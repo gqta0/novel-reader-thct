@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 1">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 1</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="#" class="nav-link disabled">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_2.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_2084">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2084: Văn khố</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nữ yêu trung niên mặt đầy bất phục, hừ lạnh: &quot;Ta đã cống nạp, hắn vẫn là Hóa Thần cảnh ư?&quot; &quot;Chẳng lẽ ta còn phải lấy lòng hắn sao?&quot; &quot;Tóm lại, tốt nhất hắn đừng rơi vào tay ta, nếu không, mối thù ngày đó ắt sẽ được báo!&quot;</p>
+                <p>Một nơi khác trong hư vô.</p>
+                <p>Kiếm Tam Cuồng khoanh chân ngồi trên kiếm ảnh, lắc đầu thở dài: &quot;Ai, sao ta lại xui xẻo thế này?&quot; &quot;Giang Phàm ở Trung Thổ lại chính là Nam Càn Bệ Hạ, ai mà ngờ được chứ?&quot; &quot;Ta bị dội một thân phân, lại còn mất chín mươi chín thanh linh kiếm cực phẩm, về sao mà giao phó đây?&quot;</p>
+                <p>Đúng lúc này.</p>
+                <p>Một đạo kiếm ảnh xuyên qua hư vô, lướt đến trước mặt nàng. Nàng khẽ nhướng mày: &quot;Là hư không truyền tin của sáu lão già đó sao?&quot; Ngón trỏ khẽ búng, kiếm ảnh vỡ vụn, một luồng tin tức từ đó hiện ra.</p>
+                <p>&quot;Chúng ta đã đến Nam Càn, để đảm bảo an toàn, vẫn cần nhờ vào kiếm dực của tam muội để bảo toàn tính mạng.&quot; &quot;Tam muội đừng chần chừ nữa, mau chóng đến hội hợp.&quot;</p>
+                <p>Đọc đến đây, Kiếm Tam Cuồng đau cả đầu. Kiếm dực đã không còn!</p>
+                <p>Tuy nhiên, tin tức chưa dừng lại.</p>
+                <p>&quot;Ngoài ra, Nam Càn Bệ Hạ đã có tin tức, hắn đột nhiên xuất hiện ở Thần Đô, giao chiến với mấy lão quái vật thời Đại Càn Thần Quốc, thể hiện tu vi kinh khủng.&quot; &quot;Nghe đồn, hắn đã thành công thoát khỏi Thần Đô, và cướp đi một bảo vật chí tôn của Thần Đô.&quot; &quot;Nếu không có gì bất ngờ, hắn sẽ sớm trở về Nam Càn.&quot; &quot;Thời gian còn lại cho chúng ta không nhiều nữa...&quot;</p>
+                <p>Nghe đến đây, Kiếm Tam Cuồng đột ngột ngồi thẳng dậy, ngọc dung tràn đầy kinh hãi. &quot;Lão quái vật thời Đại Càn Thần Quốc?&quot; Nàng nhớ lại khi xưa thoát khỏi Thần Đô, từng bị một lão quái vật vừa tỉnh giấc nhìn một cái. Chỉ một cái nhìn, đã lấy đi nửa cái mạng của nàng. Đến nay nàng vẫn còn kinh hồn bạt vía.</p>
+                <p>Thế nhưng, Nam Càn Bệ Hạ, người mà thực lực chưa từng lộ ra ngoài, lại có thể đồng thời giao chiến với mấy lão quái vật. Không chỉ vậy, còn thành công cướp đi một bảo vật, công thành thân thoái? Đây là thực lực cỡ nào?</p>
+                <p>Nhưng, rất nhanh, Kiếm Tam Cuồng chợt nhận ra điều gì đó. Đột nhiên bật dậy khỏi kiếm ảnh: &quot;Khoan đã!&quot; &quot;Nam Càn Bệ Hạ lợi hại như vậy, sao lại bị ta truy sát?&quot; &quot;Còn nữa!&quot;</p>
+                <p>Nàng nhìn ngày tháng của tin tức, rõ ràng là ba ngày trước, nói cách khác, ngày Nam Càn Bệ Hạ đại chiến Thần Đô, ít nhất là ba ngày trước. Mà lúc đó, chính là thời điểm Giang Phàm dẫn dắt Trung Thổ phản công Nam Thiên Giới. Sao có thể đồng thời xuất hiện ở Thần Đô!</p>
+                <p>Chát! Nàng vỗ mạnh tay phải vào tay trái, trên mặt lộ vẻ bừng tỉnh: &quot;Ta cứ thắc mắc có gì đó không đúng!&quot; &quot;Thì ra, hắn là Nam Càn Bệ Hạ giả mạo!&quot; &quot;Hề hề... hề hề hề... hề hề hề hề hề...&quot;</p>
+                <p>Nói rồi, nàng bật cười, đôi vai gầy không đầy một nắm run rẩy. Khí tức Tam Tai cảnh, không kiểm soát được mà cuồng loạn quét ngang.</p>
+                <p>&quot;Giang Phàm!!!&quot; Kiếm Tam Cuồng mặt đầy băng sương, gào thét chói tai: &quot;Dội phân lên người ta, lừa kiếm của ta!&quot; &quot;Ngươi lừa người quá đáng!&quot;</p>
+                <p>Đặc biệt là khi nghĩ đến, mình rõ ràng đã dồn Giang Phàm vào đường cùng, chỉ còn một bước nữa là có thể bắt được hắn. Kết quả, lại bị đối phương lừa gạt. Không chỉ khúm núm xin lỗi, còn dâng lên chín mươi chín thanh linh kiếm cực phẩm, thậm chí suýt nữa còn làm nha hoàn ấm giường cho hắn!</p>
+                <p>Nghĩ đến đây, nàng tức đến run rẩy toàn thân, kéo theo cả hư vô cũng chấn động dữ dội. &quot;Đồ khốn! Còn con chó chết đó nữa!&quot; &quot;Ta xé xác các ngươi!&quot;</p>
+                <p>Hai con mắt đen trắng rõ ràng của nàng, tràn đầy ác ý, hung hăng nhìn về phía cấm địa. Sau đó, một chưởng đánh nát hình chiếu truyền tin, xoay người lướt đi.</p>
+                <p>Tuy nhiên, không có kiếm dực, thân pháp của nàng xa không còn nhanh như lúc đầu. Ngược lại, Giang Phàm khoác Vũ Y Hư Không, một đường phi nước đại.</p>
+                <p>Khoảng hai ngày sau.</p>
+                <p>Quãng đường mà Đại Hắc Cẩu cần nửa tháng mới đến được, Giang Phàm không tiếc giá nào thúc giục Vũ Y Hư Không, trong thời gian ngắn đã thành công đến nơi.</p>
+                <p>&quot;Ngươi nói địa điểm, là nơi này sao?&quot; Giang Phàm nhìn cảnh tượng trước mắt, có chút không thể tin được. Đập vào mắt, lại là một mảnh điện đường đổ nát, ánh sáng rực rỡ, đèn đuốc trải dài vạn dặm. Trong hư vô tối tăm, sự tồn tại của nó như một viên dạ minh châu, vô cùng chói mắt.</p>
+                <p>Trong điện đường vô tận trải dài khắp chư thiên, ẩn hiện những hàng giá sách. Có giá sách vẫn còn nguyên vẹn, trên đó xếp gọn gàng các loại sách, có cái đã đổ nát không còn hình dạng. Nơi đây, lại là tàng thư các?</p>
+                <p>Đại Hắc Cẩu mắt lộ vẻ phức tạp nhìn điện đường đổ nát phía trước, nói: &quot;Đây là văn khố của Đại Càn Thần Quốc.&quot; &quot;Thời kỳ thịnh vượng nhất, lớn như một thế giới.&quot; &quot;Phong ấn tất cả tri thức trong trời đất.&quot;</p>
+                <p>Văn khố? Giang Phàm nghĩ đến Võ Khố Giới. Võ khố hẳn là nơi Đại Càn Thần Quốc cất giữ binh khí. Tương ứng, văn khố là nơi cất giữ các loại sách, truyền thừa văn minh Đại Càn Thần Quốc. Thông thường, văn khố hẳn không khác võ khố là bao. Điện đường đổ nát trước mắt, chỉ là một góc nhỏ của văn khố mà thôi.</p>
+                <p>Giang Phàm chú ý thấy không ít sách trên giá vẫn còn khá nguyên vẹn, không khỏi khẽ động lòng. Sách vở để lại từ thời Đại Càn Thần Quốc, bất kỳ cuốn nào cũng là bảo vật quý giá của đương thời.</p>
+                <p>Tuy nhiên, hắn rất nhanh nhận ra điều không đúng. Một nơi chói mắt như vậy, tồn tại vạn năm, chẳng lẽ không có ai phát hiện sao? Đã phát hiện, vì sao sách vở bên trong vẫn còn tồn tại?</p>
+                <p>Giang Phàm mắt lóe lên, nói: &quot;Bên trong có điều gì đó phải không?&quot; Đại Hắc Cẩu ba mắt đảo quanh, chín thật một giả nói: &quot;Đó là lẽ tự nhiên!&quot; &quot;Văn khố của Đại Càn Thần Quốc, là nền tảng quốc gia, há có thể dễ dàng xông vào?&quot; &quot;Hiện nay, tuy chỉ còn lại một góc tàn khuyết, nhưng vẫn có cấm chế kinh khủng.&quot; &quot;Xông vào đó, rất dễ bị cấm chế trấn sát.&quot; &quot;Hiền giả cũng dễ bị thương.&quot;</p>
+                <p>Giang Phàm suy tư. Loạn Cổ Huyết Hầu hung uy vô biên, thực lực hiện tại của Đại Tửu Tế không thể ngăn cản hắn. Cách duy nhất, là mượn ngoại lực. Một góc văn khố Đại Càn Thần Quốc trước mắt, chính là lựa chọn sai lầm.</p>
+                <p>Tuy nhiên, Đại Tửu Tế đã dùng cách nào, cưỡng chế chuyển Loạn Cổ Huyết Hầu từ Trung Thổ xa xôi vào văn khố? Loạn Cổ Huyết Hầu không thể nào ngu ngốc đến mức bị Đại Tửu Tế từng bước dụ dỗ đến đây chứ? Hay là, Đại Hắc Cẩu đang lừa mình?</p>
+                <p>Đang lúc hắn nghi hoặc, sâu trong điện đường đột nhiên lóe lên một hư ảnh đạo nhân khổng lồ vô cùng. Chính là thân ảnh do chín vị Đại Tửu Tế liên thủ ngưng tụ thành. Ngay sau đó, một mảnh huyết quang cái thế quét ngang trời xanh. Cả hai cùng hủy diệt lẫn nhau, đồng thời biến mất. Chỉ để lại dư ba chấn động trống rỗng, lan rộng trong điện đường, đánh bay giá sách, vô số sách vở hỗn loạn nằm ngổn ngang.</p>
+                <p>Đại Tửu Tế thật sự ở bên trong! Giang Phàm trong lòng vui mừng. Mặc dù trạng thái của hắn và Loạn Cổ Huyết Hầu đều có chút kỳ lạ, nhưng ít nhất vẫn còn sống.</p>
+                <p>&quot;Đại Hắc Cẩu, làm tốt lắm!&quot; Giang Phàm lấy ra một thanh linh kiếm cực phẩm, khá đau lòng ném cho nó. &quot;Thưởng cho ngươi!&quot;</p>
+                <p>Đại Hắc Cẩu nhe răng chó, thầm bụng bảo dạ: &quot;Ta giúp hắn đòi được hơn chín mươi thanh, hắn lại chỉ cho ta một thanh?&quot; &quot;Đúng là chủ nhân lòng dạ đen tối.&quot;</p>
+                <p>Nào ngờ, Giang Phàm lại bổ sung một câu. &quot;Cho ngươi mượn một tháng, nếu có tổn thất, bồi thường theo giá!&quot;</p>
+                <p>Khốn kiếp! Vẫn là mượn sao? Nó mài mài răng chó, thầm nói: &quot;Đồ chết tiệt, đợi đấy cho ông!&quot; &quot;Vào văn khố này, quan hệ chủ tớ của chúng ta chấm dứt!&quot; &quot;Đến lúc đó, ngươi cứ đợi chó gia ta báo thù như mưa bão đi!&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2085">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2085: Xuống ngựa bỏ kiếm</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Đại Hắc Cẩu giả vờ cảm kích, quỳ gối xuống, cất lời: “Đa tạ chủ nhân, người thật hào phóng.” Giang Phàm không màng đến giọng điệu âm dương quái khí của nó, ánh mắt nghiêm nghị dõi về phía điện đường trước mặt.</p>
+                <p>Di tích Tu Di Thần của Đại Càn Thần Quốc trước đây suýt chút nữa đã lấy mạng hắn. Giờ đây, khi lại đối mặt với Văn Khố của Đại Càn Thần Quốc, lẽ nào hắn lại không đề phòng cẩn mật?</p>
+                <p>Tức thì, hắn giơ tay triệu hồi, sáu viên trận pháp thạch hiện ra. Bất kể đại trận mà Đại Hắc Cẩu nói có tồn tại hay không, đa lưu một tay vẫn là không sai. Chỉ có điều, trận pháp thạch đã trải qua nhiều lần công kích, hư hại đến mức không còn hình dạng. Sáu viên đều chi chít vết nứt, sắp nổ tung, căn bản không còn khả năng dung xuyên trận pháp.</p>
+                <p>Nghĩ đến đây, hắn triệu hồi khí linh của Tiên Vương Bất Diệt Chung, thẳng thắn nói: “Tiểu Khí Linh, có thể dành chút thời gian giúp ta phục hồi sáu viên trận pháp thạch không?”</p>
+                <p>Tiểu Khí Linh phồng má giận dỗi: “Đừng làm phiền ta phục hồi bản tôn dung khí.” Giang Phàm ánh mắt lóe lên, nói: “Vậy, nếu tính là ngươi lại ra tay một lần nữa thì sao?”</p>
+                <p>“Cái gì cái gì?” Tiểu Khí Linh kích động reo lên: “Lại có chuyện tốt như vậy sao?” “Yên tâm giao cho ta, vài viên pháp khí cực phẩm mà thôi, một ngày là có thể phục hồi.”</p>
+                <p>Một ngày? Giang Phàm khẽ trầm tư rồi gật đầu: “Được, đợi ngươi một ngày.” Vừa hay, hắn cũng cần chút thời gian để chuẩn bị tiến vào Văn Khố.</p>
+                <p>Đầu tiên và quan trọng nhất, tự nhiên là thanh kiếm vỏ chứa hơn chín mươi thanh kiếm. “Nhiều linh kiếm cực phẩm như vậy, nếu có thể đồng thời điều động, chỉ riêng việc ném người cũng đủ để đập chết những tồn tại dưới Hiền Giả.” “Nếu có thể thao túng chúng thành kiếm trận, uy lực mạnh mẽ không thể tưởng tượng nổi.”</p>
+                <p>Hắn nhớ lại cảnh tượng Kiếm Tam Cuồng đồng thời điều động tất cả linh kiếm cực phẩm thành kiếm dực, không khỏi một trận hâm mộ. Võ Khố trong phương diện kiếm đạo, quả thực có chỗ độc đáo. Nếu có thể tham khảo ngự kiếm chi pháp của bọn họ thì tốt biết mấy. Có lẽ có thể trên cơ sở của Đại Diễn Kiếm Trận, lĩnh ngộ ra kiếm đạo cao hơn.</p>
+                <p>Mộ địa. Giang Phàm nhìn những cuốn sách tản mát khắp nơi trong điện đường, trong mắt dấy lên một tia hy vọng. Trong Văn Khố, liệu có sách về kiếm đạo không?</p>
+                <p>Ánh mắt lóe lên, hắn thu hồi kiếm vỏ. Chuyển sang lấy ra mặt dây chuyền băng tinh mang theo từ Băng Tâm, ánh mắt lộ vẻ suy tư. “Tiến vào Văn Khố, vạn nhất gặp phải Loạn Cổ Huyết Hầu, đó chính là cửu tử nhất sinh.” “Mặc dù chữ ‘huyết’ trên trán ta đã bị Kỳ Kỳ tạm thời phong ấn, Loạn Cổ Huyết Hầu không thể cảm ứng được, nhưng nếu đối mặt trực diện, Loạn Cổ Huyết Hầu lẽ nào lại không nhận ra?”</p>
+                <p>“Mặt dây chuyền băng tinh của Băng Tâm đến thật đúng lúc?” “Khứu giác vô sở bất năng của Đại Hắc Cẩu mà còn bị che chắn thành công, năng lực ngụy trang của nó nói không chừng có thể qua mặt được Loạn Cổ Huyết Hầu.” Giang Phàm tức thì đeo nó vào cổ. Khi tiến vào Văn Khố sẽ phát động.</p>
+                <p>Sau đó, hắn lại chuẩn bị sẵn ngọc phù mà Thanh Linh Đại Hiền tặng và Định Cách Chủng Tử. Đảm bảo lúc nguy cấp có thể lập tức phát động.</p>
+                <p>Cuối cùng. Hắn khoanh chân ngồi xuống, đặt Thời Gian Chi Kiếm ngang đầu gối, thời gian xung quanh tăng tốc gấp ba lần: Hắn thì lấy ra một sợi pháp tắc chi lực, tiếp tục tu luyện Ly Thiên Tẩy Nan Kinh. Dưới sự gia tốc thời gian gấp ba lần, vừa đủ để hắn luyện hóa thêm một sợi pháp tắc chi lực.</p>
+                <p>Thời gian thoáng chốc trôi qua. Một ngày sau. Khí linh của Tiên Vương Bất Diệt Chung, đột nhiên reo hò từ chiếc chuông nhỏ trắng như tuyết, nhả ra sáu viên trận pháp thạch. Chúng đã hư hỏng nặng nề, lại nghịch thiên phục hồi trở lại trạng thái hoàn chỉnh! Thậm chí còn mạnh hơn khi mới có được.</p>
+                <p>Tiểu Khí Linh khẽ thở ra một hơi: “Xong rồi, nhiệm vụ hoàn thành.” “Ta chỉ nợ ngươi một cơ hội ra tay thôi, sau khi hoàn thành, ta sẽ đi tìm chủ nhân của mình.” Giang Phàm mở mắt, nói: “Đó là đương nhiên, nếu ngươi không tìm thấy, ta còn sẽ giúp ngươi tìm.”</p>
+                <p>Tiểu Khí Linh cảm kích nói: “Ừm ừm, ngươi thật là người tốt.” “Vậy ta sớm phục hồi Tiên Vương Bất Diệt Chung.” Ngay sau đó, nó lao vào chiếc Tiên Vương Bất Diệt Chung bị hư hỏng, tiếp tục phục hồi.</p>
+                <p>Giang Phàm lộ vẻ an ủi. Thấy “ngưu mã” chăm chỉ như vậy, hắn liền yên tâm.</p>
+                <p>Lúc này, một trận gió thổi qua, Giang Phàm bỗng cảm thấy toàn thân lạnh toát. Cúi đầu nhìn xuống, mình lại mồ hôi đầm đìa, y phục ướt sũng, toàn thân đỏ bừng. Từng trận đau đớn thấu xương từ từ tan đi. Sợi pháp tắc chi lực thứ hai đã được tôi luyện thành công.</p>
+                <p>Giang Phàm năm ngón tay nắm chặt, lòng bàn tay phát ra tiếng nổ long trời lở đất, hư vô trong vòng ba trượng khẽ rung động. Thể phách này đã vượt qua Thiên Nhân Ngũ Suy, gần đạt đến cấp độ Hiền Cảnh! Mà hắn trước sau chỉ trải qua ba lần tôi luyện bằng pháp tắc chi lực! Nếu tôi luyện xong mười đạo pháp tắc chi lực, thật sự có khả năng đột phá gông xiềng Hóa Thần Cảnh, đạt đến cấp độ Hiền Cảnh!</p>
+                <p>Xem ra, Ly Thiên Tẩy Nan Kinh không phải hoàn toàn là suy đoán của Phật Đà. Một tia mong đợi lóe lên trong mắt. Cho hắn thời gian, thể phách của hắn sớm muộn cũng sẽ đạt đến Hiền Cảnh!</p>
+                <p>Nhưng bây giờ, mọi thứ đã chuẩn bị xong, đã đến lúc tiến vào Văn Khố một chuyến. Hắn nắm chặt mặt dây chuyền băng tinh trên ngực, kích hoạt nó, một tầng hàn khí từ mặt dây chuyền tỏa ra, sau đó lưu chuyển khắp toàn thân, tạo thành một lớp băng bao phủ toàn thân. Lớp băng này không ngừng biến đổi, có nghĩa là có thể tùy theo ý niệm của Giang Phàm mà biến thành dung mạo khác.</p>
+                <p>Giang Phàm không chút do dự, tâm niệm vừa động. Khoảnh khắc tiếp theo, thân hình của Vương Sung Tiêu liền hiện ra. Lúc này, huynh đệ tốt không ra trận thì còn đợi đến bao giờ?</p>
+                <p>Liếc nhìn Đại Hắc Cẩu đang nằm một bên, Giang Phàm đá nó một cái: “Tỉnh dậy đi, đến lúc xuất phát rồi.” “Dựa vào khứu giác của ngươi, tìm ra Trung Thổ Đại Tửu Tế của chúng ta.” Đại Hắc Cẩu vỗ ngực: “Cứ giao cho ta!”</p>
+                <p>Tức thì, nó sải bước chân chó, một bước đã bước vào điện đường đổ nát. Giang Phàm theo sát phía sau, bước vào điện đường. Ai ngờ, chân phải vừa đặt vào, một luồng không gian ba động không thể kháng cự chấn động lan ra. Rõ ràng hắn chỉ cách Đại Hắc Cẩu một bước, nhưng sau khi vào, lập tức mất dấu Đại Hắc Cẩu. Trong cảm nhận của hắn, Đại Hắc Cẩu lại ở cách xa hàng triệu dặm!</p>
+                <p>Giang Phàm lúc này mới biết, điện đường đổ nát tưởng chừng rộng vạn dặm này lại có càn khôn khác, diện tích thực sự không biết bao nhiêu. “Con chó chết này lại không nhắc nhở có không gian ba động?” Giang Phàm cười khẩy: “Xem ra, tên phản cốt này đã tỉnh ngủ rồi.”</p>
+                <p>Hắn lấy ra Địa Ngục Hồn Linh, ánh mắt lộ vẻ suy tư lắc lắc. Một cảnh tượng bất ngờ xuất hiện. Địa Ngục Hồn Linh không hề phản ứng. Giang Phàm nheo mắt: “Giới khí không phản ứng?” Hắn lại thử lấy ra Thời Gian Chi Kiếm, ba lần thời gian lực tỏa ra trên đó cũng hoàn toàn biến mất. Tiếp đó, lấy ra vài pháp khí khác, tất cả đều như vậy. Pháp khí ở nơi này không thể phát huy hiệu quả.</p>
+                <p>“Pháp khí ở nơi này mất hiệu lực?” Giang Phàm ánh mắt kinh ngạc, nhìn quanh bốn phía. Bất chợt, hắn phát hiện một tấm biển nhắc nhở treo trên một giá sách. “Văn Khố trọng địa, hạ mã dỡ kiếm, cấm ồn ào.”</p>
+                <p>Giang Phàm ngỡ ngàng. Ý của lời nhắc nhở này là, người vào Văn Khố, cấm mang thần binh vào. Vì Văn Khố bị hư hại, quy tắc này đã suy yếu đi phần lớn, không thể cưỡng chế tịch thu pháp khí của người vào, chỉ cấm sử dụng mà thôi. “Không hổ là di tích của Đại Càn Thần Quốc, ngay cả giới khí cũng có thể trấn áp.” Giang Phàm thầm tặc lưỡi.</p>
+                <p>May mắn thay, Định Cách Chủng Tử, ngọc phù của Thanh Linh Đại Hiền, những thứ này không phải là pháp khí, có thể tùy ý sử dụng. Còn mặt dây chuyền băng tinh trên ngực, hiệu quả đã phát huy, cũng không bị ảnh hưởng.</p>
+                <p>“Chó chết, ta đợi ngươi cắn chủ!” Giang Phàm lạnh lùng quét mắt nhìn xung quanh, liền cất bước đi sâu vào Văn Khố. Khi đi ngang qua một giá sách hoàn chỉnh, bất ngờ phát hiện, giá sách này bày toàn bộ là công pháp. Hắn không khỏi đồng tử co rút, tiến lại gần quan sát. Cẩn thận để tránh xảy ra bất trật, hắn không chạm vào.</p>
+                <p>Nhưng, ngay khi hắn chuẩn bị quan sát kỹ lưỡng, một đôi mắt mang theo Diễm Lệ Ba Quang nhìn tới. Giọng nói quen thuộc, cũng vang lên bên tai. “Ngươi còn khá cẩn thận đấy.” “Sách ở đây đều đã thành tinh, chạm vào một cái thì đừng hòng rời đi.”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2086">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2086: Lại Lại Lại Lại Bị Lừa</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm rợn tóc gáy! Kiếm Tam Cuồng! Nàng ta lại đuổi vào Văn Khố!</p>
+                <p>Giang Phàm theo bản năng muốn động dụng Định Cách Chủng Tử, nhưng rồi lại bình tĩnh trở lại. Hắn đã ngụy trang thành Vương Trùng Tiêu, nếu đối phương nhận ra hắn, ắt đã ra tay. Xem ra hiệu quả ngụy trang của Băng Tinh Điếu Trụy của Băng Tâm, ngay cả Tam Tai Cảnh cũng có thể lừa được!</p>
+                <p>Hắn giả vờ kinh hãi né tránh ra xa, đứng ở nơi vừa kinh hãi, quát: &quot;Ai?&quot;</p>
+                <p>Trong ánh mắt co rút của hắn, Kiếm Tam Cuồng như u linh đứng ở vị trí cao hơn phía sau Giang Phàm. Hai người cách nhau không quá một cánh tay, chỉ cần nhấc tay là có thể đánh Giang Phàm thành tro bụi. Giang Phàm thầm may mắn. Việc phòng ngừa ngụy trang của Loạn Cổ Huyết Hầu đã giúp hắn giữ lại một mạng.</p>
+                <p>Đôi mắt tràn đầy vẻ diễm lệ của Kiếm Tam Cuồng, trên dưới đánh giá Giang Phàm. Nàng ta sở dĩ tiếp cận để hù dọa Giang Phàm, chính là để thử phản ứng bản năng của hắn, xem hắn có thi triển thủ đoạn của Giang Phàm hay không. Dù sao, trong Văn Khố xuất hiện một Thiên Nhân Tứ Trọng có tu vi tương đồng với Giang Phàm, thật sự quá trùng hợp.</p>
+                <p>&quot;Ngươi là ai?&quot; Kiếm Tam Cuồng phóng ra một tia khí tức Tam Tai Cảnh, nhìn thẳng vào mắt Giang Phàm.</p>
+                <p>Giang Phàm vội vàng giả vờ kinh ngạc, cúi người chắp tay nói: &quot;Vãn bối Vương Trùng Tiêu, bái kiến tiền bối!&quot;</p>
+                <p>Vương Trùng Tiêu? Kiếm Tam Cuồng lẩm bẩm một tiếng, rồi lại hỏi: &quot;Ngươi vì sao đến đây?&quot;</p>
+                <p>Giang Phàm cung kính đáp: &quot;Bẩm tiền bối, vãn bối mấy ngày trước quan sát thấy trong Văn Khố có thiên địa dị tượng, nghi ngờ có trọng bảo, nên mới cả gan xông vào tìm hiểu đôi chút.&quot;</p>
+                <p>Thiên địa dị tượng? Ánh mắt Kiếm Tam Cuồng hướng về sâu trong Văn Khố, mơ hồ bắt được những dao động chiến đấu còn sót lại của Đại Tửu Tế và Loạn Cổ Huyết Hầu. Rồi ánh mắt nhìn Giang Phàm dần trở nên thâm thúy:</p>
+                <p>&quot;Nói ngươi gan lớn đi, lại cẩn trọng với công pháp của Đại Càn Quốc.&quot;</p>
+                <p>&quot;Nói ngươi cẩn trọng đi, vì một thiên địa dị tượng không rõ mà tự tiện xông vào Thập Đại Hung Địa.&quot;</p>
+                <p>Giang Phàm thầm rùng mình. Thật là nhãn lực sắc bén, sự mâu thuẫn mà hắn thể hiện, Kiếm Tam Cuồng chỉ liếc mắt đã nhận ra. Để nàng ta tiếp tục nghi ngờ, lớp ngụy trang này của hắn sẽ bị lộ tẩy.</p>
+                <p>Nhãn cầu khẽ đảo, Giang Phàm linh cơ khẽ động, giả vờ kinh hãi nói: &quot;Tiền bối anh minh, một mình vãn bối quả thực không dám xông vào Văn Khố.&quot;</p>
+                <p>&quot;Là có người đi trước mở đường, vãn bối mới dám thử một chút.&quot;</p>
+                <p>Ừm? Ánh mắt Kiếm Tam Cuồng ngưng lại: &quot;Còn có người khác vào?&quot;</p>
+                <p>Giang Phàm mặt không đỏ tim không đập, nói: &quot;Vâng, tiền bối. Là một con Đại Hắc Cẩu, bên cạnh nó dường như còn có một tiểu tùy tùng.&quot;</p>
+                <p>Tinh thần Kiếm Tam Cuồng đột nhiên phấn chấn, sự nghi ngờ đối với Giang Phàm tan biến. Nơi đây hiểm ác như vậy, nếu người trước mắt là Giang Phàm, ắt sẽ để Đại Hắc Cẩu hộ thân. Nàng ta ánh mắt rực lửa hỏi: &quot;Chúng ở đâu?&quot;</p>
+                <p>Giang Phàm không chút do dự chỉ về hướng Đại Hắc Cẩu: &quot;Khi ta đến, chúng ở hướng đó, giờ ở đâu thì không rõ.&quot;</p>
+                <p>Chó chết, cái nồi đen này ngươi cứ gánh trước đi!</p>
+                <p>Kiếm Tam Cuồng cảm ứng theo hướng hắn chỉ, trong mắt tinh quang bùng nổ. Khí tức của Giang Phàm tuy chưa cảm nhận được, nhưng khí tức của con chó thối đó, dù cách xa đến mấy cũng có thể ngửi thấy.</p>
+                <p>&quot;Hừ, Giang Phàm! Ngươi chạy được hòa thượng, chạy được miếu sao?&quot;</p>
+                <p>&quot;Lần này, ta sẽ nghiền xương ngươi thành tro bụi!&quot;</p>
+                <p>&quot;Còn con chó chết đó, dám bảo ta làm nha hoàn ấm giường? Ta sẽ bóp nát đầu chó của ngươi!&quot;</p>
+                <p>Ngay lập tức, thân thể nàng ta hư hóa.</p>
+                <p>Tuy nhiên, trước khi biến mất, nàng ta tùy tiện vung tay, trong tay áo có một lá bùa hình kiếm bay xuống. &quot;Cầm lấy lá bùa này, gặp nguy hiểm thì đốt lên, có thể bảo toàn tính mạng một lần.&quot;</p>
+                <p>Đợi đến khi nàng ta hoàn toàn hư hóa biến mất, Giang Phàm mới vội vàng tiến lên đón lấy lá bùa hình kiếm đang bay xuống, liên tục cúi người về phía hư không. &quot;Cảm ơn tiền bối, cảm ơn tiền bối!&quot;</p>
+                <p>Hắn vẻ mặt biết ơn, trong lòng lại có chút lo lắng. Lá bùa này toàn bộ là khí tức của Kiếm Tam Cuồng, không nghi ngờ gì đã cho đối phương cơ hội khóa chặt vị trí của mình. Nhưng hắn không thể không nhận, càng không thể tẩy đi khí tức trên đó. Nếu không, Kiếm Tam Cuồng sẽ lập tức nhận ra sự bất thường của hắn, rồi đoán ra thân phận của hắn.</p>
+                <p>Điều phiền phức nhất là, sau khi Kiếm Tam Cuồng tìm thấy Đại Hắc Cẩu, ắt sẽ ép hỏi tung tích của hắn. Mà với cái tính nết của Đại Hắc Cẩu...</p>
+                <p>Mặt Giang Phàm tối sầm lại: &quot;Chó chết, từ bây giờ, xương cốt của ngươi phải cứng như sắt!&quot;</p>
+                <p>&quot;Làm chó cứng hay chó mềm, tự ngươi mà chọn!&quot;</p>
+                <p>Nói xong, Giang Phàm lưu luyến nhìn lần cuối vào giá sách trước mặt. Mặc dù không biết &quot;sách thành tinh&quot; mà Kiếm Tam Cuồng nói là có ý gì. Nhưng, chúng tồn tại lâu như vậy, không ai lấy đi, có thể thấy chúng ắt ẩn chứa vô vàn hiểm nguy. Tốt nhất là đừng nên tham lam. Hắn không còn nhiều thời gian, phải nhanh chóng tìm thấy Đại Tửu Tế.</p>
+                <p>Thế là. Tâm niệm vừa động, hắn liền lướt đi về phía nơi Đại Tửu Tế đã bùng phát khí tức.</p>
+                <p>Một góc khác của điện đường. Đại Hắc Cẩu đang cuộn tròn dưới một bức tường đổ nát. Nó há miệng chó, &quot;oa&quot; một tiếng phun ra một chiếc chuông nhỏ màu vàng dính đầy chất nhầy hôi thối. Chính là chiếc không gian trữ vật thứ tư mà nó đã giấu đi!</p>
+                <p>&quot;Hắc hắc hắc, đồ nhân loại, không ngờ tới chứ? Cẩu gia ta còn giấu một chiếc không gian trữ vật để phòng thân.&quot;</p>
+                <p>&quot;Pháp bảo của ngươi bây giờ đều không thể động dụng, thứ duy nhất có thể uy hiếp cẩu gia ta chỉ có ngọc phù mà con nha hoàn thông phòng kia tặng.&quot;</p>
+                <p>&quot;Nhưng, điều này đâu làm khó được cẩu gia ta!&quot;</p>
+                <p>Chiếc chuông vàng lóe sáng, một bộ chiến giáp kim loại phát ra ánh sáng đen u ám xuất hiện. Chất liệu của nó cực kỳ giống với Mê Thần Lao, có uy năng mạnh mẽ mà cường giả khó lòng phá hủy. Kiểu dáng của nó được thiết kế riêng cho Đại Hắc Cẩu. Có thể bao bọc toàn thân nó, không sợ cường giả tấn công.</p>
+                <p>&quot;Hắc hắc, nơi đây cấm dùng pháp khí, nhưng pháp khí phòng ngự của ta chỉ cần dựa vào chất liệu, cũng đủ để chặn đứng công kích ngọc phù của ngươi!&quot;</p>
+                <p>&quot;Cẩu gia ngươi đến đây!&quot;</p>
+                <p>Nó vừa bắt đầu mặc chiến giáp, vừa ngửi ngửi không khí, khóa chặt vị trí của Giang Phàm. Không ngửi thì thôi, vừa ngửi một cái, một luồng hương thơm thuần khiết quen thuộc xộc vào mũi. Đại Hắc Cẩu ngây người, lẩm bẩm: &quot;Sao ta lại ngửi thấy mùi của lão nữ nhân kia?&quot;</p>
+                <p>Lời vừa dứt. Trên đỉnh đầu nó truyền đến một giọng nói lạnh lẽo vô cùng.</p>
+                <p>&quot;Bỏ chữ &#039;hình như&#039; đi!&quot;</p>
+                <p>&quot;Cả chữ &#039;lão&#039; cũng bỏ đi cho ta!&quot;</p>
+                <p>Sss! Ba con mắt chó của Đại Hắc Cẩu trợn tròn, thân chó run bần bật. Không đợi nó kịp phản ứng, &quot;ầm&quot; một tiếng, bức tường che chắn nó vỡ vụn. Nó cứng đờ cổ từ từ ngẩng đầu nhìn lên, một tà váy dài màu xanh, Kiếm Tam Cuồng toàn thân không nhiễm một hạt bụi, đôi mắt như sao băng lạnh lẽo nhìn chằm chằm nó.</p>
+                <p>Đại Hắc Cẩu hít một hơi khí lạnh, lắp bắp nói: &quot;Ngươi... ngươi sao lại đến nữa?&quot;</p>
+                <p>Ngay sau đó, nó phản ứng lại, ngẩng đầu chó lên, hung hăng nói: &quot;Đồ nữ nhân thối, chủ nhân ta đã cho ngươi một con đường sống, ngươi còn dám dây dưa không dứt?&quot;</p>
+                <p>Vừa nói, nó vừa lén lút tăng tốc mặc chiến giáp. Nhưng tiểu xảo này, làm sao qua mắt được Kiếm Tam Cuồng? Nàng ta hai ngón tay hợp thành kiếm, khẽ vung lên, xiềng xích pháp tắc ngưng tụ thành một thanh cự kiếm trăm trượng ầm ầm trấn áp xuống.</p>
+                <p>Con mắt thứ ba trên trán Đại Hắc Cẩu lập tức phun ra luồng sáng vàng thần bí, cố gắng chống cự. Nhưng pháp tắc của Kiếm Tam Cuồng quá mạnh, chỉ trong chốc lát, luồng sáng vàng đã bị đánh tan. Cự kiếm hung hăng trấn áp Đại Hắc Cẩu xuống đất. Bộ chiến giáp chưa kịp mặc trên người càng bị đánh bay ra xa.</p>
+                <p>Kiếm Tam Cuồng lạnh lùng nói: &quot;Ta chỉ hỏi ngươi một lần.&quot;</p>
+                <p>&quot;Giang Phàm ở đâu?&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2087">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2087: Chó đen phá đại phòng</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Đại Hắc Cẩu thống khổ rên rỉ, tiếng kêu thảm thiết vang vọng. Nó thấu hiểu, thân phận Nam Càn Bệ Hạ của Giang Phàm ắt đã bị vạch trần, bằng không Kiếm Tam Cuồng đâu dám truy đuổi, càng không dám hạ thủ tàn độc đến vậy. Song, bảo nó khai ra tung tích Giang Phàm, tuyệt đối không thể. Một khi Giang Phàm bị tìm thấy, nó sẽ mất đi giá trị lợi dụng, ắt bị xử trí. Thân phận Hộ Quốc Trung Khuyển của nó, trong thư khố vắng người này, Kiếm Tam Cuồng có giết nó cũng chẳng ai hay.</p>
+                <p>Ba con mắt đảo quanh, nó cất lời: “Chủ nhân của ta… người đang ở nơi rất xa!”</p>
+                <p>Ầm!</p>
+                <p>Đáp lại nó là cự kiếm nghiền ép, xương cốt nó kêu răng rắc, suýt chút nữa gãy lìa. Đại Hắc Cẩu đau đến nhe răng trợn mắt, nhưng vẫn cắn chặt răng, kiên quyết không khai. Bị thương một chút và mất mạng chó, lựa chọn thế nào nó vẫn biết rõ.</p>
+                <p>Kiếm Tam Cuồng lạnh lẽo đến thấu xương: “Nếu ngươi tìm chết, ta sẽ thành toàn cho ngươi!”</p>
+                <p>Cự kiếm pháp tắc phát ra tiếng ong ong kinh hoàng, khí tức hủy diệt tuôn trào. Đại Hắc Cẩu giật giật mí mắt, nữ nhân điên này thật sự muốn diệt nó.</p>
+                <p>“Lão nữ nhân, ta đã làm gì? Ta, chẳng qua chỉ buông lời trêu chọc, bảo ngươi làm thị nữ sưởi ấm giường cho chủ nhân ta thôi mà?”</p>
+                <p>“Đến mức phải độc ác như vậy sao?”</p>
+                <p>Kiếm Tam Cuồng hừ lạnh: “Độc ác?”</p>
+                <p>“Ngươi giúp Giang Phàm lừa đi vỏ kiếm, chẳng lẽ không độc ác?”</p>
+                <p>Đại Hắc Cẩu nghe xong, lập tức nước mắt chó giàn giụa. Nó liều mạng chó, giúp Giang Phàm kiếm được một vỏ kiếm toàn linh kiếm cực phẩm, cuối cùng chỉ đổi lấy quyền sử dụng một thanh kiếm trong một tháng. Giờ đây, kẻ chết trước lại là nó!</p>
+                <p>Giang Phàm à Giang Phàm, ngươi thật sự không phải là giống người mà!</p>
+                <p>Nếu nói, điều này chỉ khiến nó cảm thấy uất ức, thì câu nói tiếp theo của Kiếm Tam Cuồng lại khiến trời đất của Đại Hắc Cẩu sụp đổ.</p>
+                <p>Kiếm Tam Cuồng tiếp tục lạnh giọng nói: “Còn chủ nhân của ngươi, càng là một thứ độc ác đến cực điểm!”</p>
+                <p>“Hắn ta dám dùng phân hắt ta!”</p>
+                <p>“Hắn không chết, ta mối hận này khó bình!”</p>
+                <p>Đại Hắc Cẩu ngẩn người, nghi hoặc hỏi: “Phân? Khi nào thì dùng phân hắt ngươi? Sao ta không biết?”</p>
+                <p>Kiếm Tam Cuồng hồi tưởng lại, lập tức sắc mặt tái xanh, toàn thân nổi da gà, ghét bỏ trừng mắt nhìn nó:</p>
+                <p>“Phân có mùi vị y hệt miệng ngươi!”</p>
+                <p>“Phân ngập trời, nhiều không đếm xuể!”</p>
+                <p>“Chủ tớ các ngươi, kẻ nào cũng độc ác hơn kẻ nào, kẻ nào cũng không phải người!”</p>
+                <p>Nàng càng nói càng kích động, đến câu cuối cùng thì bắt đầu khản cả giọng.</p>
+                <p>Đại Hắc Cẩu ngây người, lẩm bẩm: “Ngập trời…”</p>
+                <p>“Hắn có phải đã thả ra từ một chiếc chuông đen không?”</p>
+                <p>Kiếm Tam Cuồng ghét bỏ trừng mắt nhìn nó: “Sao, ngươi biết chiếc trữ vật khí đó?”</p>
+                <p>Đại Hắc Cẩu tối sầm mắt lại, trong lồng ngực phát ra tiếng tim vỡ vụn.</p>
+                <p>Chuông đen, phân ngập trời…</p>
+                <p>Phụt—</p>
+                <p>Đại Hắc Cẩu lập tức ngã vật xuống đất, sùi bọt mép, phát ra tiếng tru tréo thảm thiết đến rợn người:</p>
+                <p>“Đó là cả đời đại tiện của ta!”</p>
+                <p>“Là tuyệt thế trân tàng ta đã tích cóp cả đời!”</p>
+                <p>Vừa nói, nó vừa điên cuồng phun bọt mép. Phun một lúc lâu, nó lại vội vàng bò dậy, với ánh mắt đầy hy vọng, run rẩy hỏi:</p>
+                <p>“Rải hết rồi? Không còn một chút nào sao?”</p>
+                <p>Kiếm Tam Cuồng lạnh lùng nhìn nó: “Không còn một mảy may, toàn bộ đều đổ lên người ta!”</p>
+                <p>Phụt—</p>
+                <p>Đại Hắc Cẩu lại lần nữa ngã vật xuống đất, phun máu tươi, ngửa mặt lên trời gào thét:</p>
+                <p>“Giang Phàm! Ngươi không phải con người!”</p>
+                <p>Ngay sau đó, ánh mắt nó tối sầm, tứ chi không ngừng co giật, một mạng chó dường như đã bị rút cạn tám chín phần, ánh mắt đờ đẫn nhìn lên bầu trời:</p>
+                <p>“Không còn đại tiện yêu quý nhất, đời chó của ta… đã hoàn toàn vô nghĩa rồi.”</p>
+                <p>“Lão nữ nhân, giết ta đi.”</p>
+                <p>Kiếm Tam Cuồng đảo mắt khẽ, phất tay một cái, cự kiếm hóa thành lực lượng pháp tắc quay trở về cơ thể. Nàng lộ ra vẻ mặt nửa cười nửa không: “Vậy sao ngươi không nói cho ta tung tích Giang Phàm?”</p>
+                <p>“Ta sẽ giúp ngươi báo thù.”</p>
+                <p>Đúng rồi!</p>
+                <p>Đại Hắc Cẩu đột nhiên bò dậy, hung hăng gầm lên: “Giang Phàm! Ngươi rải đại tiện của ta, ta với ngươi không đội trời chung!”</p>
+                <p>“Đi, ta dẫn ngươi đi tìm hắn!”</p>
+                <p>Ngay lập tức, mũi chó hít một hơi, liền khóa chặt vị trí của Giang Phàm, nói: “Hắn ở hướng đó!”</p>
+                <p>Kiếm Tam Cuồng quay đầu nhìn lại, ánh mắt lộ vẻ nghi hoặc: “Đó chẳng phải là vị trí của Vương Trùng Tiêu sao?”</p>
+                <p>Đại Hắc Cẩu nghe xong liền hiểu ra mọi chuyện, cười khẩy: “Vương Trùng Tiêu nào?”</p>
+                <p>“Ngươi thấy chính là hắn!”</p>
+                <p>“Chẳng qua, hắn đã ngụy trang thành một diện mạo khác.”</p>
+                <p>Cái gì?</p>
+                <p>Kiếm Tam Cuồng biểu cảm đông cứng tại chỗ: “Vương Trùng Tiêu… chính là Giang Phàm? Giang Phàm chính là Vương Trùng Tiêu?”</p>
+                <p>Nàng lảo đảo một cái, ánh mắt cũng đờ đẫn trong chốc lát.</p>
+                <p>Ngay sau đó, lồng ngực nàng kịch liệt phập phồng, tạo nên đường cong kiều diễm. Hai tay nắm chặt thành quyền, hơi thở dồn dập, răng cắn chặt, một khuôn mặt ngọc bị sự phẫn nộ chưa từng có thay thế.</p>
+                <p>“Ta lại lại lại bị hắn lừa nữa rồi!”</p>
+                <p>“A!!!!”</p>
+                <p>“Giang Phàm, ngươi không được chết tử tế!”</p>
+                <p>Nàng tràn đầy sát ý, trực tiếp thông qua khí tức của phù chỉ khóa chặt Giang Phàm, một cái thuấn di đã giết tới. Nàng đã không đếm xuể mình đã bị Giang Phàm lừa bao nhiêu lần. Nàng chỉ biết, mình sắp bị Giang Phàm lừa thành kẻ đần độn rồi!</p>
+                <p>Cái thứ trời đánh này!</p>
+                <p>Đại Hắc Cẩu cũng giận dữ, gào thét: “Giang Phàm, trả phân cho ta!”</p>
+                <p>Nói xong, nó cũng theo sau giết tới.</p>
+                <p>Nói về Giang Phàm.</p>
+                <p>Thúc giục Hư Không Vũ Y, dưới tốc độ phi hành cực nhanh, cuối cùng đã đến nơi Đại Tửu Tế và Loạn Cổ Huyết Hầu giao chiến. Giang Phàm lộ vẻ nghi hoặc: “Chẳng lẽ ta tìm nhầm vị trí rồi sao?”</p>
+                <p>Trước mắt là một rừng giá sách dày đặc, xếp đặt ngay ngắn, vô số sách vở đủ loại tên được bày biện chỉnh tề. Nơi nào giống như đã từng bùng nổ ba trận đối kháng? Cấp độ xung kích sóng như vậy, đủ để san phẳng khu vực lân cận thành bụi trần.</p>
+                <p>Đang lúc nghi hoặc, ánh mắt hắn chợt cảnh giác phát hiện vật lạ giữa hai hàng giá sách cách đó không xa. Hắn nắm chặt ngọc phù của Thanh Linh, đồng thời thi triển Vô Trần Thuật, trong trạng thái ẩn thân cẩn thận tiến lại gần.</p>
+                <p>Đến gần nhìn kỹ, sắc mặt Giang Phàm khẽ biến. Nơi đây lại có một bộ xương ngọc được bảo quản cực kỳ hoàn hảo! Hóa ra là một cường giả Hóa Thần cảnh đã vẫn lạc. Nó giữ tư thế khoanh chân ngồi, hai tay ôm một cuốn cổ tịch. Dường như trước khi chết đang lật xem cổ tịch của Đại Càn Thần Quốc.</p>
+                <p>Không biết nó đã chết bao nhiêu năm tháng, bảo y trên người đã mục nát thành cát bụi thời gian, huyết nhục cũng hoàn toàn không còn. Duy chỉ có cuốn cổ tịch Đại Càn Thần Quốc trong tay vẫn nguyên vẹn như thuở ban đầu. Hắn trong lòng nghi hoặc, người này đã gặp phải nguy hiểm gì, vì sao lại tọa hóa trong tư thế đọc sách?</p>
+                <p>Ngay lúc này, hắn phát hiện ở góc xa xa, lại có một bộ di hài. Cũng giữ tư thế tọa hóa khi đọc sách. Tuy nhiên, đây là một bộ di hài tọa hóa trong tư thế đứng. Giang Phàm trong lòng khẽ động, bay vút lên không, đến trên không trung của những giá sách rộng lớn, nhìn xuống không khỏi đồng tử co rút.</p>
+                <p>Trong tầm mắt, đâu chỉ có hai bộ di hài? Hầu như dưới mỗi hàng giá sách, đều có những bộ di hài mới cũ khác nhau. Có bộ đã thành xương cốt, có bộ vẫn đang phân hủy. Trong đó có một thi thể, bảo y trên người đã mục nát, nhưng thân thể lại không hề hấn gì.</p>
+                <p>“Di hài của Hiền giả!” Giang Phàm hít một hơi khí lạnh.</p>
+                <p>Thậm chí cả Hiền giả cũng vẫn lạc tại đây! Điều khiến Giang Phàm càng rợn tóc gáy hơn là, tất cả mọi người đều giữ cùng một động tác.</p>
+                <p>Đọc sách!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2088">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2088: Xem sách ngộ đạo thành tiên</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Họ không phải vì hiểm nguy ngoại lai mà bỏ mình. Trái lại, họ tọa hóa ngay trong lúc đọc sách! Nơi mắt thấy còn vô số người ngã xuống, vậy cả điện đường này còn bao nhiêu nữa? Nghĩ đến việc mình từng định xem xét kỹ lưỡng những cuốn sách kia, Giang Phàm không khỏi toát mồ hôi lạnh trên trán. May mắn thay, Kiếm Tam Cuồng xuất hiện, cắt ngang hành động của hắn. Bằng không, hậu quả thật khôn lường!</p>
+                <p>Quét mắt nhìn di thể của vị hiền giả nọ, Giang Phàm dập tắt ý định lục soát di vật, mà cố gắng tránh xa nhất có thể, để khỏi gặp bất trắc.</p>
+                <p>Xoạt ——</p>
+                <p>Đúng lúc này.</p>
+                <p>Một tiếng lật trang sách khe khẽ truyền đến. Sắc mặt Giang Phàm chợt biến, nơi đây còn có người đang đọc sách ư? Hắn vội vàng lần theo âm thanh, đi đến giữa hai hàng giá sách. Nhìn quanh, những cuốn sách ở đây đều là các loại truyện kể, có tình ái, có du ký thám hiểm, lại có cả quyền mưu triều đình. Những cuốn sách phổ thông chỉ xuất hiện giữa phàm nhân này, lại được Văn Khố cất giữ. Nói Văn Khố thu thập mọi sách vở trong trời đất, tuyệt không phải lời hư ngôn. Hắn không khỏi nghĩ đến Cơ Thanh Y, vị công chúa Bắc Hải cả đời khát khao tri thức kia, nếu biết đến sự tồn tại của Văn Khố, hẳn sẽ vô cùng vui mừng đi? Thời đại Đại Càn Thần Quốc, mọi tri thức đều có thể tìm thấy ở nơi này. Đương nhiên, tiền đề là những cuốn sách này chưa hóa tinh.</p>
+                <p>Xoạt xoạt xoạt ——</p>
+                <p>Tiếng sách lật lại vang lên, Giang Phàm lập tức cảnh giác, nắm chặt ngọc phù, cẩn thận từng li từng tí tiếp cận. Thế nhưng, nơi đây lại không có sinh linh nào… Đang suy nghĩ, hắn chợt va phải một vật vô hình, một tầng gợn sóng như nước lan tỏa, đẩy hắn ra. Giữa những gợn sóng, đồng tử Giang Phàm co rút lại. Hắn nhìn thấy chín vị Đại Tửu Tế! Lại còn thấy Loạn Cổ Huyết Hầu! Giữa họ vẫn giữ nguyên tư thế giao chiến, trong chiến trường, một cuốn sách mở ra, đang nhanh chóng lật từng trang. Giang Phàm lập tức hiểu ra họ đã đi đâu! Chắc hẳn khi họ giao chiến, một cuốn sách vô tình rơi xuống, cuốn ý thức cả hai bên vào trong sách. Lúc này, trang sách vẫn tiếp tục cuộn, sắp đến trang cuối. Sắc mặt Giang Phàm hơi đổi. Chẳng lẽ đây là thật, họ sắp sửa xuất hiện ư? Nghĩ đến sóng xung kích khủng khiếp bùng phát từ trận đại chiến một ngày trước, hắn không nghĩ ngợi gì, lập tức lùi lại, dịch chuyển tức thời rời đi.</p>
+                <p>Thế nhưng.</p>
+                <p>Vẫn chậm một bước. Thân ảnh hắn vừa biến mất, cuốn sách kia đã nhanh chóng lật đến trang cuối cùng.</p>
+                <p>Rắc một tiếng.</p>
+                <p>Cuốn sách đang mở khép lại, hai luồng hư ảnh như khói từ đó rơi ra, lần lượt dung nhập vào thân thể chín vị Đại Tửu Tế và Loạn Cổ Huyết Hầu. Cả hai bên đột nhiên mở mắt, không chút do dự đồng loạt ra tay tấn công đối phương. Chín vị Đại Tửu Tế thi triển một đồ án Thái Cực Âm Dương khổng lồ, Loạn Cổ Huyết Hầu thì vung thương đâm tới. Trong tiếng nổ vang trời đất, đồ án Thái Cực Âm Dương vỡ tan tành. Trường thương huyết sắc mang theo thế hủy diệt, đâm thẳng về phía chín vị Đại Tửu Tế! Nhìn lại chín vị Đại Tửu Tế, sắc mặt họ tái nhợt, ánh mắt tràn đầy vẻ tiều tụy sâu sắc, trên người đều có những vết thương khác nhau. Khí tức đã không còn ở đỉnh phong. Có thể thấy những ngày tháng đại chiến với Loạn Cổ Huyết Hầu đã khiến họ dầu hết đèn cạn. Ngược lại, Loạn Cổ Huyết Hầu vẫn hung uy ngút trời, ngạo nghễ đương thế. Một thương xuất ra, chín vị Đại Tửu Tế không còn sức chống đỡ.</p>
+                <p>Nhưng, vào thời khắc mấu chốt, Đại Tửu Tế của Thái Thương Đại Châu quả quyết nắm lấy một cuốn sách của Đại Càn Thần Quốc, mở ra. Loạn Cổ Huyết Hầu phát ra một tiếng hừ lạnh nặng nề: “Lần sau xuất hiện, tất diệt các ngươi!” Lời vừa dứt, hắn đột nhiên thân thể cứng đờ, giữ nguyên tư thế đâm trường thương mà bất động. Chín vị Đại Tửu Tế cũng giữ nguyên tư thế nghênh chiến, tất cả đều mất đi ý thức. Và cuốn sách trong tay Đại Tửu Tế Thái Thương Đại Châu, xoạt một tiếng bắt đầu lật trang. Một luồng thanh quang còn tỏa ra, bao phủ cả hai bên, không cho họ bị ảnh hưởng từ bên ngoài.</p>
+                <p>Cùng lúc đó.</p>
+                <p>Sóng xung kích bùng phát trong chốc lát của họ cũng tạo ra sức phá hoại kinh thiên động địa. Các giá sách tại chỗ đều bị đánh bay, vô số sách vở tán loạn bắn về bốn phía, ngay cả Giang Phàm đang dịch chuyển tức thời cũng bị đánh văng ra. Hắn há miệng phun ra một ngụm máu lớn, đạo thể nứt ra vô số vết rạn nhỏ li ti, máu tươi cuồn cuộn trào ra. Thế nhưng, đây chỉ là dư ba! Sóng xung kích tiếp theo mang theo sức hủy diệt chết chóc ập tới. Sắc mặt Giang Phàm kịch biến. Đây chính là dư ba của trận đại chiến cảnh giới Tam Tai sao? Hóa Thần cảnh… không, là dưới cảnh giới Tam Tai đều như lông vũ trong ngọn lửa, sớm tối hủy diệt. Trong khoảnh khắc ngàn cân treo sợi tóc, hắn đang định lấy ra Tiên Vương Bất Diệt Chung!</p>
+                <p>Nhưng kỳ lạ thay.</p>
+                <p>Điện đường Văn Khố giáng xuống một mảnh thần quang huyền diệu, cảnh tượng xung quanh như thời gian quay ngược: Những cuốn sách hỗn loạn tự động phục hồi, trở về vị trí cũ. Các giá sách tán loạn cũng lần lượt trở về chỗ cũ. Sóng xung kích bùng phát kia, dưới thần quang cũng biến mất không dấu vết. Ngay cả vết thương trên người Giang Phàm cũng được thần kỳ xoa dịu. Giang Phàm lộ ra một tia chấn động. Thủ đoạn như vậy, có thể xưng là tạo hóa thần! Không dám tưởng tượng, khi Văn Khố ở trạng thái hoàn chỉnh năm xưa, là thần thánh đến mức nào. Càng không dám tưởng tượng, Đại Càn Thần Quốc ở trạng thái đỉnh phong, lại huy hoàng vạn đại ra sao.</p>
+                <p>Cạch ——</p>
+                <p>Đột nhiên, trong tay hắn hơi nặng xuống. Cúi đầu nhìn, đồng tử không khỏi co rút lại! Lại là một cuốn cổ tịch bìa màu xanh vàng, rơi vào tay hắn!!! Chắc hẳn là lúc nãy khi bị đánh bay, cuốn sách này đã đập vào người hắn, được điện đường mặc định là Giang Phàm lấy sách ra xem, nên không trả về vị trí cũ. May mắn là cuốn sách này đang ở trạng thái đóng. Giang Phàm kinh hãi toát mồ hôi lạnh, thầm thì: “Cái này cũng quá hung hiểm rồi!” Hắn chỉ cảm thấy trong tay mình không phải là một cuốn sách, mà là dung nham nóng bỏng, theo bản năng liền ném đi.</p>
+                <p>Nào ngờ.</p>
+                <p>Sau khi ném ra, cuốn sách lại lơ lửng xuất hiện trong tay Giang Phàm. Ném cũng không ném đi được? Hay là phải đặt về vị trí cũ mới được? Hắn vội vàng quét mắt nhìn các giá sách xung quanh, không khỏi khóe miệng giật giật, không biết cuốn sách này thuộc giá sách nào! Chỉ có thể dựa vào loại hình sách, trước tiên đại khái xác định một chút. Hắn cầm sách lên, đang định xem tên sách.</p>
+                <p>Bất chợt, toàn thân hắn rùng mình một cái.</p>
+                <p>Cảm giác lạnh lẽo cực độ xâm chiếm toàn thân, khiến hắn như rơi vào hầm băng, thân thể càng cứng đờ vô cùng. Cảm giác này, giống hệt lần đầu tiên gặp Nha Tôn Giả, bị hắn một ngón tay bắn giết! Có thể mang lại cho hắn áp lực như vậy, chỉ có một người! Kiếm Tam Cuồng! Quả nhiên.</p>
+                <p>Bên tai hắn truyền đến giọng nói mang theo hơi lạnh: “Tìm thấy ngươi rồi!”</p>
+                <p>Một luồng hơi thở thơm tho, thổi qua tai hắn, phả vào má! Cổ Giang Phàm cứng đờ vô cùng, từ từ quay lại. Một khuôn mặt xinh đẹp gần như dán vào mặt hắn, phủ đầy sương lạnh, hiện ra trong tầm mắt. Đôi mắt lẽ ra phải lấp lánh ánh sáng tuyệt mỹ, giờ đây như hai hố băng, tỏa ra hơi lạnh cuồn cuộn.</p>
+                <p>Ực!</p>
+                <p>Giang Phàm nuốt nước bọt khan, không dám động đậy. Hạt giống Thái Sơ, ngọc phù đặt trong tay áo, căn bản không có cơ hội sử dụng. Hắn hành động có nhanh đến mấy, cũng không nhanh bằng một ánh mắt của Kiếm Tam Cuồng. Mà để giết hắn, Kiếm Tam Cuồng chỉ cần một ánh mắt. Hắn hơi lùi lại một bước, tim đập thình thịch, nói: “Tiền bối, có thể cho ta một cơ hội để biện bạch không?”</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="#" class="page-btn disabled">← Trước</a>
+            <a href="page_1.html" class="page-btn current">1</a>
+            <a href="page_2.html" class="page-btn">2</a>
+            <a href="page_3.html" class="page-btn">3</a>
+            <a href="page_4.html" class="page-btn">4</a>
+            <a href="page_5.html" class="page-btn">5</a>
+            <a href="page_6.html" class="page-btn">6</a>
+            <a href="page_7.html" class="page-btn">7</a>
+            <a href="page_2.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>
