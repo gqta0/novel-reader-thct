@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 12">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 12</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_11.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_13.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_2142">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2142: Thiên Qua</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Linh khí của bảo vật kia chỉ mong một lần hộ chủ cuối cùng, liền có thể hoàn toàn tự do. Giang Phàm khẽ cười, giọng lạnh nhạt: “Không cần, hiện tại ta đã an toàn.”</p>
+                <p>Sinh linh bé nhỏ này, tâm tư đơn thuần hơn cả dung mạo, y há lại không thấu rõ? Chỉ khi nào thế cùng lực kiệt, y mới tùy ý để nó toại nguyện.</p>
+                <p>Giang Phàm lại hỏi: “Ta triệu ngươi ra, chỉ muốn hỏi, nếu không có Thánh cảnh gia trì, ngươi có thể ngăn cản được công kích cấp độ nào?”</p>
+                <p>Sinh linh nghiêng đầu đáp: “Nếu có Thánh nhân gia trì, có thể ngăn được công kích từ Thánh cảnh.”</p>
+                <p>“Không có ai gia trì, ắt hẳn chỉ chống đỡ được dưới Thánh cảnh?” Tâm tư Giang Phàm chợt dâng trào.</p>
+                <p>Nguyên thần bảo vật phòng ngự đệ nhất thiên giới, uy lực lại kinh khủng đến vậy sao? Không cần dung hợp, vẫn có thể phát huy sức mạnh khiến cho cường giả dưới Thánh cảnh khó lòng xuyên phá.</p>
+                <p>Nhớ lại thuở sơ khai có được chiếc chuông cũ này, dù là đòn công kích của Bắc Tuyết Sát La Hoàng, đại chuông cũng không thể ngăn cản hoàn toàn. Giang Phàm ẩn mình bên trong còn bị chấn động đến mức thổ ra máu tươi.</p>
+                <p>Vậy thì, công kích của Lộn Cổ Huyết Hầu cũng có thể chặn đứng? Đây chính là lá chắn hộ mệnh bất khả hủy diệt! Lòng y trấn định, nếu đối diện với Lộn Cổ Huyết Hầu, chí ít cũng không đến nỗi bị đánh tan trong khoảnh khắc.</p>
+                <p>“Tốt, khi gặp nguy nan, ta sẽ nhờ ngươi tương trợ,” Giang Phàm khẽ cười.</p>
+                <p>Sinh linh phấn chấn gật đầu, lập tức thu mình trở về.</p>
+                <p>Giang Phàm cười lạnh trong lòng: “Tiểu vật kia, nếu ngươi có thể thoát khỏi tay ta, thì ta đâu còn là Giang Phàm nữa?”</p>
+                <p>Cất Tiên Vương Bất Diệt Chuông đi, y lấy ra một mảnh vỏ giới Địa giới vừa rơi rụng.</p>
+                <p>Đây chính là thu hoạch lớn nhất trong chuyến hành trình Địa giới lần này! Để Địa giới nguyên thủy khí lực viên mãn, tất cả đều trông cậy vào mảnh rơi rớt này.</p>
+                <p>Y lập tức thu nạp nguồn nguyên khí đất vô tận đang tuôn chảy, âm thầm cảm ngộ.</p>
+                <p>Thoáng chốc, hai ngày đã trôi qua. Nguyên khí đất rò rỉ từ mảnh rơi rớt đã được Giang Phàm thu thập toàn bộ. Cần thêm thời gian lắng đọng để phát huy sức mạnh nguyên khí tối đa. Công phu của Giang Phàm cũng đạt được thành quả rực rỡ.</p>
+                <p>“Khai!” Y quát khẽ, ba đạo kinh mạch đồng thời hiển hiện trong thân.</p>
+                <p>Một kinh mạch trắng xanh lưu chuyển Lôi Đình khí lực. Một kinh mạch đỏ rực điều hành Hỏa Diễm khí lực. Lại một kinh mạch vàng đất điều hành Thổ Nguyên khí lực.</p>
+                <p>So với hai mạch trước, Thổ Nguyên khí lực rõ ràng yếu kém hơn hẳn. Bởi lẽ, Thổ Nguyên khí lực mới chỉ đạt đến trình độ Tiểu Thành!</p>
+                <p>Sắc mặt y ánh lên vẻ hân hoan. Ngũ Khí Hội Nhất, thiên hạ vô đối. Nếu Thánh nhân chưa xuất thế, ắt hẳn y là vô địch thiên hạ!</p>
+                <p>Nay đã có ba đạo Ngũ Hồn khí lực. Thổ Nguyên khí lực tuy chỉ Tiểu Thành, nhưng nếu hợp nhất cùng Lôi Đình và Hỏa Diễm, Tam Khí Hội Nhất, sức mạnh tất sẽ biến đổi sâu sắc. Y nóng lòng muốn tìm đối thủ để thử nghiệm uy lực này.</p>
+                <p>Bỗng chốc, chiến hạm diệt thế rung chuyển dữ dội, sóng khí vô hình cuộn trào tứ phía.</p>
+                <p>“Chiến thuyền đã dừng?” Ánh mắt Giang Phàm lóe lên tinh quang. “Như vậy, Huyền Thiên Giới đã sắp đến.”</p>
+                <p>Y rời khỏi Ngũ Đạo Tuyền, đề phòng Vô Tướng Hiền Giả phục kích, nhanh chóng vận dụng Thổ Độn thuật, dịch chuyển thân hình rời đi.</p>
+                <p>Vừa rời đi không lâu, cách Ngũ Đạo Tuyền chẳng xa, trong một dãy núi đá, sơn thể chấn động, Vô Tướng Hiền Giả từ trạng thái tàng hình hiện ra.</p>
+                <p>Khuôn mặt nam tử tăm tối đầy phẫn nộ, ông ta hung hăng nện một quyền nghiền vụn ngọn núi bên cạnh: “Tiểu giả nhân gian xảo quyệt!”</p>
+                <p>Ông ta đã phục kích hơn hai ngày, chờ Giang Phàm xuất quan. Khi đó, y chính là lúc lơ là cảnh giác nhất, không ngờ y lại gian xảo hơn cả hồ ly tinh ngàn năm tu luyện, đã trốn thoát mất dạng!</p>
+                <p>“Hừ! Màn kịch lớn còn ở phía sau! Phải cho ngươi biết, chiến hạm Tử Âm ta đâu phải muốn lên là lên dễ dàng!”</p>
+                <p>Trên mũi chiến hạm. Điệp Tiên Tử khoanh tay, nhìn về phía xa, một thế giới chìm trong màn sương xám xịt mịt mờ.</p>
+                <p>“Huyền Thiên Giới đã bị Huyết Ma Cổ Đại tàn phá đến mức này sao?”</p>
+                <p>“Nơi đây từng được mệnh danh là Bồng Lai Tiên Cảnh đẹp nhất các cõi.” Ngày xưa, Huyền Thiên Giới là rừng xanh bạt ngàn, trời cao vô số tiên cung điện thờ. Phong cảnh hùng vĩ, khí chất tiên nhã. Là cảnh giới mơ ước của biết bao người, ngay cả Điệp Tiên Tử cũng từng một lần du ngoạn thập phương.</p>
+                <p>Nhưng giờ đây… Cỏ cây rừng rậm đều cháy rụi thành khói đặc. Thần điện đổ nát, bầu trời hoang vắng không một bóng chim. Khắp nơi chỉ thấy Huyết Ma Cổ Đại lang thang, chúng cướp đoạt sinh mệnh phàm nhân không có người bảo hộ, cùng đám hiệp khách đơn độc còn sót lại. Huyền Thiên Giới, đã sụp đổ.</p>
+                <p>Giang Phàm từ lòng đất nhô lên, nhìn Huyền Thiên Giới tiêu điều, đồng tử co rút. Lại đến kịp lúc này sao?</p>
+                <p>Một cảm giác hối hận trào dâng trong lòng. Nếu y không bế quan tu luyện Địa giới nửa tháng làm chậm trễ thời gian, liệu Huyền Thiên Giới có còn cơ hội cứu vãn?</p>
+                <p>Thấy sinh linh còn sót lại giữa vực thẳm diệt vong đang bị Huyết Ma Cổ Đại càn quét, Giang Phàm hỏi: “Vẫn tiếp tục theo kế hoạch cướp đoạt chăng?”</p>
+                <p>Điệp Tiên Tử do dự. Nếu là lúc Huyền Thiên Giới thịnh vượng, trong điều kiện giữ toàn vẹn nguyên khí thiên địa, cướp đoạt một phen cũng không đáng kể. Nhưng giờ đây… Sinh linh còn sót lại của Huyền Thiên đang khốn khổ, sắp tận diệt, nàng làm sao nỡ tiếp tục hành động thâu tóm?</p>
+                <p>Chợt một luồng khí tức thô bạo cuộn tới, Vô Tướng Hiền Giả xuất hiện. Nhìn cảnh Huyền Thiên Giới thê thảm, mắt ông ta lóe lên vẻ phấn khích: “Như vậy, bọn họ đã bỏ trống vỏ giới, không người canh giữ?”</p>
+                <p>“Chúng ta có thể đoạt lấy ngay lập tức!”</p>
+                <p>Nhưng ông ta phát giác nét mặt của Điệp Tiên Tử và Giang Phàm, mắt đảo nhanh, nói: “Điệp Tiên Tử, thế nào, định từ bỏ nhiệm vụ cướp đoạt Huyền Thiên Giới sao?”</p>
+                <p>Điệp Tiên Tử cắn môi son, đắn đo. Nếu thất bại thêm lần nữa, ắt sẽ bị Đốc Sát Sứ liệt vào danh sách đen. Hai lần cướp đoạt thế giới đều thất bại, thủ lĩnh còn dám giao Điệp Tiên Tử chỉ huy chiến đoàn thứ chín sao?</p>
+                <p>Nhưng cướp đoạt sinh mệnh khốn khổ còn sót lại, nàng làm sao nỡ động thủ?</p>
+                <p>Giang Phàm sắc mặt trầm trọng. Nếu chiến đoàn thứ chín nhân cơ hội ức hiếp sinh linh Huyền Thiên Giới, y phải chọn đứng về phía nào? Dùng sức lực một thân chống lại bọn họ sao?</p>
+                <p>Chưa kể năm vị hiền giả đi trước, trên chiến hạm còn có một vị cường giả Họa Cảnh, thậm chí là tồn tại mạnh mẽ chưa xác định.</p>
+                <p>Giang Phàm còn đang tính toán, bỗng nhiên trong Huyền Thiên Giới xuất hiện một khe nứt không gian, một bóng hình u tối mang theo âm khí đen kịt lén lút ló ra nhìn thế giới bên ngoài. Ngay sau đó, bóng hình đó biến mất.</p>
+                <p>Giang Phàm nhíu mày, thầm nghĩ lạnh lẽo: “Đó là tộc Ám Hắc Sát La ở Nam Thiên giới sao?”</p>
+                <p>“Tướng thiên giáp dẫn dắt tàn quân đã tiến vào Huyền Thiên Giới?”</p>
+                <p>Hình hài ló đầu kia chính là một trong năm Sát La Hoàng từng theo Tướng thiên giáp bước vào hư không. Giang Phàm vẫn còn ấn tượng sâu sắc.</p>
+                <p>Như vậy, sự bại vong của Huyền Thiên Giới phần lớn liên quan đến Tướng thiên giáp cùng các Sát La Hoàng kia.</p>
+                <p>Vô Tướng Hiền Giả cười lạnh nhạt: “Điệp Tiên Tử, cô thực sự muốn từ bỏ nhiệm vụ sao?”</p>
+                <p>Điệp Tiên Tử cắn môi, không biết nên lựa chọn thế nào.</p>
+                <p>Giang Phàm chuyển hướng ánh mắt, lạnh giọng nói: “Tất nhiên là phải đi!”</p>
+                <p>“Ta không chỉ cướp đoạt, mà còn phải cướp đoạt một cách tàn nhẫn!”</p>
+                <p>Giang Phàm đối với sinh linh khác có thể còn động lòng trắc ẩn. Nhưng với đám Sát La Hoàng bóng tối kia, y tuyệt không có lòng thương hại, nhất là khi sự diệt vong của Huyền Thiên Giới có một phần công lao của chúng!</p>
+                <p>Điệp Tiên Tử hơi sửng sốt, nhưng khi nhận ra ánh mắt rực lửa của Giang Phàm, nàng do dự một lát rồi cắn răng quyết định: “Tốt, chúng ta tiến vào!”</p>
+                <p>Sắc mặt Vô Tướng Hiền Giả biến đổi. Điệp Tiên Tử đã quyết tâm tiếp tục thực thi mưu đồ, toan tính của ông ta liền phá sản, liền lạnh lùng quay sang nhìn Giang Phàm.</p>
+                <p>Tất cả là do y đề nghị, mới thuyết phục được Điệp Tiên Tử ra tay cướp đoạt. Ông ta nở nụ cười méo mó: “Vương Xung Tiêu, quyết định này do ngươi giúp Điệp Tiên Tử đưa ra, vậy thì ngươi cũng hãy theo chúng ta vào Huyền Thiên Giới, cùng tham gia cướp đoạt!”</p>
+                <p>Điệp Tiên Tử chau mày, kiên quyết: “Không cần, Vương Xung Tiêu vốn không phải thành viên của hải tặc Tử Âm, không cần cùng ta hành động.”</p>
+                <p>Nếu Vương Xung Tiêu đi cùng, y sẽ bị xem là thành viên của hải tặc Tử Âm. Tin tức này lan ra, các cõi trời đều không còn chỗ dung thân cho y. Bất kể thế giới nào cũng sẽ cấm tuyệt y nhập cảnh. Vô Tướng Hiền Giả rõ ràng cố ý muốn hãm hại y!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2143">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2143: Mang thai sinh mệnh mới</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm đối diện Vô Tướng Hiền Giả, tâm thần khẽ trầm: “Lên thuyền cướp dễ, xuống thuyền cướp khó, lẽ nào không phải là đạo lý muôn đời?” Vực Hải Biển Chết lưu danh vạn năm, tàn phá tam thiên thế giới, ác danh lan xa, bị chư thiên nguyền rủa, thù hận chất chồng trăm giới.</p>
+                <p>Quán Quân Hầu nếu gia nhập Hải Tặc Vực Hải, ắt khiến chư giới rung chuyển, vạn đại giới dậy sóng gió. Lời nguyền rủa cùng sự ruồng bỏ sẽ bủa vây, không ai thoát khỏi. Ngoài Trung Thổ, chư thiên không còn đất dung thân.</p>
+                <p>Nhưng giờ đây, hắn lại là Vương Xung Tiêu! Kẻ đang bị hắn hạ sát, chính là Ám Hắc Tu La Tộc – lũ dị tộc phản nghịch khét tiếng.</p>
+                <p>“Điệp Tiên Tử, ta cùng nàng đã kết đồng minh. Ta sẽ dốc hết sức lực trợ nàng đoạt lấy toàn bộ Đệ Cửu Hạm Đội,” Vương Xung Tiêu kiên quyết nói. “Ta nguyện cùng nàng tiến vào Huyền Thiên Giới!” Hắn muốn mượn uy thế Hải Tặc Vực Hải, hiến tặng Huyền Thiên một món quà kinh thiên động địa.</p>
+                <p>Điệp Tiên Tử khẽ nhíu mày, khó tin kẻ trước mắt có còn là Vương Xung Tiêu thuở ban sơ nàng từng quen biết. Kẻ năm xưa chính trực, cương liệt, không hề e sợ bất kỳ đại hiền giả nào. Kẻ ấy trọng lời hứa, dám vì danh dự mà tự hủy đạo cơ. Quả thật, khác xa người thuở ban đầu.</p>
+                <p>Nàng dấy lên hoài nghi, liệu lời trách cứ của Vô Tướng Hiền Giả có phải là sự thật. Nhưng nàng lập tức chôn chặt ý nghĩ ấy, thầm nhủ: “Giang Phàm thối nát, còn đê tiện hơn cả Vương Xung Tiêu!” Nỗi uất ức về cách Giang Phàm từng đối xử với nàng tại Tướng Quân Cứu Thế Sở lại trào dâng, nghẹn ứ tâm can.</p>
+                <p>Nàng liếc nhìn Vương Xung Tiêu, ánh mắt hàm ơn: “Đa tạ ngươi.” Dù sức mạnh hắn chẳng thấm vào đâu, nhưng tấm lòng này lại vô giá.</p>
+                <p>Trong lòng bàn tay, Điệp Tiên Tử khẽ xoay, một chiếc thuyền nhỏ màu đen lập tức hiện ra: “Khi gặp nguy nan, kích hoạt vật này, nó sẽ đưa ngươi quay về chiến thuyền Diệt Thế.” Nàng liếc nhìn Vô Tướng Hiền Giả.</p>
+                <p>Đôi mắt Giang Phàm lóe lên tinh quang. Hắn từng chứng kiến Băng Tâm điều khiển chiếc thuyền này bằng thủ pháp huyền bí, ngưỡng mộ đã lâu.</p>
+                <p>“Đa tạ Điệp Tiên Tử,” hắn hàm ơn đón lấy. Trong tâm trí, thông tin về Tiểu Hắc Thuyền lập tức hiện lên. Đây là pháp bảo hộ mệnh gắn liền với Hạm Đội Diệt Thế – chiến thuyền vĩ đại từ thời Đại Kiền Thần Quốc vạn năm trước.</p>
+                <p>Nó được chế tạo để cứu hộ khi Diệt Thế Thuyền gặp nạn, giúp người trên thuyền thoát thân. Chiếc thuyền có phòng ngự phi phàm, tốc độ vượt qua hư vô chi cảnh. Trong thời gian ngắn, nó có thể chống lại đòn tấn công của cường giả Nhị Cảnh, tốc độ sánh ngang cường giả Nhị Cảnh. Nói cách khác, đây chẳng khác nào một cường giả Nhị Cảnh miễn phí trong tay hắn.</p>
+                <p>Điệp Tiên Tử khẽ gật đầu, tháo xuống pháp khí trữ vật khắc dấu cổ thụ trên cổ. Nàng niệm ba đạo pháp quyết, pháp bảo hé mở. Một chiếc kèn phong thủy nhỏ nhắn bằng hắc ngọc phi ra.</p>
+                <p>Nàng nắm chặt ống kèn, hít sâu một hơi, trang nghiêm truyền âm: “Các thành viên Đệ Cửu Hạm Đội, tập hợp! Nhiệm vụ: cướp bóc Huyền Thiên Giới. Tài nguyên thiên địa là trọng yếu nhất, tài sản kẻ khác xếp thứ hai, kẻ già yếu phải được ưu tiên bảo hộ.”</p>
+                <p>“Chú ý! Nghiêm cấm cưỡng hôn, nghiêm cấm tàn sát thành trì, nghiêm cấm buôn bán người; trừ phi gặp hiểm nguy, tuyệt đối không được phép sát nhân tùy tiện!”</p>
+                <p>Trong Diệt Thế Thuyền, vạn Trường Sinh Cảnh cùng Hóa Thần Cảnh rộn ràng, tựa bầy châu chấu đói khát, sục sôi chuẩn bị tràn ra.</p>
+                <p>Giang Phàm không kìm được mà liếc nhìn Điệp Tiên Tử thêm lần nữa. Nàng lớn lên trong Hải Tặc Vực Hải, đã nhìn thấu tầng sâu nhất của bóng tối gian ác trần thế. Tội ác tàn độc của hải tặc như giết người, cưỡng hôn, cướp bóc, tra tấn, dường như đã thấm sâu vào huyết mạch.</p>
+                <p>Thế mà, nàng vẫn điềm tĩnh hiển lộ một trái tim từ bi thanh cao. Dùng câu “Thân ở chốn bùn nhơ, tâm vẫn giữ thanh cao” để miêu tả nàng, quả là chí lý.</p>
+                <p>Nếu Đệ Cửu Hạm Đội cần một người đứng đầu, Giang Phàm kỳ vọng đó sẽ là Điệp Tiên Tử, chứ không phải kẻ tàn độc như Vô Tướng Hiền Giả. Lời nói đùa giúp nàng trước kia, giờ đây lại hóa thành chân tâm.</p>
+                <p>Chợt, một luồng gió lạnh lướt qua. Khi các hải tặc chuẩn bị hành động, Hắc Yếm Lão Phụ lập tức xuất hiện, tay cầm ngọc giản, trầm giọng nhắc nhở: “Diệt Thế Thuyền xuất kích trong vòng một tháng, cần phải tiêu hao Thiên tệ Đại Kiền Thần Bảo Tệ.”</p>
+                <p>“Nếu giá trị chiến lợi phẩm thu được không đủ Thiên tệ thánh bảo, lần xuất trận này coi như thất bại, hiểu rõ chưa?”</p>
+                <p>Thiên tệ? Giang Phàm nhớ Kỳ Kỳ từng nói về giá trị Đại Kiền Thần Bảo Tệ. Mười ngàn tệ tương đương giá trị một món giới khí. Thiên tệ, tương đương một món giới khí tàn phế!</p>
+                <p>Cướp bóc một thế giới đã bị đào bới kỹ lưỡng, muốn thu về Thiên tệ thánh bảo, đối với người thường quả là nan giải. Trừ phi bắt được Thiên Ca cùng năm vị đệ tử Tu La Hoàng.</p>
+                <p>Điệp Tiên Tử lộ rõ vẻ căng thẳng. Nhiệm vụ này cực kỳ gian nan, nhưng vì muốn thâu tóm Đệ Cửu Hạm Đội, nàng chỉ có thể liều một phen.</p>
+                <p>Không lâu sau đó, từng chiếc chiến thuyền lớn nhỏ chở đầy hải tặc, ầm ĩ kéo đến Huyền Thiên Giới. Điệp Tiên Tử cùng các hiền giả, và Hạm Đội Tam, nhờ một cường giả Hóa Thần dẫn đường, xuyên qua giới bích.</p>
+                <p>Ngàn vạn hải tặc, tựa cơn mưa tập kích, từ mấy chục khe hư không, ào ào tuôn chảy xuống. Điệp Tiên Tử từ túi sinh mệnh hiện thân, tay cầm ống kèn, ra lệnh: “Phân tán! Hành động!”</p>
+                <p>Nàng liếc nhìn Giang Phàm, hỏi: “Ngươi muốn tự do hành động, hay theo ta?”</p>
+                <p>Giang Phàm còn phải theo dõi Viễn Cổ Huyết Ma, tất nhiên sẽ tự mình hành động. “Ngươi nhắm mục tiêu thai tạng giới, ta không can dự, tự mình tìm báu vật.”</p>
+                <p>Điệp Tiên Tử gật đầu, càng mong Vương Xung Tiêu giữ khoảng cách, để không bị vướng vào danh tiếng gia nhập Hải Tặc Vực Hải. “Ngươi cẩn thận! Chúng ta đi!” Nàng dứt lời, cùng các hiền giả lập tức biến mất.</p>
+                <p>Giang Phàm cầm Trái Tim Vạn Thổ, cảm ứng toàn bộ thế giới. Hắn phát hiện góc đông nam Huyền Thiên có số lượng nhịp tim cực kỳ dị thường, chiếm gần ba phần mười sinh linh nơi ấy.</p>
+                <p>Lông mày hắn khẽ nhướn: “Chẳng lẽ nơi ấy, vẫn còn cường giả Huyền Thiên Giới đang kháng cự?” Đôi mắt lóe sáng, hắn lập tức phát động Trái Tim Vạn Thổ.</p>
+                <p>Chẳng lâu sau, từ dưới đất, hắn xông lên, toàn thân phủ đầy bùn máu. Trước mắt là đồng cỏ xanh tốt vốn hào nhoáng, nay nhuốm đỏ như vũng bùn máu.</p>
+                <p>Xác Huyết Ma to lớn, gớm ghiếc nằm rải rác, mùi thối rữa xộc thẳng vào khứu giác. Xác sinh linh Huyền Thiên mang vân mộc hoặc dấu hoa văn, ngổn ngang khắp nơi.</p>
+                <p>Kẻ xương bụng vỡ tung, kẻ chỉ còn đống chân tay, kẻ tựa như đã cùng chiến bại bên Viễn Cổ Huyết Ma, nét mặt ngưng đọng ánh uất nghẹn trong khoảnh khắc lìa đời. Bầy ruồi, đàn chó hoang tự do vui đùa giữa cánh đồng chết.</p>
+                <p>Dù từng trải qua chiến trận Viễn Cổ Huyết Ma khốc liệt, chứng kiến nhiều bi thảm nhân gian, Giang Phàm vẫn không khỏi tiếc thương não lòng.</p>
+                <p>Một tiếng gào đau đớn vang vọng khắp trời đất: “Huyền Thiên đã mất, tất cả đều tại ta... tất cả đều tại ta…” Lời nói ngập tràn sự trách móc bản thân và nỗi cô đơn tột cùng.</p>
+                <p>Giang Phàm lập tức dùng Vô Ngã Tịnh Trần chi thuật, nhập vào hiện trường. Trước mắt là huyết hải Viễn Cổ Huyết Ma bất tận, tựa đại dương máu trùng trùng điệp điệp.</p>
+                <p>Giữa biển máu là một khu rừng, cây cổ thụ âm u vươn cao, tầng tầng lớp lớp dị hóa lan rộng. Thân cây vung rễ quất mạnh tỏa độc tố, lá bay lướt qua, tấn công kẻ địch.</p>
+                <p>Viễn Cổ Huyết Ma ngã xuống từng đàn, nhưng so với huyết hải đồ sộ, khu rừng tựa chiếc thuyền cô độc giữa ngày tận thế, có thể bị lật úp bất cứ lúc nào.</p>
+                <p>Trong vòng vây dày đặc của cây cổ thụ, một cây cổ thụ đỏ thẫm cao vút, nổi bật hơn hết thảy. Trên tán cây, bầu quả đỏ dài, lớn tựa tử cung con người, bên trong là hài nhi hình người đang phát triển.</p>
+                <p>Qua lớp da mỏng, dễ dàng nhận thấy hài nhi đang vật vã, như muốn phá vỡ vỏ bọc mà chui ra ngoài. Cây cổ thụ ấy, đang sinh nở! Các cây xung quanh, tất cả đều đang bảo vệ người mẹ cùng hài nhi.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2144">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2144: Phụ thân</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm đã thấu triệt. Huyền Thiên Giới, vốn là một thế giới lấy Mộc hệ sinh linh làm chủ đạo.</p>
+                <p>Những cổ thụ mà hắn nhìn thấy, chính là những cường giả cuối cùng còn sót lại của giới này. Bọn họ đang dùng sinh mệnh của chính mình để hộ vệ cho một tộc nhân mới ra đời.</p>
+                <p>Giữa thời khắc vong tộc diệt chủng, thiên địa nghiêng đổ, điều họ nghĩ đến không phải là đường thoát thân, mà là bảo hộ một mầm sống sơ sinh.</p>
+                <p>Tựa như đã từng có kẻ hỏi Giang Phàm rằng, vì phàm nhân nhỏ bé mà liều mạng đại chiến với cự nhân viễn cổ, liệu có đáng giá?</p>
+                <p>Giờ đây, trong lòng Giang Phàm cũng vang lên câu hỏi tương tự. Vì một hài nhi, mà đánh cược tương lai cuối cùng của cả chủng tộc. Liệu có xứng đáng?</p>
+                <p>Đoàng— Một tiếng động kinh thiên bỗng vang lên từ sâu trong thiên mạc.</p>
+                <p>Một cổ thụ đen kịt, cao ngất trời xanh, từ trên đó rơi xuống. Thân cây nứt toác, lá rụng tả tơi, cành trơ trụi phần lớn đã bị thiêu hủy. Rễ cây vẫn còn bốc lên ngọn lửa tím biếc, thiêu đốt nó thành than đen.</p>
+                <p>Cổ thụ đen nặng nề va chạm bên cạnh cây non đỏ thẫm, thân thể khổng lồ hóa thành một nam tử áo đen khôi ngô.</p>
+                <p>Trên người hắn có những vân gỗ màu vàng kim, trên trán khắc chín phiến lá. Hầu hết đã vỡ nát, chỉ còn sót lại hai phiến tàn khuyết.</p>
+                <p>Chín phiến lá khắc ấn, tương tự như Cửu Nhật Cự Nhân Hoàng, Cửu Ngục Tu La Hoàng, Cửu Dực Đại Thiên Sứ, chính là dấu hiệu của sự Niết Bàn.</p>
+                <p>Người đàn ông trước mắt, chính là một Cửu Cấp Hiền Giả! Ít nhất, đã từng là.</p>
+                <p>Giờ phút này, thân thể hắn tan nát, tựa như một con rối bị bầy dã cẩu xé rách. Khí tức Cửu Cấp Hiền Giả suy yếu đến mức khó lòng cảm nhận, sinh mệnh lực cũng đang nhanh chóng tiêu tán.</p>
+                <p>Ngọn lửa tím trên đôi chân hắn, càng như giòi trong xương, lan tràn khắp cơ thể, nơi nào đi qua, nơi đó cháy thành than đen.</p>
+                <p>Cùng lúc đó. Một tôn Huyết Ma Hoàng thân hình khổng lồ, đạp trên huyết tương, từ thiên mạc giáng xuống. Đôi mắt khát máu tỏa ra khí tức kinh người.</p>
+                <p>Nó nhai nuốt cành cây vừa xé ra từ sinh linh Mộc hệ Cửu cấp, lộ vẻ hưởng thụ: &quot;Cuối cùng ta cũng đã nếm được huyết nhục của Cửu Diệp Mộc Hoàng! Quả nhiên như lời đồn, huyết nhục tựa tiên nhưỡng, ngon miệng vô cùng!&quot;</p>
+                <p>Cửu Diệp Mộc Hoàng bi phẫn nhìn nó, ánh mắt tràn ngập sự không cam lòng: &quot;Nếu không phải ta lầm tin kẻ khác, bị phản bội vào thời khắc chí mạng, ngươi đã sớm bị ta đánh về sào huyệt, như ngàn năm trước!&quot;</p>
+                <p>Cửu Nhật Huyết Ma Hoàng lộ ra vẻ khát máu, cười dữ tợn: &quot;Anh hùng chỉ luận thành bại, quá trình chẳng có ý nghĩa gì. Huyết nhục của ngươi, ta xin nhận...&quot;</p>
+                <p>Vừa nói, ánh mắt nó ngước lên, nhìn về phía cây gỗ đỏ thẫm thon dài, trong mắt dâng lên vẻ tham lam: &quot;Thê tử và hài tử của ngươi, còn tinh thuần hơn huyết nhục của ngươi, ta cũng sẽ...&quot;</p>
+                <p>Đúng lúc này. Trên đỉnh đầu nó truyền đến một giọng nữ thanh lãnh.</p>
+                <p>&quot;Theo ước định, mẫu tử bọn họ thuộc về ta.&quot;</p>
+                <p>Chỉ thấy trên đỉnh đầu Cửu Nhật Huyết Ma Hoàng, một nữ tử mang hình dáng nhân loại, vừa vặn đạt tới cảnh giới Tu La Vương, đang chắp tay bước tới.</p>
+                <p>Dung mạo nàng ta vô cùng xinh đẹp, ánh mắt sắc bén thấu triệt, tựa hồ có thể nhìn xuyên tâm can. Bên trái phải nàng ta, còn có năm vị Tu La Hoàng đi theo.</p>
+                <p>Chính là Thiên Ca đã trốn thoát khỏi Nam Thiên giới cùng năm vị Tu La Hoàng! Trong tay Thiên Ca đang ôm một vò lửa tím. Hiển nhiên, ngọn tử hỏa khiến Cửu Diệp Mộc Hoàng đại bại, cũng là do Thiên Ca bày ra!</p>
+                <p>Cửu Nhật Huyết Ma Hoàng đảo mắt lên, hung quang chợt lóe.</p>
+                <p>Thiên Ca không nhanh không chậm, thản nhiên nói: &quot;Dưới Giới Thai có đại trận ta bố trí, nếu ta chết, đại trận sẽ khởi động, mang theo Giới Thai vĩnh viễn đọa vào hư vô. Nếu không muốn đoạt được một thế giới trống rỗng vô dụng, tốt nhất nên tuân thủ ước định.&quot;</p>
+                <p>Một tia hung lệ bùng lên trong mắt Cửu Nhật Huyết Ma Hoàng, rồi bị nó cưỡng ép đè nén xuống.</p>
+                <p>Bọn chúng đã dốc toàn lực của cả thế giới, không tiếc bất cứ giá nào để công phá Huyền Thiên Giới, không phải chỉ để ăn thịt hai người. Không cần thiết phải mạo hiểm vì thê tử và hài nhi của Cửu Diệp Mộc Hoàng.</p>
+                <p>Nó lạnh lùng nói: &quot;Mang bọn họ đi, lập tức rời khỏi Huyền Thiên Giới!&quot;</p>
+                <p>Thiên Ca thu hồi tử hỏa, mỉm cười nhạt: &quot;Đa tạ Cửu Nhật Huyết Ma Hoàng thành toàn.&quot;</p>
+                <p>Nàng ta quay sang nhìn Cửu Diệp Mộc Hoàng, thấy hắn đang nhìn mình bằng ánh mắt thù hận, thần sắc vẫn thản nhiên: &quot;Kẻ yếu là thức ăn của kẻ mạnh, sức mạnh mới là chân lý. Nếu muốn phẫn nộ, hãy phẫn hận vì ngươi không đủ cường đại.&quot;</p>
+                <p>Cửu Diệp Mộc Hoàng nghiến chặt răng, máu đỏ rỉ ra từ lợi vì căm hận. Hắn hận Thiên Ca, nhưng càng hận chính mình.</p>
+                <p>Hắn vươn tay, đặt lên rễ cây đỏ thẫm thon dài, hổ thẹn nói: &quot;Hồng Liễu... nàng và hài tử... hãy bảo trọng...&quot;</p>
+                <p>Dứt lời, hai ấn ký lá cây còn sót lại trên trán hắn chợt vỡ vụn, hóa thành năng lượng xanh biếc cường đại vô song, tuôn trào vào thân cây đỏ.</p>
+                <p>Lập tức, tử cung kia nhận được sức mạnh chưa từng có, phát ra ánh sáng lập lòe. Hài nhi bên trong giãy giụa, muốn phá vỡ tử cung mà ra.</p>
+                <p>Cửu Diệp Mộc Hoàng, hiển nhiên là đang lúc lâm chung, đem toàn bộ lực lượng của mình truyền thừa cho hài tử.</p>
+                <p>Bản thân hắn, đôi mắt triệt để mất đi quang trạch, khí tức tiêu tán. Duy chỉ có ánh mắt vẫn chăm chú nhìn về phía cây đỏ và hài tử bên cạnh. Đây, là điều hắn không thể yên lòng nhất trong khoảnh khắc hấp hối.</p>
+                <p>Thiên Ca ánh mắt lóe lên, nói: &quot;Ngăn cản hài tử kia xuất thế, nó sẽ chìm sâu vào lòng đất, khó lòng tìm kiếm.&quot;</p>
+                <p>Cửu Nhật Huyết Ma Hoàng cười khẩy: &quot;Ta há có thể để hắn toại nguyện?&quot; Nó há miệng, một chiếc lưỡi dài đỏ tươi bắn thẳng về phía tử cung.</p>
+                <p>Nhưng khi đi được nửa đường, nó đột nhiên cảm nhận được điều gì đó, thu lưỡi lại, ánh mắt như lâm đại địch nhìn về một nơi.</p>
+                <p>&quot;Là ai?&quot;</p>
+                <p>Thiên Ca nghiêng mắt nhìn tới, khẽ nhướng mày: &quot;Một kẻ rất lợi hại?&quot;</p>
+                <p>Lại có kẻ ẩn mình gần đây lâu đến vậy mà Cửu Nhật Huyết Ma Hoàng mới phát giác, còn khiến Huyết Ma Hoàng kiêng dè đến thế.</p>
+                <p>Ánh mắt Cửu Nhật Huyết Ma Hoàng chấn động khiến không gian nơi đó rung chuyển. Ẩn thân chi pháp của Giang Phàm bị phá vỡ, thân ảnh hắn hiện ra.</p>
+                <p>&quot;Vương Xung Tiêu?&quot; Thiên Ca hơi bất ngờ. Nàng ta ở bên cạnh Giang Phàm lâu như vậy, há có thể không biết đến sự tồn tại độc đáo của Vương Xung Tiêu? Nhưng không ngờ, lại gặp hắn ở nơi này.</p>
+                <p>Giang Phàm lặng lẽ nhìn Cửu Diệp Mộc Hoàng. Có lẽ bởi vì, chính hắn cũng sắp sửa làm cha.</p>
+                <p>Nhìn thấy Cửu Diệp Mộc Hoàng, kẻ đến lúc hấp hối vẫn một lòng bảo hộ thê nhi, trong lòng hắn dâng lên nỗi buồn khó tả.</p>
+                <p>Hắn có thể không phải một vị vương tốt. Cũng chưa chắc là một người phu quân tốt. Nhưng, hắn muốn làm một người cha tốt.</p>
+                <p>Ánh mắt Giang Phàm chuyển động, lạnh lùng nhìn về phía Thiên Ca: &quot;Ngươi, quả thực đáng chết!&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2145">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2145: Một đối hai</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Thiên Ca kinh ngạc. Nàng không hề nhớ mình cùng Vương Xung Tiêu có ân oán gì. Cớ gì Vương Xung Tiêu lại hận nàng đến mức này? Một tia suy tư lướt qua đáy mắt nàng.</p>
+                <p>Ngũ Ngục Tu La Hoàng bên cạnh nàng lộ ra hung quang: “Kẻ đến từ Trung Thổ?”</p>
+                <p>“Giang Phàm đã phá hỏng đại kế của Tam công chúa chúng ta. Ngươi là đồng tộc của hắn, còn dám hiện diện trước mặt ta?”</p>
+                <p>Hàn quang trong mắt Giang Phàm càng thêm sâu thẳm: “Vậy thì ta sẽ phá thêm một lần nữa!”</p>
+                <p>Ngũ Ngục Tu La Hoàng cười khẩy: “Chỉ bằng một mình ngươi, cảnh giới Thiên Cương?”</p>
+                <p>Giang Phàm mặt không cảm xúc, rút ra Miễn Chiến Bi, lạnh lùng hỏi: “Đã đủ chưa?”</p>
+                <p>Miễn Chiến Bi vừa hiện, đồng tử Cửu Nhật Cự Nhân Hoàng co rút dữ dội, kinh hãi thốt lên: “Miễn Chiến Bi? Sao ngươi lại có Miễn Chiến Bi?”</p>
+                <p>Chẳng trách vừa rồi nó cảm thấy bất an mãnh liệt. Hóa ra kẻ ẩn mình trong bóng tối này lại nắm giữ trọng khí bậc này!</p>
+                <p>Ngay cả nó còn bất an như thế, huống hồ là Viễn Cổ Huyết Ma đang công phá Mộc Lâm.</p>
+                <p>Chúng lập tức dừng lại, bồn chồn không yên. Các Mộc Linh đang bị áp chế cũng nhờ đó mà có được hơi thở.</p>
+                <p>Sắc mặt Ngũ Ngục Tu La Hoàng cứng lại: “Miễn Chiến Bi của Giang Phàm, sao lại ở trong tay ngươi?”</p>
+                <p>Giữa lúc kinh nghi, một tiếng thở dài nhàn nhạt truyền đến. Thiên Ca nói: “Quả nhiên là ngươi!”</p>
+                <p>“Giang Phàm, ngươi đúng là âm hồn bất tán!”</p>
+                <p>Nếu nói về những kẻ ở Trung Thổ muốn đoạt mạng nàng, thì nhiều không kể xiết. Nhưng kẻ muốn giết nàng nhất, không nghi ngờ gì chính là Giang Phàm!</p>
+                <p>Bởi vậy, ngay từ đầu nàng đã hoài nghi, Vương Xung Tiêu trước mắt có phải là chân thân hay không.</p>
+                <p>Miễn Chiến Bi vừa xuất hiện, đáp án đã rõ ràng.</p>
+                <p>Giang Phàm lạnh nhạt nói: “Muốn đoạt lấy hài nhi kia? Mộng tưởng hão huyền!”</p>
+                <p>Hắn dứt khoát thúc động Miễn Chiến Bi. Đuổi đi Viễn Cổ Huyết Ma, bọn chúng chỉ còn lại Ngũ Ngục Tu La Hoàng. Muốn phá vỡ phòng tuyến cuối cùng của Mộc Linh, sẽ không còn dễ dàng nữa!</p>
+                <p>“Ngươi dám!” Ngũ Ngục Tu La Hoàng gầm lên phẫn nộ.</p>
+                <p>Bên ngoài trời đã có Tử Âm Hải Tặc hiện thân, chúng có thể xông vào bất cứ lúc nào. Không có Huyết Ma tương trợ, bọn chúng chưa chắc đã ngăn được đối phương!</p>
+                <p>Cửu Nhật Huyết Ma Hoàng cũng gào thét: “Dừng tay!” Vừa nói, nó vừa phóng ra chiếc lưỡi dài chứa đầy sát cơ, muốn giải quyết Giang Phàm trước.</p>
+                <p>Viễn Cổ Huyết Ma đã phải trả cái giá quá đắt, khó khăn lắm mới sắp xâm chiếm được Huyền Thiên Giới, lại sắp bị Miễn Chiến Bi trục xuất!</p>
+                <p>Chỉ có Thiên Ca nhắm mắt lại. Nàng hiểu Giang Phàm, hắn không làm chuyện không nắm chắc. Đã dám công khai lấy Miễn Chiến Bi ra, há có thể để người khác phá hoại?</p>
+                <p>Quả nhiên! Miễn Chiến Bi được kích hoạt, một chữ “Cút” tràn ngập uy nghiêm, cuồn cuộn chấn động như mây trời.</p>
+                <p>Những Viễn Cổ Huyết Ma trên mặt đất kinh hoàng tháo chạy, hoàn toàn không màng đến Mộc Linh trước mắt.</p>
+                <p>Các Huyết Ma Hoàng trên không cũng đầy vẻ kinh nghi, không đợi Cửu Nhật Cự Nhân Hoàng hạ lệnh đã trực tiếp bỏ trốn.</p>
+                <p>Đại quân tan rã, Cửu Nhật Cự Nhân Hoàng đã vô lực xoay chuyển. Thêm vào đó, uy áp kinh khủng của Miễn Chiến Bi không ngừng tăng cường, hắn phẫn nộ gầm lên đầy bất mãn: “Nhân tộc Giang Phàm!”</p>
+                <p>“Ta nguyền rủa ngươi, khi Thời Sơ Thiên Phạt đến, ngươi sẽ thân tàn hồn diệt, không còn một mảnh xương!” Nói xong, hắn cũng dứt khoát rút lui.</p>
+                <p>Trên chiến trường chém giết, thoáng chốc chỉ còn lại phe Tu La Hoàng và Mộc Linh.</p>
+                <p>Giang Phàm thân ảnh chợt lóe, xuất hiện trước mặt các Mộc Linh, quay lưng về phía họ và hỏi: “Các vị còn bao nhiêu vị Hoàng giả?”</p>
+                <p>Xào xạc— Trong rừng cây, ba cây đại thụ cao lớn hơn hẳn hóa thành hình người với vân gỗ trên thân. Số lá trên trán họ từ năm lá đến một lá.</p>
+                <p>Hóa ra chỉ còn lại ba vị Mộc Hoàng sao?</p>
+                <p>May mắn thay, trong đó có một vị Ngũ Diệp Mộc Hoàng, dù thương thế không nhẹ, nhưng vẫn miễn cưỡng ngăn được Ngũ Ngục Tu La Hoàng. Bằng không, Ngũ Ngục Tu La Hoàng vừa ra tay, bọn họ sẽ bị chém giết trong chớp mắt.</p>
+                <p>Thiên Ca chậm rãi mở mắt, ánh mắt thâm thúy mà lạnh lẽo, nói: “Đừng bận tâm Mộc Hoàng, giết Giang Phàm trước!”</p>
+                <p>Người khác không rõ, lẽ nào nàng lại không biết thủ đoạn của Giang Phàm?</p>
+                <p>Một Thái Sơ Nhân Thiên Hồ, một Thái Sơ Chủng Tử, đều là những vật đoạt mạng. Chỉ cần Giang Phàm thi triển ra, đều là vật vô phương kháng cự!</p>
+                <p>Sắc mặt Giang Phàm hơi đổi, quả là Thiên Ca, gặp chuyện vẫn không hề hoảng loạn.</p>
+                <p>Hắn dứt khoát kích hoạt Vạn Mộc Chi Tâm, chuẩn bị rút lui trước.</p>
+                <p>Đúng lúc này. Cây Hồng Liễu kia khẽ lay động, truyền đi tin tức chỉ Mộc Linh mới nghe thấy.</p>
+                <p>Xoẹt xoẹt xoẹt— Ba vị Mộc Linh cũng dứt khoát ra tay, che chắn trước người Giang Phàm.</p>
+                <p>Ngũ Diệp Mộc Hoàng quay đầu lại, ánh mắt chứa đầy từ ý, nói: “Tiểu huynh đệ Nhân tộc, Hoàng hậu nhờ ta chuyển lời, cảm tạ ngươi đã cứu vớt thương sinh Huyền Thiên.”</p>
+                <p>“Nhưng, ngươi hãy đi đi, đừng bận tâm đến nàng.”</p>
+                <p>“Hài nhi của nàng và Mộc Hoàng, không liên quan đến ngươi.”</p>
+                <p>Giang Phàm vừa đi, ba người bọn họ làm sao chống đỡ nổi năm vị Tu La Hoàng?</p>
+                <p>Kết cục đã định là hủy diệt. Đứa trẻ được Cửu Diệp Mộc Hoàng dốc sức bảo vệ đến cùng, e rằng cũng sẽ rơi vào tay Thiên Ca.</p>
+                <p>Hắn nhìn thoáng qua hài nhi sắp chào đời kia, ánh mắt kiên định nói: “Ta cũng sắp làm cha, hôm nay coi như tích thêm một phần phúc duyên cho hài nhi chưa ra đời của ta.”</p>
+                <p>Nói đoạn, hắn trở tay lấy ra Thái Sơ Nhân Thiên Hồ. Vùng hồ lô màu vàng tỏa ra ánh sáng rực rỡ.</p>
+                <p>“Đã giúp thì giúp cho trót, ta sẽ giúp các vị thêm một lần nữa!”</p>
+                <p>“Ba vị tiền bối tạm thời ngăn chặn bọn chúng!” Nói rồi, hắn chĩa Thái Sơ Nhân Thiên Hồ về phía Thiên Ca.</p>
+                <p>Nàng là hạch tâm của các Tu La Hoàng. Thu nàng đi, Ngũ Ngục Tu La Hoàng sẽ không thể hành động thống nhất.</p>
+                <p>Thiên Ca đã sớm liệu trước, không nhanh không chậm nói: “Nếu ta bị thu đi, các ngươi đừng bận tâm Giang Phàm, hãy giết đôi mẫu tử kia.”</p>
+                <p>Vì Giang Phàm đến vì đôi mẫu tử kia, vậy thì phải đánh vào chỗ hiểm của hắn. Ánh mắt Giang Phàm trầm xuống, Thiên Ca này! Hắn có cảm giác khó đối phó, giống như khi đối diện với Hồng Tịch.</p>
+                <p>Cửu Diệp Mộc Hoàng bị nàng lừa gạt từng bước, cũng không thể trách hoàn toàn Cửu Diệp Mộc Hoàng quá tin người. Tâm kế của nữ nhân này cực kỳ cao thâm!</p>
+                <p>Hắn nhìn năm vị Tu La Hoàng còn lại, không biết tên một ai, Thái Sơ Nhân Thiên Hồ liền không thể sử dụng.</p>
+                <p>Chỉ có thể đánh một trận chiến cứng rắn! Kéo chân bọn chúng một lúc, người của Tử Âm Hải Tặc đến, có thể lợi dụng bọn chúng để giải quyết Tu La Hoàng!</p>
+                <p>Thu hồi Thái Sơ Nhân Thiên Hồ, Giang Phàm nói: “Không cần hồ lô, ta vẫn giết được các ngươi!”</p>
+                <p>Ngũ Ngục Tu La Hoàng ánh mắt lạnh lẽo thấu xương, nói: “Giết chúng ta? Mới qua một tháng, chẳng lẽ thực lực ngươi có thể nghịch thiên bạo trướng?”</p>
+                <p>“Ta sẽ đến chém giết Ngũ Diệp Mộc Hoàng, phân ra ba người đi giết ba vị Mộc Hoàng còn lại.”</p>
+                <p>“Để lại Tam Ngục Tu La Hoàng và Nhất Ngục Tu La Hoàng liên thủ chém giết Giang Phàm!”</p>
+                <p>“Thực lực của hắn, nhiều lắm chỉ đối phó được Nhất Ngục Tu La Hoàng!” Trong trận chiến ở Nam Thiên giới, khi Giang Phàm đại chiến với U Minh Minh Vương, thực lực đã bộc lộ không sót chút nào.</p>
+                <p>Tam Ngục Tu La Hoàng giết hắn, dư dả!</p>
+                <p>Thiên Ca khẽ gật đầu, tán thành sự sắp xếp này, nói: “Tốc chiến tốc thắng, chúng ta không còn nhiều thời gian.”</p>
+                <p>Ngũ Ngục Tu La Hoàng sát cơ chợt lóe, dẫn bốn vị Tu La Hoàng tiến lên.</p>
+                <p>Ba vị Mộc Hoàng ánh mắt lộ vẻ quyết nhiên, tự biết trận chiến này tất phải chết. Họ ngoảnh lại nhìn cây Hồng Liễu kia, không nói một lời lao ra chém giết.</p>
+                <p>Xoẹt— Gần như trong khoảnh khắc, lông tơ toàn thân Giang Phàm dựng đứng, cảnh báo trong lòng trỗi dậy mãnh liệt. Hắn không chút nghĩ ngợi né tránh.</p>
+                <p>Vừa vặn tránh được, một nắm đấm kinh khủng đầy uy lực đã đánh xuyên không gian nơi Giang Phàm vừa đứng.</p>
+                <p>“Ồ? Ngươi có thể cảm ứng được? Lại còn né tránh được?” Tam Ngục Tu La Hoàng hiện thân, mặt lộ vẻ kinh ngạc.</p>
+                <p>Công kích của Hiền Giả, cớ sao tiểu tử này có thể dự đoán? Hơn nữa, còn dễ dàng tránh được?</p>
+                <p>Thiên Ca cũng có nghi vấn tương tự, nhưng không đợi nàng phân tích ra nguyên nhân. Nhất Ngục Tu La Hoàng kia đã xuất hiện sau lưng Giang Phàm, năm ngón tay hóa thành trảo, đâm thẳng vào tim hắn:</p>
+                <p>“Hai vị Hiền Giả liên thủ, ngươi còn muốn sống sao?”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2146">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2146: Phá vỏ</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nhất Ngục Tu La Hoàng trừng mắt quát lớn, năm ngón tay như trở thành năm cái móng vuốt hung tợn lao thẳng về phía đối phương. Cảnh tượng ấy khiến cho Tam Ngục Tu La Hoàng, người phối hợp cùng hắn, bật cười khẩy đầy khinh bỉ.</p>
+                <p>Chỉ cần không để Giang Phàm có cơ hội sử dụng Thái Sơ Nhân Thiên Hồ và Chủng Tử Định Cách, hắn sẽ yếu ớt như tơ liễu trước chiêu thức của Tu La Hoàng. Thân thể hóa thần đẳng cấp của người phàm phu nhỏ bé, làm sao có thể sống sót khi đối mặt với một chiêu liền toàn lực của Tu La Hoàng?</p>
+                <p>Các vị Tu La Hoàng xung quanh cũng không giấu nổi vẻ khinh thường pha chút chế nhạo. Hai vị Tu La Hoàng hợp sức tấn công một hóa thần đẳng cấp, thử hỏi có thể xảy ra bất ngờ nào ngoài thảm bại chăng?</p>
+                <p>Thế nhưng, điều làm tất cả đều sững sờ là Giang Phàm như được trời ban đôi mắt thiêng huyền bí, sớm đã phát giác động tác của Tu La Hoàng, nghịch tay nắm chặt cổ tay đối phương.</p>
+                <p>Gương mặt Tu La Hoàng đột nhiên cứng đờ, vừa kinh ngạc vừa không thể tin nổi: &quot;Ngươi...&quot; Hắn cố vùng vẫy nhưng kinh hoàng thấy chính mình không cách nào thoát được.</p>
+                <p>Ngay lập tức, Giang Phàm quay mình, chín thanh kiếm linh thiên quanh người đồng loạt xuất hiện, tạo thành trận kiếm đạo uy mãnh, đại uy quang chiếu.</p>
+                <p>Trong mắt Tu La Hoàng thu lại chỉ còn một thanh đại kiếm chín sắc khổng lồ tràn ngập tầm nhìn. Hắn muốn chạy nhưng bàn tay bị kìm chặt không buông của Giang Phàm như kim câu xích sắt níu chân, muốn kêu cứu cũng đã quá muộn.</p>
+                <p>Thanh đại kiếm rung lên vang dội, phút chốc cuốn trùm lấy đối thủ. Rầm! Một loạt ánh kiếm chớp lóe như sấm sét xuyên thủng thân hình Tu La Hoàng, xé tan cơ thể thành dòng máu hồng.</p>
+                <p>Cảnh tượng xảy ra nhanh đến mức không vị Tu La Hoàng xung quanh kịp phản ứng cứu viện. Ánh mắt Thiên Ca chợt rung động: &quot;Hắn đã bứt phá đến cảnh giới Hiền Giả sao?&quot;</p>
+                <p>&quot;Không, là thân thể riêng biệt đã tu luyện đến Hào Kiệt cảnh!&quot; Một tia kinh ngạc xen lẫn hoài nghi lan tỏa trong đáy mắt. Thân thể nhân tộc có thể một mình đắc cảnh Hiền Giả? Sao chưa từng nghe tin?</p>
+                <p>Tam Ngục Tu La Hoàng đứng gần đó, nụ cười lạnh cứng đơ trên mặt, mãi nửa canh giờ mới tỉnh ngộ, gào lên đau đớn xé lòng: &quot;Lão Ngũ!&quot;</p>
+                <p>Bọn họ năm vị Tu La Hoàng là bằng hữu thân thiết bầu bạn trăm năm. Ở Nam Thiên Giới, nơi cổ đại người khổng lồ hoành hành, bộ tộc Tu La thường xuyên giao tranh, để đối phó rủi ro, họ nút chặt mối quan hệ hiếm hoi, kết thành liên minh sâu đậm.</p>
+                <p>Sau trận chiến trên Nam Thiên Giới, lữ khách đơn độc rong ruổi nơi hư vô, tình nghĩa gắn bó cũng trở nên quý giá hơn bội phần. Vậy mà giờ đây, họ chỉ còn biết trơ mắt nhìn đồng bạn ngã xuống.</p>
+                <p>Ánh mắt hắn đỏ rực, từng tia hận thù bùng nổ mãnh liệt như sóng dữ: &quot;Giang Phàm, ngươi đáng chết!&quot;</p>
+                <p>Ba luồng xoáy lốc trên đầu hắn trào lên vô số sợi dây nhân quả, tụ hội thành một bàn tay khổng lồ sấm sét đập tan trận kiếm đạo.</p>
+                <p>Kế đó, với uy lực không gì sánh nổi, bàn tay ấy quát sát đỉnh đầu Giang Phàm. Một chiêu của Tam Ngục Tu La Hoàng là thứ một thân thể Hiền Giả sơ kỳ cũng khó mà chống đỡ nổi.</p>
+                <p>Hồng Sắc Liễu Thụ rung rinh cành lá, truyền mệnh lệnh cứu viện từ ba vị Linh Mộc. Thế nhưng, sau nhiều tháng chiến đấu mệt nhoài với Viễn Cổ Huyết Ma, bọn họ đã cạn kiệt sức lực, đối mặt Tu La Hoàng cũng trở nên yếu thế, làm sao kịp rút lui?</p>
+                <p>Ngũ Ngục Tu La Hoàng ánh mắt rực lửa hận thù, nói: &quot;Giữ lại hồn phách nó, đừng để hắn chết quá dễ dàng.&quot;</p>
+                <p>Song Tam Ngục Tu La Hoàng chẳng nghe lời, ánh mắt đỏ như máu chỉ có một niềm hận: Sát Giang Phàm cho bằng được!</p>
+                <p>Cảm nhận áp lực kinh khủng của chiêu thức, Giang Phàm hít sâu một hơi, giơ tay triệu hồi tà kiếm về bên mình. Đồng thời, ba mạch kinh khác màu chảy tràn qua thân thể.</p>
+                <p>Tức là Vi Lưu Lôi Kiếp - Hỏa Kiếp và mới nhất là Vi Lưu Thổ Kiếp hiện hữu rõ ràng trong lòng bàn tay. Ba đại kiếp vi lưu này lần đầu tiên hòa hợp thành một khối chất lỏng đỏ trắng vàng bùn, bao phủ quanh kiếm thân.</p>
+                <p>Giang Phàm không chút do dự, vung bàn tay cầm kiếm chém thẳng vào dây nhân quả của Tam Ngục Tu La Hoàng.</p>
+                <p>Ầm ầm... Bàn tay giăng đầy sợi nhân quả bỗng bốc cháy như tuyết chạm lửa, dây từng sợi từng sợi bị thiêu rụi, tiếng nổ như núi lở vang vọng dữ dội.</p>
+                <p>Tận lực của sóng xung kích ma quái lan tràn tứ phương tám hướng. Tam Ngục Tu La Hoàng lùi lại từng bước, vì dây nhân quả bị chém cũng gây phản tác dụng khiến hắn phun ra máu đen.</p>
+                <p>Còn Giang Phàm ngực treo lá cờ thêu phượng hoàng nhỏ, luồng khí cuồn cuộn vùn vụt tránh xa, bao quanh lấy bản thân.</p>
+                <p>Giang Phàm lạnh lùng nói: &quot;Muốn giết ta không dễ dàng như vậy đâu!&quot;</p>
+                <p>Bốn vị Tu La Hoàng còn lại mặt đầy ngỡ ngàng. Chỉ hơn một tháng trôi qua, Giang Phàm đã có thể ngang sức đấu với một Tam Ngục Tu La Hoàng mà còn chiếm ưu thế?</p>
+                <p>Ba Linh Mộc cũng mừng rỡ khôn xiết nhưng chóng lại vội vã gào thét. Thiên Ca tiên đoán nguy hiểm, tay cầm hũ lửa tím bay về phía rừng cây.</p>
+                <p>Chỉ một vung tay, ngọn lửa cháy rừng rực bùng lên. Cửu Diệp Mộc Hoàng cũng bị thiêu đốt thành than đen, hậu quả của đám hỏa hồn kia chất chồng vô cùng.</p>
+                <p>Chỗ lửa tím rơi xuống, Linh Mộc không còn hình dáng, biến thành đống tro tàn khô đen.</p>
+                <p>Rừng cây mà Viễn Cổ Huyết Ma tấn công mãi không xong, Thiên Ca thiêu huỷ thẳng tiến, nhanh chóng tạo thành lối thẳng tới Hồng Sắc Liễu Thụ.</p>
+                <p>Ba vị Mộc Hoàng vang tiếng thét dữ dội, không màng thân mạng, rút lui hỗ trợ.</p>
+                <p>Nhưng động thái đó tạo cơ hội cho Tu La Hoàng tiến công. Một Diệp Mộc Hoàng hai lá để lưng vào đối thủ, ngay tại chỗ bị thanh đao âm khí chặt đứt cổ.</p>
+                <p>Hai vị Mộc Hoàng còn lại cũng chịu thương tổn không nhẹ. Giữa thương tích ngút ngàn, họ chạy tới che chở cho Hồng Sắc Liễu Thụ, dốc hết sinh mạng bảo vệ người nữ chủ.</p>
+                <p>Giang Phàm sắc mặt biến đổi, quyết định vận chuyển Vạn Thổ Chi Tâm, tức khắc di chuyển tới Hồng Sắc Liễu Thụ trước mặt.</p>
+                <p>Nhìn bốn vị Tu La Hoàng tụ họp bên Thiên Ca, rồi quay sang hai đồng bạn còn lại, anh cau mày phức tạp. Ánh sáng hi vọng tranh đấu vừa nhen nhóm giờ lại chìm sâu vào bóng tối!</p>
+                <p>Hắn rút ra Chủng Tử Định Cách, lạnh lùng hỏi: &quot;Các ngươi còn nhận ra thứ này chứ?&quot;</p>
+                <p>Bốn vị Tu La Hoàng đồng loạt co rút đồng tử. Thiên Ca cũng hiện vẻ mặt phức tạp. Chủng tử ấy do chính tay nàng giữ trong Thái Sơ Nhân Thiên Hồ, đối tượng cũng là cha nàng.</p>
+                <p>Dù trước đây Giang Phàm từng nắm giữ chủng tử, sức đe doạ không lớn bởi thân thể chỉ hóa thần, áp sát một Tu La Hoàng rồi đánh trúng chính xác là điều vô cùng khó khăn.</p>
+                <p>Nay thì khác, chẳng phải anh đã có thể thân thủ tới cảnh Hiền Giả?</p>
+                <p>Thiên Ca tay cầm hũ lửa nói: &quot;Giang Phàm, ta không muốn ép ngươi lúc này. Ta chỉ cần đứa nhi tử đó, không làm hại người khác, các ngươi tránh ra.&quot;</p>
+                <p>Đứa trẻ sao lại đặc biệt đến thế? Thiên Ca không ngại quá thân thiết với Cửu Nhật Huyết Ma Hoàng, thậm chí dám mạo hiểm đoạt lấy đứa trẻ kia.</p>
+                <p>Giang Phàm cảm nhận được sức sống dồi dào đang trỗi dậy trong cung điện, mắt ánh lên ánh sáng quyết đoán: &quot;Muốn toại nguyện, các ngươi phải trả giá.&quot;</p>
+                <p>Thiên Ca lạnh lùng quay đầu, nhìn về phía Tam Ngục Tu La Hoàng rỉ máu đầy mặt: &quot;Đi đi, ta sẽ chuẩn bị cho ngươi thân thể Hiền Giả để tái chiếm.&quot;</p>
+                <p>Tam Ngục Tu La Hoàng kinh ngạc, biết rõ đây là lệnh chấp nhận hy sinh, cùng hành động tự sát với Giang Phàm. Nhưng hắn nhanh chóng quyết lòng, nghiến răng: &quot;Xin mang thân vì Tam Công Chúa chết không hối tiếc!&quot;</p>
+                <p>Hắn gắng sức phát động dây nhân quả, cuộn lấy mình, giận dữ lao về phía Giang Phàm, gào lên: &quot;Nhân tộc Giang Phàm! Ngươi chết đi!&quot;</p>
+                <p>Giang Phàm thở dài trong lòng, cuối cùng cũng không thể bảo vệ được đứa trẻ. Hắn chỉ biết dùng hết sức mình trong phút chốc cuối!</p>
+                <p>Ngay lúc đó, một tiếng rạn vỡ vang rền khắp xung quanh - tử cung của đứa trẻ hé mở. Hào quang sinh mệnh khủng khiếp báo hiệu đứa trẻ sắp chào đời!</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_11.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_11.html" class="page-btn">11</a>
+            <a href="page_12.html" class="page-btn current">12</a>
+            <a href="page_13.html" class="page-btn">13</a>
+            <span class="page-info">...</span>
+            <a href="page_17.html" class="page-btn">17</a>
+            <a href="page_13.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

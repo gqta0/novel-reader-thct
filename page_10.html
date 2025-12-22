@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 10">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 10</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_9.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_11.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_2132">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2132: Kẻ buôn người</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm vốn không muốn giao thủ cùng một vị Hiền Giả giữa chốn phồn hoa đô hội. Hắn không ngờ, nữ nhân này lại dám trêu ghẹo. Hắn tiến đến nhuyễn tháp, an tọa bên cạnh Phiên Lộc.</p>
+                <p>Nàng khẽ cười, giọng lạnh nhạt: &quot;Vương Xung Tiêu là ai? Bổn tọa không quen biết.&quot; Vị Hiền Giả kia nhíu mày, nhưng không truy cứu, liền vô định lướt đi nơi khác.</p>
+                <p>Giang Phàm đánh giá nàng, cất lời: &quot;Các hạ mời ta lên kiệu, hẳn không chỉ vì tò mò chuyện của Bổn tọa?&quot;</p>
+                <p>Dung mạo Phiên Lộc lại biến hóa, hóa thành thiếu nữ dung nhan thanh thuần, linh động. Nàng cười duyên dáng: &quot;Vương công tử, giờ đây ta chẳng phải dáng vẻ người yêu thích sao?&quot;</p>
+                <p>Nàng khẽ cười, ánh mắt phản chiếu bóng hình Giang Phàm, tình ý dạt dào. Quả nhiên có vài phần thần vận linh khí.</p>
+                <p>Giang Phàm thoáng ngẩn người, hồi lâu mới đáp: &quot;Chẳng trách nàng là đệ nhất hoa khôi của Giới. Thế gian này, mấy ai có thể cự tuyệt nàng?&quot; Bóng hình người trong lòng sâu sắc yêu thương, đều có thể hiện ra trên thân Phiên Lộc. Kẻ nào gặp phải mà không sa vào lưới tình?</p>
+                <p>Phiên Lộc khẽ nghiêng đầu, tựa vào vai hắn, giọng mềm mại: &quot;Từng có người nói: &#039;Khi duyên khởi, ta thấy người giữa vạn người. Khi duyên diệt, ta thấy người giữa vạn người...&#039; Vương công tử, người nói xem vì sao cùng một cảnh tượng, lại mang hai ý nghĩa hoàn toàn trái ngược?&quot;</p>
+                <p>Cảm nhận hương thơm cỏ cây thoang thoảng truyền đến, Giang Phàm khẽ cười. Chẳng những dung mạo, ngay cả hương thơm linh hồn cũng bị nàng mô phỏng. Hắn không nỡ chấn động linh hồn, mỉm cười đáp: &quot;Tự nhiên là do tâm cảnh khác biệt. Một là nắm giữ, một là buông bỏ.&quot;</p>
+                <p>Phiên Lộc ngẩng đầu cười: &quot;Vậy ta chính là đã nắm giữ. Hôm nay du ngoạn, ta đi qua vạn người, duy chỉ vì người mà dừng lại. Đây, chính là duyên phận của người. Cho nên, Vương công tử chính là ân khách của ta hôm nay rồi.&quot; Vừa nói, đôi tay ngọc khẽ ôm lấy Giang Phàm, nửa thân mình tựa vào lòng hắn.</p>
+                <p>Giang Phàm hào sảng ôm lấy nàng, cất lời: &quot;Ân khách sao? Vậy giờ chúng ta đi động phủ của nàng?&quot; Động phủ của hoa khôi, cũng không mất đi sự thanh tịnh.</p>
+                <p>Dung mạo Phiên Lộc lại biến đổi, hóa thành khuôn mặt trái xoan, thần thái kiều diễm, lúc giận lúc vui, một dung nhan xa lạ. Nàng nâng ngón tay khẽ lay động trước mắt Giang Phàm. Một lọn tóc bạc quấn quanh đầu ngón tay nàng.</p>
+                <p>&quot;Thì ra, người dựa vào lọn tóc này mới có thể ngăn cản pháp tắc của ta. Cứ ngỡ người lợi hại đến nhường nào.&quot;</p>
+                <p>Sắc mặt Giang Phàm biến đổi, hắn chỉ kịp thốt lên: &quot;Nàng...&quot; Một luồng ba động vô hình xâm nhập vào ý thức, muốn chi phối tâm thần hắn.</p>
+                <p>Tiếng xào xạc của Thái Hư Cổ Thụ như dự kiến mà đến, ngăn cản luồng ba động này ở bên ngoài. Nhưng, Giang Phàm dứt khoát giả vờ bị chi phối, học theo dáng vẻ những kẻ khác bị hoa khôi mê hoặc, lộ ra vẻ cuồng nhiệt đối với Phiên Lộc.</p>
+                <p>&quot;Phiên Lộc, Phiên Lộc...&quot; Hắn nắm lấy vai nàng, mặt tràn đầy vẻ si mê.</p>
+                <p>Phiên Lộc thu lại nụ cười, một chưởng đẩy Giang Phàm ra, thất vọng nói: &quot;Vô vị. Nhưng, người có thể bị một vị Hiền Giả truy bắt, chứng tỏ có chút giá trị. Hẳn là có thể bán được giá tốt.&quot;</p>
+                <p>Nàng lấy ra một tấm ngọc giản, truyền âm: &quot;Viễn Cổ Cự Nhân đột nhiên rút lui, Giới sắp khôi phục trật tự. Xin thủ lĩnh ra tay trước.&quot;</p>
+                <p>Nàng không hề phát hiện, khóe mắt Giang Phàm khẽ giật giật. Hóa ra, cái gọi là hoa khôi lại là một kẻ buôn người. Hơn nữa, sau lưng nàng còn có một tổ chức thần bí!</p>
+                <p>Ánh mắt Giang Phàm lóe lên. Hắn có thể lợi dụng tổ chức này để lén rời khỏi Giới chăng? Lập tức, hắn bất động thanh sắc, lặng lẽ nghe Phiên Lộc sắp đặt.</p>
+                <p>Phiên Lộc khởi động lại hoa kiệu, tiếp tục du ngoạn, hay nói đúng hơn, là tìm kiếm những nhân khẩu có giá trị để bắt giữ.</p>
+                <p>Đúng lúc này, phía trước truyền đến tiếng quát tháo chấn động thiên địa: &quot;Quán Quân Hầu, Giang Phàm! Dụ dỗ thê tử ta, ta giết ngươi!!!&quot;</p>
+                <p>Chỉ thấy một nam tử khôi ngô, tản ra khí tức Nhất Tai Cảnh, thân hình bạo thiểm truy sát một thiếu niên anh tuấn đang kéo quần. Đó là Giang Phàm. Không, đó là Giang Phàm do Vương Xung Tiêu ngụy trang!</p>
+                <p>Phiên Lộc vốn trăm bề vô lại, đột nhiên đứng bật dậy, kinh hô: &quot;Quán Quân Hầu? Giang Phàm? Các quý phụ muốn cất giữ hắn nhiều như lông trâu, có một vị quý phụ thần bí, còn ra giá một kiện Giới Khí công kích để mua hắn!&quot;</p>
+                <p>Phiên Lộc hô hấp dồn dập, trong mắt lộ ra vẻ mừng rỡ điên cuồng. Giang Phàm đứng một bên suýt chút nữa thổ huyết. Ý gì đây? Thật sự có phú bà muốn nuôi dưỡng hắn? Không, là cất giữ hắn! Lại còn ra giá một kiện Giới Khí công kích!</p>
+                <p>Giang Phàm cũng động lòng, thầm nghĩ muốn bán mình cho vị quý phụ kia.</p>
+                <p>Ánh mắt Phiên Lộc lóe lên, thúc giục hoa kiệu. Vô số cánh hoa theo gió bay đi, phất phơ trên người hai kẻ đang truy đuổi và chạy trốn.</p>
+                <p>Vị Hiền Giả Nhất Tai Cảnh đang gầm gừ kia, sát khí trong mắt lập tức tiêu tán, thay vào đó là sự mê luyến, tự mình hòa vào đám đông đang theo dõi. Còn Vương Xung Tiêu kia, lại như không có chuyện gì.</p>
+                <p>Phiên Lộc kinh ngạc thốt lên: &quot;Không hổ là người được các quý phụ tranh giành, quả nhiên khác biệt với mọi người!&quot;</p>
+                <p>Nàng lại lần nữa dùng lại chiêu cũ, thò đầu ra, cất lời: &quot;Công tử có nguyện cùng Phiên Lộc cạn chén không?&quot; Dung mạo nàng biến đổi một lát mới định hình.</p>
+                <p>Giang Phàm hiếu kỳ nhìn sang, muốn biết người nữ tử quan trọng nhất trong lòng Vương Xung Tiêu là ai. Thế nhưng, vừa nhìn thấy, Giang Phàm chấn động đến suýt mất thái độ.</p>
+                <p>Đó là một dung nhan tuyệt mỹ không giống vật phàm trần, bất kỳ mỹ từ nào trên thế gian cũng không thể hình dung được vẻ đẹp của nàng.</p>
+                <p>Khoảnh khắc dung nhan ấy xuất hiện, thời không dường như ngưng đọng. Giang Phàm cũng kinh diễm thất thần trong chốc lát. Người có thể đẹp đến mức khiến hắn thất thái như vậy, chỉ có một người! Linh Âm Tế Tư!</p>
+                <p>Người quan trọng nhất trong lòng Vương Xung Tiêu, lại là Linh Âm! Chẳng lẽ, Vương Xung Tiêu đã yêu Linh Âm? Nhưng với dung nhan nghịch thiên của Linh Âm, Vương Xung Tiêu yêu nàng cũng là lẽ thường tình.</p>
+                <p>Vương Xung Tiêu đang lảo đảo, khoảnh khắc nhìn thấy dung mạo Linh Âm, cũng lập tức ngây người. &quot;Ngươi là... không, ngươi không phải.&quot;</p>
+                <p>Vương Xung Tiêu tỉnh ngộ, cảnh giác lùi lại, chuẩn bị rời đi. Nhưng phía sau lại liên tiếp truyền đến tiếng hô giết chóc. Truy sát hắn không chỉ có phu quân của nữ nhân kia, mà còn có vài tình phu của nàng ta.</p>
+                <p>Nhìn hoa kiệu trước mắt, hắn cắn răng, lóe thân chui vào trong, chắp tay nói: &quot;Tiên tử, giúp ta chặn bọn họ một chút.&quot;</p>
+                <p>Đang nói, hắn đột nhiên cảnh giác phát hiện trong hoa kiệu còn có một nam nhân, hơn nữa khuôn mặt vô cùng quen thuộc. Định thần nhìn kỹ, hắn không khỏi ngây người. Đây... đây chẳng phải mặt của hắn sao? Kẻ khốn nạn nào lại dám mạo danh hắn?</p>
+                <p>Nhưng hắn hiện tại đang mạo danh Giang Phàm, không dám vạch trần, càng không dám lớn tiếng, chỉ có thể hung hăng trừng mắt nhìn Giang Phàm một cái, rồi giả vờ như không có chuyện gì mà cầu cứu Phiên Lộc.</p>
+                <p>Trong lòng Phiên Lộc nở hoa. Hôm nay vận khí thật tốt, gặp được hai món hàng ngốc nghếch.</p>
+                <p>Nàng cố làm ra vẻ đoan trang, mô phỏng ra giọng nói thanh thoát mà đạm nhiên của Linh Âm: &quot;Đương nhiên.&quot; Ngay sau đó, nàng vỗ vỗ nhuyễn tháp bên cạnh, ra hiệu Vương Xung Tiêu ngồi xuống.</p>
+                <p>Giang Phàm nhìn thấy mà mặt đầy vô ngữ. Nữ nhân này, một chiêu ăn khắp thiên hạ!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2133">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2133: Hỗn hợp Đôi</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Vương Xung Tiêu khẽ nhíu mày kiếm, vốn không muốn an tọa. Song, nghe tiếng hò hét chém giết vọng đến gần, hắn đành miễn cưỡng hạ mình. Chỉ khi đó, Phiên Lộc mới điều khiển kiệu hoa tiếp tục tiến, thản nhiên xuyên qua đám đông đang truy bắt kẻ gian.</p>
+                <p>&quot;Giang lang, đã lâu không tương phùng.&quot; Phiên Lộc nhẹ nhàng tựa vào vai Vương Xung Tiêu, thi triển lại chiêu cũ, vươn tay ôm lấy vòng eo hắn. Nào ngờ, vai Vương Xung Tiêu khẽ chấn động, hất nàng ra, trầm giọng quát: &quot;Ngươi đang làm gì? Chẳng lẽ không biết liêm sỉ là gì sao?&quot;</p>
+                <p>Hả? Giang Phàm ngẩn ngơ. Chẳng lẽ Vương Xung Tiêu lại là kẻ chính trực đến mức này? Gặp tiên nữ như Linh Âm chủ động ôm ấp, lại có thể giữ tâm không loạn. Hay là, Linh Âm trong lòng hắn có vị trí quan trọng, không phải chỉ vì hắn ái mộ dung nhan nàng?</p>
+                <p>Phiên Lộc cũng thoáng kinh ngạc, chưa từng có kẻ nào kháng cự được chiêu thức này. Bởi lẽ, nó đánh thẳng vào dục vọng sâu thẳm nhất trong tâm khảm. Nàng che giấu vẻ bất ngờ, lại ôm lấy cánh tay Vương Xung Tiêu, giọng ủy khuất: &quot;Giang lang, chàng làm sao vậy? Chẳng lẽ không nhận ra thiếp sao?&quot;</p>
+                <p>Sắc mặt Vương Xung Tiêu càng thêm chán ghét, trầm giọng quát: &quot;Nữ nhân dơ bẩn, còn chưa chịu dừng tay?&quot; Vừa dứt lời, hắn liền dùng lực mạnh mẽ hất tay Phiên Lộc ra.</p>
+                <p>Phiên Lộc sững sờ, thân hình tái hiện nguyên dạng, khuôn mặt trái xoan tràn ngập hàn ý thấu xương. &quot;Đã không chịu uống rượu mừng, vậy thì phải uống rượu phạt!&quot; Thân thể nàng đột nhiên tan rã thành vô số đóa hoa ngũ sắc, trong chớp mắt bao bọc lấy Vương Xung Tiêu, kết thành một bức tường hoa hình người.</p>
+                <p>&quot;Nữ nhân điên cuồng, ngươi muốn làm gì...&quot; Vương Xung Tiêu giãy giụa đôi chút, rồi dần dần chìm vào im lặng.</p>
+                <p>Chẳng bao lâu sau, những đóa hoa rời khỏi thân thể Vương Xung Tiêu, ngưng tụ lại thành Phiên Lộc. Còn trên người Vương Xung Tiêu, đầy rẫy dấu vết của hoa, không ngừng tỏa ra ảo thuật mê hoặc tâm trí.</p>
+                <p>Ánh mắt Vương Xung Tiêu đờ đẫn, vẻ mặt si mê nhìn Phiên Lộc. Hiển nhiên, hắn đã bị cưỡng chế mê hoặc.</p>
+                <p>Giang Phàm thầm suy tính: &quot;Thân thể nữ nhân này có thể phân tán thành vô số đóa hoa, hoặc nàng không phải nhân tộc, hoặc đây chỉ là một phân thân khôi lỗi được tạo ra.&quot;</p>
+                <p>Liên tưởng đến việc nữ nhân này có tổ chức bí ẩn đứng sau, khả năng thứ hai càng lớn hơn. Phiên Lộc đắc ý nâng cằm Vương Xung Tiêu: &quot;Quán Quân Hầu lừng lẫy thì đã sao? Chẳng phải vẫn rơi vào tay ta đây sao?&quot;</p>
+                <p>&quot;Lát nữa, sẽ bán ngươi được một cái giá thật tốt!&quot;</p>
+                <p>Đang cười, nàng chợt cảm ứng được một luồng khí tức. Trên mặt lộ ra vẻ hân hoan: &quot;Cuối cùng cũng đã hành động rồi!&quot; &quot;Cái nơi quỷ quái này, ta đã chịu đựng quá đủ!&quot; Dưới sự điều khiển của nàng, kiệu hoa quay đầu, cấp tốc rời đi.</p>
+                <p>Những kẻ bị kiệu hoa mê hoặc vẫn đứng sững sờ tại chỗ, mãi đến khi kiệu hoa khuất dạng mới dần dần tỉnh ngộ. Bọn họ vẻ mặt mờ mịt, hoàn toàn không nhớ đã xảy ra chuyện gì.</p>
+                <p>Sau thời gian một chén trà, kiệu hoa mấy lần xuyên qua hư không, đã đến trung tâm nhất của thành trì. Chín tòa sòng bạc, tửu quán hùng vĩ, ba tầng trong ba tầng ngoài, tạo thành một hình tròn, vây quanh một suối mắt khổng lồ màu vàng đất ở chính giữa.</p>
+                <p>Bên trong không ngừng tuôn ra thứ bùn vàng đục ngầu, sau đó thấm vào địa mạch, chảy đi khắp thế giới. Suối mắt này là vật gì, không khó để suy đoán! Chính là Giới Thai của Thổ Giới!</p>
+                <p>Phiên Lộc đến nơi này để làm gì? Chẳng lẽ mục tiêu thực sự của nàng khi tiềm phục tại Thổ Giới, chính là Giới Thai? Giang Phàm thầm suy tư.</p>
+                <p>Hắn nhớ lại gần đây Giới Thai của vài thế giới đã bị kẻ gian thừa cơ cướp đoạt, rồi lại nghĩ đến lời Phiên Lộc lẩm bẩm vừa nãy, nói muốn hành động sớm. Hắn không khỏi rùng mình! Chẳng lẽ Phiên Lộc là thành viên của đội cướp Giới Thai khét tiếng?</p>
+                <p>Hắn nhất thời cạn lời. Hiền Giả của Thổ Giới làm sao có thể cho phép Giới Thai của mình bị cướp đi dễ dàng? Song phương tất sẽ có một trận đại chiến kinh thiên động địa. Không chừng, chính mình cũng sẽ bị cuốn vào vòng xoáy này!</p>
+                <p>Vốn muốn mượn nữ nhân này tạm thời ẩn mình tìm chút thanh tịnh, kết quả lại hay rồi, lại bị cuốn vào một mớ phiền phức lớn hơn. Phải nhanh chóng rút lui mới được!</p>
+                <p>Đang chuẩn bị rời đi, kiệu hoa sắp đến suối mắt thì đột nhiên dừng lại, rồi lóe lên rẽ vào một con hẻm nhỏ bên cạnh. Tiếp đó, Phiên Lộc thúc giục năng lực của kiệu, khiến nó tiến vào trạng thái ẩn mình vô hình.</p>
+                <p>Đôi mắt nàng lóe lên tinh quang, lắng nghe động tĩnh bên ngoài, lẩm bẩm: &quot;Sắp có đại động tĩnh rồi, ta chỉ cần chờ thời cơ, hội hợp cùng đồng bọn là được!&quot;</p>
+                <p>Sau đó, nàng lại nhìn Giang Phàm và Vương Xung Tiêu, cười hì hì vỗ vỗ chiếc ghế mềm mại hai bên, nói: &quot;Hai vị, đều an tọa lại đây!&quot; &quot;Khó khăn lắm mới kiếm được hai món hàng đáng giá, không thể bỏ rơi các ngươi được.&quot;</p>
+                <p>Trong mắt Giang Phàm, tinh quang chợt lóe. Nữ nhân dơ bẩn này đã lấy đi sợi tóc của hắn, còn định bán hắn, tuyệt đối không thể để nàng dễ dàng thoát thân! Hắn giả vờ ngoan ngoãn an tọa, đang định ra tay.</p>
+                <p>Vương Xung Tiêu, người đang ngồi ngay ngắn, đột nhiên không hề báo trước rút ra một cây đại bổng màu vàng, bất ngờ giáng thẳng một đòn vào đầu Phiên Lộc! Hắn ra tay tàn nhẫn, không chút thương hương tiếc ngọc. So với lúc Giang Phàm đánh hắn, đòn này còn ác liệt hơn nhiều!</p>
+                <p>Nhưng, thân thể Phiên Lộc đột nhiên tan rã, hóa thành một biển cánh hoa. Cây đại bổng màu vàng vung xuống, chỉ đập nát vài cánh hoa mỏng manh. Những đóa hoa tản ra lại ngưng tụ thành bóng dáng Phiên Lộc, nàng ôm vai, vẻ mặt kinh ngạc: &quot;Ngươi... ngươi dám đánh ta?&quot;</p>
+                <p>Vương Xung Tiêu khinh miệt cười lạnh: &quot;Nữ nhân chết tiệt, chút trò vặt vãnh đó mà cũng dám đùa giỡn với Quán Quân Hầu ta?&quot; &quot;Ngươi còn quá non nớt!&quot;</p>
+                <p>Phiên Lộc nghiến răng, quát khẽ: &quot;Vương Xung Tiêu, mau quấn lấy hắn!&quot; &quot;Đợi bản tôn ta đến, hắn có mọc cánh cũng khó thoát!&quot;</p>
+                <p>Giang Phàm không chút nghĩ ngợi, đáp: &quot;Vâng.&quot; Tức thì nhìn về phía Vương Xung Tiêu, nói: &quot;Kẻ nào làm tổn thương Phiên Lộc, ta với ngươi không đội trời chung!&quot;</p>
+                <p>Vương Xung Tiêu cười giận: &quot;Đồ chó má, ngươi mạo danh ta, ta còn chưa tính sổ với ngươi đâu!&quot; &quot;Để ta xem, rốt cuộc ngươi là kẻ nào?&quot;</p>
+                <p>Giang Phàm không nói một lời, rút ra cây đại hắc bổng. Sau một tháng được song trùng bồi dưỡng bởi Tử Tinh Khoáng và Tức Thổ, Thần Mộc cuối cùng đã có biến hóa long trời lở đất! Chồi non màu tím kia đã mọc thành một phiến lá thần bí, tỏa ra khí tím mờ ảo.</p>
+                <p>Thần Mộc rộng một bàn tay, nay đã thô to đến mức hai tay mới có thể nắm giữ, trên thân cây nổi lên từng hạt u tím. Trong lòng hắn thầm kích động. Khúc gỗ mục này cuối cùng cũng đã trưởng thành! Trước đây nhiều nhất cũng chỉ có thể khiến Đại Tôn đau đầu, giờ không biết uy lực sẽ ra sao.</p>
+                <p>Phiên Lộc thấy cả hai đều dùng bổng, không khỏi ngẩn người, lẩm bẩm: &quot;Từ khi nào mà vũ khí bổng lại thịnh hành đến vậy?&quot; Lắc đầu, nàng thản nhiên nói: &quot;Mau ra tay đi! Cho hắn biết lợi hại!&quot;</p>
+                <p>Giang Phàm gật đầu, giơ đại hắc bổng lên, hung hăng giáng xuống. &quot;Bốp——&quot; Một tiếng động thịt da trầm đục vang lên! Ngay sau đó, là tiếng kêu thảm thiết của Phiên Lộc đau đến giậm chân: &quot;A~ Vương Xung Tiêu, ngươi cũng đánh ta sao?&quot;</p>
+                <p>Không sai, cây bổng của Giang Phàm đã giáng thẳng vào đầu Phiên Lộc. Giang Phàm hừ lạnh: &quot;Nữ nhân chết tiệt, còn dám toan tính bán ta? Thật không biết tự lượng sức mình!&quot; Dứt lời, hắn lại lần nữa giơ đại hắc bổng lên cao!</p>
+                <p>Phiên Lộc đau đến đầu muốn nứt ra, trước mắt tối sầm, nhưng vẫn cố nén kịch đau, thân thể hóa thành cánh hoa tản đi, rồi lao ra ngoài kiệu. Nào ngờ. Vừa đến cửa kiệu, một đạo côn ảnh màu vàng của Vương Xung Tiêu đã quất tới, đánh bay một đám cánh hoa trở lại.</p>
+                <p>Phiên Lộc kêu thảm một tiếng. Không đợi nàng hoàn hồn, đại hắc bổng của Giang Phàm lại quất tới. Hai kẻ, một trước một sau, mỗi người dùng đại bổng kẹp đánh. Phiên Lộc như một quả bóng, bị đánh qua đánh lại, tiếng kêu thảm thiết từng đợt cao hơn từng đợt.</p>
+                <p>Cuối cùng, Phiên Lộc tái ngưng thành hình người, rơi xuống đất. Nàng mặt mũi bầm tím, toàn thân đẫm máu. Ngón tay run rẩy, chỉ vào Giang Phàm và Vương Xung Tiêu, mang theo giọng khóc nức nở nói: &quot;Hai kẻ các ngươi... quả thật không phải người...&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2134">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2134: Tử Âm Hải Tặc</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Lời vừa dứt, Hắc Bổng đã giáng xuống. Một tiếng &quot;Ngao~&quot; thảm thiết vang lên, Phiên Lộc trước mắt tối sầm, triệt để hôn mê.</p>
+                <p>Giang Phàm khinh miệt &quot;Phì!&quot;, đoạn lạnh giọng: &quot;Ngươi mới không phải nhân loại!&quot; Dứt lời, hắn lật nàng lại, khám xét trong lòng, nhanh chóng tìm thấy sợi tóc bạc của Tuyết Cơ Đại Hiền.</p>
+                <p>Ngoài ra, còn thu được một nắm cánh hoa. &quot;Cánh hoa? Linh vật, thu!&quot; &quot;Trong lòng còn có khăn tay? Thu!&quot; &quot;Y bào ẩn chứa hương khí mê hoặc, lột!&quot;</p>
+                <p>Vương Xung Tiêu thấy Giang Phàm thủ pháp thuần thục đoạt bảo, vội vàng xông tới, tìm thấy kim trâm cài tóc trong búi tóc nàng. &quot;Thượng phẩm linh khí? Thu!&quot; &quot;Ngọc trạc trữ vật? Của ta!&quot; &quot;Y phục hạ thân có hiệu quả ẩn thân? Cởi!&quot;</p>
+                <p>Hai kẻ vốn là oan gia, giờ lại tâm đầu ý hợp, đồng lòng đối ngoại.</p>
+                <p>Chẳng mấy chốc, Giang Phàm cười híp mắt kiểm đếm chiến lợi phẩm. Vương Xung Tiêu cũng hai mắt sáng rực, hớn hở kiểm kê linh vật. Còn Phiên Lộc, chỉ còn lại một chiếc yếm che ngực, bất động nằm trên nền đất lạnh.</p>
+                <p>Vương Xung Tiêu kiểm kê xong, ánh mắt liếc xéo Giang Phàm, nhìn dung mạo giống hệt mình, thần sắc trầm xuống: &quot;Ngươi chính là Giang Phàm?&quot;</p>
+                <p>Thủ pháp lục soát thuần thục kia, cây Đại Hắc Bổng quen thuộc kia, tư thế hạ thủ điêu luyện kia. Hắn thực sự quá đỗi quen thuộc! Khắp chư thiên vạn giới, tuyệt không có kẻ thứ hai!</p>
+                <p>Giang Phàm cũng cất kỹ bảo vật, không hề che giấu, hừ lạnh: &quot;Vương Xung Tiêu, chúng ta lại gặp mặt!&quot;</p>
+                <p>Nhận được xác nhận, Vương Xung Tiêu lập tức thất thố: &quot;Giang Phàm! Tên khốn kiếp nhà ngươi, mạo danh ta còn chưa đủ sao?&quot;</p>
+                <p>Thần sắc Giang Phàm cũng tối sầm, đáp: &quot;Ngươi cái tên đáng vạn đao phanh thây! Ta mạo danh ngươi là để đối phó Viễn Cổ Cự Nhân, là vì đại nghĩa nhân tộc!&quot;</p>
+                <p>&quot;Ngươi mạo danh ta lại đi dẫn dụ phu quân của người ta, làm ô uế danh tiếng của ta!&quot;</p>
+                <p>Vương Xung Tiêu tức đến bật cười: &quot;Ngụy biện! Ngươi ngoài việc đối phó Viễn Cổ Cự Nhân, những nơi khác mạo danh ta còn ít sao?&quot;</p>
+                <p>&quot;Khi làm việc thiện, ngươi phô trương thanh thế, liền báo tên ta; khi làm việc ác, lại là ta Vương Xung Tiêu gánh chịu!&quot; &quot;Lợi lộc ngươi hưởng trọn, tiếng xấu ta gánh hết!&quot;</p>
+                <p>Giang Phàm nộ hỏa ngút trời: &quot;Ta dù có làm việc ác, cũng chưa từng câu dẫn nữ nhân khác!&quot;</p>
+                <p>Nhìn Giang Phàm giận dữ đến vậy, Vương Xung Tiêu ngược lại không còn giận, nhịn không được cười lớn. &quot;Ha ha ha! Mặc dù bổn ý không phải để ngươi gánh tiếng xấu, nhưng, có thể khiến ngươi thất thế, vậy thì quá tốt rồi!&quot;</p>
+                <p>&quot;Cái ô danh này, ngươi cứ gánh cho tốt đi!&quot;</p>
+                <p>Giang Phàm đang tức giận, chợt nhớ ra, mình cũng đã tặng cho Vương Xung Tiêu một cái ô danh kinh thiên, liền không còn giận nữa. Nói nghiêm túc, vẫn là hắn càng không phải nhân loại hơn một chút.</p>
+                <p>&quot;Khụ khụ khụ, oan gia nên hóa giải, chuyện đã qua cứ để nó qua đi.&quot; Giang Phàm lộ ra thần sắc hòa hoãn: &quot;Ta đi trước đây, xin cáo từ!&quot;</p>
+                <p>Vương Xung Tiêu không khỏi nghi hoặc, tên khốn Giang Phàm này khi nào lại dễ dàng thỏa hiệp đến thế? Lại liên tưởng Giang Phàm lúc này vẫn đang mạo danh mình, trong lòng dấy lên nghi vấn: &quot;Ngươi có phải đã dùng thân phận của ta làm một đại sự kinh thiên rồi không?&quot;</p>
+                <p>Giang Phàm xua xua tay: &quot;Không có chuyện đó, ta không phải loại người như vậy.&quot; &quot;Nơi đây sắp xảy ra đại sự, chúng ta mau chóng rời đi thì hơn.&quot;</p>
+                <p>Vương Xung Tiêu càng lúc càng cảm thấy Giang Phàm tâm tư quỷ dị, nhưng những lời Phiên Lộc lẩm bẩm trước đó, hắn cũng đã nghe lọt tai. Nơi đây tuyệt đối không phải tịnh thổ, quả thực phải nhanh chóng khởi hành!</p>
+                <p>Tuy nhiên, hai người còn chưa kịp động thân.</p>
+                <p>Một tiếng gầm rống trầm đục vang vọng khắp thiên địa, dẫn phát thiên địa rung chuyển kịch liệt vô cùng. Hai người trong kiệu ẩn mình, ngẩng đầu nhìn lên bầu trời.</p>
+                <p>Một khe nứt hư không vô biên vắt ngang vòm trời xuất hiện trên đỉnh đầu, lực thôn phệ kinh khủng, trong nháy mắt cuốn rất nhiều phòng ốc và sinh linh không có trận pháp che chở vào trong Hư Vô.</p>
+                <p>Mà trong Hư Vô kia, một Hắc Ám Chiến Thuyền khổng lồ đen như mực đang lơ lửng. Tựa như một tiểu đại lục nằm ngang trong hư không, vô cùng hùng vĩ. Trên chiến thuyền, cột buồm đỏ như máu, trên cánh buồm treo lơ lửng một ấn ký đầu lâu màu trắng.</p>
+                <p>Nhìn thấy biểu tượng này, đồng tử Giang Phàm co rút: &quot;Tử Âm Hải Tặc!&quot;</p>
+                <p>Hắn quay đầu nhìn Phiên Lộc đang nằm trên đất. Thì ra, tổ chức thần bí đứng sau Phiên Lộc, chính là Tử Âm Hải Tặc! Kẻ vẫn luôn cướp bóc tiểu thế giới, đoạt lấy Giới Thai của chúng, chính là bọn chúng!</p>
+                <p>Vương Xung Tiêu không lộ vẻ quá đỗi kinh ngạc, lạnh nhạt nói: &quot;Nói chính xác, là Đệ Tam Phi Đội của Tử Âm Hải Tặc.&quot;</p>
+                <p>&quot;Tử Âm Hải Tặc, các phi đội khác nhau, phân công cũng khác nhau.&quot; &quot;Đệ Nhất, Đệ Nhị, Đệ Tam, ba phi đội mạnh nhất phụ trách tìm kiếm Giới Thai giữa thiên địa.&quot;</p>
+                <p>Sự xuất hiện của Đệ Tam Phi Đội, gây ra hỗn loạn cực lớn. Không đợi các Giới Hiền kịp phản ứng, một thành viên hải tặc Thần Cảnh, tay cầm Túi Càn Khôn khổng lồ, nhanh chóng xông vào trong thế giới. Sau đó mở túi, hoàn thành việc lén lút xâm nhập.</p>
+                <p>Theo một luồng khí tức kinh khủng phun trào từ trong túi, chín cường giả tỏa ra uy áp ngập trời từ đó hiện thân! Bọn họ đều khoác hắc bào có ấn ký đầu lâu, thân hình dung mạo toàn bộ ẩn giấu bên trong.</p>
+                <p>Thủ lĩnh là một người thần bí dáng người cao ráo, có đặc điểm nữ nhân rõ ràng, khí tức cường đại đến mức khiến người ta nghẹt thở. Lại là một vị Tam Tai Cảnh!</p>
+                <p>Giang Phàm thầm kinh hãi. Một chi phi đội lại có một vị Tam Tai Cảnh trấn giữ? Trong Tử Âm Hải Tặc rốt cuộc có bao nhiêu vị Tam Tai Cảnh?</p>
+                <p>Một thế lực bàng bạc như vậy, nếu công phá một thế giới, trừ Tứ Đại Giới và Thần Đô ra, ít có thế giới nào có thể chống đỡ nổi chăng? Hắn lần đầu tiên chân thực cảm nhận được sự khổng lồ của thế lực hải tặc này!</p>
+                <p>Nữ thủ lĩnh phun ra giọng nói lạnh lùng: &quot;Nhanh chóng động thủ!&quot;</p>
+                <p>Chín người đã sớm chuẩn bị, mỗi người lấy ra một cây phi trảo, cắm vào lòng đất tuyền nhãn. Phi trảo toàn thân đỏ như máu, được nối bằng một sợi gân trong suốt.</p>
+                <p>Giang Phàm ngẩn ra. Cây phi trảo này, giống hệt pháp khí của vị Song Diện Dị Tộc kia! Vậy thì, thân phận của chúng đã rõ ràng! Chính là Tử Âm Hải Tặc!</p>
+                <p>Đối phương tiềm nhập Băng Giới, còn đi tới Giới Thai, mục đích e rằng chính là thăm dò tình hình Giới Thai, chuẩn bị cho việc cướp đoạt. Giang Phàm khẽ nhíu mày, không khỏi lo lắng cho Băng Giới. Sinh tử kẻ khác không quan trọng, nhưng Bạch Nham Hiền Giả tuyệt đối không thể chết trong tay bọn chúng.</p>
+                <p>&quot;Khởi!&quot; Nữ thủ lĩnh quát khẽ một tiếng, chín người đồng loạt kéo sợi gân. Sâu trong lòng đất, phát ra tiếng bích chướng thế giới rạn nứt.</p>
+                <p>Chín người bọn chúng lại hợp lực, nhấc bổng tuyền nhãn cùng đại địa dưới lòng đất, thậm chí cả bích chướng thế giới bên dưới, toàn bộ mang đi! Chỉ có như vậy, mới có thể thành công trước khi các Giới Hiền kịp đến!</p>
+                <p>Rất nhanh. Một mảnh đại lục khổng lồ vô cùng, bị chín người kéo về phía chiến thuyền.</p>
+                <p>Mà các Hiền Giả của Sĩ Giới, tinh lực toàn bộ dồn vào việc tìm kiếm Giang Phàm, bởi vậy không phái người trấn giữ nơi đây. Mãi cho đến khi đại lục bị kéo ra khỏi Sĩ Giới, toàn bộ Sĩ Giới phát ra tiếng ai minh ầm ầm, Sĩ Giới Đại Hiền mới cuối cùng kịp đến!</p>
+                <p>Hắn mắt rực lửa, bạo hống: &quot;Tử Âm Hải Tặc! Các ngươi dám cướp Giới Thai của Sĩ Giới ta!&quot;</p>
+                <p>Toàn thân hắn bùng phát lực lượng pháp tắc vô song, tràn ngập đủ loại dục vọng sâu thẳm nhân tính. Ngay cả Giang Phàm có Thái Hư Cổ Thụ hộ thể, cũng cảm thấy những cảm xúc như tham lam, sắc dục mãnh liệt đang dần mất kiểm soát. Hắn quay đầu nhìn về phía sau, Phiên Lộc với nửa thân trên trần trụi, dục vọng trong lòng càng thêm mãnh liệt.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2135">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2135: Cho ta chừa chút</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nhờ phúc duyên, cùng với Thái Hư Cổ Thụ không ngừng xào xạc, thêm vào cảm giác băng lãnh thấu xương từ sợi tóc của Tuyết Cơ Đại Hiền, dục niệm cuồng loạn sắp mất kiểm soát cuối cùng cũng bị áp chế. Thần hồn vừa vặn thanh tỉnh, một trận ác phong đã ập tới. Lại là Vương Xung Tiêu đột nhiên ra tay! Kẻ này lại có thể hoàn toàn không bị ảnh hưởng!</p>
+                <p>Giang Phàm tả thủ khẽ động, cây đại bổng màu vàng giáng xuống cánh tay. Một trận tê dại yếu ớt truyền đến, khiến hắn nội tâm chấn động.</p>
+                <p>Giờ đây, hắn mang thân thể Hiền Giả, một bổng này vậy mà có thể khiến hắn cảm thấy tê dại. Cây đại bổng này, đối với những kẻ dưới Hiền Giả, uy lực không kém gì Thần Mộc năm xưa. Tuyệt đối là một cây Thần Mộc!</p>
+                <p>&quot;Ngươi lại không sao?&quot; Vương Xung Tiêu kinh ngạc không thôi. Hắn có vô biên khí vận hóa giải tai ương mới ngăn được pháp tắc của Thượng Giới Đại Hiền. Giang Phàm dựa vào đâu?</p>
+                <p>Đáp lại hắn là cây Thần Mộc vung tới từ hữu thủ Giang Phàm. Đã vô lễ, chớ trách ta không niệm tình!</p>
+                <p>Vương Xung Tiêu cũng học theo động tác của Giang Phàm, giơ tay chống đỡ. Nào ngờ, một luồng bạo ngược chi lực vượt xa dự liệu, trực tiếp đánh gãy cánh tay hắn. Thần Mộc theo đó hung hăng giáng xuống đầu hắn!</p>
+                <p>Giờ đây Vương Xung Tiêu vẫn chỉ là Thiên Nhân tam trọng. Theo lý mà nói, một bổng này hẳn phải khiến hắn lập tức mất đi ý thức. Ai ngờ, một tiếng &quot;ong&quot; vang lên, Thần Mộc vậy mà bị bật ra! Hắn chỉ phát ra tiếng kêu thảm thiết vì đau đớn.</p>
+                <p>Vương Xung Tiêu thừa cơ lùi lại, kéo giãn khoảng cách, vừa xoa đầu, vừa đắc ý nói: &quot;Không ngờ đúng không? Ta đặc biệt cường hóa cái đầu này, chính là để phòng tên khốn ngươi lén lút đánh lén! Gậy của ngươi đối với ta đã vô dụng rồi!&quot;</p>
+                <p>Giang Phàm xoa cằm, lạnh giọng nói: &quot;Thì ra là vậy. Thật không may, gần đây ta cũng vừa có được một cây gậy mới.&quot;</p>
+                <p>Thần Mộc lóe lên biến mất, thay vào đó là một cây đại thiết bổng màu vàng kim.</p>
+                <p>Giang Phàm ôm lấy đại thiết bổng, nhắm thẳng trán Vương Xung Tiêu mà giáng xuống một bổng. Vương Xung Tiêu đại kinh thất sắc: &quot;Đây là Định Thiên Trụ của Đại Càn Thần Quốc! Sao lại ở trong tay ngươi...&quot;</p>
+                <p>Trong lúc vội vàng, hắn lấy ra mấy khối phòng ngự ngọc phù, khoác lên mình tấm chăn vảy cá loang lổ.</p>
+                <p>&quot;Rắc rắc!&quot; Dưới trọng lực vô tận của Định Thiên Trụ, phòng ngự ngọc phù bị nghiền nát. Tấm chăn vảy cá chỉ kiên trì được chốc lát liền &quot;rắc&quot; một tiếng vỡ vụn, lộ ra Vương Xung Tiêu đang ẩn mình bên trong.</p>
+                <p>Cuối cùng, một tiếng &quot;bộp&quot; trầm đục, Định Thiên Trụ giáng xuống trán hắn.</p>
+                <p>Định Thiên Trụ, thứ có thể nghiền nát đạo cơ của cường giả Nhất Huyệt Cảnh, giáng xuống trán Vương Xung Tiêu, vậy mà không hề vỡ nát. Chỉ khiến hắn hoa mắt chóng mặt, hai chân run rẩy, lảo đảo ngã khuỵu xuống đất.</p>
+                <p>Giang Phàm khó nhọc thu Định Thiên Trụ lại, ném vào không gian trữ vật. Sau đó, hắn xoa xoa tay, ánh mắt hưng phấn đánh giá Vương Xung Tiêu. Thời khắc thu hoạch đáng mong chờ nhất đã đến.</p>
+                <p>Liếc nhìn ngọc phù và tấm chăn vảy cá đã vỡ nát, hắn thoáng tiếc nuối. Ngay sau đó, xé toạc y phục của Vương Xung Tiêu, bắt đầu lục lọi bảo bối.</p>
+                <p>Vương Xung Tiêu trước mắt tối sầm, nhưng vẫn cố nắm chặt cổ tay Giang Phàm: &quot;Lần này... hãy để lại cho ta thêm một bộ y phục...&quot;</p>
+                <p>Giang Phàm cười lạnh: &quot;Yên tâm, đều là huynh đệ, ta biết chừng mực!&quot; Nói xong, hắn giáng một quyền vào trán Vương Xung Tiêu, triệt để đánh ngất hắn.</p>
+                <p>Sau đó, hắn xé toạc cổ áo Vương Xung Tiêu. Một đống đồ vật &quot;loảng xoảng&quot; rơi ra. Đầu tiên là những thứ hắn vừa lục soát được, còn chưa kịp cất vào không gian trữ vật. Kế đến là một không gian trữ vật, có tồn tại chú ngữ phong ấn. Ngoài ra, không còn vật gì khác.</p>
+                <p>Giang Phàm nhíu chặt mày: &quot;Không phải chứ, sao ngươi lại không theo lẽ thường? Bảo bối của ta đâu? Ngươi cất hết bảo bối của ta vào không gian trữ vật rồi sao?&quot;</p>
+                <p>Bỏ ra nhiều công sức như vậy, cuối cùng lại chẳng có gì! Hắn càng nghĩ càng giận: &quot;Thế này mà còn muốn ta để lại cho ngươi thêm một bộ y phục?&quot;</p>
+                <p>&quot;Bùm!&quot; Hắn một tay xé nát toàn bộ y phục của Vương Xung Tiêu.</p>
+                <p>Lúc này, hắn mới phát hiện trên ngực Vương Xung Tiêu lại có một bức họa được cất giữ sát thân. Chất liệu băng lãnh trơn nhẵn, tựa như làn da của người trẻ tuổi. Lờ mờ, còn có thể thấy được vài lỗ chân lông của tóc. Giang Phàm rụt người lại, có chút kinh hãi. Đây là da đầu người!</p>
+                <p>Trên tấm da đầu, vẽ một chiếc Hoàng Quan. Chẳng biết đã trải qua bao nhiêu năm tháng, hình ảnh có chút mơ hồ, không nhìn rõ. Nhưng xuyên qua năm tháng, vẫn có thể cảm nhận được uy nghiêm Đế Hoàng khó tả.</p>
+                <p>Đối diện với Hoàng Quan này, một loại ký ức viễn cổ ẩn sâu trong huyết mạch dường như bị kích hoạt. Thân thể không tự chủ được mà muốn quỳ xuống hành lễ.</p>
+                <p>&quot;Đây là Hoàng Quan gì? Một bức họa thôi mà đã có uy nghiêm đến vậy?&quot; Giang Phàm kinh hãi không thôi. Thừa lúc thân thể còn chưa hoàn toàn quỳ xuống, vội vàng thu Nhân Bì Họa vào không gian trữ vật. Như vậy, hắn mới toàn thân thả lỏng.</p>
+                <p>Huyết dịch sôi trào trong cơ thể từ từ lắng xuống, từng giọt mồ hôi trên trán cũng dần tan biến.</p>
+                <p>Một cỗ đau nhức từ khắp nơi trên thân thể truyền đến. Chỉ là nhìn gần một cái bức họa này, đã dẫn đến hậu quả nghiêm trọng như vậy! Nếu như bức họa này có thể giống pháp bảo mà kích hoạt, chẳng phải càng thêm khủng bố sao? Vương Xung Tiêu từ đâu mà có được bảo vật tà dị đến vậy? Đợi có thời gian rảnh, hãy nghiên cứu kỹ bức họa này.</p>
+                <p>&quot;Ầm!&quot; Một đạo chiến đấu ba văn khủng bố quét ngang, hất tung toàn bộ đại địa. Chín tòa kỹ quán, tửu quán và đổ quán có trận pháp bảo hộ cũng không thể may mắn thoát khỏi. Hoa Kiệu ẩn mình trong ngõ hẻm, càng bị oanh bay lên giữa không trung. Rõ ràng là cường giả Thượng Giới và Tử Âm Hải Tặc Đích Đệ Tam Phi Đội đang phát sinh đại chiến kịch liệt!</p>
+                <p>Giang Phàm ổn định thân hình, mắt lộ tinh quang. Hiện tại chính là thời điểm thiên địa hỗn loạn nhất, bất cứ lúc nào cũng có thể xuất hiện cơ hội rời đi!</p>
+                <p>Liếc nhìn Vương Xung Tiêu đang hôn mê bất tỉnh. Lược chút trầm ngâm, hắn sờ sờ lên mặt Vương Xung Tiêu, quả nhiên chạm vào một lớp vật chất mềm mại đặc biệt. Một cái kéo, liền lột xuống một tấm màng trong suốt mỏng như cánh ve, tản ra uy áp của Chuẩn Giới Khí!</p>
+                <p>Giang Phàm mừng rỡ như điên. Sau khi dò xét công năng của nó, càng thêm hớn hở ra mặt. &quot;Dịch Dung Diện Mạc của Chuẩn Giới Khí! Còn có thể dịch dung thành bất kỳ ai sao?&quot;</p>
+                <p>Băng Tinh Điếu Chủy trên người hắn, cần bổ sung Băng Đạo pháp tắc mới có thể duy trì. Hiện tại pháp tắc chi lực trong đó đã không còn nhiều, không dùng được bao lâu. Hiện tại lại có thêm một Chuẩn Giới Khí Diện Mạc!</p>
+                <p>Tính toán một chút, hắn đã thu hoạch được Nhân Bì Họa, Chuẩn Giới Khí Diện Mạc, cùng với cây đại bổng màu vàng thần bí kia, còn có không gian trữ vật của Vương Xung Tiêu. Thu hoạch thật sự phong phú!</p>
+                <p>&quot;Vương huynh, vật tốt cứu mạng, có ngươi thật tốt!&quot; Giang Phàm nhếch miệng cười lạnh.</p>
+                <p>Ngay lúc này, Hoa Kiệu đột nhiên chấn động kịch liệt, phát ra tiếng &quot;cạch cạch&quot; không chịu nổi gánh nặng! Giang Phàm ba người trong Hoa Kiệu, lập tức bị hất tung va đập loạn xạ.</p>
+                <p>Giang Phàm hướng ra ngoài cảm nhận, lúc này mới đồng tử co rút lại mà phát hiện, Hoa Kiệu và chín tòa quán đã bị Hư Vô chi lực cuốn vào trung tâm đại chiến của hai bên. Xung kích ba của đại chiến hai bên đã đánh nát chín tòa quán thành một mảnh bụi trần.</p>
+                <p>Hoa Kiệu miễn cưỡng bảo trụ, nhưng hiệu quả ẩn thân của nó bị phá, triệt để hiển lộ trong mắt hai bên.</p>
+                <p>Hiền Giả bình thường có lẽ bị Hoa Kiệu ngăn cản ánh mắt dò xét, nhưng làm sao có thể qua mắt được Thượng Giới Đại Hiền? Hắn liếc mắt một cái liền phát hiện Giang Phàm, theo bản năng thấp giọng quát: &quot;Vương Xung Tiêu?&quot;</p>
+                <p>Đều là vì tìm kiếm Vương Xung Tiêu, bọn họ mới để Tử Âm Hải Tặc Đích Đệ Tam Phi Đội có cơ hội thừa nước đục thả câu!</p>
+                <p>Trong mắt hắn sát cơ bùng nổ, hướng về Hoa Kiệu chỉ một điểm. Một chỉ này, đủ để đem Hoa Kiệu cùng với Giang Phàm và những người khác bên trong hủy diệt thành tro tàn!</p>
+                <p>Nữ Thủ Lĩnh của Tử Âm Hải Tặc Đích Đệ Tam Phi Đội, nhìn thấy Hoa Kiệu trong nháy mắt, đồng tử co rút lại. Đó là kiệu của phân thân nàng!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2136">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2136: Song song băng khốc</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nàng lẽ nào có thể khoanh tay đứng nhìn phân thân của mình bỏ mạng dưới tay Thổ Giới Đại Hiền? Khẽ hé đôi môi son, một đạo tử quang cuồn cuộn phun ra, chặn đứng trước Hoa Kiệu.</p>
+                <p>Hai luồng lực lượng Tam Tai Cảnh đối chọi, dấy lên cuồng bạo xung lực, chấn động thiên địa. Hoa Kiệu vốn đã mang trọng thương, không chịu nổi thêm, &quot;rắc&quot; một tiếng, tan nát thành tro bụi.</p>
+                <p>Đồng tử Giang Phàm chợt rụt lại. Hắn dứt khoát tế ra Phong Thần Lệnh Kỳ, quát lớn: &quot;Tán đi!&quot; Tuyết Cơ Đại Hiền từng nói, Phong Thần Lệnh Kỳ có thể hiệu lệnh vạn vật lưu động trong thiên hạ. Luồng xung kích ba kinh hoàng trước mắt, hẳn cũng nằm trong số đó!</p>
+                <p>Quả nhiên, một cảnh tượng kỳ diệu hiện ra. Vừa dứt lệnh, luồng xung kích ba tưởng chừng muốn hủy diệt tất cả, lại tách ra hai bên, lướt qua. Vài vị Tam Tai Cảnh gần đó bị ảnh hưởng, đều trọng thương thổ huyết. Lá cờ này, quả nhiên là chí bảo!</p>
+                <p>Thổ Giới Đại Hiền thấy vậy, mặt y trầm xuống, hừ lạnh: &quot;Bảo vật của ngươi cũng không ít!&quot; Y vung tay áo, một thanh hắc ám chủy thủ xé toang hư không, lao thẳng tới. Pháp khí do Tam Tai Cảnh thi triển, dưới cùng cảnh giới, tất phải đoạt mạng!</p>
+                <p>Sắc mặt Giang Phàm biến đổi. Phong Thần Lệnh Kỳ chỉ có thể điều khiển lực lượng vô hình lưu động, đối với công kích của loại pháp khí này, hoàn toàn vô dụng! Hắn tâm thần chấn động, thậm chí không kịp triệu hồi Tiên Vương Bất Diệt Chung.</p>
+                <p>May mắn thay, linh quang chợt lóe. Hắn vồ lấy mái tóc Vương Xung Tiêu, kéo y chắn trước người. Kẻ này mệnh số nghịch thiên, sao cũng không chết được, y chính là pháp bảo phòng ngự tốt nhất!</p>
+                <p>Quả nhiên, một cảnh tượng nghịch thiên xuất hiện! Thanh chủy thủ mang theo uy năng hủy diệt, lại lướt qua bên cạnh Vương Xung Tiêu. Trượt mục tiêu! Một vị Tam Tai Cảnh đường đường chính chính, ra tay trước mặt, lại bắn trượt!</p>
+                <p>Thổ Giới Đại Hiền đứng sững như trời trồng, trong mắt lóe lên vẻ hoang mang tột độ. Nữ Thủ Lĩnh cũng sững sờ, lẩm bẩm: &quot;Thiên hạ này, còn có chuyện như vậy sao?&quot;</p>
+                <p>Những kẻ chứng kiến cảnh này, trên trán đều hiện lên một chuỗi nghi vấn. Sau một thoáng trầm mặc ngắn ngủi, Nữ Thủ Lĩnh là người đầu tiên hoàn hồn, ánh mắt lóe lên tinh mang, dứt khoát tế xuất pháp tắc công kích về phía Thổ Giới Đại Hiền. Đồng thời quát: &quot;Mang Giới Thai đi!&quot;</p>
+                <p>Thổ Giới Đại Hiền hoàn hồn, làm sao còn dám xao nhãng vào Giang Phàm, giận dữ nghênh chiến Nữ Thủ Lĩnh, nói: &quot;Đuổi theo, đoạt lại Giới Thai cho ta!&quot;</p>
+                <p>Dặn dò xong các Hiền Giả bản địa của Thổ Giới, y lại chắp tay hướng về những Hiền Giả Thiên Ngoại đang khoanh tay đứng nhìn: &quot;Chư vị, xin hãy giúp Thổ Giới ta một tay. Nếu đoạt lại được Giới Thai, Thổ Giới sẽ mở cửa mười ngày, cung cấp cho chư vị tận tình hưởng lạc!&quot;</p>
+                <p>Nghe vậy, các Hiền Giả Thiên Ngoại mới mắt lộ vẻ tham lam, nhao nhao gia nhập. Đệ Tam Phi Đội chỉ còn tám vị Hiền Giả, làm sao chịu nổi sự truy sát của nhiều cường giả như vậy? Bọn họ không dám chần chừ, điều khiển chiến hạm lập tức rút lui.</p>
+                <p>Giang Phàm hơi chần chừ một lát. Giới Thai bị đoạt, Thổ Giới vô lực chống lại Hắc Ám Triều Tịch. Thậm chí muốn nương tựa vào thế giới khác cũng sẽ bị cự tuyệt. Chúng sinh trên đó khó thoát khỏi vận mệnh hủy diệt.</p>
+                <p>Nhưng, Thổ Giới đối đãi hắn như vậy, lẽ nào hắn còn phải lấy ân báo oán, giúp bọn họ đoạt lại Giới Thai sao?</p>
+                <p>&quot;Mong các ngươi có thể đoạt lại Giới Thai!&quot; Giang Phàm khẽ thở dài, ánh mắt hướng về phương vị thế giới kế tiếp.</p>
+                <p>Còn về Vương Xung Tiêu, Giang Phàm thuận tay quăng y trở lại Thổ Giới, khẽ cười lạnh: &quot;Vương huynh, chúc ngươi may mắn, mong ngươi thích món đại lễ ta để lại cho ngươi.&quot;</p>
+                <p>Ngay sau đó, hắn cởi bỏ lớp ngụy trang, khôi phục dung mạo Giang Phàm, thi triển Hư Không Vũ Y thuấn di rời đi.</p>
+                <p>Sau một chén trà. &quot;Xì...&quot; Phó Điệp đang trôi dạt trong hư vô bỗng giật mình tỉnh giấc. Nàng mở mắt, vô thức xoa xoa cánh tay, mơ hồ lẩm bẩm: &quot;Sao ta lại ở trong hư vô?&quot;</p>
+                <p>&quot;Khoan đã! Hai tên khốn kiếp đó!&quot; Nàng bật dậy, gương mặt tràn đầy nhục nhã. Mê huyễn chi thuật mà nàng tự hào, vậy mà không một lần thành công khống chế được, ngược lại, hai tên kia kẻ nào cũng diễn xuất tài tình hơn kẻ nào. Cuối cùng lại cùng nhau trở mặt, xem nàng như quả bóng mà đùa giỡn!</p>
+                <p>&quot;Thật là sỉ nhục tột cùng!&quot; Phó Điệp càng nghĩ càng giận. Lúc này, nàng đang ôm cánh tay bỗng cảm thấy có gì đó không đúng. Vai trơn tuột!</p>
+                <p>Cúi đầu nhìn xuống, đôi mắt hạnh của nàng trợn trừng, phát hiện toàn thân mình chỉ còn độc một chiếc yếm, tóc tai bù xù, ngay cả Dịch Dung Diện Mạc trên mặt cũng bị cạo sạch! Ngực nàng phập phồng kịch liệt, hai mắt phun lửa, phát ra tiếng thét chói tai điên cuồng vang vọng khắp hư vô: &quot;Giang Phàm! Vương Xung Tiêu! Hai tên súc sinh các ngươi!&quot;</p>
+                <p>Cùng lúc đó, tên súc sinh Vương Xung Tiêu tỉnh giấc. Không phải vì rơi từ trên trời xuống mà đau đớn, mà là những tiếng xì xào bàn tán xung quanh đã đánh thức y.</p>
+                <p>Mở mắt nhìn, hàng chục cái đầu lớn nhỏ vây quanh y, cười cợt đánh giá. Vương Xung Tiêu bật dậy, quát: &quot;Nhìn cái gì mà nhìn? Chưa từng thấy mỹ nam sao?&quot;</p>
+                <p>Một kỹ nữ vận hoa y, dùng quạt hoa che nửa mặt, cười duyên dáng nói: &quot;Mỹ nam thiếp gặp nhiều rồi, nhưng ngủ trần truồng giữa phố thì đây là lần đầu tiên đấy.&quot;</p>
+                <p>Hả? Vương Xung Tiêu cúi đầu nhìn, trước mắt tối sầm. Y vậy mà trần truồng nằm giữa trung tâm thành phố phồn hoa nhất của Thổ Giới!</p>
+                <p>&quot;Giang Phàm, ngươi ngay cả quần lót cũng không chừa cho ta!&quot; &quot;Ngươi còn là người sao?&quot; Vương Xung Tiêu vội vàng dùng linh khí che thân, đồng thời chửi rủa ầm ĩ.</p>
+                <p>Tuy nhiên, lần này y không quá tức giận. Bởi vì y đã làm bại hoại danh tiếng của Giang Phàm, coi như đã gỡ lại một ván trong số ít lần giao phong. Sau này y còn sẽ dùng lại chiêu cũ ở các thế giới khác, khiến Giang Phàm khó chịu mà không làm gì được.</p>
+                <p>Nghĩ đến đây, y vỗ vỗ mông đứng dậy, hừ lạnh: &quot;Giang Phàm, hãy tận hưởng món quà ta dành cho ngươi đi.&quot;</p>
+                <p>Ngay sau đó, y rẽ đám đông, ánh mắt hướng về Thiên Ngoại: &quot;Tính toán thời gian, tên kia cũng sắp đến rồi, ta nên đi tiếp ứng.&quot; Dứt lời, y vút lên trời cao.</p>
+                <p>Nhưng, vừa mới bay lên, y đã chạm mặt một đám Hiền Giả mặt mày như đưa đám. Chính là những Hiền Giả đã đi truy kích chiến hạm của Đệ Tam Phi Đội. Tốc độ của bọn họ trong hư vô, làm sao đuổi kịp đám hải tặc tự do ra vào? Đương nhiên là tay trắng trở về.</p>
+                <p>&quot;Uổng công một trận, chẳng vớt vát được gì.&quot;</p>
+                <p>&quot;Đáng ghét nhất vẫn là tên khốn Vương Xung Tiêu đó, nếu không có hắn, chúng ta còn có thể ở Thổ Giới vui vẻ thêm vài ngày.&quot;</p>
+                <p>&quot;Đúng vậy! Nhớ lại cái dáng vẻ hắn chỉ vào mũi chúng ta mà mắng, ta hận không thể rút gân lột da hắn!&quot;</p>
+                <p>&quot;Đừng hy vọng nữa, trời biết hắn giờ chạy đi đâu rồi.&quot;</p>
+                <p>Mọi người đang bàn tán, bỗng thấy Vương Xung Tiêu trần truồng đi tới. Ai nấy đều ngây người, có chút hoài nghi đôi mắt của mình. Vương Xung Tiêu tự mình dâng tới cửa sao?</p>
+                <p>Sau đó bọn họ mới hoàn hồn, nhao nhao xông tới Vương Xung Tiêu.</p>
+                <p>&quot;Tên khốn, ngươi còn dám lộ mặt?&quot;</p>
+                <p>&quot;Khi đuổi Viễn Cổ Cự Nhân, cắt đứt đường tài lộc của chúng ta, ngươi không phải rất ngông cuồng sao?&quot;</p>
+                <p>&quot;Hôm nay, chó mệnh của ngươi tận rồi!&quot;</p>
+                <p>Hả? Vương Xung Tiêu chớp chớp mắt, y đuổi Viễn Cổ Cự Nhân từ khi nào? Không phải chỉ có miễn chiến bài của Giang Phàm mới có thể đuổi Viễn Cổ Cự Nhân sao?</p>
+                <p>Khoan đã! Nghĩ đến Giang Phàm đã ngụy trang thành bộ dạng của mình, y hít vào một ngụm khí lạnh thấu xương. Giang Phàm đã đắc tội với tất cả cường giả của mấy thế giới xung quanh! Lại còn dùng danh nghĩa của y, Vương Xung Tiêu!</p>
+                <p>Y tức đến mức suýt nữa nứt toác tại chỗ, gầm lên: &quot;Giang Phàm, đồ chó chết nhà ngươi!&quot;</p>
+                <p>&quot;Ta muốn lấy răng trả răng, lấy mắt trả mắt!&quot;</p>
+                <p>Trong hư vô. Giang Phàm sau vài lần thuấn di đã dần rời xa Thổ Giới. Ngay khi sắp không còn thấy ánh sáng của Thổ Giới nữa, hư vô bỗng dậy sóng. Dường như có một vật thể khổng lồ đang đẩy không gian, lao thẳng tới.</p>
+                <p>Giang Phàm sắc mặt ngưng trọng: &quot;Lại là ai đến nữa đây?&quot;</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_9.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_9.html" class="page-btn">9</a>
+            <a href="page_10.html" class="page-btn current">10</a>
+            <a href="page_11.html" class="page-btn">11</a>
+            <span class="page-info">...</span>
+            <a href="page_17.html" class="page-btn">17</a>
+            <a href="page_11.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>
