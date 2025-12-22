@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 9">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 9</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_8.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="#" class="nav-link disabled">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_2127">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2127: Chó cắn chó</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm vỗ nhẹ Hư Không Vũ Y, một đường cấp tốc phi hành.</p>
+                <p>Bỗng nhiên, tâm thần hắn chợt động, dừng lại giữa hư không, khẽ chạm lên trán. Một luồng cảm giác nóng rực từ từ tiêu tán. Ánh mắt hắn lập tức ngưng trọng.</p>
+                <p>Là chữ &quot;Huyết&quot; của Loạn Cổ Huyết Hầu vừa lóe lên trong chốc lát! Hắn bấm ngón tay tính toán, kể từ khi Lang Nha điểm ấn ký hỏa diễm lên trán mình, đã hơn ba mươi ngày trôi qua. Khi ấy, Lang Nha từng nói, hiệu quả của nó chỉ có thể duy trì khoảng một tháng. Thời điểm này, vừa vặn là lúc hiệu lực kết thúc.</p>
+                <p>Điều khiến Giang Phàm càng thêm bất an là, nếu ấn ký &quot;Huyết&quot; xuất hiện giữa mi tâm, vậy có nghĩa là Loạn Cổ Huyết Hầu đã đến! Đối phương rất có thể sẽ dựa vào huyết ấn này để cảm nhận vị trí của hắn!</p>
+                <p>&quot;Quả nhiên là âm hồn bất tán!&quot; Giang Phàm nghiến răng, lập tức vận dụng niệm lực, thúc giục Hư Không Vũ Y đến cực hạn. Chỉ có như vậy, hắn mới có thể thoát khỏi sự truy sát của kẻ đó!</p>
+                <p>Nhưng vừa định rời đi, phía sau đã truyền đến tiếng gió rít gào, quay đầu nhìn lại, lại là một cơn lốc hư vô đang lao nhanh tới. Trong cơn lốc, Phong Lăng Tiêu tay cầm một lá cờ đen nhỏ uy áp cực mạnh, trên đó thêu ba chữ &quot;Phong Thần Lệnh&quot;.</p>
+                <p>&quot;Giới khí nào đây?&quot; Giang Phàm lộ vẻ kinh ngạc. Cơn lốc được thúc giục toàn lực, tốc độ trong hư vô không hề kém cạnh cường giả Nhị Tai Cảnh! Chỉ vài lần chớp mắt đã sát đến trước mặt.</p>
+                <p>Phong Lăng Tiêu quát lớn: &quot;Dựa vào Hư Không Vũ Y mà dám chơi trò hèn hạ với ta sao?&quot;</p>
+                <p>&quot;Ngươi đối với Tử Tước Nam Càn ta, quả thực chẳng biết gì!&quot;</p>
+                <p>&quot;Đây là Phong Thần Lệnh độc nhất của Nam Càn ta, có thể truy ngươi đến tận trời cao địa ngục!&quot;</p>
+                <p>Giang Phàm nhíu mày. Giờ phút này, hắn nào có thời gian dây dưa với Phong Lăng Tiêu!</p>
+                <p>&quot;Sao, đuổi kịp để thỉnh an ta à?&quot; Giang Phàm cười nhạo một tiếng, sau lưng hiện lên hư ảnh một lá đại kỳ.</p>
+                <p>Sắc mặt Phong Lăng Tiêu khẽ biến, quát: &quot;Ta há có thể để ngươi đắc thủ lần nữa?&quot; Hắn lấy ra một tấm gấm lụa màu vàng tươi dán lên ngực, cố gắng chống lại uy áp của Quán Quân Hầu.</p>
+                <p>Nào ngờ, hư ảnh sau lưng Giang Phàm chợt rút đi, Hư Không Vũ Y được thúc giục đến cực hạn, hắn trực tiếp dịch chuyển tức thời khỏi vị trí cũ. Hóa ra hắn chỉ là hư chiêu!</p>
+                <p>Phong Lăng Tiêu tức giận: &quot;Ngươi chạy thoát được sao?&quot; Lập tức điều khiển Phong Thần Kỳ, cực tốc truy đuổi, nhưng Hư Không Vũ Y được thúc giục toàn lực, tốc độ không hề kém cạnh Phong Thần Lệnh Kỳ. Rõ ràng Giang Phàm ngay trước mắt, nhưng lại không tài nào đuổi kịp. Điều này khiến Phong Lăng Tiêu càng thêm phẫn nộ!</p>
+                <p>Tuy nhiên. Điều khiến hắn bất ngờ là, một chiếc thuyền nhỏ toàn thân bốc cháy Băng Diễm, với tốc độ phi thường như sao băng đuổi trăng, đã vượt qua hắn. Trên mũi thuyền, có một lão giả mặt mũi băng lãnh, đang không tiếc giá nào mà rót pháp tắc chi lực vào trong thuyền nhỏ.</p>
+                <p>Chẳng bao lâu, đã thành công đuổi kịp Giang Phàm! Kẻ đến lại chính là Bạch Nham Hiền Giả, người phụng mệnh truy kích Giang Phàm! Sau ba ngày đường, cuối cùng cũng phát hiện ra Giang Phàm gần U Minh Giới.</p>
+                <p>&quot;Tiểu súc sinh! Ngươi chạy thoát được sao?&quot; Bạch Nham Hiền Giả vung tay áo, pháp tắc băng đạo Nhị Tai Cảnh kinh khủng đóng băng thiên địa. Ngay cả thời gian, cũng xuất hiện sự đình trệ ngắn ngủi.</p>
+                <p>Hư Không Vũ Y trên người Giang Phàm cũng bị ảnh hưởng nghiêm trọng, trong chớp mắt đã bị Băng Diễm Tiểu Chu đuổi kịp, hung hăng đâm tới hắn! Sắc mặt Giang Phàm khẽ biến, lại thêm một kẻ âm hồn bất tán! Kẻ đến lại là cường giả Nhị Tai Cảnh!</p>
+                <p>Xem ra phải động đến Thái Sơ Nhân Thiên Ngục, nếu không, cứ dây dưa thế này, hắn chắc chắn phải chết.</p>
+                <p>Nhưng, ngay khi Băng Diễm Tiểu Chu sắp đâm tới, nó lại lướt qua phía trên Giang Phàm, chặn đứng đường đi của hắn. Bạch Nham Hiền Giả cũng không có ý định ra tay ngay lập tức, mà ánh mắt tham lam nhìn chằm chằm Giang Phàm.</p>
+                <p>Hắn liếc nhìn Phong Lăng Tiêu đang đuổi sát phía sau, lộ ra vẻ trêu tức: &quot;Tiểu tử, kẻ thù của ngươi cũng không ít nhỉ?&quot;</p>
+                <p>&quot;Có cần lão phu cứu ngươi một mạng không?&quot;</p>
+                <p>Ánh mắt Giang Phàm lóe lên, nói: &quot;Lão già, ngươi nhìn trúng ta cái gì?&quot; Nghe giọng điệu của hắn, không giống như chỉ đơn thuần muốn đòi lại nửa tòa Giới Thai.</p>
+                <p>Bạch Nham Hiền Giả vuốt râu nói: &quot;Ta muốn viên Long Châu của ngươi...&quot; Hắn dừng lại một chút, ánh mắt càng thêm nóng bỏng: &quot;Ta còn muốn thân thể của ngươi!&quot;</p>
+                <p>Hít! Có bóng ma bị lão già Băng Tâm ức hiếp, hắn theo bản năng ôm lấy mông, vội vàng nói: &quot;Lão già, ngươi nhìn nhầm người rồi!&quot;</p>
+                <p>&quot;Nhà ta không có cong!&quot;</p>
+                <p>Bạch Nham Hiền Giả mặt lạnh tanh, quát: &quot;Ngươi đang nghĩ gì vậy?&quot;</p>
+                <p>&quot;Ta nói là, muốn thân thể của ngươi để đoạt xá!&quot;</p>
+                <p>Thì ra là vậy? Giang Phàm thở phào một hơi, vỗ vỗ ngực, trấn an nỗi sợ hãi trong lòng, oán trách: &quot;Ngươi nói sớm đi, làm ta sợ chết khiếp!&quot;</p>
+                <p>&quot;Thì ra chỉ là muốn đoạt xá, có gì to tát đâu?&quot; So với việc bị người khác nhòm ngó, việc bị lão già nhòm ngó càng khiến hắn sợ hãi hơn.</p>
+                <p>Bạch Nham Hiền Giả mặt đen sầm nói: &quot;Lão phu hôm nay cứu ngươi một mạng, giúp ngươi đuổi Phong Lăng Tiêu đi.&quot;</p>
+                <p>&quot;Ngươi hồn phách rời khỏi thân thể này, tự mình đi đoạt xá khác, nếu không, ngươi sẽ hình thần câu diệt trong tay Phong Lăng Tiêu.&quot;</p>
+                <p>&quot;Thế nào?&quot;</p>
+                <p>Giang Phàm nhìn Phong Lăng Tiêu, rồi lại nhìn Bạch Nham Hiền Giả, thần sắc ngưng trọng nói: &quot;Trước có hổ, sau có sói, xem ra Giang Phàm ta hôm nay khó thoát khỏi cái chết rồi.&quot;</p>
+                <p>&quot;Được, Bạch Nham tiền bối, chỉ cần ngươi đuổi Phong Lăng Tiêu đi, đạo thể này của ta sẽ tặng cho ngươi!&quot;</p>
+                <p>Bạch Nham Hiền Giả cười khẩy, mỉa mai: &quot;Giang Phàm, còn muốn chơi trò vặt với ta sao?&quot;</p>
+                <p>&quot;Kế sách &#039;đuổi hổ nuốt sói&#039; đừng hòng khoe khoang trước mặt lão phu.&quot;</p>
+                <p>&quot;Ngươi bây giờ lập tức rời khỏi thân thể, ta sẽ bảo vệ linh hồn ngươi rời đi!&quot;</p>
+                <p>Cái gì? Giang Phàm lộ vẻ kinh ngạc, thần sắc biến đổi kịch liệt, tỏ ra vô cùng do dự và không cam lòng.</p>
+                <p>Bạch Nham Hiền Giả lạnh nhạt nói: &quot;Lão phu đã nhận lợi ích của ngươi, tự nhiên sẽ bảo hộ ngươi đến cùng.&quot;</p>
+                <p>&quot;Yên tâm đi!&quot;</p>
+                <p>Giang Phàm suy nghĩ kỹ lưỡng, sau đó mới hạ quyết tâm, nghiến răng nói: &quot;Được! Ta tin ngươi một lần!&quot;</p>
+                <p>&quot;Nhưng xin cho phép ta mang theo một số thứ!&quot; Hắn nắm lấy Thiên Lôi Thạch, chuyển những thứ bên trong vào không gian trữ vật. Long Châu, Công Đức Thần Châu, Huyền Thiên Chiến Giáp, Giới Khí Vạn Thổ Chi Tâm, vân vân.</p>
+                <p>Phong Lăng Tiêu đứng một bên, khóe miệng treo nụ cười châm chọc, trong mắt tràn đầy vẻ trêu ngươi. Hắn không ngăn cản hai người giao dịch, bởi vì Giang Phàm mất đi đạo thể, chính là sự trả thù tốt nhất đối với Giang Phàm. Hắn vui vẻ thấy điều đó thành hiện thực.</p>
+                <p>Không ngờ, trên người Giang Phàm lại có nhiều trọng bảo đến vậy. Đến mức, ngay cả một Tử Tước Nam Càn như hắn cũng lộ ra vẻ nóng bỏng trong mắt.</p>
+                <p>Sắc mặt Bạch Nham Hiền Giả khẽ biến, quát: &quot;Được rồi được rồi, muốn đi thì mau đi, lát nữa sẽ không đi được đâu!&quot; Nhiều thứ tốt như vậy bị lộ ra, ai thấy mà không phát điên? Lát nữa e rằng không tránh khỏi một trận chiến chính diện với Phong Lăng Tiêu.</p>
+                <p>Giang Phàm vô cùng luyến tiếc nói: &quot;Được! Đạo thể này còn những thứ dư thừa đều để lại cho ngươi, xin ngươi nhất định phải cản hắn lại cho ta!&quot;</p>
+                <p>&quot;Ta đi đây!&quot;</p>
+                <p>Khoảnh khắc tiếp theo. Hắn nhắm mắt lại, tại chỗ mất đi dao động linh hồn. Sinh mệnh khí tức trên người cũng nhanh chóng suy yếu!</p>
+                <p>Giang Phàm lại dứt khoát từ bỏ đạo thể như vậy sao? Bạch Nham Hiền Giả hơi sững sờ, nhưng không kịp nghĩ nhiều, quả quyết cách không chộp lấy đạo thể của Giang Phàm.</p>
+                <p>Phong Lăng Tiêu quát: &quot;Những thứ này đều là của ta! Cút ngay!&quot; Hắn điều khiển Phong Thần Lệnh lao tới, cố gắng đánh bật Bạch Nham Hiền Giả.</p>
+                <p>Nhưng, Bạch Nham Hiền Giả dù sao cũng là cường giả Nhị Tai Cảnh, đâu phải kẻ tầm thường? Pháp tắc ngập trời tuôn ra, phá hủy cơn lốc, và mang theo sát ý trí mạng diệt đi đạo thể của hắn. Một tia độc ác tràn ngập trong mắt Bạch Nham Hiền Giả. Nhiều trọng bảo như vậy, hắn há có thể để người khác truyền ra ngoài?</p>
+                <p>Phong Lăng Tiêu tức giận: &quot;Gan to bằng trời, dám mưu sát Tử Tước Nam Càn?&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2128">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2128: Phong Thần Lệnh Kỳ Diệu Dụng</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Hắn gầm lên một tiếng, xé toang hắc bào trên người. Chỉ thấy từ cổ trở xuống, toàn thân hắn là một khối dịch đen kịt như mực! Bạch Nham Hiền Giả kinh hãi, lập tức nhận ra quang tử của mình đang hộ thể.</p>
+                <p>Từng xúc tu đen quỷ dị xuyên thủng cánh tay Bạch Nham Hiền Giả, vật chất sền sệt bí ẩn thừa cơ tràn vào cơ thể y. Bạch Nham Hiền Giả quả quyết chấn đứt cánh tay ấy, ôm vết thương đoạn chi, mặt đầy sát ý: “Hay lắm, lão phu muốn lĩnh giáo thần thông của Nam Càn!”</p>
+                <p>Y thi triển đại thuật càng thêm kinh khủng, Phong Lăng Tiêu như lâm đại địch, kích hoạt toàn bộ dịch thể sền sệt quỷ dị trong cơ thể. Hai người điên cuồng đại chiến trong hư vô. Vô số mảnh vỡ xiềng xích pháp tắc, vụn đại thuật, dư ba lực lượng hòa quyện vào nhau, tạo thành từng đợt sóng xung kích cuồn cuộn lan tỏa khắp bốn phương.</p>
+                <p>Không lâu sau:</p>
+                <p>Phong Lăng Tiêu lùi lại trong một tiếng kêu đau đớn, nửa thân dịch thể sền sệt bị tổn hại, khí tức tán loạn. Giữa hai người, rốt cuộc vẫn cách biệt một đại cảnh giới. Phong Lăng Tiêu trầm giọng nói: “Ngươi nhất định muốn tranh đoạt với ta sao?”</p>
+                <p>Lực lượng pháp tắc quanh Bạch Nham Hiền Giả cũng yếu đi không ít so với trạng thái đỉnh phong, y hừ lạnh: “Tranh đoạt? Ngươi hãy nghĩ xem mình có thể sống sót không đã!” Vừa nói, dưới chân y hiện ra tiểu thuyền Băng Diễm, cực tốc lao tới.</p>
+                <p>Sắc mặt Phong Lăng Tiêu khẽ biến, quả quyết tế ra Phong Thần Lệnh, điều khiển lốc xoáy chuẩn bị bỏ chạy.</p>
+                <p>Ngay khi hai người sắp sửa đại chiến lần nữa.</p>
+                <p>Một luồng thanh âm uy nghiêm, vang vọng trong hư vô. “Hai tên ngốc, ai da…”</p>
+                <p>Trong lời nói ẩn chứa uy áp mênh mông, lốc xoáy quanh Phong Lăng Tiêu lập tức vỡ tan, hắn rơi ra ngoài. Tiểu thuyền Băng Diễm dưới chân Bạch Nham Hiền Giả cũng đột ngột vỡ nát, y lộ vẻ kinh hãi: “Đại Hiền?” “Ngươi, ngươi là Tuyết Cơ Đại Hiền của U Minh Giới?”</p>
+                <p>Hai người nhìn quanh, chợt phát hiện bên cạnh “di thể” của Giang Phàm, không biết từ lúc nào đã có một phụ nhân áo xanh dung mạo đoan trang tuyệt mỹ đang ngồi xổm. Nàng véo mũi Giang Phàm, cười nói: “Được rồi, đừng giả vờ nữa.”</p>
+                <p>Lời vừa dứt.</p>
+                <p>Trong túi sinh mệnh chứa Độc Thân đặt ở thắt lưng Giang Phàm, đôi mắt Độc Thân nhắm lại. Sau đó, Bản Tôn mở mắt. Giang Phàm vô ngữ nói: “Để các ngươi chó cắn chó, ta lát nữa ra nhặt tiện nghi không phải tốt hơn sao?”</p>
+                <p>Cái gì? Sắc mặt Bạch Nham Hiền Giả và Phong Lăng Tiêu đồng loạt biến đổi.</p>
+                <p>Phong Lăng Tiêu có cảm giác bị trêu đùa nhục nhã, quát: “Ngươi cố ý khiêu chiến chúng ta tự tương tàn!” Hắn cuối cùng cũng hiểu ra nguyên nhân Giang Phàm bại lộ gia sản!</p>
+                <p>Bạch Nham Hiền Giả thì nhìn Giang Phàm và Tuyết Cơ Đại Hiền thân mật, lòng kinh hãi, vội vàng chắp tay: “Vãn bối phụng mệnh Đại Hiền hành sự, nếu có chỗ đắc tội, xin Tuyết Cơ Đại Hiền lượng thứ.”</p>
+                <p>Đây là muốn đổ hết tội lỗi cho Đại Hiền Băng Giới sao? Tuyết Cơ Đại Hiền liếc mắt nhìn tới, trong mắt lóe lên sát cơ, năm ngón tay từ từ nắm lại về phía Bạch Nham Hiền Giả. Hư vô vốn đã tối tăm quanh y, trở nên càng thêm đen kịt, hóa ra là sụp đổ thành hắc động!</p>
+                <p>Bạch Nham Hiền Giả ở trong đó, đạo khu lập tức bị ép đến máu tươi bắn tung tóe, xương cốt vỡ vụn.</p>
+                <p>“Nhớ nhung bảo vật của Phàm Đệ ta thì thôi đi, còn muốn đoạt mạng hắn?” “Dù cho Đại Hiền Băng Giới ngươi có mặt ở đây, ta cũng chiếu sát ngươi không tha!” Tuyết Cơ Đại Hiền lạnh giọng nói.</p>
+                <p>Nàng đã xuất hiện gần đó từ sớm, chứng kiến hành vi của hai người. Bạch Nham Hiền Giả này hoàn toàn có thể dùng từ ti tiện để hình dung, không thể giữ lại! Bạch Nham Hiền Giả kinh hoàng tột độ, nói: “Tuyết Cơ Đại Hiền tha mạng, ta nguyện làm nô cho U Minh Giới, chỉ cầu cho ta một đường sống.”</p>
+                <p>Tuyết Cơ Đại Hiền nhìn Giang Phàm, nói: “U Minh Giới ta không cần nô bộc, Phàm Đệ có muốn không?” Giang Phàm vẻ mặt ghét bỏ nói: “Ai muốn một lão già nô bộc chứ?” “Mạng hắn ta không cần, Công Đức Thần Bi để lại cho ta đi, đó là thứ tốt!”</p>
+                <p>Hắn còn đang suy tính, sau này có thể tu luyện ra các phân thân khác. Tuyết Cơ Đại Hiền trong lòng đã rõ, năm ngón tay đột nhiên siết chặt.</p>
+                <p>“Bốp!”</p>
+                <p>Ngay cả tiếng kêu thảm cuối cùng cũng không kịp phát ra, Bạch Nham Hiền Giả cảnh giới Nhị Tai Cảnh đã tan vỡ thành một màn huyết vụ, biến mất trong hắc động! Duy chỉ có hai tòa Công Đức Thần Bi vàng óng, nguyên vẹn được tách ra, bay về bên Giang Phàm.</p>
+                <p>“Cảm ơn Tuyết Cơ Tỷ!” Giang Phàm mắt sáng rực nói.</p>
+                <p>Không hổ là Tam Tai Cảnh, không chỉ chém giết Nhị Tai Cảnh dễ như trở bàn tay, mà còn có thể tùy tiện tước đoạt Công Đức Thần Bi của đối phương. Nếu là Giang Phàm, giết chết một kẻ Sơ Kỳ Nhất Tai Cảnh có lẽ có thể. Nhưng muốn dễ dàng đoạt được Công Đức Thần Bi của đối phương như vậy, hoàn toàn không thể.</p>
+                <p>Tuyết Cơ Đại Hiền nói: “Còn chưa hết đâu.”</p>
+                <p>Nàng ánh mắt lóe lên, lạnh lùng nhìn về phía Phong Lăng Tiêu: “Giết ngươi ở đây, Nam Càn sẽ không biết đâu!” Biểu cảm Phong Lăng Tiêu cứng đờ, đáy mắt lóe lên một tia kiêng kỵ, không còn dám kiêu ngạo như trước. Hắn nhìn sâu vào Giang Phàm một cái, không cam lòng chắp tay nói: “Tuyết Cơ Đại Hiền, đắc tội rồi, vãn bối xin cáo từ.”</p>
+                <p>Tuyết Cơ Đại Hiền khẽ móc ngón tay, Phong Thần Lệnh trong tay Phong Lăng Tiêu bị câu tới. Phong Lăng Tiêu kinh ngạc nói: “Tuyết Cơ Đại Hiền, đây là pháp khí bất truyền của Nam Càn ta!” Hắn đã phải xin Hoàng thất Nam Càn mới có được một lá Phong Thần Lệnh Kỳ quý giá. Nếu làm mất, sau khi trở về không thể giao phó, hậu quả vô cùng nghiêm trọng.</p>
+                <p>Tuyết Cơ Đại Hiền lạnh lùng nhìn hắn: “Nói thêm một chữ nữa, ngươi cũng ở lại!” Phong Lăng Tiêu mí mắt giật giật, hằn học liếc nhìn Giang Phàm một cái, rồi đành phải lui đi.</p>
+                <p>Tuyết Cơ Đại Hiền đưa lá cờ nhỏ màu đen cho Giang Phàm, nói: “Cái này cũng tặng ngươi.” “Ngươi tuy không thiếu vật trốn chạy, nhưng Phong Thần Lệnh Kỳ không chỉ là lợi khí để chạy đường.” “Nó có thể điều động mọi vật thể vô hình lưu động giữa trời đất, từ gió tự nhiên nhỏ bé, đến phong bạo hư vô, thậm chí là khí lưu hủy diệt do cường giả Tam Tai Cảnh giao chiến tạo ra.” “Sử dụng đúng cách, không chỉ có thể bảo mệnh, còn có thể giết chết kẻ địch mạnh mẽ.”</p>
+                <p>Giang Phàm lập tức hiểu được diệu dụng của Phong Thần Lệnh Kỳ! Nếu gần đó có lực lượng xung kích mạnh mẽ, hắn hoàn toàn có thể điều động chúng, mượn lực này tiêu diệt kẻ địch! Nếu lực lượng điều động đủ lớn, thì kẻ địch bị chém giết cũng sẽ mạnh mẽ đến mức vượt ngoài sức tưởng tượng. Hắn mắt đầy cảm kích đón lấy, nói: “Cảm ơn Tỷ!”</p>
+                <p>Tuyết Cơ Đại Hiền quả thực đã tặng hắn một trọng bảo vô cùng quý giá. Tuyết Cơ Đại Hiền như trút được gánh nặng, dịu dàng cười: “Ngươi đã giúp ta nhiều như vậy, tặng ngươi chút quà thì sao chứ?” “Sau này gặp phải kẻ địch không đối phó được, cứ đến U Minh Giới.” “Ai dám ức hiếp ngươi, Tỷ diệt hắn!”</p>
+                <p>Giang Phàm khẽ động lòng. Thân ở chư thiên, có thể gặp được một người đối xử với mình như vậy, là trời cao ưu ái hắn sao? Không, là Khốc Khí Đại Tửu Tế tên tra nam chết tiệt kia có ánh mắt quá độc! Một nữ nhân tốt như vậy lại bị hắn làm hư.</p>
+                <p>“Cảm ơn Tuyết Cơ Tỷ!” Giang Phàm đứng dậy, hơi kiêng kỵ nhìn về phía sau, nói: “Tỷ mau chóng về U Minh Giới, gần đây đừng ra ngoài.” Lúc này Loạn Cổ Huyết Hầu, cũng không biết đã đến đâu rồi.</p>
+                <p>Tuyết Cơ Đại Hiền không nghe ra lời cảnh báo trong đó, nói: “Ta hiểu rồi.” “Tỷ không làm chậm trễ đường đi của ngươi nữa, dọc đường bảo trọng.”</p>
+                <p>Giang Phàm chắp tay, tiễn Tuyết Cơ Đại Hiền mỉm cười hóa thành hư ảnh tan biến. Hắn thì quả quyết thúc giục Hư Không Vũ Y, lao nhanh về phía Thổ Giới.</p>
+                <p>Ngoài U Minh Giới, trời đất một màu huyết hồng. Một con bạch cốt chiến mã đạp trên huyết nguyệt, đứng sừng sững ngoài giới.</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_8.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_5.html" class="page-btn">5</a>
+            <a href="page_6.html" class="page-btn">6</a>
+            <a href="page_7.html" class="page-btn">7</a>
+            <a href="page_8.html" class="page-btn">8</a>
+            <a href="page_9.html" class="page-btn current">9</a>
+            <a href="#" class="page-btn disabled">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>
