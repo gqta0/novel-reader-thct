@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 19">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 19</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_18.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="#" class="nav-link disabled">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_2177">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2177: Tâm Kiếm</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Liễu Khuynh Tiên nhìn Tao Lão Đầu Tử trước mặt, trong lòng không khỏi thấp thỏm. Lão gia hỏa này, liệu có đưa ra yêu cầu quá đáng nào không?</p>
+                <p>Nhưng Chuẩn Tiên Thuật hiếm có khó tìm, lại là loại dành riêng cho Tổ Đạo, e rằng khắp chốn chư thiên vạn giới cũng chỉ có một bản này. Nếu bỏ lỡ, sẽ không còn cơ hội nào khác.</p>
+                <p>Nàng cắn răng nói: “Yêu cầu chính đáng không trái với ý nguyện của ta, ta có thể đáp ứng, bằng không ta thà không cần!” Vì một bộ công pháp mà hiến thân, đó chẳng phải là bỏ gốc lấy ngọn sao? Nàng không hồ đồ đến thế.</p>
+                <p>Giang Phàm lắc đầu: “Yên tâm, lão hủ sẽ không đưa ra yêu cầu quá phận, chỉ là hiện tại vẫn chưa nghĩ ra. Đợi khi nào cần, ta sẽ yêu cầu ngươi thực hiện.”</p>
+                <p>Đôi mắt tinh anh của Liễu Khuynh Tiên sáng lên: “Được, giao dịch thành công!”</p>
+                <p>Thế là, Giang Phàm tại chỗ chép thêm một bản. Một bản cho Liễu Khuynh Tiên, một bản cho Độc Lang Hiền Giả. Đồng thời thu về một lời hứa và một trăm Đại Càn Thần Tệ.</p>
+                <p>Độc Lang Hiền Giả nắm Chuẩn Tiên Thuật trong tay, trong lòng thầm khó chịu! Theo lý mà nói, giá trị của thuật này đổi lấy một trăm Đại Càn Thần Tệ là không lỗ, nhưng tại sao hắn cứ cảm thấy nghẹn khuất?</p>
+                <p>Dựa vào cái gì mà Liễu Khuynh Tiên chỉ cần nói suông là có được Chuẩn Tiên Thuật, còn hắn lại phải trả tiền?</p>
+                <p>Điều khiến ánh mắt hắn thêm sắc lạnh là Ngọc Nhan lúc này đang tò mò nhìn chằm chằm Giang Phàm, rõ ràng bị nội hàm tùy tay ném ra Chuẩn Tiên Thuật của lão làm cho kinh ngạc. Hắn không phục, chẳng lẽ bản thân lại thua kém một kẻ Hóa Thần Cảnh?</p>
+                <p>“Đến lượt ta!” Giọng hắn không nhanh không chậm, nhưng khiến người ta không thể phớt lờ. Là người từng được đề danh Thần Bí Hiền Giả, ai dám xem thường nội hàm của hắn?</p>
+                <p>Độc Lang Hiền Giả phất tay áo, một chiếc chiến ủng cổ xưa tàn phá hiện ra giữa không trung. Toàn thân nó đen kịt, trên đó vẫn còn vương lại vết máu khô cạn, tỏa ra từng trận Thánh Uy...</p>
+                <p>Đúng vậy, chính là Thánh Uy! Ánh mắt Giang Phàm sắc lẹm. Đây là loại ủng gì? Vết máu lưu lại ít nhất cũng đã vạn năm, vậy mà vẫn còn Thánh Uy tồn tại!</p>
+                <p>Nếu có được nó, Câu Quyết Bút có thể tái sử dụng! Huống hồ, vết máu khô đối với chiến ủng mà nói chỉ là tạp chất. Thứ thực sự quý giá chính là bản thân chiếc ủng.</p>
+                <p>“Ngươi thật đúng là bỏ được vốn liếng!” Kiếm Vô Sầu đôi mắt tỏa ra tinh quang mãnh liệt. Sự khát khao tràn ngập trong mắt.</p>
+                <p>Phù Vân Hiền Giả cũng nheo mắt lại, thân hình đột ngột ngồi thẳng: “Thật bất ngờ, lại là một trọng bảo ngoài dự liệu!”</p>
+                <p>Trước có Táng Thiên Thánh Thú, sau có chiến ủng thần bí. Hơn nữa, chiếc chiến ủng này còn khiến bà kinh ngạc hơn cả Táng Thiên Thánh Thú! Bởi vì, chiếc ủng này cực có khả năng là pháp bảo của một vị nhân vật phi phàm nào đó!</p>
+                <p>Các vị Hiền Giả khác cũng lần lượt ném tới ánh mắt khác thường, rõ ràng cũng cảm nhận được sự bất phàm cực độ của nó.</p>
+                <p>Độc Lang Hiền Giả nhìn quanh bốn phía, nói: “Chiếc ủng này, chính là chiến ủng năm xưa của Đại Càn Quốc Quân!”</p>
+                <p>Lời vừa thốt ra, cả động phủ rơi vào một mảnh tĩnh mịch. Ngay cả Giang Phàm đồng tử cũng co rụt lại như kim châm!</p>
+                <p>Ai cơ? Đại Càn Quốc Quân?</p>
+                <p>Xoạt xoạt xoạt — Trên mười mấy tòa linh sơn, liên tiếp bộc phát ra từng đạo khí tức hỗn loạn, khiến động phủ vang lên những tiếng nổ không dứt.</p>
+                <p>Đại Càn Quốc Quân, đó là tồn tại bực nào? Từng ngự trị bát phương, khai sáng Đại Càn Thần Quốc, là Nhân Gian Võ Thần! Người đàn ông thống trị thiên địa trong thời đại huy hoàng rực rỡ đó!</p>
+                <p>Tuy thân xác đã diệt, nhưng bóng dáng vĩ đại vẫn sống mãi trong ký ức huyết mạch của vô số sinh linh. Chiếc ủng trước mắt, lại là chiến ủng năm xưa của vị ấy!</p>
+                <p>Gạt bỏ đặc tính của bản thân chiếc ủng, chỉ riêng giá trị sưu tầm đã là vô giá chi bảo!</p>
+                <p>Phù Vân Đại Hiền khẽ hít một hơi, nói: “Độc Lang, ngươi định trao đổi thứ gì?”</p>
+                <p>Các vị Hiền Giả lúc này mới bình tĩnh lại. Di vật của Đại Càn Quốc Quân, phải là trọng bảo gì mới đổi được?</p>
+                <p>Giang Phàm cũng đè nén sự kích động trong lòng. Độc Lang Hiền Giả đa phần giống Kiếm Vô Sầu, chủ yếu là phô trương nội hàm, chưa chắc đã thực sự muốn đổi đi.</p>
+                <p>Quả nhiên, Độc Lang Hiền Giả chắp tay sau lưng nói: “Ta chỉ đổi một thứ duy nhất! Đó chính là Thần Minh Huyết Mạch!”</p>
+                <p>Lời này vừa ra, trong động phủ lại im lặng một hồi. Tiếp đó, vài tiếng thở dài truyền đến từ mấy tòa linh sơn. Không ngoài dự đoán, thứ Độc Lang Hiền Giả cầu, tuyệt đối không đơn giản!</p>
+                <p>Giang Phàm cũng khẽ gật đầu. Độc Lang Hiền Giả bị Tu La Thánh Tử đá văng khỏi Thần Đô Thánh Quyển, tự nhiên muốn giết ngược trở lại. Mà Thần Minh Huyết Mạch trong truyền thuyết, chính là có năng lực nghịch thiên cải mệnh này.</p>
+                <p>Phù Vân Đại Hiền tâm tình gợn sóng, nói: “Thu lại đi, vật này vượt quá phạm vi giao dịch của chúng ta.”</p>
+                <p>Thần Minh Huyết Mạch, ai có thể sở hữu vật này chứ? Độc Lang Hiền Giả cũng không thấy bất ngờ, hôm nay mang ra chỉ là để đánh tiếng. Tương lai tự khắc sẽ có người tìm đến hắn.</p>
+                <p>Ngọc Nhan lầm bầm: “Tên này là cố ý khoe khoang phải không? Chúc hắn ra khỏi cửa bị người ta cướp sạch!”</p>
+                <p>Giang Phàm lắc đầu, nói: “Hắn đã dám mang ra, tự nhiên có bản lĩnh không sợ bất kỳ cường giả nào đoạt lấy.”</p>
+                <p>Lần trước hai người giao thủ, đôi bên rõ ràng đều chưa dùng đến át chủ bài. Độc Lang Hiền Giả dám tiến vào Vạn Độc Giới, nhất định có thủ đoạn cực kỳ mạnh mẽ! Muốn đoạt lấy chiếc ủng đó, độ khó không nhỏ.</p>
+                <p>“Đến lượt ta!” Một vị Thần Bí Hiền Giả lấy ra một thanh kiếm toàn thân trong suốt, tựa như được ngưng tụ từ chất lỏng tinh khiết.</p>
+                <p>Vật này vừa xuất hiện, Liễu Khuynh Tiên mắt lộ tinh quang, một tia kích động tràn ngập trong mắt.</p>
+                <p>Kiếm Khinh Mi cũng lộ vẻ an tâm: “Tin tức quả nhiên không sai, thanh Tâm Kiếm này sẽ xuất hiện trong buổi giao dịch này.”</p>
+                <p>“Nếu Khuynh Tiên muội muội có được, và thành công luyện hóa nó, hành động kế thừa Kiếm Thánh Kiếm Đạo tiếp theo chắc chắn sẽ thuận buồm xuôi gió.”</p>
+                <p>“Đại ca, xin hãy nhất định ra tay đoạt lấy!”</p>
+                <p>Kiếm Vô Sầu liếc xéo Liễu Khuynh Tiên, hừ lạnh: “Nàng ta chẳng phải rất tin tưởng lão đầu tử kia sao? Cứ để đối phương mua cho là được!”</p>
+                <p>Kiếm Khinh Mi cảm thấy bất lực. Tâm Kiếm là một kiện Chuẩn Giới Khí, còn được mệnh danh là đỉnh cấp Chuẩn Giới Khí trong vạn kiếm chi tâm. Giá bán cao ngất ngưởng, khó lòng ước lượng.</p>
+                <p>Kiếm Vô Sầu mua còn thấy vô cùng chật vật, huống chi là một kẻ Hóa Thần Cảnh?</p>
+                <p>Liễu Khuynh Tiên sau phút kích động ngắn ngủi, ánh mắt lại trở nên ảm đạm. Đến một trăm Đại Càn Thần Tệ nàng còn không gom đủ, lấy tư cách gì để mua Tâm Kiếm?</p>
+                <p>Nàng cúi đầu, không nhìn nữa, để tránh bản thân thất vọng.</p>
+                <p>“Bán thế nào?” Tuy nhiên, ngay khi nàng định từ bỏ, lão đầu bên cạnh lại lên tiếng hỏi.</p>
+                <p>Liễu Khuynh Tiên giật mình: “Lão tiên sinh, ngài...”</p>
+                <p>Giang Phàm cười không nói, tĩnh lặng nhìn về phía vị Thần Bí Hiền Giả kia. Đối phương thấy là Giang Phàm – người từng lấy ra Chuẩn Tiên Thuật, nên cũng không xem thường, mà nói:</p>
+                <p>“Ta muốn một viên Bát Phẩm Thiên Đan! Ngoài thứ đó ra, tuyệt không trao đổi!”</p>
+                <p>Nghe thấy lời này, Ngọc Nhan lầm bầm: “Ngươi thà đòi cơ duyên Thánh Nhân luôn đi cho rồi!”</p>
+                <p>“Bát Phẩm Thiên Đan, đó là loại vô song đại đan mà chỉ có Thánh Nhân mới dùng tới, số lượng tồn thế chỉ đếm trên đầu ngón tay.”</p>
+                <p>“Một viên hoàn chỉnh, ít nhất có thể đổi được ba kiện Chuẩn Giới Khí!”</p>
+                <p>Các vị Hiền Giả phản ứng bình thường với Tâm Kiếm, đặc biệt là sau khi nghe báo giá cần một viên Bát Phẩm Thiên Đan, càng không có ai đứng ra trao đổi.</p>
+                <p>Thậm chí một số linh sơn còn phát ra tiếng cười nhạo. Rõ ràng cũng cho rằng dùng Tâm Kiếm đổi Bát Phẩm Thiên Đan là chuyện viển vông.</p>
+                <p>Vị Thần Bí Hiền Giả kia đại khái biết không dễ lừa gạt, tự tìm cho mình một bậc thang đi xuống, nói: “Được rồi, không yêu cầu hoàn chỉnh, chỉ cần còn năm thành dược lực là được.”</p>
+                <p>Tuy nhiên, mọi người vẫn lạnh nhạt, hoàn toàn không có ý định giao dịch.</p>
+                <p>Thần Bí Đại Hiền đợi một lát, khẽ thở dài: “Nếu đã không ai cần, vậy ta...”</p>
+                <p>“Chậm đã!”</p>
+                <p>“Bát Phẩm Thiên Đan, ta có!”</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_18.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_15.html" class="page-btn">15</a>
+            <a href="page_16.html" class="page-btn">16</a>
+            <a href="page_17.html" class="page-btn">17</a>
+            <a href="page_18.html" class="page-btn">18</a>
+            <a href="page_19.html" class="page-btn current">19</a>
+            <a href="#" class="page-btn disabled">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>
