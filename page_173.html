@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 173">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 173</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_172.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_174.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_861">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 861: Thượng Cổ Liệu Thương Đan</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nhưng hắn đã mở miệng đòi lại, hắn đành cầm lấy Hồi Xuân Đan, trả lại cho Giang Phàm.Cầm lại linh đan, Giang Phàm quay người rời đi.</p>
+                <p>Đợi khi hắn đi xa, Hoàng hậu khẽ cau mày: “Yêu Hoàng, người Nhân tộc này là ai? Ngươi vừa rồi vì sao lại ngăn ta hỏi chuyện?”</p>
+                <p>Nàng đang hỏi lai lịch Giang Phàm, Yêu Hoàng lại ngắt lời nàng, bảo Mộc Tử Ngư đưa hắn đi.Khi Giang Phàm đi khuất, Bắc Hải Yêu Hoàng mới nói: “Là bạn của Mộc Tử Ngư đưa đến, tên là Giang Phàm. Chính là người đã đánh bại Bạch Sơ ngay tại chỗ.”</p>
+                <p>Hoàng hậu lập tức lộ vẻ không vui: “Thì ra là bạn của tiểu tiện nhân đó! Hèn chi lại vô lễ đến vậy! Đan dược đã cho đi rồi còn đòi lại. Thật không sợ mất mặt Nhân tộc sao!”</p>
+                <p>Bắc Hải Yêu Hoàng cau mày, khẽ trách: “Thôi đi, bớt nói hai câu! Người ta dù sao cũng là đến thăm Thái tử, đừng quá cay nghiệt.”</p>
+                <p>Việc hắn cho Giang Phàm đi là có nguyên do. Bạch Sơ là tộc nhân thuộc dòng họ của Hoàng hậu. Chuyến đi thăm yêu tộc Đại Lục lần này, kết quả Bạch Sơ lại bị độ hóa.Người chủ sự và bốn vị phó sứ phụ trách hộ tống, Hoàng hậu há có thể không trách cứ họ sao? Nàng từng kiến nghị tống giam Ngư Thanh Huyền và bốn vị phó sứ kia vào thiên lao.Nhưng Bắc Hải Yêu Hoàng đã xá miễn cho họ. Lần này, không thể trách Ngư Thanh Huyền và bọn họ bảo vệ không chu toàn. Pháp Ấn Kim Cương lợi hại đến mức nào? Ở Thái Thương Đại Châu, hắn là cao thủ hàng đầu.Ngay cả hắn tự mình hộ tống, cũng chưa chắc đã bảo vệ được Bạch Sơ, huống chi Ngư Thanh Huyền và những người khác? Hoàng hậu có tức giận cũng không dám tìm đến Bạch Mã Tự, tự nhiên liền trút giận lên Ngư Thanh Huyền và bốn vị phó sứ kia.</p>
+                <p>“Ngươi chỉ biết bảo vệ người ngoài!” Hoàng hậu tức giận nói: “Nếu không phải bọn chúng, Bạch Sơ sẽ bị độ hóa sao? Không có Bạch Sơ bị độ hóa, làm gì có chuyện Thần Tuyền? Hoàng nhi làm sao đến nông nỗi này? Nếu hoàng nhi chết, ta nhất định phải bắt năm người bọn chúng chôn cùng!”Nói rồi, nước mắt nàng chợt lóe lên trong khóe mắt, đầy vẻ hận ý.</p>
+                <p>Bắc Hải Yêu Hoàng sắc mặt lạnh đi.</p>
+                <p>Hai vợ chồng sắp cãi nhau, một tiểu cung nữ cung kính dẫn một Nhân tộc Nguyên Anh đến. Lão ta đã tám mươi tuổi, mặc một bộ trường bào trắng hơi bạc màu vì giặt giũ. Da hơi ngăm đen, thần sắc không tính là hiền từ, nhưng cũng chẳng có vẻ ác.Thuộc dạng người ném vào đám đông sẽ chẳng ai nhìn đến lần thứ hai. Nhưng lão ta chính là y đạo Nguyên Anh nổi tiếng lừng lẫy của Thái Thương Đại Châu, Bách Thảo Thượng Nhân. Từng chữa bệnh cho một cường giả Hóa Thần Cảnh, nhờ đó mà danh tiếng lừng lẫy, có danh xưng Thần Y số một Thái Thương Đại Châu.</p>
+                <p>Bắc Hải Yêu Hoàng cúi mình thật sâu, vạn phần cảm kích: “Cơ mỗ bái tạ Bách Thảo Thượng Nhân đã không quản vạn dặm xa xôi đến trợ giúp!”</p>
+                <p>Bách Thảo Thượng Nhân xách theo hòm thuốc, xua tay nói: “Lời xã giao thì không cần nhiều. Vết thương của Thái tử quý tộc hơi phiền phức.”</p>
+                <p>Lão đã nhìn thấy Bắc Hải Thái tử đang nằm trên giường, sắc mặt lập tức trở nên ngưng trọng. Lão tách Yêu Hoàng, Hoàng hậu ra, vội vàng đi đến trước giường. Lão đặt hòm thuốc xuống, lập tức thi triển thần thông, vệt qua hai mắt. Trong mắt, lập tức lóe lên luồng ánh sáng xanh biếc kỳ dị, quét qua cơ thể Thái tử. Chỉ trong chốc lát, lão lắc đầu, cầm lại hòm thuốc, không có ý định tiếp tục chữa trị.</p>
+                <p>Sự kỳ vọng to lớn vừa trỗi dậy trên khuôn mặt Bắc Hải Yêu Hoàng, hóa thành lo lắng.“Thượng Nhân, khuyển tử…”Bách Thảo Thượng Nhân khẽ lắc đầu: “Y đạo chữa bệnh chứ không chữa người chết. Vết thương của Thái tử đã không còn nằm trong phạm vi y thuật nữa. Trong cơ thể không một chỗ xương cốt nào còn nguyên vẹn, ngũ tạng lục phủ đều bị sét đánh hủy hoại, trái tim cũng suy kiệt vỡ nát. Sinh cơ hoàn toàn không còn, chỉ còn sót lại hai ba hơi thở thoi thóp. Ta ra tay, cũng chỉ là để kéo dài mạng sống của hắn thêm một lát mà thôi. Không có ý nghĩa gì. Chi bằng để hắn sớm kết thúc, còn có thể tránh bớt thống khổ giày vò.”</p>
+                <p>Cái gì?Hoàng hậu mềm nhũn bên giường, đẫm lệ nắm lấy bàn tay bê bết máu thịt của Thái tử. “Hoàng nhi!” “Ô… ô…”</p>
+                <p>Bắc Hải Yêu Hoàng đầy hy vọng, khóe mắt lại trào ra nước mắt, bắt đầu nức nở khóc. Nguyên tưởng rằng, mời được Bách Thảo Thượng Nhân đến là có thể cứu được con trai, không ngờ, ngay cả lão ta cũng đành bó tay.</p>
+                <p>Bách Thảo Thượng Nhân đã quen với những cảnh tượng như vậy, bình tĩnh nói: “Thương thế Thiên Kiếp, từ trước đến nay rất dễ dẫn đến tử vong. Ta đã tiếp nhận không ít người bị Thiên Kiếp đánh trọng thương, nhưng có thể cứu sống được, không quá một nửa. Thái tử vận khí không tốt. Yêu Hoàng xin hãy nén bi thương.”Trong lòng lão khẽ thở dài. Ngay từ trước khi Thái tử đột phá, lão đã nhận được lời cầu xin từ Bắc Hải Yêu tộc, mời lão đến để phòng ngừa vạn nhất. Nhưng vết thương này quá nặng.</p>
+                <p>Bắc Hải Yêu Hoàng nước mắt như mưa, còn nhiều hơn cả nước mắt của Hoàng hậu, nghẹn ngào nói: “Thượng Nhân, thật sự không còn một chút biện pháp nào sao? Y thuật không được, vậy các loại linh đan thì sao?”Bách Thảo Thượng Nhân hờ hững nói: “Y đạo cấp cao, từ lâu đã là y đan bất phân gia. Ta chính là một Tam Tinh Hồn Sư. Nếu có linh đan có thể chữa khỏi, há lại không lấy ra sao? Nhiều vết thương của võ giả cấp cao đã không còn là châm cứu, hay thuốc thông thường có thể điều trị được. Cần phải phối hợp với linh đan có dược lực mạnh hơn. Không có năng lực của Hồn Sư làm phụ trợ, rất khó trở thành một y giả lợi hại.”</p>
+                <p>Nghe đến đây, Bắc Hải Yêu Hoàng không thể nhịn được nữa, bắt đầu khóc lớn, quỳ gối trước mặt lão ta. Ánh mắt nhìn về phía hòm thuốc chưa từng được mở của Bách Thảo Thượng Nhân: “Thượng Nhân, cầu xin ngươi nghĩ thêm cách nào đó đi. Bắc Hải ta nguyện trả bất cứ giá nào, chỉ cần có thể đổi lại tính mạng của nhi tử ta.”</p>
+                <p>Bách Thảo Thượng Nhân bật cười. Hóa ra Bắc Hải Yêu Hoàng cho rằng lão ta vẫn còn thủ đoạn nhưng không chịu lấy ra, muốn nhân cơ hội đòi lợi ích. Lão lập tức hừ lạnh một tiếng: “Ta cứu không được. Các ngươi có thể cầu một cường giả Hóa Thần, dùng tinh huyết cứu hắn. Hoặc tìm được một trong Cửu Đại Liệu Thương Linh Đan Thượng Cổ cũng được.”</p>
+                <p>Bắc Hải Yêu Hoàng mặt đầy lệ ngân. Bắc Hải làm sao tìm được cường giả Hóa Thần, lại làm sao mời được bọn họ dùng tinh huyết cứu giúp? Còn về Cửu Đại Liệu Thương Linh Đan Thượng Cổ, đã là thời thượng cổ rồi, nghĩa là đã sớm thất truyền. Thời đại ngày nay, làm sao còn có được?Bắc Hải Yêu Hoàng khổ sở nói: “Linh đan chữa thương thượng cổ, chúng ta biết tìm ở đâu? Dù có tìm được tin tức, nhi tử ta cũng đã tắt thở rồi.”Bách Thảo Thượng Nhân khẽ lắc đầu: “Các loại linh đan thượng cổ khác, có lẽ thật sự không có chỗ tìm. Nhưng trên vùng Đại Lục phía sau các ngươi, gần đây ta có nghe được một số tin đồn vặt. Có một loại linh đan thượng cổ đã xuất hiện trên chiến trường. Lần này không quản vạn dặm xa xôi đến Bắc Hải, một là để chuẩn bị chữa trị vết thương cho Thái tử các ngươi khi độ kiếp. Hai là nhân tiện đến vùng Đại Lục kia xem tin đồn có đúng sự thật không.”</p>
+                <p>Đại Lục có sao? Mắt Bắc Hải Yêu Hoàng khẽ sáng lên, rồi lập tức lại tối sầm. Dù thật sự có thì sao chứ? Thái tử căn bản không thể đợi được đến khi hắn tìm thấy. Chỉ e rằng, hắn còn chưa đặt chân lên Đại Lục, Thái tử đã tắt thở rồi.Thấy hắn như vậy, Bách Thảo Thượng Nhân không nói thêm gì nữa. Lão xách hòm thuốc nói: “Các ngươi hãy nén bi thương. Sau này, các ngươi cũng có thể đến Đại Lục gần đó tìm loại linh đan kia. Để lại một viên trong tay, sau này có thể ngăn chặn những chuyện tương tự xảy ra.”</p>
+                <p>Bắc Hải Yêu Hoàng khóc không thành tiếng. Hoàng hậu đẫm lệ hỏi: “Thượng Nhân. Xin hỏi viên đan dược này tên là gì, trông như thế nào?”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_862">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 862: Lý lịch lại được làm mới</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Bách Thảo Thượng nhân suy tư: “Ta cũng chỉ từng thấy trong sách cổ.”</p>
+                <p>“Lớn nhỏ như ngón tay cái của trẻ sơ sinh, màu sắc toàn thể u lục.”</p>
+                <p>“Tên gọi là… Hồi Xuân Đan!”</p>
+                <p>“Cáo từ.”</p>
+                <p>Hắn không quay đầu lại, sải bước rời đi.</p>
+                <p>Lần này hắn vốn muốn mượn việc chữa khỏi Bắc Hải Thái tử, để xin một cơ hội tiến vào Hóa Thần di tích. Đáng tiếc, lại đi một chuyến vô ích.</p>
+                <p>Hắn không hề chú ý tới.</p>
+                <p>Bắc Hải Yêu Hoàng phía sau lưng hắn dần dần ngừng tiếng khóc, không dám tin mà hỏi: “Vừa rồi Thượng nhân nói đan dược trị thương thượng cổ đó tên là gì?”</p>
+                <p>Hoàng hậu mắt lệ nhòa, đáp: “Hồi Xuân Đan.”</p>
+                <p>“Sao vậy?”</p>
+                <p>Bắc Hải Yêu Hoàng toàn thân kịch chấn.</p>
+                <p>Viên đan dược Giang Phàm cho hắn, chẳng phải cũng gọi Hồi Xuân Đan sao? Nhớ lại hình dáng của nó, lớn nhỏ như ngón tay cái của trẻ sơ sinh, toàn thể u lục. Mà Giang Phàm, lại đến từ mảnh đất phía sau kia.</p>
+                <p>Hắn vội vàng lau nước mắt, run rẩy bò dậy rồi vọt ra ngoài.</p>
+                <p>Hoàng hậu nước mắt lưng tròng gọi: “Sắp được gặp con trai lần cuối rồi.”</p>
+                <p>“Ngươi còn đi đâu nữa?”</p>
+                <p>Bắc Hải Yêu Hoàng cực kỳ kích động nói: “Hồi Xuân Đan! Đi tìm Hồi Xuân Đan đây!”</p>
+                <p>“Viên linh đan Giang tiểu hữu vừa tặng, chính là Hồi Xuân Đan!”</p>
+                <p>Hoàng hậu đột nhiên bật dậy, sắc mặt đại biến. Cẩn thận hồi tưởng, viên linh đan bị Giang Phàm lấy lại, chẳng phải đúng là hình dáng như Bách Thảo Thượng nhân đã miêu tả sao?</p>
+                <p>Nàng mừng rỡ khôn xiết. Nàng cũng vội vàng đuổi theo.</p>
+                <p>***</p>
+                <p>Khách điện.</p>
+                <p>“Mộc tỷ tỷ, ngươi đã chọc giận Hoàng hậu rồi sao?” Thấy Mộc Tử Ngư sắc mặt vẫn không tốt lắm, Giang Phàm bèn hỏi.</p>
+                <p>Mộc Tử Ngư rót cho Giang Phàm một chén trà, trên mặt nàng tràn đầy sầu khổ: “Bạch Sơ là hậu bối của Hoàng hậu nhất mạch.”</p>
+                <p>Chỉ một câu này, Giang Phàm liền hiểu ra. Chẳng trách Hoàng hậu lại có thái độ tệ như vậy với Mộc Tử Ngư. Cũng chẳng trách Bắc Hải Yêu Hoàng vội vàng đưa hắn ra ngoài.</p>
+                <p>Nếu Hoàng hậu biết hắn là do Mộc Tử Ngư dẫn đến, thì cũng khó tránh khỏi vài lời chua ngoa, khiến hắn cũng phải chịu khó xử theo.</p>
+                <p>“Chỉ có thể trách các ngươi xui xẻo, đã đụng phải Pháp Ấn Kim Cương.”</p>
+                <p>“Dù đổi ai tới, thực ra cũng không thể giữ được Bạch Sơ.” Giang Phàm an ủi nàng.</p>
+                <p>Mộc Tử Ngư cười khổ: “Ta thà rằng Yêu Hoàng phạt ta một trận, để Hoàng hậu cùng trưởng bối của Bạch Sơ bớt giận.”</p>
+                <p>Ngay lúc hai người đang trò chuyện. Bên ngoài khách điện truyền đến tiếng cười nói.</p>
+                <p>“Thượng nhân đại giá quang lâm, hữu thất viễn nghênh, hữu thất viễn nghênh a!”</p>
+                <p>Một hải yêu tộc trung niên y phục bất phàm, trên đỉnh đầu có vài cái gai, khí tức mạnh mẽ, đang nhiệt tình dẫn một vị khách đến đây.</p>
+                <p>Vừa thấy hắn, Mộc Tử Ngư lập tức căng thẳng. Nàng muốn rời khỏi khách điện, nhưng đã không kịp nữa rồi. Chỉ có thể lặng lẽ đứng bên cạnh Giang Phàm.</p>
+                <p>“Ngươi sợ hắn sao?” Giang Phàm kinh ngạc hỏi.</p>
+                <p>Mộc Tử Ngư cay đắng nói: “Bạch Hải Lang, một trong bảy Đại Yêu Vương Bắc Hải, kẻ thù không đội trời chung của Ngư Chủ Sứ.”</p>
+                <p>“Người trong tộc của Bạch Sơ.”</p>
+                <p>Thân phận này… Mỗi một điều đều khiến Mộc Tử Ngư cảm thấy khó giải quyết.</p>
+                <p>Giang Phàm tò mò nhìn sang. Bạch Hải Lang này xưng hô trong miệng là Thượng nhân. Chắc hẳn là một cường giả Nguyên Anh của Nhân tộc nhỉ?</p>
+                <p>Rất nhanh. Đối phương đã bước vào bên trong khách điện.</p>
+                <p>Thiếu mất cánh tay phải, mắt phải đeo một miếng che mắt màu đen. Lại là một cường giả Nguyên Anh thân thể tàn khuyết.</p>
+                <p>Giang Phàm khẽ híp mắt. Lặng lẽ sờ vào đôi mắt song đồng đang giấu trong vạt áo. Kẻ đến không phải ai khác. Chính là Tà Đồng Thượng nhân!</p>
+                <p>Đúng là hắn. Tà Đồng Thượng nhân khó khăn lắm mới lừa được ấn ký Hóa Thần di tích, lẽ nào lại có đạo lý vứt bỏ không dùng?</p>
+                <p>Mà Tà Đồng Thượng nhân sau khi bước vào khách điện, ánh mắt quét qua, cũng phát hiện ra sự tồn tại của Giang Phàm, lập tức nhận ra, lạnh giọng nói: “Là ngươi!”</p>
+                <p>Giang Phàm cười vẫy vẫy tay: “Tà Đồng Thượng nhân!”</p>
+                <p>“Nhân sinh hà xứ bất tương phùng, tay ngươi sao thế?”</p>
+                <p>“Mắt lại sao thế?”</p>
+                <p>Tà Đồng Thượng nhân giận dữ: “Tiểu tử!”</p>
+                <p>“Ngươi còn mặt mũi nhắc tới sao?”</p>
+                <p>Hắn rơi vào nông nỗi này, chẳng phải là nhờ Giang Phàm ban tặng sao? Không có cái lực lượng kỳ quái cuối cùng của hắn, kéo ta từ trên trời xuống, ta có thể bị chặt đứt cánh tay sao? Mà nếu không mất cánh tay, ta có thể bị Tây Hải Yêu Hoàng dễ dàng móc mắt ra sao? Tên này mới chính là kẻ đầu sỏ gây tội!</p>
+                <p>Khóe miệng Mộc Tử Ngư khẽ giật. Giang Phàm vừa chọc giận Yêu Hoàng xong, sao lại chọc tới một vị Nguyên Anh Nhân tộc nữa?</p>
+                <p>Nàng nửa chắn Giang Phàm phía sau lưng, trầm giọng nói: “Tà Đồng Thượng nhân, nơi đây là Bắc Hải Hoàng Cung.”</p>
+                <p>Tà Đồng Thượng nhân chỉ trừng mắt nhìn chằm chằm Giang Phàm. Hắn tới đây là để tiến vào Hóa Thần di tích, tự nhiên biết không thể tùy tiện động thủ tại đây.</p>
+                <p>Bạch Hải Lang khẽ nhíu mày. Tà Đồng Thượng nhân chính là khách quý của Tam Thanh Sơn. Lần này hắn đến thăm, sao có thể lơ là, chậm trễ.</p>
+                <p>Lại nhìn thấy là Mộc Tử Ngư, hắn liền trầm mặt: “Láo xược!”</p>
+                <p>“Ngươi nói chuyện với Thượng nhân kiểu gì vậy?”</p>
+                <p>Mộc Tử Ngư mím môi. Tự thấy có lỗi với Bạch Thị nhất mạch, nàng bèn không lên tiếng.</p>
+                <p>Bạch Hải Lang liếc xéo nàng một cái. Hắn chắp tay với Tà Đồng Thượng nhân: “Thượng nhân, bớt giận.”</p>
+                <p>“Loại không biết điều này, ta sẽ tâu lên Yêu Hoàng, đem nàng đuổi tới biên ải.”</p>
+                <p>“Để tránh làm Bắc Hải chúng ta mất mặt.”</p>
+                <p>Tà Đồng Thượng nhân liếc xéo nàng. Phát hiện nàng đang nói chuyện với Giang Phàm, liền không mặn không nhạt nói: “Ngưỡng cửa Bắc Hải các ngươi cao thật đấy.”</p>
+                <p>“Nguyên Anh tới, cũng phải nghe một tiểu hải yêu quát tháo.”</p>
+                <p>Bạch Hải Lang lập tức cảm thấy không ổn. Đây là chọc giận Tà Đồng Thượng nhân rồi. Vốn dĩ đã oán hận Mộc Tử Ngư, nàng lại càng thêm bất mãn.</p>
+                <p>“Mộc Tử Ngư! Ngươi cố ý đúng không?”</p>
+                <p>“Hại Bạch Sơ chưa đủ, còn muốn gây đại họa cho Bắc Hải sao?”</p>
+                <p>“Còn không mau qua đây quỳ xuống nhận lỗi với Tà Đồng Thượng nhân?”</p>
+                <p>Mộc Tử Ngư mím môi. Trong lòng có chút hoảng loạn. Hai bàn tay nhỏ bé nắm chặt vạt váy, trông có vẻ luống cuống không biết làm gì.</p>
+                <p>Nàng đâu có quát tháo? Chỉ là nhắc nhở Tà Đồng Thượng nhân một chút thôi! Ai ngờ một vị Đại Nguyên Anh như vậy, lại làm lớn chuyện đến thế, làm khó dễ một tiểu bối như nàng.</p>
+                <p>“Tai điếc rồi sao?”</p>
+                <p>Bạch Hải Lang lạnh giọng quát: “Nếu chọc Thượng nhân tức giận bỏ đi, ngươi có biết Hoàng hậu sẽ phạt ngươi thế nào không?”</p>
+                <p>“Toàn bộ tộc quần của các ngươi đều sẽ bị liên lụy!”</p>
+                <p>Nếu chỉ mình nàng chịu phạt, Mộc Tử Ngư còn có thể chịu đựng được. Nhưng vừa nghe nói sẽ liên lụy đến tộc nhân, nàng liền không thể kiên trì được nữa. Nàng ngân nha cắn chặt, liền nhấc chân định bước tới.</p>
+                <p>Chỉ là… Vừa động, nàng đã bị Giang Phàm kéo lấy cánh tay, nhẹ nhàng kéo trở lại.</p>
+                <p>Giang Phàm nhẹ nhàng đặt chén trà xuống, thản nhiên nói: “Bạch Yêu Vương cứ yên tâm đi.”</p>
+                <p>“Tà Đồng Thượng nhân khó khăn lắm mới lừa được ấn ký Hóa Thần di tích.”</p>
+                <p>“Ngươi có đuổi hắn đi, hắn cũng sẽ không đi đâu.”</p>
+                <p>Hắn đâu có không nhìn ra, bọn họ nhắm vào không phải Mộc Tử Ngư, mà là hắn Giang Phàm? Chẳng có lý do gì hắn lại rụt rè ẩn mình phía sau, mà để Mộc Tử Ngư phải chịu sỉ nhục.</p>
+                <p>Bạch Hải Lang lạnh lùng nhìn Giang Phàm: “Ngươi là người nào?”</p>
+                <p>Giang Phàm chỉ vào chén trà trên bàn: “Không nhìn ra sao?”</p>
+                <p>“Khách của Bắc Hải ngươi.”</p>
+                <p>“Mộc Tử Ngư chiêu đãi ta đàng hoàng tử tế, ngươi lại lên giọng quát mắng nàng, còn bắt nàng quỳ xuống.”</p>
+                <p>“Sao, Tà Đồng Thượng nhân là khách, còn ta thì không sao?”</p>
+                <p>Bạch Hải Lang hồ nghi đánh giá Giang Phàm: “Bạch Mỗ mắt kém, ngươi là vị nào?”</p>
+                <p>Mộc Tử Ngư thấy Giang Phàm đứng ra che chở cho mình, vô cùng cảm động. Nàng bèn lấy hết dũng khí nói: “Người đang đứng trước mặt ngươi là huynh đệ kết nghĩa của Đông, Nam, Tây Tam Hải Yêu Hoàng.”</p>
+                <p>“Thừa Long Khoái Húc của Thương Khung Yêu Hoàng!”</p>
+                <p>“Đệ tử đắc ý nhất của Thiên Cơ Các Chủ!”</p>
+                <p>“Thiên Kiêu mạnh nhất Nhân tộc!”</p>
+                <p>“Giang Phàm!”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_863">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 863: Một Kiếm Trấn Yêu Vương</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm khẽ giật giật mí mắt.</p>
+                <p>Đệ tử đắc ý nhất của Thiên Cơ Các chủ? Lời này, đã hỏi qua Thiên Cơ Các chủ chưa?</p>
+                <p>Mộc Tử Ngư đưa cho Giang Phàm một ánh mắt ý bảo hắn cứ yên tâm. Ra ngoài phiêu bạt, thân phận đều do bản thân tạo ra. Đừng hoảng.</p>
+                <p>Bạch Hải Lang bị trấn trụ. Chỉ riêng thân phận đệ đệ kết nghĩa của Tam Hải Yêu Hoàng đã khiến hắn kinh hồn bạt vía. Thân phận này, có chút động trời.</p>
+                <p>Tà Đồng Thượng nhân nheo mắt lại. Đệ đệ kết nghĩa của Tam Hải Yêu Hoàng? Dựa vào một tiểu nhân tộc sao? Những Yêu Hoàng khác thì hắn không rõ, nhưng Cựu Mộng Yêu Hoàng là nữ nhân bảo thủ như vậy, sao có thể tùy tiện kết giao quan hệ?</p>
+                <p>&quot;Bạch Yêu Vương, ngươi không phải bị dọa sợ rồi đấy chứ?&quot;</p>
+                <p>Bạch Hải Lang hoàn hồn. Chuyện này khiến hắn có chút cưỡi hổ khó xuống. Hắn không muốn đắc tội với bất kỳ ai. Nhưng bị ép vào thế khó, chỉ có thể đưa ra lựa chọn.</p>
+                <p>Hắn cắn răng nói: &quot;Giang công tử, nơi này không có chuyện của ngươi. Ta đang giáo huấn tộc nhân của ta.&quot;</p>
+                <p>Nói đoạn, hắn hung tợn trừng Mộc Tử Ngư. &quot;Lời tương tự, ta không muốn lặp lại! Đến đây! Đừng lấy khách nhân làm lá chắn.&quot;</p>
+                <p>Mộc Tử Ngư khẽ cắn răng, cố gắng giằng thoát khỏi Giang Phàm. Nhưng Giang Phàm bây giờ đã không còn như xưa. Làm sao nàng có thể dễ dàng giằng thoát?</p>
+                <p>Giang Phàm thản nhiên nhìn Bạch Hải Lang, nói: &quot;Ngươi muốn lấy lòng Tam Thanh Sơn, có thể tự mình quỳ xuống, muốn quỳ thế nào thì quỳ thế đó. Ta còn xem ngươi là một nửa người biết co biết duỗi. Nhưng vừa muốn lấy lòng, vừa không muốn tự mình quỳ xuống, lại ép tộc nhân của mình chịu đựng sự sỉ nhục này thay cho mình, thì đó thực sự không phải là thứ gì tốt đẹp!&quot;</p>
+                <p>Tam Thanh Sơn là thứ gì, Hải Yêu tộc chẳng lẽ không rõ sao? Lại còn chèn ép tộc nhân của mình để lấy lòng đối phương như vậy? Không biết nên nói đáng thương, hay nên nói Bạch Hải Lang không có ý tốt.</p>
+                <p>&quot;Ai lấy lòng ai?&quot; Bạch Hải Lang cuống lên. Bởi vì đã nói trúng tim đen. Giang Phàm đã nói đến mức công kích cá nhân, hắn còn có thể khách khí sao?</p>
+                <p>&quot;Tiểu tử! Ta mặc kệ ngươi là khách nhân nào! Ở Bắc Hải của ta, công khai lăng mạ một vị Yêu Vương, ngươi không có tư cách này! Làm phiền ngươi rời đi! Đa tạ.&quot;</p>
+                <p>Hừ! &quot;Nói sự thật cũng bị coi là lăng mạ sao? Vậy ngươi làm ra những chuyện sỉ nhục, thì tính là gì?&quot;</p>
+                <p>Giang Phàm vẫn hiên ngang ngồi đó, đưa chén trà đã cạn cho Mộc Tử Ngư đang sốt ruột: &quot;Trà đã uống hết rồi, cũng không biết rót thêm một chút sao? Ngươi tiếp đãi khách nhân như vậy, cẩn thận ta mách Yêu Hoàng.&quot;</p>
+                <p>Bạch Yêu Vương đã hạ lệnh đuổi khách rồi, Giang Phàm sao còn nghĩ đến chuyện uống trà? Mộc Tử Ngư sắp khóc đến nơi. Nàng vừa nhận lấy chén trà rót nước, vừa nhanh chóng nghĩ cách.</p>
+                <p>&quot;Đừng căng thẳng,&quot; Giang Phàm trấn định nói. &quot;Hắn không đuổi được ta đâu. Hoàng hậu đến cũng không được!&quot;</p>
+                <p>Trong tay hắn đang nắm giữ đan phương Hàn Thiền Tịch Diệt Đan. Bởi vì đã trao cho Tam Hải, Bắc Hải tự nhiên cũng có thể được trao. Có đan phương này, Hoàng hậu dù có để ý Bạch Sơ đến mấy, cũng nên phân biệt rõ nặng nhẹ chứ?</p>
+                <p>&quot;Hừ!&quot; Bạch Hải Lang tức đến bật cười: &quot;Ta không đuổi được ngươi sao?&quot;</p>
+                <p>Hắn nổi giận. Trước mặt Tà Đồng Thượng nhân của Tam Thanh Sơn, nếu ngay cả một tiểu bối dám mạo phạm hắn mà hắn còn không giải quyết được, sau này làm sao tiếp tục có được sự tin tưởng của Tam Thanh Sơn?</p>
+                <p>&quot;Ta không muốn động thủ với khách nhân. Vậy nên, tiểu tử, ngươi có ba hơi thở để tự mình rời khỏi khách điện. Nếu không, ta sẽ đích thân mời ngươi đi.&quot;</p>
+                <p>Nghe vậy, Mộc Tử Ngư lòng bàn tay run lên, làm nước đổ ra ngoài chén trà. Giang Phàm nhẹ nhàng nắm lấy cánh tay nàng, giúp nàng giữ vững để tiếp tục rót trà.</p>
+                <p>Hắn không biểu cảm nói: &quot;Để lấy lòng Tà Đồng Thượng nhân mà đuổi khách nhân khác đi. Ừm. Vậy ta xin lĩnh giáo xem, Bắc Hải các ngươi &#039;mời&#039; người khác đi như thế nào!&quot;</p>
+                <p>Đang yên đang lành ở khách điện. Hai kẻ này vừa xuất hiện, liền liên tục được đà lấn tới. Hết bắt người này quỳ xuống xin lỗi, lại bắt người kia rời đi. Hắn cũng chẳng cần phải khách khí nữa.</p>
+                <p>Bạch Hải Lang sắc mặt trầm xuống, hừ lạnh nói: &quot;Vậy là ngươi tự tìm!&quot;</p>
+                <p>Mắt hắn lóe lên, trước tiên trừng Mộc Tử Ngư. &quot;Đều là do cái thứ không biết sống chết như ngươi gây chuyện. Ta sẽ giáo huấn ngươi trước rồi nói sau!&quot;</p>
+                <p>Hắn muốn động thủ với Mộc Tử Ngư trước, thông qua võ lực mạnh mẽ để uy hiếp Giang Phàm rời đi, tránh không cẩn thận làm khách nhân trọng thương. Yêu Hoàng ít nhiều cũng sẽ trách tội. Dọa cho đi là tốt nhất.</p>
+                <p>Hắn tùy tiện vung tay, đó chính là một kích mạnh mẽ của cường giả Kết Đan Cảnh tầng chín Viên Mãn. Một đạo thủy ba vô hình, bắn ra những tia nước dài, ầm ầm đánh về phía Mộc Tử Ngư. Tu vi Kết Đan Cảnh tầng tám của nàng, trước một kích như vậy, căn bản không có chút sức chống cự nào. Nhưng nếu nàng né tránh, sẽ liên lụy đến Giang Phàm. Nàng chỉ có thể cắn chặt răng, dốc sức chống đỡ. Cảm nhận được sự trùng kích lạnh lẽo vô cùng, lòng nàng đắng chát. Cú này, e là sẽ trọng thương.</p>
+                <p>Xẹt!</p>
+                <p>Đột nhiên, một đạo lôi kiếm cháy sém mạnh mẽ chiếm trọn tầm nhìn của nàng. Chỉ thấy một thanh lôi kiếm khổng lồ dài hai trăm trượng, xuất hiện giữa không trung. Không chỉ nghiền nát thủy ba của Bạch Hải Lang, mà còn hất văng hắn bay ra ngoài khách điện. Y phục toàn thân, bị lôi điện thiêu đốt đến cháy xém lỗ chỗ. Trên bề mặt cơ thể toàn là vết cháy sém.</p>
+                <p>Bạch Hải Lang kinh ngạc vô cùng: &quot;Lôi đạo thần thông? Bất Diệt Nhận của Vạn Kiếp Thánh Điện?&quot;</p>
+                <p>Mộc Tử Ngư kinh ngạc nhìn Giang Phàm. Trong lòng nàng chợt có chút ngẩn ngơ. Khi ở Yêu Hoàng Điện ngày trước, Giang Phàm và Bạch Sơ (Kết Đan Cảnh tầng tám), còn phải thi triển nhiều thủ đoạn mới có thể thắng. Bây giờ, hắn lại có thể một kích đánh lui một vị Yêu Vương Kết Đan Cảnh tầng chín Viên Mãn. Sự biến hóa này, quả thực là long trời lở đất!</p>
+                <p>Tà Đồng Thượng nhân liếc xéo lòng bàn tay Giang Phàm, nơi vẫn còn lưu lại lôi khí. Hắn từng chứng kiến Giang Phàm giao thủ với Trọc Âm, tự nhiên biết sự lợi hại của tiểu tử này. Nếu nghiêm túc mà nói, Bạch Hải Lang chưa chắc đã là đối thủ của tiểu tử này.</p>
+                <p>Nhưng khóe môi hắn khẽ cong lên, tiếp tục khiêu khích nói: &quot;Bạch Hải Lang. Bắc Hải các ngươi không được rồi. Một khách nhân vô lễ cũng không đuổi đi được. Chậc chậc.&quot;</p>
+                <p>Bạch Hải Lang cuống lên. Hắn lập tức quát lớn về phía xa: &quot;Tất cả mau đến đây! Có kẻ đang gây rối trong hoàng cung!&quot;</p>
+                <p>Trên thực tế, không cần hắn hô hoán. Các cường giả trong hoàng cung đều đã cảm nhận được dao động lớn, đang vội vã chạy đến đây.</p>
+                <p>Rất nhanh, tổng cộng bốn vị Yêu Vương Kết Đan Cảnh tầng chín Viên Mãn đã đến. Mặc dù, bọn họ không có tư lịch thâm hậu, thực lực cường đại như Ngư Thanh Huyền, nhưng cũng là Kết Đan Cảnh tầng chín Viên Mãn chân chính. Cộng thêm Bạch Hải Lang, năm người liên thủ, ngay cả Ngư Thanh Huyền cũng khó mà chống đỡ nổi.</p>
+                <p>Giang Phàm liếc xéo Tà Đồng Thượng nhân một cái, tên gia hỏa này, là cố ý gây sự, để Giang Phàm gây ra động tĩnh lớn, sau đó dẫn đến Yêu Hoàng trừng phạt hắn.</p>
+                <p>Nhưng, hắn sẽ phải thất vọng rồi. Giang Phàm cũng không có ý ra ngoài nghênh chiến. Hắn chỉ nâng tay lên, lực lượng lôi điện trong cơ thể cuồn cuộn dâng đến đỉnh phong, hướng về năm vị Yêu Vương hung hăng chém xuống.</p>
+                <p>Xẹt xẹt——</p>
+                <p>Một đạo lôi kiếm khủng bố dài tám trăm trượng, theo thế chưởng của hắn từ trên trời giáng xuống.</p>
+                <p>Rầm——</p>
+                <p>Khách điện bị chém thành hai nửa! Mặt đất bị chém ra một vết lôi ngân dài tám trăm trượng. Bạch Hải Lang và bốn vị Yêu Vương, thì bị đánh bay văng tứ tán. Bọn họ mặt lộ vẻ kinh hãi. Một kích này, đã gần bằng một kích của Tả Đạo Nguyên Anh rồi! Trong số những cường giả Kết Đan Cảnh tầng chín Viên Mãn, cũng chỉ có những kẻ đã độ kiếp, có tư lịch cực sâu mới có thể chống chịu được.</p>
+                <p>Giang Phàm thản nhiên nói: &quot;Bạch Hải Lang, ngươi có thể tiếp tục gọi người. Gây náo động càng lớn càng tốt.&quot;</p>
+                <p>Hoàng cung bị phá hủy càng nặng, khi Giang Phàm lấy đan phương ra, Bạch Hải Lang chịu sự trách cứ của Yêu Hoàng sẽ càng nặng nề. Loại ngu ngốc quỳ lạy ngoại tộc, bị bán đi còn giúp người ta đếm tiền thế này, hắn không ngại cho hắn ta một bài học sâu sắc hơn.</p>
+                <p>Bạch Hải Lang mất hết thể diện. Năm vị Yêu Vương mà không đuổi được một tiểu nhân tộc ư?</p>
+                <p>Ngay lúc này, một đạo Nguyên Anh nhân ảnh, từ trong hoàng cung xông thẳng lên trời. Là Bách Thảo Thượng nhân.</p>
+                <p>Ngay sau đó, hai đạo nhân ảnh trước sau cấp tốc lao tới. Dẫn đầu chính là Bắc Hải Yêu Hoàng.</p>
+                <p>Tà Đồng Thượng nhân nhìn khách điện tan hoang, khóe môi khẽ cong lên. Hắn đã có thể tưởng tượng được biểu cảm của Bắc Hải Yêu Hoàng khi nhìn thấy khách điện của mình bị hủy hoại. Nơi đây chính là hoàng cung Bắc Hải, là thể diện của hoàng tộc Bắc Hải. Ngay cả hắn cũng không dám tùy tiện động thủ ở đây. Giang Phàm thì lại chẳng biết trời cao đất rộng, trực tiếp hủy nát khách điện!</p>
+                <p>Bạch Hải Lang cũng mặt lộ vẻ lạnh lùng, dùng khẩu hình nói với Giang Phàm &quot;ngươi xong đời rồi&quot;. Sau đó vội vàng tiến lên nghênh đón, giả vờ vô cùng vô tội: &quot;Yêu Hoàng, người cuối cùng cũng đến rồi. Ở đây có một thứ không biết sống chết, đang gây rối ở Bắc Hải chúng ta!&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_864">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 864: Thái vương đãi ngộ</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Hiện giờ, Thái tử trọng thương, sinh tử khó lường. Yêu Hoàng đang lúc bi thống, Giang Phàm lại phá hủy khách điện vào thời điểm này, chẳng khác nào tự đâm đầu vào chỗ chết. Cứ đợi Yêu Hoàng nổi giận lôi đình đi!</p>
+                <p>Ai ngờ, Yêu Hoàng lại đẩy phắt hắn ra khỏi đường. Hắn không kịp đề phòng, liền ngã lăn ra một bên. Hắn kinh ngạc. Yêu Hoàng vì lẽ gì lại vội vã đến vậy? Cho đến khi hắn nhận ra Tà Đồng Thượng Nhân đang ngồi giữa đống đổ nát, nét mặt âm trầm như nước, hắn liền bừng tỉnh. Một vị khách quý như Tà Đồng Thượng Nhân lại bị đối đãi sơ suất đến mức này, Yêu Hoàng há chẳng phải nên sốt ruột sao?</p>
+                <p>Hắn liếc xéo Giang Phàm một cái, nói: “Ta bảo ngươi đi, ngươi không chịu đi. Giờ Yêu Hoàng đã đến, muốn đi cũng chẳng đi được nữa rồi.”</p>
+                <p>Tà Đồng Thượng Nhân cố ra vẻ âm trầm, chờ đợi Bắc Hải Yêu Hoàng vội vàng chạy tới xin lỗi. Quả nhiên, Yêu Hoàng đã đi về phía hắn. Khi sắp tới gần, hắn liền kịp thời hừ nhẹ một tiếng: “Đạo đãi khách của Bắc Hải thật khiến ta được mở mang tầm mắt…”</p>
+                <p>Hắn vốn muốn cho một cú ra oai, nhưng điều khiến hắn cứng đờ cả mặt là Yêu Hoàng đã đi thẳng qua hắn, nhanh chóng bước đến trước mặt Giang Phàm: “Giang tiểu hữu, Giang tiểu hữu! Bản hoàng sơ suất, thật sự xin lỗi!”</p>
+                <p>Hoàng hậu cũng vội vã chạy đến, đầy vẻ áy náy khom người thi lễ: “Thiếp thân có nhiều chỗ đắc tội, còn xin Giang công tử lượng thứ.” Nàng thầm tự nhủ: May mà Yêu Hoàng đã đưa Giang Phàm đi, nếu không lúc ấy nàng chỉ buông vài lời cay nghiệt khiến hắn tức giận rời đi, thì giờ khó mà vãn hồi được nữa rồi.</p>
+                <p>Giang Phàm liếc nhìn Tà Đồng Thượng Nhân với vẻ mặt hơi cứng đờ, cười như không cười nói: “Yêu Hoàng, Hoàng hậu. Ta chỉ là một vãn bối mà thôi. Tà Đồng Thượng Nhân mới là tiền bối, hai vị đừng có mà lạnh nhạt với hắn nhé. Hắn đang chờ hai vị nhiệt tình tiếp đãi đấy.”</p>
+                <p>Chẳng những giết người, mà còn phải tru diệt tâm trí. Lúc này, tình thế thập vạn hỏa cấp, Yêu Hoàng đâu còn rảnh rỗi mà để tâm đến Tà Đồng Thượng Nhân? Ngài chỉ từ xa chắp tay một cái, xem như đã gặp mặt rồi. Điều này khiến sắc mặt Tà Đồng Thượng Nhân thật sự âm trầm xuống, như thể vừa nuốt phải một cục nghẹn lớn. Càng khiến hắn khó chịu hơn là Yêu Hoàng chẳng hề mảy may để ý đến cảm nhận của hắn, thẳng thắn nói: “Giang tiểu hữu, ngươi mới là vị khách quý nhất của Bắc Hải ta. Những người khác đều không quan trọng nữa rồi. Để ngươi phải chịu oan ức ngồi trong khách điện này, thật sự là bạc đãi ngươi.”</p>
+                <p>Ngay sau đó, Yêu Hoàng nhìn lướt qua đống đổ nát, quay đầu trừng mắt nhìn Mộc Tử Ngư, quát lớn: “Ngươi đã chăm sóc Giang công tử kiểu gì vậy? Còn nữa, ai đã phá hủy khách điện này?”</p>
+                <p>Hoàng hậu vốn đã không vừa mắt Mộc Tử Ngư, giờ càng giận sôi lên: “Đồ vô dụng! Bảo ngươi tiếp đón Giang công tử mà lại gây ra chuyện tày đình thế này! Khách điện là ai phá hủy? Nói!”</p>
+                <p>Mộc Tử Ngư cẩn thận liếc nhìn Giang Phàm, nói: “Yêu Hoàng, Hoàng hậu, hay là thôi không nói nữa ạ.”</p>
+                <p>Hoàng hậu hừ lạnh: “Ta không cần biết hắn là ai! Giang công tử đang ngồi ở đây mà dám phá hủy đại điện, chính là bất kính với Giang công tử! Ta quyết không tha thứ nhẹ nhàng! Cứ nói thẳng ra đi!”</p>
+                <p>Mộc Tử Ngư bĩu môi: “Nhưng mà là hai vị bảo ta nói đó nha.” Nàng chỉ tay vào Giang Phàm, nói: “Chẳng phải là Giang công tử hủy sao?”</p>
+                <p>Là Giang Phàm hủy sao? Hoàng hậu lập tức biến sắc mặt, gượng gạo nói: “Ôi chao, hai vị xem kìa, khách điện này đã lâu năm không sửa chữa, suýt nữa thì đè trúng Giang công tử rồi.”</p>
+                <p>Mộc Tử Ngư cười thầm. Hoàng hậu, người thường ngày oai phong lẫm liệt, cũng có lúc phải diễn màn biến mặt ngay tại chỗ thế này ư? Liếc nhìn Bạch Hải Lang đang đứng gần đó với vẻ mặt tái mét, Mộc Tử Ngư bồi thêm một đao: “Khách điện không phải tự sụp đổ đâu. Là do Bạch Hải Lang nhất quyết muốn đuổi Giang công tử đi, còn động thủ với hắn mới gây ra đấy.”</p>
+                <p>Cái gì? Động thủ với Giang Phàm sao? Lần này, ngay cả Yêu Hoàng cũng giật mình hoảng hốt. Ngài trừng mắt nhìn Hoàng hậu: “Tộc nhân của nàng thật hay ho quá nhỉ! Dám tự ý đuổi khách, còn ra tay đánh người nữa!” Nhìn khắp bốn biển, nào có ai từng nghe nói về việc đuổi khách bao giờ? Thật đúng là chuyện nực cười nhất thiên hạ!</p>
+                <p>Hoàng hậu cũng kinh hãi, tộc nhân của nàng dưới sự che chở của nàng, bình thường đúng là có hơi ngang ngược. Nhưng không ngờ lại ngang ngược đến mức động thủ đuổi khách! Chẳng lẽ hắn thật sự không màng đến thể diện của Bắc Hải dù chỉ một chút sao? Nghĩ đến đây, mắt nàng tóe lửa, uy nghiêm nói: “Bạch Hải Lang! Ngươi cũng quá là vô pháp vô thiên rồi! Mau nộp lệnh bài Yêu Vương của ngươi lên đây! Đến ngoài Hoàng cung quỳ gối chờ lệnh xử lý!”</p>
+                <p>Cái gì? Sắc mặt Bạch Hải Lang tái nhợt như tờ giấy. Hắn bị tước bỏ thân phận Yêu Vương sao?</p>
+                <p>Yêu Hoàng áy náy nói: “Giang công tử, thật sự vô cùng xin lỗi. Nội bộ Bắc Hải chúng ta đã xảy ra vấn đề lớn rồi.” Vạn hạnh là Giang Phàm không hề hấn gì. Bằng không, làm sao ngài có thể mở lời về Hồi Xuân Đan được nữa?</p>
+                <p>Vì họ đã xử lý Bạch Hải Lang, Giang Phàm đương nhiên sẽ không truy cứu thêm nữa. Hắn đứng dậy nói: “Đi xem Thái tử thôi.”</p>
+                <p>Hoàng hậu lập tức xúc động, sau đó lại vô cùng hổ thẹn, nói: “Cảm ơn Giang công tử không chấp hiềm khích cũ. Bắc Hải chúng ta nợ ngươi một ân huệ lớn.”</p>
+                <p>Giang Phàm gật đầu, trước khi đi, lại nói: “Mộc tỷ tỷ cùng đến nhé.”</p>
+                <p>Mộc Tử Ngư vui vẻ đi theo. Cảnh tượng này lọt vào mắt Hoàng hậu, tự nhiên nàng hiểu rằng Giang Phàm có ý muốn đề bạt Mộc Tử Ngư. Làm sao nàng có thể không hiểu ý tứ đây? Hơn nữa, lần này cũng nhờ có người bạn mà Mộc Tử Ngư đã kết giao. Bằng không, Thái tử đã không được cứu rồi.</p>
+                <p>“Tử Ngư, ngươi đã lập công cho Bắc Hải.” Nàng nói: “Từ hôm nay, ngươi sẽ được hưởng đãi ngộ của Yêu Vương, mong ngươi sớm trở thành Yêu Vương mới!”</p>
+                <p>Mộc Tử Ngư nghe vậy mừng rỡ khôn xiết! Đãi ngộ của Yêu Vương nghĩa là nàng có thể hưởng thụ tài nguyên tốt nhất chỉ sau Yêu Hoàng và Hoàng hậu. Nếu cứ như vậy mà vẫn không thể đạt tới Kết Đan cảnh tầng chín viên mãn, thì chỉ có thể trách bản thân nàng không tranh khí.</p>
+                <p>“Cảm ơn Hoàng hậu.” “Cảm ơn… Giang công tử.” Nàng đương nhiên hiểu rõ, đây là lợi ích Giang Phàm đã đòi hỏi giúp nàng. Nàng nghiêng đầu nhìn sườn mặt anh tuấn của Giang Phàm. Bỗng ý thức được rằng, ngày đó bị Giang Phàm đánh ngất xỉu xuống đất, rồi bị sờ mất yếm, thực chất chính là cơ duyên mà trời cao đã ngầm sắp đặt. Đáng tiếc Giang Phàm lại quá nhát gan, chỉ sờ mất mỗi chiếc yếm. Nếu sờ thêm một chút nữa, chẳng phải cơ duyên sẽ càng nhiều hơn sao?</p>
+                <p>Bạch Hải Lang vẫn chưa đi xa, thân thể chợt run lên. Hắn thấp giọng nịnh nọt Tà Đồng Thượng Nhân, vậy mà một đồng cũng chẳng kiếm được lợi lộc gì. Còn Mộc Tử Ngư lại chỉ cần tiếp đón Giang Phàm tử tế, đã nhận được phần thưởng kinh người đến vậy sao? Sự chênh lệch quá lớn này khiến hắn nghiến răng nghiến lợi, oán hận trừng mắt nhìn Tà Đồng Thượng Nhân, thấp giọng nguyền rủa: “Thứ đồ chỉ được cái mã ngoài! Làm phí hết cả tình cảm của ta!”</p>
+                <p>Tà Đồng Thượng Nhân lúc xanh lúc đỏ cả mặt. Hắn cô đơn ngồi giữa đống hoang tàn, ôm tách trà nguội, bị bỏ mặc một bên. Đi không được, ở cũng không xong!</p>
+                <p>Trong bệnh phòng.</p>
+                <p>Nhìn Thái tử chỉ còn hơi thở yếu ớt, Giang Phàm lần nữa lấy ra viên Hồi Xuân Đan, đầy thâm ý nói: “Lần này, nó sẽ không bị vứt xó nữa chứ?”</p>
+                <p>Lão mặt Yêu Hoàng nóng bừng, ngài nói: “Bản hoàng có mắt như mù, lại không nhận ra đây là viên Thượng Cổ Linh Đan danh tiếng ngay trước mắt. Giang công tử vô tư tặng cho một viên linh đan trân quý như vậy, mà ta lại không biết tốt xấu. Thật sự là…”</p>
+                <p>Giang Phàm không nói nhiều. Hắn nhét viên Hồi Xuân Đan vào miệng Thái tử. Khi nuốt xuống, đan dược hóa thành linh dịch, tưới nhuần khắp cơ thể. Hơi thở yếu ớt kia lập tức có khởi sắc. “Nhiều nhất là nửa ngày, Thái tử quý tộc sẽ hồi phục hoàn toàn.”</p>
+                <p>Vết thương nghiêm trọng như vậy, chỉ cần nửa ngày ư? Yêu Hoàng và Hoàng hậu vừa kinh vừa mừng. Yêu Hoàng càng thêm cảm kích vô vàn, liên tục chắp tay, rưng rưng nước mắt nói: “Giang tiểu hữu. Ân cứu mạng của khuyển tử, bản hoàng vô cùng cảm kích.”</p>
+                <p>Giang Phàm cũng lười nói thêm gì nữa. Hắn điểm ngón tay vào giữa mi tâm. Một ngọn lửa màu lam hiện ra. “Ta đã đánh cược với Bạch Sơ, thắng được ấn ký Di Tích Hóa Thần, chắc hẳn quý tộc đã biết rồi.” Hắn nói tiếp: “Giờ ta muốn vào đó một chuyến, không biết có tiện không?”</p>
+                <p>Di Tích Hóa Thần? Yêu Hoàng lộ vẻ khó xử, không khỏi cùng Hoàng hậu liếc nhìn nhau.</p>
+                <p>Giang Phàm nhíu mày. Vừa mới dùng Hồi Xuân Đan của hắn, đã muốn đổi ý sao?</p>
+                <p>Nhận thấy Giang Phàm không vui, Yêu Hoàng vội nói: “Giang tiểu hữu, đừng hiểu lầm! Ngươi có ân cứu mạng với khuyển tử của ta, ta báo đáp còn không kịp. Làm sao lại gây khó dễ cho ngươi chứ? Chỉ là, đi Di Tích Hóa Thần vào lúc này, thật sự không phải là một ý hay.”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_865">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 865: Bắc Hải Trường Công Chúa</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm suy nghĩ: &quot;Vì sao người lại nói vậy?&quot;</p>
+                <p>Yêu Hoàng không hề che giấu, nói: &quot;Thực không dám giấu. Hóa Thần di tích đã xảy ra biến cố. Không biết từ lúc nào, bên trong bắt đầu xuất hiện từng đàn độc trùng. Những con trùng đó vô cùng lợi hại, dù là ta nếu bị cắn quá nhiều cũng sẽ gặp nguy hiểm tính mạng. Dưới Nguyên Anh, chỉ cần bị cắn một cái là đã ngàn cân treo sợi tóc. Ta đoán rằng, đó là do hung linh bí ẩn kia thả ra trước khi rời đi, lúc chúng ta mở di tích. Mục đích là để ngăn chúng ta vào lại.&quot;</p>
+                <p>Giang Phàm lộ vẻ trầm ngâm.</p>
+                <p>Độc trùng?</p>
+                <p>Lông gà trên ngực hắn, ngay cả Ác Mộng Hàn Trùng còn có thể khắc chế. Độc trùng càng không đáng nhắc tới.</p>
+                <p>Nhưng, Yêu Hoàng lại nói tiếp: &quot;Ngoài độc trùng ra, còn có một chuyện hơi khó giải quyết. Thiên Nhai Hải Các có ba người cũng muốn tiến vào Hóa Thần di tích. Trong số đó có một vị Nguyên Anh cảnh. Giang công tử và bọn họ cùng vào, liệu có giành được tài nguyên hay không, tạm thời chưa nói, sự an toàn của ngươi cũng khó mà được bảo đảm.&quot;</p>
+                <p>Nguyên Anh cảnh?</p>
+                <p>Thế thì gay go rồi. Vị Nguyên Anh đó chưa chắc đã dễ nói chuyện như ba vị Yêu Hoàng Di Châu, Cựu Mộng, Đại Nhật. Nếu xuất hiện Tinh Huyết Hóa Thần, càng không thể nhường cho hắn. Thậm chí, còn có thể gây ra uy hiếp tính mạng cho hắn.</p>
+                <p>Hèn chi Yêu Hoàng lại khó xử.</p>
+                <p>Yêu Hoàng thở dài: &quot;Hay là, ngươi chờ bọn họ thăm dò trước một lần? Bọn họ đã dám đi vào, ắt hẳn có cách khắc chế độc trùng. Nói không chừng, bọn họ đi qua một lần, họa độc trùng sẽ được giải trừ.&quot;</p>
+                <p>Giang Phàm nhíu mày. Hắn sao có thể chờ người khác thăm dò trước? Vật tốt đều bị bọn họ vơ vét hết, mình còn vào làm gì? Du ngoạn ngắm cảnh, rồi khắc thêm một câu &quot;Giang Phàm đã đến đây&quot; ư?</p>
+                <p>Trầm ngâm một lát, đành phải tiết lộ chút át chủ bài, nói: &quot;Có thể để ta vào trước không? Thực không dám giấu, ta cũng có chút bản lĩnh khắc chế độc trùng. Tự bảo vệ bản thân thì không thành vấn đề.&quot;</p>
+                <p>&quot;Ngươi cũng có bản lĩnh khắc chế độc trùng?&quot; Yêu Hoàng vô cùng kinh ngạc.</p>
+                <p>Nhưng vẫn có chút bất an. Nếu Giang Phàm chết bên trong, ba vị Yêu Hoàng Đông, Nam, Tây Hải đến đòi đệ đệ kết nghĩa, hắn biết lấy gì mà bồi thường?</p>
+                <p>Lúc này, Hoàng Hậu nhìn thoáng qua giường, thấy khí tức của Thái tử đã hoàn toàn thông suốt, làn da cháy sém đang tái sinh. Nàng cắn răng, nói: &quot;Yêu Hoàng, hãy cho Giang công tử mượn Thần khí Bắc Hải Cửu Long Thanh Đồng Liễn dùng một chút đi. Vừa có thể thoát thân, lúc mấu chốt còn có thể triệu hoán Long Hồn cảnh Nguyên Anh chiến đấu.&quot;</p>
+                <p>Yêu Hoàng vừa nghe, không khỏi đau lòng. Hắn hạ giọng nói: &quot;Cửu Long Thanh Đồng Liễn cần Thủy Nguyên Tinh Tủy để thôi thúc. Một chuyến đi di tích, ít nhất cũng phải hao tổn trọn vẹn một phần. Bắc Hải chúng ta, cũng chẳng còn mấy phần Thủy Nguyên Tinh Tủy nữa đâu.&quot;</p>
+                <p>Cửu Long Thanh Đồng Liễn, ngay cả Bắc Hải cũng không nỡ dùng.</p>
+                <p>Hoàng Hậu véo vào cánh tay hắn một cái: &quot;Sao ngươi lại keo kiệt như đàn bà vậy? Người ta Giang Phàm tặng ngươi Hồi Xuân Đan lúc đó, có đòi hỏi báo đáp gì đâu. Đến lượt ngươi thì lại bủn xỉn.&quot;</p>
+                <p>Yêu Hoàng cười gượng gạo, nói: &quot;Được được được, nghe theo nàng.&quot; Sau đó liền nói: &quot;Giang tiểu hữu, ngươi đã nghe thấy rồi đấy. Đi theo ta đến bảo khố đi.&quot;</p>
+                <p>Có thể được xưng là Thần khí Bắc Hải, Cửu Long Thanh Đồng Liễn đó chắc chắn không tầm thường. Từ chối chẳng phải là kẻ ngốc sao? Giang Phàm vui vẻ gật đầu.</p>
+                <p>Không lâu sau, tại bảo khố Hoàng cung Bắc Hải.</p>
+                <p>Một cỗ xe liễn bằng đồng xanh cỡ lớn được nhiều tầng trận pháp bảo vệ nghiêm ngặt đập vào mắt. Cao đến vài trượng! Toàn thân ánh xanh lưu chuyển, tản mát ra khí vận cổ xưa. Thân xe khắc những minh văn phức tạp, bánh xe khảm hoa văn kỳ lạ. Điều thu hút nhất là, chín con rồng đồng xanh làm vật kéo.</p>
+                <p>&quot;Thiên tử xuất hành, Cửu Long mở đường.&quot; Giang Phàm tán thán: &quot;Cũng chỉ có cường giả đương thời mới xứng với cỗ xe liễn như vậy.&quot;</p>
+                <p>Yêu Hoàng giải khai trận pháp, thu nhỏ Cửu Long Thanh Đồng Liễn lại bằng lòng bàn tay. Hắn lộ vẻ hoài niệm, nói: &quot;Ta cũng chỉ dùng qua một lần lúc kế thừa Hoàng vị. Ngày thường không nỡ dùng. Hy vọng, nó có thể hộ Giang công tử bình an.&quot;</p>
+                <p>Tiếp đó, lại lấy ra một vỏ ốc chứa đầy Thủy Nguyên Tinh Tủy, cùng đưa cho Giang Phàm. &quot;Khi chưa thật sự bất đắc dĩ, đừng tùy tiện sử dụng. Để tránh khi gặp nguy hiểm lại thiếu Thủy Nguyên Tinh Tủy, không thể thôi thúc.&quot;</p>
+                <p>Giang Phàm không chút biến sắc nhận lấy. Hắn liếc nhìn Thủy Nguyên Tinh Tủy, trong lòng thầm kinh ngạc. Thứ này vậy mà lại có công dụng lớn đến thế. Nghĩ đến con phản cốt tử đã ăn của hắn ba vỏ ốc, liền đau lòng không thôi. Thật nên khấu trừ khẩu phần ăn của nó, để nó trải nghiệm cảm giác bị lão địa chủ bóc lột một phen.</p>
+                <p>&quot;Giang công tử, để mở Hóa Thần di tích, ta cần bố trí trước một chút, kẻo độc trùng chạy hết ra ngoài. Ngươi tạm thời cứ đi dạo trong bảo khố đi. Có bảo vật nào vừa mắt, cứ việc lấy.&quot; Bắc Hải Yêu Hoàng khách khí nói.</p>
+                <p>Giang Phàm sao lại nghe không ra đó là lời khách sáo? Hắn cười tủm tỉm: &quot;Yêu Hoàng đã cho ta mượn Cửu Long Thanh Đồng Liễn rồi, ta đâu còn gì mà không biết đủ nữa? Bảo vật ta không cần đâu. Không biết có thể cho ta xem qua tàng thư của quý tộc được không?&quot;</p>
+                <p>Tàng thư của Bắc Hải chắc cũng có chút ít. Vừa lúc tranh thủ thời gian xem thử, có Minh Văn Thanh Đồng Địa Ngục Hoang Thú không.</p>
+                <p>Bắc Hải Yêu Hoàng thầm thở phào nhẹ nhõm. Chỉ là xem sách thì cứ tùy ý xem. &quot;Tàng Thư Các ở phía nam nhất của bảo khố. Hoàng Hậu, Mộc Tử Ngư, các ngươi đi cùng Giang công tử đi.&quot;</p>
+                <p>Giang Phàm nói: &quot;Không cần đâu. Ta cứ yên lặng đọc một lúc là được, đợi Hóa Thần di tích chuẩn bị xong xuôi, rồi hẵng gọi ta cũng không muộn.&quot;</p>
+                <p>Hắn đã nói vậy, Bắc Hải Yêu Hoàng tự nhiên không tiện nói thêm gì nữa. &quot;Được! Vậy bọn ta đi trước. Dù sao trong bảo khố cũng không có nguy hiểm gì. Ngươi cứ tự nhiên đi dạo.&quot;</p>
+                <p>Rời khỏi bảo khố. Hắn phát hiện không xa, ở cửa đại điện có đặt một cây dù. Hắn lộ một tia vui mừng: &quot;Đây không phải là dù của Thanh Toàn sao? Nàng xuất quan rồi sao?&quot;</p>
+                <p>Hoàng Hậu vừa nghe, bấm đốt ngón tay tính toán, mừng rỡ ra mặt: &quot;Hôm nay đúng là ngày Thanh Toàn xuất quan! Gần đây bận tối mày tối mặt, vậy mà lại quên ngày con gái xuất quan.&quot;</p>
+                <p>Nàng quay đầu muốn quay lại bảo khố tìm, nhưng bị Yêu Hoàng ngăn lại, cưng chiều nói: &quot;Thôi đi, giờ này nàng ấy chắc chắn đang đọc sách. Đừng quấy rầy nàng.&quot;</p>
+                <p>Mộc Tử Ngư bên cạnh nghe thấy hai chữ &quot;Thanh Toàn&quot;, lộ vẻ mặt kỳ lạ. Cơ Thanh Toàn là Bắc Hải Trưởng Công Chúa, nhưng Mộc Tử Ngư cũng chưa gặp được mấy lần. Bởi vì, vị Bắc Hải Trưởng Công Chúa này, là một dị loại. Khi nàng sinh ra, một cây dù từ trên trời rơi xuống biển, trôi thẳng đến bên cạnh nàng. Từ sau đó, nàng ra ngoài nhất định phải mang dù. Thường xuyên nói, trên đầu có mưa. Thế nhưng, nơi đây là Thương Hải, mưa từ đâu ra? Kỳ lạ hơn nữa là, nàng trời sinh đã tinh thông ngôn ngữ của nhiều tộc. Ba tuổi, đã bắt đầu đọc rộng sách vở. Mười tuổi, không bằng lòng kiến thức bị giới hạn trong thế giới Bắc Hải. Đã nuôi dưỡng một nhóm đông đảo Nhân tộc, Đại Lục Yêu tộc và Hải Yêu tộc. Bọn họ không làm gì cả, mỗi ngày đi khắp thế gian tuần du, thu thập các loại tin tức lớn nhỏ. Giờ đây mười tám tuổi, nàng đã ít khi nói chuyện với người khác. Bởi vì, những gì nàng muốn hỏi, ít ai biết. Những gì người khác nói, nàng hầu hết đều đã biết. Ngay cả Yêu Hoàng, cũng dần dần không nói chuyện được với nàng. Nàng như một tinh linh không thuộc về Bắc Hải, không thuộc về nhân gian. Hoàn toàn không hợp với xung quanh.</p>
+                <p>Hoàng Hậu dừng bước chân định quấy rầy, khẽ thở dài, nói: &quot;Thanh Toàn... Cả đời đều sẽ như vậy sao?&quot;</p>
+                <p>Trong bảo khố. Giang Phàm một đường đi tới phía nam nhất. Quả nhiên nhìn thấy những dãy giá sách liền kề, tàng thư này phong phú hơn Đông Hải rất nhiều! Hắn lập tức chạy bước nhỏ tới. Đến gần lại bất ngờ phát hiện, có một thiếu niên đang dựa vào giá sách, khoanh chân ngồi đó. Trong tay hắn đang cầm những trang giấy rời rạc đủ loại. Trên đó viết các loại thông tin khác nhau. Có của Nhân tộc, có của Đại Lục Yêu tộc, cũng có của Hải Yêu tộc. Đang hết sức tập trung nghiền ngẫm những dòng chữ trên đó.</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_172.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_172.html" class="page-btn">172</a>
+            <a href="page_173.html" class="page-btn current">173</a>
+            <a href="page_174.html" class="page-btn">174</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_174.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

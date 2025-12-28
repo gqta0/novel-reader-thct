@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 70">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 70</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_69.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_71.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_346">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 346: Kim Vân Liệt</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Đột nhiên, Lục Thời Y ngẩn người khi thấy hắc kính xuất hiện từ trong ngực Giang Phàm. Hắn nhất thời không hiểu rõ tình huống, chợt nghĩ: &quot;Giang Phàm cấu kết với Tà Linh sao?&quot;</p>
+                <p>Lục Thời Y cười lạnh: &quot;Ta thực sự bội phục ngươi, thế mà có thể thuần phục Tà Linh. Bất quá, ngươi có phải quên, ta là ai không? Tà Linh đối phó ta, chẳng phải chuột bắt mèo sao?&quot;</p>
+                <p>Lực lượng sấm sét của Chính Lôi tông là khắc tinh của âm tà. Trước đây, tấm gương này từng bị hắn truy sát đến chật vật chạy trốn. Bây giờ, dùng nó để đối phó hắn? Đầu óc Giang Phàm chắc có vấn đề rồi!</p>
+                <p>Mang theo nụ cười lạnh, Lục Thời Y thúc giục sấm sét trong cơ thể, một đạo dòng điện theo kiếm khí chém ra, &quot;Đinh&quot; một tiếng đánh vào hắc kính.</p>
+                <p>Hắc kính lập tức phát ra tiếng kêu thảm thiết: &quot;A a a!&quot;</p>
+                <p>Vừa kêu thảm, nó vừa ngã xuống đất lăn lộn kêu loạn.</p>
+                <p>Lục Thời Y cười nhạo: &quot;Chỉ vậy thôi sao? Ảnh vệ số một, biết mình ngu xuẩn đến mức nào không? Cầm loại Tà Linh phế vật này tới đối phó ta?&quot;</p>
+                <p>Nói rồi, hắn tiến lên một cước đạp lên hắc kính. Bàn chân hiện lên ánh chớp, khẽ nói: &quot;Tà Linh nhỏ nhoi, cũng dám đối nghịch với ta! Chết!&quot;</p>
+                <p>Xùy ――</p>
+                <p>Lôi điện ầm ầm đánh vào bên trong hắc kính. Tiếng kêu thảm thiết bên trong không những không tăng lên, ngược lại đột nhiên dừng lại. Thay vào đó là vẻ trêu tức: &quot;Ha ha, bản tọa đã nói rồi, chơi với ngươi thôi, ngươi còn tưởng thật à?&quot;</p>
+                <p>Nó sợ hãi lực lượng sấm sét, nhưng sợ hãi lực lượng sấm sét mạnh mẽ như của Giang Phàm. Lôi điện gà mờ trước mắt, còn không đủ để gãi ngứa cho nó!</p>
+                <p>Cái gì?</p>
+                <p>Lục Thời Y biến sắc. Hắn lập tức muốn rụt chân về, nhưng đã muộn. Hắc kính lập tức phun ra một mảnh khói đen, trong chớp mắt bao trùm lấy chân hắn.</p>
+                <p>Oạch một tiếng.</p>
+                <p>Như thể đang ăn thạch, bàn chân Lục Thời Y bị hút đi máu thịt, chỉ còn lại bạch cốt sâm nhiên. Đau đớn kịch liệt sau đó mới truyền đến.</p>
+                <p>&quot;A!!!&quot;, Lục Thời Y phát ra tiếng kêu thảm thiết đau đớn.</p>
+                <p>Hắn cà nhắc cái chân, loạng choạng lảo đảo lui về sau, đặt mông ngã ngồi xuống đất. Hắn không kịp nhìn bàn chân máu chảy đầm đìa của mình, sợ chết khiếp quát: &quot;Sư tôn mau cứu ta!&quot;</p>
+                <p>Bởi vì từ trong hắc kính, Tà Linh phát ra tiếng rên rỉ hưởng thụ: &quot;Đã nói triệt để thay đổi rồi, vẫn không nhịn được ăn một miếng. Thật mỹ vị a! Bất quá, bản tọa khôi phục nguyên khí, còn cần ngươi vất vả thêm một chút.&quot;</p>
+                <p>Với tiếng cười lạnh âm u, hắc kính hung hăng đánh tới ngực hắn!</p>
+                <p>Trong khoảnh khắc ngàn cân treo sợi tóc, võ giả bí ẩn toàn thân hắc bào hừ lạnh một tiếng: &quot;Tà vật không đáng kể, dám ở trước mặt trưởng lão này lỗ mãng!&quot;</p>
+                <p>Xoẹt ――</p>
+                <p>Một đạo lôi điện to bằng cánh tay, ầm ầm từ tay áo hắn đánh ra, hung hăng đánh vào hắc kính. Lực lượng lôi điện này mạnh hơn của Giang Phàm rất nhiều!</p>
+                <p>Hắc kính sợ hãi hét lên liên tục, vội vàng phun ra khói đen bao lấy thân thể.</p>
+                <p>Phanh ――</p>
+                <p>Hắc kính bị đánh bay, khói đen bên ngoài thân bị đánh tan thành mây khói. May mắn là hắc kính nhặt lại được một mạng, vội vàng bay trở về bên cạnh Giang Phàm, cấp bách nói: &quot;Mau lên, đây là cao nhân của Chính Lôi tông!&quot;</p>
+                <p>Đồng tử Giang Phàm co rụt lại. Không cần nói hắn cũng đoán được là ai! Kim Vân Liệt! Kim Vân Liệt đã mất tích!</p>
+                <p>Hắn chưa chết, may mắn nhặt về một mạng. Hắn vẫn chưa hết hy vọng vào cây kiếm pháp phẩm cực tốt kia, đi theo đệ tử cùng đi tìm kiếm.</p>
+                <p>Vù ――</p>
+                <p>Giang Phàm không dám dừng lại chút nào, nắm lấy hắc kính, lập tức thi triển thân pháp chạy trốn. Người này vốn không phải loại hiền lành gì, huống chi hắn còn khám phá bí mật hắn tìm kiếm bội kiếm của Từ Thanh Dương? Nói gì đi nữa, hắn cũng khó có khả năng để hắn sống.</p>
+                <p>Kim Vân Liệt một tay kéo mũ trùm đầu xuống, lộ ra khuôn mặt gần như hủy dung. Năm vết cào khủng bố sâu đến tận xương, khiến da thịt trên mặt hắn cuộn lại, tròng mắt phải bị vồ nát, bờ môi bị cắt rách tả hữu, xuyên qua hai bên gò má. Bộ dáng dị thường dữ tợn!</p>
+                <p>Nếu không phải một tay thuần khiết lực lượng lôi điện, rất khó tin người áo đen hủy dung trước mắt lại là Kim Vân Liệt!</p>
+                <p>Tròng mắt trái còn sót lại của hắn nhìn chằm chằm bóng lưng Giang Phàm, lộ ra vẻ sâm nhiên. &quot;Trước mặt trưởng lão này, ngươi còn có thể đi được sao?&quot;</p>
+                <p>Xoẹt ――</p>
+                <p>Tay áo vung lên, một con Lôi Long to bằng cánh tay ầm ầm mà đi.</p>
+                <p>Vẻ mặt Giang Phàm trong nháy mắt biến đổi! Đây chính là công kích của Đại trưởng lão Cửu Tông! Làm sao một tiểu đệ tử như hắn có thể chống lại?</p>
+                <p>Cũng may hắn có thân pháp tại thân, lập tức né tránh.</p>
+                <p>Xùy ――</p>
+                <p>Dòng điện mạnh mẽ sượt qua vai hắn, trong nháy mắt đốt quần áo hắn thành tro bụi. Đồng thời, dòng điện xâm nhập thân thể, khiến hắn xuất hiện cứng đờ trong nháy mắt.</p>
+                <p>Kim Vân Liệt mắt lộ sát cơ, nhìn đúng thời cơ, lại lần nữa oanh ra một đạo lôi điện hủy diệt, thẳng đến sau lưng Giang Phàm.</p>
+                <p>Giang Phàm lúc này căn bản không có cách nào linh hoạt né tránh. Mắt thấy mình sắp bị lôi điện đánh trúng, hắn quả quyết xoay người, trong tay đã cầm món yếm kia, bảo vệ ở ngực.</p>
+                <p>Phanh ――</p>
+                <p>Ánh chớp nổ tung.</p>
+                <p>Lôi điện bẻ gãy nghiền nát, hung hăng đánh trúng ngực Giang Phàm. Ban đầu, một kích này có thể oanh sát Giang Phàm thành một đống thịt nát. Thần kỳ là món yếm này lại hấp thu toàn bộ lực lượng lôi điện. Chỉ có lực lượng còn sót lại, xuyên qua yếm, đánh vào ngực Giang Phàm.</p>
+                <p>May mắn là Giang Phàm còn mặc một tầng pháp bảo phòng ngự thượng phẩm, có thể ngăn cản được công kích của Kết Đan năm tầng. Bởi vậy, hắn thành công hóa giải được nó.</p>
+                <p>Giang Phàm chịu công kích không đủ một phần mười. Dù thế, hắn cũng bị đánh bay ra ngoài, trong miệng phun ra một ngụm huyết tiễn.</p>
+                <p>&quot;Thế mà không chết?&quot;, Kim Vân Liệt kinh ngạc.</p>
+                <p>Mặc dù hắn bị trọng thương, thực lực không đủ một nửa thời kỳ đỉnh phong, nhưng đâu phải một tên tiểu bối có thể tiếp nhận?</p>
+                <p>Và ngay trong khoảnh khắc hắn ngây người đó, Giang Phàm đang bay ngược, lấy xuống trường cung bên hông, bắn một mũi tên về phía Kim Vân Liệt.</p>
+                <p>Mũi tên thủy tinh mang theo đạo đạo tàn ảnh, tốc độ không thua kém tốc độ lôi điện bao nhiêu. Chớp mắt đã tới gần.</p>
+                <p>Khi Kim Vân Liệt phản ứng lại, mũi tên đã gần ngay trước mắt. Hắn đồng tử co rụt lại, chỉ đành nghiêng đầu né tránh. Mặc dù tránh được chỗ yếu hại, nhưng lực lượng phá lưỡi đao khủng bố của mũi tên này, chỉ sượt qua tai hắn đã gọt sạch toàn bộ lỗ tai.</p>
+                <p>&quot;Tê!&quot;, Kim Vân Liệt đau đến hít khí lạnh. Trong mắt chợt bộc phát lệ khí kinh người.</p>
+                <p>&quot;Ngươi muốn chết!&quot;, hắn gầm thét một tiếng.</p>
+                <p>Mình lại bị một tên tiểu bối bắn rụng tai? Sao có thể như vậy!!!</p>
+                <p>Giang Phàm lau đi máu trên khóe miệng, ánh mắt lạnh lẽo: &quot;Muốn giết ta? Ngươi cũng phải trả giá một chút!&quot;</p>
+                <p>Vù ――</p>
+                <p>Mũi tên bắn ra, thần kỳ dạo qua một vòng, lại trở về trong tay Giang Phàm. Điều này khiến Giang Phàm thầm cảm thán sự thần kỳ của cung này. Bất quá, vừa rồi chẳng qua chỉ là bất ngờ gây tổn thương cho Kim Vân Liệt. Đối phương có đề phòng, rất khó lại thành công.</p>
+                <p>Mắt sáng lên, Giang Phàm trở tay rút ra trường kiếm màu đồng cổ trên lưng, lạnh lùng nói: &quot;Ngươi không phải muốn tìm bội kiếm của Từ Thanh Dương sao? Có bản lĩnh, thì đi nhặt đi!&quot;</p>
+                <p>Hắn phát động Kiếm Tâm, quả quyết thi triển Ngự Kiếm Thuật. Thanh kiếm pháp phẩm cực tốt này liền hóa thành một đạo lưu quang, trong nháy mắt bay về phương xa. Đồng thời, hắn thi triển thân pháp, hướng về Vạn Kiếm thành chạy đi.</p>
+                <p>Hai hướng đi hoàn toàn trái ngược.</p>
+                <p>Kim Vân Liệt biến sắc. Thân thể khẽ động, lại định ngay tại chỗ. Bởi vì, trong lúc nhất thời, không biết nên truy sát Giang Phàm trước, hay bắt lấy thanh pháp kiếm cực phẩm trước!.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_347">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 347: Xui đến đổ máu</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Như trước tìm kiếm, dùng thân pháp của Giang Phàm, e rằng thoáng chốc đã mất dạng.Nếu như trước truy sát Giang Phàm, thanh cực phẩm pháp kiếm này, trời biết sẽ bay đi đâu.</p>
+                <p>Giãy giụa một lát, hắn khẽ cắn răng, quả quyết hướng phía phi kiếm mà đi.</p>
+                <p>Chuyến này vốn là vì cực phẩm pháp kiếm, chém giết Giang Phàm là tiện tay mà làm.</p>
+                <p>Sự tình chủ thứ không thể điên đảo.</p>
+                <p>Giang Phàm thở dài một hơi, không tiếc hao tổn linh lực, hướng về Vạn Kiếm thành thẳng tiến.</p>
+                <p>Thật tình không biết, ngay tại hai người đối mặt mà đi không lâu, trên đỉnh Bút Giá sơn điện, một đoàn mây lặng yên không tiếng động hạ xuống.</p>
+                <p>Rõ ràng là Phệ Thiên Hổ.</p>
+                <p>Trên lưng nó là Lưu Ly với cơn giận còn chưa tiêu tan.</p>
+                <p>Nhìn vẻ mặt trầm như nước của nàng là biết, nàng giờ phút này còn đang tức giận.</p>
+                <p>&quot;Thiếu chủ, nhân tộc có câu nói, ta cảm thấy hết sức có đạo lý.&quot;</p>
+                <p>&quot;Quân tử báo thù mười năm không muộn.&quot;</p>
+                <p>&quot;Tiểu tử kia coi như mang theo mặt nạ, cũng chỉ có thể trốn nhất thời, trốn không thoát nhất thế.&quot;</p>
+                <p>&quot;Chỉ cần thiếu chủ có kiên nhẫn, sớm muộn có thể tìm tới hắn, báo mối thù hôm nay.&quot;</p>
+                <p>Lưu Ly tinh tế nhấm nháp câu nói này.</p>
+                <p>Suy nghĩ dần dần thư thái, xoa mi tâm nói: &quot;Là ta tức đến chập mạch rồi.&quot;</p>
+                <p>&quot;Người thành đại sự không câu nệ tiểu tiết, vì nhất thời cừu hận che đậy hai mắt, tương lai làm sao có thể thành làm một đời Yêu Hoàng, làm sao có thể thống lĩnh bầy yêu.&quot;</p>
+                <p>&quot;Tốt, mối thù hôm nay, ta chỉ ghi nhớ.&quot;</p>
+                <p>&quot;Tương lai có cơ hội lại báo.&quot;</p>
+                <p>Nàng nhảy xuống lưng hổ, nói: &quot;Mau đem đồ vật của ta đều lấy về.&quot;</p>
+                <p>&quot;Nơi này cách Vạn Kiếm thành không xa, nếu bị Từ Thanh Dương phát giác, có thể liền phiền toái.&quot;</p>
+                <p>Phệ Thiên Hổ rất tán thành: &quot;Từ Thanh Dương không có cực phẩm pháp kiếm, thực lực chỉ còn bảy thành so với đỉnh phong.&quot;</p>
+                <p>&quot;Yêu tộc ta tai họa ngầm giảm mạnh.&quot;</p>
+                <p>&quot;Thanh kiếm này, nói cái gì cũng không thể lại để Từ Thanh Dương đạt được.&quot;</p>
+                <p>Lưu Ly gật đầu: &quot;Ta đang có ý đó.&quot;</p>
+                <p>Chỉ là, hai chân vừa chạm đất, nàng đột nhiên phát hiện không hợp lý.</p>
+                <p>Dưới chân toàn bộ là lít nha lít nhít hố bị ăn mòn, dẫm lên vừa cấn chân lại truyền đến từng đợt đau đớn do ăn mòn.</p>
+                <p>&quot;Cái này. . .&quot;</p>
+                <p>Nàng trong lòng hơi hồi hộp một chút.</p>
+                <p>Có loại dự cảm bất tường.</p>
+                <p>Vội vàng nhìn quanh bốn phía, tìm thấy khối đá đen khổng lồ nổi bật kia.</p>
+                <p>Thế nhưng, điều khiến nàng trái tim lạnh đi một nửa chính là, cự thạch đã bị di chuyển.</p>
+                <p>Bẫy rắn đầu mà nàng chôn dưới tảng đá lớn cũng bị người vứt xuống một bên.</p>
+                <p>Một cỗ cảm giác mất trọng lượng rơi vào vực sâu kéo tới, khiến thân thể nàng lung lay.</p>
+                <p>&quot;Nhanh. . . Nhanh dìu ta.&quot;</p>
+                <p>Thân thể nàng cứng đờ, hai chân như nhũn ra, không nghe lời.</p>
+                <p>Một khuôn mặt xinh đẹp trắng bệch như tờ giấy.</p>
+                <p>Nơi đó không chỉ có bội kiếm của Từ Thanh Dương.</p>
+                <p>Còn có toàn bộ gia sản của nàng!</p>
+                <p>Phệ Thiên Hổ cũng ý thức được hoàn cảnh hiện trường không đúng, vội vàng ngậm nàng đi đến bên cạnh Hắc Thạch.</p>
+                <p>Đập vào mắt, chính là túi vải.</p>
+                <p>Đã vô cùng khô quắt.</p>
+                <p>Lưu Ly trước mắt tối sầm lại.</p>
+                <p>Quả nhiên, đồ vật đã bị người phát hiện.</p>
+                <p>Nàng run run rẩy rẩy cầm lấy túi vải, hy vọng có người nhìn nhầm, ít nhất giữ lại cái yếm.</p>
+                <p>Như vậy nàng ít nhiều cũng có chút an ủi.</p>
+                <p>Có thể mở ra xem.</p>
+                <p>Bên trong trống rỗng!</p>
+                <p>Nàng hai mắt đờ đẫn, ngây ra như phỗng.</p>
+                <p>Đồ vật, mất hết!</p>
+                <p>Phệ Thiên Hổ cũng hít sâu một hơi: &quot;Đồ vật cũng mất rồi?&quot;</p>
+                <p>Dừng một chút, nó vội vàng nói: &quot;Thiếu chủ, mau nhìn xem phía dưới, xem cây cung kia còn ở đó không.&quot;</p>
+                <p>&quot;Cái khác không có có thể tìm lại.&quot;</p>
+                <p>&quot;Cây Chấn Thiên cung này, chính là thánh khí độc nhất vô nhị của yêu tộc, không cho sơ thất.&quot;</p>
+                <p>Lưu Ly lấy lại tinh thần, cái đầu tái nhợt không ngừng gật: &quot;Đúng đúng đúng, chỉ cần cung còn tại là không sao.&quot;</p>
+                <p>&quot;Ta giấu cung sâu như vậy, người cầm vải đồ trong túi, liền cao hứng tìm không thấy nam bắc.&quot;</p>
+                <p>&quot;Không thể lại nghĩ đến, phía dưới còn có thứ quan trọng hơn.&quot;</p>
+                <p>Tuy nhiên.</p>
+                <p>Khi nàng xốc lên túi vải.</p>
+                <p>Phía dưới trống rỗng.</p>
+                <p>Chỉ còn lại một vết lõm do cung tiễn đè ra.</p>
+                <p>&quot;Chấn Thiên cung. . . Không có?&quot;</p>
+                <p>Phệ Thiên Hổ chỉ cảm thấy đầu ong ong.</p>
+                <p>Lần này có thể gây họa lớn!</p>
+                <p>Cho dù là thiếu chủ mất đi cung này, trở về cũng sẽ bị Yêu Hoàng nghiêm khắc vô cùng trừng phạt!</p>
+                <p>Tối thiểu nhất, muốn mất nửa cái mạng!</p>
+                <p>Lưu Ly càng thân thể lay lay, cuối cùng đặt mông ngồi dưới đất.</p>
+                <p>Hai mắt đờ đẫn nói: &quot;Toàn. . . Mất hết?&quot;</p>
+                <p>&quot;Tại sao có thể như vậy?&quot;</p>
+                <p>Trong đầu nàng toàn bộ là dáng vẻ thịnh nộ của phụ thân.</p>
+                <p>Nghĩ đến đây, liền không nhịn được toàn thân run lẩy bẩy.</p>
+                <p>Phệ Thiên Hổ hung hăng nuốt nước miếng một cái, nhắc nhở: &quot;Thiếu chủ, việc cấp bách là mau tìm đồ vật về!&quot;</p>
+                <p>&quot;Đây là cách bổ cứu duy nhất.&quot;</p>
+                <p>Lưu Ly tỉnh ngộ lại.</p>
+                <p>Vụt một tiếng đứng lên, hai mắt phun ra căm giận ngút trời:</p>
+                <p>&quot;Là ai?&quot;</p>
+                <p>&quot;Là ai lấy trộm hết đồ vật của bản thiếu chủ?&quot;</p>
+                <p>&quot;Sao lại như vậy!&quot;</p>
+                <p>&quot;Ta muốn tìm được ngươi, muốn xé xác ngươi thành tám mảnh, ném ngươi vào sông cho rùa ăn!&quot;</p>
+                <p>Nàng trợn tròn mắt, nhìn quanh bốn phía.</p>
+                <p>Là yêu tộc, có lực lượng cảm ứng vô cùng cường đại.</p>
+                <p>Không nói đến đồ vật tùy thân của nàng.</p>
+                <p>Chỉ là thanh cực phẩm pháp kiếm kia, nàng đã vuốt qua, phía trên có khí tức của nàng.</p>
+                <p>Chỉ cần trong phạm vi nhất định, tìm tới không khó!</p>
+                <p>Bỗng dưng!</p>
+                <p>Nàng đột nhiên nhìn về phía dưới chân núi, lộ ra tầm mắt sâm nhiên: &quot;Tìm được!&quot;</p>
+                <p>&quot;Khí tức của cực phẩm pháp kiếm, chính là ở đây!&quot;</p>
+                <p>Dưới chân núi, Kim Vân Liệt thập phần hưng phấn nắm cực phẩm pháp kiếm, nói: &quot;Thanh kiếm này, cuối cùng vẫn rơi vào trong tay ta!&quot;</p>
+                <p>&quot;Ha ha ha!&quot;</p>
+                <p>&quot;Trời cũng giúp ta!&quot;</p>
+                <p>Lục Thời Y đã băng bó kỹ chân, cố nén đau nhức, chắp tay nói: &quot;Chúc mừng sư tôn, chúc mừng sư tôn.&quot;</p>
+                <p>&quot;Có thanh cực phẩm pháp kiếm này, thử hỏi trong cùng cảnh giới, còn ai có thể địch lại sư tôn?&quot;</p>
+                <p>Trên mặt hắn lộ ra vẻ hâm mộ từ đáy lòng.</p>
+                <p>Đây chính là cực phẩm pháp kiếm.</p>
+                <p>Trong thiên hạ, chỉ hai chí bảo.</p>
+                <p>Ai có được thanh kiếm này, chắc chắn tiếu ngạo Cửu Tông đại địa!</p>
+                <p>Kim Vân Liệt thoải mái cười to: &quot;Ha ha ha, lần này ngươi không thể bỏ qua công lao.&quot;</p>
+                <p>&quot;Đợi trở lại tông môn, vi sư chắc chắn trọng thưởng. . .&quot;</p>
+                <p>Phốc phốc ――</p>
+                <p>Thình lình, một đạo tàn ảnh đen như mực, bỗng nhiên từ trên trời giáng xuống.</p>
+                <p>Kim Vân Liệt còn chưa kịp phản ứng, đã bị tàn ảnh đè xuống đất.</p>
+                <p>Lực lượng khổng lồ đánh văng cả đại địa, nhấc lên bụi mù ngập trời.</p>
+                <p>Lục Thời Y sửng sốt, qua lớp bụi mù, kinh hãi nói: &quot;Sư tôn, sư tôn, đây là chuyện gì vậy?&quot;</p>
+                <p>Khi bụi mù tan đi, Lục Thời Y con ngươi kịch liệt co lại.</p>
+                <p>Toàn thân run rẩy dữ dội dâng lên!</p>
+                <p>Chỉ thấy Kim Vân Liệt, bị một cái vuốt hổ to lớn, gắt gao đè trên mặt đất, không cách nào phản kháng.</p>
+                <p>Một con hổ toàn thân đen kịt, tản ra hung uy tuyệt thế, nghiêng đầu lạnh lùng nhìn hắn một cái.</p>
+                <p>Chỉ một liếc mắt, Lục Thời Y tâm mạch đứt đoạn, một búng máu từ miệng phun ra.</p>
+                <p>Ngay sau đó mắt tối sầm lại hôn mê bất tỉnh.</p>
+                <p>Bị đè dưới đất Kim Vân Liệt, cũng con ngươi chấn động, kinh khủng vô cùng.</p>
+                <p>Trong miệng phát ra thanh âm sợ hãi tột cùng: &quot;Yêu Hoàng tọa hạ, tứ Đại Yêu vương Phệ Thiên Hổ?&quot;</p>
+                <p>Hắn cuồng nuốt nước bọt, trái tim đập thình thịch kinh hoàng.</p>
+                <p>Mình làm sao lại gặp phải loại tồn tại khủng bố này?</p>
+                <p>Lưu Ly theo lưng hổ nhảy xuống.</p>
+                <p>Đi đến trước mặt hắn, từ dưới đất nhặt lên bội kiếm của Từ Thanh Dương.</p>
+                <p>Trên vỏ kiếm, tỏa ra khuôn mặt lạnh như băng của nàng.</p>
+                <p>&quot;Những vật khác đâu?&quot;</p>
+                <p>Kim Vân Liệt run giọng nói: &quot;Cái gì những vật khác?&quot;</p>
+                <p>Phốc phốc ――</p>
+                <p>Hàn quang lóe lên.</p>
+                <p>Lưu Ly một kiếm chém rụng bàn tay hắn, đau đến Kim Vân Liệt kêu thảm vô cùng.</p>
+                <p>&quot;Ta hỏi lần cuối, những vật khác, ở đâu?&quot;</p>
+                <p>Kim Vân Liệt mặt mũi tràn đầy ủy khuất: &quot;Ta thật không biết. . .&quot;</p>
+                <p>Thấy Lưu Ly lại muốn chém xuống một kiếm nữa, hắn giật mình, vội vàng nói: &quot;Chờ một chút!&quot;</p>
+                <p>&quot;Ngươi nói đồ vật, có thể là cái yếm, còn có một cây cung?&quot;</p>
+                <p>Lưu Ly trong mắt sát ý lưu chuyển: &quot;Biết còn không lấy ra?&quot;</p>
+                <p>Kim Vân Liệt hô to oan uổng: &quot;Đại nhân, ngài hiểu lầm.&quot;</p>
+                <p>&quot;Đồ vật không phải ta lấy, là người khác đến trước.&quot;</p>
+                <p>&quot;Ta chỉ cướp được thanh kiếm này từ tay hắn.&quot;</p>
+                <p>Cái gì?</p>
+                <p>Lưu Ly biến sắc, cấp bách nói: &quot;Là ai?&quot;</p>
+                <p>&quot;Hắn ở đâu?&quot;</p>
+                <p>Nếu người kia trốn về địa bàn Nhân tộc thì xong rồi!</p>
+                <p>Kim Vân Liệt bị dáng vẻ lúc này của nàng dọa cho sợ hãi, nói: &quot;Là. . . là. . . một người đeo mặt nạ.&quot;</p>
+                <p>&quot;Thân phận cụ thể, ta cũng không rõ ràng.&quot;</p>
+                <p>Mang mặt nạ?</p>
+                <p>Lưu Ly giật mình, chợt nghĩ đến Giang Phàm.</p>
+                <p>Nàng híp con ngươi, gằn từng chữ:</p>
+                <p>&quot;Ngươi sẽ không phải nói, trên mặt nạ kia khắc một chữ &#039;Nhất&#039; chứ?&quot;</p>
+                <p>[Tổng Tài Nhặt Được Bé Cá Ngựa - Quyển 3] Ninh Thư - Rất Là Lập Dị Quy Tắc Sinh Tồn Trên Tàu Hỏa - Phần Truyền Thuyết Quy Tắc Chết Chóc Vô Hạn Lưu: Thiết Lập Nhân Vật Không Thể Phá Vỡ.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_348">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 348: Phát điên lưu ly</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Kim Vân Liệt sững sờ: &quot;Làm sao ngươi biết?&quot;</p>
+                <p>Loảng xoảng!</p>
+                <p>Lưu ly trong lòng bàn tay run lên.</p>
+                <p>Trường kiếm không thể nắm chặt, lỡ tay rơi xuống, nện xuống tảng đá vang lên ong ong.</p>
+                <p>Bản thân nàng cũng lảo đảo lùi mấy bước.</p>
+                <p>Thất thần tự lẩm bẩm: &quot;Là hắn! Vậy mà thật sự là hắn!&quot;</p>
+                <p>Phệ Thiên Hổ cũng ngẩn ngơ, thầm nói: &quot;Tại sao lại là hắn?&quot;</p>
+                <p>Có khoảnh khắc, nó cảm thấy Giang Phàm có phải là khắc tinh của thiếu chủ.</p>
+                <p>&quot;Hắn ở đâu? Hắn ở đâu???&quot;</p>
+                <p>Thất thần một lúc, nộ khí trong mắt Lưu ly tăng vọt có thể thấy bằng mắt thường.</p>
+                <p>Đạt đến đỉnh điểm, hóa thành tiếng núi lửa phun trào thét lên.</p>
+                <p>Kim Vân Liệt vội vàng chỉ hướng Giang Phàm bỏ chạy về phía Vạn Kiếm thành.</p>
+                <p>Mặt Lưu ly tràn ngập nộ khí.</p>
+                <p>Nàng cầm cực phẩm pháp kiếm, thân hình vút lên đuổi theo.</p>
+                <p>Phệ Thiên Hổ biến sắc: &quot;Thiếu chủ, bình tĩnh!&quot;</p>
+                <p>Nó làm bộ muốn theo sau, nhưng phát hiện Kim Vân Liệt còn chưa xử trí.</p>
+                <p>Vội vàng nói: &quot;Người này xử trí như thế nào?&quot;</p>
+                <p>Nghe vậy, trái tim Kim Vân Liệt đập mạnh kinh hoàng, tranh thủ cầu xin tha thứ:</p>
+                <p>&quot;Hai vị đại nhân, ta là Đại trưởng lão Chính Lôi tông, quyền cao chức trọng, có thể cung cấp rất nhiều tình báo cho các ngươi yêu tộc.&quot;</p>
+                <p>&quot;Lưu ta một mạng, các ngươi chắc chắn sẽ không thiệt thòi.&quot;</p>
+                <p>Hắn lại chuẩn bị đầu hàng yêu tộc, phản bội!</p>
+                <p>Hơn nữa, địa vị của hắn cực cao.</p>
+                <p>Tình báo hắn có được đều là cơ mật cốt lõi.</p>
+                <p>Làm không tốt, có thể giúp yêu tộc thắng một trận chiến then chốt.</p>
+                <p>Phệ Thiên Hổ động lòng.</p>
+                <p>Một gián điệp cấp cao trong nhân tộc có giá trị quá lớn.</p>
+                <p>Lưu ly lại không quay đầu lại, lạnh lùng nói: &quot;Giết chết!&quot;</p>
+                <p>Phệ Thiên Hổ nói: &quot;Thiếu chủ, giữ lại hắn có tác dụng lớn.&quot;</p>
+                <p>Lưu ly lại dứt khoát nói: &quot;Một thứ đối với bộ tộc mình còn phản bội, ngươi dám dùng?&quot;</p>
+                <p>Điều này khiến Phệ Thiên Hổ rùng mình.</p>
+                <p>Không phải tộc ta thì chắc chắn sẽ có dị tâm.</p>
+                <p>Người này đối với nhân tộc còn không trung thành, huống chi đối với yêu tộc?</p>
+                <p>Hắn lúc nào cũng có thể quay về phe Nhân tộc.</p>
+                <p>Đến lúc đó phản chiến, khả năng bị tổn thất lớn chính là yêu tộc.</p>
+                <p>Bởi vậy, mắt hổ của nó lạnh lẽo.</p>
+                <p>Nâng vuốt sắc bén lên, xẹt qua cổ Kim Vân Liệt.</p>
+                <p>&quot;Không...&quot;</p>
+                <p>Tiếng kêu thảm thiết thê lương, hơi ngừng lại.</p>
+                <p>Đường đường Đại trưởng lão Chính Lôi tông, cứ thế ngã xuống.</p>
+                <p>Nếu như hắn không tham lam cực phẩm pháp kiếm của Từ Thanh Dương, đã không ở đây gặp Phệ Thiên Hổ.</p>
+                <p>Càng sẽ không chết ở đây.</p>
+                <p>Phệ Thiên Hổ sau đó đuổi kịp Lưu ly, cõng nàng về phía Vạn Kiếm thành.</p>
+                <p>Chỉ một chén trà sau.</p>
+                <p>Tầm mắt Lưu ly đột nhiên nhìn về phía một khu rừng.</p>
+                <p>Nhìn thấy một tàn ảnh, cực nhanh lấp lánh giữa khu rừng.</p>
+                <p>Một chiếc mặt nạ khắc chữ &quot;Một&quot; lúc ẩn lúc hiện.</p>
+                <p>Không phải số một Ảnh vệ thì là ai?</p>
+                <p>Lưu ly nghiến răng nghiến lợi, phát ra tiếng cười giận dữ kéo dài: &quot;Thiên đường có đường ngươi không đi! Địa ngục không cửa ngươi càng muốn xông!!&quot;</p>
+                <p>&quot;Số một Ảnh vệ, báo ứng của ngươi đến rồi!&quot;</p>
+                <p>&quot;Đuổi kịp hắn!&quot;</p>
+                <p>Phệ Thiên Hổ nhảy vọt lên, tốc độ kinh người đuổi theo.</p>
+                <p>Nhưng, đột nhiên, nó nhìn về phía Vạn Kiếm thành với vẻ ngưng trọng.</p>
+                <p>Nói trầm giọng: &quot;Không tốt, lão già Từ Thanh Dương đến rồi!&quot;</p>
+                <p>&quot;Không chỉ có hắn một người!&quot;</p>
+                <p>Lưu ly biến sắc.</p>
+                <p>Vội vàng nói: &quot;Nhanh! Tốc chiến tốc thắng!&quot;</p>
+                <p>&quot;Có thể bắt sống hắn thì bắt sống! Không thể bắt sống thì... thì giết chết hắn!&quot;</p>
+                <p>Ánh mắt Phệ Thiên Hổ lóe lên một tia nghi ngờ.</p>
+                <p>Tại sao nói đến giết chết hắn, thiếu chủ lại có chút lưỡng lự?</p>
+                <p>Nhưng bất kể thế nào, người này nhất định phải giữ lại.</p>
+                <p>Tuyệt đối không thể để hắn tụ hợp với Từ Thanh Dương.</p>
+                <p>Vù!</p>
+                <p>Phệ Thiên Hổ là tồn tại Kết Đan chín tầng viên mãn, có thể sánh ngang với Thái Thượng trưởng lão của Cửu Tông, thậm chí là Thái Thượng trưởng lão cấp cao nhất.</p>
+                <p>Thêm vào đó là yêu tộc, tốc độ vốn vượt xa nhân tộc.</p>
+                <p>Bởi vậy, Giang Phàm thi triển thân pháp đến cực hạn cũng không thể thoát.</p>
+                <p>Một lát sau.</p>
+                <p>Phệ Thiên Hổ gầm lên giận dữ, nhảy vọt đâm nát mảng lớn rừng cây.</p>
+                <p>Thân thể cao lớn, chặn đường Giang Phàm.</p>
+                <p>Tiếp theo, một con mãnh hổ quay đầu lại.</p>
+                <p>Đôi mắt hổ to lớn như đèn lồng, đằng đằng sát khí nhìn chằm chằm Giang Phàm, lạnh nhạt nói:</p>
+                <p>&quot;Tiểu tử, ngươi cũng rất biết chạy!&quot;</p>
+                <p>Truy đuổi Kết Đan trung kỳ của nhân tộc cũng không tốn sức như vậy!</p>
+                <p>Trái tim Giang Phàm đập thình thịch kinh hoàng.</p>
+                <p>Chuyện gì đang xảy ra?</p>
+                <p>Đã trốn lâu như vậy, tại sao vẫn bị đuổi kịp?</p>
+                <p>Nhìn con cự hổ có khí tức khủng bố trước mắt, Giang Phàm tâm niệm vạn chuyển, chắp tay nói:</p>
+                <p>&quot;Yêu Vương tiền bối, ta đang muốn tìm ngươi đây.&quot;</p>
+                <p>&quot;Ta phát hiện Đại trưởng lão và đệ tử Chính Lôi tông đang đào báu vật của các ngươi.&quot;</p>
+                <p>Khóe miệng Phệ Thiên Hổ nhếch lên một cái.</p>
+                <p>Tiểu tử này, vừa ăn cướp vừa la làng à!</p>
+                <p>&quot;Vậy ta phải cảm ơn ngươi?&quot;</p>
+                <p>Trên lưng Phệ Thiên Hổ, dưới lớp lông hổ dày, một Lưu ly nghiến răng nghiến lợi chui ra.</p>
+                <p>Đôi bàn tay trắng nõn của nàng nắm chặt, gắt gao nhìn chằm chằm Giang Phàm.</p>
+                <p>Giống như nhìn thấy kẻ thù truyền kiếp.</p>
+                <p>Giang Phàm trong lòng hơi giật mình.</p>
+                <p>Nữ nhân này cũng ở đây à!</p>
+                <p>Nhưng hắn vẫn mặt không đổi sắc, chắp tay nói:</p>
+                <p>&quot;Công chúa điện hạ, quen biết một trận, ta mới nói cho ngươi tình báo quan trọng này.&quot;</p>
+                <p>&quot;Ngươi nếu đi trễ, chỉ sợ đã muộn.&quot;</p>
+                <p>Ha ha!</p>
+                <p>Lưu ly cười lạnh, giơ trường kiếm trong tay lên, nói: &quot;Cẩu nam nhân, nhìn xem đây là cái gì?&quot;</p>
+                <p>&quot;Trong miệng không có một câu thật!&quot;</p>
+                <p>Bội kiếm của Từ Thanh Dương?</p>
+                <p>Chẳng lẽ nói, nàng đã đi qua núi Bút Giá, đồng thời Kim Vân Liệt rất có khả năng gặp bất trắc?</p>
+                <p>Mà lời nói dối của mình, nàng sớm đã nhìn thấu?</p>
+                <p>Nghĩ đến đây, hắn vẫn mặt không đỏ tim không đập, nói: &quot;Ồ, thì ra công chúa điện hạ đã lấy lại đồ vật của mình rồi.&quot;</p>
+                <p>&quot;Như vậy ta yên tâm.&quot;</p>
+                <p>Mắt thấy Giang Phàm chống chế như vậy, Lưu ly cười giận dữ nói: &quot;Bớt nói nhiều lời!&quot;</p>
+                <p>&quot;Đồ vật ngươi cầm của ta, trả lại hết!&quot;</p>
+                <p>Giang Phàm vẻ mặt bất đắc dĩ, nói: &quot;Được thôi.&quot;</p>
+                <p>Hắn từ trong ngực lấy ra một viên yêu đan trong suốt, nói: &quot;Không phải chỉ là thay ngươi giữ hộ một viên huyễn thận yêu đan sao?&quot;</p>
+                <p>&quot;Đến mức truy đuổi thế này?&quot;</p>
+                <p>Lưu ly giận đến tay cầm kiếm siết chặt kêu kẽo kẹt, quát: &quot;Vẫn còn giả ngốc?&quot;</p>
+                <p>&quot;Đồ vật ta chôn dưới tảng đá, một kiện không thiếu, phun ra hết cho ta!&quot;</p>
+                <p>Giang Phàm lộ ra vẻ chợt hiểu, nói: &quot;Ồ, ngươi nói có phải là cái này không?&quot;</p>
+                <p>Hắn gỡ xuống cung thủy tinh trên vai.</p>
+                <p>Đột nhiên liền kéo theo mũi tên thủy tinh, bắn một mũi tên về phía Lưu ly.</p>
+                <p>Uy lực của cực phẩm pháp khí, mạnh mẽ vô song.</p>
+                <p>Mang theo sức mạnh lưỡi đao sắc bén, xuyên thủng bầu trời.</p>
+                <p>Trong chốc lát đã bắn tới mặt Lưu ly.</p>
+                <p>Nhưng, một cái vuốt hổ to lớn như cánh cửa, dùng sức quét qua, liền đánh bay mũi tên thủy tinh ra ngoài.</p>
+                <p>Ánh mắt Phệ Thiên Hổ bùng lên hung quang, quát: &quot;Thiếu chủ, tiểu tử này đang trì hoãn thời gian!&quot;</p>
+                <p>&quot;Đừng nói nhiều lời với hắn, giết trước rồi nói!&quot;</p>
+                <p>Lưu ly lúc này đã giận đến toàn thân run rẩy.</p>
+                <p>&quot;Dùng cung tên của ta bắn ta?&quot;</p>
+                <p>&quot;Ta không tha cho ngươi!&quot;</p>
+                <p>&quot;Bắt sống hắn cho ta!&quot;</p>
+                <p>Phệ Thiên Hổ loạng choạng một cái.</p>
+                <p>Đã đến lúc này rồi, còn bắt sống?</p>
+                <p>Nhưng thiếu chủ có mệnh, nó không thể chống lại.</p>
+                <p>Thân hổ rung lên, dùng thế thái sơn áp đỉnh lao tới.</p>
+                <p>Giang Phàm trong lòng rung mạnh.</p>
+                <p>Quả quyết rút ra tử kiếm.</p>
+                <p>Đã nếm mùi thua thiệt từ Phệ Thiên Hổ, nó nheo mắt lại, uy lực của thanh kiếm này nó đã được chứng kiến.</p>
+                <p>Đã chặt đứt móng vuốt của nó.</p>
+                <p>Nhưng, là yêu thú có linh trí cực cao, khả năng phản ứng của nó không thể xem thường.</p>
+                <p>Giang Phàm vừa rút ra tử kiếm.</p>
+                <p>Nó liền há miệng gầm lên tiếng hổ gầm.</p>
+                <p>Tiếng rống cực kỳ mạnh mẽ, trong nháy mắt hình thành sóng khí mãnh liệt, chấn động khiến cây cối xung quanh gãy đổ.</p>
+                <p>Giang Phàm càng bị chấn động khí huyết cuồn cuộn, ngũ tạng lục phủ như vỡ vụn.</p>
+                <p>Toàn thân run rẩy, lại cứng đờ tại chỗ, không thể động đậy.</p>
+                <p>Phệ Thiên Hổ hừ lạnh: &quot;Nhân tộc nhỏ bé, còn mưu toan chính diện chống lại bổn vương hay sao?&quot;</p>
+                <p>Theo nó thấy, loại trúc cơ cảnh như Giang Phàm, dám bắn một mũi tên về phía nó đã là chuyện chưa từng có.</p>
+                <p>Cố gắng chính diện gây tổn thương cho nó.</p>
+                <p>Đây là nói mơ giữa ban ngày, hoàn toàn không thể.</p>
+                <p>Vuốt hổ khẽ chụp, liền muốn đập Giang Phàm ngã xuống đất!</p>
+                <p>Nhưng Giang Phàm không cam chịu bó tay chịu trói.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_349">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 349: Để người ta tiểu yêu nữ</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Tay chân hắn không thể động.</p>
+                <p>Nhưng kiếm thuật không nhất thiết phải dùng tay để thi triển.</p>
+                <p>Linh lực trong cơ thể hắn cấp tốc phun trào, tạo thành hình một thanh kiếm.</p>
+                <p>Kiếm Tâm phát động!</p>
+                <p>Tử kiếm sau lưng hắn lập tức xuất vỏ dù không có người điều khiển, vụt một tiếng.</p>
+                <p>Hóa thành một luồng sáng tím chói mắt, trong nháy mắt bắn ra.</p>
+                <p>Phốc ――</p>
+                <p>Vuốt hổ to lớn, tại chỗ bị ánh sáng tím xuyên thủng, mang theo một chuỗi máu tươi!</p>
+                <p>&quot;Ngao&quot; Phệ Thiên Hổ không kịp đề phòng, phát ra tiếng gào lên đau đớn.</p>
+                <p>Khi dư quang của nó quét qua, phát hiện thanh tử kiếm nguy hiểm kia lại tự do bay lượn trên không trung.</p>
+                <p>Mắt hổ co giật kịch liệt, run rẩy thất thanh nói: &quot;Ngự Kiếm Thuật?&quot;</p>
+                <p>&quot;Ngươi biết Ngự Kiếm Thuật!!!&quot;</p>
+                <p>Nó đơn giản không thể tin được.</p>
+                <p>Trong nhân tộc, ngoài Từ Thanh Dương, lại còn có người thứ hai tinh thông Ngự Kiếm Thuật!</p>
+                <p>Nhưng nó không kịp kinh hô.</p>
+                <p>Vì tử kiếm xuyên qua hổ chưởng của nó, liền không chút chậm trễ đâm về phía Lưu Ly!</p>
+                <p>&quot;Bắt giặc phải bắt vua.&quot;</p>
+                <p>Giang Phàm tự nhiên hiểu sâu đạo lý này.</p>
+                <p>&quot;Thiếu chủ!&quot; Phệ Thiên Hổ quá sợ hãi.</p>
+                <p>Giờ khắc này, tử kiếm đã đến trước người Lưu Ly.</p>
+                <p>Nàng tràn đầy hoảng sợ, bị ép thi triển thiên phú Yêu Hoàng huyết mạch, ngưng tụ một tầng lồng ánh sáng màu tím quanh thân.</p>
+                <p>Nhưng trước mặt tử kiếm, tầng lồng ánh sáng này mỏng manh như giấy bị đâm xuyên.</p>
+                <p>Tử kiếm lạnh lẽo, vô tình đâm về phía ngực nàng!</p>
+                <p>Ngàn cân treo sợi tóc.</p>
+                <p>Phệ Thiên Hổ rống giận, chiếc đuôi hổ dài hóa thành một đạo tàn ảnh, kịp thời chắn trước mặt Lưu Ly.</p>
+                <p>Phốc phốc ――</p>
+                <p>Chiếc đuôi của nó ứng tiếng bị chém đứt.</p>
+                <p>Nhưng cũng cho Lưu Ly cơ hội phản ứng, nàng nghiêng người nhanh chóng né tránh.</p>
+                <p>Nhìn chiếc đuôi đứt gãy, nghe tiếng Phệ Thiên Hổ gào lên đau đớn không ngừng, Lưu Ly đột nhiên giận dữ.</p>
+                <p>&quot;Ngươi đáng chết!&quot;</p>
+                <p>Nàng trở tay rút ra cực phẩm pháp kiếm, ném mạnh về phía Giang Phàm!</p>
+                <p>Giờ khắc này, thân thể Giang Phàm còn có chút cứng đờ, cực kỳ không linh hoạt.</p>
+                <p>Căn bản không thể né tránh.</p>
+                <p>Khẽ cắn môi, hắn quả quyết lấy ra món chiếc yếm kia, che trước người.</p>
+                <p>Xùy ――</p>
+                <p>Cực phẩm pháp kiếm vốn nên bẻ gãy nghiền nát, đâm vào chiếc yếm, giống như đâm vào một đống bông gòn.</p>
+                <p>Kiếm khí phía trên nhanh chóng bị tiêu tán.</p>
+                <p>Rất nhanh, trường kiếm liền rơi xuống đất.</p>
+                <p>Thấy cảnh này, khuôn mặt Lưu Ly đỏ bừng, phát điên nói: &quot;Ngươi, ngươi vô sỉ!&quot;</p>
+                <p>&quot;Trả yếm cho ta!&quot;</p>
+                <p>Dùng chiếc yếm của nàng ngăn cản công kích của nàng.</p>
+                <p>Nàng cảm giác mình sắp sụp đổ!</p>
+                <p>Phệ Thiên Hổ liên tục bị thương, hoàn toàn kích phát hung tính của nó.</p>
+                <p>Không còn để ý đến mệnh lệnh bắt sống của Lưu Ly.</p>
+                <p>Cự chưởng mang theo uy lực hủy diệt, hung hăng vỗ xuống, gầm lên giận dữ: &quot;Kiến hôi, đi chết!!&quot;</p>
+                <p>Âm vang ――</p>
+                <p>Đúng lúc này!</p>
+                <p>Một đạo phi kiếm từ trên trời giáng xuống.</p>
+                <p>Đâm thẳng đầu Phệ Thiên Hổ.</p>
+                <p>Kiếm khí như cầu vồng, hàn quang chiếu thiên!</p>
+                <p>Cửu Tông đại địa, có uy thế như vậy, chỉ có một người!</p>
+                <p>Khuôn mặt Phệ Thiên Hổ kịch liệt biến sắc.</p>
+                <p>Làm sao còn nhớ đến Giang Phàm, cõng Lưu Ly lăn khỏi chỗ, miễn cưỡng tránh đi nhất kiếm uy lực vô cùng khủng khiếp này.</p>
+                <p>Phanh ――</p>
+                <p>Nơi nó vừa đứng, bị nhất kiếm đánh ra một hố to đường kính mấy trượng.</p>
+                <p>Trong hố đất khô cằn cuồn cuộn, bốc lên khói trắng nóng hổi.</p>
+                <p>Mí mắt Giang Phàm giật liên hồi.</p>
+                <p>Đây là nhất kích của Kiếm Vương đệ nhất Cửu Tông sao?</p>
+                <p>Đương đại ai có thể chống đỡ được đây?</p>
+                <p>Nhưng hắn phản ứng cũng cực nhanh.</p>
+                <p>Nhân lúc Từ Thanh Dương còn chưa tới, nhanh chóng thu hồi tử kiếm.</p>
+                <p>Sau đó nhặt luôn bội kiếm của Từ Thanh Dương.</p>
+                <p>Sưu sưu sưu ――</p>
+                <p>Mấy đạo nhân ảnh theo sát tới.</p>
+                <p>Chính là các Thái Thượng trưởng lão Vạn Kiếm Môn, do Từ Thanh Dương dẫn đầu.</p>
+                <p>Từ Thanh Dương khuôn mặt băng hàn: &quot;Tốt ngươi, Phệ Thiên Hổ, thật coi Vạn Kiếm Môn của ta là vườn rau xanh sao?&quot;</p>
+                <p>&quot;Lặp đi lặp lại nhiều lần giương oai?&quot;</p>
+                <p>Khi ở rừng kiếm, đã bị bọn họ truy sát đến chạy.</p>
+                <p>Giờ lại quay lại rồi!</p>
+                <p>Sắc mặt Lưu Ly đại biến.</p>
+                <p>Chợt hung dữ trừng mắt nhìn Giang Phàm.</p>
+                <p>Nàng trăm triệu không nghĩ tới, Giang Phàm lại khó dây dưa như vậy, lại bị hắn kéo dài đến khi Từ Thanh Dương tới!</p>
+                <p>Nàng cắn chặt răng ngà, hận nói: &quot;Chúng ta không cố ý ở Vạn Kiếm Môn không đi!&quot;</p>
+                <p>&quot;Là tên khốn này trộm đồ của ta!&quot;</p>
+                <p>Giang Phàm nhanh chóng chạy đến bên cạnh Từ Thanh Dương.</p>
+                <p>Chỉ như vậy mới cảm thấy an toàn.</p>
+                <p>Hắn nghiêm mặt, nói: &quot;Tiểu yêu nữ, nói chuyện đừng khó nghe như vậy.&quot;</p>
+                <p>Lưu Ly nghe xong, bực bội nói: &quot;Ngươi gọi ta là gì?&quot;</p>
+                <p>&quot;Vừa rồi ngươi còn gọi ta là Công chúa điện hạ!&quot;</p>
+                <p>Cái tên không biết xấu hổ này!</p>
+                <p>Lúc không có chỗ dựa, mở miệng là Công chúa điện hạ, còn nho nhã lễ độ.</p>
+                <p>Có chỗ dựa, lập tức trở mặt, gọi nàng là tiểu yêu nữ!</p>
+                <p>Làm sao có thể như vậy!</p>
+                <p>Nàng nghiến răng nói: &quot;Ngươi cầm đồ của ta, không phải trộm là gì?&quot;</p>
+                <p>Giang Phàm nói năng hùng hồn đầy lý lẽ: &quot;Của ngươi? Xin lỗi, ta là tìm thấy trong núi.&quot;</p>
+                <p>&quot;Đây là thiên nhiên ban tặng!&quot;</p>
+                <p>Cái gì?</p>
+                <p>Lưu Ly không tin vào tai mình.</p>
+                <p>Thiên nhiên ban tặng?</p>
+                <p>Ta ban tặng tổ tông ngươi à!</p>
+                <p>&quot;Ngươi vô sỉ!&quot; Lưu Ly tức giận dậm chân: &quot;Cái đó rõ ràng là của ta!&quot;</p>
+                <p>Giang Phàm mới không để ý đến nàng.</p>
+                <p>Đưa thanh trường kiếm màu đồng cổ cho Từ Thanh Dương: &quot;Tiền bối, ta đã cùng tiểu yêu nữ này đoạt lại kiếm của ngài.&quot;</p>
+                <p>Từ Thanh Dương mừng rỡ.</p>
+                <p>Vừa nắm chặt kiếm, trên khuôn mặt già nua hiện lên từng tia kích động.</p>
+                <p>&quot;Tốt tốt tốt! Ta đều đã chuẩn bị đi Chính Lôi Tông đòi một lời giải thích.&quot;</p>
+                <p>&quot;Hóa ra, thanh kiếm này bị Nữ nhi Yêu Hoàng lấy đi!&quot;</p>
+                <p>Tâm trạng vui sướng khi mất mà được lại khiến hắn vô cùng cao hứng.</p>
+                <p>&quot;Tiểu tử, lão phu lại nợ ngươi một phần nhân tình.&quot;</p>
+                <p>&quot;Muốn gì, nói!&quot;</p>
+                <p>Giang Phàm nói: &quot;Tiền bối không cần khách khí, vì đại nghiệp chém yêu, vãn bối chỉ làm chút sức mọn mà thôi.&quot;</p>
+                <p>&quot;Chỉ cần tiền bối có thể giữ lại tiểu yêu nữ kia, vãn bối mạo hiểm lớn như vậy đoạt kiếm cũng không uổng công.&quot;</p>
+                <p>Từ Thanh Dương híp mắt, chậm rãi nhìn về phía Lưu Ly.</p>
+                <p>&quot;Nữ nhi Yêu Hoàng, ở trong cảnh nội nhân tộc gây sóng gió.&quot;</p>
+                <p>&quot;Thật là không coi nhân tộc ta ra gì!&quot;</p>
+                <p>Tiếng nói vừa dứt.</p>
+                <p>Cực phẩm pháp kiếm trong nháy tức thời rời tay, hóa thành một đạo kiếm quang khủng bố hơn nhiều so với vừa rồi, đâm về phía Lưu Ly.</p>
+                <p>Phệ Thiên Hổ tê cả da đầu.</p>
+                <p>Cầm lại cực phẩm pháp kiếm, thực lực Từ Thanh Dương cao hơn một đoạn dài!</p>
+                <p>Giờ khắc này, nó làm sao còn quản được Giang Phàm, làm sao còn nhớ đến đồ trên người hắn.</p>
+                <p>Cõng Lưu Ly quả quyết bỏ chạy.</p>
+                <p>Từ Thanh Dương lạnh mặt, khẽ nói: &quot;Ta ngược lại muốn xem xem, các ngươi có đi được không!&quot;</p>
+                <p>Lúc này, dẫn theo một đám Thái Thượng trưởng lão đuổi theo.</p>
+                <p>Giang Phàm lộ ra một tia cười trên nỗi đau của người khác: &quot;Tiểu yêu nữ, ngươi cũng nếm thử cảm giác bị người đuổi giết đi.&quot;</p>
+                <p>Lúc này.</p>
+                <p>Tà Linh trong ngực hắn mới dám thò đầu ra, tặc lưỡi nói: &quot;Đi nhanh đi.&quot;</p>
+                <p>&quot;Ở cùng đám lão quái vật này, không có chút cảm giác an toàn nào.&quot;</p>
+                <p>Giang Phàm bĩu môi.</p>
+                <p>Ngươi mới thật sự là lão quái vật được không?</p>
+                <p>Hắn trầm ngâm nói: &quot;Trước khi đi, đi xem thử Kim Vân Liệt chết chưa.&quot;</p>
+                <p>&quot;Là Đại trưởng lão một tông, trên người hắn hẳn là có không ít đồ tốt.&quot;</p>
+                <p>Những thứ khác, Giang Phàm không quá để ý.</p>
+                <p>Nhưng Kim Vân Liệt làm sao thi triển ra lôi điện uy lực to lớn như vậy, hắn hết sức tò mò.</p>
+                <p>Dưới chân núi Bút Giá.</p>
+                <p>Lục Thời Y mơ màng tỉnh lại, liền phát hiện Kim Vân Liệt đầu bị chặt đứt.</p>
+                <p>Không khỏi lộ ra vẻ hoảng sợ: &quot;Sư tôn!&quot;</p>
+                <p>Nhưng rất nhanh, xác định Phệ Thiên Hổ và Lưu Ly đã đi, lại nhanh chóng bình tĩnh lại.</p>
+                <p>Nhìn thi thể Kim Vân Liệt, lộ ra mấy phần vẻ tham lam.</p>
+                <p>&quot;Sư tôn, ngài tuy đã chết, nhưng đồ nhi sẽ phát dương quang đại bản lĩnh của ngài.&quot;</p>
+                <p>Hắn bò về phía thi thể.</p>
+                <p>Vừa mới chuẩn bị lật quần áo của hắn lên, Giang Phàm lại chạy tới.</p>
+                <p>Không nói hai lời, một cước đạp hắn bay ra ngoài.</p>
+                <p>&quot;Ngươi!&quot; Lục Thời Y giận nói.</p>
+                <p>Nhưng đối diện với đôi mắt lạnh lùng của Giang Phàm, lại không khỏi rụt cổ lại, nằm rạp trên đất một tiếng không dám lên tiếng.</p>
+                <p>Thật chọc giận Giang Phàm, giờ phút này giết hắn cũng không có người biết là ai làm.</p>
+                <p>&quot;Ngay cả đồ nhi cũng nghĩ vơ vét, rõ ràng Kim Vân Liệt trên người hẳn có đồ tốt.&quot; Giang Phàm mỉm cười.</p>
+                <p>Dùng kiếm gạt quần áo hắn ra, cẩn thận vơ vét vật phẩm của hắn.</p>
+                <p>Sau một lúc lâu.</p>
+                <p>Kim Vân Liệt bị lột sạch, vật phẩm đều bị lục soát ra.</p>
+                <p>Chiến lợi phẩm thu được lại khiến Giang Phàm thất vọng.</p>
+                <p>&quot;Chỉ thế này thôi sao?&quot;</p>
+                <p>Trừ một ít đan dược, còn lại là các loại tài liệu.</p>
+                <p>Mặc dù đều rất đáng tiền, nhưng đối với Giang Phàm mà nói, không có gì trọng dụng.</p>
+                <p>&quot;Vui mừng hụt một trận.&quot;</p>
+                <p>Giang Phàm khẽ thở dài, đang chuẩn bị rời đi.</p>
+                <p>Ánh mắt vô tình phát hiện, Lục Thời Y thấy mình sắp đi, đáy mắt lóe lên một tia kích động.</p>
+                <p>Còn rất cẩn thận liếc qua phần bụng Kim Vân Liệt.</p>
+                <p>Mắt Giang Phàm híp lại.</p>
+                <p>Không động thanh sắc móc ra hắc kính, không để lại dấu vết chiếu Lục Thời Y một thoáng.</p>
+                <p>Cũng giấu Tà Linh, âm thầm thúc giục Cổ Kính.</p>
+                <p>Lập tức, trong đầu hắn xuất hiện một đoạn tiếng lòng xa lạ.</p>
+                <p>Chính là Lục Thời Y.</p>
+                <p>Lúc này hắn đang cười lạnh:</p>
+                <p>&quot;Đồ đần, sư tôn ta là người ham tài như vậy, sẽ để đồ quan trọng nhất tùy tiện sao?&quot;</p>
+                <p>Mắt Giang Phàm sáng lên, tiếp tục vụng trộm lắng nghe..</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_350">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 350: Kinh người bảo tàng</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Lục Thời Y lần nữa liếc nhìn phần bụng, trong lòng thầm cười: &quot;Sư tôn quý báu nhất chính là tàng trong đan điền viên Thiên Lôi thạch.&quot;</p>
+                <p>&quot;Đây là vật hắn nhặt được thuở thiếu thời, có thể chứa đựng sức mạnh sấm sét của trời đất, và phóng thích khi cần thiết.&quot;</p>
+                <p>&quot;Để trở thành Đại trưởng lão của Chính Lôi tông, viên Thiên Lôi thạch này đóng vai trò cực kỳ quan trọng.&quot;</p>
+                <p>&quot;Giờ đây, nó thuộc về ta!&quot;</p>
+                <p>Bỗng nhiên.</p>
+                <p>Lục Thời Y sững sờ.</p>
+                <p>Bởi vì, Giang Phàm vốn định rời đi.</p>
+                <p>Lại đột ngột quay lại cạnh thi thể Kim Vân Liệt.</p>
+                <p>Lòng hắn hơi run: &quot;Hắn muốn làm gì?&quot;</p>
+                <p>&quot;Chẳng lẽ là phát hiện Thiên Lôi thạch?&quot;</p>
+                <p>&quot;Không thể nào, không thể nào, trên đời này ngoài sư tôn ra chỉ có ta biết chỗ đó.&quot;</p>
+                <p>&quot;Ta không nói, làm sao hắn biết được?&quot;</p>
+                <p>Nhưng điều khiến con ngươi hắn chấn động là.</p>
+                <p>Giang Phàm nhìn thẳng vào phần bụng Kim Vân Liệt, rút kiếm rạch một đường, lập tức mở bung phần bụng!</p>
+                <p>Một viên châu đầy lôi quang, ẩn hiện trong vùng đan điền.</p>
+                <p>&quot;Đây là cái gì?&quot; Giang Phàm chỉ vào viên châu, vẻ mặt cười như không cười hỏi.</p>
+                <p>Trái tim Lục Thời Y nhảy dựng lên đến cổ, cố gắng giữ bình tĩnh nói: &quot;Là... là... Lôi Hạch của võ giả Chính Lôi tông.&quot;</p>
+                <p>Giang Phàm vuốt cằm, nói: &quot;Có đáng giá không?&quot;</p>
+                <p>Trái tim Lục Thời Y đập loạn xạ, giả vờ như không để ý: &quot;Trong Chính Lôi tông, đệ tử nào cũng có.&quot;</p>
+                <p>&quot;Ngươi thấy đáng giá thì đào đi cũng được.&quot;</p>
+                <p>Hắn nghĩ rằng nói đến đây, ai nghe cũng sẽ không còn hứng thú nữa.</p>
+                <p>Ai ngờ.</p>
+                <p>Giang Phàm nói: &quot;Được, ta nghe ngươi.&quot;</p>
+                <p>Trường kiếm nhún một cái, liền nhặt viên Thiên Lôi thạch ra, bỏ vào hộp ngọc.</p>
+                <p>Lục Thời Y trợn tròn mắt, lòng sốt ruột: &quot;Ngươi đừng nghe ta!&quot;</p>
+                <p>&quot;Ngươi cũng phải làm theo kịch bản chứ!&quot;</p>
+                <p>&quot;Khốn nạn!&quot;</p>
+                <p>Hắn vội vàng mở lời: &quot;Vị sư huynh này, Lôi Hạch này vô dụng với người ngoài.&quot;</p>
+                <p>&quot;Nhưng với đệ tử Chính Lôi tông ta, có chút tác dụng nhỏ.&quot;</p>
+                <p>&quot;Hay là bán cho ta đi?&quot;</p>
+                <p>Ánh mắt tha thiết hiện lên trong mắt hắn.</p>
+                <p>Ai ngờ.</p>
+                <p>Giang Phàm nhét hộp ngọc vào ngực, dứt khoát từ chối: &quot;Không bán, ta tự giữ lại.&quot;</p>
+                <p>Nói xong, nghênh ngang rời đi.</p>
+                <p>Để lại Lục Thời Y trợn mắt há hốc mồm.</p>
+                <p>Rất lâu sau, hắn mới hoàn hồn.</p>
+                <p>Giận đến giậm chân mắng to: &quot;Lúc này ngươi lại không nghe lời ta sao?&quot;</p>
+                <p>&quot;Đây là bảo bối chí bảo của sư tôn ta đó!&quot;</p>
+                <p>&quot;Ngươi cái tên đáng đâm ngàn nhát!&quot;</p>
+                <p>Ha ha ha!</p>
+                <p>Từ xa, Giang Phàm cười to không dứt.</p>
+                <p>Không thể không nói, Chiếu Tâm Cổ Kính thật sự rất hữu dụng!</p>
+                <p>Nếu không phải nó, viên Thiên Lôi thạch này thật sự đã bị bỏ qua.</p>
+                <p>Hắn cứ thắc mắc, Kim Vân Liệt lấy sức mạnh sấm sét ở đâu ra.</p>
+                <p>Công pháp tu luyện của Chính Lôi tông là mượn dùng lôi điện.</p>
+                <p>Hoặc là dẫn động sấm sét trời đất lúc sấm vang chớp giật, hoặc là thôi động pháp bảo, phù chú thuộc tính lôi.</p>
+                <p>Nhưng Kim Vân Liệt phất tay áo một cái, đã là lôi điện đáng sợ to bằng cánh tay.</p>
+                <p>Điều này khiến Giang Phàm lúc đó rất nghi hoặc.</p>
+                <p>Bây giờ cuối cùng cũng hiểu rõ, hóa ra là có một vật gọi là Thiên Lôi thạch.</p>
+                <p>&quot;Tiểu tử, ngươi thật sự nhặt được món hời lớn.&quot;</p>
+                <p>Hắc Kính Tà Linh hiện lên vẻ ngưỡng mộ pha lẫn kiêng dè, nói: &quot;Thiên Lôi thạch là vật kỳ diệu của trời đất, hình thành sau khi chịu đựng vô vàn thiên lôi oanh kích.&quot;</p>
+                <p>&quot;Từng có một vị võ giả Nguyên Anh thuộc tính lôi, suốt đời tìm kiếm, cũng chỉ tìm được một viên.&quot;</p>
+                <p>&quot;Hơn nữa, còn không lớn bằng viên trong tay ngươi.&quot;</p>
+                <p>Giang Phàm lộ vẻ kinh ngạc: &quot;Thiên Lôi thạch hiếm hoi đến vậy sao?&quot;</p>
+                <p>Hắc Kính Tà Linh nói: &quot;Đương nhiên, vật có thể dẫn thiên lôi đánh, vốn đã không phải vật phàm.&quot;</p>
+                <p>&quot;Huống chi dẫn dụ Vạn Thiên Lôi Đình oanh kích? Trước đây, nó tuyệt đối là vật quý hiếm cấp bậc thiên địa kỳ trân, là sự tồn tại đã dẫn phát Thiên Đạo kiêng kỵ.&quot;</p>
+                <p>&quot;Đáng tiếc, không thể sớm phát hiện, để nó bị oanh thành Thiên Lôi thạch.&quot;</p>
+                <p>Nó tiếc nuối thở dài.</p>
+                <p>Giang Phàm chấn động trong lòng.</p>
+                <p>Hắn nhớ đến hạt giống thần bí trong cơ thể, đã từng liên tục dẫn phát thiên lôi.</p>
+                <p>Viên Thiên Lôi thạch trước mắt này, đã từng cũng là vật thần kỳ như vậy sao?</p>
+                <p>Đáng tiếc là, bị vô vàn thiên lôi oanh kích.</p>
+                <p>Đã sớm hoàn toàn thay đổi, trở thành một tảng đá.</p>
+                <p>Không biết, bên trong còn lưu lại chút ít chỗ thần bí nào không.</p>
+                <p>Giang Phàm nghĩ lấy ra, tìm hiểu kỹ một chút.</p>
+                <p>Bỗng nhiên.</p>
+                <p>Hắc Kính Tà Linh mang theo ý tứ sâu xa hỏi: &quot;Bất quá, ngươi làm sao biết, trong đan điền của người này giấu Thiên Lôi thạch?&quot;</p>
+                <p>Nó không thể hiểu được, Giang Phàm vốn định rời đi.</p>
+                <p>Sao đột nhiên lại thay đổi chủ ý, rồi một kiếm mở bung đan điền, tìm thấy viên Thiên Lôi thạch ẩn giấu sâu như vậy.</p>
+                <p>Ánh mắt Giang Phàm lấp láy, dùng giọng điệu nửa thật nửa giả nói: &quot;Đương nhiên là vận dụng năng lực nhìn trộm tâm linh của Hắc Kính.&quot;</p>
+                <p>&quot;Không thì làm sao tìm được?&quot;</p>
+                <p>Hắc Kính run lên.</p>
+                <p>Rõ ràng có thể cảm nhận được cảm xúc căng thẳng của Tà Linh.</p>
+                <p>Bề ngoài nó truyền thụ phương pháp điều khiển cho Giang Phàm, nhưng thực tế đương nhiên không muốn có người ngoài nó có thể nắm giữ kính này.</p>
+                <p>Nhưng rất nhanh, nó trấn định lại.</p>
+                <p>Phương pháp điều khiển này, nó nói với Giang Phàm cần nửa năm mới có thể lĩnh ngộ.</p>
+                <p>Điều không nói cho Giang Phàm là, nửa năm là đối với loại lão quái Nguyên Anh như nó.</p>
+                <p>Giang Phàm chỉ là cảnh giới Trúc Cơ tầm thường, muốn lĩnh ngộ phương pháp điều khiển, không có ba năm năm, tuyệt đối không thể.</p>
+                <p>Nó nhịn không được cười nói: &quot;Tiểu tử ngươi, vẫn rất hài hước.&quot;</p>
+                <p>&quot;Ta thấy, ngươi tu luyện công pháp lôi điện, đối với Thiên Lôi thạch có cảm ứng mãnh liệt nhỉ?&quot;</p>
+                <p>Giang Phàm nhún vai.</p>
+                <p>Tà Linh nghĩ vậy, càng tốt hơn.</p>
+                <p>Thấy Giang Phàm không lên tiếng, Tà Linh càng ngày càng khẳng định, triệt để thả lỏng, cười nói: &quot;Vậy bây giờ ngươi đi đâu?&quot;</p>
+                <p>&quot;Đi tìm thi thể con Yêu Hoàng kia thế nào?&quot;</p>
+                <p>Nó nóng lòng muốn tìm được thân thể, sau đó rời xa Giang Phàm.</p>
+                <p>&quot;Vốn định lên phía bắc Cự Nhân Tông, nhưng hiện tại, ta muốn về Thanh Vân tông một chuyến trước.&quot;</p>
+                <p>Giang Phàm khẽ nhíu mày.</p>
+                <p>Hắn theo suy nghĩ của Lục Thời Y, lại bắt được chuyện Phong Cổ Thiền nhờ mọi người truyền lời.</p>
+                <p>Mặc dù chỉ là suy nghĩ chợt lóe, nhưng, việc Thanh Vân tông triệu hoán mình trở về là thật.</p>
+                <p>&quot;Lạ thật, tông môn sao đột nhiên gọi ta trở về?&quot;</p>
+                <p>Gãi đầu, hắn bối rối.</p>
+                <p>Biết là triệu hoán khẩn cấp, hắn không dám trì hoãn.</p>
+                <p>Lúc này xuôi nam.</p>
+                <p>Mười ngày sau.</p>
+                <p>Giang Phàm ngồi trên một chiếc xe ngựa, phong trần mệt mỏi chạy tới chân núi Thanh Vân tông.</p>
+                <p>Không có nhiệm vụ, hắn một đường thuận lợi.</p>
+                <p>Thật có thời gian rảnh rỗi củng cố cảnh giới Trúc Cơ tầng chín viên mãn.</p>
+                <p>Bây giờ có thể chuẩn bị cho Kết Đan.</p>
+                <p>Ngoài ra, còn thành công tu luyện chiêu cuối cùng của môn Địa cấp chỉ pháp 《Thiên Tàn Chỉ》, Kháng Long Hữu Hối.</p>
+                <p>Đến đây.</p>
+                <p>Bản Địa cấp chỉ pháp này, nguồn gốc từ vách đá Ma Kha của Luân Hồi phong, đã tu luyện hoàn thành toàn bộ.</p>
+                <p>&quot;Mặc dù là công pháp Địa cấp hạ đẳng, nhưng là chiêu cuối cùng, uy lực của nó không thua kém thức đầu tiên của 《Hổ Khiếu Long Ngâm Công》 và 《Tam Thanh Lôi Ảnh》.&quot;</p>
+                <p>&quot;Lại thêm một chiêu lợi khí để khắc địch.&quot;</p>
+                <p>&quot;Thật phải cảm ơn Luân Hồi phong.&quot;</p>
+                <p>Giang Phàm mỉm cười, ngước mắt nhìn lên, Thanh Vân tông đã xa cách gần một tháng, cảm thấy rất thân thiết.</p>
+                <p>Bước vào tông môn, phát hiện Thanh Vân tông náo nhiệt hơn ngày xưa.</p>
+                <p>Tuy không ít đệ tử ra ngoài chấp hành nhiệm vụ, nhưng số đệ tử hoàn thành nhiệm vụ trở về lại nhiều hơn.</p>
+                <p>Bởi vậy trông rất ồn ào.</p>
+                <p>&quot;Giang sư đệ!&quot;</p>
+                <p>&quot;Giang sư đệ, ngươi trở về rồi?&quot;</p>
+                <p>Mấy đệ tử Thanh Vân tông phụ trách giao nhận nhiệm vụ, từ xa thấy Giang Phàm, đồng loạt mắt sáng lên chạy tới đón.</p>
+                <p>Trong thần sắc có chút cung kính.</p>
+                <p>Trước đây, bình xét cấp bậc đệ tử.</p>
+                <p>Giang Phàm ba chiêu hạ gục Đường Thiên Long, một trận chiến thành thần.</p>
+                <p>Đến nay các đệ tử Thanh Vân tông vẫn còn bàn tán sôi nổi.</p>
+                <p>Đặc biệt là rất nhiều đệ tử cấp thấp tư chất không tốt, nhìn thấy vô linh căn ngày xưa cũng đi ra một con đường rực rỡ, họ càng được cổ vũ, tu luyện chăm chỉ hơn ngày xưa.</p>
+                <p>Khiến cho bầu không khí tu luyện toàn bộ tông môn đều tăng lên rất nhiều.</p>
+                <p>Giang Phàm mỉm cười ôn hòa: &quot;Mấy vị sư huynh từ khi chia tay đến giờ không có vấn đề gì chứ.&quot;</p>
+                <p>&quot;Gần đây trong môn có bình an không?&quot;</p>
+                <p>Một đệ tử cười nói: &quot;Có Thái Thượng trưởng lão và Tông chủ tọa trấn, còn ai dám gây rối được sao?&quot;</p>
+                <p>Giang Phàm gật đầu.</p>
+                <p>Hắn sợ giống như Linh Thú tông, bị yêu thú thẩm thấu vào phúc địa.</p>
+                <p>Biết không có việc gì, vậy là tốt.</p>
+                <p>&quot;Thế còn Tông chủ phong của ta?&quot; Giang Phàm lại hỏi.</p>
+                <p>Mấy đệ tử lập tức cứng đờ mặt, ấp úng: &quot;Tông chủ phong hiện tại... đúng là gặp phải chút phiền phức.&quot;</p>
+                <p>Giang Phàm không khỏi nhíu mày: &quot;Sao? Đại trưởng lão lại làm loạn à?&quot;</p>
+                <p>Hắn chỉ có thể nghĩ đến Phong Cổ Thiền.</p>
+                <p>Một tên đệ tử vội vàng nói: &quot;Chuyện này không liên quan đến Đại trưởng lão.&quot;</p>
+                <p>&quot;Cũng là có chút liên lụy đến Giang sư đệ ngài.&quot;</p>
+                <p>Giang Phàm vẻ mặt mơ hồ, gần một tháng nay hắn đều không có ở tông môn.</p>
+                <p>Sao lại liên quan đến hắn?</p>
+                <p>Mãi đến khi tên đệ tử kia nói ra một cái tên, hắn mới bừng tỉnh...</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_69.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_69.html" class="page-btn">69</a>
+            <a href="page_70.html" class="page-btn current">70</a>
+            <a href="page_71.html" class="page-btn">71</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_71.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

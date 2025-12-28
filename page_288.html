@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 288">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 288</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_287.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_289.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_1436">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1436: Thế giới sụp đổ</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Thần vật như thế, dùng ngón chân cũng nghĩ ra được, sao lại có thể đặt tùy tiện mà không có bất kỳ sự bảo vệ nào? Chắc chắn có hung hiểm vô hình.</p>
+                <p>Hắn mặt mày vô ngữ nói: “Ngươi xem ta là người khổng lồ thời viễn cổ sao?”</p>
+                <p>Tiểu tâm tư bị nhìn thấu, Nguyệt Minh Châu cũng không giận, tinh mâu chuyển động, lại sinh một kế, nói: “Vậy chúng ta liên thủ lấy Độ Ách Hắc Liên đi. Sau khi có được, tách hạt sen ra, mỗi người một nửa.”</p>
+                <p>Chờ Độ Ách Hắc Liên vào tay, nàng có trăm phương ngàn kế để đoạt lấy.</p>
+                <p>Giang Phàm trầm ngâm chốc lát, rồi khẽ lắc đầu, nói: “Ta cảm thấy tốt nhất là không nên sinh lòng tham luyến. Trong môi trường hiểm ác như vậy, một đóa linh vật đáng gọi là tạo hóa, mà các sinh linh địa ngục lại kính sợ tránh xa. Điều này có nghĩa là gì, còn cần phải nói sao?”</p>
+                <p>Nguyệt Minh Châu bĩu môi, nói: “Ngươi đúng là thận trọng đấy.”</p>
+                <p>Lời vừa nói ra, nàng bỗng sững sờ, không khỏi nghiêng đầu đánh giá Giang Phàm.</p>
+                <p>“Nhìn ta làm gì?” Giang Phàm hỏi.</p>
+                <p>Nguyệt Minh Châu xoa cằm nói: “Có chút giống với nam nhân của ta.”</p>
+                <p>Giang Phàm vừa tức vừa buồn cười, tên này đã có nam nhân rồi mà Vong Tình Dã Lão còn tác hợp bọn họ? Hắn nghiêm mặt nói: “Nam nhân của ngươi đúng là không kén chọn! Ai cũng cần!”</p>
+                <p>Nguyệt Minh Châu nhún vai: “Nam nhân của ta ưu tú hơn ngươi tưởng tượng nhiều đấy!”</p>
+                <p>Vừa nói, nàng vừa nhìn lại Độ Ách Hắc Liên. Sau một hồi suy tư ngắn ngủi, nàng nói: “Nếu không lấy, vậy chúng ta cứ chờ đi.”</p>
+                <p>Nàng cũng chọn cách dứt khoát từ bỏ. Bởi vì, lời Giang Phàm nói quả thật có lý. Thần vật nghịch thiên như vậy, nếu dễ lấy đến thế, vì sao các sinh linh địa ngục trong Giới Vực Kẹp không lấy? Trong số chúng, có cả những tồn tại Cảnh giới Hóa Thần. Chúng đều không động, có thể thấy được sự nguy hiểm của nó.</p>
+                <p>“Chờ cái gì?” Giang Phàm vẻ mặt không hiểu. Hắn có chút không nắm bắt được một loạt hành động của cô gái xấu xí trước mắt.</p>
+                <p>“Chờ cơ hội sống sót.” Nguyệt Minh Châu bình tĩnh nói: “Chỉ có nơi này là an toàn nhất.”</p>
+                <p>Độ Ách Hắc Liên trước mắt, chính là khối khí vận khổng lồ mà nàng đã nhìn thấy. Ở bên cạnh nó, chắc chắn an toàn vô cùng.</p>
+                <p>Vừa nói, nàng vừa lấy ra một hòn đá nhỏ có khắc minh văn màu vàng nhạt, ấn lên trán. Minh văn liền in dấu trên trán nàng. Ngay sau đó, nàng lập tức ẩn thân tại chỗ. Khí tức và ba động lực lượng cũng hoàn toàn tiêu tán, không còn một chút nào.</p>
+                <p>Giang Phàm ngạc nhiên. Thuật ẩn thân thật lợi hại, rõ ràng nàng ở ngay bên cạnh hắn, nhưng hắn lại không hề cảm giác được. Xét về hiệu quả ẩn thân, nó còn lợi hại hơn cả *Vô Ngã Tịnh Trần Thuật* mà hắn đã học. E rằng đến cường giả Hóa Thần Cảnh sơ kỳ cũng chưa chắc đã phát hiện được sự tồn tại của nàng.</p>
+                <p>Giang Phàm tò mò hỏi: “Hòn đá kia có thể cho ta mượn dùng một chút không?”</p>
+                <p>Nguyệt Minh Châu liếc nhìn Kim Diệp không ngừng xoay tròn trước ngực hắn, không chút khách khí nói: “Mơ đi.”</p>
+                <p>Giang Phàm bĩu môi: “Thôi được, vậy ta tự ẩn thân vậy.”</p>
+                <p>Nguyệt Minh Châu nhíu mày. Lỡ chốc lát nữa gặp phải nguy hiểm, lại là một tồn tại cực kỳ lợi hại thì sao? Nếu thuật ẩn thân của Giang Phàm không đủ cao minh, sẽ bị nhìn thấu. Lúc đó, nàng chắc chắn cũng sẽ bị liên lụy.</p>
+                <p>“Thật phiền phức!” Nàng lầm bầm một tiếng, bất đắc dĩ ném hòn đá nhỏ sang bên cạnh hắn.</p>
+                <p>Giang Phàm lúc này mới chộp lấy hòn đá nhỏ, làm theo y hệt dán lên trán mình. Lập tức, một luồng ba động huyền diệu nhàn nhạt tràn vào cơ thể hắn. Ba động tương tự, hắn không hề xa lạ! Đây là Hiền Giả Khắc Tự! Những chữ có chứa lực lượng quy tắc! Giang Phàm thầm kinh hãi. Vong Tình Dã Lão thật sự rất cưng chiều vị đệ tử này, thứ này mà cũng tặng cho nàng để tùy thân bảo mệnh.</p>
+                <p>“Dùng xong thì trả ta.” Nguyệt Minh Châu thấy Giang Phàm ẩn thân, liền lập tức giục.</p>
+                <p>Giang Phàm “ồ” một tiếng, nghiêng đầu nhìn, lúc này mới phát hiện mình có thể nhìn thấy Nguyệt Minh Châu đang trong trạng thái ẩn thân. Hắn không khỏi ngạc nhiên: “Thật sự quá thần kỳ. Cùng trong trạng thái ẩn thân của một Hiền Giả Khắc Tự, lại có thể nhìn thấy lẫn nhau.”</p>
+                <p>Nguyệt Minh Châu lập tức giật lại hòn đá, cho hắn thấy cái gáy to tướng của mình, rồi im lặng quan sát Độ Ách Hắc Liên.</p>
+                <p>Giang Phàm khẽ mỉm cười. Tính cách tên này thật khó đoán. Hắn cũng nằm xuống, cùng quan sát Độ Ách Hắc Liên, khẽ hỏi: “Ngươi rốt cuộc đang chờ cái gì?”</p>
+                <p>Cảm nhận khí tức Giang Phàm ở rất gần mình, Nguyệt Minh Châu ghét bỏ bò sang bên cạnh một chút, nói: “Đừng hỏi, cứ chờ đi!”</p>
+                <p>Giang Phàm bất đắc dĩ, chỉ có thể kiên nhẫn tĩnh lặng chờ đợi.</p>
+                <p>Sau nửa chén trà. Độ Ách Hắc Liên vẫn không chút động tĩnh. Nhưng, đột nhiên, Giang Phàm mãnh liệt nheo mắt lại, nhìn về phía bờ đối diện của sơn cốc. Bằng vào Phong Chi Bản Nguyên, hắn mơ hồ cảm nhận được một luồng khí lưu bất thường.</p>
+                <p>Có người đến. Sở dĩ không nhìn thấy, hoặc là tu vi đã đạt đến Hóa Thần Cảnh, hoặc là đang trong trạng thái ẩn thân.</p>
+                <p>Nguyệt Minh Châu dường như cũng có cảm giác, lặng lẽ viết sáu chữ “Theo Độ Ách Hắc Liên” xuống đất cho Giang Phàm xem. Đợi Giang Phàm xem xong, nàng lại lập tức xóa đi.</p>
+                <p>Giang Phàm vẻ mặt suy tư: *Theo Độ Ách Hắc Liên?*</p>
+                <p>Trong lúc suy nghĩ, nước đen dưới đáy cốc dấy lên một tầng gợn sóng. Hóa ra Độ Ách Hắc Liên đang lay động, khuấy động sóng nước. Có người đang cố gắng đào Độ Ách Hắc Liên đi! Hắn ngưng mắt nhìn, không chớp mắt chú ý động tĩnh của Độ Ách Hắc Liên.</p>
+                <p>Rễ của Độ Ách Hắc Liên không biết liên kết với thứ gì, cường giả đang ẩn thân dùng tay không không cách nào nhổ nó lên được. Kéo dài suốt mười hơi thở. Đối phương có chút sốt ruột, nơi đây là chỗ sâu trong Giới Vực Kẹp, không thể trì hoãn dù chỉ một chút thời gian!</p>
+                <p>Bất đắc dĩ, hắn đã phóng thích ra uy lực của Hóa Thần Cảnh. Lực lượng tiết ra ngoài, trạng thái ẩn thân trên người hắn tự nhiên bị phá vỡ, lộ ra hình dáng. Hóa ra là một gã tráng hán mình trần, da đỏ bừng, cơ bắp cuồn cuộn, bên hông đeo chéo một cây búa sắt cấp bậc Thượng Phẩm Linh Khí! Sau gáy có một Thần Hoàn với ấn ký ngọn lửa!</p>
+                <p>Giang Phàm nhận ra, đây hẳn là một vị Tôn Giả Hóa Thần Cảnh của Thần Binh Châu. Người này cũng bị cuốn vào Giới Vực Kẹp!</p>
+                <p>Sau khi lộ diện thân hình, hắn ra tay không còn kiêng kỵ gì, Thần Hoàn sau lưng chấn động, trực tiếp phát động lĩnh vực.</p>
+                <p>“Vô Kiên Bất Tồi!”</p>
+                <p>Lĩnh vực bao phủ khắp tám phương, Giang Phàm và Nguyệt Minh Châu cũng bị bao trùm trong đó. Giang Phàm lập tức cảm thấy cơ thể mình trở nên mềm nhũn. Không chỉ là toàn thân không còn chút sức lực nào, mà ngay cả xương cốt cũng đang mềm đi. Thần kỳ hơn nữa, mặt đất âm lạnh bên dưới cũng trở nên như bùn lầy, Giang Phàm không ngừng chìm xuống. Nguyệt Minh Châu cũng vậy, chỉ trong chớp mắt, nửa thân dưới đã lún sâu vào lòng đất.</p>
+                <p>Vị Tôn Giả kia cảm ứng được sự bất thường, hai mắt quét qua chỗ Giang Phàm, kinh hãi xen lẫn lo lắng. Hắn không dám chần chừ, lại dốc sức. Dù đáy nước đen, nơi trung tâm lĩnh vực, đã bị làm mềm đến mức tối đa, nhưng hắn vẫn phải điều động tất cả Hóa Thần Chi Lực, Độ Ách Hắc Liên mới cuối cùng có động tĩnh.</p>
+                <p>Một tiếng “ong” vang lên. Đáy nước đen chấn động mạnh, như thể một thứ gì đó đã tách rời khỏi đáy đầm, tạo ra rung chuyển dữ dội. Cả sơn cốc rung lắc kịch liệt, từng vết nứt lấy đáy đầm làm trung tâm, lan rộng ra khắp bốn phía. Hơn nữa, trận động đất còn lan rộng ra toàn bộ Giới Vực Kẹp, khiến cả thế giới bắt đầu rung động, nứt ra, có dấu hiệu sắp sụp đổ.</p>
+                <p>Sắc mặt Giang Phàm biến đổi. Độ Ách Hắc Liên này không phải là một linh vật sao? Vì sao sau khi nhổ lên, lại giống như một trận pháp bị phá hủy trận nhãn?</p>
+                <p>Vị Tôn Giả Hóa Thần của Thần Binh Châu cũng giật mình. Hắn chỉ vô tình phát hiện ra sự phi phàm của đóa sen này, thế nên mới nảy ý định lấy nó. Sao lại có thể gây ra rung chuyển lớn đến thế trong Giới Vực Kẹp? Điều này có nghĩa là, động tĩnh ở đây không thể giấu được người khác! Nếu có các Tôn Giả Hóa Thần khác cũng bị cuốn vào đây, họ sẽ nhanh chóng thuấn di đến!</p>
+                <p>Hắn không dám chần chừ, dốc hết sức lực, ra sức kéo.</p>
+                <p>“Rắc!”</p>
+                <p>Cùng với một tiếng gãy vỡ cực lớn, cuối cùng, Độ Ách Hắc Liên đã bị nhổ bật gốc lên.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1437">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1437: Hoàng tước tại hậu</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Và điều này cuối cùng đã khơi mào một chấn động còn lớn hơn nữa!</p>
+                <p>Cả sơn cốc liền sụp đổ, trận đại địa chấn kinh khủng khiến mặt đất cuộn trào mãnh liệt. Tựa hồ có vô số cự thú vạn trượng đang cuộn mình dưới lòng đất.</p>
+                <p>Ngay cả không gian bích chướng của thế giới kẹp cũng rung chuyển dữ dội vào khắc này! Không gian bị vặn vẹo thành từng tầng nếp gấp, hệt như trận đại chiến của các Hiền giả trước đây.</p>
+                <p>Nhất thời, thế giới kẹp liền thiên băng địa liệt!</p>
+                <p>Giang Phàm thầm run sợ, nhất định phải mau chóng rời đi!</p>
+                <p>Chấn động của thế giới kẹp không có xu thế yếu bớt, trái lại càng lúc càng mạnh. Vạn nhất không gian bích chướng bị phá hư, liền thông đến hư vô thế giới, vậy thì hay rồi. Tất cả sinh linh trong thế giới này đều sẽ bị lưu đày đến hư vô thế giới, giống như động phủ Nguyên Anh dưới chân vách núi tuyết của Thái Thương Đại Châu.</p>
+                <p>Giờ phút này.</p>
+                <p>Hóa Thần Tôn Giả của Thần Binh Châu đã nhổ Độ Ách Hắc Liên ra. Thô lược nhìn qua, dưới gốc rễ lại mang theo một khối vật thể sưng phồng màu xám dài ngoằng. Hóa ra là một đoạn ngó sen cao bằng người! Chính bởi vì sự tồn tại của nó, Độ Ách Hắc Liên mới không thể bị nhổ lên. Hóa Thần Tôn Giả không kịp nhìn kỹ, tiện tay ném nó vào không gian trữ vật, lúc này mới nhìn về phía Giang Phàm hai người.</p>
+                <p>Đồng tử hơi nheo lại, một tia tàn nhẫn chợt lóe trong đôi mắt.</p>
+                <p>Giang Phàm biến sắc mặt, không ổn rồi, tên kia chuẩn bị giết người diệt khẩu. Mang trong mình thần vật nghịch thiên như vậy, nếu tin tức bị lộ ra ngoài, cực kỳ có thể sẽ rước họa sát thân. Vì an toàn, đương nhiên là giết những kẻ chứng kiến thì tốt hơn. Mặc dù hắn không nhìn thấy Giang Phàm hai người, nhưng việc bất ngờ chìm xuống đất trước đó đã làm lộ vị trí của hai bên. Chỉ cần ra tay vào chỗ này, liền có thể trấn sát hai người.</p>
+                <p>Giang Phàm tim đập điên cuồng, quả quyết vươn tay kéo lấy cánh tay Nguyệt Minh Châu, một cái không gian thuấn di liền bỏ chạy.</p>
+                <p>Vừa vặn rời đi.</p>
+                <p>Mảnh đất hai người họ từng nằm, bỗng nhiên hóa thành một đầm lầy. Dưới đầm lầy, một nắm đấm tràn ngập lực lượng hủy diệt hung hăng vung ra. Tiếp đó, bùn đất ngưng tụ, hình thành dáng vẻ của Hóa Thần Tôn Giả. Nhìn lại Hóa Thần Tôn Giả bên cạnh Hắc Thủy Đàm, ngay lập tức hóa thành bùn đất tan rã. Lĩnh vực của người này, ngoại trừ làm mềm vạn vật, lại còn có thể làm mềm chính mình, hơn nữa cùng vạn vật hòa làm một thể.</p>
+                <p>Giang Phàm kinh hãi không thôi. Hóa Thần Tôn Giả lấy luyện đan, luyện khí làm chủ, vẫn luôn mang đến một loại ấn tượng rập khuôn là năng lực phụ trợ cực mạnh, nhưng thực lực lại thiên về yếu. Thế nhưng Hóa Thần Tôn Giả của Thần Binh Châu trước mắt này, giống như Vưu Phó cung chủ, đã lật đổ nhận thức của Giang Phàm. Thực lực của bọn họ, không hề yếu hơn Hóa Thần Tôn Giả nhập đạo Pháp Tu!</p>
+                <p>“Trốn cũng khá nhanh.” Hóa Thần Tôn Giả của Thần Binh Châu mặt âm trầm nhìn chằm chằm bọn họ.</p>
+                <p>Nguyệt Minh Châu trong lòng kinh hãi, theo bản năng muốn điều động Nguyên Anh chi lực, thôi động pháp bảo ứng địch. Thế nhưng linh lực còn chưa kịp tuôn ra, đã bị Nguyên Anh chi lực từ lòng bàn tay Giang Phàm truyền vào áp chế. Hắn hướng về phía Nguyệt Minh Châu khẽ lắc đầu, ý là, đừng khinh cử vọng động. Kẻ này đang lừa bọn họ ra tay, để lộ vị trí. Nguyệt Minh Châu lúc này mới bình tĩnh lại, bọn họ đang được sự bảo hộ của chữ khắc của Hiền giả, chỉ cần không để lộ khí tức độc đáo, kẻ này sẽ không thể phát hiện ra vị trí của họ.</p>
+                <p>Quả nhiên. Thấy xung quanh không có khí tức dị thường lưu động, Hóa Thần Tôn Giả vừa vội vừa giận. Hắn không còn thời gian tiếp tục chậm trễ nữa! Nhất định phải tốc chiến tốc thắng! Hắn lần nữa phát động Thần Hoàn, lĩnh vực làm mềm vạn vật nhanh chóng bao trùm bốn phía. Sau đó chăm chú nhìn chằm chằm dị trạng xung quanh.</p>
+                <p>Giang Phàm và Nguyệt Minh Châu làm sao có thể chống lại được lĩnh vực do một vị Tôn Giả trực tiếp thi triển? Thân thể nhanh chóng mềm nhũn, mặt đất dưới chân bắt đầu tan chảy. Nhìn thấy sắp lại bị lún sâu vào, để lộ vị trí. Giang Phàm cắn răng, âm thầm điều động ba thanh phi kiếm cực phẩm. Nay đã khác xưa. Ba thanh linh kiếm cực phẩm trước đây là Thính Tuyết Kiếm, Cưa Răng Kiếm và Tử Kiếm. Trong đó chỉ có Thính Tuyết Kiếm sở hữu khí linh. Giờ đây, hắn điều động là Thính Tuyết Kiếm, Tử Điện và Thanh Sương. Chúng đều ẩn chứa khí linh. Uy lực của kiếm trận, so với trước đây không nghi ngờ gì đã tăng thêm một tầng. Có mối đe dọa chí mạng đối với Thiên Nhân Nhất Suy. Thêm nữa khoảng cách hai bên rất gần, bất ngờ ra tay sát chiêu, đánh cho đối phương trở tay không kịp, vẫn còn hi vọng có thể tập sát hắn! Đương nhiên, đây là khi đối phương không đủ cảnh giác, không có đủ phòng bị đối với hai Nguyên Anh cảnh bọn họ. Nếu hắn ta tâm tồn cẩn trọng, hắn vẫn sẽ thuấn di bỏ chạy.</p>
+                <p>Ngay khi Giang Phàm chuẩn bị động thủ.</p>
+                <p>Đột nhiên, một giọng nói âm lãnh mơ hồ mà phiêu miểu, không hề có dấu hiệu báo trước, vang lên trên đỉnh đầu. “Lấy được đồ rồi, còn không chạy?” “Đúng là ngu ngốc.”</p>
+                <p>Giang Phàm toàn thân run lên. Uy áp ẩn chứa trong giọng nói này, tựa hồ từng ngọn núi lớn đè lên thân thể hắn, khiến hắn không cách nào khống chế mà run rẩy.</p>
+                <p>Hóa Thần Tôn Giả của Thần Binh Châu cũng sắc mặt kịch biến, ngẩng đầu nhìn khoảng không bao la trên bầu trời, dường như đã hiểu ra là gì. Kinh hãi muốn chết, không màng đến Giang Phàm và Nguyệt Minh Châu, trực tiếp thuấn di bỏ chạy.</p>
+                <p>Nhưng, vừa mới biến mất. Nơi tận cùng thiên địa, liền có một tiếng kêu thảm thiết bi ai vọng ra. Lại thấy Hóa Thần Tôn Giả của Thần Binh Châu, bị lực lượng khủng bố vô hình bóp nát thân thể, huyết vụ bạo tán, nhuộm đỏ cả một vùng trời.</p>
+                <p>Giang Phàm mồ hôi lạnh chảy ròng. Thuấn sát một vị Tôn Giả Thiên Nhân Nhất Suy, đối phương ngay cả nửa điểm sức phản kháng cũng không có. Đây là tồn tại ở cảnh giới nào, hắn đã có thể tưởng tượng được. Đại Tôn Thiên Nhân Ngũ Suy! Trong số Băng Tâm Đại Tôn, Thiếu Đế và Kim Lân Đại Tôn. Có một vị cũng bị cuốn vào đây! Với thực lực của Đại Tôn Thiên Nhân Ngũ Suy, không thể nào bị một vài dao động không gian đơn giản cuốn đến nơi này. Chỉ có thể là, hắn ta tự mình tiến vào. Hơn nữa, từ khẩu khí của đối phương mà xem. Hắn ta đã ở ngay cạnh Độ Ách Hắc Liên từ sớm. Sở dĩ không tự mình thu hái Độ Ách Hắc Liên, rất có thể cũng như Giang Phàm và những người khác, cảm nhận được nguy hiểm ẩn chứa trong Độ Ách Hắc Liên. Bởi vậy mới đợi người khác hái rồi mới ra tay. Nhưng điều này có nghĩa là, đối phương đã sớm biết trong thế giới kẹp có Độ Ách Hắc Liên, hơn nữa là chạy đến vì nó. Đây là vị Đại Tôn nào?</p>
+                <p>Trong lúc Giang Phàm suy tư, phía trước lại xuất hiện dị biến. Trong huyết vụ bạo liệt, một linh hồn lớn bằng nắm tay, ôm chiếc nhẫn trữ vật không gian chứa Độ Ách Hắc Liên, độn vào hư vô. Một cái đuôi dài thượt khổng lồ, tựa như lưỡi hái tử thần, quét qua một mảnh thiên địa. Hồn phách của Hóa Thần Tôn Giả thảm kêu một tiếng, từ hư vô rơi ra. Hắn ta mặt đầy kinh hoàng chạy trốn. Điều khiến Giang Phàm sắc mặt lạnh đi là, tên kia lại đang chạy về phía bọn họ. Hiển nhiên là ý đồ họa thủy đông di, muốn bọn họ thu hút sự chú ý của vị đại tôn thần bí này, để bản thân có thể thoát hiểm thành công. Chỉ còn lại linh hồn rồi, mà còn ác độc đến vậy sao?</p>
+                <p>Trong chớp mắt, linh hồn của Hóa Thần Tôn Giả đã lướt đến gần Giang Phàm, sau đó vừa mang theo vẻ kinh hoảng vừa chờ đợi nhìn quanh. Hắn ta tĩnh lặng chờ đợi vị Thiên Nhân Ngũ Suy Tôn Giả kia ra tay. Đối phương dù chỉ tiết lộ một chút khí tức, cũng có thể khiến hai người đang ẩn nấp hiện hình. Giang Phàm mặt lộ vẻ lạnh lẽo, giữa mi tâm xoay chuyển một cây Linh Hồn Đinh Thích. Nhận thấy dao động linh hồn, linh hồn của Hóa Thần Tôn Giả không giận mà mừng, hướng về phía Giang Phàm lộ ra nụ cười lạnh. Bọn họ quả nhiên ở đây. Mà lúc này, cái đuôi khổng lồ đáng sợ kia cũng đã quét tới. Giang Phàm tim đập điên cuồng, đồng thời tâm niệm khẽ chuyển, thu hồi Kinh Hồn Thích, đổi thành Tù Hồn Tỏa! Độ Ách Hắc Liên đang ở trong không gian trữ vật của kẻ này. Vị Đại Tôn Thiên Nhân Ngũ Suy kia, nhất định là muốn giữ hắn sống, tìm kiếm khẩu quyết của trữ vật khí. Nếu nói Giang Phàm và Nguyệt Minh Châu còn có đường sống, vậy thì chỉ có một con đường: bắt lấy linh hồn của kẻ này!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1438">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1438: Hắc Long Đại Tôn</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Linh hồn của Hoá Thần Tôn giả, thấy cự vĩ quét đến, lập tức độn vào hư vô. Vừa lúc định thoát thân thì trên người lập tức xuất hiện từng lớp xiềng xích khoá chặt nó. Nó giật mình, kinh nộ hét lên: “Mau thả ta ra!” Từng sợi xiềng xích liền xuất hiện vết nứt.</p>
+                <p>Giang Phàm giật mình, vậy mà không thể cầm cố được hắn ư? Trước đó, khi cầm cố bán Cự nhân cảnh Pháp Tướng thì rất dễ dàng trấn áp. Chợt hắn hiểu ra. Linh hồn của bán Cự nhân chỉ có một nửa là con người, nửa còn lại màu đen là vật thể chưa biết. Còn Hoá Thần Tôn giả trước mắt, lại là linh hồn cảnh Hoá Thần chân chính! Linh hồn Nguyên Anh Cửu Khiếu của hắn, muốn cầm cố hắn thì có chút miễn cưỡng. Sai sót ngắn ngủi đã khiến cự vĩ nghiền nát đến trước mặt.</p>
+                <p>“Mau thả ta ra!” Linh hồn Hoá Thần Tôn giả phát ra tiếng kêu thất thanh vì kinh hãi. Giang Phàm cũng tim đập thình thịch. Đã quá muộn rồi ư? Bất chợt, hắn nhớ ra điều gì đó, bụng hắn lập tức hiện ra hư ảnh một con mắt xanh biếc. Sau khi quét qua Hoá Thần Tôn giả. Giang Phàm quát khẽ: “Nhuyễn Hoá Vạn Vật!” Hắn chưa bao giờ dùng Phục Chế Ma Nhãn để phục chế lĩnh vực của Hoá Thần Tôn giả. Liệu có thành công hay không, hắn cũng không chắc. Nhưng bây giờ chỉ có thể thử mà thôi! Theo tâm niệm của hắn khẽ động, một tia dao động yếu ớt khuếch tán trong phạm vi mười trượng lấy hắn làm trung tâm. Lập tức. Đất đai xung quanh, cả Nguyệt Minh Châu trong phạm vi đó, đều bị ảnh hưởng. Đất mềm ra, Nguyệt Minh Châu cũng có cảm giác tương tự như bị lĩnh vực Nhuyễn Hoá Vạn Vật ảnh hưởng. Mặc dù yếu hơn gấp mười lần nhưng đúng thật là Nhuyễn Hoá Vạn Vật!</p>
+                <p>Linh hồn Hoá Thần Tôn giả đang giãy giụa, bị ảnh hưởng sâu hơn, lực lượng suy yếu, Tù Hồn Tỏa đang sắp vỡ vụn lập tức quấn chặt lấy nó. “A! Ngươi mau buông ta ra!” Tất cả những điều này dường như kéo dài, nhưng thực chất chỉ diễn ra trong chớp mắt. Giang Phàm nắm chặt lấy linh hồn, đồng thời đoạt lấy không gian trữ vật khí từ trong tay nó, nắm trong tay còn lại. “Dừng tay!” “Bằng không ta sẽ nghiền nát hết!” Để an toàn, hắn cũng dùng trữ vật khí làm vật uy hiếp. Thiếu đi một trong hai, đại tôn trước mắt đừng hòng đạt được ý đồ. Cự vĩ lướt qua phía trên họ, tựa như vạn đạo lôi đình ầm ầm trên đỉnh đầu, và xé ra một vết nứt đen kịt vô cùng dữ tợn! Dư uy còn sót lại khiến người ta run rẩy toàn thân. Một giọt mồ hôi lạnh chảy xuống trán Nguyệt Minh Châu. Chỉ một chút nữa thôi, họ đã bị nghiền nát dưới một đòn của Tôn giả Thiên Nhân Ngũ Suy.</p>
+                <p>Sâu trong bầu trời. Một đôi mắt vàng vọt, ẩn hiện, nheo mắt nhìn chằm chằm Giang Phàm và Nguyệt Minh Châu. Hắn ta tuy không nhìn thấy hai người, nhưng lại có thể mẫn cảm cảm ứng được sự tồn tại của họ. Quả nhiên là Thiên Nhân Ngũ Suy, tồn tại chỉ cách Hiền giả một bước. Ngay cả khắc tự của Hiền giả cũng không thể phát huy tác dụng hoàn toàn. “Bổn toạ không thích bị người khác uy hiếp.” Trong đám mây đen, đại tôn phát ra giọng nói uy nghiêm và lạnh nhạt. Một đôi mắt bắn ra luồng sáng lạnh lùng vô cảm với sinh mệnh. Cự vĩ lướt qua họ lại lần nữa từ trên trời giáng xuống, sát phạt về phía hai người. Chỉ là, hắn dường như cảm ứng được điều gì đó, không khỏi ngạc nhiên nhìn Giang Phàm một cái. Cự vĩ lao về phía hắn cũng dừng lại một chút. Nhưng rất nhanh, lại tăng tốc nghiền nát tới.</p>
+                <p>Giang Phàm trong lòng khẽ thắt lại, nhưng rồi lập tức phản ứng. Đối phương đang đánh cược rằng hắn không dám nghiền nát không gian trữ vật khí! Đồ vật tạo hoá trấn áp một giới như Độ Ách Hắc Liên, hắn há lại dễ dàng từ bỏ? Chẳng qua là đang thăm dò quyết tâm của Giang Phàm mà thôi. Hắn lộ vẻ quả quyết, dứt khoát dùng lực, xem ai sợ ai!</p>
+                <p>Ngay khi hai người đang thăm dò lẫn nhau. Một tiếng hừ lạnh nặng nề, như sấm sét cuồn cuộn chấn động khắp tám phương. “Biết ngay là ngươi mà!” Tiếng nói ẩn chứa thiên uy mênh mông, nhất thời chấn tán hắc khí che trời lấp đất, lộ ra màn trời. Tuy chỉ là trong nháy mắt. Nhưng Giang Phàm đã nhận ra. Chủ nhân của cái đuôi khổng lồ kia, không phải ai khác! Chính là Hắc Long Đại Tôn!!! Tên này, chẳng phải lấy cớ đang phản tổ, tu luyện đến thời khắc mấu chốt mà bế quan trong động phủ sao? Sao lại xuất hiện ở thế giới kẹp giữa này?</p>
+                <p>Ánh mắt vàng vọt của Hắc Long Đại Tôn ngưng lại, thu hồi cự vĩ, xa xa nhìn về phía chân trời. Một vị trung niên vĩ ngạn toát ra ánh sáng vàng nhạt, tức thì dịch chuyển tới. Chính là Kim Lân Đại Tôn! Lúc này, hắn ta mặt đầy thịnh nộ: “Lẽ ra phải đoán ra sớm hơn, ngươi đang nhắm vào chủ ý của Độ Ách Hắc Liên!” “Vì Độ Ách Hắc Liên, ngươi mới không tiếc lần thứ hai mở ra thế giới kẹp giữa!” Hắn ta vẫn luôn thắc mắc, tại sao sau khi thành công lấp lỗ hổng với sự giúp đỡ của Tinh Uyên Đại Tôn, nó lại inexplicably bị mở ra lần nữa. Hoá ra là Hắc Long Đại Tôn âm thầm gây rối!</p>
+                <p>Giang Phàm nhíu mày thật sâu. Mười ngày trước, sự bùng nổ của sinh linh địa ngục đã gây ra thương vong to lớn cho Linh Xà Sơn! Trên đường đến đây, hắn tận mắt thấy từng bộ thi thể yêu tộc không kịp thu hồi, chấn động lớn đến mức khó mà tưởng tượng được. Đó đều là người của yêu tộc mà! Hắc Long Đại Tôn vì Độ Ách Hắc Liên, lại không tiếc mở ra hạo kiếp sao? &quot;Là thì sao?&quot; Hắc Long Đại Tôn khoanh tay trước ngực, khinh thường nhìn Kim Lân Đại Tôn.</p>
+                <p>Kim Lân Đại Tôn siết chặt nắm đấm. “Ngươi lần thứ hai xé toạc vết nứt, dẫn bạo sinh linh địa ngục, khiến sự việc đến mức cực kỳ nghiêm trọng, là để dẫn dụ Đại Tửu Tế đến, giúp ngươi chặn đứng sinh linh địa ngục cảnh Hiền giả kia phải không?” “Như vậy, ngươi mới có thể đến trộm Độ Ách Hắc Liên!” “Nhưng, tổ tiên Linh Xà Sơn đã sớm có di ngôn, cây Độ Ách Hắc Liên này tuyệt đối không thể mang ra khỏi thế giới kẹp giữa!” “Ngươi lại dám tơ tưởng đến nó!”</p>
+                <p>Giang Phàm cuối cùng cũng hiểu ra. Hoá ra, Linh Xà Sơn đã sớm biết đến sự tồn tại của thế giới kẹp giữa! Lại càng biết đến sự tồn tại của Độ Ách Hắc Liên! Chẳng qua, Hắc Long Đại Tôn tâm có tham lam, muốn mang cây Độ Ách Hắc Liên cấm kỵ này đi. Chỉ vì kiêng dè sinh linh địa ngục cảnh Hiền giả bên trong, nên mới lập kế hoạch bùng nổ sinh linh địa ngục lần thứ hai. Nếu không phải Giang Phàm quấn lấy một lúc, lúc này Hắc Long Đại Tôn đã âm thầm mang Độ Ách Hắc Liên đi mất, rồi như không có chuyện gì trở về động phủ. Sẽ không ai nghi ngờ đến hắn, người đang phản tổ bế quan.</p>
+                <p>Hắc Long Đại Tôn khẽ “khà” một tiếng: “Tổ tiên với tổ tiên, lần này Cự nhân viễn cổ giáng lâm, Trung Thổ của chúng ta sắp diệt vong rồi, tổ tiên có thể nhảy ra giúp chúng ta được không?” “Chúng ta chỉ có thể tự dựa vào bản thân!” “Cây Độ Ách Hắc Liên này, có thể giúp chúng ta bồi dưỡng thêm một vị đại tôn, hà cớ gì không làm?” Kim Lân Đại Tôn trầm giọng nói: “Thế còn những yêu tộc đồng bào đã chết thì sao?” Hắc Long Đại Tôn không hề bận tâm, hờ hững nói: “Chỉ là vài yêu tộc cấp thấp mà thôi.” “Cái chết của bọn chúng đổi lấy một vị đại tôn, có gì mà không được?” Kim Lân Đại Tôn tức đến bật cười: “Ngụy biện!” “Miệng thì nói vì Trung Thổ, ngươi rõ ràng là không phục thân phận chủ nhân Linh Xà Sơn của ta, muốn bồi dưỡng ra một vị đại tôn để đối kháng với ta!” “Chỉ cần ngươi thật lòng vì yêu tộc, sẽ không làm ra chuyện dẫn bạo sinh linh địa ngục!” Lần này, nếu không phải Thái tử Tây Hải ra tay, cả Vạn Yêu Đại Châu đã sớm luân hãm rồi! Hắn ta vậy mà còn không biết xấu hổ mà nói là vì Trung Thổ.</p>
+                <p>“Giao Độ Ách Hắc Liên ra đây!” Kim Lân Đại Tôn quát: “Đóa Hắc Liên này, không được mang ra khỏi thế giới kẹp giữa!” Hắc Long Đại Tôn ánh mắt sắc lạnh: “Không giao thì sao?” “Ta đã bước vào trạng thái phản tổ rồi, ngươi không phải đối thủ của ta!” Kim Lân Đại Tôn hừ lạnh: “Không thử sao biết được?” Một tiếng “xoẹt” vang lên, hai người biến mất tại chỗ. Từng đợt dao động khủng bố, từ màn trời truyền ra.</p>
+                <p>Ngay lúc này. Bên tai Giang Phàm vang lên truyền âm của Hắc Long Đại Tôn: “Ta sẽ chặn Kim Lân Đại Tôn.” “Ngươi ra ngoài ẩn nấp, đợi ta thông báo.” Giang Phàm lúc này mới hiểu, vì sao vừa nãy Hắc Long Đại Tôn ra tay với hắn lại đột nhiên dừng lại. Hoá ra, là đã sớm dựa vào giọt độc dịch trên người Giang Phàm mà nhận ra thân phận của hắn.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1439">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1439: Giáp chiến Hắc Long</h2>
+            </header>
+            <div class="chapter-content">
+                <p>May mắn thay.Giang Phàm đang đeo mặt nạ người đàn ông trung niên, chỉ cần thoát đi thành công, cởi mặt nạ xuống thì ai cũng không còn biết hắn là ai.Chỉ là, ngay khi hắn vừa động, Kim Lân Đại Tôn đã nhận ra điều bất thường.</p>
+                <p>“Nơi này còn có người khác sao?” Kim Lân Đại Tôn sắc mặt ngưng trọng.Trước khi nhìn thấy Độ Ách Hắc Liên, hắn tuyệt đối không thể để bất kỳ ai rời khỏi nơi này.Ngay lập tức, toàn thân hắn bùng nổ kim quang chói mắt, chiếu rọi cả một phương thiên địa.Dưới lớp kim quang bao phủ, thân ảnh Giang Phàm và Nguyệt Minh Châu hiện rõ.</p>
+                <p>“Là ngươi?” Kim Lân Đại Tôn liếc mắt một cái đã nhận ra Giang Phàm, nhíu mày không ngớt: “Độ Ách Hắc Liên ở trên người ngươi sao?”Giang Phàm cảm thấy da đầu tê dại, Độ Ách Hắc Liên này quả nhiên là tai họa.Chỉ một chốc đã khiến hắn thu hút sự chú ý của hai vị Đại Tôn.Hắc Long Đại Tôn sắc mặt trầm xuống, cái đuôi dài phía sau quét tới, quật thẳng vào Kim Lân Đại Tôn, quát lớn:“Nhanh chóng rời đi!”Giang Phàm không dám chần chừ, vội vàng chạy thoát thân.Nguyệt Minh Châu tặc lưỡi không ngừng, vạn vạn lần không ngờ lại dẫn tới hai vị Thiên Nhân Ngũ Suy Đại Tôn khủng bố.Càng không ngờ tới, Độ Ách Hắc Liên ẩn chứa khí vận khổng lồ kia, lại rơi vào tay Giang Phàm.Không còn cách nào khác, vì an toàn, nàng cũng chỉ có thể chạy theo Giang Phàm.</p>
+                <p>Kim Lân Đại Tôn đã xác định Độ Ách Hắc Liên đang ở trên người Giang Phàm.Hắn vừa cản lại cái đuôi khổng lồ của Hắc Long Đại Tôn, vừa vội vàng nói:“Các hạ, Độ Ách Hắc Liên không thể rời khỏi Giáp Tầng Thế Giới!”“Nếu không sẽ mang tai họa đến cho Trung Thổ!”“Ngươi hãy đặt nó xuống.”Giang Phàm lộ vẻ chần chừ.Lời của Kim Lân Đại Tôn hẳn không phải nói bừa.Linh Xà Sơn qua các đời, đều biết sự tồn tại của Giáp Tầng Thế Giới, và càng biết rõ về Độ Ách Hắc Liên.Nhưng chưa từng có ai lấy nó ra, có thể thấy vật này quả thực là cấm kỵ.Tuy nhiên, nếu lấy ra, chẳng phải sẽ đắc tội với Hắc Long Đại Tôn sao?Đối phương một khi nổi giận, hắn chưa chắc có cơ hội rời đi.Suy nghĩ một lát, hắn ôm quyền nói: “Xin lỗi, Kim Lân Đại Tôn, Hắc Long Đại Tôn là chủ nhân của ta.”“Ta phải tuân lệnh hành sự.”</p>
+                <p>Chủ nhân?Kim Lân Đại Tôn nhíu mày không ngớt, trong mắt lộ ra một tia lạnh lẽo: “Nếu đã như vậy, thì đừng trách ta!”Ban đầu còn khá thưởng thức Giang Phàm, nhưng tiếc là đối phương đã trợ Trụ vi ngược!Hắc Long Đại Tôn sắc mặt hơi đổi, nếu Kim Lân Đại Tôn ra tay bất chấp hậu quả, hắn chưa chắc có thể bảo vệ được Giang Phàm.Một đòn của Thiên Nhân Ngũ Suy, dù chỉ là một chút dư uy, cũng không phải là thứ mà một Nguyên Anh Cảnh như Giang Phàm có thể chịu đựng được.Nghĩ đến đây, trong mắt hắn xẹt qua một tia đau lòng.Cái đuôi khẽ rung, một mảng lớn vảy rụng xuống, lấp lánh bay tới bên Giang Phàm, và toàn bộ đều dính chặt vào da thịt hắn.Trừ bảy khiếu ra, toàn thân hắn đều bị vảy đen bao phủ.Giang Phàm thầm kinh hãi, đây là thứ gì?Sẽ không có nguy hại gì chứ?Càng khiến hắn bất an hơn là, những chiếc vảy từ từ chìm xuống dưới da, vậy mà lại hòa làm một thể với cơ thể hắn.“Có Hắc Long Chiến Giáp của bản tọa bảo vệ, ngươi cứ việc đi!”Chiến giáp?Giang Phàm lúc này mới hơi an tâm, vội vàng rời đi.</p>
+                <p>Kim Lân Đại Tôn mắt lộ vẻ sắc bén, hừ lạnh: “Muốn đi sao?”Hắn đột ngột phun ra một luồng khí tức màu vàng kim, hóa thành vô số con rắn vàng nhỏ lao về phía Giang Phàm.“Đã quá muộn rồi, Kim Lân!” Hắc Long Đại Tôn hai chưởng ngang đẩy, phía sau xuất hiện một hư ảnh mãng xà khổng lồ màu đen kịt.Mãng xà há miệng hút một hơi, nuốt chửng hầu hết những con rắn vàng nhỏ.Chỉ còn một số ít bay lạc.Trong đó, một con rắn vàng nhỏ, như tia chớp đánh về phía Nguyệt Minh Châu.Giang Phàm sắc mặt kịch biến.Đây chính là một đòn của Đại Tôn!Đối với Nguyên Anh Cảnh mà nói, có thể nói là hủy diệt.Không kịp suy nghĩ, con rắn vàng nhỏ đã đánh trúng hắn.Tim hắn chợt hụt một nhịp, cảm thấy mình chết chắc rồi.Thế nhưng, điều khiến hắn bất ngờ là.Ngoài một vài cơn châm chích, vậy mà không có thêm đau đớn nào khác.Cúi đầu nhìn xuống, những chiếc vảy ẩn dưới da không biết từ khi nào đã hiện ra, bám chặt trên bề mặt cơ thể.Con rắn vàng nhỏ kia bắn vào ngực hắn, hóa thành những đốm sáng vàng kim tan biến.Giang Phàm mặt đầy vẻ không thể tin nổi.Lớp Hắc Long Chiến Giáp này, vậy mà có thể đỡ được dư uy của Đại Tôn sao?Hắn không khỏi cảm thấy khô khan trong miệng, đây quả là bảo vật nghịch thiên!</p>
+                <p>Ngay lúc này.Lại một con rắn vàng nhỏ khác bắn tới, nhưng lại nhắm vào Nguyệt Minh Châu.Giang Phàm không chút chần chừ, một tay kéo nàng vào lòng, dùng lưng mình đỡ lấy con rắn vàng nhỏ.Một cảm giác đau đớn rõ ràng hơn rất nhiều truyền đến, khiến Giang Phàm hít vào một hơi khí lạnh.Hắc Long Đại Tôn quát lên: “Đừng quản người khác!”“Chiến giáp này cần chân linh chi huyết thúc giục, dùng một lần lực phòng ngự sẽ yếu đi một lần.”Giang Phàm cố nén đau đớn, không nói thêm lời nào, ôm Nguyệt Minh Châu rồi lập tức dịch chuyển rời đi.Kim Lân Đại Tôn sắc mặt biến đổi, muốn đuổi theo thì lại bị Hắc Long Đại Tôn ngăn cản.“Hắc Long! Ngươi muốn mặc kệ Trung Thổ sao? Vật kia ngay cả ở Địa Ngục Giới cũng là thứ bất tường!”Hắc Long Đại Tôn không cho là đúng, nói: “Trung Thổ lần này không giữ được rồi.”“Ta cũng nên chuẩn bị đường lui cho mình!”“Linh Xà Sơn, nhất định phải nằm trong tay ta!”</p>
+                <p>Nơi cuối chân trời.Giang Phàm lóe lên xuất hiện, trong lòng truyền đến sự giãy giụa kịch liệt.Hóa ra là tiểu cô nương xấu xí vô cùng kháng cự đẩy hắn ra, liên tục quát khẽ: “Buông ta ra!”Giữa lời nói, còn có vài phần tức giận.Giang Phàm buông nàng ra, hơi nhíu mày.Đúng là một nữ nhân không biết điều.Cứu nàng, chẳng có chút biết ơn nào, ngược lại còn nổi giận.Nguyệt Minh Châu dùng sức lau cánh tay từng tiếp xúc với Giang Phàm, mặt đầy xấu hổ và tức giận: “Ai cho ngươi chạm vào ta?”Trừ Giang Phàm ra, nàng không muốn bất kỳ ai chạm vào mình.Bất kỳ ai!Giang Phàm nhún vai: “Ta không hứng thú với nữ nhân xấu xí, đừng tự đa tình!”Nguyệt Minh Châu vô cùng bực bội, nhưng cũng biết, mình không thể trách hắn.Nàng nghiêm túc nói: “Thiện ý của ngươi ta đã nhận, nhưng lần sau đừng quản ta nữa.”“Ta yêu nam nhân của mình, không muốn tiếp xúc dù chỉ một chút với bất kỳ ai khác ngoài hắn.”</p>
+                <p>Giang Phàm lộ vẻ ngạc nhiên.Không ngờ, tiểu cô nương xấu xí này lại trinh tiết đến vậy.Hoàn toàn trái ngược với tính cách khó nắm bắt của nàng.Hắn đột nhiên có chút thưởng thức nàng, tuy dung mạo hơi xấu, tâm tư lại nhiều, nhưng nhân phẩm khó tìm.Hắn chắp tay nói: “Xin lỗi, đó là quyền nghi chi kế, sau này sẽ chú ý.”“Chúng ta mau đi thôi, nơi này không nên ở lâu.”Ngoài việc hai vị Đại Tôn đang giao chiến, toàn bộ Giáp Tầng Thế Giới vẫn đang rung chuyển kịch liệt, có dấu hiệu sụp đổ và hủy diệt.Nguyệt Minh Châu gật đầu, chủ động lấy ra một cuộn trục lớn, sau khi mở ra, nàng tự mình nhảy lên trước.Sau đó chỉ vào một góc, nói: “Ngồi xa ta một chút.”Đây lại là thứ gì?Hắn nhảy lên cuộn trục, ngồi ở góc xa nhất.Khoảnh khắc tiếp theo, cuộn trục liền dịch chuyển tới trăm dặm xa, sau đó lại tiếp tục dịch chuyển.Chỉ trong vài hơi thở, đã vượt qua ngàn dặm, còn nhanh hơn cả khi hắn thi triển Vân Trung Ảnh!“Có một vị Đại Tôn làm sư tôn, thật tốt!” Giang Phàm thật lòng ngưỡng mộ nói.Nguyệt Minh Châu quay đầu liếc hắn một cái, nói: “Ngươi cũng không đơn giản.”“Điều khiển sinh linh Địa Ngục, đây không phải là việc người thường có thể làm được.”Thì ra, khi Nguyệt Minh Châu trước đó bị sinh linh Địa Ngục truy đuổi, Giang Phàm dễ dàng xua đuổi chúng, vẫn khiến Nguyệt Minh Châu đoán ra.Giang Phàm cười cười, không nói nhiều.Hắn lấy ra linh hồn của Hóa Thần Tôn Giả Thần Binh Châu, cùng với không gian trữ vật của lão.Nguyệt Minh Châu kinh ngạc nói: “Ngươi muốn làm gì?”Giang Phàm mắt lóe lên, nói: “Đương nhiên là lấy ra Độ Ách Hắc Liên.”Độ Ách Hắc Liên đã vô tình rơi vào tay hắn, lẽ nào có lý do gì để bỏ qua?</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1440">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1440: Liên tử được lấy trong tay</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nguyệt Minh Châu mắt sáng rực, vận khí mà Độ Ách Hắc Liên ẩn chứa là thứ nàng hiếm khi được thấy. Nàng cũng rất tò mò.</p>
+                <p>Tuy nhiên, khi nhìn linh hồn Thần Binh Châu Tôn Giả đang phẫn nộ, nàng âm thầm lắc đầu. Muốn cạy miệng hắn, moi ra khẩu quyết của không gian trữ vật khí, e rằng rất khó.</p>
+                <p>Giang Phàm nhìn linh hồn, nhàn nhạt nói: “Ngươi biết ta muốn hỏi gì rồi chứ?”</p>
+                <p>Thần Binh Châu Tôn Giả lạnh lùng đáp: “Nếu ta nói ra, chẳng phải sẽ mất đi giá trị lợi dụng sao? Ngươi nghĩ ta ngu ngốc đến vậy ư?”</p>
+                <p>Giang Phàm thờ ơ nói: “Ngươi quên vì sao mình bị ta bắt giữ rồi sao?”</p>
+                <p>Linh hồn Tôn Giả biểu cảm cứng đờ, trầm giọng hỏi: “Sao ngươi lại có lĩnh vực của ta?”</p>
+                <p>Sở dĩ hắn bị chế phục vào khoảnh khắc cuối cùng là vì Giang Phàm đã vận dụng lĩnh vực “Làm mềm vạn vật” của chính hắn, khiến hắn mất đi sức phản kháng. Nếu ta thi triển thêm một lần nữa, quả thật có thể làm mềm lòng kháng cự của ngươi, moi ra khẩu quyết.</p>
+                <p>Giang Phàm không trả lời hắn, mà nói: “Cho ngươi hai lựa chọn. Thứ nhất, giao ra khẩu quyết. Thứ hai, ta sẽ tự moi khẩu quyết, sau đó nhốt ngươi vào đây.”</p>
+                <p>Hắn lấy ra chiếc bình ngọc mà Tâm Nghiệt Tôn Giả dùng để tra tấn linh hồn phụ thân mình. Từng sợi lửa linh hồn màu trắng, dù cách lớp bình đen, vẫn khiến linh hồn Hóa Thần Tôn Giả cảm thấy đau đớn.</p>
+                <p>Thần Binh Châu Hóa Thần Tôn Giả vừa kinh vừa giận: “Ngươi… ngươi là Ma tu sao? Sao lại có thủ đoạn tàn nhẫn thế này?”</p>
+                <p>Giang Phàm ánh mắt lạnh đi: “Khi ngươi đẩy họa cho người khác, muốn Hắc Long Đại Tôn giết chết chúng ta để tranh thủ thời gian bỏ chạy, sao không tự thấy mình tàn nhẫn? Chọn đi, chỉ cho ngươi ba tức thời gian.”</p>
+                <p>Linh hồn Hóa Thần Tôn Giả sắc mặt không ngừng biến đổi. Việc Giang Phàm có thể tái tạo được bao nhiêu phần hiệu quả của lĩnh vực Làm Mềm Vạn Vật của hắn thì không thể nói trước. Dù không thành công, cũng khó bảo đảm hắn không còn thủ đoạn nào khác. Nhưng, nếu nói ra, hắn sẽ không còn giá trị lợi dụng nữa.</p>
+                <p>Hắn cắn răng, nói: “Nếu ta nói ra, ngươi có thể đảm bảo sẽ thả ta không?”</p>
+                <p>Giang Phàm lắc đầu: “Ta sẽ không thả ngươi. Ta chỉ có thể đảm bảo, tạm thời sẽ không giết ngươi, đợi đến khi nào ngươi không còn uy hiếp gì đối với ta nữa, ta sẽ thả ngươi. Được rồi, ba tức thời gian đã hết, chọn đi.”</p>
+                <p>Hắn dám tự tin như vậy, ngoài việc có thể tái tạo lĩnh vực Làm Mềm Vạn Vật, kỳ thực còn có một thủ đoạn khác, đó chính là lĩnh vực của Kim Xà Thánh Mẫu. Lĩnh vực này có thể giúp hắn khống chế một người trở thành khôi lỗi. Đối với thể linh hồn trước mắt, hẳn cũng có thể tác dụng tạm thời. Chỉ là, hắn không muốn lãng phí mà thôi.</p>
+                <p>Linh hồn Hóa Thần Tôn Giả cắn răng, nói: “Ta có lựa chọn nào khác sao? Thiên Chùy Bách Luyện!”</p>
+                <p>Nguyệt Minh Châu đứng một bên lộ vẻ kinh ngạc. Gã này thủ đoạn thật sự lợi hại! Lại có thể dễ dàng moi được khẩu quyết, nàng còn tưởng ít nhất cũng phải tra tấn đối phương một trận mới được chứ.</p>
+                <p>Nàng hiếu kỳ sáp lại gần, nói: “Mau mở ra xem đi. Độ Ách Hắc Liên ta chỉ nghe nói qua, không ngờ nó thật sự tồn tại.”</p>
+                <p>Giang Phàm lại điều chỉnh tư thế ngồi, che Nguyệt Minh Châu ở phía sau. Nguyệt Minh Châu tức giận bật cười: “Nhìn một cái cũng không được sao? Chẳng lẽ ta còn cướp của ngươi à?”</p>
+                <p>Giang Phàm không nói nhiều, mà dùng nguyên anh chi lực điều khiển không gian trữ vật khí, khiến nó bay ra xa thân thể trăm trượng. Đến lúc này mới há miệng hô: “Thiên Chùy Bách Luyện!”</p>
+                <p>Trong nháy mắt, không gian trữ vật khí mở ra, nhưng chưa kịp để Giang Phàm dò xét bên trong có gì, một mũi tên chứa đựng thần lực của Hóa Thần Tôn Giả đã “vụt” một tiếng bắn ra. Một vùng không gian lớn vì thế mà lõm xuống. Nếu không đề phòng, cho dù là Tôn Giả cảnh giới Thiên Nhân Nhất Suy, cũng có thể bị đánh nát ngay tại chỗ!</p>
+                <p>Nguyệt Minh Châu biểu cảm cứng đờ, lập tức lông tơ dựng đứng, lộ vẻ vẫn còn sợ hãi: “Không gian trữ vật khí này, có bẫy sao?”</p>
+                <p>Lúc này nàng mới hiểu ra, Giang Phàm không phải là không cho nàng xem, mà là đoán được có hiểm nguy, nên mới dùng thân thể mình chắn trước mặt nàng. Nhìn bóng lưng Giang Phàm gầy gò nhưng lại mang đến cảm giác an toàn lạ thường, nàng không khỏi thoáng ngẩn ngơ. Người này, càng ngày càng giống Giang Phàm rồi. Cũng thận trọng như vậy, thủ đoạn cũng đa dạng như vậy, trí tuệ cũng như vậy, và cũng đáng tin cậy như vậy.</p>
+                <p>Giang Phàm lạnh lùng nhìn chằm chằm linh hồn Hóa Thần Tôn Giả, trong mắt lóe lên sát khí: “Ta biết ngay ngươi sẽ không trung thực như vậy!”</p>
+                <p>Thần Binh Châu Hóa Thần Tôn Giả trước mắt, nhìn có vẻ thô kệch, nhưng qua những lần giao đấu trước đây, lại cực kỳ âm hiểm. Vì vậy Giang Phàm mới đề phòng một chiêu. Không ngờ, bên trong quả nhiên có mưu mẹo.</p>
+                <p>Linh hồn Hóa Thần Tôn Giả sắc mặt âm trầm, nói: “Sao ngươi lại đề phòng một không gian trữ vật khí?”</p>
+                <p>Trên đời, rất ít Hóa Thần Tôn Giả lại đặt bẫy trong không gian trữ vật khí. Thứ nhất, Hóa Thần Tôn Giả cực kỳ mạnh mẽ, hiếm khi ngã xuống, không gian trữ vật khí gần như không có khả năng rơi vào tay kẻ khác. Thứ hai, sự tồn tại của bẫy sẽ gây ra một số trở ngại khi điều động vật phẩm bên trong. Vốn tưởng người trước mắt sẽ mắc bẫy một vố đau, không uổng công hắn chuẩn bị cạm bẫy suốt nhiều năm. Không ngờ, hắn lại cẩn trọng đến mức khiến hắn tuyệt vọng.</p>
+                <p>Giang Phàm nhàn nhạt nói: “Rất đơn giản, bởi vì ta từng chịu thiệt thòi vì chuyện này.”</p>
+                <p>Hắn đến giờ vẫn còn nhớ, khi đó sau khi có được không gian trữ vật khí của Phó Lâu Chủ Giang Sơn Nhất Phẩm Lâu, Nhan Đạo An, vì không để ý mà tùy tiện mở ra, suýt chút nữa đã bị một đạo nguyên anh chi lực bị phong ấn bên trong đánh chết. Bây giờ, khi mở không gian trữ vật khí của người khác, hắn phải hết sức tập trung.</p>
+                <p>Linh hồn Thần Binh Châu Hóa Thần Tôn Giả thở dài một tiếng, nhắm mắt cam chịu: “Coi như ta xui xẻo, tùy ngươi xử lý đi!”</p>
+                <p>Giang Phàm trước tiên không xử lý hắn ngay, mà cẩn thận kiểm tra không gian trữ vật khí, xác định bẫy bên trong đã được kích hoạt, lúc này mới thò tay vào.</p>
+                <p>Theo tâm niệm vừa động, đóa Độ Ách Hắc Liên kia đã được lấy ra.</p>
+                <p>Giang Phàm đối với đóa hắc liên này vẫn còn một tia kiêng kỵ. Kim Lân Đại Tôn coi nó là vật cấm kỵ, hẳn không phải là chuyện vô căn cứ. Hơn nữa, điều kỳ lạ là, Độ Ách Hắc Liên sinh trưởng trong hắc thủy, lại không có sinh linh địa ngục nào đến hái. Ban đầu Giang Phàm cho rằng trong hắc thủy có nguy hiểm nào đó, khiến các sinh linh địa ngục không dám đến. Nhưng Hóa Thần Tôn Giả trước mắt lại dễ dàng nhổ nó ra, cũng không hề kích hoạt nguy hiểm. Vậy thì, nguy hiểm rất có thể đến từ chính Độ Ách Hắc Liên.</p>
+                <p>“Xú nữ, Độ Ách Hắc Liên có nguy hiểm gì không?” Giang Phàm trầm tư hỏi.</p>
+                <p>Nguyệt Minh Châu lườm hắn một cái: “Ngươi mới là xú nam!” Hồi tưởng một lát, nàng khẽ lắc đầu: “Nó không có nguy hiểm gì, đơn thuần chỉ là một kiện thiên địa kỳ vật mà thôi.”</p>
+                <p>“Vậy sao?” Giang Phàm suy nghĩ một chút, nhìn về phía đài sen ở trên cùng, chỉ còn lại một hạt sen màu đen. Hắn cách không đánh ra một đạo nguyên anh chi lực, bao bọc lấy hạt sen màu đen. Dù sao hắn có Hắc Long Chiến Giáp, cho dù có nguy hiểm, hẳn cũng có thể ngăn cản được phần lớn.</p>
+                <p>Hắn hít sâu một hơi, hơi dùng sức một chút, hạt sen màu đen này liền được lấy ra. Hơn nữa, không hề xuất hiện bất kỳ dấu hiệu nguy hiểm nào.</p>
+                <p>“Là ta nghĩ nhiều rồi sao?” Giang Phàm trong lòng nghi hoặc, nhưng dù sao đi nữa, hạt sen có thể giúp Thiên Nhân Tứ Suy xung kích tới Thiên Nhân Ngũ Suy này đã nằm trong tay. Không kịp xem kỹ, hắn liền đặt hạt sen vào một chiếc hộp ngọc.</p>
+                <p>Còn về những bộ phận còn lại của Độ Ách Hắc Liên, Giang Phàm từ trên xuống dưới đánh giá, ánh mắt lần lượt quét qua đài sen và thân rễ. Cuối cùng khi ánh mắt rơi vào củ sen đen cao bằng người, đồng tử hắn đột nhiên co rút. Tim cũng theo đó mà đập mạnh một cái.</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_287.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_287.html" class="page-btn">287</a>
+            <a href="page_288.html" class="page-btn current">288</a>
+            <a href="page_289.html" class="page-btn">289</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_289.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

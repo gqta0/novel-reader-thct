@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 365">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 365</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_364.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_366.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_1821">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1821: Rơi vào Hư Vô</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Là Cửu Nhật Cự Nhân Hoàng!Đồng tử Giang Phàm kịch liệt co rụt lại!Địa Ngục Giới thế mà lại có một Cửu Nhật Cự Nhân Hoàng không ai đối phó được đang tự do hành động!Các Đại Tôn các châu nhìn chín mặt trời nối tiếp nhau liền hiểu ra là gì, trên mặt đều hiện vẻ kinh hoàng.Kim Lân Đại Tôn chấn động nói: “Cửu Nhật Cự Nhân Hoàng? Hắn… sao lại tới đây? Địa Ngục Giới không phải đã chiếm thượng phong sao?”“Vì sao đột nhiên lại có một Cửu Nhật Cự Nhân Hoàng giết tới nơi này!”Giang Phàm hít sâu một hơi nói: “Là Trung Thổ Thập Tội!”Chuyện hắn lo lắng nhất vẫn xảy ra rồi.Trung Thổ Thập Tội không chỉ làm phản loạn ở đây, mà còn tạo ra đại loạn ở chiến trường chính Phong Đô.Giống như thời Trung Thổ cực thịnh ngàn năm trước.Khi song phương thế lực ngang nhau, mười chiến lực đỉnh cao cấp bậc Hiền Giả đâm sau lưng, hậu quả tất nhiên là sự sụp đổ của Cự Nhân viễn cổ!Cửu Nhật Cự Nhân Hoàng có thể một thân một mình giết tới đây, đủ thấy, cấp bậc Tu La Hoàng của Địa Ngục Giới đã bại trận.Không hẳn bọn họ đã chết hết, nhưng đã không còn sức chống đỡ Cự Nhân Hoàng cùng Trung Thổ Thập Tội.Mà sự bại trận ở cấp độ này, chiến trường của Tu La Vương, Khai Khiếu Tu La e rằng cũng sẽ nguy hiểm theo.Rất có thể, đại quân Địa Ngục Giới trong nửa ngày qua đã bị Cự Nhân viễn cổ đánh tan, chạy trốn tứ phía.Địa Ngục Giới đã đại loạn rồi.“Mau, có thể rút bao nhiêu thì rút bấy nhiêu!” Thái Thương Đại Châu Đại Tửu Tế sắc mặt ngưng trọng.Mười sáu vị Hiền Giả liên thủ, ngược lại không sợ Cửu Nhật Cự Nhân Hoàng, vấn đề là, bọn họ còn hơn ngàn đại quân đang chắn ở lối vào Các Lâu Thế Giới.Song phương vừa giao thủ, sóng xung kích hủy diệt tạo ra, đủ sức hủy diệt số đại quân còn lại!Nơi này không có đại quân Cự Nhân viễn cổ, Cửu Nhật Cự Nhân Hoàng sẽ không phối hợp bọn họ dẫn dắt chiến trường về phía Thiên Mạc, ngược lại, hắn sẽ tận lực dùng dư ba càn quét tàn dư Trung Thổ.“Ra tay!” Thái Thương Đại Tửu Tế khẽ quát một tiếng, dẫn theo tám vị Đại Tửu Tế dịch chuyển tức thời đi, đón địch ở đường chân trời, các Hiền Giả còn lại nối gót theo sau.Bọn họ cố gắng khống chế chiến đấu tại đường chân trời, giảm thiểu ảnh hưởng đến nơi này.Nhưng, Giang Phàm từng chứng kiến Cửu Nhật Cự Nhân Hoàng hiểu rõ, dù chỉ là dao động ngoài đường chân trời, cũng có thể dễ dàng giết chết bọn họ.“Đi mau!” Hắn sắc mặt ngưng trọng, lấy ra một cái túi, hút vào hơn hai trăm cường giả Trung Thổ, sau đó dịch chuyển tức thời đưa đến Các Lâu Thế Giới.Các Đại Tôn cũng cố hết sức mình, cuốn theo một bộ phận cường giả trốn vào Các Lâu Thế Giới.Dù vậy, vẫn còn hơn trăm người không kịp chuyển đi.Mà cuộc chiến giữa Cửu Nhật Cự Nhân Hoàng và các Đại Tửu Tế không ngoài dự đoán đã nổ ra.Những lời nguyền và pháp tắc siêu việt sức tưởng tượng, lập tức đánh xuyên Địa Ngục Giới, bầu trời như bị lật tung, để lộ ra khoảng hư vô rộng vạn trượng.Mặt đất vô biên bị lực không gian nhổ tận gốc, cuốn vào trong hư vô.Đáng sợ hơn là, dư ba do lời nguyền và pháp tắc đan xen vào nhau, như sóng thần lan rộng ra tám phương.Nơi nào đi qua, hư vô đều bị xé nát.Chỉ có Giới Khí này, mới có thể chặn được xung kích của dư ba.Sắc mặt Giang Phàm kịch biến, cúi đầu nhìn hơn trăm đại quân Trung Thổ còn lại, đồng tử co rút kịch liệt phát hiện, Hứa U Nhiên, Nguyệt Minh Châu và Bình Thiên Bồ Tát cũng ở trong đó!Cảnh tượng vừa rồi quá hỗn loạn, khi hắn và mấy Đại Tôn chuyển người, căn bản không phân biệt được ai với ai.Không ngờ, trong số những người còn lại cuối cùng, lại có Hứa U Nhiên và Nguyệt Minh Châu!Giang Phàm không chút do dự, thân hình lóe lên lao ra khỏi Các Lâu Thế Giới, phía sau truyền đến tiếng kinh hô của các Đại Tôn và cường giả Trung Thổ.Dư ba đã ập đến, Giang Phàm một khi đi sẽ bị dư ba nhấn chìm.Giang Phàm tiện tay ném ngược lại cái túi khác chứa ba trăm tín đồ Tu La Thánh Tử, bản thân hắn liền biến mất khỏi tầm mắt mọi người.Khi xuất hiện lần nữa, đã ở giữa hơn trăm cường giả.Mà sóng thần dư ba khủng bố ập đến, nhấn chìm hắn và hơn trăm cường giả.Khi dư ba xông tới phía xa, mọi người nhìn lại, lòng lạnh nửa vời.Chỉ thấy nơi Giang Phàm và hơn trăm cường giả đứng, chỉ còn lại một vùng hư vô tàn phá…Bức tường thế giới còn bị đánh xuyên, huống chi bọn họ thân thể phàm thai!E rằng đều đã trong chớp mắt hóa thành tro bụi.Mọi người chìm vào nỗi bi thương tột độ, khó khăn lắm mới sống sót rời khỏi Địa Ngục Giới, cuối cùng lại gục ngã trước ánh bình minh.Chân Ngôn Tôn Giả nhắm nghiền mắt lại, lẩm bẩm nói: “Từng người từng người một đều chết vì người khác.”“Chưa từng nghĩ đến ta.”“Ta… cũng là thê tử của ngươi mà.”Nàng nhớ lại cảnh Thiên Kiều Tôn Giả ôm thi thể phụ thân nhảy vào hư vô, bỗng nhiên có chút hiểu tâm cảnh của nàng ấy rồi.Khi trong lòng không còn nơi nương tựa, thế gian chỉ là một nơi có thể ở lại hoặc không.Nàng mở mắt ra, nhìn hư vô phía dưới, cất bước đi về phía trước.Nhưng lại bị một tiếng kinh hô phía sau thu hút.“Tinh Hỏa Tôn Giả còn sống!”Quay đầu nhìn lại, là Minh Dạ Tu La Vương, chỉ thấy hắn chăm chú nhìn vào trong hư vô, dường như đã thấy được cảnh tượng cực kỳ xa xôi.Giữa thần sắc tràn ngập vẻ kích động: “Không sai, hắn vẫn còn sống.”“Chỉ là tình hình không ổn lắm, hắn đang trôi dạt vào sâu trong hư vô, ta sắp không nhìn thấy hắn nữa rồi.”Sâu trong hư vô.Giang Phàm chỉ còn nửa thân trên, bị loạn lưu hư vô cuốn đi nhanh chóng trượt vào nơi hư vô vô định.Tay trái hắn nắm chặt một cái túi, tay phải cầm Hư Không Ngư Can.Đầu kia của sợi dây câu, móc chặt một Hắc Sắc Đại Đỉnh.Một người một đỉnh, cùng nhau trôi dạt về sâu trong hư vô.Thì ra, vào thời khắc hủy diệt, hắn chợt lóe linh quang, nhớ ra còn một nơi có thể ẩn náu.Đó chính là, hư vô!Mà trùng hợp thay, hắn lại có pháp bảo giúp nhanh chóng ẩn vào hư vô, Cửu Long Yêu Đỉnh!Thế nên, ngay trước khi dư ba ập tới, sau khi kịp thời thu người vào túi, hắn liền quả quyết phát động Cửu Long Yêu Đỉnh, liên thông với hư vô, rồi nhảy vọt vào.Đáng tiếc dư ba uy lực quá mạnh, vẫn lan tới tận trong hư vô, làm nửa thân trên của hắn bị đánh nát.Điều khiến Giang Phàm đau khổ là, vết thương này do pháp tắc và lời nguyền gây ra, Sinh Mệnh Bổn Nguyên Giang Phàm thi triển hoàn toàn vô dụng.Hắn cố nén kịch liệt đau đớn, từ trong túi đưa Nguyệt Minh Châu ra: “Minh Châu, nhờ vào ngươi rồi.”Nguyệt Minh Châu quét mắt nhìn quanh, phát hiện Giang Phàm còn sống, vô cùng kinh hỉ, khi thấy vết thương thảm khốc của hắn, liền vội vàng từ thắt lưng lấy xuống một cái túi.“Đại Bạch Thỏ, mau ra đây!” Tâm niệm vừa động, một con Đại Bạch Thỏ lớn hơn cả người liền hiện thân.Nó chớp chớp đôi mắt to màu đỏ, vẻ mặt mờ mịt.Nhưng giây tiếp theo liền toàn thân run rẩy.Bởi vì Nguyệt Minh Châu một phát túm một nắm lông thỏ từ bụng nó, đau đến mức nó run lẩy bẩy.Nguyệt Minh Châu vội vàng đặt lông thỏ lên vết thương của Giang Phàm, vết thương máu chảy không ngừng cuối cùng cũng ngừng chảy máu, và bắt đầu hồi phục chậm rãi.“Chậm thế này? Vậy thì đau đến mức nào chứ?” Nguyệt Minh Châu xót Giang Phàm, quay người liền xoạt xoạt xoạt giật xuống một nắm lông thỏ to bằng chậu rửa mặt từ trên người Đại Bạch Thỏ.Đại Bạch Thỏ bị giật đến phát điên, quay đầu cắn vào quần áo Nguyệt Minh Châu.Nguyệt Minh Châu vội nói: “Đây là nam nhân của ta, ngươi đau một chút thì sao? Buông ra, không thì tối nay ăn đầu thỏ!”Thấy vết thương đã hồi phục, Giang Phàm nói: “Đừng làm khó nó, ta nhịn một lát là được rồi.”Nguyệt Minh Châu vội vàng đau lòng đắp một nhúm lông thỏ lên vết thương, đôi chân Giang Phàm bị đứt liền tái sinh với tốc độ mắt thường có thể thấy được.Nàng vẫn còn xót, túm lấy chân sau của Đại Bạch Thỏ đưa đến trước mặt Giang Phàm, nói: “Cứ cắn trực tiếp đi, hiệu quả sẽ tốt hơn.”Giang Phàm nhìn cái chân đầy lông thỏ được đưa tới miệng, vẻ mặt ngạc nhiên.Nguyệt Minh Châu nói: “Nó là một viên đan dược, chính là để cho người ăn đó.”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1822">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1822: Tu La Thánh Tử</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Đan dược?</p>
+                <p>Giang Phàm nghi hoặc nhìn con thỏ trắng lớn đang nhảy nhót loạn xạ vì nôn nóng, đầu óc ngưng trệ một lát. Ngay sau đó, một tiếng nổ vang vọng trong não, hắn kinh ngạc thốt lên: “Nó… nó là Bát phẩm Thiên Đan ư?”</p>
+                <p>Năm xưa, Cổ Tâm Hiền Giả của Dược Thần Điện, vì ý niệm luyện chế Bát phẩm Thiên Đan không hợp với ba vị Hiền Giả khác, nên đã rời khỏi Dược Thần Điện. Sau này, y bát và di vật của Cổ Tâm Hiền Giả được Vong Tình Dã Lão kế thừa. Cuối cùng, di vật đó truyền đến tay Nguyệt Minh Châu.</p>
+                <p>Nguyệt Minh Châu nhìn quanh không một bóng người, mới nói: “Sư tôn dặn dò ta không được nói cho người ngoài, sợ rằng sẽ rước lấy họa sát thân.”</p>
+                <p>“Nó đích xác chính là Bát phẩm Thiên Đan do Cổ Tâm Hiền Giả luyện chế từ ngàn năm trước!”</p>
+                <p>“Công hiệu là có khả năng giúp Hiền Giả Tam Tai Cảnh đột phá Thánh Cảnh.”</p>
+                <p>Cái gì?</p>
+                <p>Giang Phàm chợt ngồi bật dậy, kinh ngạc nhìn con thỏ trắng lớn trước mặt.</p>
+                <p>“Xung kích Thánh Cảnh ư?”</p>
+                <p>Hắn thực sự không thể tin được, con thỏ trắng lớn lại là một tồn tại như thế này!</p>
+                <p>Nguyệt Minh Châu che miệng cười khẽ: “Xem ra ngươi cũng chẳng hơn ta là bao! Lúc đầu nghe sư tôn nói, ta còn chẳng khoa trương như ngươi đâu.”</p>
+                <p>Trong mắt Giang Phàm vẫn ngập tràn sự chấn động. Bởi vì càng hiểu rõ về Thánh Cảnh, hắn càng cảm thấy con thỏ trắng lớn này nghịch thiên đến nhường nào. Cần biết rằng, một tư cách Giới Chủ đã có thể châm ngòi đại chiến giữa hai thế giới, đó cũng chỉ là tư cách mà thôi! Nguồn tài nguyên cần thiết để xung kích Thánh Cảnh, chỉ có khó hơn mà thôi! Vậy mà con thỏ trắng lớn trước mắt, lại có khả năng xung kích Thánh Cảnh ư? Hiệu quả của nó, thậm chí còn sắp sánh ngang với Thánh Anh trên Thái Hư Cổ Thụ!</p>
+                <p>Trong mắt hắn lóe lên vẻ kinh nghi: “Năm xưa, Cổ Tâm Hiền Giả, Đan đạo tạo nghệ của ông ấy lại đạt đến Bát Tinh Hồn Sư rồi ư?”</p>
+                <p>“Không thể nào tiến bộ nhanh đến thế được chứ?”</p>
+                <p>Nhưng rất nhanh, hắn mới chợt bừng tỉnh khi chú ý đến Cửu Long Yêu Đỉnh ở một bên!</p>
+                <p>Chính là Cửu Long Yêu Đỉnh!</p>
+                <p>Chiếc đỉnh này sở dĩ chỉ còn lại hiệu quả sử dụng cuối cùng, xem ra, chính là do Cổ Tâm Hiền Giả đã dùng qua. Ông ấy mới là chủ nhân của Cửu Long Yêu Đỉnh. Sau này trải qua mấy phen thăng trầm, Cửu Long Yêu Đỉnh đã rơi vào động phủ dưới vách núi tuyết. Giang Phàm cũng nhờ đó mà kết duyên với Nguyệt Minh Châu.</p>
+                <p>“Chẳng trách con thỏ trắng lớn này chỉ một sợi lông cũng có thể trị thương, hóa ra nó là một viên Bát phẩm Thiên Đan.”</p>
+                <p>Giang Phàm dở khóc dở cười: “Ta lẽ ra phải nghĩ ra sớm hơn mới phải.”</p>
+                <p>Nguyệt Minh Châu khúc khích cười: “Sau này nó là của ngươi đó!”</p>
+                <p>Cho dù là Bát phẩm Thiên Đan, Nguyệt Minh Châu cũng không hề tiếc rẻ mà tặng đi.</p>
+                <p>Giang Phàm khẽ khựng lại, nhẹ nhàng xoa má nàng: “Đồ ngốc, Vong Tình Dã Lão để lại cho ngươi, vậy đó chính là vật hữu duyên của ngươi.”</p>
+                <p>“Huống hồ, ta thời gian không còn nhiều, giữ vật này có ích gì?”</p>
+                <p>“Đi thôi, mau trở về, trôi xa quá sẽ bị lạc trong hư vô đấy.”</p>
+                <p>Thương thế ở hai chân hắn đã khôi phục, nên mau chóng trở về Trung Thổ rồi. Hắn lấy ra một chiếc áo choàng lông vũ rộng lớn, chính là Hư Không Vũ Dực có thể vượt qua hư vô. Sau khi khoác lên người, luồng loạn lưu hư không xung quanh lập tức lướt qua hắn, giúp hắn có thể lơ lửng trong hư không mà không bị ảnh hưởng.</p>
+                <p>“Quả nhiên thần kỳ!” Giang Phàm thầm tán thán, trở về sẽ dùng chậu chó để phục chế thêm một chiếc nữa. Cố gắng để Thiên Cơ Các mỗi người có một chiếc. Đương nhiên, cũng sẽ có thêm một kẻ xui xẻo của Thiên Cơ Các mà thôi.</p>
+                <p>Lúc này, hắn bất ngờ phát hiện, con thỏ trắng lớn vậy mà cũng có thể giẫm chân lên hư không, hoàn toàn không chịu ảnh hưởng của hư vô. Nguyệt Minh Châu nắm lấy chân nó cũng tương tự được miễn khỏi ảnh hưởng của hư vô. Bát phẩm Thiên Đan đúng là có chút đặc biệt thật, vậy mà lại có thể vượt qua hư không.</p>
+                <p>Giang Phàm nói: “Ngươi đi theo con thỏ trắng lớn, hay là đi theo ta?”</p>
+                <p>Nguyệt Minh Châu nhìn chiếc vũ y của Giang Phàm không quá rộng rãi, hỏi: “Có thể mang theo hai chúng ta không?”</p>
+                <p>Giang Phàm dang rộng hai tay, nói: “Cứ ôm ta từ phía sau là được.”</p>
+                <p>Phía sau, ôm ư?</p>
+                <p>Nàng chợt nhớ lại không lâu trước đây, vô tình nghe được Cung Thải Y và Vân Thường Tiên Tử trao đổi chuyện phòng the. Loáng thoáng nghe được, Giang Phàm thích tư thế ôm các nàng từ phía sau. Mặt nàng không khỏi đỏ bừng, ấp úng nói: “Ta… ta cưỡi con thỏ trắng lớn là được rồi.”</p>
+                <p>“Thôi được, nhưng vì ngươi đã thành khẩn mời như vậy, ta đành miễn cưỡng đi cùng ngươi vậy.”</p>
+                <p>Nói xong, nàng liền nhảy vọt về phía Giang Phàm.</p>
+                <p>Nào ngờ, vạt váy bị con thỏ trắng lớn cắn lấy, đôi mắt còn liếc liếc về phía lưng nó, ý là “có thể ngồi lên ta mà!”. Nguyệt Minh Châu liền vung tay đấm một cú vào trán nó, khẽ mắng: “Cái đồ không có mắt nhìn!”</p>
+                <p>“Cút về!”</p>
+                <p>Nàng mở túi, nhét con thỏ trắng lớn trở lại.</p>
+                <p>Sau đó nàng giả vờ như không có chuyện gì xảy ra, đi đến trước mặt Giang Phàm. Giang Phàm cười khẽ ôm lấy nàng từ phía sau, siết chặt thân thể mềm mại nhỏ bé của nàng vào người mình, rồi khép vũ y lại.</p>
+                <p>Nguyệt Minh Châu chỉ còn lộ ra một cái đầu nhỏ đỏ bừng, đôi mắt ngập nước vì xấu hổ. Nàng cảm thấy mình như bị một luồng nhiệt nóng bỏng bao bọc, khiến toàn thân mềm nhũn vô lực.</p>
+                <p>“Xuất phát thôi!” Giang Phàm tâm niệm vừa động, lông vũ trên vũ y lập tức phóng thích ra một luồng lực lượng độc đáo, chống lại luồng loạn lưu hư vô. Sau đó, hai người hóa thành một vệt sáng trắng sữa, lao nhanh trong hư vô tăm tối.</p>
+                <p>Không lâu sau đó, hai người đã đến trước bức tường kết giới của Địa Ngục Giới.</p>
+                <p>Nguyệt Minh Châu lo lắng nói: “Địa Ngục Giới đã đại loạn, đi từ Địa Ngục Giới về Trung Thổ chẳng phải rất nguy hiểm sao?”</p>
+                <p>Giang Phàm bất đắc dĩ nói: “Trung Thổ mọi việc bình an, bức tường kết giới quá ổn định, nhất thời không thể xuất hiện khe nứt hư vô.”</p>
+                <p>“Chỉ có thể mượn đường qua Địa Ngục Giới đang trong loạn chiến.”</p>
+                <p>Nguyệt Minh Châu lúc này mới chợt hiểu ra.</p>
+                <p>Đúng lúc này, bức tường kết giới phía trước đột nhiên vỡ vụn, một cây trường mâu màu máu của Cự Nhân Hoàng đã đánh xuyên qua bức tường kết giới. Từng mảng đất đá, những kiến trúc miếu tự bị xé nát, và cả những hòa thượng khoác cà sa cũng bị cuốn vào bên trong.</p>
+                <p>Miếu tự, hòa thượng? Giang Phàm khẽ ngẩn ra, Địa Ngục Giới sao lại có hòa thượng? Nhưng ngay sau đó hắn hiểu ra, là Phật Vực!! Suýt chút nữa quên mất, Địa Ngục Giới có một vị Giới Chủ cực kỳ đặc biệt, đó là Phật Đà! Vị Phật Đà khai sáng ra 《Trấn Ngục Tức Hồn Kinh》! Vốn là một vị Đại Bồ Tát ở Trung Thổ, ông ấy đã tay cầm 《Trấn Ngục Tức Hồn Kinh》 đi đến Địa Ngục Giới siêu độ oán linh, cuối cùng thành tựu Phật Đà chi vị, kiến lập Phật Vực.</p>
+                <p>Bọn họ vậy mà lại quay về gần Phật Vực của Địa Ngục Giới. Nhìn những hòa thượng trước mắt, Giang Phàm do dự không biết có nên cứu bọn họ không. Hiện tại Trung Thổ và Địa Ngục Giới đã đình chiến, không còn là kẻ thù, hơn nữa Phật Đà lại có nguồn gốc từ Trung Thổ, môn nhân của ông ấy gặp nạn, nếu mình cứu một nhóm, có lẽ có thể thêm chút tình hữu hảo với Phật Vực.</p>
+                <p>Ngay lập tức, hắn liền bay vút lên, một mặt đề phòng công kích của Cự Nhân Hoàng có thể bất chợt đánh xuống từ trên đầu, một mặt khác đem sáu vị hòa thượng kia toàn bộ nhét vào túi. Tình thế nguy cấp, hắn cũng không kịp xem xét kỹ lưỡng, những vị hòa thượng đó đang ở cảnh giới và trạng thái nào. Sau khi thu thập xong, hắn liền quả quyết thi triển Vô Ngã Tịnh Trần Thuật ẩn mình vào trong kiến trúc miếu tự đang lơ lửng.</p>
+                <p>Chỉ chờ khí tức Cự Nhân Hoàng của Phật Vực biến mất, hắn sẽ men theo khe nứt mà quay về. Không lâu sau đó, phía trên không còn ba động, khí tức Cự Nhân Hoàng cũng nhanh chóng biến mất. Cơ hội đã đến! Tâm niệm hắn vừa động, chuẩn bị thúc giục vũ y, nào ngờ, một bóng dáng đáng sợ tản ra khí tức Tu La Hoàng đã nhanh như chớp chui vào khe nứt trước một bước.</p>
+                <p>Dù chỉ là thoáng qua trong khoảnh khắc điện quang hỏa thạch, nhưng Giang Phàm vẫn nhận ra.</p>
+                <p>“Tu La Thánh Tử!” Giang Phàm đại kinh thất sắc!</p>
+                <p>Tên này đã bị Giới Chủ Địa Ngục Giới đuổi đi rồi, vậy mà còn dám quay lại, lại còn lén lút lẻn vào Phật Vực! Mục đích của hắn không cần nói cũng biết, chính là 《Trấn Ngục Tức Hồn Kinh》.</p>
+                <p>Giang Phàm thậm chí còn có chút bội phục sự gan dạ và khí phách của hắn. Hiện tại vừa đúng lúc Địa Ngục Giới đại loạn, các Giới Chủ căn bản không có thời gian bận tâm đến một Tu La Thánh Tử xâm nhập. Đây chính là thời cơ tốt nhất để trộm 《Trấn Ngục Tức Hồn Kinh》.</p>
+                <p>Giang Phàm ánh mắt lộ vẻ nghiêm nghị, nếu để Tu La Thánh Tử đoạt được 《Trấn Ngục Tức Hồn Kinh》, với thủ đoạn của hắn, chẳng bao lâu nữa là có thể thành công đột phá Tam Tai Cảnh. Đến lúc đó hắn quay về báo thù Trung Thổ, chắc chắn sẽ là một tai họa.</p>
+                <p>Phải ngăn cản hắn mới được!</p>
+                <p>Nhưng mà, làm sao mình có thể là đối thủ của hắn đây? Sờ cằm, Giang Phàm bỗng nghĩ ra điều gì đó, nở một nụ cười:</p>
+                <p>“Ngươi đã đánh thông hai giới, tạo ra phiền phức lớn thế này cho Trung Thổ của ta, vậy thì ta cũng sẽ gây cho ngươi một chút phiền toái nho nhỏ vậy!”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1823">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1823: Đừng Ra Tay, Minh Hữu</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Một chút rắc rối nhỏ ư?</p>
+                <p>Nguyệt Minh Châu vừa nghe đã thấy hào hứng. Giang Phàm đã nói &quot;chút nhỏ&quot;, chắc chắn là muốn làm lớn chuyện rồi.</p>
+                <p>&quot;Ngươi định làm gì đây?&quot;</p>
+                <p>Giang Phàm thần bí cười, nói: &quot;Đóng cửa đánh chó!&quot;</p>
+                <p>Hắn lấy ra Nguyệt Cảnh, bắt đầu viết chữ lên đó.</p>
+                <p>&quot;Lấy Một Tên Đẹp: Có ai ở đó không?&quot;</p>
+                <p>Rất nhanh sau đó, Nguyệt Cảnh đã có phản hồi.</p>
+                <p>&quot;Tây Cung: Tiểu Phàm, ngươi đang ở đâu? Tình hình thế nào rồi?&quot;</p>
+                <p>&quot;Lấy Một Tên Đẹp: Ta không sao, những người khác cũng còn sống, xin cứ yên tâm. À phải rồi, Địa Ngục Giới Chủ có từng liên lạc với Trung Thổ chúng ta không?&quot;</p>
+                <p>&quot;Hoa Tùng: Sư thúc quả nhiên thần cơ diệu toán, Bỉ Ngạn Giới Chủ đang ở ngay bên cạnh chúng ta. Nàng muốn Trung Thổ chúng ta phát động Miễn Chiến Bia, Đại Tửu Tế nói chỉ có ngươi mới có thể quyết định.&quot;</p>
+                <p>Giang Phàm khẽ gật đầu, quả nhiên không ngoài dự liệu.</p>
+                <p>Ngay cả Phật Vực cũng phải chịu sự tấn công của Cự Nhân Hoàng, có thể thấy chiến trường chính ở Phong Đô đã tan rã, Viễn Cổ Cự Nhân đã xâm nhập khắp nơi trong Địa Ngục Giới.</p>
+                <p>Tình hình Địa Ngục Giới đang ngàn cân treo sợi tóc.</p>
+                <p>Con đường sống duy nhất là cầu cứu Trung Thổ phát động Miễn Chiến Bia, trục xuất Viễn Cổ Cự Nhân.</p>
+                <p>&quot;Lấy Một Tên Đẹp: Bảo Bỉ Ngạn Giới Chủ nói chuyện với ta.&quot;</p>
+                <p>Rất nhanh, Nguyệt Cảnh xuất hiện một dòng chữ không tên.</p>
+                <p>&quot;Mạng ngươi đúng là lớn thật đấy, thế mà vẫn chưa chết!&quot;</p>
+                <p>&quot;Lấy Một Tên Đẹp: Ta mà chết thật, Bỉ Ngạn muội muội chắc sẽ lo lắm đây.&quot;</p>
+                <p>&quot;Đừng nói nhảm nữa! Địa Ngục Giới ta đã là phụ thuộc của Trung Thổ các ngươi, vậy thì phải có trách nhiệm với chúng ta chứ, mau trục xuất Viễn Cổ Cự Nhân đi!&quot;</p>
+                <p>Giang Phàm bật cười, &quot;đứng mà xin ăn&quot; đúng không?</p>
+                <p>&quot;Lấy Một Tên Đẹp: Không thành vấn đề, nhưng sư phụ của ta, Kỳ Kỳ, không cho phép ta giúp người miễn phí, như vậy sẽ làm mất mặt nàng.&quot;</p>
+                <p>&quot;Kỳ Kỳ là sư tôn của ngươi? Hèn chi tâm địa ngươi còn đen tối hơn cả bầu trời Địa Ngục Giới!&quot;</p>
+                <p>&quot;Ngươi muốn gì?&quot;</p>
+                <p>Bỉ Ngạn Giới Chủ xoa xoa thái dương, nàng thầm nhủ với bản thân rằng, dù điều kiện Giang Phàm đưa ra có hà khắc đến mấy, nàng cũng phải giữ bình tĩnh.</p>
+                <p>&quot;Lấy Một Tên Đẹp: Đều là người quen cả, ta sẽ không &#039;sư tử ngoạm miệng&#039; đâu. Cứ đưa Trung Thổ chúng ta một trăm Tu La Hoàng để dùng làm trâu ngựa trăm năm, lấy lệ vậy thôi.&quot;</p>
+                <p>Nguyệt Cảnh trầm mặc hồi lâu.</p>
+                <p>Bỉ Ngạn Giới Chủ không lên tiếng, các thành viên trong Nguyệt Cảnh cũng im lặng.</p>
+                <p>Giang Phàm dùng sức vỗ vỗ Nguyệt Cảnh, lầm bầm: &quot;Trong Hư Vô tín hiệu kém thế ư?&quot;</p>
+                <p>Nguyệt Minh Châu che miệng nhỏ lại, đôi mắt mở to: &quot;Yêu cầu của ngươi, ngay cả quỷ cũng phải chạy mất dép!&quot;</p>
+                <p>Trung Thổ trừ Đại Tửu Tế ra, còn chưa có nổi mười Hiền Giả nữa là.</p>
+                <p>Giang Phàm vừa mở miệng đã đòi một trăm vị Tu La Hoàng, lại còn điểm mặt chỉ tên muốn dùng bọn họ làm trâu ngựa!</p>
+                <p>Nếu nàng là Bỉ Ngạn Giới Chủ, chắc chắn sẽ tức đến mức đập nát Nguyệt Cảnh ngay tại chỗ.</p>
+                <p>Mãi một lúc lâu sau, Nguyệt Cảnh mới truyền đến hồi đáp.</p>
+                <p>&quot;Một trăm Tu La Hoàng? Ngươi có muốn ta tặng luôn cả Địa Ngục Giới cho ngươi không?&quot;</p>
+                <p>&quot;Lấy Một Tên Đẹp: Tốt quá chứ, tặng thêm tám vị Giới Chủ nữa thì càng hay.&quot;</p>
+                <p>Bỉ Ngạn Giới Chủ bộ ngực đầy đặn phập phồng, hàm răng bạc khẽ cắn chặt.</p>
+                <p>Vốn tưởng &quot;Trung Địa Điều Ước&quot; đã là giới hạn của Giang Phàm, không ngờ, đó chỉ là trình độ phát huy bình thường của hắn.</p>
+                <p>&quot;Phái một Tu La Hoàng, để Trung Thổ sai khiến một năm. Ngoài ra, ngươi hãy chọn một Ngũ Quán Vương đáng tin cậy, trong vòng một tháng, Giới Chủ này sẽ giúp nàng ta đột phá cảnh giới Tu La Hoàng.&quot;</p>
+                <p>&quot;Không đồng ý thì thôi, đằng nào...&quot;</p>
+                <p>Lời nàng còn chưa nói hết, Giang Phàm đã nhanh chóng hồi đáp.</p>
+                <p>&quot;Lấy Một Tên Đẹp: Thành giao! Không được hối hận!&quot;</p>
+                <p>Bỉ Ngạn Giới Chủ cảm thấy ngực nghẹn lại, thân ảnh khẽ lay động.</p>
+                <p>Từ một trăm vị mà trả giá xuống còn một vị, Giang Phàm cũng sảng khoái đồng ý, đủ thấy Giang Phàm vốn dĩ không hề có ý định muốn thứ gì từ Địa Ngục Giới.</p>
+                <p>Hắn chỉ là tiện tay &quot;sư tử ngoạm miệng&quot; lừa bịp một phen.</p>
+                <p>Lừa được thì tốt, không lừa được cũng chẳng lỗ.</p>
+                <p>Tên gian thương chết tiệt này!</p>
+                <p>&quot;Được, thành giao rồi, kích hoạt Miễn Chiến Bia đi!&quot;</p>
+                <p>&quot;Lấy Một Tên Đẹp: Khuynh Tiên, thông báo Đại Tửu Tế hành động.&quot;</p>
+                <p>Trong Hư Vô, Giang Phàm thu hồi Nguyệt Cảnh, khóe miệng tràn đầy vẻ vui mừng.</p>
+                <p>Nguyệt Minh Châu nói: &quot;Thế là ngươi đồng ý rồi à?&quot;</p>
+                <p>Giang Phàm khẽ gãi mũi nàng, nói: &quot;Sau khi Viễn Cổ Cự Nhân chiếm đóng Địa Ngục Giới, nếu bọn chúng theo Các Lâu Thế Giới xâm nhập Trung Thổ thì phải làm sao?&quot;</p>
+                <p>&quot;Địa Ngục Giới Chủ không cầu ta, ta cũng sẽ xua đuổi Viễn Cổ Cự Nhân thôi.&quot;</p>
+                <p>&quot;Hiện giờ không công nhặt được một Tu La Hoàng, lại thêm một danh ngạch đột phá Tu La Hoàng, đã là một món hời lớn rồi.&quot;</p>
+                <p>&quot;Chỉ là không biết, Địa Ngục Giới sẽ phái Tu La Hoàng nào đến Trung Thổ đây, e rằng sẽ phái một vị vô dụng nhất mất thôi.&quot;</p>
+                <p>Nguyệt Minh Châu bừng tỉnh, phải rồi, Địa Ngục Giới vẫn còn liên thông với Trung Thổ mà.</p>
+                <p>Nhất vinh câu vinh, nhất tổn câu tổn.</p>
+                <p>Bỉ Ngạn Giới Chủ không giữ được bình tĩnh, đã tìm Trung Thổ cầu cứu trước, vậy thì chỉ có thể bị Giang Phàm thừa nước đục thả câu một phen thôi.</p>
+                <p>&quot;Vậy chúng ta mau trở về Địa Ngục Giới, nếu không, Viễn Cổ Cự Nhân vừa rút lui, không có đại chiến cấp Hiền Giả thì sẽ không tìm được khe nứt mới.&quot;</p>
+                <p>Giang Phàm gật đầu, thúc giục Hư Không Vũ Y chui vào khe nứt.</p>
+                <p>Chỉ là, ngay lúc sắp vượt qua khe nứt, ánh mắt hắn chợt chuyển động, rồi hắn đột nhiên dừng lại.</p>
+                <p>Hắn triệu hồi Tiên Vương Bất Diệt Chung đầy vết nứt, bảo hộ hai người ở bên trong, đồng thời còn lấy ra một miếng ngọc phù, bên trong phong ấn Thời Gian Hồi Tố Pháp Tắc của lão cẩu Từ Tâm.</p>
+                <p>Sau đó, lại lấy ra Thời Không Sa Lậu, mở nó ra.</p>
+                <p>&quot;Có chuyện gì vậy?&quot; Ánh mắt Nguyệt Minh Châu chợt ngưng lại.</p>
+                <p>Giang Phàm nheo mắt nói: &quot;Phòng ngừa một chút.&quot;</p>
+                <p>&quot;Vị Tu La Thánh Tử kia là kẻ tinh thông tính toán, có lẽ vừa nãy hắn xuất hiện là cố ý để ta nhìn thấy cũng không chừng.&quot;</p>
+                <p>Tuy không xác định, nhưng giao thiệp với Tu La Thánh Tử, cẩn thận gấp mười hai phần cũng không sai.</p>
+                <p>Chuẩn bị xong, hắn mới tiếp tục thúc giục Hư Không Vũ Y xuyên qua khe nứt.</p>
+                <p>Ngay khoảnh khắc đến Địa Ngục Giới, Phật quang nồng đậm đã ập tới. Đây là khí tức độc hữu của Phật Vực.</p>
+                <p>Nhưng cùng lúc đó, một ma trảo che trời lấp đất đã được chuẩn bị sẵn, đánh tới.</p>
+                <p>&quot;Tiểu tạp chủng, ta chờ ngươi đã lâu!&quot;</p>
+                <p>Giọng nói lạnh lẽo của Tu La Thánh Tử lạnh lùng truyền đến.</p>
+                <p>Với cảnh giới Tu La Hoàng của hắn, sao có thể không nhận ra sự tồn tại của Giang Phàm và Nguyệt Minh Châu trong Hư Vô chứ?</p>
+                <p>Hắn chỉ kiêng kỵ khối Cửu Sắc Tinh Thể trên người Giang Phàm, không muốn trực diện xuất thủ, để tránh gánh chịu rủi ro.</p>
+                <p>Cho nên, hắn giả vờ không nhìn thấy Giang Phàm, để hắn thả lỏng cảnh giác, đợi khi hắn quay lại, liền cho hắn một đòn chí mạng bất ngờ.</p>
+                <p>Hiệu quả rất tốt, Giang Phàm quả nhiên không tế ra khối Cửu Sắc Tinh Thể kia.</p>
+                <p>Ma chưởng đã tích tụ thế năng, mang theo uy áp hủy diệt hung hăng vỗ xuống người Giang Phàm.</p>
+                <p>Thế nhưng, đang lúc nhìn thấy Giang Phàm sắp tro bụi tiêu tan dưới chưởng này, một cảnh tượng quỷ dị xuất hiện.</p>
+                <p>Ma chưởng vừa đánh xuống, lại bất ngờ cuốn ngược trở lại!</p>
+                <p>&quot;Thời Gian Hồi Tố Pháp Tắc? Ngươi đề phòng ta ư?&quot; Tu La Thánh Tử lạnh lùng bật cười:</p>
+                <p>&quot;Cũng đúng, nếu ngươi dễ dàng bị giết chết như vậy, ta ngược lại sẽ nghi ngờ ngươi có phải là Giang Phàm hay không.&quot;</p>
+                <p>&quot;Có điều, ngươi tốt nhất nên có đủ Thời Gian Hồi Tố Pháp Tắc đấy!&quot;</p>
+                <p>Sắc mặt Tu La Thánh Tử chợt lạnh, một luồng Lực Lượng Nhân Quả khiến người ta nghẹt thở phóng xạ về phía Giang Phàm.</p>
+                <p>Lực Lượng Nhân Quả của Hoàng giả trực diện tấn công, làm sao Giang Phàm có thể kháng cự nổi?</p>
+                <p>Ngay cả Tiên Vương Bất Diệt Chung cũng không thể ngăn cản!</p>
+                <p>Nguyệt Minh Châu lòng chùng xuống, đôi mắt vận chuyển cửu sắc, cố gắng tìm kiếm nơi có khí vận vượng thịnh, mong tìm thấy một tia sinh cơ.</p>
+                <p>Thế nhưng, dưới một đòn của Tu La Hoàng, trời đất đều tối đen như vực sâu, không còn con đường sống nào cả.</p>
+                <p>Đây không phải là tồn tại mà bọn họ có thể kháng cự!</p>
+                <p>Giang Phàm ngược lại rất bình tĩnh, nói: &quot;Khoan đã động thủ, chúng ta bây giờ không phải kẻ địch, mà là minh hữu.&quot;</p>
+                <p>Ánh mắt Tu La Thánh Tử chuyển động, kịp thời vung tay thu hồi ma chưởng, hừ nói: &quot;Minh hữu ư?&quot;</p>
+                <p>Giang Phàm nhún vai, nói: &quot;Không sai, ta bị Địa Ngục Giới truy sát, ngươi cũng bị Địa Ngục Giới trục xuất khỏi Địa Ngục Giới.&quot;</p>
+                <p>&quot;Song phương chúng ta có kẻ địch chung!&quot;</p>
+                <p>&quot;Không bằng chúng ta hợp tác một phen đi.&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1824">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1824: Hảo huynh đệ</h2>
+            </header>
+            <div class="chapter-content">
+                <p>“Hợp tác?”</p>
+                <p>Tu La Thánh Tử cười khẩy: “Có gì tốt mà hợp tác với ngươi?”</p>
+                <p>“Ngươi chết, chính là hợp tác tốt nhất!”</p>
+                <p>Hắn đã ôm hận Giang Phàm từ lâu. Nếu không phải Giang Phàm, Trung Thổ đã sớm luân hãm; nếu không phải Giang Phàm, hắn đã tay cầm 《Trấn Ngục Tức Hồn Kinh》 độ hết vong linh Trung Thổ rồi! Kẻ này phá hỏng đại kế ngàn năm của hắn, dù có nát thây vạn đoạn cũng chưa hả dạ, sao có thể hợp tác với hắn? Lời còn chưa dứt, hắn đã động thủ!</p>
+                <p>Giang Phàm không nhanh không chậm nói: “Lỡ như ngươi không tìm được 《Trấn Ngục Tức Hồn Kinh》 thì sao?”</p>
+                <p>“Mà 《Trấn Ngục Tức Hồn Kinh》 của ta tuy đã bị hư hại, nhưng nội dung thì đều đã ghi nhớ ở đây.”</p>
+                <p>Hắn chỉ chỉ vào đầu mình.</p>
+                <p>Đây là lá bài tẩy lớn nhất khiến hắn không hề sợ hãi Tu La Thánh Tử.</p>
+                <p>Sát cơ mà Tu La Thánh Tử đang ủ chợt dừng lại, nhãn cầu hắn chuyển động: “Vậy ta còn đến Phật Vực làm gì? Bắt ngươi lại tra hỏi, chẳng phải có thể có được đáp án sao?”</p>
+                <p>Giang Phàm cười cười: “Nếu ngươi tin được ta, ta sẽ viết cho ngươi xem.”</p>
+                <p>Tu La Thánh Tử biến đổi sắc mặt, chớp động liên hồi.</p>
+                <p>Cũng phải, Giang Phàm xảo quyệt như vậy, sao có thể đưa bản thật cho hắn? Vạn nhất đưa cho hắn bản giả, bản thân lại bỏ lỡ cơ hội tiềm nhập vào Phật Đà đạo tràng tìm kiếm bản thật, chẳng phải là công cốc cả hai đường sao? Hắn từng chịu thiệt nhiều lần dưới tay Giang Phàm, cảm thấy vẫn nên tự mình tìm được bản thật thì hơn. Nội dung trong đầu Giang Phàm, chỉ có thể xem là lựa chọn thứ yếu mà thôi.</p>
+                <p>“Ngươi muốn hợp tác thế nào?” Tu La Thánh Tử thu liễm sát ý, hỏi.</p>
+                <p>Giang Phàm nói: “Ngươi chẳng phải muốn trộm 《Trấn Ngục Tức Hồn Kinh》 sao? Vậy ta nhân tiện cũng trộm một ít bảo vật Phật môn vậy.”</p>
+                <p>“Ngươi có thực lực của Tu La Hoàng, nhưng ta lại có một người vợ am hiểu Thiên Tử Vọng Khí Thuật, còn có một bằng hữu cảnh giới Bồ Tát.”</p>
+                <p>“Một số thứ ngươi không tìm được, nơi ngươi không thể đến, họ đều có thể đi.”</p>
+                <p>Tu La Thánh Tử bắt đầu suy tư, hắn quả thật từng lo lắng bảo vật khó tìm, hoặc dù tìm được rồi, nhưng không có Phật môn thần thông thì khó mà lấy được. Người Giang Phàm mang đến, e rằng thật sự có thể hữu dụng.</p>
+                <p>“Được, hợp tác thì được, nhưng sau này ngươi bỏ trốn thì sao? Ta biết tìm ngươi ở đâu để lấy nội dung 《Trấn Ngục Tức Hồn Kinh》?”</p>
+                <p>“Hay là thế này…”</p>
+                <p>Tu La Thánh Tử đưa lòng bàn tay ra, một con trùng toàn thân đỏ như máu, giống như chiếc đinh, từ lòng bàn tay hắn chui ra.</p>
+                <p>“Ngươi hãy cho con trùng này chui vào thể nội, sau khi ngươi giao ra 《Trấn Ngục Tức Hồn Kinh》, ta sẽ lấy nó ra.”</p>
+                <p>Giang Phàm nheo mắt lại.</p>
+                <p>Vật này, hắn nào có xa lạ gì. Năm xưa Khôi Tinh khống chế mấy tán tu, khi đến Thiên Cơ Các dưới lòng đất, chính là dùng loại trùng này. Đây là Huyết Trùng mà phái Thị Huyết Tu La tộc dùng để khống chế khôi lỗi. Chẳng qua, Huyết Trùng của Tu La Thánh Tử, so với của Khôi Tinh thì không thể so sánh được. Uy lực của nó mạnh đến mức, đủ để khống chế sinh tử của bất kỳ ai ở Hóa Thần cảnh.</p>
+                <p>Tu La Thánh Tử quả nhiên không dễ lừa gạt, là chấp nhận yêu cầu, hay từ chối đây? Nếu từ chối, e rằng bọn họ sẽ lập tức trở mặt.</p>
+                <p>Đang suy nghĩ thì, lồng ngực hắn truyền đến cảm giác nóng bỏng đã lâu không thấy. Là tàn hồn của Thổ Phượng Đại Hiền. Đã lâu không gặp trùng, Ngũ Sắc Đại Công Kê rảnh rỗi đến mức trứng cũng đau rồi, đột nhiên thấy một con trùng lợi hại, nó phấn khích đến mức tiếp tục phát nóng. Đến mức thân thể Hóa Thần cảnh của Giang Phàm cũng bị nóng đến bỏng rát. Giang Phàm yên tâm. Đã vậy Thổ Phượng Đại Hiền có thể khắc chế con trùng này, thì chẳng còn gì đáng sợ nữa.</p>
+                <p>Hắn nhãn cầu đảo một vòng, vỗ vỗ ngực nói: “Không thành vấn đề! Làm người mà, phải giữ chữ tín chứ.”</p>
+                <p>“Nhưng, vạn nhất sau này ngươi không chịu lấy con trùng này ra, còn muốn thông qua nó để hại chết ta thì sao?”</p>
+                <p>“Hay là, ngươi thế chấp ít đồ quý giá ở chỗ ta đi.”</p>
+                <p>“Sau khi hợp tác kết thúc, ngươi lấy con trùng ra, ta trả lại trọng bảo cho ngươi, chúng ta sẽ không nghi kỵ lẫn nhau.”</p>
+                <p>Sát khí trong mắt Tu La Thánh Tử chớp động, mặc cả với hắn sao? Tuy nhiên, xét đến nội dung 《Trấn Ngục Tức Hồn Kinh》 trong đầu Giang Phàm, hắn chỉ có thể tạm thời nhẫn nhịn.</p>
+                <p>Suy đi nghĩ lại, hắn do dự lấy ra một sợi xích màu đen thon dài, một đầu sợi xích có một chiếc vòng cổ.</p>
+                <p>“Vật này cứ để chỗ ngươi làm vật thế chấp.” Tu La Thánh Tử có chút không cam lòng.</p>
+                <p>Giang Phàm nhíu mày: “Đây là gì? Dây dắt chó sao?”</p>
+                <p>Tu La Thánh Tử hừ lạnh: “Năm xưa ta lừa Từ Tâm Hiền Giả, đến một di tích thần bí ngoài Thiên Ngoại để thám hiểm.”</p>
+                <p>“Hắn trọng thương trở về, còn mang theo một con tiểu linh thú thần bí không thể nhìn thấu được.”</p>
+                <p>“Sau này, tiểu linh thú bỏ chạy, để lại sợi xích này.”</p>
+                <p>Giang Phàm trong lòng khẽ động, Từ Tâm Hiền Giả từng nói, Tiểu Kỳ Lân là linh thú của hắn. Chẳng lẽ, con tiểu linh thú hắn mang về từ di tích Thiên Ngoại, chính là Tiểu Kỳ Lân sao? Nhìn kích thước vòng cổ, vừa hay bằng cổ Tiểu Kỳ Lân. Thứ này quả nhiên là để trói Tiểu Kỳ Lân.</p>
+                <p>Nhưng, thứ này cũng tính là bảo bối sao? Ai ngờ, Tu La Thánh Tử lại có vẻ mặt ngưng trọng: “Ngươi đừng có coi thường sợi xích này.”</p>
+                <p>“Khi xưa ta từng lấy nó thử trên người Thiên La Hiền Giả, sau khi đeo vào, Thiên La Hiền Giả ở thời kỳ toàn thịnh lập tức mất hết mọi sức mạnh, biến thành người phàm.”</p>
+                <p>“Ta vốn định nô dịch thêm một vị Hiền Giả Trung Thổ nữa, tiếc là không có mục tiêu thích hợp để ra tay.”</p>
+                <p>“Giờ nó ký gửi ở chỗ ngươi, đừng làm mất đấy, sau này ta còn có đại dụng!”</p>
+                <p>Trên trán Giang Phàm hiện lên một dấu hỏi lớn.</p>
+                <p>Không phải chứ, có cần thiết không? Tiểu Kỳ Lân yếu ớt như vậy, một bạt tai là có thể đè nó lật ngửa bụng lên trời mà giãy giụa rồi. Cần phải dùng đến sợi xích nghịch thiên như vậy để đối phó sao?</p>
+                <p>“Sao ta thấy không tin lắm nhỉ?” Giang Phàm nhận lấy sợi xích, chạm vào thấy lạnh lẽo, cũng không hề có chút uy áp nào đáng nói. Thậm chí nó còn không tính là pháp khí.</p>
+                <p>“Ngươi chờ chút, ta tìm người thử xem sao.” Giang Phàm vỗ vỗ vào không gian kính:</p>
+                <p>“Nữ Hoàng tỷ, nàng ra đây một chút, có chuyện tốt tìm nàng.”</p>
+                <p>Tu La Nữ Hoàng ngạc nhiên bước ra, khi nhìn thấy Tu La Thánh Tử, đồng tử nàng co rụt lại, lập tức như gặp đại địch.</p>
+                <p>Giang Phàm nói: “Đừng sợ, chúng ta bây giờ là huynh đệ sinh tử.”</p>
+                <p>Huynh... huynh đệ? Tu La Nữ Hoàng ngỡ ngàng, quả nhiên vật cực tất phản, kẻ thù sinh tử đến cực hạn, tự nhiên sẽ trở thành huynh đệ tốt. Nàng lắc đầu, nói: “Có chuyện tốt gì sao?”</p>
+                <p>Giang Phàm nói: “Nàng nhắm mắt lại, ta tặng nàng một chiếc vòng cổ.”</p>
+                <p>Vòng cổ? Tu La Nữ Hoàng trong lòng thấy lạ lạ, đây chẳng phải là thứ mà nam nữ mới tặng cho nhau sao? Phu quân còn chưa từng tặng nàng vòng cổ nữa là. Nàng vốn muốn từ chối, nhưng nhìn vẻ mặt chân thành của Giang Phàm, lại liên tưởng đến cảnh hai người sống chết có nhau dưới đáy vực sâu, bèn thầm mong đợi mà nhắm mắt lại.</p>
+                <p>Khoảnh khắc tiếp theo, một cảm giác lạnh lẽo bao quanh cổ. Không đợi nàng mở mắt, đột nhiên, toàn bộ sức lực trên người như bị rút cạn. Cả người nàng mềm nhũn đổ rạp xuống đất ngay tại chỗ.</p>
+                <p>Thế còn chưa đủ, tứ chi nàng không còn bị khống chế, hai tay chống trên mặt đất, hai chân quỳ xuống, mông hơi vểnh lên. Phải nói sao đây, có chút giống như biến thành một con vật nuôi bốn chân. Chỉ là, phụ nữ mà biến thành tư thế này, nhìn rất là...</p>
+                <p>Giang Phàm nắm sợi xích, vẻ mặt kinh ngạc: “Quả nhiên thật sự hữu dụng!”</p>
+                <p>Tu La Thánh Tử không lừa hắn, đây quả thực là một trọng bảo có thể trói buộc cả Hiền Giả.</p>
+                <p>“Thế nào, đủ để thế chấp một mạng nhỏ chứ?” Tu La Thánh Tử nhàn nhạt nói.</p>
+                <p>Giang Phàm liên tục gật đầu: “Đủ rồi đủ rồi, cứ yên tâm để ở chỗ ta đây.”</p>
+                <p>“Bảo đảm sẽ không thất lạc!”</p>
+                <p>Bởi vì, thứ này đã là của hắn rồi.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1825">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1825: Tây Linh Sơn</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Tu La Nữ Hoàng lúc này mới hiểu ra, Giang Phàm đang dùng nàng để thử nghiệm hiệu quả của sợi xích này.</p>
+                <p>Tại chỗ, nàng tức đến ngực phập phồng, vừa thẹn vừa giận quát:“Giang Phàm! Lần nữa tin ngươi ta là chó!”Nàng ta vậy mà lại tin Giang Phàm cái đồ chó má này có chuyện tốt tìm nàng, đầu óc nàng ta vào bao nhiêu nước rồi?</p>
+                <p>Khụ khụ!Giang Phàm vội vàng cởi vòng cổ ra, nói: “Nữ Hoàng tỷ, đừng giận, viên Địa Ngục Uyên Tinh này là tiền công của nàng.”</p>
+                <p>Tu La Nữ Hoàng liếc nhìn, ngạc nhiên nói:“Ngươi một người Trung Thổ, sao toàn thân lại là bảo vật của tộc Tu La chúng ta?”“Thôi được rồi, vừa hay Cầm Nhi của ta cần vật này, tha thứ cho ngươi.”Ngay sau đó, nàng ôm Địa Ngục Uyên Tinh, với vẻ mặt tươi cười trở lại trong Gương Không Gian, rồi tự giác trói mình lại.</p>
+                <p>“Nương, sao nương càng ngày càng vui vẻ thế ạ?”Thiên Cầm vẻ mặt nghi hoặc, lúc mới đến nương còn giả vờ ngất xỉu vì không dám gặp ai.Không biết từ khi nào, dường như nương đã bắt đầu cảm thấy thích thú với cảnh ngộ này rồi.</p>
+                <p>“Cầm lấy, câm miệng!” Tu La Nữ Hoàng ném Địa Ngục Uyên Tinh cho nàng.Thiên Cầm vừa nhìn thấy, kích động nói: “Oa, là Địa Ngục Uyên Tinh!”“Thiên giới chúng ta chẳng còn mấy viên, ta muốn dùng cũng không có cơ hội.”“Nương, nương lấy ở đâu ra vậy ạ?”Tu La Nữ Hoàng nói: “Là Giang Phàm tên tiểu tử thối đó cho.”Thiên Cầm mặt mày hớn hở: “Nương, vậy nương phải nghe lời hắn nhiều vào, rồi kiếm thêm vài viên nữa.”“Nếu thế thì, Ngũ Quan Vương của con sẽ có hi vọng rồi.”Tu La Nữ Hoàng lườm nàng một cái, đúng là một đứa con gái &#039;đại hiếu&#039;!</p>
+                <p>Bên ngoài.</p>
+                <p>“Nếu sợi xích không vấn đề gì, vậy thì hãy để Huyết Trùng đi vào cơ thể, ngươi và ta đều có thể yên tâm.”Giang Phàm không chút do dự, dưới cái nhìn chăm chú của Tu La Thánh Tử, vỗ con trùng giống như đinh sắt vào ngực mình.Tu La Thánh Tử ánh mắt dõi theo Huyết Trùng, phát hiện nó đã hoàn toàn chui vào năm tòa Hóa Thần Tế Đàn trong bụng Giang Phàm, mới yên tâm.Khóe miệng hắn nhếch lên một nụ cười lạnh khó nhận ra.“Giang Phàm à Giang Phàm, ngươi đối với uy lực của Huyết Trùng của Tộc Thị Huyết Tu La chẳng biết gì cả.”“Chỉ cần ta phát động, cơ thể ngươi sẽ hoàn toàn bị ta khống chế.”“Đến lúc đó, ta bảo ngươi lấy xích ra, ngươi liền phải lấy ra, vọng tưởng dùng xích để uy hiếp ta sao? Hừ hừ, ngây thơ!”Hắn thu lại vẻ khác thường, nói: “Đêm dài lắm mộng, chúng ta mau hành động đi.”Nói xong, hắn liền Thuấn Di đi, dẫn đường phía trước.Giang Phàm nắm tay Nguyệt Minh Châu, đi theo sát phía sau.Mục đích duy nhất hắn đi theo Tu La Thánh Tử, chính là ngăn cản hắn đoạt được 《Trấn Ngục Tức Hồn Kinh》.Đương nhiên, nếu gặp được bảo vật của Phật Đà, hắn cũng không ngại thay Phật Đà bảo quản một chút.Mọi người đều là người Trung Thổ, không cần quá khách khí.</p>
+                <p>Không lâu sau.</p>
+                <p>Một ngọn núi vàng khổng lồ sừng sững ở tận cùng phía Tây.Vô lượng Phật quang từ đó nhẹ nhàng tỏa ra, chiếu rọi cả đất trời thành một màu vàng óng.Bầu không khí an lành, thánh khiết, hoàn toàn trái ngược với sự âm u của Địa Ngục Giới.Mà bao quanh núi vàng, vài luồng ba động của Cự Nhân Hoàng và Phật Tôn như sóng thần cuồn cuộn từng lớp lan ra ngoài, nơi nào đi qua, đất trời đều hỗn loạn tan tành.Đại chiến giữa Cổ Cự Nhân và Tăng Chúng cũng lan rộng khắp bốn phương.Phật Vực lấy núi vàng làm trung tâm đã hoàn toàn rơi vào đại loạn vô biên.</p>
+                <p>Tu La Thánh Tử chắp tay sau lưng nói: “Đó chính là Đạo Tràng của Phật Đà, Tây Linh Sơn.”“Bình thường có mười tám vị Phật Tôn, một ngàn lẻ tám vị Bồ Tát tọa trấn, không thể lay chuyển.”“Bây giờ là cơ hội ngàn năm có một để tiến vào.”Bao nhiêu?Mười tám vị Phật Tôn, một ngàn lẻ tám vị Bồ Tát?Giang Phàm da đầu tê dại!Chiến lực của Phật Vực có thể sánh ngang với tổng hòa của Trung Thổ!Mà những khu vực tương tự, Địa Ngục Giới tổng cộng có chín cái!Sức mạnh của Địa Ngục Giới vào khoảnh khắc này đã hoàn toàn được cụ thể hóa.</p>
+                <p>Nhưng thế này cũng tốt.Lát nữa Miễn Chiến Bi phát động, các vị Phật Tôn đã rảnh tay sẽ vây công Tu La Thánh Tử, đến lúc đó, Tu La Thánh Tử không chết cũng phải lột da.</p>
+                <p>Tu La Thánh Tử nói xong, vung tay áo lớn, dùng hiền giả chi lực bao bọc hai người từ hư hóa thực, xông về Tây Linh Sơn.Nhưng ngay khi bọn họ đến núi vàng, đột nhiên một luồng Phật quang chói mắt bùng nổ, lại là một chữ Vạn to lớn bao phủ Tây Linh Sơn, ngăn cách bọn họ ở bên ngoài.Tu La Thánh Tử lảo đảo hiện thân, khẽ hừ nói: “Biết ngay Tây Linh Sơn có Hộ Sơn Phật Trận, may mà ta đã sớm có chuẩn bị!”Hắn giơ tay chộp một cái, một lá cờ nhỏ màu đen xuất hiện trong lòng bàn tay.Trên mặt cờ có từng khuôn mặt méo mó của nhân tộc, hoặc khóc lóc, hoặc than khóc, hoặc oán hận, chúng như thể bị nhốt trong cờ, không thể siêu thoát.Giang Phàm chỉ liếc mắt một cái, liền hai mắt hơi lạnh.Hắn nhận ra rồi, đây là tàn hồn của Ma Tu đã chết trong trận chiến Đại Hoang Châu!Trước đó Tu La Thánh Tử ở chiến trường Đại Hoang Châu đã bắt hết những linh hồn còn sót lại, lúc đó, Giang Phàm còn chưa biết hắn muốn làm gì.Giờ mới biết được, hắn đã có hai phương án.Nếu không thể lấy được 《Trấn Ngục Tức Hồn Kinh》 từ Giang Phàm, thì sẽ đến Tây Linh Sơn của Địa Ngục Giới thử một phen.Cho nên đã sớm thu thập tàn hồn, luyện chế lá cờ này để phá hủy Phật Trận.</p>
+                <p>Dường như nhận thấy ánh mắt của Giang Phàm, Tu La Thánh Tử mỉm cười không quan tâm:“Chẳng qua chỉ là vài tàn hồn sót lại giữa trời đất thôi, bọn chúng ngay cả năng lực đoạt xá trùng tu cũng đã mất rồi.”“Thay vì lãng phí, chi bằng trở thành Ác Hồn Phiên của ta thì hơn.”“Lùi ra, đừng để cây phiên này làm bị thương!”Hắn hai tay chà xát một cái, vô số ác hồn màu đen liền xông ra từ lá cờ nhỏ, lao tới chữ Vạn ấn phía trước.Phật Trận tưởng chừng kiên cố vô cùng, có thể dễ dàng ngăn chặn cả Tu La Hoàng, vậy mà lại bị đám ác hồn ăn mòn ra một lỗ hổng khổng lồ.“Hừ hừ, thế này chẳng phải đã phá giải rồi sao?”Tu La Thánh Tử tiện tay ném lá cờ đi.Giang Phàm vội vàng đỡ lấy lá cờ, rồi vẫy tay về phía bầu trời, thu hết tàn hồn vào, sau đó thầm niệm 《Trấn Ngục Tức Hồn Kinh》.Theo kinh văn dần dần hiển hiện, bọn chúng đều được siêu độ, oán niệm trên người đều tan biến, hóa thành từng vệt hư ảnh trong suốt, khom lưng về phía Giang Phàm.Mà một mảnh lông vũ Công Đức nhỏ cũng theo đó giáng xuống, rơi vào trong lòng Giang Phàm.</p>
+                <p>Chú ý tới cảnh này, Tu La Thánh Tử khẽ lắc đầu:“Cuộc đời một con người nhìn thì có vẻ dài, nhưng đặt trong dòng chảy dài của tuế nguyệt, chẳng qua chỉ là một đóa bọt nước bắn lên, thoáng chốc liền biến mất.”“Muốn lập nên bá nghiệp vạn cổ, tu luyện trường sinh đại nguyện, thì phải vứt bỏ tất cả, chuyên tâm tiến về phía trước.”“Cái gọi là tình thân, tình bạn, cố hương, đều sẽ trở thành xiềng xích trong lòng, cản trở con đường tiến lên.”Giang Phàm mở mắt, liếc xéo hắn một cái, nói: “Ngươi đang dạy ta?”Tu La Thánh Tử nhún vai: “Ta chỉ đang diễn giải đạo của mình thôi.”“Tất cả những người hoặc vật cản trở ta tiến lên, đều sẽ bị ta giẫm nát!”“Lát nữa, ngươi tốt nhất đừng phá hỏng chuyện của ta.”Hắn nhìn Giang Phàm một cái đầy ẩn ý, rồi dẫn đầu tiến vào Tây Linh Sơn.Giang Phàm nhìn chằm chằm bóng lưng hắn một cái, cũng dẫn Nguyệt Minh Châu theo sát phía sau.</p>
+                <p>Vừa mới bước vào, Phật quang nồng đậm, mềm mại chiếu rọi lên người, lập tức tâm thần trở nên dịu nhẹ, vạn niệm đều tiêu tan.Ân oán kiếp trước, túc nguyện kiếp này, đều tan thành mây khói.Cường giả như Tu La Thánh Tử cũng không nhịn được chắp tay thành chữ thập, hướng núi vàng hành lễ bái lạy.Nhưng, hắn kịp thời tỉnh ngộ lại, mũi hừ mạnh một tiếng: “Phật môn chính là thích giở trò này!”Hắn vỗ vào túi bên hông, từng mảng ma dịch mênh mông chảy ra, ngưng tụ thành ba chiếc dù, mỗi chiếc che phủ một người.Lập tức, ảnh hưởng của Phật vận đột nhiên biến mất.Núi vàng Phật quang bao phủ trước mắt, cuối cùng cũng hiện ra chân dung.Giang Phàm liếc mắt nhìn qua, đồng tử run lên bần bật.Bởi vì cái gọi là núi vàng kia, không phải là một ngọn núi.Mà là một cỗ thi thể khổng lồ cao ngàn trượng, tỏa ra uy áp Thánh Nhân!</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_364.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_364.html" class="page-btn">364</a>
+            <a href="page_365.html" class="page-btn current">365</a>
+            <a href="page_366.html" class="page-btn">366</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_366.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

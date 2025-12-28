@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 182">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 182</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_181.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_183.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_906">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 906: Cùng chết (Phần bốn)</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Hạ Triều Ca, đôi mắt trong veo khẽ động đậy:“Cùng sư thúc đồng sinh cộng tử sao?”“Được thôi.”</p>
+                <p>Nàng đáp ứng cực kỳ sảng khoái. Thậm chí còn có chút mong đợi và hưng phấn nho nhỏ.</p>
+                <p>Giang Phàm lại chẳng còn tâm trí để thưởng thức ngữ điệu của nàng. Hắn nghiến răng, phát động Vân Trung Ảnh, lao thẳng về động phủ của Nhân Diện Quỷ Chu.</p>
+                <p>Khôi Tinh với nụ cười nhạt trên môi: “Ồ? Chạy ngược lại sao? Thế giới tầng chín đã hoàn toàn phong tỏa, hắn còn có thể chạy đi đâu được nữa chứ?”</p>
+                <p>Vừa quay người, hắn liền không vội không vàng đuổi theo Giang Phàm, như thể mèo đang vờn chuột.</p>
+                <p>Sau ba lần thi triển Vân Trung Ảnh, toàn bộ Lôi Đình chi lực của Giang Phàm đã cạn sạch. Hắn đành phải rút Cửu Long Thanh Đồng Liễn ra, không tiếc bất cứ giá nào mà rót Nguồn Nước Tinh Túy vào để cấp tốc chạy trốn. Tốc độ của cỗ xe này không hề thua kém một cường giả Nguyên Anh cảnh. Chỉ có đến được chỗ Nhân Diện Quỷ Chu, bọn họ mới có một tia hy vọng sống sót. Nhưng cũng chỉ là hy vọng mà thôi.</p>
+                <p>“Sư thúc, ngươi rốt cuộc còn có bao nhiêu bảo bối vậy?”</p>
+                <p>Hạ Triều Ca nhìn cỗ xe rộng rãi, dù là người vô hỉ vô bi như nàng cũng không khỏi cảm thán. Nàng cứ ngỡ những gì mình lén nhìn thấy ở Lôi Trì đã đủ khiến người ta kinh ngạc lắm rồi, ai ngờ Giang Phàm vẫn còn bảo bối mới, hơn nữa lại vô cùng kinh người.</p>
+                <p>Giang Phàm chẳng có thời gian để ý nàng. Hắn lấy ra Ngọc Điêu Phượng Ỷ, một tay nắm một viên dạ minh châu cực phẩm, một tay cầm Phá Trận Chùy. Chỉ liếc nhìn qua, không phát hiện ra điều gì bất thường. Không có cái bẫy nào như hắn tưởng tượng. Với linh hồn cảnh giới Nguyên Anh, hắn cẩn thận dò xét, cũng không phát hiện ra bất kỳ dao động đáng ngờ nào.</p>
+                <p>“Lẽ nào ta đa nghi rồi?” Giang Phàm xoa xoa cằm, khẽ suy tư.</p>
+                <p>Trầm ngâm một lát, hắn vẫn cẩn thận lấy ra Trọng Đồng Thủy Tinh, lẩm bẩm: “Nữ nhân này có khả năng tính toán sâu xa như vậy, tuyệt đối không thể xem thường.”</p>
+                <p>Trọng Đồng Thủy Tinh phủ lên mắt, mọi hư vọng đều không có chỗ ẩn náu.</p>
+                <p>Chỉ một cái quét qua, thật sự khiến Giang Phàm phát hiện ra vấn đề! Ở tay vịn bên phải, có một điểm sáng được ẩn giấu cực kỳ tinh vi. Đó là một tòa trận pháp được nén đến cực hạn. Chỉ cần chạm nhẹ một chút, liền sẽ kích hoạt!</p>
+                <p>“Ha ha, muốn chơi tâm kế với ta à?” Giang Phàm cười.</p>
+                <p>Hắn đang tính toán, định đặt nó ở một nơi an toàn, rồi kích hoạt từ xa. Nhưng nghĩ lại, vật này giữ lại để khắc địch chẳng phải tốt hơn sao? Ngay lập tức, hắn cẩn thận lột nó ra, dùng một tấm Phù Nổ bọc kín lại, rồi nhét vào trong tay áo.</p>
+                <p>Cứ như vậy, Ngọc Điêu Phượng Ỷ coi như đã an toàn vào tay hắn.</p>
+                <p>“Sư thúc, ta có một vấn đề muốn hỏi ngươi.” Hạ Triều Ca chắp tay sau lưng, đột nhiên hỏi.</p>
+                <p>Giang Phàm tâm trạng tốt, cất Ngọc Điêu Phượng Ỷ đi, nói: “Ngươi nói đi.”</p>
+                <p>Hạ Triều Ca hỏi: “Trong xe này, có phải đã từng có nữ nhân khác ngồi rồi phải không?”</p>
+                <p>Trong lòng Giang Phàm khẽ giật thót. Hắn giả vờ như không có chuyện gì, nói: “Không… không có chuyện đó đâu. Xe này ta mới vừa có được không lâu.”</p>
+                <p>“Thật sao?”</p>
+                <p>Bàn tay nhỏ của Hạ Triều Ca đang giấu sau lưng liền đưa ra. Hai tay nàng, mỗi tay đang nắm một sợi lông màu trắng như tuyết, mềm mại tựa tơ tằm.</p>
+                <p>“Vậy đây là cái gì? Sao nhìn quen mắt vậy nhỉ?” Nàng khóe miệng cong lên nụ cười như có như không. Hiển nhiên đã nhận ra đây là lông từ chín cái đuôi hồ ly của Vân Hà Phi Tử.</p>
+                <p>Biểu cảm của Giang Phàm hơi cứng lại, hắn nói: “Nàng… nàng chỉ là đi nhờ xe thôi. Ngươi đừng nghĩ nhiều.”</p>
+                <p>Hạ Triều Ca không nói gì. Nàng nhẹ nhàng nhổ một nhúm trên sàn xe, lại nhổ thêm mấy sợi nữa.</p>
+                <p>“Chỉ ngồi một chút thôi mà rụng nhiều lông đến vậy sao? Hai người không phải là đánh nhau đó chứ? Hay là kiểu rất kịch liệt?” Nụ cười nơi khóe miệng nàng càng sâu hơn.</p>
+                <p>Giang Phàm cười gượng không ngớt. Vậy mà lại quên dọn dẹp khoang xe sau đó.</p>
+                <p>Nhìn Hạ Triều Ca với vẻ mặt như thể vừa phát hiện ra một bí mật động trời, Giang Phàm không khỏi tức giận, chọc vào trán nàng một cái: “Chuyện của sư thúc, ngươi bớt hỏi lại! Ngồi yên! Đừng động đậy!”</p>
+                <p>Hạ Triều Ca mím mím đôi môi đỏ mọng. Nàng ngoảnh mặt đi. Nụ cười nơi khóe miệng nhanh chóng tan biến. Đã có được câu trả lời chính xác, nàng sao cũng không cười nổi nữa. Trong lòng bỗng nhiên khó chịu khôn tả.</p>
+                <p>Cuồn cuộn ——</p>
+                <p>Bánh xe cuồn cuộn. Mặc dù Cửu Long Thanh Đồng Liễn đã phát huy đến cực hạn, nhưng cuối cùng vẫn bị Khôi Tinh đuổi kịp.</p>
+                <p>Hắn mặt lộ vẻ kinh ngạc: “Bảo bối của ngươi cũng không ít đấy. Đáng tiếc, đều vô dụng.”</p>
+                <p>Hắn giơ tay vung lên, liền là một luồng Nguyên Anh khí tức khủng bố tuyệt luân.</p>
+                <p>Sắc mặt Giang Phàm trầm tĩnh. Hắn cũng không quá bất ngờ khi bị đuổi kịp. Hắn nhìn về động phủ Nhân Diện Quỷ Chu đã ở ngay trước mắt, không còn xa nữa. Hắn nghiến răng, lại lấy ra một vỏ ốc Nguồn Nước Tinh Túy: “Long Hồn!”</p>
+                <p>Gầm ——</p>
+                <p>Thân rồng Long Hồn ngàn trượng đột nhiên hiện ra, nghênh đón một kích của Khôi Tinh. Chỉ trong nháy mắt, Long Hồn liền bị đánh tan, hóa thành những mảnh hồn phách, quay trở về Cửu Long Thanh Đồng Liễn.</p>
+                <p>Giang Phàm lộ rõ vẻ xót xa. Long Hồn vừa tan, phải mất rất lâu mới có thể ngưng tụ lại. Tuy nhiên, cũng coi như đã chặn được một kích của Khôi Tinh.</p>
+                <p>Đồng thời, thừa lúc Khôi Tinh vừa dứt chiêu, hắn quả quyết bắn ra mũi nỏ cuối cùng trong tay áo.</p>
+                <p>Ánh mắt Khôi Tinh khẽ co lại. Cho dù là Nguyên Anh tam khiếu, cũng không có nghĩa là hắn có thể đứng yên chịu đựng một kích của Nguyên Anh. Hắn lập tức lách mình né tránh.</p>
+                <p>Hắn hừ lạnh một tiếng: “Tiểu tử, ngươi thủ đoạn cũng không ít đấy! Nhưng trước mặt ta, tất cả đều không đáng kể.”</p>
+                <p>Hắn tung mình một cái, với tốc độ cực nhanh lao vút về phía Cửu Long Thanh Đồng Liễn. Khí trường cường đại, áp bức khiến khoang xe kêu ong ong, như thể sắp tan rã.</p>
+                <p>“Triều Ca, còn bao xa nữa?” Giang Phàm nhìn chằm chằm Khôi Tinh đang đuổi tới phía sau, đầu cũng không quay lại hỏi.</p>
+                <p>Hạ Triều Ca vội vàng thò đầu nhìn về động phủ Nhân Diện Quỷ Chu, nói: “Sắp rồi. Nhiều nhất là mười tức.”</p>
+                <p>“Mười tức ư?” Trước một cường giả Nguyên Anh mạnh mẽ đến vậy, mỗi tức đều khó mà chống đỡ nổi.</p>
+                <p>Nhìn thấy Khôi Tinh sắp sửa áp sát, hắn lạnh lùng quát một tiếng: “Kinh Hồn Thứ!”</p>
+                <p>Mật thuật linh hồn cảnh giới Nguyên Anh được phát ra, uy lực tự nhiên long trời lở đất. Khôi Tinh lập tức cảm thấy linh hồn bị châm chích, thân hình đang lao tới khựng lại một chút.</p>
+                <p>“Linh hồn chi lực của ngươi, đã đạt tới cấp bậc Nguyên Anh một khiếu ư? Ngươi vậy mà lại còn là một Nguyên Anh Tả Đạo! Bổn tọa thật sự đã xem thường ngươi rồi!”</p>
+                <p>Một tia sát ý quẩn quanh trong mắt hắn. Đường đường là Nguyên Anh tam khiếu, bắt giữ một tiểu bối Kết Đan lại tốn sức như vậy!</p>
+                <p>“Ngươi mau dừng lại cho ta!” Hắn giơ bàn tay lên, lực lượng Nguyên Anh khủng bố hội tụ, chuẩn bị một kích phá hủy Thanh Đồng Liễn, khiến hắn không còn sức để chạy trốn.</p>
+                <p>Giang Phàm thấy vậy, nghiến răng, xót xa rút ra Thất Tinh Bảo Kiếm. Hắn tiên phát chế nhân, chém ra một kiếm!</p>
+                <p>Keng ——</p>
+                <p>Một đạo kiếm ảnh ngàn trượng, hung hăng chém xuống. Khôi Tinh đang định ra tay, sắc mặt biến đổi. Hắn không thể không trước tiên đỡ lấy một kích này. Hắn giơ掌 lên, đánh tan kiếm ảnh.</p>
+                <p>Và thừa dịp này, Thanh Đồng Liễn đã chạy đến trước động phủ của Nhân Diện Quỷ Chu. Giang Phàm lần nữa giơ kiếm lên.</p>
+                <p>Khôi Tinh tức giận: “Tiểu sâu kiến! Ngươi chơi đủ rồi! Bổn tọa trước tiên chặt đứt hai chân ngươi, xem ngươi làm sao chạy?”</p>
+                <p>Khôi Tinh liên tục bị tấn công, đã hoàn toàn bị chọc giận. Hắn há miệng phun ra, liền là một sợi xích màu máu, lao thẳng về phía Thanh Đồng Liễn, không còn cho hắn cơ hội xuất kiếm nữa.</p>
+                <p>Kiếm này của Giang Phàm, lại không phải là vung về phía hắn, mà là hắn quay người, vung về phía động phủ Nhân Diện Quỷ Chu đang ở ngay trước mặt.</p>
+                <p>Khôi Tinh khẽ ngẩn ra, có chút không hiểu hành vi của Giang Phàm. Nhưng hắn chợt nhớ ra, trên đường đi những động phủ mà Giang Phàm gặp phải, đều chứa đầy hắc thủy tinh. Hắn lập tức hiểu ra hắn muốn làm gì. Sắc mặt hắn đại biến, hô lớn: “Dừng tay!”</p>
+                <p>Uy lực nổ tung của những viên hắc thủy tinh đó, có thể nói là kinh thiên động địa. Ngay cả hắn cũng kiêng kỵ vô cùng.</p>
+                <p>Giang Phàm lạnh lùng nói: “Ngươi cũng có thứ sợ hãi ư?”</p>
+                <p>Một kiếm vung ra, kiếm ảnh ngàn trượng giáng xuống. Trực tiếp đánh bay đống đá hỗn loạn, động phủ ẩn giấu bên trong cũng bị chém cho sụp đổ. Lộ ra những viên hắc thủy tinh dày đặc, số lượng lên đến hàng trăm viên.</p>
+                <p>Dù là Khôi Tinh nhìn thấy, cũng không khỏi hít vào một hơi khí lạnh. Hắn phát ra tiếng gầm kinh hoàng: “Dừng tay! Đừng động!”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_907">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 907: Thần bí tiểu dị tộc (Ngũ Canh)</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nhiều hắc tinh thể như vậy cùng lúc nổ tung.</p>
+                <p>Dù là hắn, cũng phải chín phần chết một phần sống!</p>
+                <p>Hơn nữa, nhiều hắc tinh thể nổ tung thế này chắc chắn sẽ làm nổ tung thông đạo giữa tầng thứ chín và tầng thứ mười!</p>
+                <p>Trong tầng thứ mười, có vài tồn tại mà ngay cả hắn cũng vô cùng kiêng kỵ. Nếu mạo hiểm kinh động chúng...</p>
+                <p>Nghĩ đến đây, sắc mặt hắn tái đi.</p>
+                <p>Giang Phàm hừ lạnh: “Không phải ngươi cho ta hai lựa chọn sao?”</p>
+                <p>“Chết hoặc nhận ngươi làm chủ sao?”</p>
+                <p>“Ta chọn lựa chọn thứ ba!”</p>
+                <p>“Tất cả cùng chết!”</p>
+                <p>Thất Tinh Bảo Kiếm trong tay hắn, hung hăng bổ xuống. Kiếm ảnh ngàn trượng vô tình hạ xuống, chém vào một đống hắc tinh thể.</p>
+                <p>“Đừng!” Khôi Tinh sợ hãi kêu thét liên hồi.</p>
+                <p>Thân hình hắn bạo lùi!</p>
+                <p>Trên mặt hắn đầy vẻ sợ hãi. Trong lòng hắn cầu nguyện, hắc tinh thể nổ chậm một chút để hắn có thể thoát ra.</p>
+                <p>Thế nhưng, khoảnh khắc tiếp theo.</p>
+                <p>Hàng trăm hắc tinh thể, đồng loạt nổ tung. Mỗi một viên đều là tồn tại cấp độ nấm mây. Nhiều đến mức này cùng nổ tung, đó là cảnh tượng kinh khủng đến nhường nào?</p>
+                <p>Chỉ nghe một tiếng ‘ù’.</p>
+                <p>Thế giới liền mất đi âm thanh, dù là Khôi Tinh với cảnh giới Tam Khiếu Nguyên Anh, cũng bị chấn vỡ màng nhĩ, mất đi thính giác trong nháy mắt.</p>
+                <p>Một luồng hỏa quang nổ tung vô biên vô tận, ẩn chứa lực lượng không gian, tựa như sóng thần che trời ập tới. Trong khoảnh khắc đã nuốt chửng hắn.</p>
+                <p>Giang Phàm cũng đã sớm, ngay sau khi vung một kiếm, liền quả quyết lấy ra Ngọc Điêu Phượng Y. Hắn ngồi phịch xuống.</p>
+                <p>Sau đó, một tay ôm lấy vòng eo Hạ Triều Ca, kéo nàng ngồi lên đùi mình. Hắn vội vàng rót linh lực vào Ngọc Điêu Phượng Y, kích hoạt nó.</p>
+                <p>Sóng thần hỏa quang đen kịt che trời lấp đất liền nuốt chửng bọn họ. Và cuốn theo bốn phía, hủy diệt tan tành.</p>
+                <p>Trận địa chấn khổng lồ gây ra, lan rộng khắp toàn bộ thế giới tầng thứ chín.</p>
+                <p>Trước trận pháp truyền tống dẫn đến tầng thứ mười. Cố Hoa Khê và Hứa U Nhiên đang chuẩn bị tiến vào tầng thứ mười.</p>
+                <p>Bỗng nhiên một trận địa chấn lớn ập tới. Vô số vết nứt, lan rộng đến tận dưới chân bọn họ.</p>
+                <p>Sắc mặt Cố Hoa Khê biến đổi, vội vàng nắm lấy Hứa U Nhiên. Nhờ vậy, Hứa U Nhiên mới không bị chấn ngã xuống đất.</p>
+                <p>Hai người nhìn về phía nguồn cơn địa chấn. Một đám mây hình nấm vô biên vô tận bốc lên trời.</p>
+                <p>Bầu trời của thế giới dưới lòng đất, thậm chí vì quá thấp mà không thể chứa nổi đám mây nấm này. Nó va chạm lên đỉnh thiên mạc, sau đó cuồn cuộn lan ra bốn phía theo thiên mạc.</p>
+                <p>Khi nó đến trên đầu bọn họ. Một luồng sóng nhiệt bỏng rát ập thẳng vào mặt. Không dám tưởng tượng, trung tâm vụ nổ sẽ là cảnh tượng kinh khủng đến nhường nào!</p>
+                <p>“Đi thôi, qua đó xem sao.”</p>
+                <p>Cố Hoa Khê đầy mắt chấn kinh, dẫn Hứa U Nhiên nhanh chóng đến nguồn cơn địa chấn.</p>
+                <p>Đất đai xung quanh đã hoàn toàn hóa thành dung nham cuồn cuộn, bốc lên vô số khói đen. Nơi trung tâm, càng bị nổ tung thành một vực sâu đen kịt đường kính mười dặm!</p>
+                <p>Âm khí vô tận, kèm theo những luồng gió lạnh buốt thổi về tầng thứ chín.</p>
+                <p>Cố Hoa Khê hít một ngụm khí lạnh: “Tầng thứ chín, bị nổ thủng rồi!”</p>
+                <p>“Đi mau, sinh linh ở tầng thứ mười rất có thể sẽ chạy ra ngoài.”</p>
+                <p>Nàng muốn dẫn Hứa U Nhiên đến khu vực tầng thứ mười đã được thám thính. Ở đó ít nguy hiểm, cơ duyên cũng còn chút.</p>
+                <p>Nhưng vực sâu trước mắt, trời mới biết nó thông đến đâu trong tầng thứ mười? Lại càng không biết, có kinh động đến tuyệt thế hung vật nào không.</p>
+                <p>Sắc mặt Hứa U Nhiên hơi tái đi. Nàng chậm rãi lùi lại.</p>
+                <p>Bẹt ——</p>
+                <p>Nàng vô tình hình như giẫm phải thứ gì đó, mềm mềm. Cúi đầu nhìn xuống.</p>
+                <p>Phát hiện mình giẫm phải một sinh linh kỳ lạ, toàn thân cháy xém, chỉ nhỏ bằng nắm tay. Hắn trông giống như một đứa bé sơ sinh của nhân loại, dáng vẻ có chút đáng yêu.</p>
+                <p>Nhưng trên đỉnh đầu hắn có một đôi sừng bạc nhọn. Điều này cho thấy thân phận dị tộc của hắn.</p>
+                <p>Nàng giật mình, vội vàng rụt chân lại: “Sư tôn, đây là cái gì vậy ạ?”</p>
+                <p>Cố Hoa Khê nhìn qua, đây cũng là lần đầu tiên nàng thấy.</p>
+                <p>“Chắc là sinh linh ở tầng thứ mười, vừa vặn bị vụ nổ ảnh hưởng.”</p>
+                <p>“Trông có vẻ sắp chết rồi.”</p>
+                <p>“Đi thôi, đừng để ý đến nó nữa, chúng ta mau rời khỏi đây.”</p>
+                <p>Hứa U Nhiên gật đầu, xoay người định đi.</p>
+                <p>Nhưng bước chân nàng hơi khựng lại. Cúi đầu nhìn xuống, tiểu sinh linh thoi thóp kia, hai tay nhỏ bé ôm lấy gót giày nàng.</p>
+                <p>Dường như đang cầu cứu nàng.</p>
+                <p>Nhìn tiểu sinh linh giống như trẻ sơ sinh của nhân loại này, nàng nảy sinh lòng thương xót. Nàng cúi người xuống, lấy ra một viên Hồi Xuân Đan.</p>
+                <p>Cố Hoa Khê xót xa nói: “Ngươi quan tâm nó làm gì vậy?”</p>
+                <p>“Hồi Xuân Đan quý giá như vậy, sao không giữ lại mà dùng cho bản thân?”</p>
+                <p>Hứa U Nhiên nói: “Tiểu Phàm không phải cũng thường dùng Hồi Xuân Đan cứu người không quen biết sao?”</p>
+                <p>“Tiểu quái vật này hình như vẫn còn là một đứa bé sơ sinh.”</p>
+                <p>“Cứ cho nó một viên đi.”</p>
+                <p>Nàng lập tức cho nó uống Hồi Xuân Đan.</p>
+                <p>Tiểu dị tộc sừng bạc dường như nhận ra Hồi Xuân Đan là thứ tốt, liền há miệng nhỏ hút vào. Hắn phát ra âm thanh non nớt, như đang cảm ơn Hứa U Nhiên.</p>
+                <p>Vốn dĩ có chút sợ hãi loại sinh linh chưa từng thấy này, nhưng thấy hắn không có ý định làm hại người, Hứa U Nhiên liền mạnh dạn, nhẹ nhàng lau vết máu trên đầu hắn, nói:</p>
+                <p>“Đừng sợ, rất nhanh sẽ khỏe lại thôi.”</p>
+                <p>Vừa nói lời này, tiểu dị tộc sừng bạc liền ‘oa oa’ khóc ầm ĩ lên. Giống như một đứa trẻ bị ủy khuất.</p>
+                <p>“Đừng khóc mà.”</p>
+                <p>Hứa U Nhiên nhất thời không biết phải làm sao, vội vàng an ủi. Nhưng dỗ mãi không nín.</p>
+                <p>“Có phải muốn cha mẹ không?”</p>
+                <p>“Ta đưa ngươi về tầng thứ mười nhé?”</p>
+                <p>“Tuy nhiên, ta không thể đi quá sâu, chỉ có thể đưa ngươi vào trong, ngươi cần tự mình tìm kiếm, được không?”</p>
+                <p>Tiểu dị tộc sừng bạc dường như hiểu được. Hắn từ từ nín khóc, đưa hai tay nhỏ bé ra đòi bế.</p>
+                <p>Hứa U Nhiên đau lòng ôm hắn lên, đặt vào lòng nhẹ nhàng an ủi.</p>
+                <p>Cố Hoa Khê vẫn luôn âm thầm đề phòng. Sinh linh này dù nhỏ đến mấy, cũng là sinh linh của tầng thứ mười. Không thể xem thường.</p>
+                <p>May mắn thay, nó thật sự bị trọng thương, không có ý định làm hại người.</p>
+                <p>Cố Hoa Khê lúc này mới yên tâm, nói: “U Nhiên.”</p>
+                <p>“Đừng quá lương thiện, sẽ chịu thiệt thòi đó.”</p>
+                <p>Hứa U Nhiên trêu đùa tiểu dị tộc sừng bạc, nói:</p>
+                <p>“Hắn vẫn là một đứa bé sơ sinh mà.”</p>
+                <p>“Nếu là dị tộc trưởng thành, ta đương nhiên không dám tùy tiện phát lòng từ bi.”</p>
+                <p>Cố Hoa Khê hài lòng gật đầu. Dẫn nàng trở lại chỗ trận pháp, tiến vào tầng thứ mười.</p>
+                <p>Mà tại sâu nhất của vực sâu đường kính mười dặm này.</p>
+                <p>Giữa một đống đổ nát. Một chiếc Ngọc Điêu Phượng Y, bị chôn nửa phần trong đất.</p>
+                <p>Xung quanh nó vẫn còn quẩn quanh vài đạo bóng phượng.</p>
+                <p>Trên ngọc y. Mi tâm Hạ Triều Ca lấp lánh điểm sáng màu xanh lá, khiến nàng từ từ tỉnh lại.</p>
+                <p>“Ta… đây là đâu?”</p>
+                <p>Nàng mơ màng nhìn quanh. Phát hiện nơi này còn u ám hơn tầng thứ chín, âm khí càng thêm nồng đậm.</p>
+                <p>Ngẩng đầu nhìn lên. Bầu trời dường như đã sụp đổ, xuất hiện một cái lỗ lớn.</p>
+                <p>“Ta đây là… rơi xuống tầng thứ mười sao?”</p>
+                <p>Nàng tức thì hiểu rõ tình cảnh của mình. Sợ đến mức lập tức đứng dậy.</p>
+                <p>Tầng thứ mười, đó là nơi ngay cả Nguyên Anh hậu kỳ cũng có thể ngã xuống!</p>
+                <p>Thế nhưng, nàng lúc này mới nhận ra, vòng eo mình bị ôm chặt cứng. Cúi đầu nhìn xuống.</p>
+                <p>Là Giang Phàm hai tay siết chặt, ôm nàng không buông.</p>
+                <p>Nàng quay đầu nhìn sang. Trên mặt Giang Phàm có một vệt máu dài, hóa ra là do trong sóng xung kích của vụ nổ dữ dội vừa rồi, đầu hắn đã va vào Ngọc Điêu Phượng Y.</p>
+                <p>Hạ Triều Ca ánh mắt dịu đi: “Ngất đi rồi mà vẫn còn ôm ta chặt như vậy sao?”</p>
+                <p>Vụ nổ kinh khủng kia, thanh thế quá lớn! Mặc dù Ngọc Điêu Phượng Y kịp thời xuất hiện lực lượng không gian, tránh được phần lớn sát thương.</p>
+                <p>Nhưng xung kích mạnh mẽ, vô cùng kịch liệt. Hạ Triều Ca còn nghĩ mình chắc chắn sẽ bị hất văng ra khỏi Ngọc Điêu Phượng Y.</p>
+                <p>Không ngờ, Giang Phàm cho đến khi hôn mê, vẫn chết chặt lấy nàng không buông.</p>
+                <p>Nhìn khuôn mặt Giang Phàm, Hạ Triều Ca khó có dịp tỉ mỉ ngắm nhìn, khẽ thì thầm:</p>
+                <p>“Sư thúc đối với ta còn tốt như vậy, đối với những nữ nhân của hắn, không biết sẽ tốt đến nhường nào nữa.”</p>
+                <p>“Chẳng trách các nàng đều một lòng một dạ với sư thúc.”</p>
+                <p>“Liễu Khuynh Tiên, Nguyệt Minh Châu, còn không tiếc tranh giành với Hứa U Nhiên.”</p>
+                <p>“Đúng rồi, còn có Vân Hà phi tử nữa.”</p>
+                <p>Nghĩ đến đây, nàng nhịn không được vươn ngón ngọc, khẽ chọc vào mi tâm hắn một cái, đôi má phúng phính trắng nõn hơi phồng lên:</p>
+                <p>“Ngay cả Yêu Hoàng phi tử cũng bị ngươi thu phục rồi,”</p>
+                <p>“Đúng là một quân tử phong lưu.”</p>
+                <p>Cú chọc này, khiến Giang Phàm đang hôn mê giật mình tỉnh giấc.</p>
+                <p>Hạ Triều Ca giật mình. Nàng vội vàng giả vờ hôn mê, dựa vào ngực hắn nhắm mắt lại.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_908">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 908: Mười tầng cấm địa (Thứ sáu canh)</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm từ từ tỉnh dậy. Sau khoảnh khắc mơ hồ ngắn ngủi, ý thức của hắn nhanh chóng trở nên tỉnh táo.</p>
+                <p>Hắn đảo mắt nhìn xung quanh, lập tức nhận ra mình đang ở đâu. Không khỏi giật mình: &quot;Tầng thứ mười!&quot;</p>
+                <p>Hắn vội vàng nói: &quot;Triều Ca, mau tỉnh dậy!&quot;</p>
+                <p>Hạ Triều Ca lúc này mới giả vờ vừa tỉnh giấc, mơ mơ màng màng hỏi: &quot;Sư thúc, chúng ta đang ở đâu ạ?&quot;</p>
+                <p>Nàng có chút lưu luyến rời khỏi ngực Giang Phàm. Chẳng trách Liễu Khuynh Tiên và những người khác vừa thấy Giang Phàm là lại tựa vào lòng hắn. Ghé vào ngực sư thúc, thật sự rất thoải mái.</p>
+                <p>&quot;Đừng hỏi nữa, mau đi thôi!&quot; Giang Phàm vội vàng đứng dậy, thu hồi ngọc điêu Phượng Ỷ. Hắn nắm lấy tay nàng, ngự kiếm bay về tầng thứ chín.</p>
+                <p>Ai ngờ! Hắn phát hiện linh lực của mình lại không thể thi triển được!</p>
+                <p>&quot;Triều Ca! Ngươi thử linh lực của mình xem.&quot; Trong lòng Giang Phàm dấy lên một dự cảm cực kỳ bất an.</p>
+                <p>Hạ Triều Ca ngẩn người: &quot;Ồ, ta thử xem...&quot; Khoảnh khắc tiếp theo. Sắc mặt Hạ Triều Ca cũng trở nên khó coi. &quot;Sư thúc, linh lực của ta... bị giam cầm rồi.&quot;</p>
+                <p>Lòng Giang Phàm trùng xuống. Hắn vội vàng lấy ra U Hồn Thủy Tinh, nhìn về phía Họa Tâm bên trong. &quot;Ngươi có biết là chuyện gì không?&quot;</p>
+                <p>Họa Tâm đã sớm nghiêm trọng nhìn quanh, lộ ra một tia sợ hãi: &quot;Linh lực của các ngươi không vận chuyển được nữa sao? Vậy thì ta phải chúc mừng các ngươi rồi, vận khí thật sự quá tốt.&quot;</p>
+                <p>&quot;Lại không lệch đi đâu, cứ thế rơi vào cấm địa của tầng thứ mười!&quot;</p>
+                <p>&quot;Đây là nơi mà ngay cả sinh linh ở tầng thứ mười cũng không dám đặt chân tới.&quot;</p>
+                <p>&quot;Ở đây, linh lực của nhân tộc, nguyên anh chi lực, thiên phú thần thông và yêu lực của yêu tộc, cùng các loại thần thông của Tu La tộc, đều mất hiệu lực.&quot;</p>
+                <p>Lòng Giang Phàm chợt giật thót. Cấm địa?</p>
+                <p>&quot;Nơi này có thứ gì sao?&quot; Hắn nghĩ đến vị cổ thánh đang ngủ say mà Thiên Cơ Các đã tìm kiếm suốt ngàn năm qua. Sinh linh ở nơi này, ngay cả Nguyên Anh hậu kỳ cũng có thể bị giết chết, nhưng lại không dám đến đây. Có thể thấy, cấm địa này có thứ gì đó khiến chúng cực kỳ sợ hãi.</p>
+                <p>&quot;Không biết.&quot;</p>
+                <p>&quot;Nhưng các ngươi vẫn nên mau chóng rời đi thì hơn.&quot;</p>
+                <p>Giang Phàm sắc mặt trầm trọng. Hắn nhìn lên khe hở trên đầu, nói: &quot;Hi vọng vận may của chúng ta đủ tốt, cấm địa này không lớn hơn khe hở phía trên đầu chúng ta.&quot;</p>
+                <p>Nếu khe hở này nằm hoàn toàn trong phạm vi cấm địa. Vậy thì họ không thể dùng linh lực ngự kiếm bay lên được. Muốn quay về. Chỉ có thể đi xuyên qua tầng thứ mười, đến trận pháp truyền tống kia.</p>
+                <p>Trong quá trình đó sẽ gặp phải những sinh linh hung ác nào, hoàn toàn không dám tưởng tượng.</p>
+                <p>&quot;Đi thôi.&quot; Giang Phàm kéo Hạ Triều Ca, lập tức đi ra phía ngoài.</p>
+                <p>Bốn phía một màu xám xịt, không nhìn rõ bất cứ thứ gì. Ngay cả dùng thần hồn quét qua, cũng bị chặn lại. Căn bản không thể phân biệt phương hướng, đi đâu cũng như nhau.</p>
+                <p>Cạch cạch —</p>
+                <p>Nhưng vừa mới đi được vài bước. Từ đống phế tích phía trước, truyền đến tiếng động. Chỉ thấy một thân ảnh vạm vỡ, lay động thân mình, từ trong đống phế tích bò dậy.</p>
+                <p>Là Khôi Tinh! Ma quỷ thật! Nhiều Hắc Thủy Tinh nổ tung như vậy, lại không thể giết chết hắn sao?</p>
+                <p>Nhưng mà, dù không chết, hắn cũng thê thảm vô cùng. Bụng bị nổ xuyên một lỗ lớn, nội tạng bị nát bên trong có thể nhìn thấy rõ ràng. Ngoài ra, trên cơ thể hắn còn có nhiều chỗ bị xuyên thủng. Máu đen chảy ra từ khắp nơi. Trông như một pho tượng bị vỡ nát.</p>
+                <p>Mà Khôi Tinh sau khi ý thức tỉnh táo trở lại, cũng phát hiện ra Giang Phàm ở gần đó. Lập tức vẻ mặt đầy sát khí: &quot;Tiểu nhân tộc!&quot;</p>
+                <p>&quot;Ta sẽ giết ngươi!&quot;</p>
+                <p>Hắn vung tay, định đánh ra uy lực đáng sợ của Nguyên Anh tam khiếu. Ai ngờ. Chỉ làm khuấy động bụi bặm trong không khí trước mặt. Chẳng hề phát huy được chút sức mạnh nào.</p>
+                <p>&quot;Chuyện gì thế này, Tu La chi lực của ta đâu rồi?&quot; Khôi Tinh kinh ngạc hỏi.</p>
+                <p>Giang Phàm triệt để thở phào nhẹ nhõm, xem ra đúng như Họa Tâm đã nói. Ngay cả Tu La tộc ở trong cấm địa, cũng sẽ mất đi sức mạnh.</p>
+                <p>Chỉ là không biết, những sức mạnh khác có bị giam cầm không. Hắn thử vận chuyển Hư Lưu Lôi Kính và Hỏa Kính, kinh ngạc phát hiện, cả hai loại sức mạnh đều có thể vận chuyển.</p>
+                <p>Cứ như vậy, ngược lại cũng không cần quá sợ hãi Khôi Tinh nữa rồi!</p>
+                <p>&quot;Cho dù không có Tu La chi lực, giết ngươi cũng dễ như trở bàn tay!&quot; Khôi Tinh mắt lộ sát khí, sải bước như sấm sét xông tới.</p>
+                <p>Thể phách của hắn vẫn ở cấp độ Nguyên Anh tam khiếu của nhân loại, chấn sát một Giang Phàm có gì khó khăn?</p>
+                <p>Sắc mặt Giang Phàm ngưng trọng. Hắn dứt khoát lấy ra Ngũ Từ Nguyên Sơn, kết ấn liền đánh lên đó.</p>
+                <p>Ngũ Từ Nguyên Sơn với thể tích tăng gấp đôi, đón gió mà lớn lên. Trước đó nó lớn nhất cũng chỉ bằng một ụ đất nhỏ. Giờ đây, miễn cưỡng có thể xem là một ngọn núi nhỏ.</p>
+                <p>Ngọn núi nhỏ ngũ sắc lập tức bay vút đi, rơi xuống đỉnh đầu Khôi Tinh. Rầm — Ngọn núi nhỏ mạnh mẽ đè xuống, Khôi Tinh Nguyên Anh tam khiếu bị ép đến khuỵu gối, suýt chút nữa quỳ rạp xuống.</p>
+                <p>&quot;Tránh ra!&quot; Hắn chấn động hai tay, định đánh bay Ngũ Từ Nguyên Sơn.</p>
+                <p>&quot;Ngũ Từ Thần Quang!&quot; Giang Phàm một lần nữa ra tay. Ngũ Từ Nguyên Sơn tỏa ra thần quang bao phủ trong phạm vi sáu trượng. Thần quang này không chỉ có phạm vi lớn hơn trước, mà năng lực giam cầm cũng mạnh hơn.</p>
+                <p>Khôi Tinh chợt cảm thấy thể phách chi lực của mình bị giam cầm một phần, toàn thân có sức nhưng không thể dùng được. Hai đầu gối không thể chịu đựng thêm, &#039;phịch&#039; một tiếng quỳ xuống.</p>
+                <p>Ánh mắt Giang Phàm lóe lên, lập tức xông tới. Tay trái Hư Lưu Lôi Kính, tay phải Hư Lưu Hỏa Kính, đồng loạt vỗ về phía đầu hắn!</p>
+                <p>&quot;Tiểu nhân tộc!&quot; Khôi Tinh gầm lên một tiếng, cúi đầu, hai cái sừng nhọn trên đỉnh đầu liền đâm thẳng về phía Giang Phàm.</p>
+                <p>Một Tu La khát máu cấp độ Nguyên Anh tam khiếu, lại bị ép phải húc người như trâu!</p>
+                <p>Giang Phàm lập tức tách tay trái ra, dùng Hư Lưu Lôi Kính nắm lấy sừng của đối phương. Tay phải Hư Lưu Hỏa Kính vỗ vào mặt đối phương.</p>
+                <p>Hư Lưu Hỏa Kính đỏ như máu, lập tức thiêu cháy khuôn mặt hắn thành một mảng cháy đen. Một con mắt thậm chí không chịu nổi sự nung chảy, lập tức nổ tung tại chỗ.</p>
+                <p>Khôi Tinh phát ra tiếng gầm đau đớn. Có lẽ là do cơn đau kích thích, trước khi con mắt còn lại cũng bị nung chảy nổ tung, hắn dốc sức đánh bay Ngũ Từ Nguyên Sơn.</p>
+                <p>Sau đó một quyền đánh tới ngực Giang Phàm. Giang Phàm thì đã sớm tránh sang một bên kịp thời khi Ngũ Từ Nguyên Sơn bị đánh bay.</p>
+                <p>Khí kình vô cùng mạnh mẽ, lướt qua thân thể Giang Phàm, cào trên mặt đất một rãnh lõm dài hơn ngàn trượng.</p>
+                <p>&quot;Ta sẽ diệt ngươi!&quot; Một đòn không trúng, Khôi Tinh ôm con mắt đang chảy máu không ngừng, lại một lần nữa tung ra một quyền. Thề phải đánh chết Giang Phàm!</p>
+                <p>Hắn quá hối hận. Hối hận vì sao không sớm giết hắn ta, để rồi mang đến tai họa lớn như vậy!</p>
+                <p>Sắc mặt Giang Phàm khẽ biến. Cho dù là Nguyên Anh tam khiếu bị trọng thương, cũng xa không phải thứ mà hắn có thể kháng cự!</p>
+                <p>Hắn lập tức kéo Hạ Triều Ca, không chọn phương hướng mà chạy trốn. Nhưng mất đi linh lực, lại không khôi phục Lôi Đình chi lực, bọn họ trong cuộc so tài thuần về thể phách, làm sao có thể thoát khỏi tay một Nguyên Anh tam khiếu?</p>
+                <p>Thấy sắp bị đuổi kịp. Bỗng nhiên. Phía trước đột nhiên xuất hiện một bóng đen khổng lồ. Chạy đến gần nhìn mới phát hiện, đó là một tòa kim tự tháp cao lớn.</p>
+                <p>Toàn thân được xây dựng bằng gạch đá màu đen. Trên tường chi chít những vết cào và vết máu cổ xưa đã khô, như thể nó từng phải chịu đựng những cuộc tấn công dữ dội.</p>
+                <p>Và xung quanh kim tự tháp. Chi chít những bộ hài cốt không đếm xuể! Chúng giữ tư thế quỳ gối, mông vểnh lên, đầu cúi sát đất để bái lạy.</p>
+                <p>Nhìn khắp bốn phía. Xung quanh kim tự tháp, đều là hài cốt đang bái lạy. Ít nhất cũng hơn vạn! Dường như trên kim tự tháp này, có một sự tồn tại khiến chúng kinh hãi. Khiến chúng bái lạy đến chết!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_909">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 909: Khổng khủng đại năng (Thất canh)</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Khôi Tinh đuổi theo sát nút.Khi thấy kim tự tháp trước mắt, hắn rõ ràng sững sờ.Ngay lập tức nghĩ đến điều gì đó, sắc mặt kịch biến, liên tục lùi về sau.“Vô Cấu Thánh Đàn!”“Đây, đây là cấm địa tầng thứ mười?”“Chết tiệt, sao lại đưa ta đến đây?”Hắn lập tức từ bỏ việc truy sát Giang Phàm, quay người bỏ chạy!</p>
+                <p>Giang Phàm cũng cảm thấy dựng tóc gáy.Nếu thánh đàn này có chủ nhân, tuyệt đối là tồn tại mà bọn họ không thể chọc vào.Nhìn bóng lưng Khôi Tinh sắp đi xa, Giang Phàm mắt lóe lên: “Theo hắn!”“Hắn đã có thể gọi được tên Vô Cấu Thánh Đàn, hẳn là từng đến đây.”“Theo hắn mới là cách nhanh nhất để ra khỏi cấm địa.”</p>
+                <p>Hạ Triều Ca liếc nhìn thánh đàn, trong mắt tràn ngập hai luồng sáng màu xanh lam thăm thẳm.Như thể có thể nhìn thấy nơi rất xa vậy.Một lát sau, sắc mặt nàng hơi ngưng trọng: “Bên trên từng có người.”</p>
+                <p>Giang Phàm rùng mình.Một tòa thánh đàn vạn thi triều bái, vậy mà từng có người sinh sống?Không dám tưởng tượng, loại người nào mới có thể chịu đựng được vạn thi triều bái!May mắn thay.Là từng có người.Nếu bây giờ có một người.Thì đáng sợ đến mức nào?</p>
+                <p>Hạ Triều Ca khẽ gật đầu: “Ta thấy bàn trà.”“Bên trên có một tách trà.”“Và còn hơi nóng.”</p>
+                <p>“Ưm!!!”Đồng tử Giang Phàm kịch liệt co rút: “Ngươi nói, bên trên không lâu trước đây vẫn còn người?”Hạ Triều Ca bình tĩnh đáp: “Đúng vậy.”</p>
+                <p>Giang Phàm hít vào một hơi khí lạnh, chỉ cảm thấy toàn thân lông tơ dựng ngược.Có cảm giác như phàm nhân lên núi đốn củi, lại lạc vào hang ổ của chó sói, hổ báo.Hắn thấy sau lưng lạnh toát, như thể có một đôi mắt đang nhìn chằm chằm vào mình vậy!</p>
+                <p>“Đi mau!”Hắn kéo Hạ Triều Ca, chạy như điên.Lần đầu tiên trong đời cảm thấy hoảng sợ!</p>
+                <p>Khôi Tinh tuy nhận ra Giang Phàm đang theo sau mình, nhưng hoàn toàn không có tâm trí để ý.Bởi vì hắn biết vị kia trên Vô Cấu Thánh Đàn là tồn tại như thế nào.Đó là một sự đáng sợ lớn, chỉ cần một ánh mắt, liền có thể trấn sát hắn!Hắn mồ hôi lạnh chảy ròng ròng.Dựa vào trí nhớ, nhanh chóng chạy về phía ngoài cấm địa.</p>
+                <p>Nửa canh giờ sau.Hắn cuối cùng cũng đến được rìa cấm địa, một tia tu la chi lực trong cơ thể cuối cùng cũng buông lỏng.Điều này cho thấy hắn sắp rời khỏi phạm vi cấm địa.Nhưng khoảnh khắc tiếp theo, hắn liền cứng đờ tại chỗ.Tại rìa cấm địa, có một con suối nhỏ.Một lão phụ nhân mặc áo choàng xám, đang ngồi xổm trước suối rửa những linh quả xám xịt.Nhận ra có người phía sau.Lão phụ nhân quay đầu nhìn hắn một cái.Phụt ——Chỉ một cái nhìn.Khôi Tinh liền há miệng phun ra một ngụm máu lớn, cơ thể như quả bóng bị thổi căng đến cực hạn, xuất hiện từng vết nứt.Hắn kinh hãi đến cực điểm, vội vàng quỳ xuống đất.“Đại nhân, tha mạng!”Hắn đã nhận ra.Lão phụ nhân trước mắt, chính là chủ nhân của Vô Cấu Thánh Đàn!!!Một Tu La Vương từng chuyển chiến hàng triệu dặm, trấn sát vô số sinh linh!Chính là nàng, đã bố trí cấm địa này.</p>
+                <p>Lão phụ nhân chậm rãi đứng dậy, ném những quả chưa rửa sạch trong tay về lại giỏ.Mắt nàng vượt qua hắn, nhìn vào trong cấm địa.“Ngươi làm sao vào được?”Vừa hỏi xong, Khôi Tinh chỉ cảm thấy cơ thể truyền đến từng cơn đau xé.Hắn hoảng sợ nói: “Là hắc thủy tinh tự bạo, đánh thông hai tầng trên dưới, vãn bối vô ý rơi vào cấm địa.”“Xin đại nhân khai ân.”Sắc mặt lão phụ nhân hơi đổi: “Ngươi tốt nhất nên cầu nguyện, thiếu chủ không có chuyện gì.”“Nếu không, tất cả những kẻ tiến vào, đều phải chôn cùng!”Nói xong, nàng bước chân vào trong cấm địa.“Theo ta!”Trong cấm địa truyền ra tiếng của lão phụ nhân.Khôi Tinh cười khổ một tiếng, chỉ đành đi theo.Không hề có ý niệm bỏ trốn.</p>
+                <p>Nói về Giang Phàm và những người khác.Khôi Tinh chạy quá nhanh, bọn họ theo mãi rồi lạc mất.Sau một hồi tìm kiếm loạn xạ, bọn họ lảo đảo đi đến trước một mảnh vườn rau.“Nơi này đã ở ngoài cấm địa rồi.”Hạ Triều Ca phát hiện linh lực của mình có thể vận dụng được.Khẽ thở phào nhẹ nhõm.Giang Phàm cũng thở dài một hơi.Cuối cùng cũng đã ra khỏi cấm địa.Quay đầu nhìn lại.Khe hở trên bầu trời đã biến mất.Điều này có nghĩa là, bọn họ không thể quay về qua bầu trời, chỉ có thể đi ngang qua tầng thứ mười.</p>
+                <p>“Sư thúc, tại sao ở đây lại có vườn rau?”“Không lẽ là do chủ nhân của thánh đàn kia trồng?”Giang Phàm ngước mắt quét nhìn, phát hiện toàn là nông sản chứa âm khí nồng đậm.Trong nhân tộc, trừ những tông môn cần âm khí luyện thi như Đại Âm Tông, e rằng không ai dùng được.Hơn nữa, đồ của chủ nhân thánh đàn, hắn không dám tùy tiện động vào.Họa Tâm lại nói: “Những thứ này đều là thiên địa linh bảo hình thành từ việc hấp thụ âm khí trời đất.”“Thế gian bên ngoài tuyệt đối không có.”“Các ngươi đào một ít đi, sau này thế nào cũng dùng đến.”</p>
+                <p>Giang Phàm liếc Họa Tâm một cái: “Ngươi muốn ăn thì nói thẳng đi.”“Còn xúi giục ta làm gì?”Vật này, rõ ràng là thần vật cực kỳ có ích cho Họa Tâm.Nàng tự mình muốn, lại lấy cớ là vì Giang Phàm mà tốt.“Vậy ta nói thẳng, ngươi có đào không?” Họa Tâm bực bội nói.Giang Phàm dứt khoát đáp: “Đương nhiên không.”Vì Họa Tâm mà chọc giận chủ nhân thánh đàn?Hắn bị ngốc à.</p>
+                <p>Họa Tâm hừ một tiếng: “Ngươi vì ta mà đào vài củ.”“Ta bảo đảm ngươi bình an đi ngang qua tầng thứ mười!”Giang Phàm cười nhạt.Lấy ra Âm Tủy Hổ Phù lắc lắc, nói: “Xin lỗi, ta tự có cách.”Ban đầu chính là Âm Tủy Hổ Phù đã trấn nhiếp Cẩu Địa Ngục Song Đầu phải nằm rạp xuống đất.Không những không dám tiếp tục tấn công Giang Phàm, mà còn nhả ra một chiếc chuông màu đen đưa cho hắn.Hổ phù này, hẳn cũng có thể trấn nhiếp được những sinh linh khác ở tầng thứ mười.Họa Tâm cắn môi.Tên khốn này!Muốn chiếm của hắn một chút lợi, sao mà khó thế hả?</p>
+                <p>“Vậy ta lại nói cho ngươi biết, gần trận pháp truyền tống ở tầng thứ mười, có một động phủ bí mật không lớn lắm.”“Bên trong chứa không ít không gian pháp bảo, còn có một lượng nhỏ pháp bảo liên quan đến luyện chế khôi lỗi.”“Ta từng lén lút vào xem một lần.”</p>
+                <p>Giang Phàm hồ nghi.Sao nghe quen thuộc vậy nhỉ?Không gian pháp bảo, Khôi Lỗi thuật.Đây không phải là những thứ trên người Vu Mạn Nguyệt sao?Kết hợp với việc nàng ta luôn có vô số pháp bảo xuất hiện không ngừng, Giang Phàm lập tức hiểu ra, đồ của nàng ta là từ đâu mà có!Tầng thứ mười!Tin rằng rất nhiều người từng tò mò đồ của nàng ta từ đâu mà có.Nhưng e rằng không ai từng nghĩ, sẽ là từ tầng thứ mười.Bởi vì tầng thứ mười là nơi ngay cả cường giả Nguyên Anh cũng không dám đến.Ai dám tin, Vu Mạn Nguyệt một đệ tử Kết Đan thất trọng, lại dám đến tầng thứ mười?Đây cũng là lý do tại sao động phủ này, vẫn luôn không bị người khác theo dõi phát hiện.</p>
+                <p>“Hang ổ của Vu Mạn Nguyệt ư?”“Ha ha, cái này thú vị đây.”“Nói đi cũng phải nói lại, sau khi tiến vào Địa Hạ Thế Giới, ta vẫn chưa thấy bóng dáng Vu Mạn Nguyệt.”“Nữ nhân này, sẽ không phải là lén lút đến tầng thứ mười đấy chứ?”Giang Phàm lộ ra nụ cười nhàn nhạt.Không còn chút do dự nào, hắn nói:“Được!”</p>
+                <p>Hắn lập tức tiến vào vườn rau, sau vài lần dò xét cẩn thận, xác định không có nguy hiểm gì.Liền nhổ sạch nửa vườn rau, đủ loại rau khác nhau.Họa Tâm nhìn mà trợn mắt há mồm: “Ta chỉ kêu ngươi hái vài củ thôi mà!”“Ngươi nhổ sạch cả nửa mẫu vườn rau của người ta rồi sao?”“Người ta truy tra ra thì sao đây?”Thiếu vài củ, đối phương có lẽ lười truy cứu.Trực tiếp thiếu nửa vườn rau?Người ta chẳng lẽ không vác cuốc lên đuổi theo chửi bới sao?</p>
+                <p>Giang Phàm nhét đủ loại rau vào một không gian trữ vật riêng biệt.Sau đó đặt chúng cùng với U Hồn Thủy Tinh.“Sao lại là ta hái?”“Trong ba người chúng ta, chỉ có ngươi mới ăn cái này.”</p>
+                <p>Khoan đã!Ý gì đây?Đổ cái nồi đen này lên đầu ta à?</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_910">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 910: Không thể nhắc đến cấm kỵ (Bát canh)</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Họa Tâm trợn trừng mắt. Nàng sốt ruột nói: &quot;Giang Phàm! Ngươi làm người có được không?&quot;</p>
+                <p>Giang Phàm khẽ mỉm cười. Một khi đã quyết định hái, đương nhiên phải hái nhiều một chút. Đến bên ngoài, nếu dùng được thì tốt nhất, dùng không hết thì cho Họa Tâm ăn. Dù sao cũng không lãng phí.</p>
+                <p>Chuẩn bị xong xuôi, hắn nhìn quanh. Sau khi rời khỏi cấm địa, các loại cảm ứng rõ ràng trở nên sắc bén hơn nhiều. Thậm chí hắn có thể cảm nhận rõ ràng một luồng không gian ba động yếu ớt từ rất xa. Không nghi ngờ gì nữa, đó là nơi trận pháp không gian tọa lạc.</p>
+                <p>Khóa chặt phương hướng, hắn tay cầm Âm Tủy Hổ Phù, nói: &quot;Triều Ca, đi sát ta.&quot;</p>
+                <p>Hạ Triều Ca gật đầu, nói: &quot;Ta biết phải làm gì rồi.&quot; Nàng tiến đến gần Giang Phàm, rất tự nhiên mà khoác tay hắn.</p>
+                <p>&quot;Ơ...&quot; Giang Phàm ngẩn ra. &quot;Bảo nàng đi theo thôi, chứ có bảo nàng khoác tay ta đâu.&quot; Vừa định đẩy nàng ra, đột nhiên, một luồng khí tức hung hãn cấp tốc áp sát. So với con Địa Ngục Khuyển hai đầu lúc trước, dường như nó còn mạnh hơn một chút.</p>
+                <p>Họa Tâm sắc mặt ngưng trọng, nói: &quot;Cẩn thận đấy. Đó là một con Địa Ngục sinh linh Nhị Khiếu, tương đương với Nguyên Anh Nhị Khiếu của các ngươi đấy.&quot;</p>
+                <p>Ánh mắt Giang Phàm ngưng trọng. Dưới sự chú ý của hắn, một con Địa Ngục Khuyển hai đầu, toàn thân tản ra âm khí cường đại, đang lao về phía Giang Phàm. Nó rõ ràng lớn hơn một vòng so với con Địa Ngục Khuyển hai đầu lần trước hắn thấy, và tỏa ra khí tức hung dữ ngút trời!</p>
+                <p>Tốc độ của nó quá nhanh, đến mức tạo thành một chuỗi tàn ảnh. Vừa nãy còn ở chân trời, khoảnh khắc sau đã đến cách trăm trượng. Nó há cái miệng như chậu máu, đôi mắt đỏ ngầu tỏa ra ánh nhìn hưng phấn muốn nuốt chửng người khác. Chỉ cần một cú vồ, nó có thể giết chết cả hai người.</p>
+                <p>Giang Phàm sắc mặt ngưng trọng, quả quyết thúc giục Âm Tủy Hổ Phù, một luồng âm khí mạnh mẽ ập tới. Cự thú dường như cảm ứng được điều gì đó. Đôi mắt đỏ như máu của nó đột ngột nhìn về phía Âm Tủy Hổ Phù trong tay Giang Phàm. Vẻ hung hãn muốn ăn thịt người lập tức hóa thành sự e dè. Chân sau của nó cào cào trên mặt đất, dường như rất sợ hãi, nhưng lại không cam lòng bỏ qua miếng mồi trước mắt.</p>
+                <p>Cuối cùng, nó vẫn chiến thắng bản năng, từ từ lui lại.</p>
+                <p>Giang Phàm thầm thở phào, nói: &quot;Hổ Phù quả nhiên có tác dụng. Có điều, đối với sinh linh có thực lực cao, tác dụng trấn áp dường như giảm đi nhiều.&quot; Con Địa Ngục Khuyển hai đầu lúc trước đã nhanh chóng bỏ cuộc việc truy sát Giang Phàm, còn con trước mắt này lại do dự một lúc.</p>
+                <p>Họa Tâm nói: &quot;Đó là đương nhiên. Địa Ngục sinh linh thực lực càng cao, khả năng kháng cự sự trấn áp của Âm Tủy Hổ Phù càng mạnh. Đến cảnh giới Tứ Khiếu trở lên, hiệu quả sẽ là cực kỳ nhỏ bé. Đương nhiên, Địa Ngục sinh linh Tứ Khiếu thường sẽ không lộ diện, Tam Khiếu cũng đã rất hiếm rồi.&quot;</p>
+                <p>&quot;Thường thì sao?&quot; Giang Phàm bỗng thấy Âm Tủy Hổ Phù trong tay không thể mang lại cho mình quá nhiều sự an toàn nữa. Nếu thực sự gặp phải một con Địa Ngục sinh linh Tứ Khiếu, chẳng phải sẽ gặp rắc rối lớn sao?</p>
+                <p>Nhìn con Địa Ngục Khuyển hai đầu đang định rút lui, Giang Phàm trong lòng khẽ động. Hắn lấy ra chiếc chuông màu đen đó. Hắn vẫn luôn không biết vật này có tác dụng gì. Nó không giống linh khí, cũng không giống vật có ý nghĩa biểu tượng như Âm Tủy Hổ Phù. Bây giờ gặp một con Địa Ngục Khuyển hai đầu, sao không lấy ra thử xem?</p>
+                <p>Hắn lắc lắc chiếc chuông. Một tiếng leng keng hơi chói tai truyền vào tai. Con Địa Ngục Khuyển hai đầu đang quay người định bỏ đi, bỗng nhiên quay phắt lại. Trên đôi mắt của hai cái đầu chó, bùng lên tia sáng màu máu kinh hãi. Cái đuôi sau mông nó dựng lên, không ngừng ve vẩy, biểu lộ sự kích động và hưng phấn trong lòng. Nó hạ thấp cổ, ve vẩy đuôi, tiến về phía Giang Phàm, dường như muốn thân cận hắn, nhưng lại e ngại Âm Tủy Hổ Phù trong tay hắn nên không dám hành động thiếu suy nghĩ.</p>
+                <p>Họa Tâm liếc nhìn chiếc chuông trong tay Giang Phàm, mắt nàng suýt nữa lồi ra. &quot;A! Địa Ngục Hồn Linh sao lại ở trong tay ngươi?! Trời ơi! Ta đến tầng thứ chín này, không biết đã tìm bao nhiêu lần rồi! Mấy lần suýt bị sinh linh mạnh mẽ ở đây giết chết, cũng không tìm thấy một chút manh mối nào. Ngươi lấy nó từ đâu ra?&quot;</p>
+                <p>Chỉ nhìn một cái, Họa Tâm đã &quot;phá phòng&quot; ngay tại chỗ. Đến nỗi, dung mạo giả dạng giống Vân Hà Phi Tử của nàng cũng trở nên mờ ảo biến đổi không ngừng, hóa ra là vì tâm trạng chấn động quá lớn, không thể duy trì được!</p>
+                <p>&quot;Ơ...&quot; Giang Phàm sửng sốt một chút, nói: &quot;Chiếc chuông này, có lai lịch lớn sao?&quot; Thật ra, nhìn thấy con Địa Ngục Khuyển hai đầu Nhị Khiếu trước mắt tỏ vẻ lấy lòng như vậy, hắn cũng đoán được chiếc chuông không hề đơn giản. Nhưng không ngờ Họa Tâm lại kích động đến thế.</p>
+                <p>Họa Tâm hai con mắt đen lay láy, chăm chú nhìn chằm chằm chiếc chuông màu đen. &quot;Đây chính là Địa Ngục Hồn Linh đó! Năm xưa, vì tranh giành chiếc chuông này, Địa Ngục Giới đã xảy ra một trận đại chiến. Từ Địa Ngục Giới, bọn ta đã đánh mãi đến Trung Thổ thế giới của các ngươi! Cuối cùng, động tĩnh quá lớn, khiến một vị Cổ Thánh của Trung Thổ các ngươi bất mãn, giam cầm tất cả tộc Tu La chúng ta, những kẻ đã xông vào Trung Thổ thế giới này ở đây.&quot;</p>
+                <p>Vài câu nói đơn giản của Họa Tâm lại dấy lên sóng gió cuồn cuộn trong lòng Giang Phàm. Địa Ngục Giới? Trung Thổ thế giới? Cổ Thánh ra tay? Họa Tâm này rốt cuộc có lai lịch thế nào? Sao lại biết nhiều đến vậy? Hơn nữa, Địa Ngục Hồn Linh trong tay hắn lại nghịch thiên đến mức này sao? Đến nỗi đã gây ra nội chiến ở Địa Ngục Giới, thậm chí còn lan đến Trung Thổ thế giới?</p>
+                <p>&quot;Chiếc chuông này, có tác dụng gì?&quot; Giang Phàm hỏi.</p>
+                <p>Trong mắt Họa Tâm tràn đầy khao khát, nói: &quot;Nó là để trở thành...&quot; Đột nhiên, nàng bỗng mất tiếng. Dường như có một lực lượng vô hình nào đó đã che chắn những lời nàng nói.</p>
+                <p>Họa Tâm ngẩn ra, rồi sắc mặt trở nên ngưng trọng, nói: &quot;Ta không nói ra được. Trong lòng biết, nhưng lại không thể miêu tả ra bên ngoài.&quot;</p>
+                <p>Giang Phàm ngẩn ngơ. Cảnh giới Hóa Thần, chắc không nghịch thiên đến mức này chứ? Đại Hiền Tôn Giả của Nhân tộc, hình như cũng chưa từng nghe nói không thể nhắc đến danh tính. Chỉ có Cổ Thánh, chưa từng nghe ai bàn luận. Chẳng lẽ, chiếc chuông này có liên quan đến một tồn tại cấp Cổ Thánh nào đó ở Địa Ngục Giới? Vì vậy, thiên cơ bị che chắn?</p>
+                <p>Giang Phàm suy nghĩ một chút, thăm dò nói: &quot;Đây là vật của một nhân vật cấp Cổ Thánh ở Trung Thổ thế giới chúng ta?&quot;</p>
+                <p>Họa Tâm vừa gật đầu một cái, đột nhiên sắc mặt nàng kịch biến, âm khí trong cơ thể điên cuồng tràn ra ngoài, giống như một túi nước bị vỡ. Nàng lộ vẻ kinh hoàng, ra sức muốn ngăn chặn âm khí trong cơ thể thoát ra, nhưng lại không thể nào làm được. Linh hồn lực của nàng, theo sự tiêu tán của âm khí, giảm xuống với tốc độ mắt thường có thể nhìn thấy.</p>
+                <p>Giang Phàm hít một hơi khí lạnh! Cái này cũng không thể nhắc đến? Đây là một tồn tại cấm kỵ đến mức nào? Hắn vội vàng lấy một nắm rau củ vừa hái được bỏ vào U Hồn Thủy Tinh. Họa Tâm vội vàng ôm lấy mà ăn. Hoàn toàn nhờ vào âm khí vô cùng phong phú trong rau củ, nàng mới có thể tạm thời duy trì sự cân bằng của âm khí, không để nó tiếp tục suy giảm.</p>
+                <p>Giang Phàm không ngừng đút cho nàng ăn. Nửa canh giờ sau, rau củ của cả nửa mẫu vườn rau đều đã được cho ăn hết. Âm khí của Họa Tâm cuối cùng cũng ngừng thất thoát. Sắc mặt vốn đã trắng bệch của nàng càng thêm tái nhợt, ánh mắt nhìn Địa Ngục Hồn Linh tràn đầy sợ hãi. Nàng nắm chặt miệng, một chữ cũng không dám nói thêm.</p>
+                <p>Giang Phàm cũng không dám hỏi nữa. Nếu cứ hỏi tiếp, không chừng còn liên lụy đến chính hắn.</p>
+                <p>&quot;Thật đúng là nhặt được một vật nghịch thiên a.&quot; Giang Phàm không ngừng kinh thán.</p>
+                <p>Họa Tâm ghen tị đến mắt đỏ hoe. &quot;Nhiều năm như vậy, ta đã từ bỏ việc tìm kiếm vật này rồi. Cứ nghĩ nó đã rơi vào Địa Ngục Giới. Không ngờ, lại ở trong tay ngươi! Ngươi còn chưa nói cho ta biết, làm sao ngươi có được Địa Ngục Hồn Linh vậy? Chắc chắn là trải qua ngàn gian vạn khó, thập tử nhất sinh mới có được phải không? Chiếc chuông này, không thể nào xuất hiện ở nơi an toàn được.&quot;</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_181.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_181.html" class="page-btn">181</a>
+            <a href="page_182.html" class="page-btn current">182</a>
+            <a href="page_183.html" class="page-btn">183</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_183.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

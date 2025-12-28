@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 434">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 434</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_433.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_435.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_2169">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2169: Sự chấn động của Võ Khố</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm nằm liệt giữa hố sâu thăm thẳm, hơi tàn lực kiệt. Phải mất một lúc lâu, hắn mới gượng dậy nổi để ngồi lên. Cơn đau lúc này mới như thủy triều dữ dội ập đến, gặm nhấm linh hồn, xuyên thấu da thịt, len lỏi vào tận tủy xương.</p>
+                <p>Trong lúc huyết chiến, ý chí sục sôi khiến hắn chẳng hề hay biết, giờ đây khi tâm trí đã lắng xuống, nỗi đau mới bắt đầu bộc phát cuồng loạn. Hắn không nhớ nổi mình đã trúng bao nhiêu đòn, chịu bao nhiêu thương tích, chỉ biết toàn thân đã chẳng còn nơi nào nguyên vẹn.</p>
+                <p>Hắn nén đau đớn, vận chuyển thần thức nội thị cơ thể. Cảnh tượng bên trong khiến hắn không khỏi kinh tâm động phách. Kinh mạch chằng chịt vết rách, toàn thân đầy rẫy những vết thương do pháp tắc để lại, cực kỳ khó lòng khép miệng.</p>
+                <p>Ngay cả linh hồn cũng xuất hiện những vết rạn nứt đáng sợ. Thân thể lúc này chẳng khác nào một đống đổ nát, nếu không kịp thời chữa trị, hậu quả sẽ vô cùng thảm khốc, thậm chí là vĩnh viễn không thể vãn hồi.</p>
+                <p>Hắn thúc động Vạn Thổ Chi Tâm, lặng lẽ cảm ứng nhịp đập sinh mệnh xung quanh. Cách nơi này vài ngày đường, hắn phát hiện một vùng có nhịp tim vô cùng dày đặc, hẳn là một nơi phồn hoa phía nam Vũ Khố. Nơi đó chắc chắn sẽ có linh đan diệu dược hoặc thiên tài địa bảo để trấn áp thương thế.</p>
+                <p>Tại trung tâm Vũ Khố, phía trên một tòa đại điện nguy nga, mấy vị Tam Tai Cảnh Đại Hiền cùng hàng chục vị Hiền Giả đồng loạt đạp không mà lên. Ánh mắt họ ngưng trọng, đăm đăm nhìn về phía thiên ngoại xa xăm.</p>
+                <p>Kiếm Khinh Mi cũng đứng trong số đó. Nàng ngước nhìn lên cao, lờ mờ thấy một bóng người khoác hắc bào tung bay lộng gió, mang theo khí thế khủng bố lướt qua bầu trời Vũ Khố. Sắc mặt nàng trở nên vô cùng nghiêm trọng.</p>
+                <p>Đúng lúc này, một nam tử trẻ tuổi với khí tức cường đại từ hư vô hiện ra bên cạnh nàng. Toàn thân hắn tỏa ra kiếm ý sắc lạnh, tựa như trong cơ thể đang ẩn giấu một thanh hung kiếm tuyệt thế, khiến người ta cảm thấy rợn người.</p>
+                <p>Hắn chính là Kiếm Vô Sầu, một thiên kiêu đã khai mở bát mạch, tu vi đủ sức sánh ngang với Tam Tai Cảnh trung kỳ. Hắn nhìn theo quỹ đạo của bóng người kia, trầm giọng hỏi: &quot;Có chuyện gì xảy ra? Tại sao Loạn Cổ Huyết Hầu lại xuất hiện ở bên ngoài Vũ Khố chúng ta?&quot;</p>
+                <p>Đối với hắn, loại lão quái vật đã sống vạn năm như Loạn Cổ Huyết Hầu chẳng khác nào một vùng cấm địa cổ xưa, đầy rẫy sự nguy hiểm và điềm gở.</p>
+                <p>Kiếm Khinh Mi khẽ đáp: &quot;Ba ngày trước, có kẻ đã đại chiến một trận kinh thiên động địa với Loạn Cổ Huyết Hầu ngay bên ngoài Vũ Khố.&quot;</p>
+                <p>Kiếm Vô Sầu kinh ngạc thốt lên: &quot;Cái gì? Lại có người có thể giao thủ với Loạn Cổ Huyết Hầu sao? Chắc hẳn là một lão quái vật Tam Tai Cảnh hậu kỳ, thậm chí là viên mãn nào đó ra tay chăng?&quot;</p>
+                <p>Nếu là hạng người đó thì không có gì lạ. Những lão quái vật như vậy tuy hiếm như lá mùa thu, nhưng trong chư thiên vạn giới vẫn còn tồn tại vài vị ẩn thế không ra.</p>
+                <p>Kiếm Khinh Mi lắc đầu, giọng nói có chút run rẩy: &quot;Không, theo lời những người quan sát gần đó, kẻ ra tay là một thanh niên. Tuổi đời tu đạo của hắn, có lẽ còn chưa đầy một giáp tử.&quot;</p>
+                <p>Ánh mắt Kiếm Vô Sầu đột nhiên trở nên sắc lẹm như kiếm phong: &quot;Chưa đầy một giáp tử? Có thể đại chiến với Loạn Cổ Huyết Hầu, ít nhất cũng phải có tu vi Tam Tai Cảnh hậu kỳ. Chư thiên bách giới từ khi nào lại xuất hiện một vị cái thế thiên kiêu như vậy?&quot;</p>
+                <p>Tuy nhiên, trong lòng hắn phần lớn là hiếu kỳ chứ không hề kiêng dè. Là thiên kiêu kiệt xuất nhất của Vũ Khố thế hệ này, hắn đã từ bỏ đạo thống của Huyền Hoang Cổ Thánh để đi theo con đường kế thừa huyết mạch cổ xưa. Chỉ trong vòng hai mươi năm, hắn đã đạt tới Bát Mạch chi cảnh.</p>
+                <p>Hắn tự tin chỉ cần mười năm nữa sẽ bước vào Cửu Mạch. Đối phương tu luyện sáu mươi năm mới đạt tới Tam Tai Cảnh hậu kỳ, so với hắn vẫn còn một khoảng cách rất lớn.</p>
+                <p>Kiếm Khinh Mi trầm tư, trong đầu nàng chợt thoáng qua hình bóng của Quán Quân Hầu Giang Phàm. Những thiên kiêu lừng lẫy trong chư thiên bách giới vốn đã sớm vang danh, làm gì có chuyện đột nhiên xuất hiện một kẻ mạnh mẽ đến thế?</p>
+                <p>Khả năng duy nhất chính là Giang Phàm, kẻ luôn hành động vượt xa lẽ thường. Thế nhưng, nàng lập tức gạt bỏ ý nghĩ đó. Khi chia tay, Giang Phàm mới chỉ là Thiên Nhân Nhị Suy, còn phải gọi nàng một tiếng tiền bối. Dù hắn có nghịch thiên đến đâu, cũng không thể chỉ trong một hai tháng mà đủ sức chiến đấu với Loạn Cổ Huyết Hầu.</p>
+                <p>Kiếm Vô Sầu lại hỏi: &quot;Kết cục trận chiến thế nào? Đa phần là kẻ kia bị Loạn Cổ Huyết Hầu đánh trọng thương rồi chứ? Có thể giữ được mạng trước mặt lão quái vật đó cũng đã là bản lĩnh cực lớn rồi.&quot;</p>
+                <p>Kiếm Khinh Mi do dự một chút rồi mới nói: &quot;Là Loạn Cổ Huyết Hầu bị trọng thương, còn người kia thì thản nhiên rời đi.&quot;</p>
+                <p>&quot;Cái gì?&quot; Kiếm khí trong người Kiếm Vô Sầu chấn động dữ dội, hắn không thể tin nổi: &quot;Làm sao có thể? Trong số thiên kiêu đương thời, ngoại trừ hai vị đứng đầu bảng kia, không một ai có khả năng đả thương được Loạn Cổ Huyết Hầu!&quot;</p>
+                <p>Nghĩ đến việc bản thân còn không có can đảm đối mặt với Loạn Cổ Huyết Hầu, vậy mà lại có một kẻ vô danh tiểu tốt đánh trọng thương lão ta, tâm cảnh của hắn không cách nào bình tĩnh nổi.</p>
+                <p>Kiếm Khinh Mi day day thái dương, mệt mỏi nói: &quot;Lúc mới nghe tin ta cũng không dám tin. Nhưng theo quan sát của chúng ta, Loạn Cổ Huyết Hầu quả thực bị thương rất nặng, đến nay vẫn chưa khôi phục.&quot;</p>
+                <p>Kiếm Vô Sầu nắm chặt nắm đấm, trong mắt bùng lên ngọn lửa đố kỵ. Hai vị thiên kiêu đứng đầu kia có thực lực đó thì hắn chấp nhận được vì thân phận họ quá đặc thù. Nhưng kẻ từ đâu nhảy ra này lại dám dẫm lên đầu hắn sao? Hắn rốt cuộc là ai?</p>
+                <p>Kiếm Khinh Mi nhìn lên bầu trời, chắp tay hành lễ một cách đầy cung kính rồi mới nói nhỏ: &quot;Vũ Khố Vương không cho phép chúng ta điều tra thêm.&quot;</p>
+                <p>Kiếm Vô Sầu nghe vậy thì toàn thân run rẩy, ánh mắt nhìn Kiếm Khinh Mi cũng trở nên kiêng dè hơn hẳn.</p>
+                <p>Tại phía nam Vũ Khố, một tòa cổ thành hùng vĩ đến mức khiến Giang Phàm phải kinh ngạc hiện ra trước mắt. Hắn không biết dùng từ ngữ nào để mô tả sự to lớn của nó, vì nó đã vượt xa mọi quy chuẩn đo lường thông thường.</p>
+                <p>Dựa vào cảm ứng của Vạn Thổ Chi Tâm, hắn ước tính tòa thành này rộng lớn ngang ngửa với cả vùng Trung Thổ. Điều khiến hắn chấn động hơn cả là trong tòa thành này có đến bảy đạo khí tức vô cùng mạnh mẽ. Nhịp tim đó, hắn chỉ mới thấy qua ở những cường giả Tam Tai Cảnh.</p>
+                <p>Vũ Khố này rốt cuộc có bao nhiêu Tam Tai Cảnh? Giang Phàm thầm tặc lưỡi. Chỉ một tòa thành ở phương nam đã có bảy vị, vậy bốn phương còn lại và trung tâm sẽ còn bao nhiêu nữa? Chẳng lẽ tổng cộng có đến hơn ba mươi vị Tam Tai Cảnh sao?</p>
+                <p>Nghĩ lại những tiểu thế giới trước đây, đa phần chỉ có duy nhất một vị Tam Tai Cảnh trấn giữ. Hắn mới thực sự cảm nhận được sự cường đại đến nghẹt thở của Tứ Đại Thế Giới. Nếu họ muốn, những thế giới nhỏ xung quanh căn bản không thể chống lại sự xâm lược.</p>
+                <p>Nhưng có lẽ, ngoại trừ Giới Thai, những thế giới nhỏ kia chẳng có thứ gì lọt được vào mắt xanh của họ. Họ không thèm xâm chiếm, mà chỉ lo lắng sinh linh từ nơi khác đến tranh giành tài nguyên của mình.</p>
+                <p>Sau một hồi kinh ngạc, Giang Phàm giả vờ như không có chuyện gì, dùng thuật thuấn di tiến đến trước cổng thành. Tại lối vào, hắn thấy khắc một hàng chữ lớn đầy uy nghiêm: Thần Cơ Thành.</p>
+                <p>Giang Phàm lẩm bẩm hai chữ Thần Cơ, chưa kịp hiểu ý nghĩa thì đột nhiên một tiếng nổ vang trời dậy đất vang lên.</p>
+                <p>Từ trung tâm thành phố, một luồng sáng đỏ rực kinh khủng bắn vọt ra, nghiền nát hư không, nung chảy cả vách ngăn thế giới kiên cố thành một lỗ hổng khổng lồ.</p>
+                <p>Giang Phàm hít một hơi khí lạnh. Một đòn uy lực thế này, ngay cả cường giả Nhất Tai Cảnh cũng không thể đánh ra được. Đó rốt cuộc là thứ gì mà lại có sức mạnh diệt thế đến vậy?</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2170">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2170: Đại hắc khuyển ngẫu ngộ</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Biến động kinh thiên động địa này lập tức thu hút sự chú ý của toàn bộ Hiền Giả trong Thần Cơ Thành. Từng luồng dao động mạnh mẽ của các cường giả không ngừng vang lên từ khắp các ngõ ngách trong tòa thành rộng lớn.</p>
+                <p>Giang Phàm cũng lập tức thúc động Vạn Thổ Chi Tâm, thi triển thuật thuấn di lao về phía đó. Tuy nhiên, ngay khi hắn vừa định tiếp cận, một tầng lực lượng trận pháp vô hình đã mạnh mẽ đánh bật hắn ra ngoài.</p>
+                <p>Ngay cả dưới lòng đất cũng được bố trí phòng ngự đại trận sao?</p>
+                <p>Giang Phàm từ dưới đất trồi lên, phát hiện nơi này là một tòa hắc sắc đại trận khổng lồ, bao phủ vạn dặm đại địa. Hắn thử dùng thần thức dò xét vào bên trong, nhưng tầm nhìn hoàn toàn bị ngăn cách.</p>
+                <p>Tâm niệm vừa động, hắn thuấn di lên không trung phía trên đại trận, ý định tìm kiếm khe hở do luồng sáng lúc nãy xuyên thủng. Thế nhưng, vết rách kia đã sớm được tu bổ hoàn hảo.</p>
+                <p>“Giấu giếm thật là kỹ lưỡng nha!” Một tiếng lầm bầm đột ngột vang lên từ phía không xa.</p>
+                <p>Giang Phàm liếc mắt nhìn sang, chỉ thấy các Hiền Giả đang lục tục kéo đến. Xung quanh đại trận, vô số bóng dáng Hiền Giả từ hư ảo dần hiện rõ. Họ nhìn chằm chằm vào hắc sắc đại trận, trên mặt lộ rõ vẻ kinh nghi. Hiển nhiên, tất cả đều bị luồng hỏa quang đáng sợ lúc nãy làm cho kinh hãi.</p>
+                <p>“Mẹ kiếp, đám Võ Kho này lại đào được bảo bối gì dưới lòng đất rồi?”</p>
+                <p>Một câu chửi thề lọt vào tai Giang Phàm khiến hắn không khỏi sững sờ. Giọng nói này nghe sao mà quen thuộc đến thế.</p>
+                <p>Hắn quay đầu nhìn lại, nhất thời ngẩn người. Một con đại hắc cẩu ba mắt đang hì hục đào bới lớp đất trước trận pháp, ý đồ muốn chui vào bên trong.</p>
+                <p>Trên lưng đại hắc cẩu còn ngồi một thiếu nữ áo trắng xinh đẹp, đôi mắt linh động đang nhìn chằm chằm vào hắc sắc trận pháp, tỏa ra hào quang lấp lánh.</p>
+                <p>“Đại hắc cẩu cố lên! Đại hắc cẩu cố lên!”</p>
+                <p>Đứng phía sau bọn họ là một nữ tử thành thục với dung nhan kinh diễm, khí chất thoát tục như hạc giữa bầy gà. Nàng cũng vận một thân bạch y tiên khí phiêu dật, phong thái cao sang lạnh lùng.</p>
+                <p>Hai vị mỹ nhân áo trắng này đều là tuyệt sắc nhân gian. Một người cổ quái đáng yêu, một người lãnh ngạo cô cao, khí chất hoàn toàn khác biệt.</p>
+                <p>Họ không phải ai khác, chính là hai vị công chúa của Hồ Yêu Tộc đến từ U Minh Giới: Ngọc Nhan và Ngọc Diện.</p>
+                <p>Giang Phàm đứng hình hồi lâu. Đại hắc cẩu vậy mà không chết dưới một thương của Loạn Cổ Huyết Hầu sao? Hơn nữa, tại sao hai vị công chúa này lại xuất hiện ở Võ Kho?</p>
+                <p>Hắn cẩn thận nhớ lại, Tuyết Cơ Đại Hiền từng nói sẽ phái Ngọc Nhan công chúa đi Hắc Uyên Giới một chuyến, vừa để giải quyết việc riêng, vừa để cảnh báo Hắc Uyên Giới đề phòng Tu La Thánh Tử. Tại sao bọn họ lại chuyển hướng đến đây?</p>
+                <p>Nhưng đây rõ ràng là chuyện tốt. Hiện tại thân thể hắn đang suy yếu, đại hắc cẩu lại chủ động chạy về hộ chúa, quả là một con chó trung thành.</p>
+                <p>Dường như cảm nhận được ánh mắt của hắn, đại hắc cẩu đột ngột dừng động tác đào đất, quay đầu nhìn về phía Giang Phàm. Thấy đối phương chỉ là một lão già lụ khụ, nó không khỏi nghi hoặc: “Sao cảm giác có chút quen thuộc nhỉ?”</p>
+                <p>Giang Phàm thầm cười khổ. Lúc này hắn đang sử dụng Ngụy Trang Diện Cụ là chuẩn Hiền khí, ngay cả cường giả Tam Tai Cảnh cũng chưa chắc nhìn thấu, vậy mà con chó này lại ngửi ra được chút khí tức.</p>
+                <p>Ngọc Diện nghiêng đầu nhìn sang, đôi mắt đen trắng rõ ràng đánh giá một lượt rồi nói: “Chỉ là một lão già thôi mà. Hay là lão ta đi vệ sinh xong không chùi sạch, nên cái mũi chó của ngươi mới ngửi thấy mùi gì đó?”</p>
+                <p>Giang Phàm trợn tròn mắt. Nha đầu này đi theo đại hắc cẩu bao lâu rồi mà lại trở nên thô lỗ như vậy?</p>
+                <p>Đại hắc cẩu khịt mũi khinh bỉ: “Ta là loại chó đó sao? Ta chỉ cảm thấy trên người lão già này có chút khí tức của Giang Phàm.”</p>
+                <p>Ngọc Diện nghe vậy liền phấn chấn hẳn lên, nàng nhảy xuống khỏi lưng chó, tiến lại gần Giang Phàm hỏi: “Lão nhân gia, ông có quen biết cữu cữu của ta không?”</p>
+                <p>Giang Phàm ngẩn ra: “Cữu cữu của cô nương là ai?”</p>
+                <p>Ngọc Diện đáp: “Người tên là Giang Phàm, chính là Quân Quán Hầu danh tiếng lẫy lừng, chắc chắn ông đã nghe qua.”</p>
+                <p>Đại hắc cẩu cũng tiến lại gần, cái mũi hít hà liên tục: “Lão đầu, có phải trên người ông có đồ vật của Giang Phàm không?”</p>
+                <p>Giang Phàm chuyển mắt, lấy từ bên hông ra Sinh Mệnh Bản Nguyên túi. Đại hắc cẩu vừa nhìn thấy đã nhận ra ngay, ba con mắt híp lại: “Đây là túi đựng độc dược của Giang Phàm! Sao nó lại nằm trong tay ông?”</p>
+                <p>Nghe vậy, ngay cả Ngọc Nhan cũng bước tới. Đôi mắt lạnh lùng sâu thẳm của nàng nhìn chằm chằm Giang Phàm, đồng thời lặng lẽ di chuyển ra phía sườn của hắn. Ba người tạo thành thế bao vây, rõ ràng là xem hắn như kẻ thù của Giang Phàm.</p>
+                <p>Giang Phàm bật cười, giọng khàn khàn nói: “Các vị hiểu lầm rồi. Đây là tiền đặt cọc mà Giang tiểu hữu đưa cho lão hủ.”</p>
+                <p>“Tiền đặt cọc?” Đại hắc cẩu đảo mắt liên tục, sau đó hỏi dồn: “Lão tiên sinh, Giang Phàm rốt cuộc bị làm sao?”</p>
+                <p>Trong đầu nó hiện lên hình ảnh Giang Phàm với một thân đầy bảo vật, nào là Thái Sơ Thiên Kiếm, Câu Quyết Bút, Thanh Đồng Điện... nhiều đến mức đầu chó cũng không chứa hết.</p>
+                <p>Giang Phàm giả vờ cảnh giác: “Ngươi là gì của hắn?”</p>
+                <p>Đại hắc cẩu thu lại vẻ mong chờ, gương mặt trở nên trang nghiêm chính trực: “Ta là hắc khuyển trung thành tuyệt đối của hắn, xin ông mau nói cho ta biết chủ nhân hiện giờ thế nào rồi?”</p>
+                <p>Giang Phàm vuốt râu, thở dài: “Hắn bị thương rất nặng, mệnh chẳng còn bao lâu nữa, ai da...”</p>
+                <p>Nghe tin này, khuôn mặt xinh đẹp của Ngọc Diện trắng bệch, kinh hãi thốt lên: “Cữu cữu trọng thương? Người đang ở đâu?”</p>
+                <p>Ngọc Nhan cũng hơi sững sờ. Lần cuối gặp mặt, Giang Phàm vẫn còn là người xoay chuyển càn khôn, cứu vãn Thần Thụ của U Minh Giới. Một người lợi hại như thế, chớp mắt đã trọng thương sắp chết sao?</p>
+                <p>Vẻ lạnh lùng trên mặt Ngọc Nhan giảm bớt, nàng thi lễ nói: “Vừa rồi thất lễ, khẩn cầu lão tiên sinh đưa chúng ta đi gặp Giang đạo hữu một lần.”</p>
+                <p>Đại hắc cẩu gật đầu lia lịa: “Đúng đúng, ta phải đi kế thừa di sản... à không, là thủ hộ hắn đến giây phút cuối cùng!”</p>
+                <p>Giang Phàm thu hết phản ứng của ba người vào mắt. Ngọc Diện thì không nói, nhưng Ngọc Nhan hóa ra cũng không hoàn toàn lạnh lùng đáng ghét như hắn tưởng. Còn về phần đại hắc cẩu... tìm cơ hội phải thưởng cho nó vài viên đan dược đặc biệt mới được.</p>
+                <p>Giang Phàm cười nói: “Các vị chớ vội, Giang tiểu hữu hiện tại vẫn còn cầm cự được. Lão hủ ra ngoài chính là để tìm đan dược chữa trị cho hắn. Tuy nhiên lão hủ kiến thức hạn hẹp, ba vị là người thân cận, chi bằng giúp lão tham khảo một chút.”</p>
+                <p>Ngọc Nhan tiếp lời, ân cần hỏi: “Dám hỏi Giang đạo hữu hiện tại thương thế ra sao?”</p>
+                <p>Giang Phàm đáp: “Cả cơ thể và linh hồn đều chịu tổn thương từ quy tắc pháp tắc, không cách nào tự lành.”</p>
+                <p>Ngọc Nhan cau mày trầm tư một lát rồi nói: “Pháp tắc chi thương trên cơ thể thì còn có cách, Thánh nhân chi huyết, một số loại Thất phẩm đại đan, hoặc dùng pháp tắc của Hiền Giả đều có thể mang lại hiệu quả, chỉ là nhanh hay chậm mà thôi.”</p>
+                <p>“Nhưng pháp tắc chi thương ở linh hồn thì vô cùng nan giải, thường chỉ có những thiên địa chí bảo cực kỳ hiếm thấy hoặc Thất phẩm đại đan đặc thù mới có tác dụng.”</p>
+                <p>Giang Phàm thầm gật đầu, điều này cũng giống với những gì hắn biết. Một khi đã bị pháp tắc gây thương tổn thì cực kỳ khó chữa trị. Trong tay hắn có yêu tộc thánh huyết, tu la thánh huyết, thiên sứ thánh huyết, nhưng duy nhất lại thiếu nhân tộc thánh huyết, nên không thể dựa vào đó để hồi phục nhanh chóng.</p>
+                <p>Hơn nữa bản thân hắn chưa có pháp tắc, không thể dùng pháp tắc để mài mòn vết thương. Vì vậy, chỉ còn cách tìm kiếm Thất phẩm đại đan. Về phần linh hồn lại càng khó khăn hơn, cho đến nay hắn chỉ biết Bồ Đề Thụ và Ngũ Thái Tịnh Bình của Vạn Độc Giới là có khả năng chữa trị linh hồn cho Hiền Giả.</p>
+                <p>Giang Phàm hỏi tiếp: “Không biết trong chư thiên vạn giới, thường dùng loại Thất phẩm đại đan nào để chữa trị hai loại thương thế này?”</p>
+                <p>Ngọc Nhan không chút do dự: “Thất phẩm đại đan chữa trị đạo khu thì Võ Kho chúng ta có thể nghĩ cách tìm cho hắn một viên. Nhưng về phần linh hồn, e rằng chúng ta cũng lực bất tòng tâm.”</p>
+                <p>Giang Phàm nhíu mày: “Là vì nó quá đắt sao?”</p>
+                <p>Ngọc Nhan lắc đầu: “Không phải, mà là trên thị trường không còn nữa. Nam Càn Giới đang chiêu binh mãi mã, rục rịch hành động, chư thiên vạn giới đều bao trùm trong bóng tối của chiến tranh. Ai nấy đều tự bảo vệ mình, chuẩn bị cho ngày đó. Những vật phẩm quý hiếm chữa trị linh hồn như vậy, ai còn mang ra bán nữa chứ?”</p>
+                <p>Trong mắt Giang Phàm lóe lên tinh quang. Nam Càn Giới đang chiêu binh mãi mã sao? Thảo nào Kiếm Tam Cuồng lại xuất hiện ở gần Trung Thổ, mục đích thực sự của nàng ta chắc hẳn là hướng về Nam Càn Giới.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2171">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2171: Độc Lang</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Không biết Bất Tri Kiếm Tam đã từ Nam Càn trở về hay chưa. Nhớ lại câu chuyện sư đồ hoang đường trong những cuốn sách ở văn khố cùng nàng, trong lòng Giang Phàm không khỏi dâng lên một cảm giác dị dạng.</p>
+                <p>Hắn lắc đầu, không nghĩ ngợi thêm nữa, nhàn nhạt nói: “Nếu trên thị trường không có linh đan, vậy thì tự mình luyện chế là được.”</p>
+                <p>Thời điểm còn ở Thiên Nhân Nhị Suy, hắn đã có thể luyện chế ra linh đan viên mãn. Nay linh hồn đã vượt xa Thiên Nhân Ngũ Suy, việc luyện chế một viên thất phẩm hạ đẳng đại đan hẳn là không có vấn đề gì quá lớn.</p>
+                <p>Vấn đề duy nhất chính là đan phương cùng nguyên liệu của loại đan này không biết có dễ tìm hay không.</p>
+                <p>Lời này vừa thốt ra, không chỉ Ngọc Nhan lộ vẻ kỳ quái, mà ngay cả Ngọc Diện cũng chớp mắt nhìn hắn không rời: “Lão đầu, ngươi tưởng Luyện Đan Sư thất tinh là cải trắng ngoài lề đường chắc?”</p>
+                <p>Đại Hắc Cẩu không vui, vẫy vẫy đuôi: “Hắc! Nói năng kiểu gì thế? Ngoài đường thì làm sao? Đụng chạm gì đến ai à?”</p>
+                <p>Nó lườm Ngọc Diện một cái, rồi lại quay sang nói với Giang Phàm: “Lão tiểu tử ngươi cũng thật ly kỳ, coi Luyện Đan Sư thất tinh là từ dưới đất mọc lên, muốn mời là mời được sao? Ta ở Nam Càn muốn mời một vị Luyện Đan Sư thất tinh còn phải nói lời ngon tiếng ngọt đấy!”</p>
+                <p>Giang Phàm ngẩn người, lộ vẻ kinh ngạc. Hóa ra trong Chư Thiên Bách Giới, Luyện Đan Sư thất tinh lại trân quý đến mức này sao?</p>
+                <p>Vậy mà ở một tiểu thế giới như Trung Thổ lại có đến bốn vị Luyện Đan Sư thất tinh là Vô Ngân, Cổ Tâm, Tinh Dạ, cùng Vân Hạc ở ngoại giới, đúng là chuyện dị thường.</p>
+                <p>Nghĩ kỹ lại, Trung Thổ vốn dĩ đã khác biệt. Nơi đó có Hoang Cổ Thánh Thân Vương, người đã đặt nền móng cho hệ thống tu luyện hoàn toàn mới của Chư Thiên Bách Giới đích thân trấn giữ.</p>
+                <p>Dù chỉ là một thế giới nhỏ bé như hạt bụi, nhưng trong Hư Vô Đồ, hào quang tỏa ra lại rực rỡ chói mắt, không hề thua kém Thần Đô và tứ đại giới. Xem ra, bản thân hắn vẫn chưa hoàn toàn thấu hiểu hết về Trung Thổ.</p>
+                <p>Gạt bỏ suy nghĩ trong lòng, Giang Phàm nhìn về phía Ngọc Nhan, hỏi: “Tiên tử, đan phương của loại đan này có dễ dàng đạt được không?”</p>
+                <p>Nếu đã là loại đại đan lưu truyền vạn cổ, đan phương e rằng đã sớm lộ ra trong dòng sông thời gian, khả năng vẫn còn nằm trong tay số ít người là không lớn.</p>
+                <p>Ngọc Nhan không nhịn được mà tò mò đánh giá Giang Phàm, ngữ khí của lão giả này thong dong bình thản, không giống như đang nói dối. Tuy nhiên, Đại Hắc Cẩu nói cũng không sai, Luyện Đan Sư thất tinh đâu có dễ dàng hẹn gặp như vậy?</p>
+                <p>Trầm ngâm một lát, nàng nhìn Giang Phàm rồi nói: “Lão tiên sinh, không cần phiền phức như vậy đâu. Trên thị trường tuy không có linh đan này, nhưng trong hắc thị vẫn có thể tìm thấy.”</p>
+                <p>“Vừa vặn chúng ta chuẩn bị tham gia một buổi giao dịch riêng tư, nếu trong đó có Thái Thanh Đan trị liệu hồn thương, ta sẽ giúp Giang Phàm đoạt lấy.”</p>
+                <p>Hội giao dịch sao? Giang Phàm thoáng nhớ lại, lần cuối cùng hắn tham gia một buổi giao dịch riêng tư là từ hồi còn ở đại lục. Thông thường, trong những buổi giao dịch không thấy ánh sáng này thường xuất hiện không ít bảo vật.</p>
+                <p>Ngọc Nhan, Ngọc Diện và Đại Hắc Cẩu đều là Hiền Giả. Nói cách khác, đây rất có thể là một buổi giao dịch cao cấp chỉ dành cho cấp bậc Hiền Giả, đồ tốt chắc chắn sẽ không thiếu.</p>
+                <p>Mà trên người hắn cũng có không ít thứ có thể nhân cơ hội này xử lý một chút. Hắn chắp tay nói: “Liệu có thể cho lão hủ đi theo mở mang tầm mắt một chút không?”</p>
+                <p>“Ngươi?” Ngọc Nhan lộ vẻ do dự, mãi sau mới miễn cưỡng đồng ý: “Buổi giao dịch riêng tư này do một người có địa vị ở Võ Khố tổ chức, ngưỡng cửa rất cao. Ta có thể đưa ngươi đi thử, nhưng có được vào hay không thì ta không quyết định được.”</p>
+                <p>Giang Phàm mỉm cười: “Đa tạ!”</p>
+                <p>Không lâu sau, bọn họ đi tới trước một tòa lâu đài cao chọc trời trong Thần Cơ Thành. Xung quanh đã có vài bóng dáng của các vị Hiền Giả.</p>
+                <p>Thấy bọn họ đi tới, những người đó ném tới ánh mắt đánh giá, khi nhìn thấy hai chị em Ngọc Nhan và Ngọc Diện, ánh mắt đều dừng lại lâu hơn một chút.</p>
+                <p>Nhưng khi chú ý đến Đại Hắc Cẩu, sắc mặt bọn họ rõ ràng thay đổi. Hiển nhiên, đặc điểm ba con mắt của con chó chết tiệt này rất dễ khiến người ta đoán ra thân phận của nó.</p>
+                <p>“Linh sủng của Nam Càn bệ hạ? Tại sao Võ Khố lại cho phép nó vào trong? Không sợ nó thám thính tình báo sao?”</p>
+                <p>“Ta đoán, việc thử nghiệm thần khí lúc nãy chính là để cho nó xem, ý đồ là uy hiếp Nam Càn, đừng để chiến hỏa lan đến Võ Khố.”</p>
+                <p>Giang Phàm nghe vậy khẽ gật đầu. Hóa ra luồng sáng đỏ rực kia còn có tầng cân nhắc này. Thật không biết đó là loại thần khí gì.</p>
+                <p>Nếu có thể bán cho Chư Thiên Bách Giới, thì làm gì còn chuyện của những sinh linh bóng tối viễn cổ nữa? Lấy Trung Thổ làm ví dụ, nếu trận chiến với Viễn Cổ Cự Nhân trước đó mà Trung Thổ có mười món thần khí như vậy, Cửu Nhật Cự Nhân Hoàng có nhảy xuống cũng bị đánh chết từng tên một, đâu có trận chiến thảm khốc như sau này.</p>
+                <p>Tuy nhiên, loại sát khí đáng sợ này, Võ Khố đoạn tuyệt sẽ không đem ra bán. Cục diện Chư Thiên hiện nay có thể dùng bốn chữ phong vân vần vũ để hình dung.</p>
+                <p>Nam Càn muốn khôi phục Đại Càn Thần Quốc, dấy lên một cuộc đại chiến lan rộng khắp Chư Thiên. Lúc này Võ Khố nếu bán loại siêu cấp thần binh này cho thế giới khác, rất dễ bị hiểu lầm là tín hiệu kết minh, dẫn đến sự thù địch của một phương nào đó. Án binh bất động là lựa chọn tốt nhất.</p>
+                <p>“Ngọc Nhan, sao giờ muội mới đến?” Một giọng nói ôn hòa bỗng nhiên vang lên từ phía sau mấy người.</p>
+                <p>Lông mày Giang Phàm khẽ nhướng lên, giọng nói này... Hắn quay đầu nhìn lại, đồng tử hơi co rút nhưng nhanh chóng khôi phục như thường.</p>
+                <p>Người trước mắt, thế mà lại là Độc Lang Hiền Giả của Hắc Uyên Giới! Kẻ đã thiết kế hãm hại Vạn Độc Giới, bắt đi mười mấy vị Hiền Giả, từng là thiên kiêu lừng lẫy trên Thần Đô Thánh Quyển.</p>
+                <p>Ngọc Nhan chắp tay: “Chúng ta đi thám thính nguồn gốc của luồng sáng đỏ, nên có chút chậm trễ.”</p>
+                <p>Độc Lang Hiền Giả tiến lên phía trước, mặt mang nụ cười, nhìn chằm chằm vào dung nhan tuyệt mỹ của Ngọc Nhan, ôn nhu nói: “Mới đến Võ Khố, đừng có chạy loạn, rất nguy hiểm, biết không?”</p>
+                <p>Ngọc Nhan bất động thanh sắc lùi lại một bước, giữ khoảng cách với đối phương. Độc Lang Hiền Giả vẫn giữ nụ cười trên môi, ánh mắt thuận tiện quét qua những người còn lại.</p>
+                <p>Khi lướt qua Ngọc Diện và Đại Hắc Cẩu, hắn không có biểu hiện gì lạ. Duy chỉ khi nhìn đến Giang Phàm, hắn hơi lộ vẻ kinh ngạc: “Vị này... hình như có chút quen mắt.”</p>
+                <p>Dựa vào trực giác mạnh mẽ, hắn cảm nhận được trên người Giang Phàm có một chút khí tức quen thuộc. Một loại khí tức khiến hắn chán ghét!</p>
+                <p>Ngọc Nhan vội nói: “Một người bạn, ông ấy cũng muốn tham gia hội giao dịch, nên ta mạo muội dẫn theo thử xem.”</p>
+                <p>Độc Lang Hiền Giả khẽ nhíu mày: “Ngọc Nhan, hội giao dịch này là do một đại nhân vật ở Võ Khố tổ chức. Ta mời các muội đã là rất miễn cưỡng rồi. Muội còn mời thêm người khác...”</p>
+                <p>Lời này không phải là trách cứ Ngọc Nhan, mà là nói cho Giang Phàm nghe, ý muốn hắn biết khó mà lui, tự mình rời đi.</p>
+                <p>Giang Phàm đối với vị Độc Lang Hiền Giả xảo quyệt này chẳng có chút hảo cảm nào, liền hỏi: “Ngọc Nhan tiên tử, vị này là?”</p>
+                <p>Ngọc Diện cướp lời, cái mũi nhỏ nhăn lại, nói: “Đối tượng xem mắt của chị ta. Hẹn gặp ở Hắc Uyên Giới, kết quả hắn lại gọi chúng ta đến Võ Khố, làm chúng ta phải đi đường vòng mất mấy ngày!”</p>
+                <p>Hửm? Tuyết Cơ Đại Hiền bảo Ngọc Nhan đi Hắc Uyên Giới, hóa ra là muốn nàng và Độc Lang Hiền Giả liên hôn? Cũng phải, U Minh Giới vốn tách ra từ Hắc Uyên Giới, hai bên cùng tông cùng nguồn, có liên hệ chặt chẽ là chuyện thường tình.</p>
+                <p>Nhưng Độc Lang Hiền Giả rõ ràng đã lừa gạt bọn họ. Sở dĩ đổi địa điểm đến Võ Khố, đó là vì Lang Yêu nhất tộc đã vứt bỏ Hắc Uyên Giới!</p>
+                <p>Nghĩ đến việc Độc Lang Hiền Giả đã bắt không ít Hiền Giả của Vạn Độc Giới, giờ lại lừa chị em Ngọc Nhan đến tham gia hội giao dịch này, trong lòng Giang Phàm không khỏi lộp bộp một tiếng.</p>
+                <p>Chẳng lẽ, hai chị em nàng chính là món hàng mà Độc Lang Hiền Giả định đem ra bán trong buổi giao dịch này sao?</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2172">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2172: Vi Lai Thạch</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Một cặp tỷ muội Hồ yêu tộc sắc đẹp tuyệt trần, tính cách khác biệt, lại có thực lực Hiền Giả cảnh. Nếu coi như hàng hóa, có mấy ai không động tâm? Giang Phàm nheo mắt, lặng lẽ nhìn vào mắt Ngọc Diện.</p>
+                <p>Ngọc Diện nhận ra ánh mắt đó, quay sang nói: “Lão đầu tử, nhìn ta làm gì, ta đã nói gì đâu...”</p>
+                <p>Trong đầu nàng bỗng vang lên giọng nói của Giang Phàm: “Đừng kinh ngạc, ta có chuyện muốn hỏi ngươi.”</p>
+                <p>Ngọc Diện tuy tinh quái, nhưng không hề ngu ngốc. Ngược lại, nàng chính là kẻ tiểu lừa đảo từng giả làm phụ nữ có thai để lừa Giang Phàm ngay lần đầu gặp mặt! Đôi mắt nàng đảo quanh, đáp lại trong đầu: “Lén lén lút lút làm gì?”</p>
+                <p>Giang Phàm hỏi: “Độc Lang Hiền Giả và tỷ tỷ ngươi xem mắt kết quả thế nào?”</p>
+                <p>Ngọc Diện đầy vẻ trêu chọc: “Ồ~ lão đầu tử, không lẽ ngươi đang nhắm đến tỷ tỷ ta đấy chứ? Đừng mơ mộng, ngay cả Độc Lang Hiền Giả nàng còn chẳng thèm nhìn trúng, huống chi là ngươi.”</p>
+                <p>Giang Phàm kinh ngạc. Nhãn quang của Ngọc Nhan cao thật đấy. Ngay cả người có tên trên Thần Đô Thánh Quyển cũng khó lọt vào mắt xanh. Người nam tử trong lòng nàng rốt cuộc là tồn tại thế nào?</p>
+                <p>Nhưng cũng chính vì vậy, khả năng Độc Lang Hiền Giả bán đứng hai tỷ muội bọn họ lại càng cao hơn. Hắn bĩu môi: “Ngươi rốt cuộc đã đọc bao nhiêu cuốn dâm thư rồi? Ta hỏi lại, Độc Lang Hiền Giả có tặng hai tỷ muội ngươi thứ gì không?”</p>
+                <p>Nếu Độc Lang Hiền Giả muốn bán bọn họ, tự nhiên phải có thủ đoạn khống chế, giống như mảnh vách tường tàn khuyết tặng cho Vạn Độc Giới trước đó.</p>
+                <p>Ngọc Diện lộ vẻ nghi hoặc: “Ngươi còn biết bấm quẻ bói toán sao? Hắn đúng là có tặng lễ vật gặp mặt cho tỷ tỷ ta, tiện tay cũng tặng ta một phần. Người này cũng khá tốt đấy chứ.”</p>
+                <p>Ngọc Diện đắc ý, rõ ràng rất hài lòng với món quà. Giọng Giang Phàm hơi trầm xuống: “Là loại vách tường cổ xưa gì đó sao?”</p>
+                <p>Ngọc Diện lắc đầu: “Không phải, nhưng đúng là rất cổ xưa nha~” Nghĩ đoạn, nàng phác họa một bức họa trong đầu. Đó là một khối đá đen, bên trên điêu khắc trận pháp phức tạp, nhìn qua đã có từ rất lâu đời.</p>
+                <p>Ngọc Diện nói: “Chính là cái này! Tỷ tỷ ta bảo phải trả lại, nói là quá quý giá. Đây rất có thể là Chuẩn Giới Khí của Thiên Sứ tộc ngày xưa~ Tỷ tỷ ta ngốc, ta thì không, đồ đã vào tay bản tiểu thư mà còn muốn đòi lại? Hừ, ta không trả!”</p>
+                <p>Giang Phàm ngẩn ngơ nhìn bức họa đó, đầu óc vang lên một tiếng ầm. Lại là Phá Trận Thạch! Trong số những viên Phá Trận Thạch cuối cùng mà hắn còn thiếu, không ngờ lại có mấy viên nằm trong tay Hắc Uyên Giới!</p>
+                <p>Đúng là đi mòn gót giày tìm chẳng thấy, đến khi thấy được chẳng tốn công. Nếu có thể gom đủ sáu viên cuối cùng, hắn sẽ có một bộ Chuẩn Giới Khí phòng ngự hoàn chỉnh.</p>
+                <p>Khi đó, đối mặt với Tam Tai Cảnh, dù Tiên Vương Bất Diệt Chung không ra tay, hắn cũng có năng lực tự bảo vệ mình nhất định. Hơn nữa, hắn càng thêm hoài nghi tâm địa hiểm độc của Độc Lang.</p>
+                <p>Tặng gì không tặng, lại tặng hắc sắc trận pháp thạch? Thứ này nếu đeo bên người, thông qua trận pháp thạch cốt lõi màu trắng, có thể khiến người đeo toàn thân tê liệt. Trong Tu Di Thần Lao, Vương Sung Tiêu từng dùng cách này hố không ít người!</p>
+                <p>Chỉ là không biết, Độc Lang Hiền Giả làm sao phát động trận pháp thạch khi không có viên màu trắng. Mặc kệ đi, dù sao viên cốt lõi đang nằm trong tay Giang Phàm. Độc Lang Hiền Giả không có ác ý thì thôi, nếu có, vậy cứ để hắn nếm trải một chút bất ngờ, để hắn biết trận pháp thạch này rốt cuộc thuộc về ai!</p>
+                <p>Lúc này, Ngọc Nhan Tiên Tử lộ vẻ áy náy nhìn về phía Giang Phàm: “Lão tiên sinh, ngài xem...” Nàng hiện tại cũng rơi vào thế khó. Chính mình đã hứa đưa Giang Phàm đến thử một chút, mà Độc Lang Hiền Giả lại thẳng thừng từ chối.</p>
+                <p>Giang Phàm thu hồi suy nghĩ, nén lại sóng chấn động trong lòng, nói: “Lát nữa không cần quản ta, lão hủ tự có biện pháp gia nhập hội giao dịch.”</p>
+                <p>Độc Lang Hiền Giả hơi nhíu mày, lời đã nói rõ đến thế rồi mà người này vẫn không đi? Hắn nghiêm mặt: “Các hạ, đại hội giao dịch cần Hiền Giả cảnh, cùng với việc sở hữu bảo vật kinh người mới được~ Không giống với những hội giao dịch bình thường ngươi từng thấy đâu.”</p>
+                <p>Giang Phàm chắp tay sau lưng, hờ hững đáp: “Không cần ngươi nhọc lòng, tại hạ tự có cách tham gia.”</p>
+                <p>Hắn đúng là không có tu vi Hiền Giả cảnh, nhưng đã là hội giao dịch, trọng điểm tự nhiên là bảo vật. Mà một khi hắn lấy ra vài món bảo vật trên người, đủ để làm chấn động cả Võ Khố.</p>
+                <p>Độc Lang Hiền Giả liếc nhìn Giang Phàm bằng ánh mắt lạnh lẽo. Đang định nói gì đó, bỗng nhiên cảm ứng được một luồng khí tức bất phàm giáng lâm, mắt lộ vẻ vui mừng, nhu hòa nói với Ngọc Nhan: “Ngọc Nhan, Ngọc Diện, người tổ chức đến rồi, chúng ta đi nghênh đón thôi.”</p>
+                <p>Ngọc Nhan Tiên Tử đối với hội giao dịch lần này thập phần chờ mong. Xa có Hắc Ám Triều Tịch, gần có cuộc chiến lan đến Chư Thiên. Nàng cũng hy vọng có thể thu hoạch được gì đó trong hội giao dịch, tranh thủ thêm vài phần bảo vật tự vệ cho U Minh Giới.</p>
+                <p>Nàng khẽ gật đầu, trước khi đi nhìn về phía Giang Phàm: “Lão tiên sinh, nếu ngài không thể vào hội giao dịch, đừng nên miễn cưỡng. Ngọc Nhan tự sẽ dốc sức tìm kiếm tài liệu và linh đan ngài cần~”</p>
+                <p>Dứt lời, nàng cùng Độc Lang Hiền Giả bay vút lên trời. Nơi sâu thẳm trong màn trời, một con cự long toàn thân đỏ thẫm, mang theo tiếng long ngâm điếc tai ép tới.</p>
+                <p>Những chiếc vảy đỏ rực như từng cụm lửa đang bùng cháy. Thân rồng uyển chuyển phát ra uy áp khổng lồ. Nhưng đây không phải uy áp của sinh linh, mà là của pháp khí! Đây cư nhiên là một kiện Chuẩn Giới Khí!</p>
+                <p>Ngay cả Giang Phàm cũng không khỏi kinh ngạc, đây là loại Chuẩn Giới Khí gì? Nhìn kỹ lại, đồng tử hắn co rụt khi phát hiện miệng rồng đang ở trạng thái há mở. Bên trong có một cửa hang đen ngòm hình tròn, gần mép còn vương lại vài vết cháy xém.</p>
+                <p>Hắn không khỏi nghĩ đến luồng sáng đỏ rực lúc nãy, tâm thần khẽ động. Đại Hắc Cẩu khịt khịt mũi, ba con mắt lập tức nheo lại: “Hắc, đây là đang khoe khoang với ta sao?”</p>
+                <p>Người tổ chức cố ý lấy ra thần khí này, chính là để phô trương cho Đại Hắc Cẩu xem! Trên thần khí, một phụ nữ dáng vẻ yêu kiều, mặc váy áo sặc sỡ, bờ vai thon lộ ra ngoài đang chắp tay đứng đó.</p>
+                <p>Tuy đã ngoài bốn mươi nhưng bảo dưỡng rất tốt, thấp thoáng có thể thấy được vẻ phong hoa tuyệt đại từng làm say đắm vạn người khi còn trẻ. Độc Lang Hiền Giả chủ động tiến lên nghênh đón, chắp tay nói: “Vãn bối Độc Lang, tham kiến Phù Vân Đại Hiền~”</p>
+                <p>Phù Vân Đại Hiền cười khẽ, đánh giá một lượt: “Người được đề danh trên Thần Đô Thánh Quyển quả nhiên bất phàm. Không chỉ tư chất thiên túng, dung mạo cũng anh tuấn phi thường.”</p>
+                <p>Nàng khá tán thưởng Độc Lang Hiền Giả. Độc Lang Hiền Giả cười nói: “Phù Vân Đại Hiền quá khen, vãn bối còn phải học hỏi ngài nhiều.”</p>
+                <p>Hắn lấy ra một viên đan châu cổ xưa màu đỏ: “Viên châu này vãn bối có được ở Thần Đô, có tác dụng dưỡng nhan ích hồn, tặng cho Đại Hiền, xin ngài đừng chê cười.”</p>
+                <p>Phù Vân Đại Hiền kinh ngạc bật cười: “Cũng biết cách làm việc đấy~” Đan châu chỉ là một kiện thượng phẩm linh khí, không tính là quá quý giá, thắng ở chỗ có lòng. Nàng hào phóng nhận lấy: “Sau này cứ yên tâm ở lại Võ Khố, có phiền phức cứ báo tên ta.”</p>
+                <p>Độc Lang Hiền Giả chắp tay: “Vãn bối quả thực có một việc muốn làm phiền ngài.” Hắn liếc nhìn hai tỷ muội Ngọc Nhan và Ngọc Diện bên cạnh, nói: “Ta muốn mời hai vị này cùng tham gia hội giao dịch.”</p>
+                <p>Phù Vân Đại Hiền không chút do dự: “Đã là ngươi mời, ta sao có thể không nể...” Lời nói bỗng nhiên im bặt, đôi mắt nàng đảo qua người Ngọc Nhan và Ngọc Diện, sau đó từ từ nheo lại.</p>
+                <p>“Hai vị muội muội này là người của giới diện nào vậy? Nhìn qua, có chút quen mắt nha.”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2173">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2173: Kiểm Tra Thực Lực</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Trong lòng Ngọc Nhan khẽ thắt lại, một dự cảm chẳng lành dâng lên. Ngọc Diện lại có phần vô tâm vô phế hơn nhiều, nàng kiêu ngạo nói: “Mẫu thân ta là Tuyết Cơ Đại Hiền của U Minh Giới, tiền bối có quen biết không?”</p>
+                <p>“À ha!” Phù Vân Đại Hiền nở nụ cười đầy ẩn ý, đánh mắt nhìn kỹ hai nàng một lần nữa: “Ta đã bảo mà, sao trông lại thấy quen mắt thế này.”</p>
+                <p>“Hóa ra, là con gái của con hồ ly tinh kia.”</p>
+                <p>Nói đoạn, nàng búng tay trả lại viên đan châu màu đỏ vừa nhận cho Độc Lang Hiền Giả, lạnh nhạt nói: “Hai tiểu nha đầu này, ta không thích. Các nàng từ đâu tới thì hãy về lại nơi đó đi!”</p>
+                <p>Dứt lời, chẳng thèm quan tâm đến sắc mặt khó coi của ba người, nàng ngự thần khí bay về phía mặt đất.</p>
+                <p>Gương mặt mỹ lệ của Ngọc Nhan lúc xanh lúc trắng, đôi môi đỏ mọng khẽ mím chặt. Bị người ta từ chối thẳng thừng giữa đám đông như vậy, làm sao nàng có thể chịu đựng nổi?</p>
+                <p>Ngọc Diện vốn không chịu được uất ức này, nàng tức giận trừng mắt nhìn theo bóng lưng Phù Vân Đại Hiền, rồi lại lườm Độc Lang Hiền Giả, lẩm bẩm: “Không có bản lĩnh thì ôm đồm việc lớn làm gì? Hại chúng ta cùng mất mặt theo.”</p>
+                <p>Độc Lang Hiền Giả cũng lộ vẻ lúng túng. Lão ngượng ngùng nói: “Ngọc Nhan, nếu Phù Vân Đại Hiền đã nói vậy, thì các ngươi... cứ ở ngoài này chờ đi.”</p>
+                <p>Ngọc Nhan cảm thấy nhục nhã vô cùng, nàng quay mặt đi: “Không cần, không còn việc gì khác, chúng ta đi trước. Ngọc Diện, đi thôi.”</p>
+                <p>Nàng thực sự không còn mặt mũi nào để nán lại nơi này. Hai chị em định rời đi cũng là lúc Phù Vân Đại Hiền đã đáp xuống mặt đất, ánh mắt mang theo ý cười lướt qua mọi người.</p>
+                <p>Những gương mặt này nàng đều quen thuộc, ai mang bảo vật gì nàng cũng nắm rõ đôi phần. Duy chỉ khi lướt qua Giang Phàm, nàng mới khựng lại, đôi lông mày bất giác nhíu chặt.</p>
+                <p>Rõ ràng, vị Hóa Thần Cảnh trước mắt này không nằm trong danh sách mời của nàng.</p>
+                <p>Giang Phàm nhanh chóng chắp tay cười nói trước khi nàng kịp mở lời: “Tiền bối, vãn bối tu vi tuy thấp kém, nhưng cũng có vài thứ muốn xử lý.”</p>
+                <p>Phù Vân Đại Hiền không muốn để tâm. Một kẻ Hóa Thần Cảnh thì có thể có bảo bối gì khiến một bậc Tam Tai Cảnh như nàng phải động lòng?</p>
+                <p>Giang Phàm khẽ vén lọn tóc mai, để lộ ra một tia khí tức chiêu tặc. Ánh mắt vừa dời đi của Phù Vân Đại Hiền đột ngột quay trở lại, nàng bật cười: “Thú vị đấy, ta nhìn lầm rồi sao? Nhưng ta chỉ mở cửa cho Hiền Giả. Tu vi này của ngươi, để ngươi vào là hại ngươi.”</p>
+                <p>Một hội giao dịch toàn Hiền Giả tham gia, một kẻ Hóa Thần Cảnh ôm trọng bảo trong tay, sao có thể không bị kẻ khác dòm ngó? Hội giao dịch kết thúc, Giang Phàm chắc chắn sẽ bị ám toán.</p>
+                <p>Giang Phàm mỉm cười: “Tại hạ tuy chỉ là Hóa Thần Cảnh, nhưng cũng có vài phần bản lĩnh tự bảo vệ mình.”</p>
+                <p>“Ồ?” Phù Vân Đại Hiền đánh giá lại Giang Phàm, giọng nói đầy vẻ quyến rũ: “Một tên nhóc thú vị.”</p>
+                <p>Nàng phất tay áo, một màn nước mờ ảo bao phủ lấy hai người, tạo thành một kết giới ngăn cách với bên ngoài: “Tấn công ta đi.”</p>
+                <p>Phù Vân Đại Hiền khoanh tay trước ngực, nâng đỡ lấy đôi gò bồng đảo đầy đặn. Thấy nàng không hề có ý định phòng bị, Giang Phàm nhắc nhở: “Tiền bối, ngài chớ nên thác đại, vạn nhất làm ngài bị thương thì không hay.”</p>
+                <p>Người phụ nữ này trông chẳng giống kẻ rộng lượng, nếu đánh nàng ra nông nỗi nào, không khéo nàng sẽ lật mặt ngay lập tức.</p>
+                <p>Phù Vân Đại Hiền cười kiều mị: “Một kẻ Hóa Thần Cảnh mà lại bảo Tam Tai Cảnh chớ có thác đại sao? Thú vị, cứ việc ra tay, bản hiền không trách ngươi.”</p>
+                <p>Giang Phàm gật đầu: “Vậy thì đắc tội rồi!”</p>
+                <p>Hắn búng tay một cái, chín thanh cực phẩm linh kiếm đồng loạt bay ra, vây quanh kết thành một thanh cự kiếm, đột ngột chém về phía Phù Vân Đại Hiền đang ở ngay sát gang tấc.</p>
+                <p>“Ồ? Kiếm pháp Thiên cấp, lại còn là một bộ kiếm trận hoàn chỉnh?” Một tia kinh ngạc lướt qua mắt nàng.</p>
+                <p>Kiếm pháp Thiên cấp cực kỳ khó lĩnh ngộ, đòi hỏi ngộ tính mạnh mẽ và thời gian dài đằng đẵng. Nghĩ đến việc tuổi tác của người trước mặt vẫn là ẩn số, nàng thu lại vẻ kinh ngạc, bình phẩm: “Cũng khá.”</p>
+                <p>Oanh! Kiếm trận mang theo tiếng gầm thét chém xuống, nhưng khi còn cách nàng ba tấc, tất cả đều bị đánh bật ra.</p>
+                <p>Không phải Phù Vân Đại Hiền phản kích, mà chính khí tức cường đại từ thể phách của nàng đã trực tiếp chấn tán kiếm trận. Một cường giả tuyệt thế dưới cấp Thánh Nhân như nàng, chỉ cần đứng yên không động, cũng không phải là thứ mà một Hiền Giả mới vào Nhất Tai Cảnh có thể làm tổn thương.</p>
+                <p>Nhưng thủ đoạn của Giang Phàm đâu chỉ có vậy. Hắn giơ tay nắm lấy Tà Kiếm đang bay ngược về, trong cơ thể đồng thời cuộn trào ba đạo đại mạch. Sức mạnh ba màu đỏ, trắng, vàng đất tuôn ra mãnh liệt, rực cháy trên thân Tà Kiếm.</p>
+                <p>“Hử? Ngũ hành chi lực lại có thể tu luyện đến mức độ này? Đúng là hiếm thấy.” Phù Vân Đại Hiền lộ vẻ ngạc nhiên.</p>
+                <p>Nhát chém này đánh vào vị trí cách cơ thể nàng ba tấc, vẫn bị khí tức thể phách ngăn cản, nhưng dưới tác dụng của ba luồng Hư Lưu Chi Kình dung hợp, Tà Kiếm vẫn thành công xé toạc lớp phòng ngự, chém thẳng lên vai nàng.</p>
+                <p>Keng! Một tiếng vang thanh thúy như kim loại va chạm truyền đến, Tà Kiếm cũng bị chấn văng.</p>
+                <p>Đến lúc này, Phù Vân Đại Hiền đã đánh giá được thực lực của Giang Phàm. Đối phó với Nhất Tai Cảnh hậu kỳ là quá đủ. Nàng thầm kinh ngạc: “Chỉ là Hóa Thần Cảnh mà lại có thực lực thế này, người này lai lịch ra sao? Chẳng lẽ là phân thân của vị cường giả nào đó ở Thần Đô?”</p>
+                <p>Nghĩ đến đây, nàng cố ý trêu chọc: “Chỉ có chút thực lực này thì vẫn chưa đủ đâu.”</p>
+                <p>Giang Phàm khẽ nhún vai, thế này mà vẫn chưa được sao? Suy nghĩ ngắn ngủi, hắn nói: “Được, vậy tiền bối cẩn thận!”</p>
+                <p>Nhìn vào bả vai nơi khí tức vừa bị phá vỡ của Phù Vân Đại Hiền, hắn phát động Vạn Thổ Chi Tâm, dịch chuyển tức thời đến trước mặt nàng. Trên bề mặt cơ thể hiện lên từng đạo ấn ký băng hỏa, sức mạnh thể phách khai mở, nhanh chóng ngưng tụ nơi nắm đấm phải.</p>
+                <p>Đồng thời, ba luồng Hư Lưu Chi Kình dung hợp bao bọc lấy nắm đấm, hung hãn nện thẳng vào bả vai nàng.</p>
+                <p>“Nhanh quá!”</p>
+                <p>“Còn nữa, sức mạnh thể phách này là thế nào? Hắn không phải là Hóa Thần Cảnh sao?”</p>
+                <p>Khi nàng nhận ra có điều bất ổn thì đã muộn. Nắm đấm to như cái đấu của Giang Phàm đã nện thật mạnh lên vai nàng. Tam Tai Cảnh dù có mạnh đến đâu thì cũng vẫn là thân xác phàm thai. Chịu một đòn toàn lực từ thể phách Nhất Tai Cảnh cộng thêm Hư Lưu Tam Kình mà không có phòng bị, làm sao có thể dễ chịu cho được?</p>
+                <p>Thình thịch! Phù Vân Đại Hiền lảo đảo lùi lại một bước, trên bả vai truyền đến cảm giác đau rát như bị roi quất mạnh. Cơ mặt nàng khẽ co giật, theo bản năng muốn thốt lên vì đau, nhưng để giữ thể diện, nàng đành phải cắn răng chịu đựng.</p>
+                <p>Giang Phàm thì bị chấn đến mức toàn thân tê dại, hắn hỏi: “Tiền bối, ngài không sao chứ?”</p>
+                <p>Phù Vân Đại Hiền nén đau, vẻ mặt không đổi phủi phủi bả vai: “Ngươi đang nói chuyện với ai đó? Chút Hóa Thần Cảnh mà cũng muốn làm bản hiền bị thương sao?”</p>
+                <p>Giang Phàm ngượng ngùng, một lần nữa ngưng tụ Hư Lưu Tam Kình trong lòng bàn tay, nói: “Tiền bối nói phải, xin ngài đứng yên đừng động, để vãn bối thử lại lần nữa.”</p>
+                <p>Thiên Uyên Tâm của hắn âm thầm phát động, từng tia huyết mạch Thánh Thiên Sứ bắt đầu rực cháy. Hôm nay, nói gì thì nói hắn cũng phải tham gia hội giao dịch này cho bằng được.</p>
+                <p>Lại... lại còn đến nữa sao? Khóe miệng Phù Vân Đại Hiền giật giật, cái tên khốn kiếp này rốt cuộc còn bao nhiêu thủ đoạn chưa thi triển ra đây?</p>
+                <p>Nàng vội vàng ngăn lại: “Được rồi, miễn cưỡng qua màn. Nhưng đừng mừng vội, ngươi phải có thứ gì đó đáng giá mới được.”</p>
+                <p>Giang Phàm khẽ vui mừng. Cửa ải cảnh giới mới là khó nhất, còn về bảo vật thì không thành vấn đề. Hắn tâm niệm khẽ động, một cái xác tỏa ra lệ khí ngút trời xuất hiện trước mặt.</p>
+                <p>Toàn thân nó đen kịt, đầu rồng mình hươu, khí tức vô cùng hung lệ.</p>
+                <p>Phù Vân Đại Hiền khẽ nhíu mày, nhìn thoáng qua vẫn chưa nhận ra là thứ gì. Đến khi nhìn kỹ lại, nàng mới hít một hơi lạnh: “Táng Thiên Thánh Thú Di Hài?”</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_433.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_433.html" class="page-btn">433</a>
+            <a href="page_434.html" class="page-btn current">434</a>
+            <a href="page_435.html" class="page-btn">435</a>
+            <a href="page_436.html" class="page-btn">436</a>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_435.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

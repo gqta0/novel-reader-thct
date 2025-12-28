@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 24">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 24</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_23.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_25.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_116">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 116: Gặp lại Hứa Di Ninh</h2>
+            </header>
+            <div class="chapter-content">
+                <p>&quot;Lại là Giang Phàm thắng?&quot;&quot;Vẫn là một chiêu liền thắng!&quot;&quot;Quá hoang đường a?&quot;Các đệ tử giật mình.</p>
+                <p>Các trưởng lão cùng vài vị phong chủ ở đây, sao có thể trấn định được?</p>
+                <p>Cung Thải Y ngạc nhiên: &quot;Không phải, xác định hắn là Vô Linh căn sao? Thực lực sao mạnh mẽ thế?&quot;</p>
+                <p>Liễu Khuynh Tiên không khỏi đắc ý. Lúc trước tại linh trì tắm gội, Giang Phàm một chiêu đã đẩy lui nàng. Trịnh Cửu không quan trọng, sao lại là đối thủ của Giang Phàm?</p>
+                <p>Liễu Vấn Thần mắt lộ kinh ngạc: &quot;Hắn thế mà thắng?&quot; Vốn cho rằng Giang Phàm tất thua không thể nghi ngờ. Hắn hơi thở phào: &quot;Còn tốt, cuối cùng thắng một trận, hơn nữa còn thắng đệ tử thân truyền của Cuồng Đao phong. Đằng sau coi như thua, cũng không tính mất thể diện.&quot;</p>
+                <p>Khổng Vô Song mắt lộ nụ cười: &quot;Ta liền biết, cái tên này không đơn giản. Vừa rồi hắn thi triển chưởng pháp, giống như có chút tên tuổi.&quot; Khác với đa số người quan tâm Trịnh Cửu, hắn một mực quan tâm Giang Phàm nên nhìn ra một chưởng bất phàm của hắn.</p>
+                <p>Tào Chấn khẽ nói: &quot;Trùng hợp thắng Trịnh Cửu thôi.&quot;</p>
+                <p>Khổng Vô Song cười ha hả: &quot;Trùng hợp? Ta xem, cho dù là ngươi gặp phải một chưởng vừa rồi, kết quả cũng không tốt gì.&quot;</p>
+                <p>Tào Chấn cười giận dữ: &quot;Bằng hắn? Còn muốn một chiêu bại ta?&quot;</p>
+                <p>Các trưởng lão cũng xôn xao không ngừng. Cuồng Đao phong chủ nghẹn họng nhìn trân trối, không khỏi nhìn về phía Lý Thanh Phong, chất vấn: &quot;Lý trưởng lão! Ngươi không phải nói hắn là đệ tử Vô Linh căn? Sao lại lợi hại hơn Trịnh Cửu do ta đích thân mang về? Sớm biết thế, lúc đầu ta đã thu hắn làm môn hạ.&quot;</p>
+                <p>Lý Thanh Phong lập tức lâm vào tình huống khó xử. Nhưng rất nhanh tìm được lý do: &quot;Chẳng qua là trùng hợp, trùng hợp thôi. Trịnh Cửu quá khinh địch, lại một lần, Giang Phàm không có nửa điểm thắng khả năng.&quot;</p>
+                <p>Vòng đầu tiên luận bàn kết thúc không chút sóng gió.</p>
+                <p>Liễu Vấn Thần rất nhanh cho mười đệ tử chiến thắng tiến hành bốc thăm vòng thứ hai.</p>
+                <p>&quot;Tông chủ phong Giang Phàm, đối chiến Tông chủ phong Đào Chính Quân.&quot;</p>
+                <p>Kết quả bốc thăm vừa ra, mọi người lại xì xào bàn tán. Trong đó tiếc nuối chiếm đa số. Rõ ràng đều cảm thấy Giang Phàm quá không may, vậy mà gặp phải sư huynh cùng phong.</p>
+                <p>Liễu Vấn Thần cũng đành thở dài: &quot;Vận khí quá xui xẻo a? Bất quá, những người còn lại đều là cường giả, Giang Phàm rút trúng ai chẳng bại đâu?&quot; Nghĩ tới đây, hắn liền không quan trọng nữa, tiếp tục tuyên bố trình tự luận bàn tiếp theo.</p>
+                <p>Sau khi an bài hoàn tất, Giang Phàm cùng Đào Chính Quân lần lượt bước vào quảng trường.</p>
+                <p>Tào Chấn hả hê nói: &quot;Khổng Vô Song, ngươi sẽ không còn cảm thấy Giang Phàm có thể thắng a?&quot;</p>
+                <p>Khổng Vô Song cười ha hả: &quot;Tại sao lại không chứ?&quot;</p>
+                <p>Tào Chấn cảm thấy không hiểu thấu. Đây chính là Đào Chính Quân, ngay cả hắn cũng không nắm chắc nhất định thắng được nhân vật hung ác pháp thể song tu. Giang Phàm dựa vào cái gì thắng?</p>
+                <p>Cung Thải Y cũng tò mò: &quot;Liễu tiểu thư, ngươi còn tin chắc Giang Phàm có thể thắng sao?&quot;</p>
+                <p>Liễu Khuynh Tiên ung dung cầm dao găm nhỏ mài móng tay, thản nhiên nói: &quot;Không có chút hồi hộp nào.&quot;</p>
+                <p>Phải không? Cung Thải Y trong lòng có chút dao động. Chẳng lẽ mình xem thường thực lực võ đạo của Giang Phàm? Mình đã đặt cược nặng hắn thua mà!</p>
+                <p>Lý Thanh Phong vuốt râu nói: &quot;Kẻ này, thua không nghi ngờ a! Các ngươi cứ xem đi, lão phu nhìn người chưa bao giờ sai.&quot;</p>
+                <p>Nhưng mà, theo tiếng &quot;Bắt đầu&quot; của Liễu Vấn Thần, Đào Chính Quân lại chắp tay sau lưng lùi lại: &quot;Ta nhận thua.&quot;</p>
+                <p>Cái gì? Liễu Vấn Thần vụt đứng dậy, giật mình nói: &quot;Đào Chính Quân! Ngươi làm cái quỷ gì? Nhận thua? Hướng Giang Phàm nhận thua?&quot; Đào Chính Quân là kỳ vọng của hắn. Hắn trông cậy vào Đào Chính Quân dựa vào pháp thể song tu, hạ gục hết thảy đệ tử mới, giữ gìn uy nghiêm của Tông chủ phong. Kết quả, hắn lại nhận thua? Vẫn là nhận thua cho Giang Phàm, cái đệ tử hắn căn bản không để mắt đến?</p>
+                <p>Các trưởng lão còn lại cũng kinh ngạc rớt cằm. Hai đồ đệ được kỳ vọng nhất đoạt quán quân là Đào Chính Quân, thế mà nhận thua!</p>
+                <p>Tào Chấn vội vàng ngạc nhiên nói: &quot;Thế này cũng được? Chẳng lẽ Đào Chính Quân có nhược điểm gì, rơi vào tay Giang Phàm?&quot;</p>
+                <p>Lý Thanh Phong cũng thân thể loạng choạng. Cục diện đột ngột xuất hiện khiến hắn không chịu nổi, nói: &quot;Đào Chính Quân sao có thể không bằng Giang Phàm? Chắc là hai người trước đó có ước định gì đó.&quot;</p>
+                <p>Rất nhiều đệ tử dù rất khó chấp nhận kết quả này, nhưng suy nghĩ kỹ cũng thấy Lý Thanh Phong nói có lý. Ngoài ra rất khó giải thích lý do Đào Chính Quân nhận thua.</p>
+                <p>Cung Thải Y đôi mi thanh tú chau lại: &quot;Giang Phàm rốt cuộc chuyện gì xảy ra?&quot; Nàng tự cho rằng ở chung nửa tháng đã nhìn thấu Giang Phàm, nhưng sao càng lúc càng thấy nhìn không thấu?</p>
+                <p>Thế là, vòng thứ hai luận bàn kết thúc trong một hồi xôn xao. Rất nhanh, năm người còn lại lần nữa bốc thăm.</p>
+                <p>Liễu Vấn Thần tuyên bố:&quot;Luân Hồi phong Tào Chấn, đối chiến Kinh Vân phong Trình Hạo!&quot;&quot;Thiên Kiếm phong Hứa Di Ninh, đối chiến Dược Phong Phan Xảo Xảo.&quot;&quot;Giang Phàm... Luân không.&quot;</p>
+                <p>Kết quả này lại lần nữa dẫn tới một hồi nghị luận.&quot;Không phải chứ! Cái gọi là Giang Phàm này, vòng trước đối thủ nhận thua, vòng này trực tiếp luân không!&quot;&quot;Hắn dựa vào vận khí một đường giết vào đó a!&quot;&quot;Tôi nguyện gọi hắn là Thanh Vân tông tối cường vận khí Vương!&quot;</p>
+                <p>Hứa Di Ninh, người vất vả dựa vào bản lĩnh từng bước đánh vào top năm, liếc Giang Phàm một cái.&quot;Ngươi vận khí không bình thường tốt!&quot;</p>
+                <p>Giang Phàm nhún vai: &quot;Ta đảo muốn tốc chiến tốc thắng đây.&quot;</p>
+                <p>Hứa Di Ninh khẽ hừ một tiếng: &quot;Được tiện nghi còn khoe mẽ! Vậy ngươi hãy nhìn cho thật kỹ trận chiến của ta với người khác.&quot;</p>
+                <p>Vào tông môn nửa tháng, Hứa Di Ninh từ lúc bái sư đã bế quan đến nay, chính là để hôm nay giương oai. Công sức không phụ lòng người. Dưới sự bồi dưỡng tài nguyên mạnh mẽ của Thanh Vân tông, lục phẩm linh căn của nàng được phát huy tối đa. Nửa tháng ngắn ngủi, nàng đã đột phá từ Trúc Cơ tầng một lên Trúc Cơ tầng hai. Thân pháp cũng thành thục hơn trước, lại thêm tu tập kiếm thuật tuyệt diệu của Thiên Kiếm phong, thực lực so với ở Cô Chu thành lúc đó không thể so sánh nổi.</p>
+                <p>Vị Phan Xảo Xảo kia có thể giết vào top năm, tự nhiên không phải hạng tầm thường. Nhưng chỉ mười hiệp, đã bị Hứa Di Ninh một kiếm đánh bại. Toàn trường không khỏi lớn tiếng khen hay!</p>
+                <p>Cung Thải Y mắt ngậm tia kinh ngạc: &quot;Vậy mà cũng hiểu một chút thân pháp. Mà lại cùng Giang Phàm tựa hồ có chút sâu xa.&quot;</p>
+                <p>Liễu Vấn Thần mắt lộ vẻ tán thưởng: &quot;Lý Thanh Phong cũng thu được một đệ tử lợi hại đâu.&quot;</p>
+                <p>Tào Chấn lại có chút kinh diễm nhìn thiếu nữ dung nhan và thực lực xuất sắc này, nhiệt tình tiến lên chúc mừng: &quot;Hứa sư muội thực lực xuất chúng, xứng đáng là đệ nhất nhân trong số nữ đệ tử mới. Sau trận đấu chúng ta có rảnh cắt xoa luận bàn nhiều hơn.&quot;</p>
+                <p>Hứa Di Ninh hơi ngạc nhiên. Vị Tào Chấn này là đồ đệ đắc ý của Đại trưởng lão, linh căn cao hơn nàng một cấp, lại xuất thân thế gia võ đạo, hoàn toàn không phải loại tiểu môn tiểu hộ như Hứa gia có thể so sánh. Loại người này thế mà chủ động kết giao với mình. Lòng hư vinh của nàng được thỏa mãn lớn, lễ phép nói: &quot;Được rồi Tào sư huynh.&quot;</p>
+                <p>Ánh mắt lén nhìn Giang Phàm, như đang nói cho Giang Phàm biết, đây chính là mị lực của nàng Hứa Di Ninh, hấp dẫn đều là thiên kiêu cao cấp nhất đương thời. Đáng tiếc, Giang Phàm căn bản không liếc nhìn nàng một cái. Điều này khiến Hứa Di Ninh khẽ cắn răng, nói: &quot;Giang Phàm, đừng tưởng rằng cảnh giới cao hơn ta liền xem thường người! Đến Thanh Vân tông, linh căn quyết định hạn mức cao nhất! Ngươi dựa vào tiêu hao tiềm lực đi đến Trúc Cơ tầng bốn, về sau sẽ rất khó lại tiến lên. Mà ta sẽ từ từ vượt qua ngươi!&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_117">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 117: Vinh dự cuộc chiến</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm ngạc nhiên. Hắn làm sao xem thường người? Vừa rồi chẳng qua là nhìn xem bóng lưng Hứa Di Ninh, nghĩ đến Hứa Du Nhiên, hơi nhớ nhung nên thất thần thôi.</p>
+                <p>Hắn lười biếng tranh cãi với Hứa Di Ninh, gật đầu nói: &quot;Vâng vâng vâng, ngươi nói đúng.&quot;</p>
+                <p>Thái độ qua loa này càng chọc giận Hứa Di Ninh. Nàng tức giận rút kiếm, chỉ về phía Giang Phàm: &quot;Ta muốn luận bàn với ngươi, có dám không?&quot;</p>
+                <p>Sau ba lần tỷ thí, bây giờ chỉ còn lại Tào Chấn, Giang Phàm và Hứa Di Ninh. Như thường lệ, sẽ là hai đấu hai, cuối cùng chọn ra người chiến thắng.</p>
+                <p>Khổng Vô Song, người đã xem tỷ thí khá lâu, ngứa ngáy, tự giễu nói: &quot;Giang Phàm, chi bằng ta cũng tham gia, được không?&quot;</p>
+                <p>&quot;Vừa hay ngươi luận bàn với nha đầu kia một trận.&quot;</p>
+                <p>&quot;Ta luận bàn với Tào Chấn một trận!&quot;</p>
+                <p>&quot;Loại bỏ hai người họ, ngươi ta có thể chiến đấu thật tốt.&quot;</p>
+                <p>Không đợi Giang Phàm đồng ý. Tào Chấn đã tức cười nói: &quot;Khổng Vô Song! Thật tự cao tự đại!&quot;</p>
+                <p>&quot;Còn muốn loại bỏ ta?&quot;</p>
+                <p>Đương nhiên hắn không dám tự ý làm chủ, tức giận hướng Đại trưởng lão Phong Cổ Thiền nói: &quot;Sư tôn, xin cho phép đệ tử giáo huấn tên vô lễ này!&quot;</p>
+                <p>Phong Cổ Thiền chuyển tầm mắt, chậm rãi vuốt cằm nói: &quot;Đừng làm mất mặt Luân Hồi phong...&quot;</p>
+                <p>&quot;Chậm đã!&quot;</p>
+                <p>Liễu Vấn Thần lại ngăn cản: &quot;Đây là đại điển tế tổ của Thanh Vân tông ta, đệ tử ngoại tông tham gia e không thỏa đáng.&quot;</p>
+                <p>Khổng Vô Song là đệ tử mới mạnh nhất của Cự Nhân Tông. Nếu hắn đoạt giải nhất trong đại điển tế tổ của Thanh Vân tông, chẳng phải sẽ bị người ngoài cười chê, nói đệ tử mới của Thanh Vân tông không bằng người, bị Cự Nhân Tông đạp dưới chân?</p>
+                <p>Khổng Nguyên Bá cười ha hả nói: &quot;Chẳng lẽ Liễu tông chủ lo lắng đệ tử mới của Thanh Vân tông tài nghệ không bằng người, thua mất mặt?&quot;</p>
+                <p>Phong Cổ Thiền cười nói: &quot;Tông chủ, cứ để các tiểu bối chơi đi, không sao. Có đệ tử Luân Hồi phong ta ở đây, có thể bảo vệ quán quân.&quot;</p>
+                <p>Trên mặt hắn là cười, nhưng trong miệng toàn bộ là giọng điệu Luân Hồi phong ta mới là mạnh nhất Thanh Vân tông. Rõ ràng là muốn mượn hai tông chủ ngoại tông ở đây để biểu lộ thực lực tuyệt đối của Luân Hồi phong, suy yếu địa vị Tông chủ phong.</p>
+                <p>Lòng dạ đáng khinh.</p>
+                <p>Sắc mặt Liễu Vấn Thần vô cùng khó coi. Nếu có Đào Chính Quân ở đây, hắn còn có trò vui. Nhưng còn lại lại là Giang Phàm dựa vào vận may đi đến đây! Hắn làm sao có thể đại diện Tông chủ phong, chiến đấu với Chiến thần Khổng Vô Song?</p>
+                <p>Làn gió đầu của đại điển tế tổ lần này sẽ bị Luân Hồi phong đoạt sạch. Quan trọng nhất là, đoạt sạch ngay trước mặt tông môn khác. Chuyện này đối với danh tiếng Thanh Vân tông chủ của hắn vô cùng bất lợi.</p>
+                <p>Không đợi hắn phản đối, Phong Cổ Thiền đã thay hắn tuyên bố: &quot;Tỷ thí bắt đầu! Giang Phàm và Hứa Di Ninh lên trước!&quot;</p>
+                <p>Liễu Vấn Thần lấy lại tinh thần thì đã muộn. Lửa giận trong lòng hắn ngút trời. Đại trưởng lão ngày càng làm càn, dám thay Tông chủ ra lệnh! Có thể vì vướng bận hai vị tông chủ ngoại tông ở đây, hắn không thể phát tác. Nếu không sẽ bị người khác nhìn ra mâu thuẫn nội bộ nghiêm trọng của Thanh Vân tông.</p>
+                <p>Chỉ có thể nuốt giận vào bụng, tức giận nhìn Giang Phàm và Hứa Di Ninh luận bàn.</p>
+                <p>&quot;Xem chiêu!&quot;</p>
+                <p>Hứa Di Ninh ra tay là kiếm chiêu mạnh nhất, thi triển toàn bộ tu vi. Giang Phàm không hiểu ra sao: &quot;Ta làm gì ngươi, ra tay đã tàn nhẫn vậy. Đều đến Thanh Vân tông rồi, sao vẫn một bộ tính tiểu thư!&quot;</p>
+                <p>Giang Phàm mới không chiều nàng. Quyết đoán quét một cái Ma Kha trên vách đá, thối pháp Hoàng cấp cao đẳng ra đi.</p>
+                <p>Âm vang ――</p>
+                <p>Kiếm của Hứa Di Ninh rời tay. Nhưng nàng cắn chặt răng, một bộ dáng không chịu bỏ qua, không có chiêu thức gì nắm đôi bàn tay trắng như phấn đấm vào Giang Phàm.</p>
+                <p>Giang Phàm hơi bó tay, nàng căn bản không học qua quyền pháp được không? Không chút nghĩ ngợi, một chưởng tiếp lấy quả đấm của nàng, sau đó xoay người, kéo cánh tay nàng ra sau lưng, hai tay bắt chéo sau lưng nâng lên. Cứ thế dễ dàng chế phục.</p>
+                <p>Hứa Di Ninh vô cùng xấu hổ, mình vất vả bế quan nửa tháng, vậy mà không quá hai lần đã bị Giang Phàm chế phục.</p>
+                <p>Cảnh mỹ nhân bị ăn hiếp khiến Tào Chấn đặc biệt đau lòng. Tức giận nói: &quot;Họ Giang, sao lại ức hiếp Hứa sư muội như vậy?&quot;</p>
+                <p>&quot;Chốc nữa sẽ cho ngươi biết tay!&quot;</p>
+                <p>Hứa Di Ninh đắc ý hừ một tiếng với Giang Phàm: &quot;Nghe chưa?&quot;</p>
+                <p>&quot;Tào sư huynh muốn vì ta ra mặt, ngươi sắp xui xẻo rồi.&quot;</p>
+                <p>&quot;Hừ!&quot;</p>
+                <p>Giang Phàm buông nàng ra, dở khóc dở cười nói: &quot;Chờ hắn thắng Khổng Vô Song rồi nói sau. Trực giác nói cho ta biết, Khổng Vô Song này khó đối phó.&quot;</p>
+                <p>Hứa Di Ninh xoa cánh tay bị vặn đến hơi đau, mang theo một tia oán giận nói: &quot;Trực giác của ngươi là của ngươi, không có nghĩa là Tào sư huynh! Năng lực của hắn, ngươi cứ nhìn kỹ đi.&quot;</p>
+                <p>Thật sao? Giang Phàm cười cười, im lặng lùi sang một bên.</p>
+                <p>Tào Chấn và Khổng Vô Song trong tiếng hô hào mong chờ, đi đến khoảng trống. Cả hai đều là những người nổi bật trong số các đệ tử mới. Thực lực vô song!</p>
+                <p>Tào Chấn tay cầm một thanh trường kiếm, nói: &quot;Thanh kiếm này của ta là pháp khí trung phẩm, sắc bén vô biên. Chốc nữa đao kiếm không có mắt, nếu làm ngươi bị thương, cũng đừng oán ta.&quot;</p>
+                <p>Khổng Vô Song hai tay ôm ở trước ngực, mặt không hứng thú: &quot;Đừng dài dòng. Kiếm của ngươi có sắc bén đến mấy, cũng phải chạm tới ta mới được! Ra tay đi, ta nhường ngươi ba chiêu.&quot;</p>
+                <p>Cái gì? Để cho ta ba chiêu? Tào Chấn chỉ cảm thấy vô cùng nhục nhã, tức cười nói: &quot;Tào Chấn ta tư chất ngút trời, luận bàn với người nhiều năm, luôn luôn chỉ có ta nhường chiêu cho người khác. Bị người khác nhường chiêu, đây là lần đầu tiên! Tốt! Ta sẽ xem thực lực của ngươi có xứng với sự cuồng ngạo của ngươi không!&quot;</p>
+                <p>Âm vang một tiếng. Hắn rút ra thanh trường kiếm màu cam, quyết đoán phát động kiếm thuật.</p>
+                <p>&quot;Trời cao nhất kích!&quot;</p>
+                <p>&quot;Truy Tinh Trục Nguyệt!&quot;</p>
+                <p>&quot;Phong vân phủ dày đất!&quot;</p>
+                <p>Liên tục ba chiêu, hoàn toàn thi triển bộ kiếm pháp Huyền cấp hạ đẳng này. Tuy nhiên, những chiêu thức nhìn như sắc bén này, trước mặt Khổng Vô Song lại như động tác chậm.</p>
+                <p>Trên mặt hắn luôn mang theo nụ cười nhạt, hai tay khoanh trước ngực, một bước cũng không di chuyển. Chẳng qua chỉ khẽ lướt vai, nghiêng đầu, nghiêng người, đã dễ dàng hóa giải ba chiêu. Thật sự đúng theo lời hứa, nhường ba chiêu.</p>
+                <p>Toàn trường trưởng lão và các đệ tử đều thấy hít vào khí lạnh.</p>
+                <p>&quot;Hắn nào chỉ nhường ba chiêu?&quot;</p>
+                <p>&quot;Đây rõ ràng là đứng yên bất động, nhường ngươi chém ba chiêu.&quot;</p>
+                <p>&quot;Nhưng dù vậy, Tào Chấn cũng không làm bị thương hắn một sợi tóc!&quot;</p>
+                <p>&quot;Người luyện thể khủng bố như thế sao? Lực phản ứng kinh người!&quot;</p>
+                <p>Phong Cổ Thiền hơi hoảng rồi. Hắn vô cùng tự tin vào thực lực của Tào Chấn, mới khăng khăng yêu cầu Tào Chấn đấu với Khổng Vô Song, để phát huy uy danh Luân Hồi phong. Ai ngờ, Khổng Vô Song lại mạnh đến đáng sợ.</p>
+                <p>Khổng Nguyên Bá âm dương quái khí nói: &quot;Khiêu chiến cháu trai của ta, uổng cho các ngươi có đảm lượng. Hắn là người có thiên phú luyện thể lớn nhất ta từng gặp, mạnh hơn nhiều so với thời kỳ thiếu niên của ta năm xưa.&quot;</p>
+                <p>Nghe vậy, lòng Phong Cổ Thiền chìm xuống. Liễu Vấn Thần cũng vô cùng lo lắng. Tào Chấn mà thua, hậu quả khó lường!</p>
+                <p>Trên sân. Tào Chấn hơi sửng sốt, cũng hơi xấu hổ. Ngay trước toàn tông môn, mình bị sỉ nhục trắng trợn. Hắn gầm lên, lại lần nữa huy kiếm: &quot;Đừng xem thường người!&quot;</p>
+                <p>Tuy nhiên, Khổng Vô Song đứng yên bất động, hắn đều không làm gì được, huống chi ba chiêu đã qua? Tào Chấn chỉ cảm thấy hoa mắt, Khổng Vô Song vừa rồi còn đứng tại chỗ, hóa thành một đoàn tàn ảnh, trong nháy mắt đánh bay Tào Chấn cả người lẫn kiếm.</p>
+                <p>Một đường miệng phun máu tươi bay hơn mấy trượng, cuối cùng đập vào dưới chân Liễu Vấn Thần. Vẻ mặt Liễu Vấn Thần khó coi đến cực điểm. Vô cùng phẫn nộ nhìn chằm chằm Phong Cổ Thiền. Lần bại này, bại không chỉ là Tào Chấn cá nhân, mà còn là danh tiếng của Thanh Vân tông!</p>
+                <p>Trước tượng tổ sư gia, trên đại điển tế tổ thịnh đại, đệ tử mới mạnh nhất của Thanh Vân tông, bị đệ tử ngoại tông một chiêu đánh trọng thương. Đây chẳng phải chuyện cười lớn sao?</p>
+                <p>Tự biết gây đại họa, Phong Cổ Thiền cưỡng từ đoạt lý nói: &quot;Ngươi không phải còn có một đệ tử ở đây sao? Cũng không phải chỉ có đệ tử Luân Hồi phong ta thua, ngươi không cũng vậy phải thua sao?&quot;</p>
+                <p>Liễu Vấn Thần hận không thể ngay tại chỗ cùng hắn đại chiến một trận! Có Đại trưởng lão như thế này, lo gì Thanh Vân tông không từ từ suy tàn!</p>
+                <p>Nhưng hai vị tông chủ ngoại tông đang ở đây. Hắn dù nổi trận lôi đình, cũng phải nhịn đến khi họ rời đi. Mặt âm trầm, hắn không nhịn được nói: &quot;Giang Phàm! Khổng Vô Song! Tốc chiến tốc thắng!&quot;</p>
+                <p>Hắn chỉ muốn nhanh chóng kết thúc màn mất mặt này. Tiễn hai vị tông chủ đi xong, mới hảo hảo tính sổ với Phong Cổ Thiền!</p>
+                <p>Giang Phàm mặt không biểu tình tiến lên. Hắn cũng muốn thử một lần, 《Thiết Huyết Chân Kinh》 của mình có thể cùng Khổng Vô Song, người từ nhỏ luyện thể, chiến đấu một trận hay không.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_118">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 118: Thể phách quyết đấu</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm cũng cảm nhận được Liễu Vấn Thần đang lo lắng. Hắn hiểu rằng cuộc chiến giữa mình và Khổng Vô Song không chỉ đơn thuần là một trận tỷ thí, mà còn liên quan đến danh dự của Thanh Vân tông.</p>
+                <p>Hắn gật đầu, mũi chân khẽ nhích, bước vào sân rộng. Bình tĩnh tự nhiên nói:&quot;Ta sẽ dốc toàn lực, ngươi tốt nhất đừng có giữ lại.&quot;&quot;Nếu không, ta không thể bảo đảm ngươi bình yên vô sự.&quot;</p>
+                <p>Đương nhiên, hắn nói &quot;toàn lực&quot; là ngoại trừ tử kiếm và địa cấp chỉ pháp. Hai thứ này hắn vẫn muốn giữ làm át chủ bài, tạo đòn bất ngờ cho kẻ địch. Bại lộ chúng trong lúc tỷ thí thật sự không có lợi.</p>
+                <p>Một bên, Tào Chấn mặt đầy nhục nhã không chỗ phát tiết. Vừa nãy hắn tự tin bao nhiêu thì giờ bị Khổng Vô Song ngược đánh thảm hại bấy nhiêu. Nghe lời Giang Phàm nói, không khỏi tức cười:&quot;Đồ không biết điều!&quot;&quot;Khổng Vô Song lợi hại thế nào vừa nãy ngươi không thấy sao?&quot;&quot;Vậy mà còn dám nói ra lời kiêu ngạo như thế!&quot;</p>
+                <p>Giang Phàm liếc hắn một cái, nói như giết người:&quot;Khổng Vô Song lợi hại thế nào, ta không nhìn ra.&quot;&quot;Ngươi vô năng thế nào, ta ngược lại đã nhìn ra.&quot;&quot;Nhường ba chiêu còn bị địch nhân một chiêu đánh gục.&quot;&quot;Ta nếu là ngươi, bây giờ đang úp mặt không dám gặp ai, chứ không phải lải nhải, mất mặt như thế!&quot;</p>
+                <p>Đám đệ tử và trưởng lão ngồi xem đều hướng về Tào Chấn ném những ánh mắt thất vọng. Trước không nói thực lực võ đạo của Tào Chấn thế nào, nhưng về mặt làm người, hắn quả thật khiến người ta không ưa. Hiện tại Giang Phàm đang đại diện cho Thanh Vân tông giao chiến với tông phái khác, Tào Chấn không cổ vũ người nhà thì thôi, lại còn làm nhụt chí khí người của mình.</p>
+                <p>Phong Cổ Thiền lại bênh vực đệ tử mình, khẽ nói:&quot;Đều nhìn gì vậy?&quot;&quot;Đồ nhi ta nói sai gì sao?&quot;&quot;Các ngươi tự vấn lòng xem, cái gã vô linh căn này có thể thắng sao?&quot;</p>
+                <p>Bất kể đệ tử hay các trưởng lão đều khẽ thở dài. Quả thật, dựa vào thực lực của Giang Phàm, nói gì thì nói cũng khó có khả năng thắng. Trừ phi hắn lại dẫm phải cứt chó lần nữa. Dù là Liễu Khuynh Tiên có lòng tin với Giang Phàm, lúc này cũng cau mày chặt.</p>
+                <p>Cung Thải Y tự tiếu phi tiếu nói:&quot;Thế nào, Liễu tiểu thư không có lòng tin?&quot;</p>
+                <p>Liễu Khuynh Tiên khẽ cắn răng:&quot;Giang Phàm đối phó Tào Chấn, ta tin là không vấn đề.&quot;&quot;Có thể là đối với Khổng Vô Song...&quot;</p>
+                <p>Nàng thật sự không có chút lòng tin nào.</p>
+                <p>Cung Thải Y đắc thắng vươn vai mỏi, thân hình lồi lõm quyến rũ ẩn dưới bộ quần áo sặc sỡ phác họa ra đường nét động lòng người.&quot;Đã như vậy, Giang Phàm ta sẽ không khách khí nhận.&quot;</p>
+                <p>Theo ước định giữa hai bên, nếu Giang Phàm hạ gục Tào Chấn, đoạt được danh hiệu đệ tử mới đứng đầu, nhưng sau đó lại bại dưới tay Khổng Vô Song, thì Cung Thải Y sẽ thắng. Đến lúc đó, nàng sẽ để lại một viên Địa Long tinh hạch và mang Giang Phàm đi.</p>
+                <p>Liễu Khuynh Tiên trong lòng hơi giật mình. Giang Phàm là linh căn cửu phẩm, sao có thể bị mang đi? Nàng chăm chú nhìn chiến trường, trong lòng cầu nguyện có thể xảy ra một kỳ tích. Đáng tiếc, khi Khổng Vô Song bước về phía trước, dẫm lên mặt đất khiến nó lún sâu một tấc, nàng tuyệt vọng.</p>
+                <p>&quot;Thể thuật Lục Môn chi cảnh!&quot;</p>
+                <p>Liễu Khuynh Tiên trong lòng không ngừng chìm xuống. Giống như pháp thuật, thể thuật cũng có cảnh giới phân chia. Thể thuật Khai Môn chi cảnh tương đương với pháp thuật Trúc Cơ chi cảnh. Lục Môn tương đương với Trúc Cơ sáu tầng. Một đệ tử mới như Giang Phàm làm sao có thể là đối thủ của cường giả thể thuật Lục Môn chi cảnh?</p>
+                <p>Đối diện với khí tràng mạnh mẽ của Khổng Vô Song, Giang Phàm lại thở phào nhẹ nhõm. So với Từ Cương Liệt, thể thuật của Khổng Vô Song còn non kém hơn nhiều.</p>
+                <p>&quot;Ra tay đi!&quot; Giang Phàm áp chế linh lực, định dùng 《Thiết Huyết Chân Kinh》 tầng thứ nhất để đối đầu với thiên tài luyện thể này.</p>
+                <p>Khổng Vô Song cười ha hả, vẫn giữ nguyên hai tay khoanh trước ngực, nói ra lời giống hệt khi giao chiến với Tào Chấn: &quot;Nhường ngươi ba chiêu!&quot;</p>
+                <p>Lần này, không ai cảm thấy hắn cuồng. Thậm chí còn cảm thấy Khổng Vô Song đang cho Thanh Vân tông đủ mặt mũi, để tránh Giang Phàm vừa ra sân đã bại, khiến Thanh Vân tông mất thể diện.</p>
+                <p>Liễu Vấn Thần không nhịn được nói:&quot;Giang Phàm, bớt nói nhảm, nhanh lên kết thúc!&quot;</p>
+                <p>Mất mặt đã là sự thật rồi. Kết thúc nhanh thì hắn ít bị giày vò tinh thần hơn.</p>
+                <p>Giang Phàm vốn định khuyên Khổng Vô Song đừng tự đại, nhưng thấy Liễu Vấn Thần thúc giục, hắn liền không chút do dự. Hai chân hơi cong xuống, sau đó bắp chân đột ngột phát lực! Sức mạnh thân thể cường đại khiến hắn như một con thỏ, lập tức bắn ra ngoài! Tốc độ nhanh chóng, thậm chí còn bắt kịp thân pháp 《Cô Hồng Lược Ảnh》 tầng thứ nhất.</p>
+                <p>Khuôn mặt vẫn giữ vẻ bình tĩnh cười, Khổng Vô Song đang đứng thản nhiên, hai chân chuyển hướng, nét mặt đột nhiên biến đổi. Là một người luyện thể, chỉ cần đối phương ra tay là có thể cảm nhận được sâu cạn. Giang Phàm chỉ là tùy ý dẫm chân, tốc độ đã đạt đến mức đáng sợ như vậy, khiến hắn giật mình! Hắn lúc này mới nhận ra, Giang Phàm mạnh hơn mình cảm nhận nhiều!</p>
+                <p>Hắn vội vàng bỏ hai tay đang khoanh trước ngực xuống, hai chân hơi lún sâu, làm tư thế chiến đấu. Đáng tiếc là chậm một bước. Giang Phàm đã lao tới như sao băng. Hai quả đấm đánh vào ngực hắn. Khổng Vô Song kinh hãi, không kịp phản công, vội vàng dùng hai tay chắn ngang ngực.</p>
+                <p>Phanh ――</p>
+                <p>Một tiếng vang trầm như hai khối đá lớn va chạm mạnh mẽ, đột nhiên nổ tung. Khổng Vô Song lảo đảo lùi mấy bước. Cự lực khiến hắn không thể giữ vững thân hình, cuối cùng ngã phịch xuống đất. Xương cánh tay như thể đã nứt ra, vừa đau vừa nhức.</p>
+                <p>Các trưởng lão và đệ tử đứng xem đều ngẩn ngơ. Vẻ mặt âm trầm của Liễu Vấn Thần không biết từ lúc nào đã biến thành kinh ngạc. Nét cười tự tin trên mặt Khổng Nguyên Bá cũng ngưng kết lại. Khuôn mặt tựa cười mà không cười của Cung Thải Y cũng đột nhiên bị sự kinh ngạc thay thế. Ngay cả Liễu Khuynh Tiên, người tự cho là rất hiểu Giang Phàm, cũng che miệng son, đôi mắt hạnh trừng lớn!</p>
+                <p>Tào Chấn đăm đăm nhìn, không dám tin. Hứa Di Ninh càng trợn tròn đôi mắt xinh đẹp, lẩm bẩm:&quot;Hắn, hắn dựa vào thể phách, đánh lui thiên kiêu luyện thể số một của Cửu Tông?&quot;</p>
+                <p>Sau đó, trong đám đệ tử vang lên tiếng huyên náo và xúc động như sấm động:&quot;Cái gã vô linh căn này, hình như có chút gì đó!&quot;&quot;Chúng ta Thanh Vân tông vẫn còn hy vọng!&quot;&quot;Giang sư đệ cố gắng lên, vì Thanh Vân tông chúng ta giành lại thể diện!&quot;</p>
+                <p>Tiếng huyên náo lớn khiến Khổng Vô Song đang hơi ngẩn người tỉnh lại. Hắn bật dậy, hai mắt nhìn chằm chằm Giang Phàm, đâu còn vẻ tự tin ban đầu? Về phần ba chiêu đã nhường trước đó, hắn cảm thấy đó như một cái tát thẳng vào mặt mình, khiến hắn nóng rát. Hắn vậy mà lại nhường ba chiêu cho một cao thủ thể thuật không thua kém gì mình?</p>
+                <p>&quot;Tốt! Là ta nhìn nhầm! Ngươi quả nhiên không phải người luyện thể bình thường, mà là cao thủ!&quot;</p>
+                <p>Khổng Vô Song nắm chặt hai quả đấm, khẽ nói:&quot;Vậy ta sẽ nghiêm túc đấu với ngươi một trận!&quot;&quot;Nhường ngươi kiến thức một chút, thế nào mới thật sự là người luyện thể!&quot;</p>
+                <p>Nói xong, trong cơ thể hắn phát ra tiếng răng rắc như rang đậu. Đó là do toàn bộ cơ bắp đã được điều động đến cực hạn. Hắn lúc này, như một cỗ máy giết chóc tràn đầy bạo lực! Cùng với tiếng gầm nhẹ, hắn sải bước nhanh như sấm sét lao về phía Giang Phàm.</p>
+                <p>&quot;Khai sơn phá thạch!&quot;</p>
+                <p>Cặp thiết quyền đầu tiên, hung hăng đánh về phía đầu Giang Phàm. Giang Phàm không hề sợ hãi, cũng điều động toàn bộ sức lực, chọn cách đối mặt trực diện.</p>
+                <p>&quot;Đồng bì thiết cốt!&quot;</p>
+                <p>Phanh ――</p>
+                <p>Một tiếng va chạm thân thể khiến người ta nhức răng, như sấm rền vang vọng quảng trường. Mà kết quả của cuộc va chạm đó, cũng khiến tất cả mọi người có mặt trợn mắt há hốc mồm.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_119">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 119: Tào Chấn không phục</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nhưng Giang Phàm vẫn bất động như núi, dáng người phẳng phiu sừng sững tại chỗ.</p>
+                <p>Khổng Vô Song lại bay ngược ra ngoài, rơi xuống đất nặng nề, đôi cánh tay vặn vẹo bất quy tắc, hiển nhiên đã bị gãy. Kết quả này làm rung động tất cả mọi người, há hốc mồm kinh ngạc.</p>
+                <p>Toàn lực ứng phó Khổng Vô Song, Cửu Tông đệ nhất luyện thể thiên tài Khổng Vô Song, người đã hạ gục Thanh Vân tông đệ nhất người mới Tào Chấn, lại bị Giang Phàm, ngay tại lĩnh vực hắn tự hào nhất, một chiêu đánh bại!</p>
+                <p>Liễu Vấn Thần nhất thời bối rối. Đệ tử mà hắn không coi trọng nhất lại đánh bại đối thủ mạnh hơn cả Tào Chấn? Chợt ông ta lấy lại tinh thần, vui mừng khôn xiết xông lên trước, hai tay nắm chặt vai Giang Phàm, mặt mày hớn hở: “Làm tốt lắm! Làm tốt lắm!”</p>
+                <p>Mặt mũi Thanh Vân tông không những được giữ lại, mà còn được làm rạng rỡ! Ngươi Cự Nhân Tông không phải tự cho mình là tông đứng đầu về luyện thể sao? Xin lỗi, đệ tử mới mạnh nhất của các ngươi còn không bằng một đệ tử không có linh căn của Thanh Vân tông chúng ta!</p>
+                <p>Khổng Nguyên Bá vội vàng tiến lên kiểm tra, phát hiện hai cánh tay Khổng Vô Song bị chấn gãy, vừa sợ vừa giận quát: “Tiểu tử! Ngươi ra tay nặng quá đấy!”</p>
+                <p>Cung Thải Y nhảy tới bên cạnh Giang Phàm, mang theo một nụ cười mỉa mai: “Người ta tế tổ đại điển, các ngươi Cự Nhân Tông nhất định phải tới gây sự.”</p>
+                <p>“Bị người đánh bại, liền thẹn quá hóa giận sao?”</p>
+                <p>Thấy hai vị Tông chủ đều che chở Giang Phàm, Khổng Nguyên Bá cắn môi, oán hận trừng mắt nhìn Giang Phàm: “Hay cho tiểu tử! Ta nhớ kỹ ngươi!”</p>
+                <p>“Hy vọng khi chống cự thú triều, ngươi đừng để đệ tử Cự Nhân Tông chúng ta gặp được!”</p>
+                <p>Nói xong, ôm lấy Khổng Vô Song, sắc mặt khó coi rời đi.</p>
+                <p>Nhìn hắn đi xa, Liễu Vấn Thần và Cung Thải Y đều thầm thở phào nhẹ nhõm.</p>
+                <p>Liễu Vấn Thần chắp tay về phía Cung Thải Y, cảm kích nói: “May mắn có Cung tông chủ che chở. Khổng Nguyên Bá luôn bá đạo bao che khuyết điểm, đệ tử ta làm bị thương ái đồ của hắn, đổi lại ngày xưa, hắn nhất định sẽ không bỏ qua.”</p>
+                <p>Cung Thải Y mang theo vẻ tiếc nuối quay đầu nhìn Giang Phàm, thở dài: “Ta thật sự thích ngươi. Đáng tiếc, ngươi ta vô duyên.” Nàng trong miệng nói, có sự tiếc nuối không thể che giấu.</p>
+                <p>Cùng Liễu Khuynh Tiên đánh cược, cuối cùng nàng đã thua. Theo ước định, sẽ không đề cập chuyện thu Giang Phàm làm đệ tử nữa.</p>
+                <p>Giang Phàm cũng có thiện cảm sâu sắc với vị Tông chủ Linh Thú tông ôn nhu quan tâm này, chắp tay nói: “Những ngày qua, Cung tông chủ đã chiếu cố vãn bối rất nhiều, vãn bối khắc cốt ghi tâm.”</p>
+                <p>Cung Thải Y lúc này mới mỉm cười, lấy ra một bình Thổ Phượng thảo dịch từ bên hông: “Theo ước định, tặng cho ngươi.”</p>
+                <p>Giang Phàm trong lòng vui vẻ: “Tạ ơn Cung tông chủ.” Đây là đồ tốt a! Phối hợp với cực phẩm Trúc Cơ đan, có thể nâng lên một cấp Trúc Cơ cảnh nữa đây.</p>
+                <p>Ngay sau đó, Cung Thải Y lại nhét một thanh hắc kiếm vào ngực hắn. “Thanh kiếm này là quà cá nhân ta tặng ngươi. Giữ lại làm kỷ niệm đi!”</p>
+                <p>Giang Phàm xem xét, càng thêm cao hứng. Thanh kiếm này được rút ra từ Kiếm Trủng của Thiên Kiếm phong, là một thanh trung phẩm pháp khí. Tử kiếm trên lưng hắn tuy uy lực mạnh mẽ, nhưng trừ khi đối mặt với sinh tử đại địch, không nên vận dụng. Bình thường luận bàn, cần một thanh hắc kiếm pháp khí như vậy.</p>
+                <p>“Ân tình của Cung tông chủ, vãn bối không biết nên báo đáp thế nào,” Giang Phàm ngượng ngùng nói.</p>
+                <p>Cung Thải Y che miệng cười khẽ: “Ta muốn ngươi báo đáp cái gì? Ngày khác nếu có cơ hội, tới Linh Thú tông ta ngồi chơi đi, bản tông chủ sẽ đích thân chiêu đãi ngươi.”</p>
+                <p>Giang Phàm dùng sức gật đầu: “Vãn bối nhất định đăng môn bái phỏng.”</p>
+                <p>Như vậy, Cung Thải Y mới gọi phi cầm tới, dẫn các đệ tử nhảy lên. Mang theo sự tiếc nuối không thể nói rõ, bay lên không.</p>
+                <p>Liễu Khuynh Tiên thở phào một hơi, thầm nói: “Nữ nhân này cuối cùng cũng đi.” Sau đó cười đi đến bên cạnh Giang Phàm, nhìn Liễu Vấn Thần đang cười không ngậm miệng được, nghịch ngợm nháy mắt:</p>
+                <p>“Thế nào, cha? Ánh mắt của nữ nhi không tồi chứ?”</p>
+                <p>“Bảo người thu Giang Phàm làm đồ đệ, không làm người thất vọng chứ?”</p>
+                <p>Liễu Vấn Thần vội ho một tiếng, nhìn về phía Giang Phàm, bớt đi phần nào thành kiến, nói: “Giang Phàm có được thiên phú luyện thể mạnh mẽ như vậy, cũng là ngoài ý muốn. Đáng tiếc, tài nguyên luyện thể của Thanh Vân tông chúng ta kém xa Cự Nhân Tông.”</p>
+                <p>Trong lòng hắn thật đáng tiếc. Nếu Giang Phàm có thiên phú về pháp thuật thì tốt. Như thế hắn chắc chắn sẽ trọng điểm bồi dưỡng Giang Phàm. Nhưng không ngờ, luyện thể Thanh Vân tông không am hiểu.</p>
+                <p>Mà Tào Chấn, người đang nhìn chằm chằm từ xa, ghen ghét đến đỏ ngầu cả mắt. Đối thủ mà hắn thua thảm hại, Giang Phàm lại dễ dàng đánh bại. Chẳng phải nói, hắn không bằng Giang Phàm sao?</p>
+                <p>“Có gì đặc biệt hơn người? Chẳng qua là vận khí tốt, thắng Khổng Vô Song một lần mà thôi!” Hắn tức giận căm phẫn nói.</p>
+                <p>Giang Phàm lộ ra tia chán ghét. Người này thật làm người ta khó chịu. Nhịn không được nói: “Ta nhớ không lầm, ngươi và Liễu sư tỷ có một ước định đúng không?”</p>
+                <p>“Nếu như tế tổ đại điển ta thắng ngươi, ngươi sẽ rời khỏi Luân Hồi phong, bái nhập Tông chủ phong môn hạ. Bây giờ, có phải nên thực hiện ước định rồi không?”</p>
+                <p>Nghe vậy, vẻ mặt mọi người đều thay đổi. Tào Chấn là thất phẩm linh căn, là đệ tử mới mà Đại trưởng lão tự hào nhất. Nếu thật sự bị buộc rời khỏi Luân Hồi phong, gia nhập Tông chủ phong, thì Luân Hồi phong sẽ mất mặt bao nhiêu?</p>
+                <p>Phong Cổ Thiền nghe vậy, lập tức bác bỏ: “Mồm còn hôi sữa! Đây chẳng qua là lời nói đùa, sao có thể thật chứ?”</p>
+                <p>“Ngươi đừng muốn châm ngòi quan hệ giữa Luân Hồi phong và Tông chủ phong!”</p>
+                <p>Không chịu nhận nợ? Còn trả đũa, vu oan Giang Phàm dụng tâm hiểm ác?</p>
+                <p>Giang Phàm lạnh nhạt nhìn về phía Tào Chấn: “Trước mặt một vị Tông chủ, chín vị trưởng lão, các đệ tử mà nói đùa sao?”</p>
+                <p>“Tào Chấn, ngươi nếu là thua không nổi, thì đừng chơi! Mất mặt!”</p>
+                <p>Lòng tự trọng của Tào Chấn mạnh mẽ tới mức nào? Nghe vậy giận dữ. Cắn răng, quay người quỳ xuống trước mặt Phong Cổ Thiền, dập đầu: “Đệ tử Tào Chấn bất hiếu, chưa thể thắng được ước định.”</p>
+                <p>“Bây giờ, thực hiện ước định, rời khỏi Luân Hồi phong!”</p>
+                <p>Chợt, hắn đến trước mặt Liễu Vấn Thần, quỳ một chân xuống.</p>
+                <p>Liễu Vấn Thần kích động không thôi, đây là thất phẩm linh căn giống như nữ nhi mình, tiềm lực vô tận! Nhưng câu nói tiếp theo của hắn làm Liễu Vấn Thần khó xử.</p>
+                <p>“Tông chủ, ta nguyện ý gia nhập Tông chủ phong. Nhưng, ta khinh thường cùng Giang Phàm làm bạn! Tông chủ phong có ta không hắn, có hắn không ta!”</p>
+                <p>Nói bóng gió, bức Liễu Vấn Thần đuổi Giang Phàm ra khỏi sư môn. Một kẻ không có linh căn, một kẻ thất phẩm linh căn. Liễu Vấn Thần sẽ chọn ai, còn phải nói sao?</p>
+                <p>Dụng tâm ác độc của Tào Chấn, người qua đường đều biết!</p>
+                <p>Liễu Vấn Thần làm sao có thể khai trừ Giang Phàm, cái tên này cùng nữ nhi mình đã tư định cả đời rồi! Nhưng Tào Chấn, hắn cũng trăm triệu không muốn từ bỏ.</p>
+                <p>“Tào Chấn, Giang Phàm vừa lập công lớn, ta nếu đuổi hắn ra khỏi sư môn, thế nhân sẽ nhìn ta thế nào?”</p>
+                <p>Liễu Vấn Thần từng bước hướng dẫn: “Oan gia nên giải không nên kết. Ngươi cho bản tông chủ một lần mặt mũi, hai ngươi từ đó hóa thù thành bạn, thế nào?”</p>
+                <p>Lời nói đã đến mức này, Tào Chấn còn có thể không nể mặt sao? Hắn chuyển ánh mắt, cười lạnh nói: “Cùng hắn hóa thù thành bạn, cũng không phải không được.”</p>
+                <p>“Nghe nói hắn một cái phế linh căn, lại có được hai cái như hoa như ngọc lão bà. Nếu như chịu đưa ta một cái, ta có thể cân nhắc…”</p>
+                <p>Tiếng nói chưa dứt, một bên Giang Phàm trong mắt lãnh quang chợt lóe lên, không chút do dự một chưởng Kinh Long vỗ tới!</p>
+                <p>Tào Chấn sớm có phòng bị, cười giận dữ nói: “Cẩu vật! Sớm muốn lĩnh giáo! Thật sự cho rằng ta không bằng ngươi sao?”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_120">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 120: Đệ tử bình xét cấp bậc</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nếu so đấu thể phách, Tào Chấn tự nhận không bằng Giang Phàm. Nhưng dùng pháp thuật đối kháng, Giang Phàm không xứng xách giày cho hắn!</p>
+                <p>&quot;Phong vân phủ dày đất!&quot;</p>
+                <p>Hắn quả quyết rút kiếm, đồng thời tung ra chiêu kiếm mạnh nhất. Một người dùng nắm đấm, một người dùng kiếm. Một kẻ là củi mục Vô Linh căn, một kẻ là thiên kiêu tuyệt thế Thất phẩm linh căn. Kết quả tỉ thí như thế, còn phải nói gì nữa sao? Khẳng định lại là Giang Phàm bị một kiếm gọt sạch nắm đấm, máu văng tại chỗ.</p>
+                <p>Một vài nữ đệ tử đã bắt đầu thét lên. Một vài nam đệ tử không đành lòng nhìn thẳng, dời tầm mắt đi. Một vài trưởng lão khẽ lắc đầu.</p>
+                <p>&quot;Rõ ràng có thể lực cường hãn không dùng, hết lần này đến lần khác muốn lấy yếu đấu mạnh, cùng Tào Chấn sở trường va chạm.&quot;</p>
+                <p>&quot;Lần này muốn ăn một bài học đau đớn.&quot;</p>
+                <p>Liễu Vấn Thần thấy vậy, lập tức giận dữ mắng: &quot;Dừng tay!&quot;</p>
+                <p>Hắn ra tay ngăn cản.</p>
+                <p>Phong Cổ Thiền trong lòng cực kỳ vui sướng, tay áo cuốn lên, đánh ra một quyền về phía Liễu Vấn Thần, ngăn cản hắn tách hai người ra. Liễu Vấn Thần cướp đi đệ tử của mình, vậy hắn cũng muốn Liễu Vấn Thần mất đi một người! Như vậy mới công bằng!</p>
+                <p>Trong chớp mắt, Giang Phàm và Tào Chấn đã giao thủ!</p>
+                <p>Làm người khiếp sợ là, Tào Chấn chưa kịp bổ kiếm tới, một chưởng Kinh Long của Giang Phàm đã rơi vào vai hắn.</p>
+                <p>Xoạt xoạt ――</p>
+                <p>Tiếng xương gãy giòn tan, vang vọng toàn trường.</p>
+                <p>Ngay sau đó, Tào Chấn bay ngược ra như tên bắn, đâm mạnh vào tấm bia đá trên quảng trường. Dưới lực đạo khổng lồ, bia đá nứt ra những vết như mạng nhện. Tào Chấn máu chảy không ngừng từ miệng mũi, thậm chí cả trong mắt. Thương thế có chút trầm trọng.</p>
+                <p>Trái lại Giang Phàm, vẫn khí định thần nhàn đứng tại chỗ, thản nhiên nói: &quot;Khinh thường làm bạn với ta?&quot;</p>
+                <p>&quot;Vậy ngươi tốt nhất trước cân nhắc một chút, chính mình có bao nhiêu phân lượng!&quot;</p>
+                <p>Mọi người trợn mắt há hốc mồm. Từng đôi mắt dần dần kinh hãi.</p>
+                <p>&quot;Lý, Lý trưởng lão, đây là ngươi nói tiêu hao tiềm lực?&quot;</p>
+                <p>Một vị trưởng lão, lại lần nữa chất vấn Lý Thanh Phong. Nhiều vị trưởng lão trước đó bỏ qua Giang Phàm, cũng ném ánh mắt bất thiện về phía Lý Thanh Phong.</p>
+                <p>&quot;Nếu như vậy đều xem như tiêu hao tiềm lực, vậy Tào Chấn tính là gì? Những tân thiên kiêu khác đây tính là gì?&quot;</p>
+                <p>Lý Thanh Phong bị hỏi đến mặt đỏ tới mang tai. Cưỡng từ đoạt lý: &quot;Kẻ này, kẻ này tất nhiên là được Cung tông chủ dốc sức chỉ bảo, mới có một chút tiến bộ.&quot;</p>
+                <p>&quot;Về sau không có sự bồi dưỡng như vậy, tuyệt sẽ không còn có gì tiến bộ.&quot;</p>
+                <p>Chỉ có thể nói, thành kiến là một ngọn núi lớn. Hình thành dễ dàng, dịch chuyển khó khăn. Chư vị trưởng lão nghe giải thích như vậy, cảm thấy miễn cưỡng hợp lý. Dù sao Cung Thải Y đối với Giang Phàm, đó là thực sự bảo vệ a. Không chừng đã âm thầm cho hắn bảo bối gì.</p>
+                <p>Liễu Khuynh Tiên che miệng cười trộm. Một đám đồ đần. Hiện tại vẫn chưa hay biết gì. Giang Phàm sở dĩ mạnh, không phải do ai chỉ bảo bên ngoài, mà là bản thân hắn đã rất mạnh.</p>
+                <p>Nhìn Tào Chấn nằm như chó chết, Liễu Khuynh Tiên vỗ vỗ vai Giang Phàm: &quot;Làm tốt lắm!&quot;</p>
+                <p>&quot;Loại mặt hàng mưu đồ chiếm đoạt vợ người khác, thì nên đối đãi như thế!&quot;</p>
+                <p>Liễu Vấn Thần sau một thoáng thất thần, vội vàng tiến đến kiểm tra Tào Chấn: &quot;Ngươi thương thế thế nào?&quot; Đây chính là Thất phẩm linh căn a!</p>
+                <p>Ai ngờ, Tào Chấn lại đẩy Liễu Vấn Thần ra, cắn răng nói: &quot;Không cần Tông chủ quan tâm!&quot;</p>
+                <p>Hắn gắng gượng đứng dậy, nhìn những ánh mắt đang đổ dồn về mình. Nhớ lại cảnh bại trận sỉ nhục, hắn vô cùng xấu hổ! Không khỏi siết chặt hai nắm đấm, phẫn hận trừng mắt về phía Giang Phàm: &quot;Cái nhục ngày hôm nay, ta Tào Chấn ngày khác tất báo!&quot;</p>
+                <p>&quot;Đã Thanh Vân tông của các ngươi dung không được ta, ta đây rời khỏi Thanh Vân tông!&quot;</p>
+                <p>&quot;Hy vọng tương lai, các ngươi sẽ không hối hận!&quot;</p>
+                <p>Hắn gầm lên, khập khiễng bước về phía sơn môn. Liễu Vấn Thần mấy lần giữ lại, đều bị Tào Chấn phất tay áo cự tuyệt. Hết lần này đến lần khác Tào Chấn xuất thân Tào gia, là một thế gia võ đạo không nhỏ, hắn cũng không thể cưỡng ép giam cầm. Cuối cùng chỉ có thể vỗ đùi, trơ mắt nhìn hắn rời đi.</p>
+                <p>Thất phẩm linh căn, đặt ở bất kỳ tông môn nào trong Cửu Tông, đều là bảo bối. Hết lần này đến lần khác Thanh Vân tông lại để hắn đi. Hắn nghiêng đầu sang chỗ khác, có chút oán trách trừng mắt Giang Phàm.</p>
+                <p>Liễu Khuynh Tiên bĩu môi, ngăn trước người Giang Phàm, nói: &quot;Giang Phàm làm sao vậy? Hắn làm sai chuyện gì?&quot;</p>
+                <p>Chư vị trưởng lão cũng thổn thức không thôi. Là người đứng xem, bọn họ hết sức ủng hộ Giang Phàm, cũng không thấy Giang Phàm làm bất kỳ chuyện quá đáng nào. Bị công khai vũ nhục vợ mình, không đánh chết đã là tốt. Nhưng bọn họ cũng hiểu Liễu Vấn Thần. Là Tông chủ một tông, cũng là Chấp Chưởng giả của Phong chủ, đối mặt với Đại trưởng lão đang lấn át, lại tổn thất một vị Thất phẩm linh căn, trong lòng sao có thể không có oán khí?</p>
+                <p>Phong Cổ Thiền mất đi ái đồ, càng tức giận vô cùng. Hắn oán hận trừng mắt về phía Giang Phàm: &quot;Ngươi rất lợi hại đúng không?&quot;</p>
+                <p>&quot;Tốt! Một tháng sau, chính là đệ tử bình xét cấp bậc của tông ta!&quot;</p>
+                <p>&quot;Ta nhìn ngươi có thể cười được bao lâu!&quot;</p>
+                <p>Nói xong phẫn hận bỏ đi.</p>
+                <p>Sắc mặt Liễu Khuynh Tiên biến đổi, nói với Liễu Vấn Thần: &quot;Cha! Lần này chủ trì đệ tử bình xét cấp bậc chính là đệ tử chân truyền của Luân Hồi phong, Đường Thiên Long!&quot;</p>
+                <p>&quot;Hắn là tồn tại Trúc Cơ tám tầng, đến lúc đó đánh giá cấp bậc, khẳng định sẽ mượn cơ hội kiểm tra thực lực để ra tay với Giang Phàm.&quot;</p>
+                <p>Giang Phàm dù lợi hại, đối mặt với Trúc Cơ tám tầng, cũng rất khó chống đỡ a? Từ trước đến nay khi đánh giá cấp bậc, không thiếu trường hợp bị tàn tật, thậm chí bị phá đan điền ngoài ý muốn. Lần này Giang Phàm khiến Đại trưởng lão mất đi một ái đồ như vậy, đối phương sao dễ dàng tha cho hắn?</p>
+                <p>Liễu Vấn Thần hừ mũi một cái: &quot;Đó cũng là hắn tự tìm.&quot;</p>
+                <p>Mang theo tức khí, phẩy tay áo bỏ đi ngay tại chỗ.</p>
+                <p>Liễu Khuynh Tiên lập tức bối rối, có chút hối hận vì đã chấp nhận lời khiêu khích của Tào Chấn. Nếu không phải thế, cũng sẽ không thúc đẩy cục diện hôm nay.</p>
+                <p>&quot;Sư tỷ không cần lo lắng.&quot;</p>
+                <p>Giang Phàm an ủi: &quot;Ta cẩn thận đối phó, vấn đề cũng không lớn.&quot;</p>
+                <p>Này không phải còn một tháng nữa sao? Tu vi của hắn hẳn là còn có thể đột phá. Lại thêm thân pháp của hắn, dù không địch lại Đường Thiên Long, nhưng đối phương muốn ngay trước mặt mọi người làm hại mình, e rằng cũng có khó khăn.</p>
+                <p>Liễu Khuynh Tiên lại hơi cắn môi đỏ, nói: &quot;Ngươi không hiểu đệ tử bình xét cấp bậc có ý nghĩa thế nào.&quot;</p>
+                <p>&quot;Nếu như bị đánh giá cấp thấp, ngươi liền phải rời khỏi Thanh Vân tông, ngoại phóng đến các thành thị do Thanh Vân tông quản hạt, nhậm chức thành chủ.&quot;</p>
+                <p>&quot;Ví dụ như thành chủ Cô Chu thành của các ngươi, Diệp Kế Phong, hắn đã từng là đệ tử bị đánh giá cấp thấp.&quot;</p>
+                <p>Cái gì?</p>
+                <p>Giang Phàm lúc này mới giật mình. Lần bình xét cấp bậc sắp tới, quyền lực nằm trong tay Luân Hồi phong. Nếu như bọn họ lấy lý do biểu hiện không tốt, cưỡng ép định một cấp thấp, chẳng phải mình sẽ bị ép rời đi sao? Xa rời Thanh Vân tông, không nói đến các loại tài nguyên, riêng tài liệu Trúc Cơ đan cũng không có chỗ kiếm.</p>
+                <p>Như thế nói đến, mình sau một tháng khi Đường Thiên Long kiểm tra, cần phải thể hiện ra thực lực khiến bọn họ không bắt bẻ được. Để cho bọn họ không còn mặt mũi đánh giá cấp thấp.</p>
+                <p>Nói cách khác, thực lực của mình, ít nhất phải ngang bằng với Đường Thiên Long! Đối phương là Trúc Cơ tám tầng a! Mình hiện tại mới Trúc Cơ bốn tầng. Hắn nhất định phải có đột phá lớn cả về tu vi lẫn công pháp mới được!</p>
+                <p>Nâng lên công pháp, Giang Phàm tự nhiên nghĩ đến phần thưởng hạng nhất của đại điển tế tổ lần này, nói: &quot;Sư tỷ, phần thưởng của ta còn giữ lời không?&quot;</p>
+                <p>Liễu Vấn Thần đã đi rồi, căn bản không có tuyên bố kết quả.</p>
+                <p>Liễu Khuynh Tiên cười khổ nói: &quot;Coi như ngươi đạt được một bản Tiên thư thì thế nào?&quot;</p>
+                <p>&quot;Một tháng thời gian quá ngắn, căn bản luyện không ra gì.&quot;</p>
+                <p>Dưới cái nhìn của nàng, đây bất quá là nước đến chân mới nhảy tạm thời thôi. Một bản công pháp từ lĩnh hội đến tu luyện thành thục, đều cần hao phí lượng lớn thời gian và tinh lực.</p>
+                <p>Điều khiến nàng ngạc nhiên là, Giang Phàm lại thầm nghĩ:</p>
+                <p>&quot;Tàng Thư các của Thanh Vân tông, có công pháp lợi hại như vậy sao?&quot;</p>
+                <p>&quot;Luyện đến hỏa hầu, lại cần một tháng?&quot;.</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_23.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_23.html" class="page-btn">23</a>
+            <a href="page_24.html" class="page-btn current">24</a>
+            <a href="page_25.html" class="page-btn">25</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_25.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

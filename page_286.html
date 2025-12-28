@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 286">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 286</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_285.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_287.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_1426">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1426: Phản tổ</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Rắn Đuôi Đại Tôn nhíu mày. Đến mất trí nhớ rồi mà còn biết đòi hỏi lợi lộc ư?Trước khi mất trí nhớ, tên tiểu tử này ranh ma đến mức nào chứ?</p>
+                <p>Suy nghĩ một lát, để tránh rắc rối, hắn vẫn mở miệng, lộ ra hai chiếc răng rắn nhọn hoắt. Lão dùng bình ngọc ấn vào một trong hai chiếc răng, một giọt chất lỏng tím sền sệt nhỏ vào bình ngọc.</p>
+                <p>“Đây là nọc độc bản mệnh của bổn tọa. Dù chỉ một giọt, nó cũng có thể hạ độc và giết chết mọi cường giả dưới cảnh giới Thiên Nhân Ngũ Suy.”“Cầm lấy đi!”</p>
+                <p>Giang Phàm vội vàng nhận lấy, trái tim đập thình thịch. Hắn chỉ muốn kiếm chác chút lợi lộc bừa bãi thôi, nào ngờ đối phương lại ban cho thứ bảo bối quý giá đến vậy!Dùng độc, hắn chính là cao thủ!</p>
+                <p>Yêu Quân đứng một bên nhìn với ánh mắt nóng rực. Đây chính là nọc độc bản mệnh của Đại Tôn, có thể nói là đại sát khí! Hắn chưa từng nhận được phần thưởng như vậy, mà Đại Tôn lại ban cho Vương Xung Tiêu? Điều này khiến Yêu Quân vừa ghen tị, vừa cảm thấy khó hiểu.</p>
+                <p>Đúng lúc này, truyền âm của Đại Tôn vang lên bên tai hắn.“Ngươi đã kịp thời phát hiện ra người này, công lao không nhỏ. Giọt độc dịch kia chính là ban thưởng cho ngươi.”</p>
+                <p>Yêu Quân lúc này mới bừng tỉnh. Độc dịch vốn dĩ là dành cho hắn, chỉ là hắn cần phải tìm cách lấy được nó từ tay Giang Phàm mà thôi.Trong mắt hắn xẹt qua một tia lạnh lẽo. Nếu đã vậy, hắn phải giám sát Vương Xung Tiêu thật kỹ trên đường đi.</p>
+                <p>“Vương Xung Tiêu, đi theo ta.”Giang Phàm đã có được lợi lộc, tự nhiên không còn do dự, lập tức theo Yêu Quân rời khỏi động phủ.</p>
+                <p>Trên đường đi.Giang Phàm ánh mắt lóe lên, thăm dò hỏi: “Tiền bối, ta quên mất phải xưng hô với Đại Nhân và ngài như thế nào.”</p>
+                <p>Yêu Quân liếc nhìn Thiên Lôi Thạch trên ngực Giang Phàm, mỉm cười ôn hòa:“Đại Tôn của chúng ta là chủ nhân của Linh Xà Sơn, Hắc Long Đại Tôn.”“Còn ta, ngươi có thể gọi ta là Hồn Ảnh Tôn Giả.”</p>
+                <p>Giang Phàm khẽ gật đầu, chắp tay nói: “Hồn Ảnh tiền bối, tại sao mọi người đều đến Giới Hư Không, mà Đại Nhân lại không đi ạ?”Không có lý gì Kim Lân Đại Tôn và các cường giả từ các châu đều đang liều chết chiến đấu ở Giới Hư Không. Ngay cả Đại Tửu Tế cũng đóng quân ở đó. Thế mà vị Hắc Long Đại Tôn này lại an nhàn tĩnh dưỡng trong động phủ. Cường giả các châu sao có thể cam lòng?</p>
+                <p>Hồn Ảnh Tôn Giả nghĩ một lát rồi nói: “Hắc Long Đại Tôn của chúng ta đang trong quá trình hóa rồng, không tiện xuất thủ.”</p>
+                <p>Hóa rồng? Giang Phàm hoàn toàn mơ hồ.</p>
+                <p>Hồn Ảnh Tôn Giả kiên nhẫn giải thích: “Các võ giả thuộc các lưu phái khác nhau có cách bước vào cảnh giới Đại Hiền khác nhau. Huống chi là giữa các chủng tộc? Nhân tộc các ngươi chú trọng công đức nhập hiền, còn yêu tộc chúng ta thì chú trọng phản tổ.”</p>
+                <p>Giang Phàm suy nghĩ. Hắn nhớ lại lời Thiên Thính Bồ Tát nói, Phật tu bước vào cảnh giới Phật Tôn không phải là lập công đức, mà là tạo hóa chúng sinh. Ví dụ như &quot;Trấn Ngục Tức Hồn Kinh&quot; giúp bình ổn oán linh, đó chính là một loại tạo hóa chúng sinh. Tuy nhiên, theo Giang Phàm, đây vẫn là một loại công đức. Bởi vì, sau khi hắn tự mình thi triển &quot;Trấn Ngục Tức Hồn Kinh&quot;, công đức đã giáng xuống từ trời. Chỉ là, lập công đức là nhận được tín ngưỡng của người sống, còn &quot;Trấn Ngục Tức Hồn Kinh&quot; là nhận được tín ngưỡng của vong linh. Hai con đường tuy khác biệt nhưng cùng về một đích.</p>
+                <p>Nhưng việc yêu tộc nhập Đại Hiền cảnh, thì thật sự là một con đường hoàn toàn khác biệt. Lại là phản tổ. Cái gọi là phản tổ, hẳn là không ngừng nâng cao độ thuần khiết huyết mạch trong cơ thể, cuối cùng đạt đến cấp độ chân linh của tổ tiên. Cứ như vậy, sẽ phản tổ thành công, hóa thân thành một tôn chân linh!</p>
+                <p>Nửa thân dưới của Hắc Long Đại Tôn đã nghịch chuyển thành đuôi rắn, rất có thể là đã đạt đến thời khắc mấu chốt của quá trình phản tổ. Chỉ cần nửa thân trên cũng phản tổ, là có thể trở thành một chân linh cảnh giới Đại Hiền!</p>
+                <p>Giang Phàm từ từ gật đầu. Chuyến đi đến Vạn Yêu Đại Châu lần này quả là mở mang kiến thức.</p>
+                <p>Hồn Ảnh Tôn Giả nói: “Đến Giới Hư Không, hãy ra sức tiêu diệt kẻ địch. Sau khi chúng yêu ở Linh Xà Sơn bàn bạc, đã quyết định lấy Trấn Sơn Chi Bảo của Linh Xà Sơn là Vạn Linh Tổ Huyết ra làm phần thưởng. Ai lập công nhiều nhất, sẽ có cơ hội nhận được Vạn Linh Tổ Huyết.”</p>
+                <p>“Huyết này có thể tăng cường sức mạnh huyết mạch của tất cả yêu tộc. Nếu Đại Nhân của chúng ta có được đủ Vạn Linh Tổ Huyết, sẽ có cơ hội hoàn thành quá trình phản tổ cuối cùng, triệt để hóa rồng. Khi đó, ngươi và ta đều sẽ thăng tiến rực rỡ.”</p>
+                <p>Hắn vẽ ra một viễn cảnh lớn cho Giang Phàm, nhằm đảm bảo Giang Phàm sẽ hăng hái lao vào đám sinh linh địa ngục, rồi “chết một cách hợp lý” trong đó.</p>
+                <p>Giang Phàm ánh mắt lộ vẻ kinh ngạc: Tăng cường sức mạnh huyết mạch của tất cả yêu tộc sao?Vậy huyết mạch Thiên Hồ của Vân Thường tiên tử, huyết mạch Đằng Xà trong cơ thể Lưu Ly, huyết mạch không rõ của Băng Hỏa Yêu Quân, cùng với huyết mạch của Tiểu Kỳ Lân, Phản Cốt Tử, Tiểu Hổ, Bích Lạc Hoàng Tuyền và Nô Tâm Yêu Hoàng, Sơ Nguyệt tiên tử, Tây Hải Thái Tử… đều có thể được tăng cường ư?</p>
+                <p>Vạn Linh Tổ Huyết này, đúng là một bảo bối tốt! Hắn lập tức tràn đầy khí thế, nói: “Tiền bối cứ yên tâm, thuộc hạ nhất định sẽ cống hiến hết mình, vì Đại Nhân mà chết không hối tiếc!”</p>
+                <p>Hồn Ảnh Tôn Giả xoa xoa mũi. Cái bánh hắn vẽ ra ngon đến vậy ư?</p>
+                <p>Không lâu sau.Tại trung tâm Linh Xà Sơn Mạch. Một khe nứt khổng lồ, gần như chia đôi cả dãy núi. Âm khí ngút trời từ trong núi phun trào ra, bao phủ một vùng đất trời như đêm tối.</p>
+                <p>Vừa bước vào, âm khí đã theo lỗ chân lông chui vào đan điền, cố gắng bao bọc Nguyên Anh, ngăn cản sức mạnh lưu chuyển. Giang Phàm vận chuyển lực lượng Nguyên Anh, mới miễn cưỡng đẩy lùi chúng. Hắn thầm kinh ngạc, âm khí nơi đây dày đặc đến mức còn mạnh hơn cả thế giới ngầm của Thiên Cơ Các. Người không phải cảnh giới Nguyên Anh, khó lòng ở lâu.</p>
+                <p>Đúng lúc này.Ba sinh linh khổng lồ, đen như mực, lao ra từ khe nứt. Trong đó hai con đạt cấp độ Cửu Khiếu Nguyên Anh. Con ở giữa, lại là cảnh giới Hóa Thần!</p>
+                <p>Đừng nói Giang Phàm, ngay cả Hồn Ảnh Tôn Giả cũng giật mình, kinh ngạc nói: “Sinh linh địa ngục cảnh giới Hóa Thần ư? Sao có thể?”Mười ngày trước, Kim Lân Đại Tôn và Băng Tâm Đại Tôn liên thủ cũng không thể ngăn cản được đám sinh linh địa ngục hùng hậu tràn ra. Lần đó đã gây ra thương vong cực lớn. Linh Xà Sơn phải trả giá bằng thương vong thảm trọng, mới tiêu diệt toàn bộ số sinh linh địa ngục tràn ra. Nhưng lần đó, không hề có sinh linh địa ngục cảnh giới Hóa Thần nào thoát ra. Hiện tại lại có một con cảnh giới Hóa Thần xuất hiện! Chẳng lẽ hiểm nguy ở Giới Hư Không, cùng với sự chi viện của các cường giả các châu, lại càng trở nên nghiêm trọng hơn?</p>
+                <p>Hồn Ảnh Tôn Giả theo bản năng muốn rút lui, nhưng nghĩ lại, nói: “Vương Xung Tiêu, ta sẽ chịu trách nhiệm ngăn chặn con sinh linh địa ngục cảnh giới Hóa Thần này. Hai con Cửu Khiếu Nguyên Anh kia giao cho ngươi, ngàn vạn lần đừng để Đại Nhân thất vọng.”</p>
+                <p>Giang Phàm thầm cười lạnh. Một võ giả nhân tộc tu vi Bát Khiếu Nguyên Anh, dù đối mặt với một sinh linh địa ngục Cửu Khiếu Nguyên Anh, cũng là chuyện thập tử nhất sinh. Đối mặt với hai con, thì càng không có đường sống. Hồn Ảnh Tôn Giả muốn mượn tay sinh linh địa ngục để hại chết hắn! Chắc hẳn, là định đợi hắn chết rồi, đoạt lấy độc dịch trong Thiên Lôi Thạch của hắn đúng không?</p>
+                <p>Hắn giả vờ lộ vẻ hoảng loạn, nói: “Nhưng ta đã quên công pháp rồi! Chỉ còn lại độc dịch có thể giúp ta sống sót trong gang tấc.”</p>
+                <p>Hồn Ảnh Tôn Giả giả vờ không nghe thấy, xông lên chặn đứng con sinh linh địa ngục hình hổ cảnh giới Hóa Thần, và cùng nó triền đấu đến một nơi khác, không cho Giang Phàm cơ hội cầu cứu.</p>
+                <p>Giang Phàm cầu còn chẳng được ấy chứ. Vừa vặn có thể nhân cơ hội này thoát khỏi Hồn Ảnh Tôn Giả.</p>
+                <p>Một sinh linh địa ngục hung tợn, dài nghìn trượng, trông giống con giun đất, gào thét xông về phía Giang Phàm. Giang Phàm không hề nghĩ ngợi, trực tiếp phát ra một đạo Kinh Hồn Thích.</p>
+                <p>Trong chớp mắt, linh hồn của sinh linh địa ngục bị xuyên thủng, đau đớn lăn lộn tại chỗ.“Đi!” Giang Phàm hai ngón tay hợp thành kiếm, Tử Điện xuất vỏ. Điện quang màu tím tụ lại quanh thân kiếm, hóa thành kiếm ảnh chói mắt chém bay đầu nó.</p>
+                <p>Con sinh linh địa ngục còn lại, thấy Giang Phàm hung mãnh như vậy, sợ hãi vội vàng bỏ chạy.“Vân Trung Ảnh!”</p>
+                <p>Giang Phàm lập tức đuổi theo, lướt đến lưng nó. Trong lòng bàn tay ngưng tụ một điểm Lôi Đình Bản Nguyên, vỗ vào người nó.“Phụt” một tiếng. Sinh linh địa ngục lập tức bị Lôi Đình Bản Nguyên làm nổ tung đầu thành một màn sương máu.Ầm ầm——Cơ thể khổng lồ của sinh linh địa ngục đổ sập xuống.</p>
+                <p>Giang Phàm vô cảm thu hồi Tử Điện. Đang định lướt vào trong khe nứt.Một giọng nói trong trẻo, mang chút kinh ngạc, truyền vào tai hắn.“Thủ đoạn bá đạo thật.”</p>
+                <p>Giang Phàm giật mình trong lòng, vậy mà có người ở gần đây mà hắn hoàn toàn không phát hiện ra sao?Quay đầu nhìn lại, không biết từ lúc nào, bên cạnh hắn đã đứng một giai nhân tuyệt thế. Tà váy thủy mặc bay phất phơ, mái tóc đen như thác nước, khuôn mặt trắng nõn được khắc họa những đường nét ngũ quan đẹp đến không gì sánh bằng.</p>
+                <p>Mặc dù những nữ tử bên cạnh hắn đều có thể gọi là giai nhân, nhưng nữ tử trước mắt này vẫn mang đến cho hắn một cảm giác kinh ngạc đến tim đập thình thịch.</p>
+                <p>Điều khiến Giang Phàm chấn động nhất là, sau đầu nữ tử này có một vòng thần quang. Trên đó có tới năm đạo ấn ký ngọn lửa!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1427">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1427: Hoa khai phú quý</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Đại tôn của cảnh giới Thiên Nhân Ngũ Suy?Mới hai mươi tuổi?Nàng chỉ lớn hơn Giang Phàm một, hai tuổi!</p>
+                <p>Giang Phàm vô cùng kinh ngạc, rốt cuộc nàng tu luyện thế nào? Từng gặp Cung chủ Quần Tinh Sơn hơn ba mươi tuổi, Giang Phàm đã thấy nàng nghịch thiên lắm rồi. Người thường muốn đột phá Hóa Thần cảnh đều cần trải qua tuế nguyệt cực kỳ dài đằng đẵng. Các Hóa Thần Tôn giả của Thái Thương đại châu, trừ Chân Ngôn Tôn giả hai mươi lăm, hai mươi sáu tuổi, có ai mà không phải trung niên trở lên? Nữ tử trước mắt đây, ở độ tuổi hai mươi, đã tu luyện đến cấp độ Nhân Gian Chí Tôn. Giờ phút này, hắn thực sự cảm nhận được thế nào là &quot;thiên ngoại hữu thiên, nhân ngoại hữu nhân&quot;.</p>
+                <p>Hắn lập tức chắp tay nói: &quot;Vãn bối Vương Xung Tiêu, bái kiến tiền bối.&quot;&quot;Vương Xung Tiêu?&quot; Nữ tử khẽ lầm bầm: &quot;Gần đây có vẻ nhiều người tên này thật.&quot;&quot;Ngươi ở đây đợi lát.&quot; Nàng lập tức biến mất tại chỗ.Chốc lát sau, chân trời truyền đến một tiếng kêu thảm thiết. Sau đó, nàng lại trở về, bên cạnh còn có Hồn Ảnh Tôn giả với vẻ mặt đầy kính sợ.</p>
+                <p>Nữ tử nói: &quot;Hai người các ngươi thực lực không tệ, đặc biệt là ngươi, Vương Xung Tiêu, có tiềm năng không nhỏ, chết ở đây thì đáng tiếc.&quot;&quot;Đi theo ta, đừng đi xa.&quot;Có một Đại tôn bảo vệ, Giang Phàm nào dám từ chối? Hắn vội vàng cảm tạ: &quot;Đa tạ tiền bối, không biết tiền bối xưng hô thế nào?&quot;&quot;Ta là Băng Tâm Đại tôn của Thánh Linh Châu.&quot; Nữ tử với tiên y phấp phới, không quay đầu lại đáp.Giang Phàm ghi nhớ cái tên này, vội vàng đi theo.</p>
+                <p>Hồn Ảnh Tôn giả liếc nhìn hai thi thể sinh linh Địa ngục trên mặt đất, khẽ nhíu mày: &quot;Thằng nhóc này vận khí tốt quá nhỉ? Cứ tưởng nó đã chết rồi, không ngờ lại được Băng Tâm Đại tôn cứu mạng.&quot; Hắn nhìn chằm chằm bóng lưng Giang Phàm, mắt lộ vẻ lạnh lẽo: &quot;Không vội, có vô số cơ hội cho ngươi chết ở đây.&quot;</p>
+                <p>Dưới sự dẫn dắt của Băng Tâm Đại tôn, Giang Phàm bước vào khe nứt. Khe nứt này thông thẳng xuống lòng đất sâu thẳm. Âm khí cuồn cuộn trào ra ngoài như núi lửa phun trào. Từng con sinh linh Địa ngục thỉnh thoảng lao ra, đều bị Băng Tâm Đại tôn tùy tay chém giết.</p>
+                <p>Giang Phàm hỏi: &quot;Băng Tâm tiền bối, hiện tại tình hình thế giới kẹp giữa ra sao ạ?&quot;Băng Tâm Đại tôn tuy là Đại tôn của cảnh giới Thiên Nhân Ngũ Suy, nhưng hoàn toàn không có chút kiêu ngạo nào. Nàng kiên nhẫn đáp: &quot;Mười ngày trước, Đại Tế Tự phong tỏa lối vào thế giới kẹp giữa thất bại, một lượng lớn sinh linh Địa ngục đã tràn ra ngoài. Mấy ngày nay, cường giả các châu liên tục đến chi viện, đẩy lùi sinh linh Địa ngục về phía lối ra. Chúng đang phản công dữ dội. Sinh linh Địa ngục Hóa Thần cảnh vừa rồi, chính là kẻ thoát lưới trốn khỏi vòng vây.&quot;</p>
+                <p>Đồng tử Giang Phàm co rụt lại. Trong lòng hắn, Đại Tế Tự các châu đều là những tồn tại chí cao thần bí khó lường, có thể so tài cao thấp với Hiền giả. Nàng ấy vậy mà lại phong tỏa thất bại. Chẳng lẽ trong thế giới kẹp giữa còn có tồn tại mà Đại Tế Tự cũng không đối phó nổi?</p>
+                <p>Băng Tâm Đại tôn lại nói: &quot;Hiện tại, cường giả Trung Thổ chúng ta chia thành ba đường: Đông, Nam, Tây để đẩy lùi sinh linh Địa ngục. Thiếu Đế phụ trách đường Nam, ta dẫn dắt một phần cường giả chủ đạo đường Đông, Kim Lân Đại tôn dẫn dắt một phần cường giả chủ đạo đường Tây.&quot;Giang Phàm kinh ngạc hỏi: &quot;Thiếu Đế chỉ có một người thôi sao?&quot;Băng Tâm Đại tôn khẽ gật đầu: &quot;Hắn không cần người khác. Một mình hắn phụ trách đường Nam, hơn nữa, còn là tuyến đường tiến công nhanh nhất trong ba đường.&quot;</p>
+                <p>Giang Phàm không khỏi kinh ngạc! Một mình Thiếu Đế đã khiến đại quân sinh linh Địa ngục ở một phương liên tục bại lui. Tốc độ còn nhanh hơn cả liên quân Trung Thổ ở hai đường Đông Tây! Cùng là cảnh giới Thiên Nhân Ngũ Suy, Thiếu Đế so với Băng Tâm Đại tôn và Kim Lân Đại tôn chẳng phải mạnh hơn quá nhiều sao?</p>
+                <p>Băng Tâm Đại tôn bình tĩnh nói: &quot;Thiếu Đế là Thiên Nhân Ngũ Suy mạnh nhất Trung Thổ. Hơn nữa, hắn tu luyện lại là Lôi Đạo khắc chế sinh linh Địa ngục, đương nhiên bễ nghễ thiên hạ. Ta và Kim Lân Đại tôn kém hơn cũng là chuyện bình thường.&quot;Thiên Nhân Ngũ Suy mạnh nhất? Lòng Giang Phàm trùng xuống, Thiếu Đế mạnh đến thế sao?</p>
+                <p>&quot;Đường Đông chúng ta cũng không thể quá tụt hậu, nếu không, Thiếu Đế đơn độc đột phá, dễ bị bao vây.&quot;Băng Tâm Đại tôn vừa nói vừa đưa hai người đến sâu dưới lòng đất. Họ đáp xuống một vách đá đổ nát. Phóng tầm mắt ra xa, một vùng đất đen rộng lớn vô tận hiện ra trước mắt. Trên mặt đất, sinh linh Địa ngục đông như thủy triều, nhìn không thấy điểm cuối. Chúng không ngừng tuôn ra từ sâu thẳm. Dưới vách đá, hàng trăm cường giả Yêu tộc và Nhân tộc tụ tập thành một phòng tuyến, tử thủ ngăn chặn sự tấn công của sinh linh Địa ngục.</p>
+                <p>Cảnh tượng này, sao mà giống với Giới Sơn năm xưa đến thế? Khác biệt ở chỗ, sinh linh Địa ngục trước mắt không chỉ nhiều vô số kể, mà còn hung tàn hơn Yêu tộc rất nhiều. Trong lúc hắn đang cảm thán, một tiên tử Nguyên Anh cảnh bị một luồng sáng đỏ xuyên thủng lồng ngực, sau đó bị lũ sinh linh Địa ngục xông lên xâu xé, đến xương cốt cũng chẳng còn. Những cảnh tượng tương tự như vậy liên tục diễn ra.</p>
+                <p>Giang Phàm nắm chặt tay. Đây đều là lực lượng nòng cốt để chống lại Cự Nhân viễn cổ sau này! Vậy mà tất cả đều chết thảm ở nơi đây! Rốt cuộc, đám sinh linh Địa ngục này là ai đã thả ra?</p>
+                <p>Đúng lúc này. Sâu trong làn sóng sinh linh Địa ngục, một luồng khí tức hủy diệt lại xuất hiện. Băng Tâm Đại tôn mắt khẽ nheo lại, nói: &quot;Lại có sinh linh Địa ngục Hóa Thần cảnh đến.&quot;&quot;Hai ngươi cũng tham gia phòng tuyến đi, lượng sức mà làm, đừng miễn cưỡng.&quot;Dứt lời, nàng lập tức bay đi. Giang Phàm nóng lòng bay xuống.</p>
+                <p>Hồn Ảnh Tôn giả khẽ thở phào nhẹ nhõm, kẻ cản trở cuối cùng cũng đi rồi. Tiếp theo, cứ chờ Giang Phàm chết trong miệng sinh linh Địa ngục thôi! Hắn chỉ lên trời, nói: &quot;Vương Xung Tiêu, đừng sợ, tận lực chém giết sinh linh Địa ngục, mới có thể nhận được đủ phần thưởng.&quot; Giang Phàm ngẩng đầu nhìn, trên bầu trời lơ lửng những viên thủy tinh dày đặc, ghi lại toàn bộ tình hình chiến trường. Sau đó sẽ thông qua hình ảnh thủy tinh để đánh giá công lao. Nhưng giờ đây, Giang Phàm nào còn tâm trí để bận tâm công lao hay không công lao? Hắn không để ý đến Hồn Ảnh Tôn giả, trực tiếp lao xuống.</p>
+                <p>Một nơi trên phòng tuyến. Khương Vô Nhai tay ôm kiếm hạp, ngón tay liên tục búng ra, từng đạo kiếm quang cửu sắc bay vụt. Nơi kiếm quang đi qua, sinh linh Địa ngục đều bị cắt thành những khối có kích thước như nhau. Đằng sau hắn là các cường giả Nguyên Anh của Tam Thần Tông và Thất Đại Giáo thuộc Thái Thương đại châu. Tất cả đều là Nguyên Anh Bát Khiếu. Thái Thương đại châu không thể sánh với các châu khác có cường giả như mây. Mỗi một Nguyên Anh Bát Khiếu đối với Thái Thương đại châu đều là chiến lực cực kỳ quý giá, mất đi một người cũng khiến người ta tiếc nuối vô cùng. Thái Thương đại châu đã phái tới mười vị Nguyên Anh Bát Khiếu, có thể thấy được mức độ chi viện lớn đến mức nào.</p>
+                <p>Song, dù có Khương Vô Nhai, vị Hóa Thần Tôn giả này ở phía trước, tình cảnh của họ vẫn không hề tốt đẹp. Tống Linh Ngọc sắc mặt hơi trắng bệch, xuất hiện dấu hiệu suy kiệt sức lực.&quot;Chuyện gì thế này? Tại sao sinh linh Địa ngục lại ngày càng nhiều?&quot;Theo thời gian chiến sự kéo dài, phòng tuyến của họ không những không tiến lên, mà ngược lại càng lùi về phía sau.Khương Vô Nhai bình tĩnh nói: &quot;Là Thiếu Đế. Hắn một đường tiến về phía Bắc, khiến sinh linh Địa ngục ở phương đó tan tác sang hai bên Đông Tây. Vì vậy, sinh linh Địa ngục mà chúng ta phải đối mặt ngày càng nhiều.&quot;</p>
+                <p>Các cường giả Nguyên Anh của Thái Thương đại châu sắc mặt trầm xuống. Đội ngũ của họ vốn dĩ đã ở ngay trung tâm phòng tuyến, đối mặt với lượng sinh linh Địa ngục cuồn cuộn nhất. Giờ đây áp lực tăng mạnh, tình thế của họ vô cùng nguy hiểm. Sinh linh Địa ngục có linh trí cao, nhận ra cơ hội liền càng liều mạng xung kích. Nghiêm trọng hơn nữa, vài con sinh linh Địa ngục Nguyên Anh Cửu Khiếu, lẫn vào trong thú triều lặng lẽ tiếp cận tiền tuyến. Chờ Khương Vô Nhai ra một đòn, chúng liền nắm lấy thời cơ, đột nhiên nhảy ra tấn công, mỗi con phun ra một luồng sáng đỏ nguy hiểm về phía các cường giả khác nhau. Chúng thực sự định lấy Thái Thương đại châu làm điểm phá hủy, xé toạc một lỗ hổng trên phòng tuyến.</p>
+                <p>Khương Vô Nhai sắc mặt biến đổi, nói: &quot;Cẩn thận!&quot; Hắn liên tục vung tay áo, làm tan rã mấy luồng sáng đỏ. Nhưng vẫn có một luồng lọt qua, bắn về phía lão ẩu Nguyên Anh Bát Khiếu của Đại Âm Tông. Tia sáng quá nhanh, căn bản không có thời gian phản ứng. Khoảnh khắc tiếp theo, nàng ta đã bị tia sáng đỏ xuyên thủng lồng ngực. Tống Linh Ngọc bên cạnh sắc mặt đại biến, vội vàng đỡ lấy nàng, kinh ngạc kêu lên: &quot;Vân Tầm tiền bối!&quot;</p>
+                <p>Nhưng, cú đỡ này của nàng lại vừa đúng ý của sinh linh Địa ngục. Một con sinh linh Địa ngục Nguyên Anh Cửu Khiếu đang ẩn nấp, đột nhiên lao tới phun ra luồng sáng đỏ về phía Tống Linh Ngọc. Trong khoảnh khắc, Tống Linh Ngọc đã bị luồng sáng bao phủ. Lòng nàng thắt lại. Một luồng cảm giác nóng bỏng chết người ập tới.</p>
+                <p>Nhưng, ngay khi nàng sắp rơi vào kết cục như Vân Tầm Thượng nhân. Một đạo Lôi Kiếm vô song từ phía sau nàng hung hăng chém tới, chém nát luồng sáng đỏ cận kề!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1428">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1428: Bàn Kinh Hồn Linh</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Lôi Kiếm chém tan luồng sáng đỏ, thế kiếm không giảm, mạnh mẽ bổ vào đám sinh linh địa ngục.</p>
+                <p>Dưới sức mạnh lôi đình, các sinh linh địa ngục hoàn toàn không có sức chống cự. Toàn thân âm khí tiêu tán, thân thể chúng nổ tung trong lôi đình.</p>
+                <p>Trong khoảnh khắc, cả một mảng lớn sinh linh địa ngục bị quét sạch.</p>
+                <p>Con sinh linh địa ngục cảnh giới Cửu Khiếu Nguyên Anh tập kích kia cũng bị Lôi Kiếm đánh cho cháy xém, thảm thiết kêu gào lùi về phía sau.</p>
+                <p>Mọi người kinh ngạc nhìn về phía sau.</p>
+                <p>&quot;Đây chẳng phải Bất Diệt Nhận của Vạn Kiếp Thánh Điện sao?&quot;</p>
+                <p>&quot;Chẳng lẽ có người của Vạn Kiếp Thánh Điện đến chi viện?&quot;</p>
+                <p>Tống Linh Ngọc cũng mừng rỡ quay đầu nhìn lại, nhưng đập vào mắt lại là một gương mặt trung niên xa lạ.</p>
+                <p>&quot;Ngươi là ai?&quot; Tống Linh Ngọc ngạc nhiên hỏi.</p>
+                <p>Đạo Bất Diệt Nhận này là tu luyện đến cấp độ viên mãn, trong Vạn Kiếp Thánh Điện, người tu luyện đến bước này cũng không nhiều.</p>
+                <p>Giang Phàm ngưng giọng nói: &quot;Đừng phân tâm, sinh linh địa ngục vẫn đang tăng lên!&quot;</p>
+                <p>Chỉ trong khoảnh khắc ngắn ngủi ấy, khoảng trống mà Bất Diệt Nhận tạo ra lập tức bị các sinh linh địa ngục khác lấp đầy.</p>
+                <p>Hắn quả quyết vung ra Thính Tuyết Kiếm. Một kiếm chém ra, hàn khí kinh người đóng băng một mảng sinh linh địa ngục, ngay sau đó kiếm khí tung hoành, chém nát chúng thành từng mảnh băng.</p>
+                <p>Sau đó Tử Điện lại xuất ra, mang theo luồng điện tím có thể chém đứt vạn vật, lại quét sạch một vùng.</p>
+                <p>Cuối cùng, Thanh Sương Kiếm xuất vỏ, vung ra những tàn ảnh xanh biếc dày đặc tựa rễ cây, xuyên thủng từng con Địa Ngục Hoang Thú.</p>
+                <p>Ba kiếm cùng xuất ra, vậy mà đã dọn sạch phạm vi ngàn trượng trước mặt Thái Thương Đại Châu.</p>
+                <p>Cảnh tượng này khiến mọi người ở Thái Thương Đại Châu đều ngây người.</p>
+                <p>Tống Linh Ngọc vẻ mặt hoài nghi nhân sinh: &quot;Hắn là Bát Khiếu Nguyên Anh, vậy ta là gì?&quot;</p>
+                <p>Các vị Bát Khiếu Nguyên Anh đang ngồi đó cũng đều lộ vẻ mơ hồ.</p>
+                <p>Cùng là Bát Khiếu Nguyên Anh, nhưng sao chênh lệch lại lớn hơn cả người với chó vậy? Ước chừng, cả nhà họ gộp lại cũng không đủ sức chống đỡ ba thanh kiếm này.</p>
+                <p>Khương Vô Nhai cũng không kìm được mà kinh ngạc lên tiếng: &quot;Ba thanh cực phẩm linh kiếm, mà đều có khí linh sao? Thái Thương Đại Châu của ta từ khi nào lại có cao nhân như vậy?&quot;</p>
+                <p>Cảnh tượng này cũng thu hút sự chú ý của các cường giả ở các châu xung quanh.</p>
+                <p>Ba kiếm cùng xuất, tựa như máy nghiền, nghiền nát mọi thứ, trực tiếp đánh tan không còn một mống sinh linh địa ngục nào trước mặt Thái Thương Đại Châu.</p>
+                <p>&quot;Rốt cuộc là ai đang đồn thổi rằng Thái Thương Đại Châu không có cường giả?&quot;</p>
+                <p>&quot;Một Bát Khiếu Nguyên Anh mà đã hung mãnh đến thế, thì Hóa Thần Cảnh chẳng phải nghịch thiên sao?&quot;</p>
+                <p>Nghe vậy, Khương Vô Nhai trong lòng sinh ra hổ thẹn. Ánh mắt hắn cũng trở nên sắc bén: &quot;Thái Thương Đại Châu của ta có cường giả tương trợ, ta há có thể lùi bước không tiến sao?&quot;</p>
+                <p>Hắn tung mình nhảy lên, ôm lấy hộp kiếm xông lên phía trước, từng đạo kiếm ý tựa như mưa sao băng xuyên qua đàn thú.</p>
+                <p>Tống Linh Ngọc và những người khác cũng phấn chấn tinh thần, cố gắng vực dậy tinh thần, theo Khương Vô Nhai và Giang Phàm cùng oanh sát sinh linh địa ngục.</p>
+                <p>Trong chốc lát, phòng tuyến mà Thái Thương Đại Châu trấn giữ, vậy mà lại đẩy lùi về phía trước!</p>
+                <p>Chỉ là, chỉ có họ đẩy lùi về phía trước thì cũng vô nghĩa. Bởi vì một khi phía sau họ có khoảng trống, sinh linh địa ngục ở hai bên trái phải sẽ thừa cơ tràn qua. Một phần sẽ từ phía sau bao vây Giang Phàm và đồng đội, một phần khác sẽ tấn công vào sườn phòng tuyến của hai châu còn lại. Cuối cùng dẫn đến toàn bộ phòng tuyến tan rã.</p>
+                <p>Điều rắc rối hơn là, theo sự thúc đẩy liên tục của Thiếu Đế từ nam lên bắc, càng lúc càng có nhiều sinh linh địa ngục tràn tới.</p>
+                <p>Sau một canh giờ, Nguyên Anh lực của Giang Phàm chỉ còn chưa đến ba phần mười, thể lực cũng dần cạn kiệt. Toàn thân hắn nhuộm đầy máu đen, tựa như một huyết nhân.</p>
+                <p>Hắn đã không nhớ rõ đã giết bao nhiêu sinh linh địa ngục, chỉ biết rằng, phòng tuyến tổng thể không những không tiến lên, ngược lại còn đang lùi về phía sau.</p>
+                <p>Sức mạnh cá nhân của hắn rất mạnh, nhưng trong một trận đại chiến quy mô như thế này thì chỉ như muối bỏ biển. Đây là điều mà ngay cả Đại Tôn cảnh Thiên Nhân Ngũ Suy cũng khó có thể ngăn chặn bằng sức mạnh cá nhân, Giang Phàm thì làm được gì đây?</p>
+                <p>Nhưng hiện tại điều hắn có thể làm cũng chỉ là cố gắng hết sức để chống cự. Hy vọng Đại Tế Tửu và ba vị Đại Tôn có thể sớm phong tỏa được khe hở.</p>
+                <p>&quot;Cẩn thận! Có Hóa Thần Cảnh... Rầm...&quot;</p>
+                <p>Phía bên phải là các Ma Tu đến từ Đại Hoang Châu, người chủ trì là Hồng Trần Tôn Giả cảnh giới Thiên Nhân Nhị Suy. Nàng đang dẫn dắt các Ma Tu chật vật duy trì trận tuyến. Một con sinh linh địa ngục cảnh giới Hóa Thần có thực lực đáng sợ, vậy mà lại trà trộn trong đàn thú, mò đến tiền tuyến.</p>
+                <p>Khi Hồng Trần Tôn Giả phát hiện ra thì đã bị tập kích bất ngờ. Chỉ thấy xương bả vai bên phải cùng với cánh tay của nàng đều bị móng vuốt sắc bén chém đứt lìa.</p>
+                <p>Một con Địa Ngục Song Đầu Khuyển trông có vẻ bình thường, mắt lộ vẻ trêu ngươi, bước tới, miệng lẩm bẩm những tiếng địa ngục.</p>
+                <p>&quot;Cuối cùng cũng dụ được kẻ đáng sợ kia đi rồi!&quot;</p>
+                <p>&quot;Bây giờ, chúng ta có thể rời khỏi thế giới dưới lòng đất rồi!&quot;</p>
+                <p>Giang Phàm trong lòng chấn động. Thì ra, khí tức Hóa Thần Cảnh mà Băng Tâm Đại Tôn phát hiện trước đó là kế &quot;điệu hổ ly sơn&quot;. Mục đích là để con Địa Ngục Song Đầu Khuyển này có cơ hội xông ra khỏi lòng đất.</p>
+                <p>Có thể cắn bị thương Hồng Trần Tôn Giả cảnh giới Thiên Nhân Nhị Suy, thực lực của nó không thể nghi ngờ! Ít nhất cũng là cấp độ Thiên Nhân Nhị Suy!</p>
+                <p>Hồng Trần Tôn Giả cũng nhận ra nguy hiểm cực lớn, vội vàng quát lớn: &quot;Không chống đỡ nổi nữa rồi! Người của Đại Hoang Châu rút lui đi, đừng hy sinh vô ích!&quot;</p>
+                <p>Nghe vậy, sắc mặt của người các châu đều thay đổi. Đại Hoang Châu đã rút lui rồi, nếu họ kiên trì phòng thủ sẽ bị các sinh linh địa ngục vòng ra phía sau bao vây. Lần này họ đến để chi viện Vạn Yêu Đại Châu, chứ không phải đến để liều mạng!</p>
+                <p>Do đó, các cường giả của các châu đều dao động. Giang Phàm thầm kêu không hay.</p>
+                <p>Họ rút lui thì dễ, nhưng nếu số lượng sinh linh địa ngục khổng lồ như vậy xông ra khỏi lòng đất, hành động của Tây Lộ và Nam Lộ sẽ tuyên bố thất bại. Kế hoạch đẩy lùi sinh linh địa ngục sẽ hoàn toàn đổ bể. Hậu quả trực tiếp là, khe hở của thế giới kẹp giữa sẽ không thể bịt kín được nữa. Sẽ có vô số sinh linh địa ngục không ngừng xông ra, cho đến khi chiếm lĩnh toàn bộ Vạn Yêu Đại Châu. Cự Nhân Viễn Cổ còn chưa đến, Trung Thổ đã mất một châu rồi!</p>
+                <p>Những điều này tạm không nói đến, Linh Sơ và Lưu Ly vốn đã mất tích sẽ lâm vào nguy hiểm lớn hơn.</p>
+                <p>&quot;Thái Thương Đại Châu của chúng ta cũng rút lui!&quot; Khương Vô Nhai ngàn vạn lần không muốn, nhưng hắn cũng phải nghĩ cho các cường giả của Tam Thần Tông và Thất Đại Giáo mà mình mang tới. Các châu khác đều rút, Thái Thương Đại Châu ở lại chẳng khác nào lấy trứng chọi đá.</p>
+                <p>Ánh mắt Giang Phàm biến đổi kịch liệt, phải làm sao đây?</p>
+                <p>Nhìn các sinh linh địa ngục cuồn cuộn tràn tới như thủy triều, trong lòng hắn dâng lên tuyệt vọng. Dù cho Đại Tôn đích thân tới, e rằng cũng không thể ngăn cản. Hắn một mình thì làm được gì?</p>
+                <p>Các sinh linh địa ngục này hung tàn, linh trí thấp kém, không sợ cái chết... Giang Phàm chợt sững người.</p>
+                <p>Các sinh linh địa ngục quả thật không sợ gì, nhưng có một thứ hắn mang từ thế giới ngầm Thiên Cơ Các ra, chúng hẳn sẽ phải khiếp sợ chứ?</p>
+                <p>Đó chính là, vật của một Địa Ngục Giới Chủ, Địa Ngục Hồn Linh!</p>
+                <p>Khi trước, con Địa Ngục Song Đầu Khuyển cảnh giới Nguyên Anh muốn ăn thịt Giang Phàm, sau khi nhìn thấy chiếc chuông này liền sợ hãi cúi mình nhận chủ.</p>
+                <p>Nghĩ đến đây, Giang Phàm quả quyết lấy ra Địa Ngục Hồn Linh.</p>
+                <p>Nhưng các sinh linh địa ngục trước mặt dường như không nhận ra sự tồn tại của chiếc chuông, vẫn cuồn cuộn kéo đến.</p>
+                <p>Suy nghĩ một lát, hắn lắc chiếc chuông.</p>
+                <p>Một tràng tiếng chuông chói tai vô cùng vang lên, lan tỏa ra bốn phương tám hướng.</p>
+                <p>Các sinh linh địa ngục hung hãn, sau khi nghe thấy âm thanh này, đều không hẹn mà dừng lại bước chân, trong mắt lộ ra vẻ kinh hoàng. Thân thể khổng lồ của chúng cũng run rẩy bần bật, không ngừng nhìn quanh bốn phía, tìm kiếm nguồn gốc âm thanh.</p>
+                <p>Chiến trường rộng lớn, đàn thú vô số kể, theo sự lan rộng của tiếng chuông, như nước sôi gặp đá lạnh, lập tức trở nên yên tĩnh.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1429">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1429: Đơn thách</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Hồng Trần Tôn Giả ôm cánh tay đứt, mặt đầy vẻ kinh ngạc:&quot;Chuyện gì đã xảy ra?&quot;&quot;Sao chúng bỗng nhiên không động đậy nữa?&quot;</p>
+                <p>Các cường giả từ các châu đang chuẩn bị rút lui cũng đầy vẻ kinh ngạc nghi hoặc.</p>
+                <p>Sinh linh Địa Ngục vốn không sợ chết, ngay cả Thiên Nhân Ngũ Suy Đại Tôn đích thân ra tay cũng không thể ngăn cản quyết tâm ào ạt xông ra ngoài của chúng. Không có lý do gì mà chúng bỗng nhiên dừng lại cả.</p>
+                <p>Con Địa Ngục Song Đầu Khuyển cấp Hóa Thần Cảnh đó dựng tai lên, mắt lộ vẻ kinh hãi. Rõ ràng, nó đã nghe thấy tiếng chuông đó, và càng biết đó là cái gì.</p>
+                <p>Chỉ là, chúng khó khăn lắm mới thấy được cơ hội phá vỡ phòng tuyến, quay về mặt đất, sao có thể từ bỏ?</p>
+                <p>Nó cố nén nỗi sợ hãi, ngửa mặt lên trời gầm thét: &quot;Đừng dừng lại, tiếp tục xông lên!&quot;</p>
+                <p>Khiếp sợ uy áp của nó, các sinh linh Địa Ngục đang dừng lại bèn sải bước lần nữa, bắt đầu một đợt xung phong mới.</p>
+                <p>Giang Phàm thấy vậy, quả quyết thi triển &quot;Vô Ngã Tịnh Trần Thuật&quot;, tiến vào trạng thái ẩn thân. Sau đó lén lút lắc Địa Ngục Hồn Linh.</p>
+                <p>Tiếng chuông chói tai, đối với nhân tộc và yêu tộc, dường như không có hiệu quả đặc biệt nào. Trong tai họ, nó giống như âm thanh kim loại ma sát. Nhưng trong tai các sinh linh Địa Ngục, lại có một cảm giác uy nghiêm khó tả.</p>
+                <p>Đại quân sinh linh Địa Ngục vừa mới động đậy lại lần nữa bồn chồn dừng lại.</p>
+                <p>Địa Ngục Song Đầu Khuyển bực bội quát: &quot;Xông nhanh lên, không được dừng!&quot;</p>
+                <p>Các sinh linh Địa Ngục vừa định động, Giang Phàm lại lắc chuông, chấn nhiếp khiến chúng không dám nhúc nhích.</p>
+                <p>&quot;Xông!&quot;&quot;Keng keng!&quot;&quot;Tất cả xông lên!&quot;&quot;Keng keng keng!&quot;&quot;Mau xông lên!&quot;&quot;Keng keng keng keng keng keng!&quot;</p>
+                <p>Cuối cùng, Địa Ngục Song Đầu Khuyển đã bị phá phòng. Nó vung vẩy hai cái đầu chó, gào thét ầm ĩ:&quot;Rốt cuộc là thằng khốn nạn nào?&quot;&quot;Có giỏi thì ra đây đơn đấu, đơn đấu đi!&quot;</p>
+                <p>Nhưng đáp lại nó là Giang Phàm không ngừng lắc Địa Ngục Hồn Linh.</p>
+                <p>Địa Ngục Song Đầu Khuyển giận dữ sôi sục, cố gắng dựng tai chó lên, dò la nguồn âm thanh. Nhưng hiện tại là chiến trường, vô cùng ồn ào. Hơn nữa, kẻ lắc Địa Ngục Hồn Linh lại còn giống chó hơn cả nó, không ngừng thay đổi vị trí, căn bản không thể phân biệt phương hướng.</p>
+                <p>Hơn nữa, hắn càng lắc càng hăng!</p>
+                <p>Cùng với tiếng chuông vang lên không dứt, các sinh linh Địa Ngục cuối cùng cũng cảm thấy bất an mãnh liệt, bắt đầu lùi lại. Ban đầu là những con gần Địa Ngục Hồn Linh nhất, sau đó, cảm xúc hoảng loạn lan tràn, các sinh linh Địa Ngục xung quanh cũng bắt đầu lùi lại. Cho đến khi từng mảng từng mảng sinh linh Địa Ngục quay đầu bỏ chạy.</p>
+                <p>Mặc cho Địa Ngục Song Đầu Khuyển gầm thét thế nào, cũng không thể ngăn cản chúng được nữa. Cảnh tượng trước mắt, hoàn hảo tái hiện lại hình ảnh &quot;binh bại như sơn đảo&quot; trên chiến trường phàm nhân.</p>
+                <p>Thấy các sinh linh Địa Ngục rút lui, Giang Phàm cất Địa Ngục Hồn Linh, sau đó lặng lẽ giải trừ ngụy trang, kéo tay áo Khương Vô Nhai đang ngẩn người, nói nhỏ:&quot;Còn chờ gì nữa?&quot;&quot;Tranh công lao chứ!&quot;</p>
+                <p>Khương Vô Nhai như bừng tỉnh khỏi giấc mộng, vung tay áo, cuốn theo những người ở Thái Thương Đại Châu đuổi theo. Linh Xà Sơn đã hứa hẹn không ít lợi ích. Ngay cả khi không đoạt được đầu công, cuối cùng cũng có thể dựa vào chiến lợi phẩm mà đổi lấy tài nguyên tương ứng.</p>
+                <p>Tống Linh Ngọc phản ứng lại, mắt sáng rỡ nói: &quot;Đừng chạy chứ!&quot;&quot;Các ngươi chạy rồi, ta nợ Giang Phàm thì biết tìm ai mà trả đây?&quot;</p>
+                <p>Hiếm hoi có phần thưởng kinh người như vậy, nàng phải nhân cơ hội này đổi mấy viên Lăng Thiên Đan, trả nợ Giang Phàm, sau đó chuộc lại đồ nhi đáng thương của mình.</p>
+                <p>Thế là, nàng bật người bay ra ngoài, đuổi theo sau lưng các sinh linh Địa Ngục, không tiếc hao tổn mà truy sát. Trong nhất thời, nàng lại giết được nhiều hơn cả Khương Vô Nhai cấp Hóa Thần Cảnh.</p>
+                <p>Giang Phàm chậm rãi gật đầu:&quot;Xem ra người vẫn không thể ăn quá no, phải nợ chút gì đó mới có động lực.&quot;</p>
+                <p>Nói xong, hắn cũng nhập cuộc.</p>
+                <p>Các sinh linh Địa Ngục chỉ lo bỏ chạy thoát thân, cho dù có quân truy kích phía sau cũng không dám dừng lại, chỉ có thể tượng trưng quay đầu phản kích một chút. Do đó, hắn buông lỏng tay chân, truy sát một cách phóng khoáng.</p>
+                <p>Con Địa Ngục Song Đầu Khuyển kia tức giận, đang định đuổi theo xé xác những người ở Thái Thương Đại Châu. Các cường giả của tám châu còn lại cũng phản ứng kịp, tất cả đều mắt đỏ ngầu, gào thét &quot;ào ào&quot; mà nhào lên.</p>
+                <p>Mấy vị Hóa Thần Tôn Giả còn khóa chặt nó, định chặt đầu chó của nó mang về đổi công lao. Sợ đến mức Địa Ngục Song Đầu Khuyển quả quyết bỏ chạy, cùng với các sinh linh Địa Ngục khác dồn dập rút về phía khe hở.</p>
+                <p>Sâu trong thú triều.</p>
+                <p>Băng Tâm Đại Tôn vung kiếm chém xuống, một con sinh linh Địa Ngục cấp Hóa Thần Cảnh ẩn mình trong thú triều đã bị chém dưới kiếm. Nàng khẽ nhíu mày liễu, nhìn khe hở và phương nam nơi các sinh linh Địa Ngục không ngừng tuôn ra. Trong lòng dâng lên một cảm giác bất lực.&quot;E rằng khe hở không thể bịt kín được nữa rồi.&quot;</p>
+                <p>Lúc này, trong tay áo nàng khẽ rung động một chút. Một chiếc vảy màu vàng bay ra từ tay áo. Đây là chiếc vảy mà Kim Lân Đại Tôn đã giao cho nàng và Thiếu Đế. Sự cảm ứng qua lại giữa các vảy cho phép họ liên lạc theo thời gian thực dưới lòng đất, nắm bắt động thái của các bên.</p>
+                <p>Chiếc vảy phát ra một tia sáng vàng, chiếu lên không trung, hiển hiện ra hình ảnh của Kim Lân Đại Tôn và Thiếu Đế cùng cảnh tượng xung quanh họ.</p>
+                <p>Kim Lân Đại Tôn vẻ mặt bất lực lơ lửng phía sau một nhóm yêu tộc Linh Xà Sơn. Những yêu tộc đó đang liều mạng chống cự đại quân thú triều như sóng biển vô tận. Mặc dù vì gia viên phía sau, họ liều chết chiến đấu, nhưng vẫn không thể ngăn cản sự càn quét của thú triều, phòng tuyến nguy hiểm, có thể vỡ bất cứ lúc nào.</p>
+                <p>Kim Lân Đại Tôn một tay thanh không một mảng lớn thú triều, nhưng rất nhanh lại bị các sinh linh Địa Ngục lấp đầy.</p>
+                <p>&quot;Băng Tâm Đại Tôn, tình hình bên nàng thế nào?&quot;</p>
+                <p>Băng Tâm Đại Tôn khẽ lắc đầu, nói: &quot;Ta đang ở sâu trong thú triều. Nhưng tình hình chắc hẳn rất tệ, phòng tuyến có lẽ đã bị phá vỡ rồi.&quot;</p>
+                <p>Nghe vậy, Kim Lân Đại Tôn khẽ thở dài. Điều này nằm trong dự liệu của hắn. Yêu tộc Linh Xà Sơn, với tư cách người bản địa, liều mạng chiến đấu cũng không thể ngăn cản xu thế suy yếu. Các cường giả ngoại châu, tất nhiên sẽ không liều mạng chiến đấu, việc phòng tuyến bị phá vỡ nằm trong dự liệu của hắn.</p>
+                <p>Trong một luồng chiếu khác, là Thiếu Đế khẽ chỉ một ngón tay vào thú triều đang tháo chạy phía trước. Một viên Lôi Đình Bản Nguyên bay vào trong thú triều, lập tức nổ tung tại chỗ, hóa thành vô tận lôi quang nuốt chửng một mảng đất. Khi lôi quang tan biến, trên mặt đất chỉ còn lại tàn chi nát thịt bốc lên âm khí. Các sinh linh Địa Ngục không còn sót lại chút nào!</p>
+                <p>Thiếu Đế quét mắt nhìn chiến trường của hai người, thờ ơ nói: &quot;Sau khi đường phía nam của ta được dọn sạch, nơi này không còn việc gì của ta nữa.&quot;</p>
+                <p>Nghe vậy, Kim Lân Đại Tôn đầy vẻ hổ thẹn, ngay cả Băng Tâm Đại Tôn cũng có chút ngại ngùng. Bọn họ một người dẫn dắt đại quân yêu tộc, một người thống lĩnh viện binh các châu. Trong tình huống như vậy, ngược lại đều đối mặt với việc phòng tuyến tan rã. Thiếu Đế lại một mình một ngựa, đuổi toàn bộ sinh linh Địa Ngục trên một con đường trở về khe hở. Sự so sánh vô hình khiến những người đồng cấp Thiên Nhân Ngũ Suy như họ cảm thấy trong lòng không mấy dễ chịu.</p>
+                <p>Nhưng ngay lúc này, Băng Tâm Đại Tôn đột nhiên cúi đầu nhìn thú triều dưới chân, mặt lộ vẻ kinh ngạc.&quot;Chuyện gì đã xảy ra?&quot;</p>
+                <p>Nàng định thần nhìn lại, thú triều đang tràn tới dần dần dừng lại. Rất nhanh, chúng bắt đầu quay đầu chạy về phía khe hở! Hơn nữa thần sắc hoảng loạn, không ngừng gào rít sợ hãi, như thể đang trốn tránh thứ gì đó đáng sợ.</p>
+                <p>Kim Lân Đại Tôn cũng phát hiện ra cảnh tượng này, kinh ngạc nói:&quot;Băng Tâm Đại Tôn, có phải có viện binh mạnh mẽ từ ngoại châu đến không?&quot;</p>
+                <p>Băng Tâm Đại Tôn lắc đầu nói: &quot;Không có, viện binh mới nhất là một Bát Khiếu Nguyên Anh đến từ Thái Thương Đại Châu.&quot;&quot;Hơn nữa, viện binh nào có thể dọa lui toàn bộ sinh linh Địa Ngục ở đường phía đông chứ?&quot;&quot;Hiền giả sao?&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1430">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1430: Băng Hồ Điệp</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Kim Lân Đại Tôn mắt sáng lên, rồi lại lắc đầu:&quot;Các Hiền Giả trấn thủ Trung Thổ, không ai có thể tùy ý hành động.&quot;&quot;Không phải có thương tích, thì cũng có tình huống đặc biệt hạn chế di chuyển.&quot;&quot;Nhưng ngoài Hiền Giả ra tay, còn ai có thể dọa lùi toàn bộ sinh linh Địa Ngục ở lộ Đông?&quot;</p>
+                <p>Chớ nói là hắn. Ngay cả Thiếu Đế cũng ngừng truy sát sinh linh Địa Ngục, dừng chân nhìn về phía hư ảnh của Băng Tâm Đại Tôn.</p>
+                <p>Dưới ánh nhìn của ba vị Đại Tôn, nửa chén trà sau.</p>
+                <p>Thú triều vô biên vô tận cuối cùng cũng thấy được điểm cuối. Ánh mắt của họ tập trung, phóng về phía sau thú triều, muốn xem rốt cuộc là vị thần thánh phương nào.</p>
+                <p>Nhưng cảnh tượng nhìn thấy lại khiến ba vị Thiên Nhân Ngũ Suy đều chìm vào im lặng.</p>
+                <p>Chỉ thấy một phu nhân mặc cung trang, thở hồng hộc đuổi theo sinh linh Địa Ngục, la lên:&quot;Anh bạn sinh linh Địa Ngục đằng trước, tiền của ngươi rơi rồi kìa.&quot;</p>
+                <p>Sinh linh Địa Ngục đang chạy, hung tợn quay đầu liếc nàng một cái. Ý là, coi chúng ta là kẻ ngốc à?</p>
+                <p>Truy sát đến giờ, mọi người ở Thái Thương Đại Châu đều đã kiệt sức, dần dần không thể theo kịp tốc độ tháo chạy của sinh linh Địa Ngục nữa. Chỉ có thể nghĩ cách khiến chúng dừng lại.</p>
+                <p>Giang Phàm cũng hít một hơi thật sâu. Liên tục chém giết nửa chén trà, hắn đã không đếm xuể mình đã giết bao nhiêu. Chỉ biết giết đến nỗi toàn thân sức lực cạn kiệt, lòng bàn tay run rẩy. Ba thanh cực phẩm linh kiếm đều không thể thôi động. Thấy thú triều sắp tới gần khe hở, không giết nữa thì không kịp. Hắn mở miệng dùng tiếng Địa Ngục nói: &quot;Huynh đệ đằng trước, dương vật của ngươi rơi rồi!&quot;</p>
+                <p>Vài con sinh linh Địa Ngục đang chạy, theo bản năng siết chặt hai chân, làm chậm tốc độ. Giang Phàm chớp cơ hội lao lên, ngưng tụ tia lôi đình cuối cùng thành một đóa Địa Ngục Liên ném vào giữa chúng. Kèm theo một tiếng nổ lớn, ba con sinh linh Địa Ngục tại chỗ bị nổ tung, bốn chân chổng lên trời. Chúng há to miệng, lầm bầm tuôn ra tiếng Địa Ngục. Rõ ràng, đó là lời chào hỏi thân thiết và thân thiện dành cho Giang Phàm. Chờ đợi chúng là các cường giả Thái Thương Đại Châu ập đến, dưới sự oanh tạc điên cuồng, khiến chúng tan xương nát thịt.</p>
+                <p>Ba vị Đại Tôn ngạc nhiên đứng tại chỗ. Kim Lân Đại Tôn mí mắt giật giật, nói:&quot;Đây là cường giả Thiên Châu sao?&quot;&quot;Bọn họ... khá là cá tính đấy.&quot;</p>
+                <p>Tốc độ nói của Thiếu Đế nhanh hơn bình thường rất nhiều:&quot;Không phải Thiên Châu của chúng ta!&quot;</p>
+                <p>Băng Tâm Đại Tôn nhìn khuôn mặt trung niên của Giang Phàm, có chút cạn lời:&quot;Người đã ngần ấy tuổi rồi mà vẫn còn bất chính như thế?&quot;</p>
+                <p>Tuy nhiên, nàng vẫn không hiểu vì sao sinh linh Địa Ngục lại hoảng loạn tháo chạy một cách không chọn đường như vậy. Chẳng lẽ có ai đã làm điều gì khiến sinh linh Địa Ngục phải khiếp sợ sao? Ánh mắt nàng một lần nữa rơi vào Giang Phàm, trong lòng thầm nhủ:&quot;Phần lớn là do người này gây ra.&quot;&quot;Biến số duy nhất của phòng tuyến, chính là có thêm hắn.&quot;</p>
+                <p>Nhưng nàng không hề lên tiếng. Chỉ với một người, lại có thể điều khiển vô số sinh linh Địa Ngục, chuyện này đặt ở toàn bộ Trung Thổ cũng là điều nghe rợn người. Rất dễ bị những kẻ có dã tâm nhắm tới, muốn thông qua hắn mà thao túng sinh linh Địa Ngục. Hơn nữa, hắn chỉ có Bát Khiếu Nguyên Anh, chẳng khác nào đứa trẻ ôm kim nguyên bảo nghênh ngang giữa chợ.</p>
+                <p>Nàng bình tĩnh nói với Thiếu Đế và Kim Lân Đại Tôn:&quot;Vì sao sinh linh Địa Ngục lại dị biến, tạm thời đừng quản.&quot;&quot;Việc cấp bách là bình định hỗn loạn.&quot;&quot;Kim Lân Đại Tôn, lộ Tây các ngươi hãy cố thủ.&quot;&quot;Đợi lộ Đông chúng ta quét sạch sinh linh Địa Ngục, sẽ qua hỗ trợ các ngươi.&quot;</p>
+                <p>Kim Lân Đại Tôn mắt lộ vẻ phấn chấn. Cuối cùng cũng thấy một tia hy vọng rồi! Hắn gật đầu nói:&quot;Đợi tin tốt từ các ngươi!!&quot;</p>
+                <p>Băng Tâm Đại Tôn thu lại vảy, đóng liên lạc, rồi bay xuống cạnh Giang Phàm, cùng hắn xua đuổi sinh linh Địa Ngục.&quot;Ngươi không phải Vương Xung Tiêu đúng không?&quot;</p>
+                <p>Gần đây tên Vương Xung Tiêu và Giang Phàm ở các châu đều mọc lên như nấm sau mưa. Điều khác biệt là. Những kẻ mạo danh Vương Xung Tiêu, đa phần làm những chuyện mờ ám, không dám lộ diện thật. Ngược lại, những kẻ tự xưng Giang Phàm, thì thường làm những việc thiện chính đại quang minh, và cũng lấy việc tự nhận mình là Giang Phàm mà kiêu hãnh. Vương Xung Tiêu trước mắt, không nghi ngờ gì là một cái tên giả. Chỉ là không biết, hắn định làm chuyện gì mờ ám mà lại mạo danh Vương Xung Tiêu.</p>
+                <p>Giang Phàm hơi xê dịch sang một bên, giữ khoảng cách với vị Thiên Nhân Ngũ Suy đáng sợ này, lễ phép nói:&quot;Tiền bối anh minh, vãn bối chính là Thái tử của Yêu tộc Tây Hải thuộc Thái Thương Đại Châu.&quot;</p>
+                <p>Băng Tâm Đại Tôn khẽ gật đầu:&quot;Thái tử Tây Hải sao?&quot;&quot;Lần này may nhờ có ngươi, không thì khó mà kết thúc được.&quot;</p>
+                <p>Nàng khẽ vung tay áo. Một con bướm băng từ trong tay áo bay ra, đậu trên vai Giang Phàm.&quot;Đây là một món pháp bảo ta luyện chế lúc rảnh rỗi, sau khi thôi động có thể tránh khỏi ảnh hưởng của lĩnh vực.&quot;&quot;Chỉ có thể dùng ba lần, hãy tận dụng tốt nhé.&quot;</p>
+                <p>Trên đời còn có thứ tốt như vậy sao? Giang Phàm mừng rỡ khôn xiết, vội vàng đón lấy, cảm kích nói:&quot;Đa tạ tiền bối ban thưởng!&quot;</p>
+                <p>Dừng một chút, Giang Phàm lại hỏi:&quot;Ngoài lĩnh vực của Trung Thổ, bản nguyên của Cự Nhân Vương liệu cũng có thể cản được không?&quot;</p>
+                <p>Băng Tâm Đại Tôn suy nghĩ:&quot;Chưa thử bao giờ, nhưng lĩnh vực của Trung Thổ và bản nguyên của Cự Nhân Vương đều là một loại Thiên Địa chi lực, chung quy đều quy về một mối.&quot;&quot;Chắc hẳn cũng có hiệu quả.&quot;</p>
+                <p>Giang Phàm càng thêm yêu thích không rời tay. Hắn vẫn còn nhớ, chuyện cũ khi xưa bị Vận Chi Cự Nhân Vương giáng xuống vận rủi, một đầu đâm thủng màn châu ngọc nơi Lục Châu tắm rửa. Có bướm băng ở đây, ít nhất có thể tránh khỏi bị những bản nguyên kỳ lạ không rõ tính toán.</p>
+                <p>Khương Vô Nhai và các cường giả Thái Thương Đại Châu khác nghe xong, thầm nhíu mày. Thái tử Tây Hải? Trong số họ, tuy không ai từng gặp Thái tử Tây Hải, nhưng cũng biết tình hình của Tây Hải. Chỉ có một lão yêu hoàng cảnh giới Yêu Hoàng sơ kỳ trấn giữ. Đâu ra một lão quái Nguyên Anh hậu kỳ? Rõ ràng hắn đang lừa gạt Băng Tâm Đại Tôn. Nghĩ đến đây, Khương Vô Nhai thầm lau một vệt mồ hôi lạnh. Hay thật, rốt cuộc đây là vị thần thánh phương nào? Ngay cả Đại Tôn cảnh Thiên Nhân Ngũ Suy mà cũng dám nói dối trắng trợn! Thật sự không sợ bị vạch trần sao?</p>
+                <p>Trong sự kinh ngạc của họ, tốc độ chạy của sinh linh Địa Ngục phía trước bỗng nhiên chậm lại, và trở nên càng chen chúc hơn. Ngẩng mắt nhìn lên. Cuối cùng của thế giới ngầm, là một ngọn núi vàng óng ánh, chính là phần kéo dài của Linh Xà Sơn xuống lòng đất. Trên thân núi, có một vết nứt đen rộng ngàn trượng, cao trăm trượng. Âm khí vô tận, từ trong vết nứt tuôn ra như lũ. Các sinh linh Địa Ngục chen chúc chui trở lại vết nứt, do đó tụ tập đông đúc gần vết nứt.</p>
+                <p>&quot;Nơi này chính là cái gọi là khe hở sao?&quot;</p>
+                <p>Giang Phàm nhìn chằm chằm vết nứt, mắt từ từ nheo lại. Hình dạng của vết nứt này, giống như bị một móng vuốt khổng lồ che trời xé toạc ra. Mà loại móng vuốt khổng lồ này, hắn từng thấy một lần. Đó chính là ma trảo của Tu La Thánh Tử!</p>
+                <p>Hơn nữa, giữa thế giới kẹp và Vạn Yêu Đại Châu, hẳn là có bức tường thế giới cường đại. Có thể xé rách bức tường, thông suốt hai giới, e rằng chỉ có Hiền Giả trở lên mới làm được.</p>
+                <p>&quot;Ngươi đang nhìn gì vậy?&quot;</p>
+                <p>Băng Tâm Đại Tôn phát hiện Giang Phàm bỗng nhiên dừng lại tại chỗ, không khỏi hỏi. Giang Phàm nghĩ một lát, đã khó khăn lắm mới có thể đối thoại với một vị Đại Tôn, có vài nghi vấn, hắn cũng nên hỏi thử.&quot;Tiền bối, xin hỏi trong ngàn năm qua, đã có bao nhiêu Hiền Giả ra đời?&quot;</p>
+                <p>Vị Tu La Thánh Tử kia, là tám trăm năm trước mới trốn thoát khỏi thế giới ngầm của Thiên Cơ Các. Vậy nên việc hắn nhập Hiền cũng nên là trong vòng ngàn năm.</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_285.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_285.html" class="page-btn">285</a>
+            <a href="page_286.html" class="page-btn current">286</a>
+            <a href="page_287.html" class="page-btn">287</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_287.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

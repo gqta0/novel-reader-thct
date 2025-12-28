@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 100">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 100</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_99.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_101.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_496">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 496: Giằng co</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Lúc này, mọi người đột nhiên chú ý tới sự bất thường trên thi thể Thử Yêu.</p>
+                <p>Lôi Chấn Hải biến sắc, quả quyết vung mạnh hai tay áo, đánh ra những luồng kình phong mạnh mẽ, hất bay mấy thi thể Thử Yêu trước mặt xuống chân núi.</p>
+                <p>Các trưởng lão còn lại cũng lập tức động thủ. Có người đơn thuần thi triển linh lực, có người lấy ra pháp khí giống như Ba Tiêu phiến, hô một tiếng là tạo ra cuồng phong.</p>
+                <p>Đại trưởng lão Thiên Âm tông càng liên hợp đệ tử, liên tục bắn ra mấy đạo sóng âm, đẩy những thi thể Thử Yêu đi xa.</p>
+                <p>Sườn dốc phủ tuyết trơn nhẵn. Mọi người ở phía trên chỉ cần dùng thêm chút sức là những thi thể Thử Yêu sẽ trượt xuống không quay trở lại.</p>
+                <p>Nhưng mới thanh lý được một nửa, những túi da thú bắt đầu tan chảy. Từng sợi chất lỏng màu đen không rõ ăn mòn túi da thú, nhỏ xuống mặt băng. Mặt băng không chịu nổi sự ăn mòn, tan chảy thành nước nóng bỏng, làm tan chảy luôn cả một khối băng nhỏ gần đó.</p>
+                <p>Cảnh tượng tương tự diễn ra khắp sườn dốc phủ tuyết. Từng mảng băng bị tan chảy, kéo theo phản ứng dây chuyền...</p>
+                <p>&quot;Két băng!&quot;</p>
+                <p>Dưới ánh mắt bất an của mọi người, tầng băng trong sườn dốc phủ tuyết phát ra tiếng đứt gãy khiến lòng họ chùng xuống.</p>
+                <p>Tầng băng... đứt rồi!</p>
+                <p>&quot;Ào ào ào!&quot;</p>
+                <p>Không có dấu hiệu báo trước, nửa dưới mặt băng của Giới Sơn sụp đổ dữ dội. Như một dòng lũ, nó trút xuống chân núi. Lực xung kích khổng lồ thậm chí làm mặt băng nổ tung thành vô số mảnh vụn, tạo thành một dòng sông băng di động. Dòng sông băng này chảy từ giữa sườn núi,冲 kích vào đại quân tử thi, nghiền nát hàng trăm khôi lỗi tử thi, khiến đại quân phải liên tiếp lui về phía sau, gây ra hỗn loạn không nhỏ.</p>
+                <p>Thế nhưng, những người trên Giới Sơn không ai cười nổi.</p>
+                <p>Bởi vì tầng băng từ giữa sườn núi trở xuống đã không còn. Lộ ra đất đông cứng vô cùng cứng rắn cùng mặt đá thô ráp.</p>
+                <p>Đám yêu thú leo lên dễ dàng như đi trên đất bằng!</p>
+                <p>Trong đại quân tử thi, Yêu tộc Tế Tự nhíu mày: &quot;Trong số những người trấn thủ nhân tộc, lẽ nào có cao nhân?&quot;</p>
+                <p>Nếu không phải có người kịp thời chỉ huy, quét sạch thi thể Thử Yêu, toàn bộ diện tích băng tuyết trên sườn Giới Sơn đã hoàn toàn bị tẩy sạch. Đại quân tử thi của nàng lúc này đã có thể tiến quân thần tốc.</p>
+                <p>&quot;Chỉ còn một nửa sườn núi cũng đủ!&quot;</p>
+                <p>&quot;Dù có lấp thi thể, cũng có thể lấp đầy nửa sườn núi cuối cùng!&quot;</p>
+                <p>Nàng rút cây kẹp tóc hình hồ điệp ra, nhẹ nhàng thổi. Tiếng kèn trầm thấp như tiếng chiến chùy, thúc giục đại quân tử thi như dòng lũ tiến thẳng lên Giới Sơn!</p>
+                <p>Những con cự thú có hình thể gần bằng Man Tượng xông lên trước tiên. Thân thể khổng lồ của chúng dễ dàng đạp lên đá cứng và đất đông cứng, nhanh chóng lao lên phía trên. Mỗi bước chân của chúng đều làm mặt đất rung chuyển.</p>
+                <p>Mọi người vừa mới tiểu thắng liên tục, sắc mặt nghiêm túc vô cùng. Lôi Chấn Hải phát động công kích trước tiên, nói: &quot;Giết!&quot;</p>
+                <p>&quot;Đừng để chúng nó bò lên!&quot;</p>
+                <p>&quot;Nửa sườn núi cuối cùng là tấm chắn tự nhiên duy nhất của chúng ta!&quot;</p>
+                <p>Nếu bị đại quân tử thi vượt qua, sẽ không thể không tiến hành chính diện chém giết! Khi đó, thương vong sẽ kịch liệt mở rộng!</p>
+                <p>Các trưởng lão và đệ tử các tông lập tức ném ra đủ loại bó đuốc, phù và thi triển công pháp hệ Hỏa. Cố gắng hết sức chém giết đại quân tử thi dưới chân Giới Sơn.</p>
+                <p>Nhưng số lượng của chúng thật sự quá nhiều. Hơn nữa những thi thể yêu thú ở phía trước có hình thể khổng lồ, tử khí rất nhiều. Bó đuốc bình thường phải đốt một lúc lâu mới có thể triệt để đốt rụi tử khí. Chúng vừa chết, đại quân tử thi phía sau liền giẫm lên thi thể của chúng tiếp tục xông lên.</p>
+                <p>Tình hình chiến đấu hai bên vô cùng kịch liệt. Trưởng lão và đệ tử Cửu Tông liều mạng ném mạnh bó đuốc, phù và thi triển công pháp thuộc tính hỏa. Trong khi đại quân tử thi không sợ đau đớn, không sợ tử vong. Chúng trùng trùng điệp điệp xông tới.</p>
+                <p>Kéo dài suốt một canh giờ. Nửa sườn núi chưa tới mấy trăm trượng đã nằm đầy hơn hai ngàn khôi lỗi tử thi lớn nhỏ.</p>
+                <p>Nhưng nhìn lên, điều khiến người ta thấy tuyệt vọng là đại quân tử thi vẫn không thấy điểm cuối! Chúng như dòng lũ liên tục, làm sao giết cũng không hết!</p>
+                <p>Điều tồi tệ hơn là trên mặt băng trơn nhẵn của nửa dưới Giới Sơn, thi thể khôi lỗi tử thi bắt đầu chất đống. Đại quân tử thi phía sau giẫm lên thi thể của chúng tiếp tục trèo lên. Khi chúng chết, lại tiếp tục làm đệm lưng cho đại quân tử thi phía sau.</p>
+                <p>Tình hình vô cùng nguy hiểm!</p>
+                <p>Trong lúc nguy cấp, Lôi Chấn Hải hét lớn: &quot;Gỗ lăn!&quot;</p>
+                <p>Các trưởng lão và đệ tử các tông lập tức ôm tới từng khúc gỗ dài còn nguyên vẹn. Đốt lửa rồi ném xuống theo sườn núi trơn nhẵn. Những khúc gỗ lăn mang theo ngọn lửa nóng bỏng lập tức cuồn cuộn xuống dưới, một đường đốt cháy đại quân tử thi trên sườn núi.</p>
+                <p>Và những khúc gỗ lăn tương tự, một cây tiếp một cây, vô cùng vô tận. Đại quân tử thi khó khăn lắm mới bò đến giữa sườn núi. Hoặc là bị đốt cháy mà chết, hoặc là bị những khôi lỗi tử thi lăn xuống đụng bay.</p>
+                <p>Yêu tộc Tế Tự nhíu mày: &quot;Bọn hắn lấy đâu ra nhiều gỗ như vậy?&quot;</p>
+                <p>&quot;Nơi này là vạn dặm Tuyết Nguyên!&quot;</p>
+                <p>Ban đầu nhân loại ném đuốc, nàng còn chưa cảm thấy gì. Có thể Giới Sơn có ít trữ lượng. Nhưng chiến đấu đến bây giờ, số lượng vật liệu gỗ này không những không hết, ngược lại càng dùng càng nhiều. Cho dù Giới Sơn chất đầy vật liệu gỗ, giờ này cũng sớm phải dùng hết rồi chứ?</p>
+                <p>&quot;Rốt cuộc là vị nào đang chỉ huy?&quot;</p>
+                <p>Trong mắt Yêu tộc Tế Tự nhảy lên từng tia chiến ý. &quot;Ta ngược lại muốn xem xem, ai có thể hao tổn đến cuối cùng!&quot;</p>
+                <p>&quot;Chỉ cần công lên Giới Sơn, các ngươi đều chờ chết đi!&quot;</p>
+                <p>&quot;Tiếp tục xông!&quot;</p>
+                <p>Dưới mệnh lệnh của nàng, đại quân tử thi lại lần nữa ầm ầm冲 kích Giới Sơn. Vô số khúc gỗ lăn mang theo khói đen đặc, đốt cháy từng khôi lỗi tử thi lao tới. Đám khôi lỗi tử thi thì hung hãn không sợ chết, giẫm lên vô số thi thể, không ngừng xông lên phía trên.</p>
+                <p>Hai bên như đánh giằng co, tiêu hao lẫn nhau.</p>
+                <p>Đến nửa đêm, các trưởng lão các tông đều lộ vẻ mệt mỏi. Các đệ tử thì mặt trắng bệch, rất nhiều người tay chân đều căng cơ. Việc ném gỗ lăn một cách cơ giới kéo dài suốt nửa đêm, là sự tiêu hao lớn đối với thể lực con người.</p>
+                <p>Hạ Triều Ca lau mồ hôi trên mặt. Khuôn mặt tươi cười tuyệt thế bị khói lửa hun đến đen một mảng, trắng một mảng, giống như một con mèo vằn. Nàng thở một hơi, lại lần nữa đốt một khúc gỗ lăn đẩy xuống dưới.</p>
+                <p>Lương Phi Yên tóc tai bù xù, ống tay áo không biết lúc nào bị đốt mất, lộ ra khuỷu tay. Hắn một cước đạp một khúc gỗ lăn đang cháy xuống dưới, mặc kệ lòng bàn chân giày bị bỏng đến tan chảy. Tiếp tục đốt khúc gỗ lăn tiếp theo.</p>
+                <p>Tất cả mọi người lâm vào mệt mỏi. Nhưng căn bản không thể dừng lại.</p>
+                <p>Trên sườn dốc phủ tuyết mấy trăm trượng, đã là núi thây chất đống, không nhìn thấy nửa điểm băng tuyết. Mà đại quân tử thi đã giết đến ngoài 50 trượng. Một số đại quân tử thi có hình thể khổng lồ đã có thể với tới người trên Giới Sơn.</p>
+                <p>Cũng may, bọn hắn có gỗ lăn liên tục không ngừng. Luôn duy trì khoảng cách 50 trượng.</p>
+                <p>Điều khiến mọi người thấy vui mừng là đại quân tử thi không thấy điểm cuối, sau nửa đêm bị oanh sát, cuối cùng cũng thấy được điểm cuối. Mặc dù... vẫn dày đặc, nhiều không kể hết.</p>
+                <p>Nhưng cứ giằng co như vậy nữa, bọn hắn vẫn có phần thắng!</p>
+                <p>Yêu tộc Tế Tự lặng lẽ nhìn chằm chằm chiến trường. Nhìn đại quân tử thi tổn thất nặng nề, nàng hơi bực bội.</p>
+                <p>&quot;Bọn hắn rốt cuộc lấy đâu ra nhiều vật liệu gỗ như vậy?&quot;</p>
+                <p>&quot;Chỉ riêng giai đoạn tấn công núi đã hao phí bốn thành đại quân tử thi của ta!&quot;</p>
+                <p>&quot;Lẽ nào lại như vậy!&quot;</p>
+                <p>Nhìn nhân loại tử thủ ở 50 trượng sườn dốc phủ tuyết cuối cùng, còn muốn tiếp tục hao tổn nữa. Nàng hừ lạnh một tiếng: &quot;Ta sẽ để cho các ngươi toại nguyện?&quot;</p>
+                <p>&quot;Nên kết thúc!&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_497">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 497: Tràn ngập nguy hiểm</h2>
+            </header>
+            <div class="chapter-content">
+                <p>&quot;Đi!&quot;</p>
+                <p>Ra lệnh một tiếng.</p>
+                <p>Phốc phốc phốc ――</p>
+                <p>Trong tử thi đại quân, từng bầy tử thi khôi lỗi to bằng đầu người, lại đập cánh bay lên.</p>
+                <p>Chúng nó đều là Yêu Phong!</p>
+                <p>Toàn thân giăng đầy kịch độc Yêu Phong!</p>
+                <p>Số lượng nhiều đạt trên ngàn!</p>
+                <p>Bay lên chúng nó.</p>
+                <p>Như cùng một mảnh mây đen, vô thanh vô tức bay lượn đến vùng trời đỉnh Giới Sơn.</p>
+                <p>Lôi Chấn Hải giống như có cảm giác, biến sắc: &quot;Lưu tâm, có phi hành yêu thú!&quot;</p>
+                <p>Cũng nhắc nhở đến quá muộn.</p>
+                <p>Đang ở tập trung tinh thần đối kháng thú triều các đệ tử, hoàn toàn không có phát giác.</p>
+                <p>Bên trong một cái nam đệ tử Vạn Kiếm môn giơ cao lên gỗ lăn.</p>
+                <p>Đột nhiên kêu thảm một tiếng.</p>
+                <p>Chỉ thấy hắn trên cổ.</p>
+                <p>Một đầu Yêu Phong hư thối to lớn, chiếc độc châm đen kịt nhô ra từ mông, hung hăng đâm vào cổ hắn.</p>
+                <p>Trúc Cơ chín tầng hắn, chỉ kêu thảm một tiếng, liền toàn thân biến thành màu đen.</p>
+                <p>Ngay sau đó, thẳng tắp ngã xuống.</p>
+                <p>Gỗ lăn trong tay bùng cháy, cũng đập vào trên người mình, cấp tốc nhóm lửa thân thể hắn.</p>
+                <p>&quot;Lưu sư đệ!&quot; Lương Phi Yên kinh hô một tiếng.</p>
+                <p>Bay chạy tới, đá bay gỗ lăn, dập tắt ngọn lửa trên người hắn.</p>
+                <p>Có thể ôm lấy hắn xem xét, đã thất khiếu chảy máu, khí tuyệt bỏ mình.</p>
+                <p>&quot;Sư đệ! !&quot; Lương Phi Yên bi thống quát.</p>
+                <p>Mắt thấy con Yêu Phong đốt hắn muốn chạy.</p>
+                <p>Trở tay nhất kiếm chém nát nó.</p>
+                <p>Huyết tương Yêu Phong bạo liệt, lại bắn tung tóe về phía mặt hắn!</p>
+                <p>Vù ――</p>
+                <p>Giang Phàm kịp thời chạy tới.</p>
+                <p>Tay áo một quyển, tiếp được toàn bộ máu.</p>
+                <p>Xuy xuy xuy ――</p>
+                <p>Tay áo hắn, bị máu hòa tan ra từng lỗ máu.</p>
+                <p>&quot;Lương sư huynh, bình tĩnh.&quot; Giang Phàm nói.</p>
+                <p>Con ngươi Lương Phi Yên rụt rụt.</p>
+                <p>Một tay hướng Giang Phàm chắp tay, nói: &quot;Đa tạ Giang sư đệ.&quot;</p>
+                <p>Trong thanh âm, có một tia nghẹn ngào.</p>
+                <p>Hốc mắt càng là ửng hồng.</p>
+                <p>Trước mắt vị đệ tử này, là sư đệ thân thiết cùng tồn tại với môn chủ tọa hạ hắn.</p>
+                <p>Là người ôn tồn lễ độ.</p>
+                <p>Nghe nói trong nhà cho hắn đính hôn, đối phương là tiểu thư khuê các đoan trang ôn nhu.</p>
+                <p>Đến sang năm xuân, liền muốn cử hành hôn lễ.</p>
+                <p>Có thể ngày này, hắn vĩnh viễn đợi không được.</p>
+                <p>&quot;Các ngươi đám này súc sinh!&quot; Lương Phi Yên buông hắn xuống.</p>
+                <p>Mắt đỏ, phẫn nộ chém về phía một con Yêu Phong đang tấn công nữ đệ tử Hợp Hoan tông.</p>
+                <p>&quot;Đến cơ hội cứu vãn cũng không cho ta!&quot;</p>
+                <p>&quot;Vì cái gì? Vì cái gì?&quot;</p>
+                <p>Giang Phàm thật sâu nhìn chằm chằm Lưu sư đệ.</p>
+                <p>Trong lòng yên lặng thở dài.</p>
+                <p>Đây là chiến tranh a.</p>
+                <p>Lưu sư đệ là người đầu tiên ngã xuống.</p>
+                <p>Lại sẽ không là người cuối cùng!</p>
+                <p>Hắn trong lòng ổ lấy một đám lửa.</p>
+                <p>Trở tay rút ra Ai Sương kiếm, chém về phía một đầu Yêu Phong đang bay loạn cách đó không xa.</p>
+                <p>Hàn băng mãnh liệt, sau khi chém vỡ nó, còn đông cứng toàn bộ thi thể cùng máu.</p>
+                <p>Phòng ngừa bắn tung tóe đến người xung quanh.</p>
+                <p>Mà một màn tương tự.</p>
+                <p>Tại toàn bộ Giới Sơn trước đó diễn.</p>
+                <p>Yêu Phong kịch độc đột nhiên giết ra, hoàn toàn làm rối loạn tiết tấu của bọn hắn.</p>
+                <p>Mọi người hốt hoảng chém giết Yêu Phong, thiếu hụt nhân lực hiệu quả áp chế tử thi đại quân.</p>
+                <p>Làm Lôi Chấn Hải phát hiện không ổn lúc.</p>
+                <p>Đã quá muộn!</p>
+                <p>Thú triều vượt qua 50 trượng mặt băng cuối cùng.</p>
+                <p>Từng tôn thân thể khổng lồ, xuất hiện tại trước mặt bọn hắn!</p>
+                <p>&quot;Cẩn thận! ! !&quot;</p>
+                <p>Lôi Chấn Hải chỉ có thể phát ra cảnh cáo đinh tai nhức óc.</p>
+                <p>Có thể mọi người trên có ong độc, trước mặt có tử thi khôi lỗi.</p>
+                <p>Căn bản khó lòng phòng bị!</p>
+                <p>Chiến tuyến này.</p>
+                <p>Mắt thấy là phải sụp đổ!</p>
+                <p>Sắc mặt Giang Phàm đại biến.</p>
+                <p>Chiến cuộc lại chuyển tiếp đột ngột như thế?</p>
+                <p>Chiến tuyến vừa loạn, bọn hắn liền binh bại như núi đổ!</p>
+                <p>Không được!</p>
+                <p>Không thể để thú triều xông lên.</p>
+                <p>Ít nhất phải cho đại gia thời gian đệm lót!</p>
+                <p>Không thì toàn bộ xong đời!</p>
+                <p>Mắt thấy một chút tử thi khôi lỗi, giẫm lên một điểm mặt băng trơn bóng cuối cùng, leo lên mỏm núi.</p>
+                <p>Giang Phàm hai mắt tỏa sáng.</p>
+                <p>Chợt, lộ ra một luồng lo lắng.</p>
+                <p>Nhưng lát sau cắn chặt răng.</p>
+                <p>Quả quyết lấy ra tử kiếm.</p>
+                <p>&quot;Đi!&quot;</p>
+                <p>Hai tay hắn xoa một cái, tử kiếm lượn vòng gấp gáp nhanh bay ra ngoài.</p>
+                <p>Lại không phải chém giết tử thi khôi lỗi.</p>
+                <p>Mà là cao tốc cắt hàn băng chỗ kết hợp đỉnh núi và sườn núi.</p>
+                <p>Giữa điện thạch hỏa hoa.</p>
+                <p>Sườn núi rộng mấy trăm trượng.</p>
+                <p>Bị tử kiếm vô cùng sắc bén, cắt ra vết rách thật dài.</p>
+                <p>Ngay sau đó.</p>
+                <p>Giang Phàm triệu ra Ngũ Từ Nguyên Sơn, mặc kệ đón gió biến lớn trở thành một ngọn núi nhỏ.</p>
+                <p>Sau đó dùng lực lượng linh hồn, nắm hắn đến không trung cao mười trượng.</p>
+                <p>Cuối cùng hướng phía mặt băng hung hăng nện xuống!</p>
+                <p>Ầm ầm long ――</p>
+                <p>Không thua động tĩnh trăm con Man Tượng va chạm Giới Sơn.</p>
+                <p>Một trận chấn động to lớn, rung chuyển sườn dốc phủ tuyết.</p>
+                <p>Mặt băng bị cắt đứt nửa khúc trên.</p>
+                <p>Lại cũng không chịu nổi.</p>
+                <p>Từ chỗ bị chặt đứt, ầm ầm tuột xuống.</p>
+                <p>Kèm theo thi thể yêu thú dày đặc phía trên, giống hồng lưu từ sườn dốc phủ tuyết mấy trăm trượng ầm ầm lăn xuống.</p>
+                <p>Một đường bẻ gãy nghiền nát.</p>
+                <p>Bất luận là thi thể, vẫn là tử thi khôi lỗi.</p>
+                <p>Tất cả bị hồng lưu băng tuyết này cuốn đi, lao xuống Giới Sơn, cũng hướng về phía trước cấp tốc bao phủ.</p>
+                <p>Một đường nghiền nát năm sáu trăm thi thể khôi lỗi.</p>
+                <p>Cho đến lao nhanh đến dưới chân Tế Tự yêu tộc, mới rốt cục dừng lại.</p>
+                <p>Hàn băng đập vào mặt.</p>
+                <p>Trộn lẫn vô số khí tức tử thi hư thối, đập vào mặt.</p>
+                <p>Yêu tộc Tế Tự mặt đầy băng hàn!</p>
+                <p>Nhìn chiến trường hỗn độn đầy đất.</p>
+                <p>Nhìn sườn dốc phủ tuyết bị làm sạch.</p>
+                <p>Trong mắt ánh lửa, vô pháp ngăn chặn bốc lên ra bên ngoài.</p>
+                <p>&quot;Tốt tốt tốt!&quot;</p>
+                <p>&quot;Còn có thể chơi như vậy đúng không?&quot;</p>
+                <p>&quot;Chỉ huy thật tốt!&quot;</p>
+                <p>&quot;Bản Tế Tự, đích thân đến gặp ngươi!&quot;</p>
+                <p>&quot;Đi!&quot;</p>
+                <p>Ầm ầm ――</p>
+                <p>Còn sót lại năm ngàn tử thi đại quân, lại không bất kỳ trở ngại nào hướng về Giới Sơn trùng kích.</p>
+                <p>Mất đi mặt băng trơn bóng.</p>
+                <p>Gỗ lăn không cách nào lại ọach ọạch nhấp nhô xuống dưới.</p>
+                <p>Đến nửa đường liền sẽ bị kẹt lại.</p>
+                <p>Sau khi nỗ lực một nửa tử thi đại quân.</p>
+                <p>Yêu tộc Tế Tự, cuối cùng có thể cùng nhân tộc trấn thủ Giới Sơn chính diện chém giết!</p>
+                <p>Lúc này.</p>
+                <p>Mọi người cuối cùng thanh lý xong Yêu Phong.</p>
+                <p>Cho đến trước mắt, chỉ có Lưu Vãn Phong của Vạn Kiếm môn ngã xuống.</p>
+                <p>Những người còn lại đều không có gì đáng ngại.</p>
+                <p>Mười mấy người bị thương, đều là khi chém giết Yêu Phong, vô ý bị máu nó bắn tung tóe đến.</p>
+                <p>May mắn Ôn Hồng Dược tinh thông y thuật ở đây.</p>
+                <p>Cấp tốc vì bọn họ chữa thương.</p>
+                <p>Ngoại trừ cá biệt thương thế quá nặng, vô pháp lập tức phục hồi như cũ.</p>
+                <p>Còn lại đều không ảnh hưởng chiến đấu.</p>
+                <p>Mọi người nhẹ nhàng thở ra.</p>
+                <p>Vừa rồi thật sự là quá kinh hiểm.</p>
+                <p>Nếu là mặt băng kia không có đột nhiên sụp đổ, mang theo tất cả tử thi đại quân đi.</p>
+                <p>Bọn hắn lâm vào trạng thái hai mặt thụ địch.</p>
+                <p>Hậu quả đơn giản không dám tưởng tượng.</p>
+                <p>Lôi Chấn Hải một cước giẫm chết con Yêu Phong cuối cùng.</p>
+                <p>Nghiêng đầu nhìn chằm chằm Giang Phàm xa xa.</p>
+                <p>Người khác không rõ ràng.</p>
+                <p>Hắn thấy rõ ràng.</p>
+                <p>Quan đầu tối hậu, là Giang Phàm chặt đứt mặt băng, cứu vãn chiến cuộc.</p>
+                <p>Mà thứ sử dụng.</p>
+                <p>Hắn cũng thấy rõ ràng.</p>
+                <p>Một cái là núi có thể biến lớn.</p>
+                <p>Cái khác, thì là tử kiếm mà Cự Nhân Tông vẫn đang tìm kiếm sát hại Thiết Bất Bại!</p>
+                <p>Tầm mắt Lôi Chấn Hải lấp lóe.</p>
+                <p>Bất động thanh sắc thu hồi tầm mắt, nhìn về phía tử thi đại quân trùng trùng điệp điệp đến dưới chân núi.</p>
+                <p>Chúng nó lại không ngăn trở.</p>
+                <p>Hướng về đỉnh núi mãnh liệt tới.</p>
+                <p>Lôi Chấn Hải hít sâu một hơi, chấn thanh nói:</p>
+                <p>&quot;Trận đánh ác liệt chân chính đến rồi!&quot;</p>
+                <p>&quot;Các Trưởng lão, đệ tử các Tông! Kiên thủ tốt phòng tuyến của các ngươi!&quot;</p>
+                <p>&quot;Chúng ta quyết một trận tử chiến!&quot;</p>
+                <p>Dứt lời.</p>
+                <p>Xuất thủ trước.</p>
+                <p>Trước người hắn sắp xếp mười cái Lôi Kích mộc.</p>
+                <p>Mỗi một cây đều chứa đầy lôi điện.</p>
+                <p>Công pháp Chính Lôi tông, không cách nào tự mình phát ra lôi điện.</p>
+                <p>Mà là muốn nhờ lực lượng sấm sét đất trời.</p>
+                <p>Ngoại giới lôi điện chi lực có bao nhiêu, quyết định thực lực mạnh yếu của bọn hắn.</p>
+                <p>Mười cái Lôi Kích mộc, là hắn chuyên mang tới.</p>
+                <p>&quot;Diệt!&quot;</p>
+                <p>Tầm mắt Lôi Chấn Hải sắc bén.</p>
+                <p>Phát hiện phía dưới ánh lửa thấp thoáng, trên lưng một con yêu thú, lại đứng chắp tay một vị thiếu nữ vẻ mặt lạnh lùng.</p>
+                <p>Lập tức đoán được thân phận nàng.</p>
+                <p>&quot;Yêu tộc Tế Tự!&quot;</p>
+                <p>Lôi Chấn Hải ngón tay một chỉ.</p>
+                <p>Mười đạo lôi điện hợp làm một đạo lôi điện to bằng cánh tay.</p>
+                <p>Trong nháy tức đến, đánh về phía Tế Tự yêu tộc.</p>
+                <p>Nàng biến sắc, thân ảnh như huyễn, trong nháy mắt tan biến tại chỗ.</p>
+                <p>Phanh ――</p>
+                <p>Miễn cưỡng né nhanh.</p>
+                <p>Nơi nàng vừa đứng thẳng, tử thi khôi lỗi trong phạm vi trăm trượng xung quanh, toàn bộ bị đánh tan tử khí, tất cả đều ngã xuống đất không dậy nổi!</p>
+                <p>&quot;Lôi Đạo?&quot;</p>
+                <p>Nàng ôm lấy cánh tay phải đau đớn, dù tránh kịp thời.</p>
+                <p>Nhưng vẫn bị dư ba lôi điện lau tới.</p>
+                <p>Cánh tay phải bị điện giật đến một mảnh máu thịt be bét.</p>
+                <p>&quot;Ngươi chính là người chỉ huy, vẫn là sư tôn của tên hỗn đản kia đúng không?&quot;</p>
+                <p>Tên hỗn đản kia, cũng am hiểu Lôi Đạo.</p>
+                <p>Còn đánh tan tử khí chín đầu cự mãng của chính mình!</p>
+                <p>Nghe nói, trong Cửu Tông chỉ có đệ tử Chính Lôi tông am hiểu Lôi Đạo.</p>
+                <p>Người chỉ huy trước mắt, không hề nghi ngờ chính là sư tôn của tên hỗn đản kia.</p>
+                <p>Lôi Chấn Hải hơi hơi nhăn lông mày.</p>
+                <p>Người chỉ huy là hắn không sai.</p>
+                <p>Nhưng, sư tôn của tên hỗn đản kia là chuyện gì xảy ra?</p>
+                <p>Có Chết Cũng Không Tưởng Tượng Được Nam Chính Yêu Tôi Dụ Tâm - Bạo Liệt Cổ Thủ Không Thể Tu Tiên Ta Chỉ Đi Bồi Dưỡng Hồn Sủng Lời Hứa Khuynh Thế - Tuyết Mặc</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_498">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 498: Thảm liệt</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Mặc kệ nhiều như vậy. Nếu Yêu tộc Tế Tự hiện thân, vậy liền mang ý nghĩa, hai người chỉ huy quyết đấu bắt đầu.</p>
+                <p>&quot;Lại ăn ta nhất kích!&quot; Lôi Chấn Hải hấp thu Lôi Kích Mộc bên trong lôi điện, cách Giới Sơn đánh tới.</p>
+                <p>Yêu tộc Tế Tự vô ý thức sờ soạng một thoáng cổ. Lúc này mới nhớ tới, vòng cổ của mình bị tên hỗn đản kia cướp đi. Nhưng cũng không hoảng hốt. Tâm niệm vừa động, bên cạnh một đầu hình thể khổng lồ tử thi khôi lỗi liền bay lên trời, chủ động nhào về phía lôi điện.</p>
+                <p>Theo ánh chớp bùng lên, tử thi khôi lỗi liền nổ nát vụn thành vô số khối, tán rơi xuống đất thiêu đốt lên.</p>
+                <p>&quot;Hừ! Cũng là điểm này thủ đoạn.&quot; Nàng dậm chân. Dưới chân tử thi khôi lỗi, liền theo đại quân, hướng về Giới Sơn đỉnh phóng đi. Tất cả đều là đất đông cứng cùng hòn đá dốc núi, cũng không còn cách nào trở thành vật cản. Nó cõng Yêu tộc Tế Tự, dễ dàng đăng lâm đến giữa sườn núi.</p>
+                <p>Mà tuyến ngoài cùng tử thi đại quân, đã trùng kích đến mỏm núi rìa. Lôi Chấn Hải trầm giọng quát: &quot;Giữ vững Giới Sơn!&quot; Chính mình thì hấp thu mảng lớn lôi điện chi lực, hướng về Yêu tộc Tế Tự đánh tới.</p>
+                <p>Yêu tộc Tế Tự tâm niệm vừa động, liền có nhiều đầu tử thi khôi lỗi chủ động ngăn trở lôi điện chi lực. Đồng thời, nàng tay áo vung lên, một đoàn màu đen tử khí xông vào không trung, đón gió tăng trưởng hóa thành một đầu mười trượng chi cự đầu lâu. Trong miệng phát ra làm người rùng mình tiếng rít, hướng phía Lôi Chấn Hải đột nhiên đánh tới.</p>
+                <p>Lôi Chấn Hải biến sắc. Hấp thu mấy đạo lôi điện chi lực, cùng nhau hướng đầu lâu đánh tới.</p>
+                <p>Phốc phốc ――</p>
+                <p>Đầu lâu bên trong tử khí cực kỳ nồng hậu dày đặc, mạnh mẽ như thế lôi điện chi lực lại chưa có thể đem đánh xuyên qua.</p>
+                <p>Phanh ――</p>
+                <p>Đầu lâu miệng mở rộng, lao xuống lấy hung hăng cắn về phía Lôi Chấn Hải.</p>
+                <p>Không tốt! Lôi Chấn Hải tranh thủ thời gian tránh khỏi. Đại địa lập tức bị đầu lâu đụng đánh trúng chia năm xẻ bảy. Hắn trưng bày trên mặt đất mười cái Lôi Kích Mộc, cũng tất cả đều nổ bay ra ngoài.</p>
+                <p>Sắc mặt hắn biến đổi. Chính Lôi Tông công pháp, chính là muốn mượn sấm sét đất trời lực lượng mới có thể phát huy ra uy lực. Lôi Kích Mộc là Chính Lôi Tông môn đồ thường dùng để chứa đựng lôi điện đồ vật. Trước mắt những thứ này, là hắn mang tới toàn bộ Lôi Kích Mộc.</p>
+                <p>Cùng lúc đó, tử thi các đại quân vọt tới trước mặt. Tọa trấn Giới Sơn tứ đại tông môn trưởng lão cùng các đệ tử, không thể tránh khỏi cùng tử thi đám khôi lỗi chính diện giao thủ.</p>
+                <p>Trước hết nhất nhận trùng kích chính là Thái Thượng Tông. Lỗ Tu Niên cùng hai vị khác trưởng lão ngăn tại phía trước nhất. Hạ Triều Ca, Hoa Hướng Thần, Lý Thi Thiến các đệ tử, đứng ở phía sau, thông qua các trưởng lão ở giữa chừa lại tới khe hở bổ đao.</p>
+                <p>Một đầu Kết Đan năm tầng xà yêu, một ngựa đi đầu, vượt qua đông đảo tử thi khôi lỗi trước tiên đánh tới trước mặt. Phòng ở kích cỡ tương đương lớn đầu to, hướng phía ở giữa Lỗ Tu Niên hung hăng đánh tới.</p>
+                <p>&quot;Hừ!&quot; Lỗ Tu Niên song chưởng linh lực tuôn ra, phối hợp với Địa cấp công pháp. Đánh ra một đạo không khí tuôn ra, gần như thực chất hóa chưởng pháp.</p>
+                <p>Phanh ――</p>
+                <p>Tử thi cự mãng hư thối đầu, tại chỗ đã bị đánh nhão nhoẹt. Còn sót lại chưởng kình, còn đem hai bên hộ tống mà đến tử thi khôi lỗi cũng hất tung ở mặt đất, hiện ra hình bán nguyệt ngã vào hình.</p>
+                <p>Một kích này, đem Kết Đan bảy tầng cuồng mãnh thực lực, triển lộ không thể nghi ngờ! Hai bên trưởng lão, sau lưng các đệ tử, đều tinh thần phấn chấn.</p>
+                <p>Đột nhiên! Không khí bộc phát ra kịch liệt vang lên! Mất đi đầu cự mãng, dài mấy chục trượng bạch cốt thân thể đột nhiên rút tới!</p>
+                <p>Lỗ Tu Niên cùng hai vị trưởng lão vội vàng không kịp chuẩn bị. Bị một cái đuôi quất đến lảo đảo lui lại, đụng ngã nhiều vị Thái Thượng Tông đệ tử.</p>
+                <p>&quot;Nghiệt súc!&quot; Lỗ Tu Niên vừa sợ vừa giận, quát: &quot;Đem nó đánh thành phấn vụn! Nhìn nó còn hơi một tí!&quot;</p>
+                <p>Một vị trưởng lão theo sát phía sau. Một vị trưởng lão khác lại đứng tại chỗ, không nhúc nhích.</p>
+                <p>Giọt giọt huyết dịch, theo mi tâm tuôn ra, chảy qua khóe mắt, lướt qua mũi thở, cuối cùng uốn lượn đến cái cằm, hội tụ thành một đầu huyết sắc dòng suối, rơi xuống nước tại giữa hai chân.</p>
+                <p>Lỗ Tu Niên quay đầu nhìn lại, lão mắt kịch co lại. Đối phương mi tâm, có một cái chày cán bột to lỗ máu. Theo mi tâm, xỏ xuyên qua đến cái ót. Lỗ máu bên trong, Lỗ Tu Niên thấy được các đệ tử hoảng sợ mà kinh ngạc gương mặt.</p>
+                <p>Vừa rồi đuôi rắn nhất kích, một cây bén nhọn cốt thứ, vô ý đâm xuyên qua đầu của hắn.</p>
+                <p>&quot;Lâm Chấn!&quot; Lỗ Tu Niên sắc mặt đại biến. Tại hắn không dám tin trong ánh mắt, Lâm Chấn chầm chậm ngã xuống băng lãnh trên mặt tuyết. Một đôi mắt đóng mở lấy, phản chiếu lấy không có Tinh Quang, càng không có ánh trăng đen kịt bầu trời đêm.</p>
+                <p>Hắn cuối cùng không có thể chờ đợi đến hừng đông, ngã xuống trước tờ mờ sáng.</p>
+                <p>&quot;Không! ! !&quot; Lỗ Tu Niên bi phẫn gầm thét. Ở chung nhiều năm sư đệ, cứ như vậy... cứ như vậy ngoài ý muốn vẫn lạc! Hắn phẫn nộ, khổ sở, càng nhiều hơn chính là tự trách. Nếu như mình không có đại ý như vậy, Lâm trưởng lão cũng sẽ không chết! !</p>
+                <p>Hô ――</p>
+                <p>Đuôi rắn lại lần nữa kéo tới. Lỗ Tu Niên bi phẫn đan xen, quát: &quot;Đi chết! !&quot;</p>
+                <p>Kinh khủng linh lực, bá đạo chưởng lực. Đem lại lần nữa đánh lén to lớn đuôi rắn, trong nháy mắt đập thành vô số khối nát xương. Bụng rắn bên trong, đoàn kia âm thầm lấp lánh tử khí, khống chế còn sót lại một khối cốt thứ, nhảy lên cố gắng tiếp tục đâm tới!</p>
+                <p>Răng rắc!</p>
+                <p>Một cái chân to đột nhiên đạp lên. Liền xương cốt mang tử khí, tất cả đều đạp diệt!</p>
+                <p>Lỗ Tu Niên xông hạ sơn sườn núi, hai mắt ửng hồng. Nhìn chằm chằm kéo tới thú triều chủ động vọt tới: &quot;Đáng chết! Các ngươi toàn đều đáng chết! ! !&quot;</p>
+                <p>Hạ Triều Ca, Hoa Hướng Thần cùng Lý Thi Thiến các đệ tử, cũng vành mắt ửng hồng. Lâm Chấn trưởng lão bình thường đối đệ tử là nhất ôn hòa. Cho dù là biệt phong đệ tử, cũng đều sẽ chiếu cố một ít. Hắn lại đột nhiên như vậy chết.</p>
+                <p>Hoa Hướng Thần vành mắt đỏ lên, rống giận xông đi lên, thay thế Lâm Chấn vị trí. Phẫn nộ chém về phía một đầu muốn nhân cơ hội đánh lén Lỗ Tu Niên cánh lang yêu.</p>
+                <p>Hạ Triều Ca cùng Lý Thi Thiến thì lần lượt bổ sung Lỗ Tu Niên vị trí, nén giận thẳng hướng đánh tới yêu thú.</p>
+                <p>Một màn này, cũng không phải là ví dụ. Chưa bao giờ cùng tử thi khôi lỗi chính diện giao thủ Tứ Tông nhân viên. Trong nháy mắt liền bị to lớn trùng kích. Những tử thi này khôi lỗi, bị đánh nát đầu, thậm chí là toàn thân bị đánh đến tan ra thành từng mảnh đi, lại vẫn có thể có được sức chiến đấu.</p>
+                <p>Không có chút nào kinh nghiệm bọn hắn, lập tức liền bị tách ra phòng tuyến.</p>
+                <p>Nghiêm trọng nhất chính là Cự Nhân Tông. Khoảng cách gần giao chiến bọn hắn, vốn là không chiếm ưu thế. Không đề phòng phía dưới, lại bị một đầu thiếu nửa người báo yêu, vọt vào sau lưng đệ tử trong đám. Nó toàn thân sắc bén cốt thứ, như là lưỡi hái. Đâm bị thương tám vị đệ tử. Thậm chí còn có hai vị bị đâm trúng yếu hại, tại chỗ tử vong!</p>
+                <p>&quot;Nghiệt súc!&quot; Đợi đến các trưởng lão chạy tới, đem báo yêu đánh thành phấn vụn. Các đệ tử đã thương vong thảm trọng. Trong nháy mắt liền từng có nửa đệ tử mất đi sức chiến đấu.</p>
+                <p>Vạn Kiếm Môn cũng không tốt gì. Trước đây, có hỏa diễm, lôi điện chờ dương cương chính khí khắc chế, cho bọn hắn một cái ảo giác, tử thi khôi lỗi hết sức dễ đối phó.</p>
+                <p>Nhưng mà, chính diện lúc giao thủ mới có thể cảm nhận được bọn hắn khó giải quyết. Không sợ đau xót cùng tử vong. Thậm chí đem thân thể đánh tan vẫn như cũ bất tử.</p>
+                <p>Vừa đối mặt, Vạn Kiếm Môn phòng tuyến liền bị vài đầu thể trạng khổng lồ tử thi khôi lỗi ép đến liên tiếp lui về phía sau. Ba cái đệ tử bị bắn tung tóe xương vỡ đả thương. Bên trong một cái còn bị cắt đứt ngón tay.</p>
+                <p>Lương Phi Yên phẫn nộ vung ra từng đạo kiếm khí bén nhọn, sắp chết thi băm. Có thể những xương vỡ này vẫn không ngừng công kích. Càng thêm khó giải quyết chính là, trước mặt tử thi khôi lỗi không có giải quyết xong, phía sau tử thi khôi lỗi lại nhào tới!</p>
+                <p>Duy nhất tốt một chút là Chính Lôi Tông. Trưởng lão cùng các đệ tử từng đạo Lôi Đình đánh tới, trực tiếp liền nhường tử thi đám khôi lỗi tại chỗ nằm xuống, động một cái cũng không thể động. Vừa vặn bên cạnh tam tông phòng tuyến, lần lượt bị đánh lui. Hai bên sườn của bọn họ lần lượt xuất hiện tử thi khôi lỗi, cũng hướng bọn hắn phát khởi công kích.</p>
+                <p>Ba mặt thụ địch phía dưới, Chính Lôi Tông cũng không chịu nổi. Một vị nóng vội cứu đệ tử trưởng lão, bị một cốt trảo móc rỗng trái tim!</p>
+                <p>Giết đỏ cả mắt Lỗ Tu Niên, đều bị ép lui trở về sơn phong, theo thú triều tới gần vừa đánh vừa lui. Thế cục sụp đổ, tùy thời liền muốn hủy diệt!</p>
+                <p>&quot;Lôi Tông chủ! Nhanh nghĩ một chút biện pháp!&quot; &quot;Phòng tuyến... muốn bại!&quot;</p>
+                <p>Lôi Chấn Hải có chút mờ mịt. Hắn làm sao đều không nghĩ tới, trước đây còn bị bọn hắn tùy tiện tiêu diệt hơn phân nửa tử thi đại quân, vẻn vẹn một cái giao phong, liền đem nhân loại phòng tuyến đánh tan! Tiếp tục như vậy nữa, binh bại là không có chút hồi hộp nào! Mà lại đại quân ép sát phía dưới, bọn hắn trốn đều không có cơ hội trốn!</p>
+                <p>Ngay tại hắn cũng không biết làm sao thời khắc, một đạo to rõ thanh âm, đột nhiên vang vọng chiến trường.</p>
+                <p>&quot;Công cái chết của bọn nó khí!&quot;</p>
+                <p>&quot;Đó là duy nhất phải hại!&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_499">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 499: Chuyển cơ</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm đứng trên cao nhìn xuống toàn trường, thu hết tình hình chiến đấu của tứ đại tông môn vào mắt.</p>
+                <p>Ba tông môn còn lại, cho dù khôi lỗi chết bị chặt thành bụi phấn, cũng chẳng làm nên chuyện gì. Thế nhưng Chính Lôi tông, chỉ với lôi điện đánh tan tử khí, thân thể khôi lỗi chết vẫn nguyên vẹn và bất động tại chỗ. Điều này đủ để chứng minh rằng tử khí mới là mấu chốt khiến chúng hành động.</p>
+                <p>Đây không phải là phát hiện mới gì. Dù là thí nghiệm với tiểu yêu thú trước đây hay thiêu cháy chết đại quân sau này, ta đều có thể nhận ra rằng một khi tử khí của những khôi lỗi chết này bốc hơi ra ngoài, chúng sẽ mất đi khả năng hành động. Chẳng qua, lần đầu giao phong trực diện với chết đại quân, bọn họ quá căng thẳng, chỉ lo đối phó với khôi lỗi mà quên đi yếu hại duy nhất của chúng là tử khí.</p>
+                <p>Và tiếng hô kia, xem như đã đánh thức những người trong mộng.</p>
+                <p>Hướng Vạn Kiếm môn, một đàn lợn rừng thối rữa dữ tợn, khí thế hung hăng xông lên. Ba vị trưởng lão Vạn Kiếm môn không lập tức động thủ mà tìm kiếm tử khí trong cơ thể chúng. Mặc dù là cùng loại khôi lỗi chết, vị trí tử khí trong cơ thể chúng lại không hoàn toàn giống nhau. Có con ở trong đầu, có con giấu dưới xương cột sống, lại có con giấu sâu trong xương cốt.</p>
+                <p>Lương Phi Yên cũng khóa chặt một con yêu lợn. Phát hiện trong hốc mắt nó có một đoàn tử khí. Nàng xông lên, rút kiếm đâm vào hốc mắt. Kiếm khí mạnh mẽ trong nháy tức khắc đánh tan tử khí. Con lợn rừng lập tức ầm ầm ngã xuống đất. Lương Phi Yên vừa kích động, lại hưng phấn, quát lớn: &quot;Tới nha! Đều tới nha!!!&quot;</p>
+                <p>Thấy tình hình này, mọi người phấn chấn, nhao nhao thay đổi chiến lược công kích lung tung, chuyên tìm tử khí của chúng để tấn công! Hiệu quả tốt ngoài ý liệu!</p>
+                <p>Những khôi lỗi chết vừa rồi còn cực kỳ khó đối phó, gây ra thương vong lớn cho họ, nay theo tử khí lần lượt bị tiêu diệt, liền dễ dàng ngã xuống. Phòng tuyến tán loạn dần được thu hẹp lại dưới sự hợp lực phản công của các trưởng lão và đệ tử.</p>
+                <p>Thấy ưu thế khó khăn lắm mới giành được bị san bằng chút ít, Tế Tự yêu tộc oán hận nhìn về phía người đã nhắc nhở. Đối phương đứng trên một cây băng trụ, khoanh hai tay trước ngực, chăm chú theo dõi chiến cuộc. Dù còn trẻ tuổi, hắn lại có một khí chất điềm tĩnh, bình thản. Và khi nhìn rõ dung mạo, đôi mắt xinh đẹp của Tế Tự yêu tộc trợn tròn, lửa giận phun ra ngoài!</p>
+                <p>&quot;Là ngươi!!!&quot;</p>
+                <p>Dù cho Giang Phàm có bị đốt thành tro, nàng cũng nhận ra!</p>
+                <p>Giang Phàm nghe vậy, cách không nhìn lại, cười vẫy tay: &quot;Đã lâu không gặp, Tế Tự yêu tộc vô sỉ.&quot;</p>
+                <p>Không còn gì để nói, Tế Tự yêu tộc tức giận vô cùng, hận nói: &quot;Ngươi chớ đắc ý!&quot;</p>
+                <p>&quot;Đánh hạ Giới Sơn, ta người đầu tiên bắt ngươi khai đao!&quot;</p>
+                <p>&quot;Ta sẽ cắt đầu lưỡi của ngươi, chặt móng vuốt của ngươi, chặt đầu chó của ngươi!!!&quot;</p>
+                <p>Nghĩ đến mình đã chịu nhiều thiệt thòi trong tay Giang Phàm, nàng sắp tức đến vỡ phổi!</p>
+                <p>Giang Phàm nhìn xem cục diện dần chuyển biến tốt đẹp, mỉm cười: &quot;Công tới rồi nói.&quot;</p>
+                <p>Tế Tự yêu tộc siết chặt đôi bàn tay trắng như phấn, tức giận nói: &quot;Tốt! Tốt!&quot;</p>
+                <p>&quot;Hung hăng càn quấy đúng không?&quot;</p>
+                <p>&quot;Vậy ta liền làm thịt sư tôn ngươi, trước thu một chút tiền lãi!&quot;</p>
+                <p>Chợt, ánh mắt lạnh băng trừng mắt về phía Lôi Chấn Hải. Dưới áo bào, tử khí nồng đậm cuộn trào. &quot;Lôi tông chủ! Ngươi dạy ra một đồ đệ tốt đấy!&quot;</p>
+                <p>&quot;Ta Yêu Nguyệt chưa từng chịu loại thiệt thòi lớn như vậy!&quot;</p>
+                <p>&quot;Món nợ này, trước hết tính trên đầu ngươi, người sư tôn này!&quot;</p>
+                <p>Lôi Chấn Hải sửng sốt một chút, nói: &quot;Ngươi nói là Giang Phàm?&quot;</p>
+                <p>&quot;Hắn khi nào là đệ tử ta rồi?&quot;</p>
+                <p>Yêu Nguyệt nghiến răng nghiến lợi nói: &quot;Đừng hòng chối cãi!&quot;</p>
+                <p>&quot;Hắn một thân Lôi Đạo, không phải ngươi dạy, lẽ nào là Quỷ giáo?&quot;</p>
+                <p>&quot;Ngươi đi chết đi!&quot;</p>
+                <p>Rống...</p>
+                <p>Âm khí trong tay áo nàng phát ra từng đợt gào thét, sau đó biến ảo thành hơn mười con yêu lang, bay nhào về phía Lôi Chấn Hải.</p>
+                <p>Nhìn xem Yêu Nguyệt muốn liều mạng với mình, Lôi Chấn Hải buồn bực đến muốn thổ huyết. Tìm nhầm người rồi! Lão Tử đâu phải sư tôn của Giang Phàm cái thằng nhãi con kia? Nhưng đối phương tìm hắn liều mạng, hắn cũng chỉ có thể kiên trì.</p>
+                <p>Lúc này đau lòng lấy ra mấy đạo phù chứa đựng lực lôi điện mạnh mẽ. Xé mở một tấm, liền có một tia chớp lao ra, dưới dấu tay hắn, oanh kích đánh vào bầy yêu lang đang ập tới. Nhưng một tấm rõ ràng chưa đủ. Hắn dứt khoát đau lòng vô cùng tế ra tất cả phù.</p>
+                <p>Từng đạo lực lôi điện đánh thẳng vào bầy yêu lang tử khí.</p>
+                <p>Phốc phốc phốc...</p>
+                <p>Lực lôi điện mạnh hơn Lôi Kích mộc rất nhiều, đánh tan hơn nửa tử khí. Nhưng vẫn còn chút ít trùng kích tới, đánh vào ngực Lôi Chấn Hải. Người bình thường trúng một kích này, sớm đã bị tử khí nhập thể, tại chỗ bị giết. Nhưng Lôi Chấn Hải, quanh thân tràn ngập ánh chớp, một tấm lôi võng xuyên thấu thân thể mà ra, đánh tan tử khí.</p>
+                <p>Hóa ra, hắn còn mặc một bộ nhuyễn giáp chứa đựng lôi điện bên trong. Lúc này mới may mắn nhặt về một mạng.</p>
+                <p>Lôi Chấn Hải vừa sợ vừa giận: &quot;Yêu nữ!&quot;</p>
+                <p>&quot;Ngươi muốn chơi, bản tông cùng ngươi nghiêm túc chơi một chút!&quot;</p>
+                <p>Hắn cực kỳ không nỡ lấy ra một thanh Thiết Bổng Chùy tròn trịa. Bên trong tràn ngập từng đạo lôi hơi thở. Lôi hơi thở kia mạnh đến mức khiến Yêu Nguyệt dù cách xa cũng lộ vẻ kiêng dè.</p>
+                <p>&quot;Kiếp lôi?&quot;</p>
+                <p>Không giống với lôi điện bình thường trước đây, Thiết Bổng Chùy này chứa đựng thiên địa kiếp lôi, mạnh gấp mười lần lôi điện bình thường.</p>
+                <p>&quot;Bất quá, chỉ còn lại lôi hơi thở, có thể làm khó dễ được ta?&quot;</p>
+                <p>Yêu Nguyệt miệng nói như thế, nhưng vẫn bất động thanh sắc ra lệnh cho vài con khôi lỗi chết chặn trước người.</p>
+                <p>Lôi Chấn Hải hừ lạnh nói: &quot;Điểm này lôi hơi thở, là không làm gì được ngươi.&quot;</p>
+                <p>&quot;Nhưng, ngươi không phát hiện lúc này thời tiết sao?&quot;</p>
+                <p>Yêu Nguyệt ngẩng đầu nhìn về phía bầu trời đêm. Tinh quang biến mất. Trăng non vô ảnh. Nàng hơi nhíu mày, ban đầu không hiểu rõ, chợt sắc mặt đại biến: &quot;Ngươi... Ngươi muốn dẫn tới thiên địa kiếp lôi?&quot;</p>
+                <p>Nhật nguyệt ảm đạm, chỉ có thể nói rõ một vấn đề: giờ phút này, Ô Vân bao phủ!</p>
+                <p>Lôi Chấn Hải cười ha hả một tiếng: &quot;Vừa rồi lúc hoàng hôn mặt trời lặn, liền có đám mây bao phủ.&quot;</p>
+                <p>&quot;Ta liền biết, thượng thiên vẫn đứng về phía nhân loại chúng ta!&quot;</p>
+                <p>&quot;Công pháp của Chính Lôi tông ta, lúc thiên lôi cuồn cuộn mới là mạnh nhất!&quot;</p>
+                <p>&quot;Hiện tại có Ô Vân, chỉ cần một chút lôi hơi thở, liền có thể dẫn tới Vạn Thiên Lôi Đình!&quot;</p>
+                <p>&quot;Yêu nữ! Ngươi xong rồi!&quot;</p>
+                <p>Trong tiếng cười to, hắn nhấc cánh tay vung lên, liền muốn ném Thiết Bổng Chùy trong tay vào tầng mây.</p>
+                <p>Sắc mặt Yêu Nguyệt đại biến. Không lo được nhiều như vậy. Đôi mắt nàng lập tức lấp lánh. Một đạo linh hồn dao găm hóa thành thực chất, trong nháy mắt đâm ra.</p>
+                <p>Gần như trong khoảnh khắc, Lôi Chấn Hải liền bị linh hồn trọng thương, ôm đầu đau đớn gầm lên. Thiết Bổng Chùy trong tay cũng rơi xuống theo tiếng. Một con khôi lỗi chết ở gần đó, dưới sự khống chế của Yêu Nguyệt, thừa cơ bay bổ nhào qua, muốn cướp đi.</p>
+                <p>Ngay khi móng vuốt hắn sắp nắm chặt Thiết Bổng Chùy...</p>
+                <p>Xoẹt...</p>
+                <p>Một đạo kiếm khí sắc bén lóe lên, tinh chuẩn đâm trúng tử khí của khôi lỗi chết.</p>
+                <p>Ngay sau đó, một thân ảnh lóe lên tới, một bàn tay vững vàng cầm lấy Thiết Bổng Chùy.</p>
+                <p>Thấy rõ người ra tay, Yêu Nguyệt tại chỗ phá phòng: &quot;Giang Phàm! Lại là ngươi!&quot;</p>
+                <p>Nàng trợn tròn đôi mắt. Đôi bàn tay trắng như phấn nắm chặt. Bởi vì phẫn nộ, đầu ngón tay ấn vào thịt mà không hề cảm giác.</p>
+                <p>Giang Phàm híp híp con ngươi, nói: &quot;Sớm đề phòng công kích linh hồn của ngươi rồi!&quot;</p>
+                <p>Người khác không biết, nhưng hắn đã lĩnh giáo qua công kích linh hồn của cô gái này. Cho nên, khi Lôi Chấn Hải ném Thiết Bổng Chùy, hắn đã có lo lắng. Không ngoài dự liệu, Thiết Bổng Chùy dẫn tới kiếp lôi, uy hiếp quá lớn đối với chết đại quân của Yêu Nguyệt. Nàng liền không dám tiếp tục ẩn giấu thủ đoạn công kích linh hồn.</p>
+                <p>&quot;Ngươi!&quot; Yêu Nguyệt giận điên lên. Nàng vô cùng hối hận vì sao không chặn giết Giang Phàm đi. Bằng không, cuộc chiến hôm nay đâu có nhiều khó khăn trắc trở như vậy?</p>
+                <p>&quot;Nắm mắng khí lực của ta, giữ lại đào mệnh đi!&quot;</p>
+                <p>Giang Phàm dùng sức ném đi. Chiếc Thiết Bổng Chùy quyết định thắng bại chiến trường này, liền được thả vào tầng mây trên bầu trời.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_500">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 500: Tứ Phương Thiên lôi tề tụ</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Phần cuối phương Tây, lập tức xuất hiện một tia chớp.</p>
+                <p>Đem đường giao giới thiên địa đen kịt, chiếu rọi đến sáng tối chập chờn.</p>
+                <p>Ngay sau đó, vùng cực phương hướng cũng có cảm ứng, xuất hiện một tia chớp.</p>
+                <p>Sau đó, thiên địa bốn chiều, mỗi bên đều xuất hiện lôi điện.</p>
+                <p>Nghe không được tiếng nổ vang rền, nói rõ cách nhau cực xa.</p>
+                <p>Nhưng, điện thiểm không ngừng, lại không ngừng tới gần.</p>
+                <p>Điều này không nghi ngờ gì nữa nói rõ, Thiết Bổng Chùy đã tạo ra hiệu quả hấp dẫn kiếp lôi.</p>
+                <p>Yêu Nguyệt vẻ mặt thay đổi liên tục. Nàng tử thi đại quân, sợ nhất chính là thiên lôi. Thời tiết dông tố, tử khí là mục tiêu công kích dễ dàng nhất của thiên lôi. Nếu như lại phối hợp môn đồ Chính Lôi tông thi triển lôi đạo công pháp, chỉ đâu đánh đó, chớ nói tử thi đại quân, ngay cả nàng cũng tràn ngập nguy hiểm.</p>
+                <p>“Trời không giúp ta!” Yêu Nguyệt căm tức nhìn bầu trời.</p>
+                <p>Thật vất vả mới thấy hy vọng chiến thắng, một trận thiên lôi lại mang đến uy hiếp cực lớn.</p>
+                <p>Nhưng bảo nàng rút lui? Mắt nhìn gần trong gang tấc đỉnh Giới Sơn, lại nhìn thân ảnh đáng giận của Giang Phàm, nàng một quyền nện xuống vật cưỡi, quát: “Đại quân nghe lệnh, toàn bộ công kích môn đồ Chính Lôi tông! Những người còn lại, không cần quản!”</p>
+                <p>Thiên lôi tuy lợi hại, nhưng nếu không có người của Chính Lôi tông dùng lôi đạo công pháp dẫn dắt, sẽ không tạo thành uy hiếp quá lớn. Nói cách khác, tiêu diệt môn đồ Chính Lôi tông, nàng vẫn như cũ có phần thắng áp đảo!</p>
+                <p>Ra lệnh một tiếng, chiến cuộc đột biến!</p>
+                <p>Bầy thú triều tấn công tứ đại tông môn, đồng loạt từ bỏ Thái Thượng tông, Vạn Kiếm môn và Cự Nhân Tông, cùng nhau nhào về phía Chính Lôi tông!</p>
+                <p>Chỉ một thoáng, áp lực của Chính Lôi tông tăng lên dữ dội. Một vị trưởng lão không kịp chuẩn bị, đang đánh giết tử thi khôi lỗi trước mặt, bị một tử thi khôi lỗi kéo tới bên cạnh một trảo vặn mất đầu. Mấy đệ tử cũng bị tử thi khôi lỗi điên cuồng xông tới đánh chết.</p>
+                <p>Lôi Chấn Hải muốn rách cả mí mắt, quát: “Bảo vệ môn đồ Chính Lôi tông! Chờ thiên lôi hội tụ, chính là tử kỳ của đám tử thi khôi lỗi!”</p>
+                <p>Thiết Bổng Chùy đã dẫn tới thiên lôi, nhưng thiên lôi từ nơi cực xa xôi chạy đến, cũng cần một chút thời gian. Yêu Nguyệt chính là đang đánh vào khoảng thời gian chênh lệch này. Trong lúc đó, nếu có thể tiêu diệt môn đồ Chính Lôi tông, uy hiếp sẽ giảm đi rất nhiều. Nếu không, chính nàng cũng sẽ gặp nguy hiểm!</p>
+                <p>Ba tông còn lại lập tức phản ứng lại, đồng loạt xông tới gần môn đồ Chính Lôi tông, một bên đánh lui bầy thú triều đang tràn ra, một bên để cho bọn họ lui về phía sau, tranh thủ thời gian quý giá cho môn đồ Chính Lôi tông.</p>
+                <p>Gặp tình hình này, Yêu Nguyệt chau chặt lông mày. Nàng không thể kéo dài được nữa! Liếc mắt nhìn bức Trường Thành hai bên Giới Sơn.</p>
+                <p>Thiên Âm tông, Thiên Luyện tông, Hợp Hoan tông, Linh Thú tông, tứ đại tông môn trấn thủ hai bên. Thực lực của bọn họ rõ ràng không mạnh bằng tứ đại tông môn trên Giới Sơn. Mắt sáng lên, nàng lại lần nữa ra lệnh.</p>
+                <p>“Đội ngũ phía sau, theo hai cánh tiến công. Công phá phòng tuyến, liền bọc đánh Giới Sơn phía sau!”</p>
+                <p>Đến lúc đó, tiền hậu giáp kích, môn đồ Chính Lôi tông hẳn phải chết không nghi ngờ, không nói đến phòng tuyến trên Giới Sơn cũng sẽ triệt để sụp đổ. Nhân tộc và tử thi khôi lỗi hỗn chiến thành một đoàn, tất nhiên là tử thi đại quân dùng ưu thế số lượng tuyệt đối nghiền ép giành chiến thắng!</p>
+                <p>Mệnh lệnh được đưa ra. Bầy thú triều phía trước, tiếp tục điên cuồng tấn công môn đồ Chính Lôi tông. Bầy thú triều phía sau thì chia ra bốn đường, hướng phía Tứ Tông tấn công.</p>
+                <p>Bốn tông môn nhân như lâm đại địch, nhưng vẫn tính trấn định. Thứ nhất là số lượng yêu thú kém xa Giới Sơn khủng bố như vậy. Thứ hai là bọn hắn dựa vào bức tường thành cao trăm trượng thẳng đứng, còn có thể thông qua ném vật liệu gỗ bùng cháy để tiêu diệt địch.</p>
+                <p>Chỉ bất quá, Yêu Nguyệt đã dám tấn công tường thành, tự nhiên là đã chuẩn bị sẵn sàng.</p>
+                <p>Đầu tiên mở đường là những tử thi khôi lỗi khổng lồ cao 30 trượng. Chúng mạnh mẽ xông thẳng vào tường thành, cố gắng hết sức chấn vỡ những khối băng trên tường. Cho dù bị thiêu chết dưới chân tường thành cũng không sao, bởi vì cơ thể khổng lồ của chúng sẽ trở thành đá đặt chân cho tử thi khôi lỗi phía sau.</p>
+                <p>Vẻn vẹn chưa đầy một chén trà, dưới chân bốn phía tường thành đã chất đầy xác tử thi khôi lỗi, chất đống lên gần bằng tường thành.</p>
+                <p>Không thể tránh né việc chém giết trực diện, cuối cùng cũng đến.</p>
+                <p>Lệnh cho Lôi Chấn Hải, người vẫn luôn chú ý đến nơi này, trong lòng chìm xuống. So với Thượng Tam tông và Chính Lôi tông, thực lực của Tứ Tông này rõ ràng kém hơn một đoạn. Phòng tuyến ít nhiều đều xuất hiện lỏng lẻo. Nghiêm trọng nhất là Hợp Hoan tông. Đệ tử của bọn họ tu luyện công pháp, phần lớn lấy mị công làm chủ, ít có thuật công phạt. Đối phó nhân tộc, mị công có lẽ rất có tác dụng, nhưng đối mặt yêu thú, hay là yêu thú đã chết, liền không hề có tác dụng. Tử thi khôi lỗi cũng sẽ không hiểu phong tình, nhấc trảo liền xé, há mồm liền cắn. Rất nhanh liền có một vị nữ trưởng lão hương tiêu ngọc vẫn. Nhiều đệ tử cũng vì thế bị thương.</p>
+                <p>Cùng chú ý tới cảnh này, còn có Yêu Nguyệt. Nàng khóe miệng khẽ nhếch, nói: “Quyết định tường thành kiên cố, cho tới bây giờ đều là mặt yếu nhất.”</p>
+                <p>“Ba đội khác, mỗi đội rút ra năm trăm con, tiến đánh Hợp Hoan tông!”</p>
+                <p>Áp lực của ba tông khác chợt giảm, thay vào đó là áp lực của Hợp Hoan tông tăng gấp bội. Theo một vị trưởng lão nữa ngã xuống, phòng tuyến triệt để mất kiểm soát. Mười mấy con tử thi khôi lỗi nhảy lên tường thành, đối với bọn họ triển khai vây giết. Chỉ còn một trưởng lão, cộng thêm mười mấy đệ tử của họ, làm sao ngăn cản được? Đơn giản là một cuộc đồ sát nghiêng về một bên.</p>
+                <p>Thời gian trong nháy mắt, đệ tử chỉ còn lại ba người còn sót lại! Vị trưởng lão kia đau khổ bảo vệ lấy bọn hắn, căn bản không kiên trì được mấy hơi thở!</p>
+                <p>Lôi Chấn Hải thấy vô cùng lo sợ, hét lớn: “Thanh Vân tông! Chống lên!”</p>
+                <p>Cuối cùng một nhánh lực lượng chuẩn bị chiến đấu, không thể không phát huy tác dụng. Khiến Lôi Chấn Hải lo lắng chính là, thực lực của trưởng lão, đệ tử Thanh Vân tông không cao hơn Hợp Hoan tông là bao nhiêu. Bọn họ có thể đứng vững trước bầy thú triều sao?</p>
+                <p>Tứ Tông trên Giới Sơn, ba khu tông môn khác, cũng đều đồng loạt hướng Thanh Vân tông ném ánh mắt cháy bỏng. Nếu như Thanh Vân tông cũng không chịu được, đám tử thi đại quân vô biên vô tận, sẽ dọc theo Trường Thành, tiến quân thần tốc. Đến lúc đó, thật sự hết cách xoay chuyển.</p>
+                <p>Lý Thanh Phong khẽ cắn răng, tâm tình trầm trọng nói: “Nhớ kỹ lời ta nói trước khi chiến đấu không? Ai cũng không được lui! Không được phép làm mất mặt Thanh Vân tông!”</p>
+                <p>Các đệ tử sắc mặt nghiêm túc. Khi Thanh Vân tông đệ tử vào trận, có nghĩa là chiến cuộc sắp sụp đổ. Bọn họ không chiến là chết, chiến, cũng có thể là chết! Sinh tử đã không còn do bọn họ quyết định!</p>
+                <p>“Lên!” Lý Thanh Phong hô to một tiếng, trước tiên rút ra pháp khí, phóng tới chỗ Hợp Hoan tông trấn thủ. Vừa vặn đến, bên ngoài tường thành lại lật qua một đầu tử thi có hình thể khổng lồ. Lý Thanh Phong tay mắt lanh lẹ, một kiếm điểm vỡ tử khí trong ổ bụng nó. Nhưng cũng chỉ là trì hoãn một lát.</p>
+                <p>Bị mười mấy con tử thi khôi lỗi vây khốn, trưởng lão Hợp Hoan tông cuối cùng không địch lại, bị một cái đuôi đâm xuyên trái tim, chết thảm tại chỗ!</p>
+                <p>Lý Thanh Phong mặt mũi lạnh lẽo, cầm kiếm bổ chúng ra, lộ ra ba đệ tử còn sót lại. Ôn Hồng Dược cùng Triệu Vô Cực cũng đầy mặt bi phẫn, lần lượt xông vào đó, chém giết tử thi khôi lỗi.</p>
+                <p>Giang Phàm cũng hai con ngươi hàn quang nhập xuất. Ròng rã hơn hai mươi người đội ngũ Hợp Hoan tông, bị giết đến chỉ còn lại ba tên đệ tử! Trong đó hai người còn bị trọng thương. Chỉ còn lại Cơ Như Nguyệt vẫn tính hoàn hảo, cố gắng dưới sự vây công của hai tử thi, bảo vệ bọn họ. Nhưng một mình nàng, lại sức cùng lực kiệt, còn phải thường xuyên che chở đồng môn phía sau. Làm sao còn có thể ứng phó hai đầu tử thi?</p>
+                <p>“Phù” một tiếng --</p>
+                <p>Một đầu tử thi khôi lỗi, đột nhiên nhảy lên tới, miệng lớn che kín răng sắc bén. Một ngụm ngậm lấy nàng.</p>
+                <p>Cơ Như Nguyệt chợt cảm thấy răng đâm vào cơ thể lạnh buốt nhói nhói, như dòng điện nổ tung tại các vị trí cơ thể. Ngay sau đó, cơ thể giống như bị rút hết sức lực, không động đậy được.</p>
+                <p>Lòng bàn tay Thanh Phong, im ắng lăn xuống. Thanh kiếm lạnh lẽo, phản chiếu hình ảnh nàng bị yêu thú ngậm trong miệng đi xa.</p>
+                <p>Cơ Như Nguyệt trong óc trống rỗng. Cứ như vậy, kết thúc rồi sao?</p>
+                <p>“Bang” --</p>
+                <p>Nhưng vào lúc này, một cỗ sóng xung kích đinh tai nhức óc, chấn động đến tóc nàng loạn vũ, hai tai ong ong vang lên. Cơ thể mình cũng đột nhiên trời đất quay cuồng, tiếp theo, rơi xuống đất băng lãnh.</p>
+                <p>Nàng giật mình, còn chưa hiểu chuyện gì xảy ra.</p>
+                <p>“Oanh” --</p>
+                <p>Đầu tử thi bạch cốt cự thú kia, cơ thể cao lớn ầm ầm ngã xuống đất. Trên đầu dữ tợn của hắn, đứng thẳng một thiếu niên tay trái bưng lấy núi nhỏ ngũ sắc, tay phải dẫn theo trường kiếm hàn băng.</p>
+                <p>Ngực bạch cốt cự thú, mắt thường có thể thấy bị đánh xuyên một lỗ thủng lớn. Tử khí còn lại, theo gió tản đi.</p>
+                <p>“Giang... Giang sư đệ?”</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_99.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_99.html" class="page-btn">99</a>
+            <a href="page_100.html" class="page-btn current">100</a>
+            <a href="page_101.html" class="page-btn">101</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_101.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

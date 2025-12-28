@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 224">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 224</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_223.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_225.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_1116">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1116: Hóa Thần Âm Thi hạ lạc</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Thiếu chủ Tu La càng thêm biến sắc mặt: &quot;Là Cự Nhân Vương!&quot;</p>
+                <p>&quot;Có một Tôn Cự Nhân Vương đang đuổi đến!&quot;</p>
+                <p>&quot;Đi mau, trở về trại!&quot;</p>
+                <p>Trụ đen nối trời đã phong tỏa, bọn họ chỉ có thể quay về. Sáu người tộc Tu La lập tức phun ra từng đạo mây đen, nâng họ chuẩn bị bay xa.</p>
+                <p>Thiếu chủ Tu La vội vàng nói với Giang Phàm: &quot;Sinh linh Trung Thổ giới. Nếu các ngươi có thể thoát khỏi sự truy bắt của Cự Nhân Vương, thì hãy tự tìm nơi an toàn mà ẩn nấp. Nếu không, cứ đến trại của ta, có thể bảo toàn bình an cho các ngươi.&quot;</p>
+                <p>Một tên Thất Khiếu Tu La kêu lớn: &quot;Không còn thời gian nữa. Vị Cự Nhân Vương kia tốc độ còn nhanh hơn dự liệu. Rất có thể là Thạch Chi Cự Nhân Vương!&quot;</p>
+                <p>Giang Phàm lộ vẻ bình tĩnh. Cửu Khiếu Cự Nhân đã có kỹ năng săn bắt cường đại đến vậy, Cự Nhân Vương chỉ có mạnh hơn! Mấy sinh linh từ Trung Thổ giới như bọn họ, trước mặt hắn càng không chỗ nào che giấu.</p>
+                <p>Lúc này, bọn họ hoặc là trực tiếp rút lui, hoặc là mạo hiểm đi theo mấy tộc nhân Tu La đến trại. Trầm ngâm giây lát, hắn liền truyền niệm cho Bạch Tâm và mấy người: &quot;Đi theo mấy tộc nhân Tu La. Nếu thấy tình thế không ổn, các ngươi lập tức rút lui, chấm dứt nhiệm vụ.&quot;</p>
+                <p>Mấy người đều gật đầu.</p>
+                <p>Giang Phàm giao tất cả Viễn Cổ Cự Nhân bắt sống được cho Bạch Tâm. Bên trong Định Thân Chung của nàng là một không gian vô hạn, còn có thể chứa đựng người sống. Một trăm tên Cự Nhân đều có thể chứa vào.</p>
+                <p>Sắp xếp xong xuôi, Giang Phàm cõng Tống Linh Ngọc, Bạch Tâm dẫn Cố Hinh Nhi, Pháp Ấn Kim Cương tay cầm một chuỗi Phật châu, một hàng năm người nhanh chóng theo kịp sáu người tộc Tu La.</p>
+                <p>Khoảng chừng hai canh giờ sau, cỗ lực chấn động kia yếu đi rất nhiều, nói rõ khoảng cách giữa bọn họ và Cự Nhân Vương đang nới rộng. Nhìn có vẻ là Cự Nhân Vương không phát hiện ra bọn họ. Nhưng, bất kể là Giang Phàm hay tộc Tu La, đều không có ý dừng lại.</p>
+                <p>Thiếu chủ Tu La nhìn Giang Phàm đang bám sát bên cạnh bọn họ, lộ vẻ tán thưởng: &quot;Khó trách Trung Thổ phái các ngươi lên đây, cẩn trọng như vậy, quả thật rất thích hợp để thâm nhập. Viễn Cổ Cự Nhân vô cùng giảo hoạt. Rất nhiều lúc, chúng sẽ mê hoặc con mồi, khiến con mồi lầm tưởng đã an toàn, từ đó lơ là mất cảnh giác. Cái đang chờ đợi bọn họ, chính là một đòn chí mạng bất ngờ.&quot;</p>
+                <p>Giang Phàm trong lòng rùng mình. Quả đúng như Bạch Tâm đã nói, Viễn Cổ Cự Nhân là một đám thợ săn trời sinh. Hắn nhìn về phía thiếu chủ Tu La, nói: &quot;Ta là Vương Xung Tiêu, đệ tử Đại Âm Tông của Trung Thổ giới. Các ngươi là ai?&quot;</p>
+                <p>Thiếu chủ Tu La nói: &quot;Ta tên Sơn Phong, thiếu chủ Hắc Vân Trại, cha ta là trại chủ. Lần này cảm ơn các ngươi đã cứu ta và tộc nhân của ta. Ta sẽ cảm ơn các ngươi tử tế.&quot;</p>
+                <p>Giang Phàm phất tay: &quot;Không cần. Nếu thực sự có thể che chở chúng ta tránh khỏi Cự Nhân Vương, thì xem như triệt tiêu lẫn nhau, ai cũng không nợ ai.&quot; Hắn không cảm thấy tộc Tu La có thứ gì có thể khiến hắn động lòng. Tài nguyên tu luyện song phương cần, đều hoàn toàn khác biệt mà.</p>
+                <p>Sơn Phong nhíu mày nói: &quot;Sao có thể được? Bảo vệ các ngươi là tiện tay mà thôi, nhưng ân cứu mạng không thể không đền đáp. Đồ vật của tộc Tu La chúng ta, ngươi chắc chắn sẽ không để mắt tới. Nhưng đồ vật mà sinh linh Trung Thổ giới các ngươi đánh rơi, mang về chắc chắn sẽ dùng được chứ?&quot;</p>
+                <p>Giang Phàm lộ vẻ kinh ngạc. Chân Ngôn Tôn Giả bọn họ, chẳng lẽ còn đánh rơi đồ vật sao? Bọn họ ở phía trên đã gặp phải chuyện gì, ngoại trừ Tam Hóa Thần một Tôn Giả, cùng một số ít nhân vật cốt lõi, bên ngoài đều hoàn toàn không biết.</p>
+                <p>&quot;Thứ gì đã rơi?&quot; Giang Phàm tò mò hỏi. Đồ vật của Tôn Giả, không có món nào là phàm vật cả chứ?</p>
+                <p>Sơn Phong suy nghĩ: &quot;Cha ta nói, là một cỗ thi thể. Thi thể cảnh giới Hóa Thần, đã bị người ta luyện chế thành Âm Thi.&quot;</p>
+                <p>Đồng tử Giang Phàm co rụt lại dữ dội! Âm Thi cảnh giới Hóa Thần? Chắc chắn là của Tà Nha Tôn Giả! Tên này, vậy mà lại giấu một cỗ Âm Thi cảnh giới Hóa Thần! Đúng là thâm tàng bất lộ! Không dám tưởng tượng, khi hắn giao chiến với Hóa Thần hoặc Bồ Tát khác, đến thời khắc mấu chốt nhất, bỗng nhiên phóng ra một cỗ Âm Thi cảnh giới Hóa Thần, đó sẽ là cảnh tượng gì? Đây tuyệt đối là tồn tại có thể &quot;một thi định càn khôn&quot;.</p>
+                <p>Cỗ Âm Thi Hóa Thần này của Tà Nha Tôn Giả... Không đúng. Là Âm Thi Hóa Thần của Giang Phàm!</p>
+                <p>Đương nhiên, lời nói của Sơn Phong, Giang Phàm không tin hoàn toàn. Vị thiếu chủ này nhìn thì vô hại, nhưng thực chất tâm tư không hề nông cạn. Cố ý ném ra một sự cám dỗ mà Giang Phàm khó có thể kháng cự, mục đích là gì cũng chưa chắc. Hắn không biểu cảm nói: &quot;Đó hẳn là đồ của Tà Nha Tôn Giả. Chỉ có người tu luyện công pháp Âm Thi mới dùng được, đối với chúng ta vô dụng.&quot;</p>
+                <p>Nghe lời này, Sơn Phong cười: &quot;Vậy thì cũng có thể mang về, trả lại cho chủ nhân cũ mà. Chắc chắn phần thưởng sẽ không ít đâu.&quot;</p>
+                <p>Giang Phàm gật đầu: &quot;Có cơ hội rồi nói sau.&quot; Hắn cố ý giả vờ không quá hứng thú.</p>
+                <p>Sơn Phong không để lại dấu vết nhíu mày, đang định nói gì đó. Đột nhiên, không khí chấn động dữ dội! Đám người đang bay đều như bị búa đập, khí huyết sôi trào, thân hình hỗn loạn. Giang Phàm còn suýt nữa làm rơi Tống Linh Ngọc đang cõng trên lưng. Bọn họ còn chưa kịp phản ứng, lại là một tiếng chấn động dữ dội nữa.</p>
+                <p>Đồng tử Sơn Phong co rụt lại: &quot;Là Cự Nhân Vương đuổi kịp rồi! Hắn vẫn luôn đuổi theo chúng ta không ngừng, tiếng bước chân yếu đi vừa rồi, quả nhiên là để làm chúng ta mất cảnh giác!&quot;</p>
+                <p>Giang Phàm tê dại da đầu. Những Viễn Cổ Cự Nhân này, quả nhiên giảo hoạt vô cùng. May mà bọn họ không dừng lại, bằng không, giờ phút này đã bị Viễn Cổ Cự Nhân đuổi kịp rồi.</p>
+                <p>Sơn Phong đầy mặt lo lắng nói: &quot;Đừng hoảng, Hắc Vân Trại của chúng ta không còn xa nữa. Chỉ cần vào trong trại, là có thể bình an vô sự!&quot; Khó trách Cự Nhân Vương đột nhiên không giả vờ nữa, bắt đầu tăng tốc truy kích, hóa ra Hắc Vân Trại sắp đến rồi.</p>
+                <p>Giang Phàm không chút do dự, thúc giục Vân Trung Ảnh, nhanh chóng phi điện đuổi đi. Mọi người cũng đều thi triển thần thông, liều mạng chạy trốn.</p>
+                <p>Thình thịch!</p>
+                <p>Không khí không ngừng chấn động. Mọi người như hạt bụi giữa không trung, bị chấn động đến lên xuống bập bềnh. Giang Phàm mấy lần thi triển Vân Trung Ảnh đều bị cưỡng ép cắt đứt. Hắn trong lòng rùng mình. Đây vẫn là khi đối phương ở cách không biết bao xa, truy kích bằng thể phách cường thịnh gây ra. Không dám tưởng tượng, nếu ở cự ly gần, tùy tiện một quyền cách không, bọn họ sẽ đều hóa thành huyết vụ mà tiêu tán.</p>
+                <p>May mắn thay, dưới sự chạy trốn gian nan, bọn họ cuối cùng cũng nhìn thấy một vùng mây biển khá kỳ lạ. Giữa nó có một cái xoáy, giống như có thứ gì đó bên dưới, nuốt chửng cả mây biển vào trong.</p>
+                <p>&quot;Đó chính là Hắc Vân Trại!&quot;</p>
+                <p>&quot;Bước vào trong đó, chúng ta sẽ hoàn toàn an toàn!&quot;</p>
+                <p>Sơn Phong mừng rỡ nói.</p>
+                <p>Giang Phàm ước lượng khoảng cách, vừa vặn ở cuối tầm mắt. Một lần Vân Trung Ảnh là có thể lóe qua. Hắn không nói hai lời, chiêu gọi Lôi Long, quát: &quot;Tất cả lên đây!&quot;</p>
+                <p>Bạch Tâm, Cố Hinh Nhi cùng Pháp Ấn Kim Cương không chút do dự, lập tức nhảy lên Lôi Long. Ngay sau đó lại dùng thổ ngữ hô thêm một lần, Sơn Phong và mấy tộc nhân Tu La cũng lập tức nhảy lên.</p>
+                <p>Xoẹt!</p>
+                <p>Cùng với tiếng Lôi Long gào thét, bọn họ trong nháy mắt đã đến cuối tầm nhìn.</p>
+                <p>Giang Phàm lúc này mới nhìn rõ cái xoáy mây biển kia là gì. Hóa ra là một hòn đảo khổng lồ lọt hõm giữa mây biển. Hòn đảo bị khoét rỗng, trở thành một sự tồn tại giống như pháo đài dưới lòng đất. Phía trên hòn đảo thì được san bằng, bằng phẳng với mây biển.</p>
+                <p>&quot;Mau vào!&quot;</p>
+                <p>&quot;Vào trong là chúng ta an toàn rồi!&quot;</p>
+                <p>Sơn Phong mừng rỡ như điên, cảm thấy mình đã an toàn.</p>
+                <p>Giang Phàm không hề chần chừ, điều khiển Lôi Long lao thẳng vào trong. Ai ngờ vào thời khắc nguy cấp, một tiếng hừ lạnh nặng nề truyền đến, chấn động khiến tất cả người tại chỗ đều khí huyết sôi trào. Lôi Long dưới chân cũng lập tức tan biến! Một cỗ uy nghiêm đáng sợ đến nghẹt thở, trong nháy mắt bao trùm lấy bọn họ!</p>
+                <p>Cùng bao trùm lấy bọn họ, còn có một cái bóng đen khổng lồ!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1117">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1117: Tức Thổ</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Mọi người ngửa đầu nhìn lên, không ai là không tâm thần kịch chấn.</p>
+                <p>Một tôn cự nhân với làn da ánh kim nhàn nhạt, cao hai mươi trượng, giữa mi tâm có một ngôi sao đen, quỷ mị vụt hiện trước mặt bọn họ.</p>
+                <p>Vì tốc độ quá nhanh, biển mây nơi hắn lướt qua giờ mới kịp phản ứng, không gió mà dậy lên những đợt sóng khổng lồ cao mấy chục trượng vỗ vào trời. Sóng cuộn trào đẩy những tảng đá lơ lửng xung quanh ra xa, khiến chúng va chạm vào nhau.</p>
+                <p>Ngay sau đó, những tiếng âm bạo chói tai xé toạc không khí mới nối tiếp truyền đến.</p>
+                <p>Mọi người trong cơn lốc xoáy, áo quần bay phấp phới, tóc mực điên cuồng vung vẩy, suýt chút nữa không đứng vững được, bị thổi bay ra ngoài.</p>
+                <p>Tất cả đều không dám nhúc nhích, sợ hãi nhìn chằm chằm vào Cự Nhân Vương trước mắt. Hắn khoanh tay trước ngực, đôi mắt dọc khổng lồ tràn đầy vẻ trêu ngươi như mèo vờn chuột.</p>
+                <p>“Chỉ chút nữa thôi là các ngươi đã chạy về khu vực an toàn rồi.”</p>
+                <p>Ngôi sao đen trên trán hắn chậm rãi ẩn đi. Có thể thấy, vào khoảnh khắc cuối cùng, hắn đã vận dụng bản nguyên tinh thần, mới có thể bộc phát ra sức mạnh tuyệt cường, nhảy vọt lên chặn đường bọn họ.</p>
+                <p>Tâm Giang Phàm đập thình thịch. Đến nước này, họ không còn lựa chọn nào khác, chỉ có thể nhanh chóng rút lui.</p>
+                <p>May mắn thay, Trụ Đen Tiếp Thiên ngay phía sau hắn. Lối đi nằm dưới chân hắn. Mọi người chỉ cần trong một ý niệm là có thể nhảy vào lối đi mà thoát thân.</p>
+                <p>Chỉ là, nếu sáu tộc nhân Tu La phản ứng không đủ nhanh, e rằng sẽ bị Cự Nhân Vương giữ lại.</p>
+                <p>Đúng lúc này, từ trong trại bay ra một lão nhân mặt mũi xương xẩu, tóc bạc phơ. Lão dừng lại cách mặt đất ngang bằng với trại, phẫn nộ gầm lên:</p>
+                <p>“Thả tộc nhân của ta ra!”</p>
+                <p>Cự Nhân Vương mắt lộ vẻ trêu ngươi liếc lão một cái: “Ở trong trại gầm lên thì có ích gì? Có bản lĩnh thì ra đây nói chuyện.”</p>
+                <p>Giang Phàm thầm kinh ngạc. Hai người dường như đang giao thiệp cách biệt qua trại. Chẳng lẽ Cự Nhân Vương không thể vào trại được ư?</p>
+                <p>Hắn vẫn luôn nghĩ rằng lời Sơn Phong nói &quot;vào trại là an toàn&quot; chỉ là một cách nói khái quát. Giờ thì xem ra, đó lại là điều cụ thể hóa. Cự Nhân Vương, không thể đặt chân vào trong trại!</p>
+                <p>Vậy chẳng phải chỉ cần mình tìm cách xông vào, là có thể an toàn rồi sao?</p>
+                <p>Nghĩ đến đây, hắn nhân lúc Cự Nhân Vương bị lão Tu La thu hút, lặng lẽ lấy ra chiếc vòng tay do Tâm Nghiệt Tôn Giả tặng. Theo lời vị tôn giả này, vật ấy có thể nhốt được cường giả Hóa Thần Cảnh trong mười tức thời gian.</p>
+                <p>Nếu là thật, bọn họ liền có hy vọng nhân cơ hội này tiến vào trong trại.</p>
+                <p>Lão Tu La siết chặt hai nắm đấm, trong mắt đầy oán hận: “Được, ta ra ngoài, nhưng, phải đổi cho cháu ta vào trong.”</p>
+                <p>Cự Nhân Vương ha ha cười lớn, mắt dọc tràn đầy vẻ vui đùa:</p>
+                <p>“Cháu ngươi đã trộm đồ quan trọng của chúng ta, còn dám vọng tưởng mang đến Trung Thổ Giới. Hắn còn muốn sống sao?”</p>
+                <p>Lão Tu La sắc mặt đại biến, vội vàng phủ nhận: “Ngươi nói gì vậy, chúng ta không hiểu. Hắc Vân Trại chúng ta, nguyện ý hiến tế mười tộc nhân Tu La, cung phụng đại nhân hưởng dụng. Chỉ cầu đại nhân giơ cao đánh khẽ, tha cho cháu ta một mã.”</p>
+                <p>Cự Nhân Vương liếm môi, tàn nhẫn nói: “Không cần. Ngoài kia chẳng phải có sáu tên sao? Trong đó còn có thiếu chủ Hắc Vân Trại các ngươi. Ăn bọn chúng càng ngon!”</p>
+                <p>Hắn lấy ra một cái túi vải bố dính máu, bên trong đang nhúc nhích, rõ ràng còn có sinh vật sống khác. Đây là vật chứa mà Cự Nhân Vương dùng để đựng con mồi.</p>
+                <p>Thế nhưng, ngay khi mắt hắn chuyển động, chuẩn bị ra tay với thiếu chủ Tu La, trước mặt bỗng tối sầm lại. Một chiếc vòng tay khổng lồ lướt nhanh đến.</p>
+                <p>Không tốt!</p>
+                <p>Hắn thầm kêu không hay, nhưng đã muộn. Chiếc vòng tay lập tức bắn ra một luồng sáng khổng lồ, bao trùm lấy Cự Nhân Vương. Hắn gầm lên giận dữ: “Ai ám toán ta…” Tiếng nói đứt quãng, thậm chí ngay cả nói chuyện cũng không lưu loát.</p>
+                <p>Giang Phàm lộ vẻ vui mừng, lập tức hô: “Mau vào trại! Không trụ được bao lâu đâu!”</p>
+                <p>Xoẹt! Xoẹt! Xoẹt!</p>
+                <p>Lời còn chưa dứt, Cố Hinh Nhi đã chuồn nhanh nhất, lấy ra một tờ giấy nhẹ nhàng thổi, khẽ nói:</p>
+                <p>“Ta sẽ thuấn di.”</p>
+                <p>Khoảnh khắc tiếp theo, nàng trực tiếp thuấn di vào trong trại.</p>
+                <p>Bạch Tâm và Pháp Ấn Kim Cương cũng quả quyết chạy vào trại. Mấy người thiếu chủ Tu La hoàn hồn lại, cũng lần lượt chạy vào.</p>
+                <p>Giang Phàm thì cõng Tống Linh Ngọc chạy vào trong trại. Bất chợt, ánh mắt hắn liếc qua chiếc túi vải bố dính máu trong tay Cự Nhân Vương.</p>
+                <p>Liền dứt khoát xông tới, một tay giật phăng nó từ tay hắn. “Lấy đây!”</p>
+                <p>Cự Nhân Vương đại nộ: “Trung Thổ sinh linh… ngươi tìm chết!”</p>
+                <p>Giữa mi tâm hắn hiện lên ngôi sao đen, khiến sức mạnh bạo tăng. Luồng sáng đáng lẽ có thể giam cầm hắn mười tức, bắt đầu chập chờn sáng tối.</p>
+                <p>Giang Phàm mi tâm giật một cái, trực tiếp thi triển Vân Trung Ảnh, lao thẳng vào trong trại.</p>
+                <p>Vừa vặn đến được trong trại, phía sau liền có một luồng gió độc vô cùng đáng sợ ập đến. Lôi Long dưới chân hắn lập tức vỡ vụn. Cơ thể cũng truyền đến cơn đau xé rách. Mình sắp bị một quyền đánh nát rồi!</p>
+                <p>Hắn sợ đến mức tim ngừng đập trong khoảnh khắc. Nhưng, ngay sau đó, Cự Nhân Vương kịp thời thu hồi sức mạnh.</p>
+                <p>Giang Phàm quay đầu nhìn lại, mình vừa vặn vượt qua giới hạn của trại. Nắm đấm đáng sợ của Cự Nhân Vương đang ở bên ngoài giới hạn, cách Giang Phàm chưa đầy ba tấc. Đừng nói là đánh trúng, ngay cả quyền phong trên đó cũng đủ sức trong nháy mắt nghiền nát hắn thành huyết vụ.</p>
+                <p>Thế mà hắn lại kịp thời thu lực, không dám vượt qua giới hạn dù nửa tấc để làm bị thương người.</p>
+                <p>Giang Phàm vội vàng lùi lại, di chuyển đến nơi xa. Hắn mới kinh hồn bất định nhìn về phía Cự Nhân Vương, một trái tim vẫn đập thình thịch không ngừng.</p>
+                <p>Cú đánh vừa rồi, quá nguy hiểm. Chỉ sai lệch một ly là đã phải chôn thân dưới một quyền của Cự Nhân Vương.</p>
+                <p>Cự Nhân Vương với đôi mắt dọc đầy phẫn nộ và u ám, trầm giọng nói qua giới hạn:</p>
+                <p>“Trung Thổ sinh linh! Trả túi vải cho ta, ta thả ngươi về hạ giới! Bằng không, ngươi chắc chắn phải chết!”</p>
+                <p>Giang Phàm lắc lắc chiếc túi vải: “Có bản lĩnh thì vào đây mà lấy.”</p>
+                <p>Cự Nhân Vương cố nén sự phẫn nộ trong lòng, một tay túm lấy chiếc vòng tay lơ lửng giữa không trung vào lòng bàn tay, đưa ra trước giới hạn:</p>
+                <p>“Ta dùng vật này đổi với ngươi!”</p>
+                <p>Giang Phàm nhìn qua, chiếc vòng tay đã có vết nứt, hiệu quả đã giảm đi rất nhiều. E rằng nếu dùng lại, không thể giam cầm một tồn tại Hóa Thần Cảnh lâu như vừa rồi.</p>
+                <p>Nhưng cũng không mất đi giá trị của một kiện pháp bảo hộ thân. Hắn xoa xoa cằm, nói: “Một chiếc vòng tay thì ít quá. Ngươi còn phải thêm chút đồ nữa thì mới được.”</p>
+                <p>Cự Nhân Vương thấy có thể thương lượng, liền trầm tư một lát, rồi từ bên hông lấy ra một cái túi nhỏ. Bên trong đựng một nắm đất đen.</p>
+                <p>Thiếu chủ Tu La kinh hô: “Tức Thổ của Vương Đình? Vương huynh, Tức Thổ này là bảo bối. Nó có thể đẩy nhanh sự sinh trưởng của thực vật, cây cối trăm năm tuổi chỉ cần một tháng là có thể trưởng thành trong Tức Thổ. Loại Tức Thổ này, chỉ có rất ít Cự Nhân Vương lập được đại công mới có. Cự Nhân Vương Thạch Chi trước mắt, vậy mà cũng có một túi!”</p>
+                <p>Cái gì? Giang Phàm không khỏi kinh ngạc. Chuyện này cũng quá nghịch thiên rồi chứ?</p>
+                <p>Hắn nghĩ đến hạt giống thần bí có thể khiến người định cách kia. Nếu đem nó trồng vào trong đó, không biết sẽ mọc thành cái thứ gì.</p>
+                <p>Đồng thời, hắn không khỏi tò mò. Trong túi vải của Cự Nhân Vương rốt cuộc là con mồi gì, mà lại khiến hắn quan tâm đến vậy, không tiếc lấy Tức Thổ quý giá như thế ra trao đổi?</p>
+                <p>Ánh mắt khẽ lóe lên, hắn sảng khoái nói: “Được, chúng ta trao đổi. Ngươi ta đồng thời ném đồ vật qua, không được giở trò! Để đảm bảo an toàn, chúng ta phát lời thề trước! Để tỏ lòng thành ý, ta trước!”</p>
+                <p>“Ta, Vương Xung Tiêu, thề với Nam Thiên Giới, nếu ta giở trò, thì hãy để con trai ta lớn lên giống lão Vương hàng xóm!”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1118">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1118: Khí phẫn cự nhân vương</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Sơn Phong cùng mấy cường giả tộc Tu La, những kẻ có thể hiểu được văn tự địa ngục, không khỏi tặc lưỡi. Lời thề này thật độc địa. Ngay cả Cự Nhân Vương cũng sững sờ. Lẽ nào thật sự có người dám vi phạm lời thề này sao?</p>
+                <p>Suy nghĩ một lát, hắn cũng nói: &quot;Ta cũng thề.&quot;</p>
+                <p>&quot;Nếu ta lừa gạt, sẽ khiến ta tuyệt tự tuyệt tôn!&quot;</p>
+                <p>Giang Phàm cười nói: &quot;Được, ta đếm đến ba.&quot;</p>
+                <p>&quot;Một, hai, ba!&quot;</p>
+                <p>Hắn và Cự Nhân Vương đồng thời ném đồ vật trong tay sang.</p>
+                <p>Cự Nhân Vương tóm lấy túi vải dính máu, thở phào nhẹ nhõm. Ngay sau đó, một tia trêu tức hiện lên trong con mắt dọc của hắn.</p>
+                <p>Giang Phàm thì đồng thời nắm lấy vòng tay và cái túi nhỏ đựng Tức Thổ. Thế nhưng, khoảnh khắc nắm lấy cái túi nhỏ, hắn liền nhận ra có gì đó không đúng. Một cảm giác căng thẳng truyền đến từ đầu kia của giới hạn. Chắc chắn có thứ gì đó vô hình trói buộc trên cái túi nhỏ, còn đầu kia thì nằm trong tay Cự Nhân Vương.</p>
+                <p>&quot;Mấy con trùng hạ giới, cũng xứng chơi đùa với ta ư?&quot; Lòng bàn tay hắn vừa dùng sức, liền muốn dễ dàng kéo cái túi nhỏ trở về. Ai ngờ. Vừa kéo mạnh, lại kéo hụt, khiến thân hình hắn cũng loạng choạng. Hắn vội vàng ngẩng đầu nhìn lại. Phát hiện trong lòng bàn tay Giang Phàm đang nắm cái túi nhỏ, có một tầng lửa xanh biếc, đã đốt đứt sợi dây trong suốt mà hắn buộc trên cái túi nhỏ!</p>
+                <p>&quot;Ngươi tìm chết! Trả lại cho ta!&quot; Cự Nhân Vương gầm lên giận dữ. Giang Phàm ngay trước mặt hắn, ném cái túi nhỏ vào không gian trữ vật, nói:</p>
+                <p>&quot;Biết ngay ngươi là loại hàng tuyệt tự tuyệt tôn mà.&quot;</p>
+                <p>&quot;Sớm đã đề phòng ngươi rồi!&quot;</p>
+                <p>Trong con mắt dọc của Cự Nhân Vương, lửa giận bốc lên ngùn ngụt, hắn nói: &quot;Con trùng của Trung Thổ!&quot;</p>
+                <p>&quot;Ngươi cứ nhớ kỹ đó!&quot;</p>
+                <p>&quot;Chúng ta chưa xong đâu!&quot;</p>
+                <p>Giang Phàm vẫy tay: &quot;Đi thong dong, không tiễn!&quot; Cự Nhân Vương mắt âm trầm, quay người rời đi. Nhưng vừa quay người, hắn bỗng cảm thấy eo mình thắt lại. Cúi đầu nhìn xuống, một chiếc lưỡi câu vàng óng đã móc vào túi vải dính máu của hắn. Chẳng đợi hắn kịp phản ứng, *vụt* một tiếng. Túi vải dính máu liền bị kéo vào hư không. Khi xuất hiện trở lại, nó đã nằm trong tay Giang Phàm.</p>
+                <p>Cự Nhân Vương tức điên lên. Hắn lập tức quay trở lại, con mắt dọc khổng lồ đầy lửa giận ngút trời, gầm thét liên hồi:</p>
+                <p>&quot;Ngươi dám vi phạm lời thề!&quot;</p>
+                <p>&quot;Ngươi không sợ con trai ngươi trông giống lão Vương hàng xóm sao? Hả?&quot;</p>
+                <p>Giang Phàm mân mê túi vải dính máu, vẻ mặt thờ ơ.</p>
+                <p>&quot;Kẻ thành đại sự không câu nệ tiểu tiết!&quot;</p>
+                <p>&quot;Ta, Vương Xung Tiêu, không bận tâm mấy chuyện này.&quot;</p>
+                <p>Cự Nhân Vương gầm lên: &quot;Ngươi mẹ kiếp vô sỉ!&quot; Hắn dám thề tuyệt tự tuyệt tôn, là bởi vì hắn thật sự không có hậu duệ. Nhưng tên thiếu niên Nhân tộc tên Vương Xung Tiêu này, quả thật quá vô liêm sỉ đi chứ?</p>
+                <p>Người tộc Tu La đứng bên cạnh nhìn đến ngây người. Không phải chứ. Một Cự Nhân Viễn Cổ vốn nổi tiếng vô sỉ, lại bị chọc tức đến mức phải mắng người khác vô sỉ? Sống lâu mới thấy được cảnh này!</p>
+                <p>Giang Phàm ngoáy ngoáy tai: &quot;Ngươi cứ việc mắng.&quot; Cố Hinh Nhi và những người khác nhìn đến mịt mờ. Bởi vì họ căn bản không nghe hiểu hai bên đang nói gì. Chỉ có thể cảm nhận được, Cự Nhân Vương kia đang giận sôi máu, dường như đang tuôn ra những lời thô tục.</p>
+                <p>Cố Hinh Nhi nghiêng đầu, nói: &quot;Tiểu lưu manh, hắn có phải đang mắng ngươi không vậy?&quot; Giang Phàm ha ha cười lớn: &quot;Đâu có chuyện đó.&quot;</p>
+                <p>&quot;Hắn bày tỏ sự khâm phục thủ đoạn của ta, còn có ý hận không gặp sớm hơn.&quot;</p>
+                <p>&quot;Nếu không phải ngại lập trường đôi bên, hắn đã tính cùng ta uống rượu vui vẻ, xưng huynh gọi đệ rồi.&quot;</p>
+                <p>Cố Hinh Nhi &quot;khạc&quot; một tiếng: &quot;Đồ không biết xấu hổ.&quot;</p>
+                <p>&quot;Ngươi mà dám bước ra ngoài, ta liền tin lời quỷ quái của ngươi.&quot;</p>
+                <p>Giang Phàm không vui véo má nàng, nói:</p>
+                <p>&quot;Ngươi đâu ra lắm lời vô nghĩa vậy?&quot;</p>
+                <p>&quot;Một chút giác ngộ của pháo hôi nhỏ cũng không có!&quot;</p>
+                <p>Cố Hinh Nhi gạt tay hắn ra. Vừa xoa xoa má đang sưng đỏ lên nhanh chóng, vừa giận dỗi nói:</p>
+                <p>&quot;Tiểu lưu manh!&quot;</p>
+                <p>&quot;Tội chết của ngươi lại tăng thêm một điều rồi!&quot;</p>
+                <p>Bạch Tâm ngắt lời hai người, nói: &quot;Hiện tại chúng ta chưa chắc đã an toàn đâu.&quot; Nàng nhìn về phía lão Tu La kia, cùng Sơn Phong và những người khác.</p>
+                <p>Giang Phàm sắc mặt nghiêm túc. Bọn họ đúng là đã thoát khỏi sự truy sát của Cự Nhân Vương. Thế nhưng, cũng đã tiến vào một sào huyệt chưa rõ địch hay bạn.</p>
+                <p>&quot;Tất cả lại gần ta.&quot; Cố Hinh Nhi lập tức bỏ qua hiềm khích trước đó, thoắt cái chạy tới, kéo góc áo hắn. Luôn sẵn sàng bỏ chạy. Bạch Tâm và Pháp Ấn Kim Cương cũng lập tức chạy đến. Hai bên lại một lần nữa đối mặt.</p>
+                <p>Sơn Phong vội vàng nói: &quot;Đừng căng thẳng!&quot; Hắn quay đầu thuật lại nguyên nhân sự việc cho lão Tu La.</p>
+                <p>&quot;Nếu không có đám bằng hữu Trung Thổ này hai lần ra tay, cháu nội đã sớm chết rồi.&quot;</p>
+                <p>Sau khi biết Sơn Phong lại gặp phải mai phục. Trong mắt lão Tu La chợt lóe lên một tia tinh quang, trên mặt lộ ra vẻ hòa nhã, nói:</p>
+                <p>&quot;Lão phu Minh Dạ, là trại chủ của Hắc Vân Trại.&quot;</p>
+                <p>&quot;Các ngươi đã cứu cháu nội ta, vậy chính là ân nhân của Hắc Vân Trại ta.&quot;</p>
+                <p>&quot;Xin mời theo ta, lão phu nhất định sẽ hết lòng chiêu đãi các ngươi.&quot;</p>
+                <p>Thấy Giang Phàm mấy người có vẻ do dự. Minh Dạ nói: &quot;Chuyến này của các vị, hẳn là đến để dò la tin tức Thiên Giới phải không?&quot;</p>
+                <p>&quot;Hắc Vân Trại chúng ta đã cắm rễ ở đây trăm năm, ít nhiều cũng biết được một vài điều.&quot;</p>
+                <p>&quot;Nếu các vị có thắc mắc, lão phu sẽ biết gì nói nấy, không giấu giếm chút nào.&quot;</p>
+                <p>Nghe lời này. Mấy người mắt liền sáng lên. Không có gì có thể hiểu rõ tình hình Thiên Giới hơn một thổ dân bản địa phải không?</p>
+                <p>Giang Phàm dùng Bế Khẩu Thiền, truyền âm cho mấy người.</p>
+                <p>&quot;Giữ cảnh giác.&quot;</p>
+                <p>&quot;Cố Hinh Nhi, đừng ăn uống đồ của bọn họ.&quot;</p>
+                <p>Cố Hinh Nhi ngây người, sau đó giận dữ nói:</p>
+                <p>&quot;Ngươi dựa vào cái gì mà chỉ nhắc nhở một mình ta!&quot;</p>
+                <p>&quot;Nói cứ như ta sẽ ăn uống lung tung vậy!&quot;</p>
+                <p>Giang Phàm không để ý đến lời cằn nhằn của nàng. Hắn xách nàng lên, hướng về phía Minh Dạ nói: &quot;Vậy thì làm phiền chư vị Hắc Vân Trại rồi.&quot;</p>
+                <p>Minh Dạ nhiệt tình nói: &quot;Đâu có đâu có.&quot;</p>
+                <p>&quot;Mời các vị theo ta.&quot;</p>
+                <p>Hắn liếc nhìn Cự Nhân Viễn Cổ đang đầy vẻ giận dữ, canh chừng trên không Hắc Vân Trại. Trong mắt lướt qua một tia kiêng kỵ.</p>
+                <p>Dưới sự dẫn dắt của Minh Dạ. Mọi người đi tới sâu bên trong Hắc Vân Trại. Sau khi hòn đảo này bị đào rỗng, khắp bốn phía đều đục khoét hang động. Nhiều người tộc Tu La ăn mặc đơn giản lần lượt thò đầu ra xem. Đa số đều rất gầy gò, khác xa với ấn tượng về tộc Tu La vạm vỡ. Có thể thấy được. Cuộc sống của Hắc Vân Trại không hề dễ chịu.</p>
+                <p>Ở tầng thấp nhất. Là một căn nhà đá bị đào rỗng, rộng ba mươi trượng vuông. Đây chính là đại điện của Hắc Vân Trại. Bình thường khi trại có quý khách, hoặc có việc trọng đại, đều được tổ chức tại nơi này.</p>
+                <p>&quot;Chư vị mời ngồi.&quot;</p>
+                <p>Minh Dạ ngồi vào vị trí gia chủ. Hai bên đặt mấy chiếc ghế ngọc được điêu khắc từ hắc ngọc, khá tinh xảo.</p>
+                <p>Cố Hinh Nhi không hề nghĩ ngợi, liền ngồi phịch xuống. Bạch Tâm, Pháp Ấn Kim Cương cũng lần lượt ngồi xuống. Giang Phàm sau khi hơi ngạc nhiên đánh giá chiếc ghế ngọc màu đen, trong lòng chợt lóe lên một tia nghi ngờ. Suy nghĩ một lát, hắn đặt Tống Linh Ngọc xuống, cũng không động thanh sắc ngồi vào chỗ.</p>
+                <p>Thấy mọi người đều ngồi xuống. Minh Dạ mặt tươi cười hòa nhã: &quot;Năm vị ân công.&quot;</p>
+                <p>&quot;Các vị đã cứu cháu nội ta, là đại ân với Hắc Vân Trại ta.&quot;</p>
+                <p>&quot;Ta muốn thỉnh cầu các vị lại ban ân một lần nữa, giúp chúng ta dẫn dụ Cự Nhân Vương đi.&quot;</p>
+                <p>Trên mặt hắn là nụ cười, nhưng những lời nói ra lại khiến sắc mặt mấy người kịch biến. Chẳng đợi bọn họ kịp phản ứng. Chiếc ghế ngọc màu đen dưới mông, đồng loạt bắn ra từng đạo không gian quang mang, bao phủ lấy bọn họ. Điều này giống hệt như Ngọc Điêu Phượng Y của Diệp Bán Hạ! Mà Ngọc Điêu Phượng Y, còn có một năng lực khác. Đó chính là Thuấn Di! Có thể thuấn di bọn họ ra khỏi Hắc Vân Trại! Thuấn di đến trước mặt Cự Nhân Vương!</p>
+                <p>Giang Phàm sắc mặt hơi lạnh:</p>
+                <p>&quot;Trại chủ Hắc Vân, ngươi đang tự tìm đường chết!&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1119">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1119: Nội gian</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Minh Dạ điềm nhiên, thản nhiên nói: &quot;Hiển nhiên, các ngươi chết sẽ nhanh hơn.&quot;</p>
+                <p>Ngón tay hắn khẽ chạm vào tay vịn, một trận pháp lớn bằng bàn tay chậm rãi hiện lên, tỏa ra ánh huỳnh quang nhàn nhạt. Chỉ cần thôi động trận pháp này, Giang Phàm và cả bọn sẽ lập tức bị truyền tống ra ngoài.</p>
+                <p>Cảnh tượng bất ngờ này khiến Thiếu chủ Sơn Phong hoàn toàn không ngờ tới. Hắn kinh hô: &quot;Gia gia, người đang làm gì vậy?&quot; Hắn không thể tin nổi. Giang Phàm mấy người đối với họ không chỉ có ơn, mà còn có kẻ thù chung! Lấy oán báo ơn, gia gia rốt cuộc vì điều gì chứ?</p>
+                <p>Minh Dạ đạm mạc nói: &quot;Ngươi cảm thấy không nên giết?&quot;</p>
+                <p>Sơn Phong trầm giọng nói: &quot;Ta không nghĩ ra một lý do nào đáng để giết cả!&quot;</p>
+                <p>Minh Dạ xòe tay ra: &quot;Được thôi. Ta cũng không muốn mang tiếng ác lấy oán báo ơn, vậy thì hãy thông báo cho mười vị tộc lão cùng quyết định đi!&quot;</p>
+                <p>Cái trại không lớn. Chưa đầy một nén hương, mười vị tộc lão đã tập trung trước đại điện.</p>
+                <p>&quot;Sự tình nguyên nhân chính là như vậy.&quot; Minh Dạ chắp tay sau lưng, giọng nói khàn đặc: &quot;Cự Nhân Vương đang rình rập bên ngoài. Chỉ có giao bọn họ ra, mới có thể nhận được sự tha thứ của Cự Nhân Vương. Ai đồng ý giao bọn họ ra, hãy đứng về phía ta. Ai không đồng ý, hãy đứng về phía Thiếu chủ. Trong vòng mười tức, hãy đưa ra quyết định.&quot;</p>
+                <p>Người già trẻ của Hắc Vân Trại lập tức xếp thành hàng. Kết quả cuối cùng khiến Sơn Phong lộ ra vẻ an ủi, bởi vì chỉ có một người đứng bên cạnh Minh Dạ.</p>
+                <p>&quot;Trại chủ, người hồ đồ rồi sao? Chúng ta trong mắt Cự Nhân Viễn Cổ chẳng qua chỉ là con mồi mà thôi, lẽ nào có chuyện đem dân Trung Thổ giao ra, hắn ta sẽ tha cho chúng ta sao? Chính xác là phải liên kết với họ, tìm một con đường sống cho Hắc Vân Trại chúng ta chứ. Trại chủ, người có phải đã già lú lẫn rồi không?&quot;</p>
+                <p>Minh Dạ nhận lấy sự chỉ trích nhất trí của chín vị tộc lão. Hắn bất đắc dĩ nhìn về phía vị tộc lão duy nhất ủng hộ mình, cười khổ nói: &quot;Đức Phong tộc lão, chỉ có ngươi ủng hộ việc giao họ ra ngoài thôi.&quot;</p>
+                <p>Đức Phong tộc lão hơn bốn mươi tuổi, đang ở độ tuổi sung sức nhất. Hắn lộ vẻ kiên định, nói: &quot;Ta tin vào quyết định của Trại chủ! Người làm như vậy, nhất định có lý do riêng của mình!&quot;</p>
+                <p>Minh Dạ gật đầu: &quot;Được. Dù có chút lấy oán báo ơn, nhưng vì nghĩ cho Hắc Vân Trại, vẫn nên giao họ ra ngoài. Kẻ ác này, ngươi hãy ra tay đi.&quot;</p>
+                <p>Đức Phong tộc lão không nói hai lời, đi tới trước tay vịn của gia chủ, không chút do dự liền muốn thôi động trận pháp phía trên.</p>
+                <p>Thế nhưng, khoảnh khắc tiếp theo, ngực hắn đột nhiên truyền đến một cơn đau xé rách. Cúi đầu nhìn xuống, một bàn tay già nua đã xuyên thủng lồng ngực hắn!</p>
+                <p>Đức Phong tộc lão đau đớn đến mức không phát ra được tiếng kêu thảm thiết nào, khó khăn lắm mới quay đầu nhìn về phía sau. Người ra tay, không ngờ lại là Trại chủ Minh Dạ!</p>
+                <p>&quot;Trại chủ, người... người điên rồi sao?&quot; Hắn không thể hiểu nổi, Trại chủ tại sao lại muốn giết mình.</p>
+                <p>Minh Dạ rụt tay về, trên khuôn mặt già nua hiện lên từng trận sắc xanh tái. &quot;Ngay cả cháu trai ta cũng biết, nhóm dân Trung Thổ này, không thể giết. Họ sống đối với Hắc Vân Trại chúng ta trăm lợi mà không một hại. Ngươi một vị tộc lão lại không biết sao?&quot;</p>
+                <p>Đức Phong tộc lão toàn thân bị rút cạn sức lực, vô lực ngã mềm xuống đất, yếu ớt nói: &quot;Ta, ta không nghĩ nhiều như vậy. Ta là vô điều kiện nghe theo mệnh lệnh của Trại chủ. Như vậy cũng sai sao?&quot;</p>
+                <p>Minh Dạ một cước đạp lên ngực hắn, đạp hắn thổ huyết không ngừng. Trong mắt lóe lên vẻ lạnh lẽo: &quot;Đừng giả vờ nữa! Chỉ cần lòng ngươi vì Hắc Vân Trại mà tốt, thì tuyệt đối sẽ không muốn hại chết họ! Trừ phi, trong lòng ngươi là vì Cự Nhân Viễn Cổ mà tốt, mới nghĩ đến việc lập công với Cự Nhân Vương bên ngoài, đem họ giao ra!&quot;</p>
+                <p>Biến cố bất ngờ này khiến tất cả mọi người đều không ngờ tới. Sơn Phong cũng sững sờ, lắp bắp nói: &quot;Gia gia, ý người là, Đức Phong tộc lão là nội gián của Cự Nhân Viễn Cổ?&quot;</p>
+                <p>Minh Dạ đôi mắt già nua híp lại: &quot;Hành động lần này của ngươi tới Trung Thổ Giới, chỉ có ta và mười vị tộc lão biết. Những người khác đều không hề hay biết. Nhưng Cửu Khiếu Cự Nhân lại có thể mai phục chính xác tại hòn đảo nơi ngươi tất yếu đi qua, chắc chắn là có nội ứng thông báo trước cho chúng! Kẻ nội ứng này chính là một trong số ta và mười vị tộc lão. Cho nên, ta mới thiết kế để dụ hắn ra.&quot;</p>
+                <p>Nói xong, hắn ngồi xổm xuống, một tay xé toạc áo bào của Đức Phong tộc lão, để lộ lồng ngực hắn. Sau đó, hắn lấy ra một lọ máu của Cự Nhân Viễn Cổ, nhỏ lên ngực hắn.</p>
+                <p>Những giọt máu Cự Nhân Viễn Cổ này, chịu một loại cảm ứng nào đó, lập tức sống lại, ngưng tụ thành một chữ &quot;Thạch&quot; (石) trước ngực hắn. Đám người Hắc Vân Trại lập tức ồ lên!</p>
+                <p>&quot;Là đồ đằng của bộ lạc Thạch Chi Cự Nhân! Có đồ đằng này, Cự Nhân Viễn Cổ sẽ nhận ra, không gây tổn hại. Chỉ có sinh linh được Cự Nhân Viễn Cổ miễn truy lùng mới có thể có đồ đằng này!&quot;</p>
+                <p>Lúc này, sự thật đã phơi bày! Đức Phong tộc lão, vì muốn được miễn truy lùng của Cự Nhân Viễn Cổ, đã chọn trở thành nội gián của chúng.</p>
+                <p>&quot;Trại chủ, ta... ta cũng bị ép buộc! Ta cũng không muốn bán đứng Hắc Vân Trại, người hãy tin ta...&quot; Đức Phong tộc lão mặt tái nhợt, vội vàng cầu xin.</p>
+                <p>Khoảnh khắc tiếp theo, Minh Dạ vô tình đạp xuyên trái tim hắn, nghiền chết hắn ngay tại chỗ. &quot;Đã làm chó săn cho Cự Nhân Viễn Cổ, thì đừng nói mình vô tội nữa.&quot;</p>
+                <p>Ngay sau đó, hắn xoay người đến trước mặt Giang Phàm và mọi người, giải trừ không gian chi lực trên người họ. Hắn chắp tay xin lỗi: &quot;Mấy vị bằng hữu Trung Thổ, thật sự xin lỗi. Nội gián ẩn giấu quá sâu, chỉ có thể tạm thời làm khó chư vị, mới có thể dụ rắn ra khỏi hang. Lão phu bất đắc dĩ mới phải dùng hạ sách này, mong chư vị lượng thứ.&quot;</p>
+                <p>Hắn liên tục xin lỗi với vẻ mặt hòa nhã, hoàn toàn khác hẳn vẻ sắt đá tàn nhẫn khi trừ khử nội gián lúc nãy.</p>
+                <p>Giang Phàm sắc mặt hơi lạnh: &quot;Không thương lượng trước, lại hành động mạo hiểm như vậy. Ngươi nên may mắn, ta giữ được bình tĩnh, nếu không hôm nay Hắc Vân Trại của các ngươi, e rằng khó tránh khỏi cảnh máu chảy thành sông.&quot;</p>
+                <p>Minh Dạ vuốt râu cười nói: &quot;Sao nào, ngươi còn có dư lực phản kháng sao?&quot; Trong lời nói, vừa có chút đắc ý về thủ đoạn của mình, vừa có chút trêu chọc Giang Phàm mấy người lại dễ dàng trúng chiêu như vậy.</p>
+                <p>Giang Phàm thản nhiên nói: &quot;Nhìn lên trên đi.&quot;</p>
+                <p>Minh Dạ ngẩng đầu nhìn lên, kinh ngạc phát hiện trên mái nhà không biết từ lúc nào đã có một tiểu linh thú màu đỏ nâu đang nằm. Đôi mắt long lanh ướt át, trong miệng còn ngậm một tiểu thạch điêu màu đen. Bên trong nó chứa đựng một sức mạnh đáng sợ, khiến ngay cả Minh Dạ, một Cửu Khiếu Tu La, cũng phải kinh hãi rợn người.</p>
+                <p>&quot;Hóa Thần Nhất Kích?&quot; Đồng tử hắn co rụt lại, trong lòng kinh hãi.</p>
+                <p>Giang Phàm chậm rãi đứng dậy, vung tay ra hiệu, tiểu Kỳ Lân liền nhảy trở lại vai hắn, trả lại tiểu thạch điêu cho hắn.</p>
+                <p>&quot;Vừa rồi ngươi mà dám truyền tống, một kích này, liền sẽ lưu lại cho Hắc Vân Trại của các ngươi đấy.&quot;</p>
+                <p>&quot;Ực!&quot; Minh Dạ khẽ nuốt nước bọt, trên trán rịn ra những giọt mồ hôi lạnh. Hắn thật sự đã coi thường thiếu niên Trung Thổ trước mặt này rồi. Không chỉ sớm phát hiện ra sự bất thường của chiếc ghế, chuẩn bị phòng bị từ trước, mà còn nắm giữ cả một Hóa Thần Nhất Kích trong tay! Nếu kích nổ, Hắc Vân Trại e rằng sẽ sụp đổ ngay lập tức, số người có thể thoát ra ngoài chỉ đếm trên đầu ngón tay. Mà những người thoát được, ai lại có thể thoát khỏi độc thủ của Cự Nhân Vương đây? Khả năng cao sẽ là diệt tộc.</p>
+                <p>Nghĩ đến đây, sắc mặt hắn hơi cứng đờ, giọng nói cũng run rẩy vì sợ hãi: &quot;Là lão phu đã quá hấp tấp. May mà tiểu hữu tinh mắt, nhìn ra ý đồ của lão phu. Nếu không, hậu quả khó lường.&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1120">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1120: Nguồn gốc Thế giới Trung Thổ</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Lúc này, hắn đã không còn chút khinh thường nào như ban nãy. Thiếu niên trước mắt có nhãn lực tinh tường gần như yêu quái, thủ đoạn cũng vô cùng lợi hại. Hắn vội vàng sắp xếp, nói: “Các ngươi còn ngây ra đó làm gì? Sao không mau mang rượu thịt ngon nhất của Hắc Vân Trại ra đây! Mau đãi ngộ ân nhân của chúng ta cho tử tế?”</p>
+                <p>Giang Phàm nghe vậy liền vội xua tay: “Không cần phiền phức. Chúng ta hỏi vài vấn đề rồi sẽ đi.” Hắc Vân Trại tự mình sống cũng thê thảm, phần lớn mọi người đều gầy trơ xương, có thể thấy là không có gì ngon để ăn. Làm sao mà có thể lấy ra được món rượu thịt nào ra hồn chứ?</p>
+                <p>Thế nhưng, khi trước bàn của mình, bày đầy các loại linh vật tràn ngập linh khí, Giang Phàm không khỏi ngẩn cả người. Trong đó có hoa quả chưa từng thấy, có rau củ, còn có một số rễ cây giống dược liệu. Thậm chí còn có linh thịt của một số sinh linh không rõ. Phần lớn đều là tài nguyên quý hiếm, có hiệu quả sánh ngang linh đan đối với Kết Đan cảnh. Và một phần khác, có tác dụng tăng cường tu vi đối với Nguyên Anh cảnh. Nếu Nguyên Anh sơ, trung kỳ thường xuyên dùng, thì việc tăng một cảnh giới trong vòng một tháng cũng không phải là điều khó khăn.</p>
+                <p>Nhìn Cố Hinh Nhi, càng thấy hai mắt nàng ta sáng lấp lánh, hai mắt đã biến thành hình hai đồng tiền vàng. Những thứ này nếu mang về Trung Thổ, sẽ vô cùng giá trị. Pháp Ấn Kim Cương cũng lộ vẻ ngạc nhiên. Rõ ràng hắn và Giang Phàm đều có cùng suy nghĩ, cho rằng bọn họ thiếu thốn vật tư, nhưng hiện thực lại hoàn toàn trái ngược.</p>
+                <p>Giang Phàm nhìn về phía Minh Dạ, nói ra nghi hoặc trong lòng: “Minh Dạ trại chủ, những món rượu thịt này hẳn đã làm các người khó xử rồi?”</p>
+                <p>Minh Dạ lão nhân đã già thành tinh, đương nhiên hiểu rõ suy nghĩ của bọn họ. Hắn giơ tay lên, khẽ rung một cái. Một luồng âm khí tinh thuần tuôn ra. “Tộc Tu La chúng ta muốn cường tráng, không thể thiếu sự tẩm bổ của âm khí. Những vật phẩm tràn ngập linh khí này, đối với sinh linh Trung Thổ các ngươi hẳn là có tác dụng lớn. Nhưng đối với chúng ta, chỉ có thể miễn cưỡng lấp đầy bụng mà thôi.”</p>
+                <p>Giang Phàm bừng tỉnh. Giống như rau củ âm khí, là món yêu thích nhất của Địa Ngục giới. Nhưng đối với Giang Phàm cùng những người thuộc nhân tộc mà nói, nếu ăn lâu dài, âm khí bên trong ngược lại sẽ có hại cho cơ thể. Nếu không phải vì để lấp đầy bụng, Hắc Vân Trại căn bản sẽ không hái những linh vật này.</p>
+                <p>Hắn đảo mắt, trong lòng nảy ra một ý nghĩ. Tuy nhiên, bây giờ không phải là lúc để lên tiếng. Hắn gật đầu nói: “Đa tạ trại chủ khoản đãi. Tại hạ có một số việc muốn thỉnh giáo trại chủ.”</p>
+                <p>Minh Dạ gật đầu, hắn vẫn luôn chờ Giang Phàm hỏi đây mà. “Vị Cự Nhân Vương kia, vì sao không dám vượt qua Hắc Vân Trại nửa bước? Chẳng lẽ trong trại các ngươi có tồn tại Hóa Thần cảnh, hoặc là có thứ gì nguy hiểm chấn nhiếp bọn chúng?”</p>
+                <p>Minh Dạ lộ vẻ mặt không nằm ngoài dự đoán. Hắn đã đoán được câu hỏi đầu tiên của Giang Phàm chính là điều này. Vì vậy, không chút nghĩ ngợi, hắn liền đưa ra câu trả lời đã chuẩn bị sẵn: “Không phải cả hai. Là quy tắc.”</p>
+                <p>Hắn giơ ngón tay, chỉ lên chín mặt trời nối liền nhau trên bầu trời. “Ta nghe nói, Trung Thổ thế giới của các ngươi được tạo ra bởi chín vị Cổ Thánh. Chắc hẳn Người đã đặt ra rất nhiều quy tắc cho thế giới.”</p>
+                <p>Giang Phàm khẽ gật đầu. Điều này không sai. Mấy đại châu trật tự rõ ràng, yên ổn vô sự, chưa từng xảy ra chiến tranh. Nhất định là có những quy tắc vô hình ràng buộc.</p>
+                <p>Trong lòng hắn khẽ động, nói: “Ý của ngươi là…”</p>
+                <p>Không đợi hắn nói hết, Minh Dạ khẽ gật đầu: “Đúng vậy, Nam Thiên giới cũng có Đấng Sáng Tạo của riêng mình. Tuy nhiên, không phải là cùng một vị với Cổ Thánh của các ngươi. Nhưng cũng đã thiết lập quy tắc cho Nam Thiên giới. Một trong số đó chính là, phi thời kỳ đặc biệt, không được vượt qua bất kỳ sơn trại nào dù chỉ một bước. Cứ cho là Cự Nhân Vương vừa nãy, nếu hắn dám đưa quyền phong vào trong trại, tự khắc sẽ có Thiên Địa Pháp Tắc giáng xuống, khiến hắn tan thành tro bụi.”</p>
+                <p>Giang Phàm tâm thần chấn động. Nhưng lại không hề nghi ngờ. Hắn từng tận mắt chứng kiến, Họa Tâm chỉ là nghị luận vài câu về Địa Ngục Giới Chủ, liền suýt chút nữa tàn hồn vỡ nát mà chết. Cũng từng cảm nhận được, vị Cổ Thánh vẫn luôn dõi theo mình, uy năng thiên địa khó lường đến nhường nào. Một Đấng Sáng Tạo như vậy, hủy diệt một vị Tôn Giả, chẳng qua chỉ là trong nháy mắt!</p>
+                <p>Hắn ánh mắt lộ vẻ khó hiểu, nói: “Đấng Sáng Tạo của Nam Thiên giới, vì sao lại bảo vệ các ngươi?”</p>
+                <p>“Bảo vệ?” Trên khuôn mặt già nua của Minh Dạ, hiện lên một nét khổ sở và bi thương. “Khi các ngươi nuôi trâu bò dê cừu, sẽ đuổi đi sói, hổ, báo. Làm như vậy, cuối cùng là để bảo vệ trâu bò dê cừu sao? Hay là để đến cuối năm, có thể ăn được nhiều trâu bò dê cừu hơn?”</p>
+                <p>Đồng tử Giang Phàm chấn động. Giọng nói trầm thấp, nói: “Ý của ngươi là, các ngươi được bảo vệ, là để cho các ngươi sinh sôi nảy nở.”</p>
+                <p>Minh Dạ ngửa mặt lên trời thở dài nói: “Sinh linh Địa Ngục rơi vào Nam Thiên giới, ngoại trừ những kẻ được miễn đi săn. Còn lại, đều là súc vật bị Viễn Cổ Cự Nhân nuôi nhốt. Cứ mỗi một trăm năm, Viễn Cổ Cự Nhân sẽ được phép đi săn trong vòng một tháng. Tháng đó, chính là thời khắc tăm tối nhất của tất cả các sơn trại.”</p>
+                <p>Giang Phàm chấn động khôn nguôi. Sinh linh Địa Ngục sống ở Nam Thiên giới, quả thật là sống trong địa ngục, sợ hãi chẳng thể sống yên một ngày. Trong nhất thời, hắn cũng không biết nên nói gì cho phải. Ngược lại Minh Dạ, khẽ cười một tiếng để làm dịu bầu không khí nặng nề: “Chúng ta đã quen rồi, đây chính là số phận của những sinh linh Địa Ngục như chúng ta, sống ở Nam Thiên giới.”</p>
+                <p>Giang Phàm lại lần nữa kinh ngạc. “À đúng rồi, sinh linh Địa Ngục giới các ngươi, vì sao lại ở Thiên giới? Nếu ta không hiểu lầm thì, giữa Địa Ngục giới và Thiên giới, còn có Trung Thổ giới của chúng ta ngăn cách mà phải không? Các ngươi đến Thiên giới bằng cách nào?”</p>
+                <p>Minh Dạ vuốt râu trầm tư, mãi một lúc sau mới cau mày nói: “Chuyện này nói ra thì cũng đã rất lâu rồi. Ta từng nghe ông nội ta nhắc đến một lần. Theo truyền thuyết, vào thời đại rất xa xưa, trên đời không có Trung Thổ thế giới, chỉ có Địa Ngục giới và Thiên giới. Hai thế giới thường xuyên giao tranh, sau này, Địa Ngục giới chúng ta đại thắng, chiếm lĩnh Thiên giới. Nhưng không biết vì sao, Thiên giới và Địa Ngục giới đồng thời rơi vào một trận đại loạn không rõ. Địa Ngục giới hiện nay đã trở thành thế nào, thì không ai biết được. Nhưng Thiên giới trong trận đại loạn đó, đã phân chia thành Đông Tây Nam Bắc tứ giới. Cũng chính vào lúc hai giới đại loạn, chín vị Cổ Thánh nhân tộc đột nhiên xuất hiện, lợi dụng lúc hai giới động loạn, cắt lấy một phần thiên địa của cả hai giới, thiết lập nên Trung Thổ giới.”</p>
+                <p>Nói đến đây, Minh Dạ không khỏi nhìn Giang Phàm một cái đầy kỳ lạ. Ý là, Trung Thổ giới có một phần, là được trộm từ Địa Ngục giới của bọn họ mà ra.</p>
+                <p>Cả người Giang Phàm chìm vào dòng chảy lớn, khiến hắn choáng váng đầu óc. Trung Thổ giới, vậy mà lại có nguồn gốc như vậy sao? Rất lâu sau hắn mới hoàn hồn, cố gắng tiêu hóa tin tức kinh thiên động địa này.</p>
+                <p>“Vậy nên các ngươi là hậu duệ của đội quân viễn chinh năm đó không kịp rút về Địa Ngục giới?”</p>
+                <p>Minh Dạ từ từ gật đầu. Giang Phàm coi như đã giải đáp được nghi hoặc đã giày vò trong lòng bấy lâu nay.</p>
+                <p>Ngay sau đó, hắn lại nói ra tin tức kinh hoàng mà mình nghe được từ miệng Sơn Phong, nghiêm trọng nói: “Viễn Cổ Cự Nhân, là do sinh linh Địa Ngục các ngươi biến hóa thành?”</p>
+                <p>Nếu là như vậy, thì thật sự quá đáng sợ. Hắc Vân Trại đã có sáu vị Tu La từ Nguyên Anh trung kỳ trở lên. Tất cả bọn họ đều có khả năng trở thành Viễn Cổ Cự Nhân! Mà những sơn trại như vậy, không chỉ có một mình Hắc Vân Trại! Nếu chuyển hóa ra một ngàn Viễn Cổ Cự Nhân, trừ Tam Thần Tông ra, tất cả các giáo phái khác, đều sẽ trong nháy mắt tan thành tro bụi! Hơn nữa, Viễn Cổ Cự Nhân bản thân đã tích lũy hàng ngàn năm, cùng với số lượng không rõ của đại quân Viễn Cổ Cự Nhân. Trận chiến này, còn có thể đánh được nữa không?</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_223.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_223.html" class="page-btn">223</a>
+            <a href="page_224.html" class="page-btn current">224</a>
+            <a href="page_225.html" class="page-btn">225</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_225.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

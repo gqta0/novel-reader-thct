@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 268">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 268</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_267.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_269.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_1336">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1336: Bài toán lộ bài</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm khẽ nhíu mày.Hắn mơ hồ cảm thấy, khẩu khí của Tâm Nghiệt Tôn Giả dường như có ý nghĩa khác.Nghĩ đến đây, trong lòng hắn dâng lên một phần cảnh giác.Mắt hắn khẽ đảo, nói: &quot;Vâng, sư tôn.&quot;&quot;Chúng ta đi thôi, trước tiên tìm Thiên Hắc Trụ, sau đó đi đón Tu La tộc.&quot;</p>
+                <p>Bạch Mã Tự.Phật điện sâu nhất.Một hòa thượng toàn thân tản ra ánh sáng nhàn nhạt, dung mạo lúc nam lúc nữ, lúc trẻ lúc già, đang lơ lửng tọa thiền.Trong tay hắn cầm chiếc hộp ngọc mà Chân Ngôn Tôn Giả đưa tới.Một luồng tro tàn không ngừng bơi lượn bên trong, dường như muốn bay ra ngoài.Mà phương hướng của nó, chính là nơi Giang Phàm đang ở.Thì ra, trước đó Chân Ngôn Tôn Giả nhân lúc Tâm Nghiệt Tôn Giả và mọi người đều bị Phật âm làm nhiễu loạn, đã kịp thời bắt lấy đống tro tàn đó. Bằng không, những đống tro tàn này sẽ rơi hết lên người Giang Phàm, tại chỗ sẽ bị vạch trần.</p>
+                <p>Giọng Bồ Tát chậm rãi mà đầy từ tính.&quot;Có đáng không?&quot;&quot;Ngươi là hậu duệ của Tinh Uyên Đại Tôn, có hắn che chở, không sợ hạo kiếp.&quot;Chân Ngôn Tôn Giả nhẹ nhõm nói: &quot;Tinh Uyên Đại Tôn từng nói một câu ở Thiên Giới.&quot;&quot;Cái chết có khi nhẹ tựa lông hồng, cũng có khi nặng tựa Thái Sơn.&quot;&quot;Ta chết đi, đổi lấy một người có thể chống lại Thiên Giới hơn ta sống sót, sao lại không đáng?&quot;Bồ Tát nghe vậy, chắp hai tay lại.&quot;Chân Ngôn thí chủ công đức vô lượng.&quot;</p>
+                <p>Chân Ngôn Tôn Giả đứng dậy, nói: &quot;Bồ Tát còn lời dạy nào nữa không?&quot;&quot;Có!&quot;Bồ Tát mở miệng, thổ ra một luồng lời nói không tiếng động.Chân Ngôn Tôn Giả thân thể mềm mại run lên, đôi mắt hạnh tròn xoe!Ngây người tại chỗ rất lâu, lúc này mới thất thần nói: &quot;Ta biết rồi.&quot;&quot;Đa tạ Bồ Tát nhắc nhở.&quot;Nàng lơ đãng rời đi.Bồ Tát lúc này mới nhìn hộp ngọc trong tay, lòng bàn tay nhẹ nhàng lướt qua, tro tàn dần dần yên tĩnh lại. Nhưng vừa nghĩ lại, lại dừng tay.Mặt hắn mang theo nụ cười đạm nhiên: &quot;Đã đến lúc cung nghênh Phật tử quy vị rồi.&quot;</p>
+                <p>Một bên khác.Giang Phàm sau khi lấy được Thiên Hắc Trụ, một đường vác Thiên Hắc Trụ, đi đến phía bắc nhất của Bạch Mã Tự.Hắn đối chiếu với kim bát của Pháp Ấn Kim Cương, đặt Thiên Hắc Trụ lên một tảng đá lớn.&quot;Trên đỉnh đầu chính là Vạn Hương Trại mà đồ nhi đã nói.&quot;&quot;Ta từng ủy thác Cửu Hương Trại Chủ của họ, đi thuyết phục những trại Tu La tộc còn lại.&quot;&quot;Ai nguyện ý đến Trung Thổ tị nạn, ta sẽ dẫn dắt họ xuống.&quot;&quot;Bây giờ, chỉ chờ Cửu Hương Trại Chủ xuống thôi.&quot;</p>
+                <p>Tâm Nghiệt Tôn Giả chắp tay sau lưng, nhìn Giang Phàm, nói:&quot;Ngươi đúng là rất nghĩ cho Thái Thương Đại Châu.&quot;Giang Phàm gật đầu nói: &quot;Thái Thương Đại Châu có Thiên Cơ Các của ta, cũng có Thanh Vân Tông đại lục mà ta đã đi ra.&quot;&quot;Còn có Cố Chu Thành, nơi ta lớn lên.&quot;&quot;Ta không bảo vệ bọn họ, thì ai sẽ bảo vệ đây?&quot;Tâm Nghiệt Tôn Giả nhàn nhạt nói: &quot;Thật hâm mộ, ngươi có nhiều người và nơi đáng để bảo vệ đến vậy.&quot;&quot;Không như ta, một đường đi qua chỉ có những quá khứ không dám nhìn lại.&quot;</p>
+                <p>Giang Phàm nói: &quot;Sư tôn khiêm tốn rồi, người có thể bước vào Hóa Thần Cảnh, chắc chắn cũng là cơ duyên liên tiếp, hẳn là có rất nhiều khoảnh khắc huy hoàng đáng để hồi tưởng.&quot;Tâm Nghiệt Tôn Giả khẽ cười khàn. Hắn ngồi trên tảng đá, nhìn lên bầu trời cao vô tận, hồi tưởng nói:&quot;Vi sư xuất thân từ một đại gia tộc ở Thiên Châu, phụ thân là một cường giả lớn ở Nguyên Anh Cảnh hậu kỳ.&quot;&quot;Mà ta là tiểu bối xuất sắc nhất trong tộc, phụ thân cũng cực kỳ yêu thương ta, cho ta mọi thứ tốt nhất!&quot;&quot;Ta thích gì, đều sẽ được cho, ngay cả khi trên đường nhìn trúng một nữ nhân, ngay đêm đó nàng ta sẽ xuất hiện trên giường ta.&quot;&quot;Nếu không có gì bất ngờ, ta sẽ dưới sự bồi dưỡng của phụ thân, trở thành người kế nhiệm gia tộc.&quot;&quot;Cho đến khi, phụ thân ta cầm một thanh kiếm, kề vào cổ ta.&quot;</p>
+                <p>Giang Phàm sửng sốt.Sự đảo ngược đột ngột khiến hắn có chút mờ mịt:&quot;Phụ thân sư tôn, đã yêu thương người đến vậy, vì sao lại muốn giết người?&quot;Tâm Nghiệt Tôn Giả nhàn nhạt nói: &quot;Bởi vì, hắn đi là Vô Tình Chi Đạo.&quot;&quot;Thế nào là vô tình? Cắt bỏ đi người mình không nỡ nhất, đó mới là vô tình.&quot;&quot;Cho nên, từ khi ta sinh ra, đã là công cụ để hắn bước vào Hóa Thần Chi Đạo.&quot;&quot;Yêu ta đến mức tận cùng, giết ta mới hiển lộ vô tình.&quot;Giang Phàm rùng mình.Giết con vào đạo, trên đời còn có loại đạo lạnh lùng vô tình như vậy sao?</p>
+                <p>Tâm Nghiệt Tôn Giả nói: &quot;May mà mẫu thân ta che chở, để ta chạy thoát.&quot;&quot;Nhưng phụ thân ta không hề từ bỏ.&quot;&quot;Giết con không thành, liền giết vợ, giết tộc nhân, diệt sạch cả tộc.&quot;&quot;Cuối cùng đã giúp hắn thành công bước lên Vô Tình Đạo, tiến vào Bát Khiếu Nguyên Anh.&quot;Giang Phàm nhất thời không biết nên nói gì.Quá khứ của Tâm Nghiệt Tôn Giả, có thể dùng từ thảm tuyệt nhân hoàn để hình dung.Phụ thân ruột thịt, đã giết chết tất cả những người thân cận của hắn, khiến hắn dù thiên hạ rộng lớn, lại không có chỗ dung thân.&quot;Sau này thì sao?&quot; Giang Phàm hỏi.Với sự hung tàn của Tâm Nghiệt Tôn Giả, chắc chắn sẽ báo thù phụ thân chứ?</p>
+                <p>Tâm Nghiệt Tôn Giả nói: &quot;Sau này, ta liền mang theo mối thù huyết hải của một gia tộc, liều mạng tu luyện.&quot;&quot;Kẻ cản ta tu hành, giết; kẻ cướp tài nguyên của ta, giết.&quot;&quot;Tất cả những ai cản trở ta tu luyện, đều phải chết!&quot;&quot;Một đường đi qua, ta đã chứng kiến quá nhiều lòng người hiểm ác, nhìn thấy vô số mặt tối của nhân tính.&quot;&quot;Cuối cùng, ta trong giết chóc, bước lên Tâm Nghiệt Chi Đạo, và chứng đạo thành thần!&quot;</p>
+                <p>Nói đến đây, Tâm Nghiệt Tôn Giả nhìn về phía Giang Phàm.&quot;Vi sư thật sự hâm mộ ngươi a, một đường đi qua, đều là người tốt.&quot;&quot;Khiến cho, nội tâm quang minh chính đại, chính khí hạo nhiên.&quot;&quot;Vi sư trên người ngươi, không nhìn thấy nửa điểm âm u.&quot;Giang Phàm cũng có chút đồng tình với Tâm Nghiệt Tôn Giả.Hèn chi hắn lĩnh ngộ là Tâm Nghiệt Chi Đạo.&quot;Sư tôn, tất cả đã qua rồi, hãy nhìn về phía trước đi.&quot; Giang Phàm nói.Tâm Nghiệt Tôn Giả cười khẽ khàn: &quot;Qua đi sao?&quot;&quot;Có qua được không?&quot;Hắn lấy ra hai cái bình màu đen như mực.Trong đó một cái là rỗng.Cái còn lại, bên trong đang cháy ngọn lửa trắng rực, có một linh hồn cuộn tròn thành một cục, đang đau khổ gào thét trong bình.Đồng tử Giang Phàm co rụt lại: &quot;Đây chẳng lẽ là...&quot;Tâm Nghiệt Tôn Giả nhàn nhạt nói: &quot;Là linh hồn phụ thân ta.&quot;&quot;Sau khi ta Hóa Thần, việc đầu tiên chính là báo thù.&quot;&quot;Lúc đó hắn đã bước vào Cửu Khiếu Nguyên Anh, rơi vào điên cuồng, giết hắn quá dễ dàng cho hắn.&quot;&quot;Cho nên, ta đã rút linh hồn của hắn ra, để hắn vĩnh viễn chịu đựng sự tra tấn của liệt hỏa!&quot;&quot;Chỉ có như vậy, lòng ta mới được bình yên.&quot;&quot;Mới có thể tạm thời quên đi, ký ức bị phụ thân ruột thịt dùng kiếm kề cổ, bị hắn giết sạch cả tộc.&quot;</p>
+                <p>Hắn cất đi chiếc bình đen tra tấn phụ thân.Chỉ còn lại chiếc bình rỗng, hắn dò xét nói:&quot;Ta từng thề, đời này tuyệt đối không cho bất cứ ai cơ hội phản bội ta nữa.&quot;&quot;Cho nên, cả đời này, ta chưa từng tin tưởng bất kỳ ai nữa.&quot;&quot;Ngay cả đồ đệ được nuôi dưỡng từ nhỏ, cũng chưa từng tin tưởng.&quot;</p>
+                <p>Nghe đến đây.Tim Giang Phàm đập thình thịch, bất động thanh sắc lùi về phía sau một bước.Xem ra, cảm giác của hắn không hề sai.Tâm Nghiệt Tôn Giả đối với hắn, đã bắt đầu nghi ngờ.Quả nhiên!Tâm Nghiệt Tôn Giả chậm rãi ngẩng đầu nhìn về phía Giang Phàm, ánh mắt dần trở nên sắc bén, sắc mặt cũng dần dần âm trầm.&quot;Nhưng, điều ta không ngờ tới là.&quot;&quot;Đồ đệ duy nhất ta tin tưởng, đồ đệ chân truyền duy nhất không tiếc giao phó cả truyền thừa cuối cùng.&quot;&quot;Lại, vẫn luôn lừa gạt ta!!!&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1337">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1337: Sư Đồ Tư Sát</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nhìn Tâm Nghiệt Tôn Giả đang gào thét đến kiệt sức, Giang Phàm thần sắc bình tĩnh.</p>
+                <p>“Ta vốn không có ý lừa ngươi, chỉ là vì tình thế bức bách mới trở thành đệ tử của ngươi, nhận sự chỉ điểm của ngươi, thu Phá Thiên Châu của ngươi, tất cả đều không phải do ta cố ý cầu xin.”“Ngươi không cần phải cảm thấy mình bị phản bội.”</p>
+                <p>Sát ý trong mắt Tâm Nghiệt Tôn Giả không giảm mà còn tăng: “Có gì khác biệt sao?”“Kết quả chẳng phải vẫn là lừa gạt?”“Ngươi nghĩ nói như vậy thì ta sẽ không giết ngươi?”</p>
+                <p>Giang Phàm lắc đầu, thản nhiên nói: “Ta không hề mơ tưởng ngươi sẽ buông tha ta.”“Lập trường giữa ngươi và ta đã định sẵn, chỉ có một người có thể sống sót.”“Chỉ là, ta từng mong rằng chúng ta không cần phải binh đao tương kiến.”“Đáng tiếc, cuối cùng vẫn phải đi đến bước đường này.”</p>
+                <p>Nghĩ đến đây, trong đầu hắn hiện lên bóng dáng Trần Kính.Nhìn mặt Chân Ngôn và Nam Cung Tiểu Vân, hắn đã cho Trần Kính cơ hội.Thế nhưng, Trần Kính lại không chút lưu tình, giáng cho hắn một đòn chí mạng từ phía sau.Nếu mình có thể sống sót, nhất định phải diệt Trần Kính!</p>
+                <p>“Ngươi biết là tốt nhất!”Đôi mắt già nua của Tâm Nghiệt Tôn Giả tựa như hai cái hố băng, toát ra hàn khí kinh người.Lão nắm chặt bình đen rỗng trong tay, rít lên:“Thấy cái bình rỗng này không? Ta để dành cho ngươi đấy! Ta sẽ nhét linh hồn ngươi vào trong đó, giày vò ngươi vĩnh viễn!”“Ta sẽ tự nhắc nhở mình, lần này đến lần khác, đừng bao giờ tin bất kỳ ai nữa!”</p>
+                <p>Tiếng rít giận dữ của lão còn vang vọng trong không trung, thì người đã biến mất tại chỗ.Khoảnh khắc sau, lão đã thuấn di đến trước mặt Giang Phàm.Bàn tay khô héo, như kìm sắt, bóp chặt lấy cổ Giang Phàm.</p>
+                <p>Giang Phàm không ngồi yên chờ chết.Từ trong hai ống tay áo của hắn, từng giọt nước đen nhỏ như hạt mưa tuôn ra.Mỗi giọt đều vô cùng sánh đặc, tỏa ra ma khí có thể che mờ thần thức của người khác.Đúng là Duyên Uẩn Ma Dịch.</p>
+                <p>Sắc mặt Tâm Nghiệt Tôn Giả khẽ biến, lão quả quyết thuấn di lùi lại.“Duyên Uẩn Ma Dịch của Đại Hoang Châu?”“Hơn nữa, ngươi còn có thể nắm bắt được quỹ đạo hành động của ta?”Lão là một Tôn Giả, hành động trong cự ly ngắn gần như thuấn di.Giang Phàm chỉ là một tu sĩ Nguyên Anh Cảnh nhỏ bé, làm sao có thể nắm bắt được?Mãi đến khi lão phát hiện trong cơ thể Giang Phàm có một luồng khí tức Phong Chi Bản Nguyên, lão mới chợt hiểu ra.“Chưa đạt Hóa Thần Cảnh mà đã lĩnh ngộ được Phong Chi Bản Nguyên.”“Ngươi thật sự khiến ta bất ngờ!”“Nhưng, điều này không thể cứu được ngươi!”</p>
+                <p>Lão vung tay áo trong không khí, uy áp đáng sợ từ một Tôn Giả ập đến như sóng thần, khiến người ta nghẹt thở.Từng giọt Duyên Uẩn Ma Dịch lơ lửng quanh Giang Phàm lần lượt bị chấn văng ra.Xương cốt của bản thân hắn phát ra tiếng “rắc rắc”, rõ ràng là không thể chịu nổi uy áp khổng lồ, sắp sửa tan vỡ.Thế nhưng, hắn đã kiên cường trụ vững.Và còn kích hoạt con Cào Cào Đồng, khiến nó đón gió lớn gấp trăm lần.</p>
+                <p>“Thể phách của ngươi, vậy mà có thể ngăn cản uy áp của Hóa Thần ư?”Tâm Nghiệt Tôn Giả lại một lần nữa kinh ngạc.Một đòn tùy tiện của Tôn Giả bình thường cũng có thể khiến tu sĩ Cửu Khiếu Nguyên Anh thân thể tan nát, vậy mà Giang Phàm lại bình yên vô sự.“Nhưng, điều đó thì sao?”“Hóa Thần Tôn Giả và Nguyên Anh Cảnh là hai cấp độ sinh mệnh khác nhau, không phải là thứ ngươi có thể dễ dàng đối kháng!”</p>
+                <p>Lão liếc nhìn con Cào Cào Đồng, trong mắt càng lộ rõ vẻ khinh thường.“Trốn thoát ngay trước mặt Tôn Giả? Thật là nằm mơ giữa ban ngày!”Lời còn chưa dứt, Tâm Nghiệt Tôn Giả lại lần nữa thuấn di, xuất hiện quỷ dị trước con Cào Cào Đồng.Giơ tay bóp chặt Cào Cào Đồng, trước khi nó kịp hành động, lão đã ném nó đi.“Ngươi không thoát được đâu…” Tâm Nghiệt Tôn Giả quát lên.</p>
+                <p>Ai ngờ, vừa mới vứt con Cào Cào Đồng đi, lão chợt cảm thấy sau lưng có một luồng kình phong vô cùng đáng sợ ập tới.Ngoái đầu nhìn lại.Thì ra là một Tôn Giả Hóa Thần Âm Thi toàn thân bị xiềng xích bao phủ, thể phách vô cùng cường tráng!Hắn ta ẩn mình phía sau con Cào Cào Đồng.Nhân lúc Tâm Nghiệt Tôn Giả vứt con Cào Cào đi, đã đánh lén một đòn từ phía sau.Thì ra, Giang Phàm không hề có ý định chạy trốn, mà là “dục cầm cố túng” (buông lỏng để bắt), giấu Hóa Thần Âm Thi phía sau con Cào Cào Đồng.</p>
+                <p>Tâm Nghiệt Tôn Giả giật mình thon thót, lão làm sao dám chịu một đòn từ Hóa Thần Tôn Giả khi không có chút phòng bị nào?Trong đầu lóe lên ý niệm, lão định thuấn di rời đi.Nhưng đúng lúc này.Một chiếc túi gấm đã được Giang Phàm chuẩn bị sẵn trong tay, “pặc” một tiếng nứt ra.Đúng là Hồng Trần Huyễn Âm do Hồng Trần Tôn Giả ban tặng, một loại bột phấn thần bí có thể khiến ngay cả Tôn Giả cũng bị ảo giác.</p>
+                <p>Lập tức, một luồng sương mù màu hồng phấn tràn ra, ập về phía Tâm Nghiệt Tôn Giả.Tâm Nghiệt Tôn Giả là người đã trải qua vô số trận chiến sinh tử, lão lập tức nhận ra rằng luồng sương mù màu hồng phấn này không hề đơn giản.Không nghĩ ngợi gì, trong khi thuấn di, lão tung ra một chưởng, muốn đánh tan luồng sương mù.“Không gian na di!” Giang Phàm mặt không biểu cảm, ngay khoảnh khắc túi gấm nổ tung, hắn đã sắp xếp bước tiếp theo.Một luồng lực lượng không gian lập tức bao bọc lấy luồng sương mù, khi nó xuất hiện trở lại, thì đã bao phủ quanh Tâm Nghiệt Tôn Giả.</p>
+                <p>“Không ổn!” Tâm Nghiệt Tôn Giả kinh hãi.Tuyệt đối không ngờ rằng Giang Phàm lại còn giấu một tay không gian bí thuật!Nhưng lão cũng không phải người thường, ngay khoảnh khắc sương mù bao phủ, trong cơ thể lão tuôn ra một luồng sấm sét, phong tỏa tất cả lỗ chân lông và thất khiếu.Chỉ có rất ít Hồng Trần Huyễn Âm xâm nhập vào cơ thể.Mặc dù vậy, trong đầu lão vẫn lập tức hiện lên từng trận tiếng cười duyên dáng, ngọt ngào, mê hoặc lòng người của nữ nhân.Tâm thần lão nhất thời lâm vào trạng thái mê mẩn.</p>
+                <p>Khi ý thức được điều không ổn, lão chợt tỉnh táo, thì cổ đã truyền đến một cơn đau nhói thấu xương.Chính là Hóa Thần Âm Thi năm ngón tay hóa thành đao, đâm vào cổ lão, muốn chặt đầu lão ra.Tâm Nghiệt Tôn Giả rợn cả tóc gáy.Lão làm sao có thể lường trước được, việc giết một tiểu bối Nguyên Anh Cảnh lại có thể gặp phải nguy hiểm sinh tử lớn đến vậy?</p>
+                <p>Trong khoảnh khắc ngàn cân treo sợi tóc, lão nghiêng đầu.Bàn tay của Hóa Thần Âm Thi lướt qua cổ lão.“Phụt!”“Oa!”Bàn tay sắc bén vô cùng, không chút lưu tình cắt đứt cổ lão, mang đi một mảng lớn thịt cổ.Định thần nhìn lại.Cổ của Tâm Nghiệt Tôn Giả đã bị đánh mất một phần ba, lộ cả xương sống cổ đầy máu me.Chậm phản ứng thêm nửa nhịp, cả cái đầu đã bay đi mất rồi.</p>
+                <p>Tâm Nghiệt Tôn Giả vừa kinh vừa giận, không nghĩ ngợi gì, phản tay giáng một cú cùi chỏ.Ngực Hóa Thần Âm Thi lập tức nổ tung, thân thể cường tráng bay ngược ra xa.Tâm Nghiệt Tôn Giả ôm cổ, cảm nhận cơn đau thấu xương, lập tức hung tợn ngập trời.“Giang Phàm!”Tâm Nghiệt Tôn Giả như một con dã thú bị chọc giận, tức tối trừng mắt nhìn Giang Phàm.Lão làm sao có thể ngờ rằng Giang Phàm lại khó đối phó đến vậy!</p>
+                <p>Giang Phàm mặt không biểu cảm, bên cạnh hắn đã xuất hiện một pho Âm Thi cao sáu trượng, tay đang đặt trên thân Âm Thi.Tay trái thì cầm một viên Thiên Lôi Thạch chứa đựng lôi huyết vô cùng lớn.“Ngươi không phải vẫn luôn tìm kiếm tu sĩ tu luyện Hư Lưu Lôi Kình sao?”“Vậy thì, hãy để ngươi được chứng kiến thế nào là Hư Lưu Lôi Kình.”“Đấu Chuyển Tinh Di!”Khoảnh khắc.Hư Lưu Lôi Kình, Hư Lưu Hỏa Kình, hai loại hư lưu chi kình trở về cơ thể!Lôi đạo thần thuật của hắn sẽ được tăng cường gấp mười lần!</p>
+                <p>Sắc mặt Tâm Nghiệt Tôn Giả âm trầm: “Ta còn đang thắc mắc, làm sao ngươi lại có thể tránh được sự truy lùng của ta!”“Thì ra, ngươi đã tu luyện Đấu Chuyển Tinh Di của Tà Nha Tôn Giả!”“Lừa dối ta lâu như vậy, ngươi thật đáng chết!”Lão không dám thuấn di nữa, sợ lại trúng kế.Lão lật tay lấy ra một cây linh khí hình gậy sắt màu đen, phía trên chi chít những mạch máu màu đỏ sẫm, ít nhất cũng phải vài chục sợi, tất cả đều nhúc nhích như những con sâu màu đỏ.“Đây là vật ta luyện chế từ mạch máu của những kẻ địch mạnh nhất ta từng giết trong đời.” Tâm Nghiệt Tôn Giả lộ vẻ lạnh lẽo.“Là một kiện thượng phẩm linh khí có thể giết người vô hình.”“Chết trong tay nó, ngươi đủ để tự hào!”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1338">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1338: Ám Toán Chân Ngôn</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nói đoạn, hắn vung gậy một cách tàn bạo. Các huyết quản đang ngọ nguậy trên cây gậy lập tức bắn ra, miệng huyết quản chi chít những chiếc răng đen kịt. Thay vì gọi là huyết quản, chi bằng nói chúng là vô số con trùng hút máu dài. Hàng trăm huyết quản này, một khi đâm vào thân thể Giang Phàm, sẽ trong chớp mắt hút khô hắn thành một cỗ xác khô không còn chút huyết nhục.</p>
+                <p>Cảm nhận được sự hung hiểm của huyết quản, Giang Phàm không dám chần chừ. Thiên Uyên Tâm phát động. Huyết Lôi trong Thiên Lôi Thạch, trong khoảnh khắc đã bị Thiên Uyên Tâm hấp thu toàn bộ! Thiên Uyên Tâm viên mãn, có một năng lực ẩn giấu ít người biết. Đó là, có thể trong nháy mắt phóng thích toàn bộ Lôi Đình chi lực đã tích trữ vào một đòn đánh! Cộng thêm Hư Lưu Lôi Kình cuối cùng cũng trở về vị trí. Đòn đánh của Giang Phàm, sẽ đạt tới mức độ chưa từng có trong lịch sử!</p>
+                <p>&quot;Bất Diệt Nhận!&quot; Hắn giơ tay, vung mạnh ra. Một đạo lôi kiếm đáng sợ, vĩ đại vô biên, được hai loại lôi đình huyết sắc và trắng bệch quấn quanh, sau một thời gian dài, lại một lần nữa tái hiện tại Thái Thương Đại Châu! Lôi Đình chi lực của hắn hiện tại, đã vượt xa gấp mười lần so với trước đây. Lại dung nhập Hư Lưu Lôi Kình, lại tăng thêm mười lần. Thế là, một đạo lôi kiếm khó có thể đong đếm được, vắt ngang chân trời, kinh thiên xuất thế. Ngay cả Tâm Nghiệt Tôn Giả kiến thức rộng rãi, cũng phải chấn động.</p>
+                <p>&quot;Trảm!&quot; Theo đà Giang Phàm vung xuống mạnh mẽ. Đạo lôi kiếm vô biên vô tận, chấn động đến nỗi trời đất rung chuyển! Lôi quang chói lòa, che lấp cả mặt trời gay gắt, nhấn chìm mọi ánh sáng trên thế gian! Lôi kiếm bao trùm lấy Tâm Nghiệt Tôn Giả cùng vô tận huyết quản mà hắn vung ra từ trong tay. RẦM! Tiếp theo đó, là tiếng nổ vang trời long đất lở, nuốt chửng cả thiên địa! Đại địa tựa hồ bị xé toạc, bộc phát ra khói bụi ngút trời! Khi lôi quang tiêu tán. Khói bụi cuộn như rồng, cuốn khắp bốn phương. Một khe rãnh khủng khiếp, làm người ta giật mình, trải dài đến tận cuối tầm mắt. Sắc mặt Giang Phàm hơi tái nhợt. Đòn đánh này, đã tiêu hao toàn bộ Lôi Đình chi lực của hắn. Chỉ không biết, liệu đã thành công chém giết Tâm Nghiệt Tôn Giả hay chưa.</p>
+                <p>Khói bụi dần dần tản đi. Một bóng người già nua đứng lơ lửng giữa không trung, từ từ hiện ra. Toàn thân hắn tản ra sự hung tợn đáng sợ, cúi đầu nhìn linh khí thượng phẩm trong tay. Các huyết quản trên đó, toàn bộ đều bị chém đứt, và bị lôi kiếm hủy diệt thành từng mẩu cháy đen. Toàn bộ huyết quản hắn tích lũy cả đời, đều bị phá hủy! &quot;Tiểu súc sinh!&quot; &quot;Phá hủy chí bảo của ta, ta sẽ không tha cho ngươi!&quot; Một tiếng gầm giận dữ kinh thiên, toàn bộ khói bụi quanh thân hắn đều tan biến, lộ ra bộ dạng chật vật không thể tả. Y phục của hắn đều bị cháy rụi, trên người đầy vết cháy xém. Nếu không phải cây côn trong tay đã chặn lại phần lớn đòn tấn công, hắn có lẽ đã bị trọng thương. Chiêu này của Giang Phàm, đã không kém gì một đòn của Hóa Thần Tôn Giả!</p>
+                <p>Tâm Nghiệt Tôn Giả gầm lên không ngớt, thần hoàn sau gáy hắn lập tức đại phóng quang mang. &quot;Tâm Nghiệt Lĩnh Vực!&quot; Trong khoảnh khắc, một loại lực lượng vô hình đã phong tỏa phương thiên địa này. Giang Phàm lập tức cảm thấy từ sâu trong linh hồn, dâng lên một luồng sát ý khổng lồ! Hắn vốn dĩ không có sát ý quá mãnh liệt đối với Tâm Nghiệt Tôn Giả. Chẳng qua là vì tự bảo vệ mình, nên mới đánh sống chết mà thôi. Nhưng dưới tác dụng của Tâm Nghiệt Lĩnh Vực, luồng sát ý này trở nên mạnh mẽ chưa từng có, đến mức khiến đôi mắt hắn đỏ hoe, sắp mất đi lý trí! Tâm Nghiệt Tôn Giả sát ý sâm nhiên nói: &quot;Ta biết nội tâm ngươi quang minh, không có chỗ u tối.&quot; &quot;Nhưng, khi ngươi cùng người khác sinh tử chém giết, là không thể tránh khỏi không nảy sinh sát niệm.&quot; &quot;Đã có sát niệm, dưới lĩnh vực của ta, tất cả kẻ địch đều có thể biến thành dã thú bản năng khát máu!&quot; &quot;Mà chỗ dựa lớn nhất của ngươi, lại chính là bình tĩnh đối phó địch, vận dụng đủ loại thủ đoạn.&quot; &quot;Hiện tại, chỗ dựa của ngươi đã không còn!&quot; Là Tâm Nghiệt Tôn Giả đã trải qua vô số trận chiến, hắn một châm kiến huyết, chỉ thẳng vào điểm yếu lớn nhất của Giang Phàm!</p>
+                <p>Giang Phàm trầm giọng quát: &quot;Ta sẽ không bị ngươi ảnh hưởng!&quot; Nhưng hắn lại gầm thét, như một con dã thú không biết sống chết mà xông về phía Tâm Nghiệt Tôn Giả. Tâm Nghiệt Tôn Giả mang theo nụ cười lạnh: &quot;Trong số các Tôn Giả, cũng ít ai có thể ngăn cản lĩnh vực của ta.&quot; &quot;Huống hồ là ngươi?&quot; Nhìn Giang Phàm xông tới, hắn lãnh đạm nâng ngón trỏ lên, xa xa điểm một cái: &quot;Nên kết thúc rồi.&quot; &quot;Giang Phàm.&quot;</p>
+                <p>Tẩy Nguyệt Hồ. Gió nhẹ thổi qua, mặt hồ gợn lên từng đợt sóng lăn tăn. Bạch tháp phản chiếu trong hồ, khẽ lay động. &quot;Sư tôn, người đã khỏe hơn chút nào chưa?&quot; Trên bạch tháp. Trần Kính chú mục vào bóng dáng xinh đẹp áo vàng đang khoanh chân ngồi trên đỉnh tháp, lặng lẽ ngắm nhìn chân trời. Mái tóc đen mềm mượt buông xõa sau lưng, đuôi tóc khẽ bay. Từng đợt hương thơm thoang thoảng theo gió nhẹ nhàng bay tới. Đường eo mềm mại, bờ vai thon gầy, tấm lưng mỏng manh, cổ trắng nõn. Cảnh đẹp tuyệt mỹ khiến Trần Kính khó mà dứt ra được. Bước vào Nghịch Ý Chi Đạo, hắn càng khó kiềm chế dục vọng trong lòng. Thế tục càng đè nén, hắn càng muốn vùng thoát.</p>
+                <p>Chân Ngôn Tôn Giả không quay đầu lại, chỉ nhìn đăm đăm về phía xa xăm, nói: &quot;Con hãy tu luyện cho tốt, không cần bận tâm đến ta.&quot; Trần Kính bước tới, ngửi thấy hương cơ thể càng lúc càng rõ ràng, trong mắt say mê càng sâu. &quot;Sư tôn, con sẽ tìm cách, giúp người khôi phục lĩnh vực.&quot; &quot;Con thề, nhất định sẽ làm được.&quot;</p>
+                <p>Chân Ngôn Tôn Giả vẫn không quay đầu lại, nhàn nhạt nói: &quot;Cách nào, nói ta nghe thử xem sao.&quot; Trần Kính ngây người. Hắn chỉ nói thuận miệng, không ngờ Chân Ngôn Tôn Giả lại nghiêm túc. &quot;Con, con sẽ nghĩ cách.&quot; Chân Ngôn Tôn Giả quay đầu, nhàn nhạt nhìn hắn một cái: &quot;Con biết cả đời ta ghét nhất điều gì không?&quot; Trần Kính dừng bước, không dám lại gần, cúi người nói: &quot;Giả dối.&quot; &quot;Chính vì vậy, đạo mà sư tôn đi, mới là Chân Ngôn Chi Đạo.&quot; Chân Ngôn Tôn Giả thu hồi ánh mắt, bình thản nói: &quot;Biết là tốt nhất.&quot; &quot;Đừng nói lời giả dối trước mặt ta, ta không thích.&quot;</p>
+                <p>Sắc mặt Trần Kính đỏ bừng. Nhưng lại rất không cam lòng, nói: &quot;Vậy còn Giang Phàm thì sao?&quot; &quot;Hắn ta dọc đường ở Thiên Giới phô trương lừa gạt, trước mặt Tâm Nghiệt Tôn Giả cũng lừa tới lừa lui.&quot; &quot;Sư tôn vì sao không ghét hắn?&quot; Chân Ngôn Tôn Giả nói: &quot;Ta đã nói rồi, đừng so sánh con với hắn.&quot; &quot;Ngươi không bằng hắn.&quot; Trong mắt Trần Kính cuộn trào nghịch ý. Lại một lần nữa nói hắn không bằng Giang Phàm! Sao hắn lại không bằng Giang Phàm? Bản thân hắn đã ở bên Chân Ngôn Tôn Giả bao nhiêu năm, Giang Phàm mới quen biết bao lâu? Trong lòng hắn đau đớn, cảm thấy một nguy cơ cực lớn. Nhìn thần hoàn của Chân Ngôn Tôn Giả bị hỏng một góc, hắn nghiến răng, lặng lẽ lấy ra ngọc giản chứa lĩnh vực của Tâm Nghiệt Tôn Giả. Hắn không động thanh sắc tiến lại gần, nói: &quot;Sư tôn, đệ tử có một chuyện muốn thú nhận với người.&quot; Chân Ngôn Tôn Giả không quay đầu lại: &quot;Nói đi.&quot;</p>
+                <p>Trần Kính đi đến sau lưng nàng, hít sâu một hơi, cầm chặt ngọc giản vỗ mạnh về phía lưng nàng, miệng lạnh giọng quát: &quot;Điều con muốn nói là, người là của con!&quot; &quot;Giang Phàm đừng hòng cướp đi!&quot; Nhưng, điều khiến hắn bất ngờ là. Một chưởng vỗ ra, lại vỗ vào không khí. Chân Ngôn Tôn Giả trước mắt hắn, hóa thành một làn sương mù tiêu tán! &quot;Hư, hư ảnh?&quot; Trần Kính kinh ngạc nói. Sau lưng hắn, đột nhiên vang lên giọng nói lạnh lẽo như băng của Chân Ngôn Tôn Giả. &quot;Bồ Tát bảo ta đề phòng ngươi, ta vốn dĩ không tin.&quot; &quot;Không ngờ, ngươi lại thật sự ám toán ta!&quot; Trần Kính trong lòng giật thót một cái, như thể hụt mất một nhịp. Chưa kịp phản ứng, tay hắn trống rỗng. Ngọc giản kia đã bị đoạt đi. &quot;Quỳ xuống!&quot; Chân Ngôn Tôn Giả tay nắm ngọc giản, khuôn mặt xinh đẹp bị lớp băng dày bao phủ.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1339">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1339: Sinh tử nhất kích</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Trần Kính quay người lại, hai nắm đấm siết chặt, không hề quỳ xuống, vẻ mặt không cam lòng nói:“Ta không sai!”“Sư tôn là của một mình ta, không cho phép bất kỳ ai giành lấy!”</p>
+                <p>Chân Ngôn Tôn Giả sắc mặt giận dữ.Nàng khẽ vung tay, uy áp Tôn giả mạnh mẽ lập tức đè Trần Kính nằm sấp xuống đất.“Vô sỉ tột cùng! Ta là sư tôn của ngươi!”“Ngươi sao có thể có ý niệm bất chính với sư tôn!”</p>
+                <p>Trần Kính nghiến răng, thà bị trấn áp nằm sấp trên đất cũng nhất quyết không quỳ, không cam lòng nói:“Người tuổi còn nhỏ hơn ta, năm đó lúc ta cứu người, ta là Lục Khiếu Nguyên Anh, người cũng chỉ mới Bát Khiếu Nguyên Anh, chẳng cao hơn ta bao nhiêu.”“Người không có tư cách làm sư tôn của ta.”“Nhưng vì sao ta lại bái người làm sư, trong lòng người không rõ sao?”“Ta chỉ muốn ở lại bên cạnh người mà thôi!”“Ta muốn, chờ ta cũng bước vào Hóa Thần cảnh, ta sẽ là Tôn giả trẻ tuổi như người ở Thái Thương Đại Châu, sẽ là bạn lữ duy nhất người có thể lựa chọn.”“Nhưng ta vận khí không tốt, lần trước Hóa Thần thất bại, nhưng ta không nản lòng, ta làm lại từ đầu, lần nữa trùng kích Hóa Thần.”“Chỉ vì cuối cùng được ở bên người!”“Nhưng ta không ngờ, nửa đường lại xuất hiện một Giang Phàm, hắn vậy mà lại ngủ với người!”“Càng khiến ta không thể chấp nhận được là, trong lòng người vậy mà đã có hắn!”“Cho nên, ta phải ra tay sớm, phải có được người!”</p>
+                <p>Nghe Trần Kính nói một tràng lời lẽ chưa từng có, Chân Ngôn Tôn Giả không hề cảm thấy xúc động hay chấn động.Chỉ có sự ghê tởm.Nàng lùi lại phía sau, lạnh lùng nói: “Ngươi nghĩ nhiều rồi.”“Dù ngươi đột phá Hóa Thần Tôn giả cảnh, dù ngươi là Hóa Thần cảnh trẻ tuổi nhất Thái Thương Đại Châu ngoài ta ra, ta cũng sẽ không chọn ngươi.”“Ngươi vẫn chưa đủ xuất sắc để khiến ta vượt qua mối quan hệ sư đồ mà ở bên ngươi.”“Ngoài ra, cha ta là một vị Thiên Nhân Ngũ Suy Đại Tôn.”“Cho dù ta tìm bạn lữ, cũng phải tìm người như cha ta là tuyệt đỉnh nhân gian, chứ không phải ngươi!”</p>
+                <p>Cái gì?Trần Kính nghiến chặt răng, thì ra tất cả những gì hắn làm đều là nhất sương tình nguyện.Bản thân có cố gắng thế nào cũng không thể nhận được sự công nhận của Chân Ngôn Tôn Giả.“Thế còn Giang Phàm thì sao?”“Tu vi của hắn còn không bằng ta, vậy mà người lại có thể tự tổn lĩnh vực vì hắn, vì hắn mà chết!”“Người đang nói dối!”</p>
+                <p>Chân Ngôn Tôn Giả lạnh lùng nói: “Ta đối với Giang Phàm không có tình cảm nam nữ, chỉ có sự kính trọng.”“Chỉ có thế thôi!”Nàng dừng lại một chút.Chân Ngôn Tôn Giả ánh mắt đột nhiên híp lại: “Sao ngươi biết ta tự tổn lĩnh vực vì Giang Phàm?”“Ngươi biết bí mật ta che giấu vì hắn rồi ư?”Nghĩ đến đây, nàng nhìn vào ngọc giản trong tay, khẽ cảm nhận một chút, sắc mặt đại biến.“Tâm Nghiệp Lĩnh Vực?”“Ngươi đã gặp Tâm Nghiệp Tôn Giả?”“Ngươi đã mách lẻo với hắn?”</p>
+                <p>Trần Kính cười, lạnh lùng cười lên: “Đúng vậy!”“Ta không có được sư tôn, Giang Phàm cũng đừng hòng có được!”“Hiện tại hắn, chắc hẳn đã bị Tâm Nghiệp Tôn Giả lột da rút gân, tra tấn đến chết rồi nhỉ?”“Dù sao, hắn cũng là mạo danh đệ tử chân truyền của Tâm Nghiệp Tôn Giả.”“Nếu đổi lại là Tâm Nghiệp Tôn Giả ta, cũng sẽ khiến hắn cầu sống không được, cầu chết không xong!”</p>
+                <p>Chân Ngôn Tôn Giả thân mình run rẩy.Tức giận nói: “Ngươi đáng chết!”“Năng lực của Giang Phàm có thể đóng góp quan trọng vào việc kháng cự Cổ Cự Nhân, có thể bảo vệ rất nhiều người.”“Ngươi hại chết hắn, tương đương với việc hại chết rất nhiều người vô tội!”</p>
+                <p>Trần Kính rít lên: “Ta mặc kệ!”“Dám cướp nữ nhân của ta, hắn đáng chết!”</p>
+                <p>Chân Ngôn Tôn Giả đầy vẻ giận dữ.Nàng đối với Trần Kính đã không chỉ là thất vọng, mà là chán ghét, sự chán ghét sâu sắc!“Trần Kính, ngươi khiến ta ghê tởm!”“Từ bây giờ, ngươi bị trục xuất khỏi sư môn!”“Ngươi và ta, không còn là quan hệ sư đồ nữa!”“Cút, đời này không muốn nhìn thấy ngươi nữa!”</p>
+                <p>Nàng vung tay áo, ném Trần Kính ra khỏi Bạch Tháp.Trần Kính giận dữ tột cùng, mặt đầy hung khí: “Vì Giang Phàm, mà trục xuất ta khỏi Tẩy Nguyệt Hồ?”“Ngươi vong ân phụ nghĩa!”“Năm đó nếu không phải ta cứu ngươi, ngươi sớm đã vì phát điên mà chết ở Đông Hải!”</p>
+                <p>Chân Ngôn Tôn Giả lạnh lùng nói: “Không giết ngươi, chính là báo ân lớn nhất!”“Ân tình hai bên đã xóa bỏ, ngươi và ta không còn bất kỳ liên quan nào nữa!”“Còn nữa, bây giờ ngươi nên lo lắng là, Giang Phàm có tìm ngươi tính sổ không!”“Nếu hắn còn sống, ngươi lên trời xuống đất đều phải chết!”</p>
+                <p>Nói xong.Nàng phóng người nhảy về phía truyền tống trận, vội vã chạy đến Bạch Mã Tự.Trong lòng nàng lo lắng.Nếu Giang Phàm vì đệ tử của nàng mách lẻo mà chết, vậy tội lỗi của nàng sẽ lớn lắm.</p>
+                <p>Trần Kính lau vết máu ở khóe miệng, sắc mặt âm trầm đi theo sau.“Hừ! Ta không tin, hắn có thể sống sót trong tay Tâm Nghiệp Tôn Giả!”</p>
+                <p>Cột Hắc Trụ nối trời.Tâm Nghiệp Tôn Giả lạnh lùng nhìn chằm chằm, Giang Phàm đang lao tới như một con dã thú.Ngón trỏ khẽ búng một cái.Một luồng sát cơ hủy diệt, nhẹ nhàng bắn ra.Trong đôi mắt già nua của hắn lộ ra một tia phức tạp: “Nếu ngươi thực sự là đệ tử của ta, thì tốt biết mấy.”Lực lượng khủng bố, đột nhiên bắn về phía Giang Phàm!Khoảnh khắc tiếp theo, Giang Phàm sẽ hóa thành thịt nát bắn tung tóe, nổ tung ngay tại chỗ.</p>
+                <p>Tuy nhiên.Ngay lúc này.Giang Phàm đột nhiên tỉnh táo lại mà không có dấu hiệu báo trước, hai tay kết ấn.Một luồng lực lượng không gian đột nhiên xuất hiện phía sau lưng Tâm Nghiệp Tôn Giả.“Cái gì?”Tâm Nghiệp Tôn Giả giật mình.Giang Phàm vậy mà đã thoát khỏi Tâm Nghiệp Lĩnh Vực của hắn?Sao có thể?Cho đến khi, hắn đột nhiên phát hiện, trong mái tóc đen của Giang Phàm, một cách quái dị có thêm rất nhiều sợi tóc bạc.Từng luồng tro của giấy cầu nguyện, bay ra từ ống tay áo.Hắn lúc này mới nhớ ra, Giang Phàm trước khi mất lý trí, đã bất động thanh sắc nói một câu.“Ta sẽ không bị ngươi ảnh hưởng!”Lúc đó Giang Phàm, là đang cầu nguyện!!Hắn sớm đã thoát khỏi ảnh hưởng của lĩnh vực, nhưng vẫn tiếp tục giả vờ mất lý trí, chính là để Tâm Nghiệp Tôn Giả lơ là.Từ đó tạo cơ hội cho đòn đánh trước mắt hắn!Lòng hắn chợt giật thót.Không nghĩ nhiều, hắn phản tay một quyền đánh về phía lực lượng không gian phía sau.Phụt một tiếng!Tiếng thân thể bị đánh xuyên vang lên.Hắn quay đầu nhìn lại, hóa ra là Hóa Thần Âm Thi.Phần bụng của nó bị đánh xuyên, nhưng không hề có cảm giác đau đớn mà dang rộng hai tay, ôm chặt lấy Tâm Nghiệp Tôn Giả!Tâm Nghiệp Tôn Giả lập tức cảm thấy không ổn!Giang Phàm muốn chế phục hắn!Tiếp theo, chắc chắn còn có một chiêu sát thủ lớn!“Tránh ra!” Tâm Nghiệp Tôn Giả gầm lên, cố gắng gỡ tay của Hóa Thần Âm Thi ra.Nhưng, đối phương ôm chặt cứng, căn bản không thể thoát ra.Tâm Nghiệp Tôn Giả quyết đoán vận dụng thân pháp, cố gắng cùng Hóa Thần Âm Thi dịch chuyển tức thời rời đi.Bất kể Giang Phàm có chiêu sát thủ gì, chỉ cần hắn kịp thời dịch chuyển đi, thì khó mà gây sát thương cho hắn.Ai ngờ.Ngay lúc này!Những giọt ma dịch mù mịt tản mát khắp nơi kia, không biết từ lúc nào đã tụ lại trong cơ thể Hóa Thần Âm Thi.Chúng nhanh chóng trào ra, dính chặt lấy Tâm Nghiệp Tôn Giả.Đồng thời, một phần khác của ma dịch mù mịt dính vào lòng bàn chân của hai người và mặt đất.Khiến Tâm Nghiệp Tôn Giả ngay cả sức lực bỏ chạy cũng không có!“Tiểu tử! Ngươi tìm chết!”Tâm Nghiệp Tôn Giả có chút lo lắng, muốn cách xa một khoảng cách mà oanh sát Giang Phàm.Giang Phàm cũng vào lúc này ra tay.Hắn khẽ búng ngón tay, ba thanh cực phẩm linh kiếm phía sau lưng, kêu vang xuất vỏ.“Đại Diễn Kiếm Trận!”Giang Phàm khẽ quát một tiếng, ngón tay hướng về phía Tâm Nghiệp Tôn Giả xa xa chỉ một cái.Ba thanh cực phẩm linh kiếm lập tức hóa thành ba luồng thần hồng.Đây, là chiêu sát thủ cuối cùng của Giang Phàm!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1340">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1340: Tuyệt sát</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Đồng tử Tâm Nghiệt Tôn Giả co rút kịch liệt.</p>
+                <p>Hắn cũng cảm nhận được sự đáng sợ của Tam Sắc Thần Hồng, kinh hãi thất thanh: &quot;Thiên cấp kiếm pháp? Lại còn là ba thanh cực phẩm linh kiếm thi triển ra!&quot;</p>
+                <p>Trái tim hắn đập điên cuồng.</p>
+                <p>Tam Sắc Thần Hồng trong mắt hắn không phải là cầu vồng rực rỡ, mà là cái chết lạnh lẽo!</p>
+                <p>Tam Sắc Thần Hồng như thể thuấn di, trong chớp mắt đã chém tới.</p>
+                <p>Thân thể Tâm Nghiệt Tôn Giả bị cố định chặt tại chỗ, căn bản không thể né tránh.</p>
+                <p>Giây phút sinh tử.</p>
+                <p>Trong mắt hắn lóe lên một tia quả quyết, hai chân cưỡng ép vặn xoắn, như dây cao su lật ngược lại.</p>
+                <p>Kéo theo Hóa Thần Âm Thi dính chặt vào hắn, đôi chân cũng bị vặn xoắn theo.</p>
+                <p>Cứ như vậy, Hóa Thần Âm Thi ở phía trước, lấy lưng chặn đứng Tam Sắc Thần Hồng!</p>
+                <p>Phụt!</p>
+                <p>Đúng vào khoảnh khắc này, Tam Sắc Thần Hồng đã chém tới.</p>
+                <p>Ánh cầu vồng vô song xuyên thủng lưng Hóa Thần Âm Thi.</p>
+                <p>Nghe tiếng vang trầm đục sau lưng, Tâm Nghiệt Tôn Giả vẫn còn sợ hãi, đồng thời cũng may mắn vì mình phản ứng nhanh, lấy cái giá là đôi chân để đổi lấy một tia sinh cơ.</p>
+                <p>Bằng không, giờ phút này hắn đã bị chém thành ba mảnh.</p>
+                <p>Nhưng hắn vẫn đánh giá thấp Đại Diễn Kiếm Trận.</p>
+                <p>Sau khi chém xuyên Hóa Thần Âm Thi, ba thanh cực phẩm linh kiếm cuốn vào trong, rồi quay về vỏ kiếm.</p>
+                <p>Thế nhưng Tam Sắc Thần Hồng vẫn còn ở lại, lấp lánh không ngừng, sáng tối bất định.</p>
+                <p>Tâm Nghiệt Tôn Giả quay đầu nhìn lại, đồng tử co rút đến cực điểm.</p>
+                <p>Một khuôn mặt già nua, hiện rõ nỗi sợ hãi tột độ trong ánh sáng ba màu đang bùng nổ.</p>
+                <p>&quot;Đừng...&quot;</p>
+                <p>Tâm Nghiệt Tôn Giả kêu lên một tiếng thất thanh, nhưng cuối cùng ánh sáng ba màu vẫn nổ tung.</p>
+                <p>Vô số đốm sáng ba màu, tựa như mưa bão bắn ra khắp bốn phương tám hướng.</p>
+                <p>Những đốm sáng bay qua, Hóa Thần Âm Thi bị xuyên thủng thành một cái hốc máu.</p>
+                <p>Vô số đốm sáng khác biến nó thành một cái sàng, máu chảy không ngừng.</p>
+                <p>Tâm Nghiệt Tôn Giả ở ngay cạnh đó, làm sao có thể tránh được?</p>
+                <p>&quot;A!&quot;</p>
+                <p>Trong tiếng kêu thảm thiết, Tâm Nghiệt Tôn Giả cũng bị xuyên thủng khắp người, Hóa Thần chi huyết văng tung tóe.</p>
+                <p>Ngay cả đầu cũng biến thành tổ ong!</p>
+                <p>Lúc này, Hóa Thần Âm Thi không thể chống đỡ nổi nữa.</p>
+                <p>Thân thể biến thành cái sàng, tại chỗ tan rữa thành xương nát thịt nhũn.</p>
+                <p>Tâm Nghiệt Tôn Giả cũng loạng choạng, toàn thân không có một tấc da thịt nào còn nguyên vẹn.</p>
+                <p>Cơ thể hắn cũng bị hủy hoại hoàn toàn.</p>
+                <p>&quot;Tên súc sinh nhỏ...&quot; Họng Tâm Nghiệt Tôn Giả bị xuyên thủng, phát ra tiếng gầm khản đặc.</p>
+                <p>Phịch một tiếng.</p>
+                <p>Hắn cũng không thể kiên trì được nữa, thân thể tại chỗ tan rã, hóa thành thịt nát!</p>
+                <p>Một đời Tâm Nghiệt Tôn Giả, cứ thế bị chém chết dưới kiếm!</p>
+                <p>Phịch!</p>
+                <p>Giang Phàm cũng vô lực quỳ gối xuống đất, sắc mặt hơi tái nhợt.</p>
+                <p>Điều động Đại Diễn Kiếm Trận, hắn đã hao phí toàn bộ Nguyên Anh chi lực, giờ phút này một chút sức lực cũng không còn.</p>
+                <p>Để chém giết Tâm Nghiệt Tôn Giả, hắn đã dùng hết Huyết Lôi, vận dụng Hồng Trần Huyễn Âm, tiêu hao một tờ Hứa Nguyện Chi quý giá.</p>
+                <p>Thậm chí, còn hủy diệt Hóa Thần Âm Thi!</p>
+                <p>Cái giá phải trả vô cùng nặng nề.</p>
+                <p>Nhưng, trừ bỏ kẻ thù truyền kiếp đã truy sát hắn từ khi ở đại lục, tất cả đều đáng giá.</p>
+                <p>&quot;Ta thắng rồi.&quot;</p>
+                <p>Giang Phàm mệt mỏi ngẩng đầu nhìn trời, lộ ra một nụ cười nhẹ nhõm.</p>
+                <p>Giờ phút này, hắn không còn phải lo lắng Hư Lưu Lôi Kình sẽ bị phát hiện nữa.</p>
+                <p>Rắc!</p>
+                <p>Ngay lúc này, một tiếng động lạ truyền vào tai hắn.</p>
+                <p>Giang Phàm đột ngột rũ mắt nhìn xuống, đồng tử co rụt lại.</p>
+                <p>Chỉ thấy thịt nát xương tan của Tâm Nghiệt Tôn Giả đang nhanh chóng bay về phía bộ xương của hắn!</p>
+                <p>Trong lồng ngực Tâm Nghiệt Tôn Giả, có một miếng ngọc giản màu xanh biếc.</p>
+                <p>Một lĩnh vực mạnh mẽ đến mức không thể tưởng tượng nổi, phát ra từ trong ngọc giản.</p>
+                <p>Lĩnh vực kia, có năng lực nghịch thiên giúp người chết sống lại, xương trắng mọc thịt!</p>
+                <p>Huyết nhục của Tâm Nghiệt Tôn Giả, lấy ngọc giản làm trung tâm, nhanh chóng tái tổ hợp, cuối cùng ngưng kết lại.</p>
+                <p>Trong chớp mắt, Tâm Nghiệt Tôn Giả vốn đã chết hẳn, dưới tác dụng của lĩnh vực ngọc giản.</p>
+                <p>Lại khôi phục như ban đầu!</p>
+                <p>Da thịt hoàn hảo không chút tổn hại, khí tức mạnh mẽ đến đỉnh phong!</p>
+                <p>Thậm chí, ngay cả sinh cơ đã mất khi dùng Hứa Nguyện Chi trước đó cũng khôi phục hoàn toàn!</p>
+                <p>Nếu không phải y bào của hắn đầy rẫy lỗ thủng dày đặc, Giang Phàm thậm chí còn phải nghi ngờ liệu Đại Diễn Kiếm Trận của mình có thực sự giết chết hắn hay không.</p>
+                <p>Tâm Nghiệt Tôn Giả trọng sinh chậm rãi mở mắt.</p>
+                <p>Trong đôi mắt già nua, tràn ngập nụ cười lạnh lẽo âm u:</p>
+                <p>&quot;Tên súc sinh nhỏ, không ngờ ta còn có chiêu này chứ?&quot;</p>
+                <p>Trái tim Giang Phàm chìm xuống đáy vực, sắc mặt cũng tràn đầy tuyệt vọng.</p>
+                <p>Ngay cả Nguyên Anh chi lực cũng đã cạn kiệt, hắn còn lấy gì để chiến đấu với Tâm Nghiệt Tôn Giả đang ở trạng thái đỉnh phong?</p>
+                <p>&quot;Lĩnh vực trong ngọc giản kia là của Thiếu Đế?&quot;</p>
+                <p>Giang Phàm vô lực hỏi.</p>
+                <p>Lĩnh vực nghịch thiên như vậy, trừ vị Thiếu Đế Thiên Nhân Ngũ Suy kia ra, không còn ai khác.</p>
+                <p>Tâm Nghiệt Tôn Giả cảm nhận được sự mạnh mẽ của cơ thể, cười khẩy bước về phía Giang Phàm đang mất đi sức phản kháng.</p>
+                <p>&quot;Cả đời ta không phục ai, nếu không có lợi ích lớn lao, sao ta lại cam tâm thần phục Thiếu Đế, cam lòng vì hắn hiệu mệnh?&quot;</p>
+                <p>&quot;Lĩnh vực bảo mệnh của hắn chính là nguyên nhân ta bán mạng cho hắn.&quot;</p>
+                <p>Giang Phàm thở dài một hơi: &quot;Ta từng nghĩ, ngươi đến từ Thiếu Đế Sơn, chắc chắn sẽ có chiêu sát thủ cực mạnh.&quot;</p>
+                <p>&quot;Chỉ là không ngờ, lại là thứ nghịch thiên như sống lại từ cõi chết này.&quot;</p>
+                <p>Ngay cả Giang Phàm, giờ phút này cũng có một cảm giác uất ức như đối phương gian lận.</p>
+                <p>Bản thân hắn đã hao hết mọi thứ, đối phương lại có thể chết đi sống lại để chiến đấu thêm một trận.</p>
+                <p>Điều này thực sự quá bất công.</p>
+                <p>Tâm Nghiệt Tôn Giả cười khẽ: &quot;Không cần cảm thấy uất ức.&quot;</p>
+                <p>&quot;Ngươi lấy thân thể Thất Khiếu Nguyên Anh, chém giết Tôn Giả, không nói là không có ai sau này, nhưng tuyệt đối là chưa từng có tiền lệ!&quot;</p>
+                <p>&quot;Ngay cả Thiếu Đế năm xưa, cũng tuyệt không có chiến tích Thất Khiếu trảm Tôn Giả.&quot;</p>
+                <p>&quot;Ngươi thật sự rất đáng gờm.&quot;</p>
+                <p>Giang Phàm cười khổ: &quot;Cảm ơn Tôn Giả đã an ủi.&quot;</p>
+                <p>Tâm Nghiệt Tôn Giả đi tới trước mặt Giang Phàm, uy thế Tôn Giả ở đỉnh phong trấn áp khiến Giang Phàm ngồi trên mặt đất khó lòng nhúc nhích.</p>
+                <p>Xương cốt toàn thân phát ra tiếng &quot;rắc rắc&quot; như không chịu nổi gánh nặng.</p>
+                <p>Đừng nói là phản công, ngay cả âm thầm vận dụng Hứa Nguyện Chi cũng không làm được.</p>
+                <p>Giờ phút này hắn, thực sự đã đi đến đường cùng.</p>
+                <p>Tâm Nghiệt Tôn Giả cúi nhìn hắn, trong đôi mắt già nua lướt qua một tia không nỡ:</p>
+                <p>&quot;Thật sự không nỡ giết ngươi a.&quot;</p>
+                <p>&quot;So với thời niên thiếu của ta, ngươi xuất sắc đến mức khiến ta hổ thẹn.&quot;</p>
+                <p>&quot;Ta có thể tưởng tượng được, tương lai của ngươi sẽ huy hoàng đến mức nào.&quot;</p>
+                <p>&quot;Ngươi nhất định sẽ đột phá Hóa Thần chế ngự, trở thành một đời Tôn Giả, cuối cùng cũng sẽ bước lên cảnh giới Thiên Nhân Ngũ Suy, cùng các Đại Tôn tranh đoạt Nhập Hiền Thiên Cơ.&quot;</p>
+                <p>&quot;Trên chiến trường đại thế tranh phong, sẽ có một bóng hình của ngươi mãi mãi lưu lại, sử xanh nhân gian, nhất định sẽ có một nét bút đậm của ngươi.&quot;</p>
+                <p>&quot;Ta, thật sự muốn có một đồ đệ như vậy a.&quot;</p>
+                <p>&quot;Đáng tiếc, ngươi là người mà Thiếu Đế muốn giết.&quot;</p>
+                <p>&quot;Ta, không thể giữ ngươi lại.&quot;</p>
+                <p>Hắn nâng ngón trỏ, đặt lên mi tâm Giang Phàm.</p>
+                <p>Vĩ lực của Chí Tôn, trấn áp khiến linh hồn Giang Phàm run rẩy.</p>
+                <p>Không còn bất cứ nghi ngờ nào nữa.</p>
+                <p>Hắn sẽ dưới một đòn này, tan thành tro bụi.</p>
+                <p>Nhưng Giang Phàm rất bình tĩnh, nói:</p>
+                <p>&quot;Tôn Giả ra tay đi, ngươi có lập trường của ngươi.&quot;</p>
+                <p>&quot;Ta không trách ngươi.&quot;</p>
+                <p>Tâm Nghiệt Tôn Giả nhìn Giang Phàm rất lâu, trầm mặc không nói.</p>
+                <p>Mãi lâu sau, giọng nói mới hơi khàn khàn:</p>
+                <p>&quot;Ta sẽ cho ngươi một cái chết nhẹ nhàng, cũng sẽ không tìm người thân bằng hữu của ngươi để báo thù.&quot;</p>
+                <p>Giang Phàm nhắm mắt lại, chậm rãi nói: &quot;Đa tạ.&quot;</p>
+                <p>Trong mắt Tâm Nghiệt Tôn Giả lướt qua một tia đau lòng:</p>
+                <p>&quot;Kiếp sau, hãy lại làm đệ tử của ta đi.&quot;</p>
+                <p>&quot;Tạm biệt.&quot;</p>
+                <p>Từ ngón tay khô héo của hắn, xuyên ra vĩ lực tận diệt sinh cơ, xuyên thẳng qua đầu Giang Phàm!</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_267.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_267.html" class="page-btn">267</a>
+            <a href="page_268.html" class="page-btn current">268</a>
+            <a href="page_269.html" class="page-btn">269</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_269.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

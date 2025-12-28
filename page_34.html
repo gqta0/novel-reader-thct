@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 34">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 34</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_33.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_35.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_166">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 166: Núi dựa cường đại</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Ách ――Thượng Quan Thánh sửng sốt.</p>
+                <p>Bật cười nói:&quot;Sợ ta chịu không được?&quot;&quot;Hồng Dược, ngươi còn không hiểu rõ ta sao?&quot;</p>
+                <p>Thượng Quan Thánh đưa tay nhìn trời, bình tĩnh thong dong nói:&quot;Y đạo một đường, ta khi nào uể oải suy sụp qua?&quot;&quot;Gặp mạnh thì mạnh, là lời răn cả đời của ta.&quot;&quot;Coi như Giang Phàm vượt qua ta năm đó, ta cũng sẽ không tâm cảnh gặp khó khăn.&quot;&quot;Đọc một cái đi, hắn chẩn đoán bao nhiêu người.&quot;</p>
+                <p>Ôn Hồng Dược vẫn còn hơi lưỡng lự. Thượng Quan Thánh quả thật tính cách kiên cường, gặp trở ngại chưa bao giờ sa sút. Chẳng qua là, trở ngại lần này hơi lớn.</p>
+                <p>Chần chờ một lát, nàng cẩn thận nhìn chằm chằm biểu cảm của Thượng Quan Thánh, nói:&quot;Số bệnh nhân Giang Phàm chẩn đoán là... hai mươi chín người.&quot;</p>
+                <p>Điều khiến Ôn Hồng Dược lo lắng nhất vẫn xảy ra. Biểu cảm của Thượng Quan Thánh đột nhiên ngưng kết, đôi mắt lão không ngừng trợn to, sau đó cả người liền ngây ra đó. Giống như một khúc gỗ khô mục mất đi sinh mệnh lực.</p>
+                <p>Nàng vội vàng an ủi:&quot;Thượng Quan đại ca, thắng bại nhất thời không tính là gì.&quot;&quot;Có thể Giang Phàm chẳng qua là đúng vận khí tốt mà thôi.&quot;</p>
+                <p>Nhìn Thượng Quan Thánh vẫn giữ nguyên dáng vẻ như vậy, Ôn Hồng Dược nói:&quot;Có lẽ Giang Phàm chẩn đoán quá nhanh, trong đó có sai sót cũng không chừng.&quot;&quot;Ta sẽ xác nhận lại lần lượt.&quot;</p>
+                <p>Như thế, sắc mặt Thượng Quan Thánh mới hơi thư giãn. Tự xưng là đệ nhất thần y Cửu Tông đại địa, hắn lại bại bởi một tiểu tử vô danh. Làm sao chịu nổi? Hắn hết sức nghi ngờ số lượng chẩn đoán của Giang Phàm. Có lẽ là chẩn đoán sơ sài một lượt, rồi vội vàng đưa ra cho đủ số. Như thế mới nghe có lý.</p>
+                <p>Ôn Hồng Dược nói:&quot;Giang Phàm, ngươi đi theo ta, giải thích rõ ràng bệnh chứng của những đệ tử này, ta sẽ tiến hành xác nhận.&quot;</p>
+                <p>Giang Phàm chắp tay nói:&quot;Được.&quot;&quot;Vị đệ tử này tiêu hao sinh mệnh lực.&quot;&quot;Vị đệ tử này da thịt bị độc vật xâm hại, phần da thịt không thấy ánh sáng hiện màu xanh.&quot;&quot;Vị này...&quot;</p>
+                <p>Hắn chỉ ra từng người, Ôn Hồng Dược lần lượt bắt mạch, hỏi thăm. Xác nhận bệnh chứng của bọn họ, hoàn toàn khớp với chẩn đoán của Giang Phàm. Cuối cùng, hai mươi chín trường hợp chẩn đoán của đệ tử, không ngoại lệ đều chính xác đến không thể chính xác hơn. Điều này khiến Ôn Hồng Dược kinh ngạc trợn mắt há mồm. Thượng Quan Thánh càng lúc lung lay. Không chịu nổi đả kích lớn như vậy, hắn đột nhiên ngã ngồi xuống ghế đá. Lão nhân tóc bạc đồng nhan, nháy mắt già đi rất nhiều tuổi.</p>
+                <p>Lẩm bẩm tự giễu:&quot;Sư tôn, đồ nhi làm ngài mất mặt rồi.&quot;&quot;Ta nỗ lực cả đời, lại không bằng một hậu bối trẻ tuổi.&quot;</p>
+                <p>Hắn hai mắt ảm đạm, dũng động sự tự trách nồng đậm. Ôn Hồng Dược trong lòng lo lắng. Hậu quả còn nghiêm trọng hơn nàng tưởng tượng. Đạo tâm của Thượng Quan Thánh sụp đổ! Từ đó không gượng dậy nổi là chắc chắn, không khéo còn uất hận mà kết thúc.</p>
+                <p>Đúng lúc này, Giang Phàm đi đến trước Thượng Quan Thánh, thản nhiên nói:&quot;Thượng Quan tiền bối không cần như thế.&quot;&quot;Y thuật của vãn bối, cũng nguồn gốc từ Bất Tử Y của lệnh tôn.&quot;</p>
+                <p>Biết rõ sâu cạn của mình, Giang Phàm liền không che giấu nữa. Để tránh hại vị đệ nhất thần y Cửu Tông này.</p>
+                <p>&quot;Cái gì? Sư tôn của ta?&quot; Thượng Quan Thánh mạnh mẽ ngẩng đầu già nua, lộ ra vẻ không dám tin.</p>
+                <p>Ôn Hồng Dược cũng giật mình:&quot;Giang Phàm, ngươi, ngươi là đệ tử Bất Tử Y? Khoan đã, không đúng, tuổi tác không khớp.&quot;</p>
+                <p>Bất Tử Y đã qua đời mấy chục năm. Giang Phàm bao nhiêu tuổi?</p>
+                <p>Giang Phàm nói:&quot;Vãn bối tình cờ tìm hiểu 《 Bất Tử Y Điển 》 hiểu sơ một chút da lông.&quot;&quot;Hôm nay trước mặt Thượng Quan tiền bối cùng Ôn trưởng lão bêu xấu rồi.&quot;</p>
+                <p>Hai người chấn kinh, chẳng những không hề thu lại, ngược lại còn kịch liệt hơn! Thượng Quan Thánh vọt dậy, hai tay lão luyện giữ chặt cánh tay Giang Phàm, đôi mắt lão lộ ra hào quang kinh ngạc.</p>
+                <p>&quot;Ngươi nói cái gì? Ngươi tìm hiểu 《 Bất Tử Y Điển 》?&quot;</p>
+                <p>Năm đó Bất Tử Y đột nhiên dự cảm thiên mệnh của mình đã hết, sắp tọa hóa. Không kịp truyền thụ hết toàn bộ tuyệt học cả đời cho đệ tử của mình. Vội vàng biên soạn ra 《 Bất Tử Y Điển 》. Cả đời tâm huyết của hắn, đều ở trong đó. Trước khi lâm chung giao cho các đệ tử, để họ lĩnh hội. Nếu họ không thể lĩnh ngộ, liền phân phát đến các nơi, để người có duyên lĩnh hội chân lý trong đó, phát huy quang đại tuyệt học của Bất Tử Y.</p>
+                <p>Có thể bao gồm Thượng Quan Thánh, mấy đệ tử đều bất lực. Cuối cùng chỉ có thể tuân theo lời dặn của thầy, cấp cho đến mỗi một tòa thành trì. Qua mấy chục năm, căn bản không một người ngộ ra y điển này. Dần dà, truyền thừa của Bất Tử Y đoạn tuyệt, trở thành nhận thức chung.</p>
+                <p>Mấy chục năm sau hôm nay, đột nhiên xuất hiện một người trẻ tuổi, nói mình lĩnh ngộ 《 Bất Tử Y Điển 》. Là đệ tử của Bất Tử Y, sao Thượng Quan Thánh không chấn kinh?</p>
+                <p>Giang Phàm không nói gì, hai ngón tay lau qua hai mắt của mình, một luồng linh lực bao quanh đôi mắt hắn, vận chuyển theo quỹ đạo huyền diệu. Giống như hai thấu kính đeo lên mắt.</p>
+                <p>Thấy cảnh này, Thượng Quan Thánh run rẩy cực độ:&quot;Vọng Khí thuật! Vọng Khí thuật độc bộ thiên hạ của sư tôn!&quot;&quot;Vọng Khí thuật này có thể nhìn thấu bệnh lý, chẩn đoán bệnh tật như có thần trợ!&quot;</p>
+                <p>Ôn Hồng Dược giật mình. Vọng Khí thuật? Đây chính là tuyệt học năm đó của Bất Tử Y! Danh nghĩa mấy vị đệ tử, không một người biết. Ngoại trừ 《 Bất Tử Y Điển 》, nàng thực sự không nghĩ ra, Giang Phàm còn có thể thu hoạch được từ đâu.</p>
+                <p>Giang Phàm nói:&quot;Bây giờ tin rồi chứ?&quot;</p>
+                <p>Thượng Quan Thánh vẫn nắm chặt Giang Phàm, mặc dù không còn thất thố như vừa rồi, nhưng trên khuôn mặt già nua, vẫn viết đầy xúc động, trong mắt lão dũng động nước mắt, nức nở nói:&quot;Nguyện vọng của sư tôn, cuối cùng có người đã đạt thành.&quot;&quot;Cuối cùng có người đã đạt thành!&quot;</p>
+                <p>Ôn Hồng Dược trong lòng cũng theo đó bi thương. Nàng lo lắng Thượng Quan Thánh sầu não quá độ làm tổn thương thân thể, an ủi:&quot;Tuyệt học của lệnh tôn lại thấy ánh mặt trời, chính là việc trọng đại của y đạo chúng ta, Thượng Quan đại ca hẳn là cao hứng mới phải.&quot;</p>
+                <p>Nghe vậy, Thượng Quan Thánh vội vàng lau nước mắt:&quot;Đúng, ta khóc cái gì, ta hẳn là cao hứng mới phải.&quot;</p>
+                <p>Hắn quét qua vẻ sa sút trước đó, thoải mái nói:&quot;Thua bởi truyền nhân của sư tôn, ta đây thua không oan, thua không oan a, ha ha ha!&quot;</p>
+                <p>Có Vọng Khí thuật hỗ trợ, Giang Phàm chẩn đoán hai mươi chín người, liền hợp tình hợp lý.</p>
+                <p>Đột nhiên, hắn nghĩ tới ước định trước đó. Lấy ra hộp châm lam diễm ngân châm kia, cười nói:&quot;Chơi được thua chịu, vật này về ngươi.&quot;</p>
+                <p>Giang Phàm từ chối nói:&quot;Ta chỉ muốn thử trình độ của mình, lam diễm ngân châm là đồ vật của Thượng Quan tiền bối, vãn bối không thể nhận.&quot;</p>
+                <p>Thượng Quan Thánh lại nhét nó vào ngực Giang Phàm, nghiêm mặt nói:&quot;Cho ngươi thì cầm lấy!&quot;&quot;Hơn nữa, về sau cũng nên sửa lại xưng hô.&quot;</p>
+                <p>Đổi cách xưng hô? Giang Phàm bối rối.</p>
+                <p>Thượng Quan Thánh nhìn Giang Phàm, trong mắt có một tia trìu mến, nói:&quot;Ngươi đã kế thừa tuyệt học của sư tôn ta, liền coi như là nửa đệ tử của hắn.&quot;&quot;Về sau xưng hô ta một tiếng sư huynh là đủ.&quot;</p>
+                <p>Sư huynh? Đột nhiên xuất hiện một vị sư huynh danh tiếng lẫy lừng, Giang Phàm nhất thời không thể thích ứng.</p>
+                <p>Ôn Hồng Dược lại mừng rỡ, vội vàng chọc chọc cánh tay Giang Phàm:&quot;Còn lưỡng lự cái gì a? Nhanh hô sư huynh đi.&quot;</p>
+                <p>Thượng Quan Thánh tại Cửu Tông là đại nhân vật vô cùng quan trọng? Có một vị sư huynh như vậy, Giang Phàm liền coi như có một chỗ dựa. Đối với Giang Phàm xuất thân bình thường mà nói, là mối quan hệ tốt không gì bằng.</p>
+                <p>Giang Phàm lúc này mới chắp tay nói:&quot;Thượng Quan sư huynh!&quot;</p>
+                <p>Thượng Quan Thánh cười ha hả:&quot;Giang sư đệ, đến, chúng ta lại đến tham khảo y đạo.&quot;&quot;Những năm này, ta có rất nhiều khúc mắc chưa giải, lại không chỗ cầu giáo.&quot;&quot;Hôm nay xin Giang sư đệ chỉ bảo sai sót.&quot;</p>
+                <p>Ôn Hồng Dược hai mắt tỏa sáng, cũng vội vàng lại gần. Đây chính là sự trao đổi y đạo đỉnh cao nhất của Cửu Tông đại địa, lắng nghe một lát, thắng qua khổ học mười năm!</p>
+                <p>Giang Phàm tự nhiên sẽ không từ chối, gật đầu nói:&quot;Được rồi...&quot;</p>
+                <p>Nhưng đúng lúc này, một đệ tử Tông chủ phong thở hổn hển chạy tới.&quot;Giang sư đệ, linh dược vẫn chưa dẫn tới sao?&quot;&quot;Liễu sư tỷ bảo ngươi nhanh đi Lưu Tiên quán rượu Thanh Vân thành, đừng trì hoãn.&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_167">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 167: Cửu Tông Kim Bảng</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm kinh ngạc nói:</p>
+                <p>Lưu Tiên lâu phát sinh chuyện gì sao?</p>
+                <p>Truyền lời đệ tử lộ ra vẻ lo lắng nói:</p>
+                <p>Sư tỷ gặp phải phiền toái, nhờ ngươi nhanh chóng chạy tới.</p>
+                <p>Giang Phàm trong lòng giật mình, nhưng lại hơi nghi hoặc. Nơi này chính là Thanh Vân tông...</p>
+                <p>Giang Phàm nghe vậy trong lòng giật mình, vội vàng truy vấn:</p>
+                <p>Sư tỷ gặp phải phiền toái gì? Chuyện gì xảy ra?</p>
+                <p>Tên đệ tử kia vội vàng giải thích nói:</p>
+                <p>Trước đây không lâu, sư tỷ tại Lưu Tiên lâu bên ngoài gặp một chút phiền toái, hiện tại đang bị kẹt ở trong lầu, xin ngài cần phải mau sớm đuổi đi cứu viện.</p>
+                <p>Giang Phàm sau khi nghe xong, lập tức thu hồi lo nghĩ, vội vàng hướng Lưu Tiên lâu tiến đến. Nơi này mặc dù là Thanh Vân tông địa bàn, nhưng sư tỷ gặp nguy hiểm, hắn nhất định phải nhanh đi tới cứu viện.</p>
+                <p>Trên đường đi, Giang Phàm thấp thỏm bất an trong lòng, không biết sư tỷ rốt cuộc gặp phải dạng gì phiền toái. Hắn tăng tốc bước chân, rất nhanh liền đi tới trước Lưu Tiên lầu.</p>
+                <p>Chỉ thấy bên ngoài lầu tụ tập không ít Thanh Vân tông đệ tử, ai nấy vẻ mặt nghiêm túc, rõ ràng cũng đang vì an nguy của sư tỷ mà lo lắng.</p>
+                <p>Giang Phàm vội vàng tiến lên hỏi thăm tình huống. Một tên trưởng lão trầm giọng nói:</p>
+                <p>Trước đây không lâu, sư tỷ của ngươi ở bên ngoài nhà gặp một chút khách không mời mà đến, hai bên phát sinh kịch liệt giao chiến. Sư tỷ của ngươi mặc dù thực lực mạnh mẽ, nhưng cuối cùng nhân số cách xa, bị ép lui vào trong lầu. Hiện tại nàng đang bị kẹt ở trong lầu, chúng ta một mực đang nghĩ biện pháp cứu viện, lại một mực vô pháp đột phá kẻ địch phong tỏa.</p>
+                <p>Giang Phàm sau khi nghe xong, trong lòng cảm giác nặng nề. Xem ra tình cảnh của sư tỷ cũng không lạc quan. Hắn vội vàng tiến lên, chuẩn bị tự mình tiến đến cứu viện.</p>
+                <p>Đúng lúc này, chỉ thấy trong lầu đột nhiên truyền đến một tiếng vang thật lớn, tiếp lấy một đạo thân ảnh theo mái nhà bay ra, chính là thân ảnh sư tỷ.</p>
+                <p>Chỉ thấy quần áo trên người sư tỷ rách rưới, rõ ràng vừa mới đã trải qua một trận chiến đấu kịch liệt. Nhưng thần sắc nàng ung dung, không thấy chút nào hỗn loạn.</p>
+                <p>Theo sát phía sau còn có mấy danh tu sĩ thân mặc áo đen đang truy đuổi tới.</p>
+                <p>Giang Phàm trong lòng giật mình, vội vàng tiến lên chặn đường. Chỉ thấy những tu sĩ áo đen kia ai nấy thực lực bất phàm, rõ ràng cũng là một số cao thủ.</p>
+                <p>Ngay tại thời khắc hai bên sắp giao chiến, chỉ thấy một tia sáng trắng từ trên trời giáng xuống, một tên lão giả tóc trắng xóa xuất hiện tại giữa hai phe.</p>
+                <p>Dừng tay!</p>
+                <p>Lão giả quát:</p>
+                <p>Hà tất động võ?</p>
+                <p>Những tu sĩ áo đen thấy thế dồn dập dừng bước lại, cung kính nói:</p>
+                <p>Tiền bối.</p>
+                <p>Giang Phàm cùng sư tỷ cũng đều thu liễm khí thế, cung kính hướng lão giả hành lễ.</p>
+                <p>Lão giả chậm rãi mở miệng nói:</p>
+                <p>Chuyện này ta đã hiểu rõ không sai biệt lắm. Hai ngươi phương đều là Thanh Vân tông đệ tử, hà tất vì một chút việc nhỏ mà động võ đâu?</p>
+                <p>Những tu sĩ áo đen hai mặt nhìn nhau, nửa ngày mới có người mở miệng nói:</p>
+                <p>Đây cũng không phải là việc nhỏ, chính là liên quan đến chúng ta cửu đại tông môn trọng đại hạng mục công việc.</p>
+                <p>Lão giả gật đầu nói:</p>
+                <p>Đã như vậy, vậy liền để cho chúng ta cùng đi gặp chưởng môn đi.</p>
+                <p>Nói xong, lão giả dẫn đầu hướng Thanh Vân tông nội bộ đi đến, những tu sĩ áo đen cùng Giang Phàm, sư tỷ cũng đi theo.</p>
+                <p>Trên đường đi, Giang Phàm nhịn không được hướng sư tỷ hỏi thăm chuyện gì xảy ra. Sư tỷ thở dài nói:</p>
+                <p>Chuyện này còn muốn theo đoạn thời gian trước nói lên.</p>
+                <p>Nguyên lai, đoạn thời gian trước các đại tông môn đều nhận được một phần Kim Bảng thần bí, phía trên liệt kê chín đại cao thủ trong cửu đại tông môn. Phần Kim Bảng này khiến các đại tông môn đặc biệt coi trọng, bởi vì thứ hạng trên đó trực tiếp quan hệ đến uy vọng cùng địa vị của mỗi tông môn.</p>
+                <p>Sư tỷ giải thích nói:</p>
+                <p>Ta cũng là ngẫu nhiên biết được chuyện này. Lúc ấy ta đang ở Lưu Tiên lâu bên ngoài du lịch, đột nhiên gặp mấy tên tu sĩ lạ lẫm, bọn hắn tựa hồ cũng đang tìm kiếm tung tích phần Kim Bảng này. Chúng ta không hẹn mà gặp, khó tránh khỏi phát sinh xung đột. Ta mặc dù thực lực không tầm thường, nhưng dù sao nhân số cách xa, chỉ có thể tạm thời trốn vào trong Lưu Tiên lầu.</p>
+                <p>Xem ra phần Kim Bảng này thật không đơn giản a,</p>
+                <p>Giang Phàm như có điều suy nghĩ nói:</p>
+                <p>Nếu khiến các đại tông môn coi trọng, chắc hẳn trong đó nhất định có huyền cơ.</p>
+                <p>Lão giả gật đầu nói:</p>
+                <p>Không sai, phần Kim Bảng này xác thực không giống bình thường. Nó không chỉ quan hệ đến địa vị của mỗi tông môn, càng có thể có thể hàm ẩn lấy một chút huyền cơ sâu hơn. Cho nên các tông môn đều phái ra cao thủ đến tìm kiếm tung tích của nó.</p>
+                <p>Như vậy phần Kim Bảng này bây giờ đang ở trong tay ai đâu?</p>
+                <p>Sư tỷ hỏi.</p>
+                <p>Lão giả trầm ngâm chốc lát nói:</p>
+                <p>Theo ta được biết, phần Kim Bảng này hiện tại tạm thời rơi vào trong tay một vị thần bí. Hắn tựa hồ đối với phần Kim Bảng này có hứng thú đặc biệt, cho nên một mực tại tránh né các đại tông môn đuổi bắt.</p>
+                <p>Thì ra là thế.</p>
+                <p>Giang Phàm nhẹ gật đầu:</p>
+                <p>Vậy chúng ta bây giờ muốn đi gặp chưởng môn là muốn thương lượng đối sách sao?</p>
+                <p>Không sai.</p>
+                <p>Lão giả nói:</p>
+                <p>Chúng ta nhất định phải nhanh tìm tới phần Kim Bảng này, cũng điều tra rõ huyền cơ trong đó. Bằng không, sợ rằng sẽ dẫn phát tranh đấu giữa các đại tông môn.</p>
+                <p>Nói xong, lão giả bước nhanh hơn, dẫn đầu mọi người hướng Thanh Vân tông nội bộ đi đến. Giang Phàm cùng sư tỷ liếc nhau, cũng đi theo, trong lòng tràn ngập tò mò cùng chờ mong.</p>
+                <p>Mọi người rất mau tới đến trước đại điện Thanh Vân tông. Chỉ thấy trong đại điện ngồi một vị lão giả râu tóc bạc trắng, chính là chưởng môn Thanh Vân tông.</p>
+                <p>Thấy lão giả dẫn đầu mọi người tiến đến, chưởng môn khẽ mỉm cười nói:</p>
+                <p>Nguyên lai là dạng này. Xem ra chuyện này so ta tưởng tượng còn nghiêm trọng hơn a.</p>
+                <p>Lão giả nhẹ gật đầu, hướng chưởng môn kỹ càng hồi báo sự tình vừa rồi phát sinh. Chưởng môn sau khi nghe xong, trầm ngâm chốc lát nói:</p>
+                <p>Đã như vậy, vậy chúng ta cũng không thể kéo dài nữa. Phần Kim Bảng này quan hệ đến địa vị của cửu đại tông môn, chúng ta nhất định phải nhanh tìm tới nó, cũng điều tra rõ huyền cơ trong đó.</p>
+                <p>Nói xong, chưởng môn tầm mắt quét một vòng mọi người ở đây, cuối cùng rơi vào trên thân Giang Phàm cùng sư tỷ.</p>
+                <p>Hai người các ngươi như là đã cuốn vào trong đó, vậy liền cùng đi tìm kiếm phần Kim Bảng này đi.</p>
+                <p>Chưởng môn nói ra:</p>
+                <p>Đây là một cơ hội khó được, có thể cho các ngươi lịch luyện một phen.</p>
+                <p>Giang Phàm cùng sư tỷ liếc nhau, đều nhìn ra trong mắt đối phương sự hưng phấn. Có thể tham dự vào một kiện việc lớn như vậy liên quan đến địa vị của cửu đại tông môn, thật sự là cơ hội khó được.</p>
+                <p>Chúng ta nhất định sẽ toàn lực ứng phó, hoàn thành nhiệm vụ này.</p>
+                <p>Giang Phàm trịnh trọng nói.</p>
+                <p>Rất tốt.</p>
+                <p>Chưởng môn nhẹ gật đầu:</p>
+                <p>Vậy các ngươi liền mau sớm lên đường đi. Nhớ kỹ, nhất định phải chú ý cẩn thận, không nên khinh cử vọng động.</p>
+                <p>Là, chúng ta hiểu rõ.</p>
+                <p>Sư tỷ cung kính trả lời.</p>
+                <p>Nói xong, chưởng môn phất phất tay, ra hiệu mọi người có thể lui xuống.</p>
+                <p>Giang Phàm cùng sư tỷ vội vàng cáo từ, lập tức đi ra ngoài.</p>
+                <p>Sư tỷ, ngươi có tính toán gì hay không?</p>
+                <p>Giang Phàm hỏi.</p>
+                <p>Sư tỷ trầm ngâm chốc lát nói:</p>
+                <p>Chúng ta đầu tiên phải biết rõ ràng tung tích phần Kim Bảng này. Nếu các đại tông môn đều đang đuổi bắt nó, chắc hẳn nó nhất định ẩn chứa không ít huyền cơ. Chúng ta nhất định phải nhanh tìm tới nó, cũng điều tra rõ bí mật trong đó.</p>
+                <p>Được rồi, vậy chúng ta liền lập tức lên đường đi.</p>
+                <p>Giang Phàm nói ra.</p>
+                <p>Hai người thương lượng xong kế hoạch hành động, lập tức hướng về phương hướng không biết mà xuất phát.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_168">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 168: Không bằng Giang Phàm</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Làm người như nước.Nên nhu hòa lúc nhu hòa, nên kịch liệt lúc kịch liệt.Với những kẻ không có hảo ý, không cần thiết phải khách khí.</p>
+                <p>Lăng Quy Hải lập tức cứng đờ.Vốn tưởng rằng khiêu khích mọi người nhục nhã Giang Phàm một phen, Giang Phàm sẽ hoảng loạn nhường vị trí.Nhưng Giang Phàm không đi theo lối mòn.Không những không nhường, còn điểm danh, khiến hắn trong chốc lát không biết nên tức giận hay nhẫn nhịn.Tức giận ư? Kẻ này là do Liễu Khuynh Tiên mang tới.Nhẫn nhịn ư? Chẳng lẽ đường đường là người đứng thứ chín Kim Bảng lại thực sự ngồi ghế cuối?</p>
+                <p>Cũng may, lời của Giang Phàm đã kích động quần chúng.&quot;Càn rỡ! Sao lại nói chuyện với Lăng đại ca như vậy?&quot;&quot;Một chút nhãn lực cũng không có, còn chưa tránh ra?&quot;&quot;Đây là chỗ ngươi có thể ngồi à?&quot;</p>
+                <p>Thế nhưng, Giang Phàm vẫn bất động.Hắn liếc nhìn mấy kẻ đang la ó, nói: &quot;Lăng Quy Hải bảo ta ngồi.&quot;&quot;Các ngươi là cái thá gì, hơn cả Lăng Quy Hải à?&quot;</p>
+                <p>Mấy võ giả nghẹn đến hoảng.Biết rõ Giang Phàm đang ngụy biện, lại không cách nào phản bác.Chỉ trách Lăng Quy Hải đã có ý xấu, muốn làm khó Giang Phàm, không ngờ Giang Phàm lại không theo lối mòn, ngược lại khiến Lăng Quy Hải tự làm khó mình.</p>
+                <p>Liễu Khuynh Tiên cũng cuối cùng hiểu ra ý vị trong lời nói vừa rồi của Lăng Quy Hải, nụ cười theo đó lạnh lẽo, đập bàn nói: &quot;Ta cũng cho Giang Phàm ngồi.&quot;&quot;Thế nào, ta và Lăng Quy Hải không có ý kiến, ngược lại các ngươi lại có ý kiến à?&quot;</p>
+                <p>Mọi người lời đến khóe miệng đều rụt lại.Liễu Khuynh Tiên đã ra mặt, bọn họ còn dám không thức thời sao?Chỉ có điều, vẫn có một vài người muốn bênh vực Lăng Quy Hải.Nữ đệ tử Hợp Hoan tông ngồi cạnh Liễu Khuynh Tiên, khoác tấm sa y mỏng, thân hình uyển chuyển đi đến ngồi xuống bên cạnh Lăng Quy Hải.Thân thể mềm mại áp sát cánh tay hắn, đôi mắt mị hoặc như tơ nói: &quot;Lăng sư huynh ngồi đâu, đó mới là thủ tịch.&quot;</p>
+                <p>Lăng Quy Hải mỉm cười: &quot;Nhờ Như Nguyệt tiên tử nâng đỡ.&quot;Những võ giả khác hoàn toàn tỉnh ngộ, âm thầm trách mình ngu xuẩn.Đây là lúc tốt nhất để nịnh nọt Lăng Quy Hải.Đợi lát nữa trao đổi võ đạo, Lăng Quy Hải tâm tình tốt, tùy tiện chỉ bảo một chiêu nửa thức, có thể thắng được khổ tu một hai năm.Thế là, mọi người đều đứng dậy.&quot;Đúng vậy, tôn ti trên chỗ ngồi chưa bao giờ do chỗ ngồi quyết định, mà do người ngồi trên bàn tiệc định ra.&quot;&quot;Lăng sư huynh, chỗ của ngươi mới là thủ tịch nha!&quot;</p>
+                <p>Nhìn bọn họ vì ghế mà náo loạn đến vậy, Giang Phàm bất đắc dĩ nói: &quot;Ta không tranh chấp nữa vậy.&quot;&quot;Có thời gian như vậy, không bằng tu luyện thật tốt đi.&quot;</p>
+                <p>Liễu Khuynh Tiên cũng cau mày nói: &quot;Chướng khí mù mịt! Một buổi giao lưu võ đạo tốt đẹp sao lại thành ra thế này?&quot;&quot;Ngồi thêm một lát nữa, nếu Hạ Triều Ca không đến, chúng ta cũng đi!&quot;Nàng cũng chịu không nổi kiểu tập tục này.</p>
+                <p>Lăng Quy Hải lại hết sức hưởng thụ cảm giác chúng tinh củng nguyệt.Lạnh nhạt cười nói: &quot;Giang sư đệ, vị trí kia của ta, ngươi cứ ngồi cho tốt đi, muốn ngồi thế nào thì ngồi thế ấy.&quot;Mọi người không khỏi cười nhạo.</p>
+                <p>Cơ Như Nguyệt đôi mắt đẹp nháy mắt, có ý lại nâng Lăng Quy Hải một phen, nói: &quot;Lăng sư huynh, đã sớm nghe nói kiếm thuật của ngươi phi phàm, Cửu Tông vô song.&quot;&quot;Như Nguyệt ngưỡng mộ đã lâu, liệu có thể biểu diễn một đoạn kiếm thuật, để Như Nguyệt được chiêm ngưỡng?&quot;</p>
+                <p>Nàng vừa mở miệng, tâm tư của mọi người đều hoạt lạc.Có người muốn nâng đỡ Lăng Quy Hải, cũng có người thực sự muốn xem kiếm thuật của cao đồ Vạn Kiếm môn này.Lăng Quy Hải cũng có ý muốn biểu diễn một phen trước mặt Liễu Khuynh Tiên.Hắn đã sớm nghe nói, Liễu Khuynh Tiên chủ tu kiếm thuật.Mà Vạn Kiếm môn mạnh nhất chính là kiếm thuật tinh diệu không ai sánh bằng.Bởi vậy, cười lớn một tiếng nói: &quot;Nếu mọi người đã đề cử như vậy, vậy ta đây xin múa rìu qua mắt thợ!&quot;</p>
+                <p>Hắn đứng dậy đi lên võ đài nhỏ trong phòng.Tay cầm chuôi kiếm, đột nhiên rút kiếm.Hàn quang chợt lóe, phảng phất có một đạo kiếm mang lạnh lẽo, lướt qua trái tim mọi người, khiến người ta trong lòng không hiểu sao cảm thấy lạnh lẽo.</p>
+                <p>Các tinh anh của các tông đều mắt lộ vẻ kinh hãi.&quot;Kiếm khí chọc người! Chỉ mới rút kiếm đã có khí thế như vậy!&quot;&quot;Kiếm thuật của Vạn Kiếm môn thật sự không phải khoác lác!&quot;&quot;Lăng Quy Hải đứng thứ chín Kim Bảng, tuyệt không phải hư danh nha!&quot;</p>
+                <p>Lăng Quy Hải trong lòng đắc ý, liếc nhìn Liễu Khuynh Tiên thấy nàng cũng đang hết sức chăm chú nhìn mình, trong lòng càng vui vẻ.Lúc này thi triển bộ kiếm thuật mà mình vẫn lấy làm kiêu ngạo.&quot;Cực nhanh!&quot;&quot;Thiên Hồng quán nhật!&quot;&quot;Đại phá tướng tinh!&quot;</p>
+                <p>Kiếm thuật của hắn dùng uy mãnh làm chủ, chiêu sau mạnh hơn chiêu trước!Kiếm khí tung hoành, lẫm liệt vô cùng.Võ đài lát đá hoa cương dưới chân hắn, trong vô hình bị vạch ra từng đạo vết kiếm sắc bén.Những bức tranh trang trí trên tường, như mảnh giấy mỏng yên lặng tan nát.</p>
+                <p>Những người đứng xa ngắm nhìn, cũng không khỏi nín thở.Có loại cảm giác nghẹt thở khi ở giữa biển rộng mênh mông.Sợ Lăng Quy Hải sơ suất, kiếm khí mất khống chế nuốt chửng bọn họ.</p>
+                <p>Keng ――Theo trường kiếm vào vỏ, kiếm thuật đã thi triển xong.Tâm trạng căng thẳng của mọi người cuối cùng cũng buông xuống, từng ngụm từng ngụm thở dốc.Cơ Như Nguyệt lau mồ hôi trán, mắt đầy vẻ sùng bái, nhẹ vỗ ngực, vẻ sợ sệt:&quot;Lăng sư huynh, khi huynh thi triển kiếm thuật, thật đáng sợ.&quot;&quot;Tiểu muội chỉ sợ huynh làm bị thương ta đây.&quot;</p>
+                <p>Những người còn lại cũng lòng còn sợ hãi.&quot;Tĩnh như quân tử, động như bôn lôi, đây là miêu tả tốt nhất về Lăng sư huynh.&quot;&quot;Vẫn luôn không biết thứ chín Kim Bảng là khái niệm gì, bây giờ cuối cùng đã hiểu, Trúc Cơ chúng ta trước mặt hắn, ngay cả hít thở cũng khó khăn, huống chi chiến đấu?&quot;Lần này, bọn họ không phải tâng bốc.Mà là lời nói từ đáy lòng.</p>
+                <p>Dù Giang Phàm không quen nhìn nhân phẩm hắn, lại cũng không thể không tán thưởng một tiếng: &quot;Gã này vẫn có tài năng thực sự.&quot;Vừa rồi bộ kiếm thuật đó, thi triển đến thành thạo lưu loát, uy lực thu phóng tự nhiên.Có thể leo lên thứ chín Kim Bảng, quả thực có chút tài năng.</p>
+                <p>Nghe lời khen ngợi của toàn trường, Lăng Quy Hải giấu đi sự vui mừng, hướng về Liễu Khuynh Tiên vẫn im lặng cười nói:&quot;Liễu sư muội, bộ kiếm thuật này của ta, ngươi có thể chỉ bảo chỗ nào không?&quot;Mọi người ngầm hiểu.Lăng Quy Hải đây là đang mượn kiếm thuật, kéo gần quan hệ với Liễu Khuynh Tiên đây.Bọn họ cùng lộ ra vẻ suy tư.Muốn nghe xem, Lăng Quy Hải muốn làm thế nào để chiếm được trái tim của vị đại mỹ nữ nổi tiếng Cửu Tông này.</p>
+                <p>Không ngờ.Liễu Khuynh Tiên vẻ mặt nhàn nhạt, đơn giản đến cực điểm phun ra bốn chữ.&quot;Không bằng Giang Phàm.&quot;Nàng thừa nhận, kiếm thuật của Lăng Quy Hải quả thực bất phàm.Nhưng kiến thức kiếm khí đáng sợ như kinh lôi của Giang Phàm khi thi triển &quot;Kiếm Tâm Vẫn Khắc&quot;, nàng đến nay vẫn nhớ rõ.So với đó, kiếm thuật của Lăng Quy Hải kém xa.Không hề có cảm giác kinh diễm.</p>
+                <p>Không khí toàn trường đột nhiên hạ xuống điểm đóng băng.Mọi người nhìn nhau, đều có chút nghi ngờ tai mình.Không bằng Giang Phàm?Kiếm thuật của Lăng Quy Hải, vậy mà không bằng Giang Phàm?Xác định Liễu Khuynh Tiên không phải đang nói mát sao?</p>
+                <p>Còn Lăng Quy Hải một lòng muốn thể hiện mình, như bị sét đánh.Phí hết tâm tư, kết quả nhận được lại là câu trả lời như vậy?Hắn không nhịn được nhìn về phía Giang Phàm.Trong mắt một mảnh mịt mờ.Mình sao lại không bằng một võ giả vô linh căn?Nói khó nghe, hắn chính là phế vật võ đạo a!</p>
+                <p>Một luồng không cam tâm nồng đậm, dâng trào trong lòng, hắn nghiêm mặt nói:&quot;Thật sao? Hóa ra kiếm thuật của Giang sư đệ cao minh đến thế.&quot;&quot;Liệu có thể thỉnh Giang sư đệ biểu diễn một chút?&quot;&quot;Để ta hiểu rõ, thế nào là không bằng Giang Phàm!&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_169">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 169: Kỹ kinh tứ tọa</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm tức giận trừng mắt nhìn Liễu Khuynh Tiên, thấp giọng nói:&quot;Không đề cập tới ta ngươi sẽ chết à?&quot;</p>
+                <p>Liễu Khuynh Tiên trong mắt lộ ra một luồng tinh ranh:&quot;Bớt nói nhảm, còn không ứng chiến?&quot;</p>
+                <p>Nàng tự nhiên biết, đề cập Giang Phàm thế tất sẽ khiến hắn trở thành mục tiêu bị nhắm vào. Nhưng nàng cố ý làm thế. Hơn nữa còn nói ra câu cực kỳ đả thương người là &quot;không bằng Giang Phàm&quot;. Ai bảo bọn hắn từng người xem thường Giang Phàm, còn ác ngữ hãm hại? Nên để Giang Phàm biểu hiện tốt một chút, hung hăng vả mặt bọn hắn.</p>
+                <p>Mà lấy tính cách lạnh nhạt của Giang Phàm, không lôi hắn ra thì hắn căn bản sẽ không để ý những chuyện này. Cho nên mới có màn kịch này.</p>
+                <p>Giang Phàm đành chịu. Hắn thật sự không hứng thú biểu diễn trước mặt mọi người. Bởi vậy hướng Lăng Quy Hải chắp tay, nói:&quot;Tại hạ kiếm thuật bình thường, không dám bêu xấu trước mặt cao đồ Vạn Kiếm môn.&quot;&quot;Lời của Liễu sư tỷ, ngươi đừng để trong lòng.&quot;</p>
+                <p>Nhưng Lăng Quy Hải làm sao lại từ bỏ? Liễu Khuynh Tiên đã khiến hắn mất mặt trước đám đông! Giang Phàm không ra tay, làm sao hóa giải câu nói kia?</p>
+                <p>&quot;Giang sư đệ, ngươi không nể mặt ta không sao, lẽ nào đến cả mặt mũi Thanh Vân tông cũng không cần?&quot;Lăng Quy Hải vẻ mặt không vui nói:&quot;Thiên kiêu các tông đều ở đây, đại diện cho mặt mũi các tông. Ngươi sợ hãi không chiến, có thể làm mất mặt Thanh Vân tông.&quot;</p>
+                <p>Hay lắm, rõ ràng là muốn tìm lại thể diện cho mình, thế mà lôi tông môn ra làm lá chắn. Nói đến nước này, Giang Phàm muốn không ra tay cũng không được.</p>
+                <p>Hắn nhắm mắt nói:&quot;Chiến thì miễn đi, ta tu vi nông cạn, chỉ xin biểu diễn một lượt kiếm thuật.&quot;</p>
+                <p>Điều Lăng Quy Hải muốn nhất đương nhiên là hành hung Giang Phàm một trận, thể hiện tuyệt đối thực lực của mình. Bất quá, làm vậy cũng là thắng không vẻ vang. Dù sao hắn là Kết Đan cảnh, Giang Phàm mới Trúc Cơ. Để hắn diễn luyện kiếm thuật cũng tốt. Những người ở đây đều là tinh anh các tông, nhãn lực bậc nhất, ưu khuyết kiếm thuật liếc mắt một cái là nhìn ra.</p>
+                <p>&quot;Tốt, vậy xin mời!&quot;</p>
+                <p>Cùng đường, Giang Phàm bị ép phải ra mặt. Leo lên lôi đài, tiện tay rút ra hắc kiếm, mềm nhũn nắm trong tay. Nếu là biểu diễn, vậy cứ đơn giản lộ tài đi, không cần dốc toàn lực.</p>
+                <p>Tư thái này lập tức gây ra không ít nghi vấn.&quot;Rút kiếm không chút khí thế nào cả, kiếm thuật của hắn sẽ cao hơn Lăng Quy Hải sao?&quot;&quot;Trông không giống người luyện kiếm chút nào.&quot;&quot;Vừa rồi Lăng Quy Hải rút kiếm ra khỏi vỏ đã có cảnh giới nhân kiếm hợp nhất, hắn đâu?&quot;</p>
+                <p>Cơ Như Nguyệt nhếch môi đỏ, trong mắt lộ ra vẻ chán ghét, mỉa mai nói:&quot;Mọi người cẩn thận đấy.&quot;&quot;Nhỡ hắn cầm kiếm không chắc, văng kiếm ra ngoài thì nguy hiểm lắm đấy.&quot;</p>
+                <p>Nghe vậy, mọi người cười vang. Lăng Quy Hải cũng lộ ra một tia khinh miệt. Người như vậy, cũng xứng so kiếm pháp với hắn?</p>
+                <p>Nhưng mà...</p>
+                <p>Tiếng cười vang bỗng nhiên bị một luồng tiếng bạo liệt nuốt mất. Chỉ thấy Giang Phàm đã bắt đầu thi triển kiếm thuật.</p>
+                <p>&quot;Phân Quang nhất kiếm!&quot;</p>
+                <p>Kiếm khí thấu thể mà ra, đánh trúng không khí phía trước, phát ra cuồn cuộn tiếng sấm rền. Bao sương kín mít tính hút âm tốt, khiến tiếng sấm rền nhấp nhô không ngớt, chồng chất lên nhau, thanh thế càng lúc càng khổng lồ. Đến mức trong nháy mắt liền bao trùm tiếng cười vang. Cảnh tượng này khiến sắc mặt mọi người ngưng kết.</p>
+                <p>&quot;Xảy ra chuyện gì?&quot;&quot;Tiếng gì mà lớn thế?&quot;&quot;Do thuộc tính đặc biệt của thanh kiếm kia?&quot;&quot;Hay là kiếm thuật của Giang Phàm?&quot;</p>
+                <p>Lúc bọn hắn kinh ngạc nghi ngờ, Giang Phàm thi triển ra chiêu kiếm thứ hai.</p>
+                <p>&quot;Mặt trời mọc Thương Hải!&quot;</p>
+                <p>Lần này, bọn hắn nhìn rõ! Một luồng kiếm khí mạnh mẽ, mang theo ý chí bàng bạc như thương long xuất hải, xuyên phá không khí phía trước. Kiếm khí bạo liệt, giống như tiếng sấm sét nổ vang. Chấn động khiến tai bọn hắn ong ong. Đồ trang trí trên tường trong phòng liên tục bị chấn động đến rơi ra. Những người ngồi dưới đất cũng cảm thấy sàn nhà rung lắc, khiến toàn thân run lên.</p>
+                <p>&quot;Cái... Đây là kiếm thuật?&quot;&quot;Kiếm thuật gì mà uy lực kinh người đến vậy?&quot;</p>
+                <p>Có thể, ngay sau đó, chiêu kiếm thuật thứ ba thi triển ra.</p>
+                <p>&quot;Thiên địa Tinh Lạc!&quot;</p>
+                <p>Một luồng kiếm khí đáng sợ hơn, vượt xa hai chiêu trước vô số lần, mãnh liệt công kích ra. Võ giả có kinh nghiệm sắc mặt đại biến, hoảng sợ nói:&quot;Mau mở cửa sổ! Mở cửa sổ ra! Không thì tất cả chúng ta đều sẽ bị chấn điếc...&quot;</p>
+                <p>Vài võ giả ở gần cửa sổ luống cuống tay chân đẩy cửa sổ ra. Đúng lúc này, một đạo tiếng lôi bạo thất truyền ầm ầm nổ vang. Mọi người chỉ cảm thấy hai lỗ tai đau nhức, toàn thân phát run. Tiếng lôi minh mạnh mẽ đã phá hủy thính giác của bọn hắn, chỉ còn nghe thấy tiếng rít chói tai.</p>
+                <p>Trọn vẹn mười hơi sau, thính giác mới dần dần hồi phục. Phóng tầm mắt nhìn tới, mái nhà đều bị chấn bay một mảng lớn ngói vụn, đồ trang trí trên tường ngổn ngang rơi đầy đất. Cái lôi đài càng bị kiếm khí bạo liệt trùng kích đến nứt ra những lỗ lớn. Trong nháy mắt, bao sương trở nên bừa bộn.</p>
+                <p>Mà đây vẫn là nhờ kịp thời mở cửa sổ ra, giảm bớt ảnh hưởng của lôi bạo. Nếu không, người ở đây nhất định phải bị thương! Bọn hắn kinh ngạc nhìn về phía Giang Phàm, mặt đầy không tin. Kiếm thuật này, mạnh hơn Lăng Quy Hải không phải một chút điểm! Cả hai hoàn toàn không cùng đẳng cấp!</p>
+                <p>&quot;Thanh Vân tông lại có kiếm thuật cường hãn như vậy?&quot;&quot;Vạn Kiếm môn chuyên tu kiếm thuật, kiếm thuật mạnh nhất chưa chắc đã huyền diệu như thế!&quot;&quot;Như thấy quỷ! Giang Phàm này thật sự là đệ tử vô linh căn sao?&quot;&quot;Kiếm thuật mạnh như vậy, ở Cửu Tông cũng có thể xếp hàng đầu!&quot;&quot;Nếu như hắn có đủ tu vi, dựa vào bộ kiếm thuật này, đánh bại Lăng Quy Hải, đoạt lấy Kim Bảng thứ chín là chắc chắn!&quot;</p>
+                <p>Sau một màn biểu diễn, tất cả mọi người nhìn Giang Phàm bằng con mắt khác. Không ai còn dám dùng cái mác vô linh căn để đối xử với hắn.</p>
+                <p>Lăng Quy Hải mặt lộ vẻ không dám tin. Bộ kiếm thuật này, mạnh hơn hắn rất nhiều. Càng khiến hắn cùng mọi người khiếp sợ là...</p>
+                <p>Đợi Giang Phàm trở lại chỗ ngồi, Liễu Khuynh Tiên đôi bàn tay trắng như phấn nện cho hắn một cái, oán giận nói:&quot;Ngươi sao không dốc toàn lực?&quot;</p>
+                <p>Sự kinh ngạc vừa lắng xuống của mọi người lại lần nữa trỗi dậy! Vừa rồi lại chỉ là Giang Phàm tiện tay thi triển, không nghiêm túc? Nhớ tới tư thái cầm kiếm mềm nhũn của hắn, mọi người không chút nghi ngờ phán đoán của Liễu Khuynh Tiên.</p>
+                <p>Vẻ mặt Lăng Quy Hải có chút khó coi. Hóa ra lời Liễu Khuynh Tiên nói là thật! Hắn, không bằng Giang Phàm!</p>
+                <p>Cơ Như Nguyệt thì hơi cắn môi đỏ, lời mỉa mai vừa rồi của nàng giống như một chiếc boomerang đánh thẳng vào mặt. Khiến nàng có chút buồn bực xấu hổ.</p>
+                <p>Âm dương quái khí nói:&quot;Chẳng qua là trùng hợp lĩnh ngộ một môn kiếm thuật lợi hại mà thôi.&quot;&quot;Võ Đạo giới chú trọng thực lực tổng hợp, kiếm thuật chỉ là một phần trong đó thôi.&quot;</p>
+                <p>Mọi người rất tán thành. Mặc dù kiếm thuật của Giang Phàm kinh người, vượt xa Lăng Quy Hải, nhưng không ai cảm thấy địa vị của Giang Phàm cao hơn Lăng Quy Hải. Người sau là dựa vào thực lực đánh vào Kim Bảng thứ chín! Giang Phàm đâu? Không có danh tiếng gì, không đúng, là nổi danh khắp Cửu Tông với tư cách đệ tử vô linh căn. Luận địa vị, hắn căn bản không xứng so sánh với Lăng Quy Hải.</p>
+                <p>Bởi vậy, sau sự kinh ngạc ngắn ngủi, tất cả mọi người vẫn tiếp tục thổi phồng Lăng Quy Hải.</p>
+                <p>Liễu Khuynh Tiên không khỏi xem thường:&quot;Một đám thực tế!&quot;&quot;Chờ Giang Phàm thực lực tăng lên, xem các ngươi nói thế nào.&quot;</p>
+                <p>Bất quá, lời này nàng nói không có chút lực lượng nào. Dù có tăng lên thế nào, trong thời gian ngắn, địa vị của Giang Phàm cũng không thể đuổi kịp Lăng Quy Hải. Danh tiếng của người ta đã ở đó. Giang Phàm làm sao so được?</p>
+                <p>Ngay lúc này, tiểu nhị quán trọ dưới lầu vội vàng chạy tới:&quot;Chư vị khách quan, xin hỏi các vị có biết một vị tiên tử tên là Hạ triều ca không?&quot;&quot;Nàng muốn tìm một người gọi... gọi...&quot;</p>
+                <p>Hắn nhất thời quên mất, đối phương muốn tìm ai. Có thể những người trong phòng lại sôi trào! Hạ triều ca? Nàng ứng ước mà đến rồi?</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_170">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 170: Tham kiến Giang sư thúc</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Bá bá bá ――</p>
+                <p>Vô số ánh mắt đồng loạt đổ dồn về phía Lăng Quy Hải.</p>
+                <p>“Tê! Lăng Quy Hải vậy mà thật sự mời được Hạ Triều Ca tới!”</p>
+                <p>“Không hổ là Kim Bảng cường giả, chỉ có hắn mới có tư cách mời được thiên kiêu vương giả như Hạ Triều Ca!”</p>
+                <p>Liễu Khuynh Tiên cũng kích động khôn xiết. Ánh mắt nhìn Lăng Quy Hải đầy vẻ ngưỡng mộ. Không ngờ Lăng Quy Hải lại thật sự mời được Hạ Triều Ca, mời được nàng thiên chi kiêu nữ mà nàng sùng bái nhất.</p>
+                <p>Cảm nhận được sự khâm phục từ mọi người, đặc biệt là ánh mắt ngưỡng mộ của Liễu Khuynh Tiên, Lăng Quy Hải lập tức cảm thấy ấm áp như gió xuân, toàn thân sảng khoái. Nỗi khó chịu lúc nãy tan biến trong khoảnh khắc.</p>
+                <p>Hắn ưỡn ngực, kiêu ngạo nói với tiểu nhị quán: “Hạ tiên tử là do ta mời tới. Mau mời nàng vào.”</p>
+                <p>Kỳ thực, ngay cả hắn cũng không ngờ Hạ Triều Ca lại đến. Bởi vì khi hắn đến bái kiến Hạ Triều Ca, ngay cả mặt cũng không gặp được, chỉ nhờ người gửi thư mời. Hơn nữa, Hạ Triều Ca tính tình thanh lãnh, không thích náo nhiệt, rất ít khi tham gia hoạt động. Cho nên hắn không đặt bất kỳ kỳ vọng nào.</p>
+                <p>Thật mừng là nàng vậy mà thật sự đến rồi! Điều này quả thật là cho hắn một cái mặt mũi cực lớn! Phải biết, ngay cả Kim Bảng cường giả xếp hạng cao hơn hắn mời, nàng cũng không thèm để ý.</p>
+                <p>Ngay lập tức, Lăng Quy Hải lại nhìn về phía mọi người, trịnh trọng nói: “Tính cách Hạ tiên tử, các ngươi hẳn rõ. Có thể tham gia buổi giao lưu võ đạo nhỏ lần này của chúng ta, thật sự rất khó khăn. Chúng ta không thể chậm trễ nàng. Chỗ ngồi, vẫn là nên sắp xếp lại cho tốt đi.”</p>
+                <p>Nói xong, liền nhìn về phía Giang Phàm, lý lẽ hùng hồn nói: “Giang Phàm, ta có thể ngồi ghế cuối. Nhưng ngươi không thể để Hạ tiên tử cũng ngồi ghế cuối a?”</p>
+                <p>Giang Phàm không quan trọng. Trước đây hắn không nhường chỗ là vì Lăng Quy Hải giở trò xấu, khiến hắn khó chịu mà thôi. Đối với cái gọi là thủ tọa, hắn không có chút lưu luyến nào. Lúc này liền tránh ra.</p>
+                <p>Liễu Khuynh Tiên khẽ mấp máy môi, nhưng nghĩ đến người sắp đến là Hạ Triều Ca. Một vị thiên kiêu vương giả như thế, có thể gặp mặt một lần đã là vinh hạnh lớn lao. Thật sự không cần thiết phải vì chỗ ngồi mà khiến hắn khó chịu. Bởi vậy liền không giữ lại.</p>
+                <p>Thế là, chỗ ngồi được sắp xếp lại. Do Lăng Quy Hải, Liễu Khuynh Tiên và Hạ Triều Ca sắp đến ngồi tại thủ tọa. Vị trí còn lại thì dựa theo thực lực mạnh yếu mà phân chia.</p>
+                <p>Còn về Giang Phàm. Mặc dù kiếm thuật hắn thể hiện ra quả thật rất mạnh, nhưng không ai cảm thấy thực lực của Giang Phàm có thể xếp trên họ. Dù sao họ đều là cường giả Trúc Cơ tám tầng, chín tầng. Cho nên, Giang Phàm được sắp xếp ở vị trí cuối cùng, vừa lúc là chỗ ngồi lúc nãy của Lăng Quy Hải. Chỉ có điều, bên cạnh Giang Phàm lại không có người chịu ngồi ghế cuối cùng như Cơ Như Nguyệt vui vẻ bồi tiếp.</p>
+                <p>Sự chênh lệch rõ ràng khiến Lăng Quy Hải cảm thấy thoải mái trong lòng. Đây mới đúng!</p>
+                <p>Chỗ ngồi vừa mới sắp xếp xong, ngoài cửa liền truyền đến tiếng bước chân!</p>
+                <p>Mọi người nín thở. Trong truyền thuyết, Hạ Triều Ca, đã đến rồi!</p>
+                <p>Lăng Quy Hải nói: “Đứng dậy! Chuẩn bị nghênh đón!”</p>
+                <p>Mọi người đồng loạt đứng dậy. Duy chỉ có Giang Phàm nhíu mày, không nhúc nhích chút nào. Đối với tập tục cực kỳ nịnh hót trong giới đệ tử tinh anh, hắn thực sự không thể chịu đựng được. Đều là đồng lứa, ngang hàng tương giao là đủ. Dù cho thực lực đối phương mạnh mẽ, cũng chỉ cần tôn kính là được. Cần gì phải mị thái đến như vậy?</p>
+                <p>Lăng Quy Hải đang ở đối diện Giang Phàm, rất khó không chú ý đến sự bất thường của hắn. Không khỏi vội vàng nói: “Giang Phàm, ngươi làm gì? Còn không mau đứng dậy?”</p>
+                <p>Mọi người nhìn lại, cũng bị sự lơ đễnh của hắn dọa cho giật mình.</p>
+                <p>“Giang sư đệ, người đến là Hạ Triều Ca, vương giả đồng lứa xếp thứ ba Cửu Tông đại địa! Sao ngươi có thể lãnh đạm như vậy?”</p>
+                <p>“Nàng có thể đến, là cho chúng ta cái mặt mũi lớn lao, chúng ta cung kính một chút là bình thường nhất!”</p>
+                <p>“Ngươi mau mau đứng dậy, nếu như vì sự lãnh đạm của ngươi mà khiến Hạ Triều Ca không vui, cứ thế mà bỏ đi, ngươi cũng không gánh nổi trách nhiệm!”</p>
+                <p>Cơ Như Nguyệt đã sớm nhìn Giang Phàm không vừa mắt, híp mắt nói: “Ngươi sẽ không cảm thấy, đây là làm tổn thương mặt mũi của ngươi chứ? Được ngươi, những thiên chi kiêu tử như chúng ta đều cung kính đây. Ngươi tính là gì chứ? Chẳng lẽ mặt mũi có thể lớn hơn chúng ta sao?”</p>
+                <p>Liễu Khuynh Tiên nhíu nhíu mày. Thật ra, nàng cũng cảm thấy đám người này thể hiện quá mức ân cần. Nếu không phải Hạ Triều Ca là đối tượng mà nàng vẫn luôn sùng bái, nàng cũng quyết không đứng dậy nghênh đón.</p>
+                <p>Nhìn thấy Giang Phàm không muốn, nàng bênh vực: “Được rồi, Hạ Triều Ca thật sự để ý đến những lễ nghi này, sẽ không ở ẩn không ra ngoài. Giang Phàm muốn thế nào thì cứ để hắn vậy đi.”</p>
+                <p>Lăng Quy Hải cau mày chặt. Nhưng thời gian gấp gáp, không rảnh tiếp tục tranh cãi. Bởi vì tiếng bước chân đã gần tới cửa, liền thiếu kiên nhẫn thúc giục nói: “Vậy ngươi đứng lui ra phía sau, đừng lên tiếng. Đừng để Hạ Triều Ca chú ý tới!”</p>
+                <p>Nhìn thấy ánh mắt cầu xin của Liễu Khuynh Tiên, Giang Phàm bất đắc dĩ. Hắn cũng không hy vọng mình làm Liễu Khuynh Tiên đánh mất người mà nàng sùng bái nhất. Liền thở dài, chậm rãi đứng lên.</p>
+                <p>Kẹt kẹt ――</p>
+                <p>Theo cửa bị đẩy ra. Tim mọi người như ngừng đập, từng đôi mắt dồn dập nhìn chằm chằm về phía cửa.</p>
+                <p>Chỉ thấy một nữ tử mặc váy trắng giản dị, đứng ở cửa, nổi bật như con hạc giữa bầy gà. Mái tóc dài xõa ngang vai, tùy ý buông xuống lưng. Dưới hàng mày liễu tinh xảo là đôi mắt thanh lãnh như cuối mùa thu. Mũi cao thẳng, đôi môi mỏng manh như cánh đào tháng tư. Khuôn mặt đầy đặn nhưng không thiếu đường nét, dưới ánh mặt trời chiếu rọi, phản chiếu ánh sáng dịu nhẹ.</p>
+                <p>Tuy là mặt mộc, lại cho người ta cảm giác kinh diễm sâu sắc. Luận dung mạo, hoàn toàn không thua kém Liễu Khuynh Tiên nổi danh Cửu Tông.</p>
+                <p>Vóc dáng nàng yêu kiều, dưới lớp lụa trắng mỏng manh như được người thợ kim hoàn tài ba nhất tỉ mỉ điêu khắc thành tác phẩm nghệ thuật. Gầy một chút thì khô quắt, béo một chút thì thừa thãi. Có thể nói là hoàn mỹ!</p>
+                <p>Một tuyệt sắc mỹ nhân cực phẩm như thế khiến tất cả mọi người trong phòng đều nhìn đến ngây người. Mọi người chỉ nghe danh tiếng, không thấy mặt. Đến hôm nay mới biết, Hạ Triều Ca quả thật là một tuyệt thế đại mỹ nhân hoàn mỹ không tì vết!</p>
+                <p>Ánh mắt Lăng Quy Hải lộ ra vẻ ngưỡng mộ, vội vàng cúi đầu cung nghênh: “Lăng Quy Hải, bái kiến Hạ tiên tử!”</p>
+                <p>Mọi người tỉnh lại, lần lượt thi lễ. Duy chỉ có Giang Phàm, đứng yên không động đậy, không hề có ý nịnh hót.</p>
+                <p>Hạ Triều Ca hơi nhíu mày lộ ra một tia phản cảm khó nhận thấy, giọng nói trong trẻo lạnh lùng: “Hữu lễ, đều ngồi đi.”</p>
+                <p>Lăng Quy Hải trong lòng xúc động. Người khác sao cũng không mời được Hạ Triều Ca, hắn Lăng Quy Hải lại mời được! Liền lập tức nói: “Hạ tiên tử mời ngồi.”</p>
+                <p>Hắn kéo ghế thủ tọa ở giữa ra, mời Hạ Triều Ca ngồi xuống. Hạ Triều Ca lại không để ý đến, mà nhìn quanh nói: “Xin hỏi, Giang Phàm Giang công tử có ở đây không?”</p>
+                <p>Giang Phàm?</p>
+                <p>Lăng Quy Hải ngạc nhiên nói: “Hạ tiên tử, ngài tìm Giang Phàm làm gì?”</p>
+                <p>Hai người một trời một vực, vốn dĩ không có giao thoa mới đúng. Sao lại quen biết?</p>
+                <p>Trong lòng mọi người cũng kỳ lạ, đồng loạt nhìn về phía Giang Phàm. Trong đầu không nhịn được nảy ra một suy nghĩ hoang đường. Chẳng lẽ, tiểu nhị quán vừa rồi nói Hạ Triều Ca tìm người, kỳ thực không phải Lăng Quy Hải, mà là... Giang Phàm?</p>
+                <p>Nhưng chợt, tất cả đều ném cái suy nghĩ hoang đường này ra khỏi đầu.</p>
+                <p>Chỉ là... Cảnh tượng tiếp theo, hoàn toàn lật đổ nhận thức của họ!</p>
+                <p>Hạ Triều Ca theo ánh mắt của họ nhìn thấy Giang Phàm. Liền bước nhẹ nhàng, mang theo một luồng hương thơm dịu dàng đi đến trước mặt Giang Phàm. Sau đó, cúi sâu lạy.</p>
+                <p>“Hạ Triều Ca, bái kiến, Giang sư thúc!”</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_33.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_33.html" class="page-btn">33</a>
+            <a href="page_34.html" class="page-btn current">34</a>
+            <a href="page_35.html" class="page-btn">35</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_35.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

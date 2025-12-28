@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 415">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 415</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_414.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_416.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_2071">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2071: Băng Tâm Lai Sát</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Lược trầm ngâm, Hoàng Sam Mỹ Phụ nhân toan đuổi theo, chợt cảm ứng được điều gì đó mà nhìn về Trung Thổ. Hư vô trên đỉnh đầu nàng, nứt ra một khe hở dài hơn một trượng.</p>
+                <p>Dưới ánh mắt diễm lệ của nàng, bức tường thế giới Trung Thổ bị phá vỡ, một lão thái bà khoác áo vải thô bước ra. Tóc bà ta xám đen, đầu bù tóc rối, da đầy nếp nhăn, miệng đầy răng vàng ố. Trên người tỏa ra mùi hôi khó chịu của nhiều ngày chưa tắm rửa.</p>
+                <p>Bà ta nhìn về phía Giang Phàm, cười khàn khàn: &quot;Giang Phàm chết tiệt, bách nhân tất hữu quả, quả báo của ngươi chính là ta!&quot;</p>
+                <p>&quot;Ta đến tìm ngươi đây!&quot;</p>
+                <p>Ngay sau đó, bà ta há miệng phun ra một chiếc thuyền đồng cổ xưa, nhảy lên rồi lấy ra một đồng Đại Càn Thần Tệ khảm vào rãnh. Lập tức, thuyền đồng bùng nổ tiếng ong ong kinh hoàng, mang theo một cầu vồng xanh biếc với tốc độ cực nhanh đuổi theo.</p>
+                <p>Hoàng Sam Mỹ Phụ nhân hiện thân, đôi mày liễu khẽ nhíu: &quot;Lão thái bà này lai lịch thật lớn, ngay cả Hư Vô Thiên Chu của Đại Càn Thần Quốc năm xưa cũng có.&quot;</p>
+                <p>&quot;Bà ta có thù với Quán Quân Hầu sao?&quot;</p>
+                <p>Trong lúc suy tư, một luồng mùi cơ thể khó chịu bị lực lượng không gian hư vô thổi tới. Sắc mặt Hoàng Sam Mỹ Phụ nhân đại biến, vội vàng vung tay áo, quét sạch mọi khí tức, ghét bỏ nói: &quot;Lão thái bà chết tiệt, mấy ngày chưa tắm rồi?&quot;</p>
+                <p>Không chỉ đẩy lùi mùi hôi, nàng còn dùng lực lượng liên tục tẩy rửa cơ thể mấy lần, xua tan mùi hôi còn sót lại. Sau đó mới mang vẻ mặt không vui nhìn về phía Giang Phàm, mũi chân khẽ nhón, ưu nhã rời đi.</p>
+                <p>Cùng lúc đó.</p>
+                <p>Trung Thổ, Quy Khư Châu, Quần Tinh Sơn.</p>
+                <p>Quần Tinh Sơn Chủ tóc bạc phơ, đứng trên chưởng điện tiên sơn, lặng lẽ đón gió núi. Gió nhẹ lay động mái tóc dài của nàng, cũng thổi bay bức thư trong tay. Trên đó là những nét chữ thanh tú của Hứa Ninh.</p>
+                <p>&quot;Sư tôn, thấy thư như gặp mặt.&quot;</p>
+                <p>&quot;Đệ tử tạ ơn sư tôn đã cứu mạng năm xưa, cũng tạ ơn sư tôn đã dày công bồi dưỡng, Di Ninh khắc ghi trong lòng.&quot;</p>
+                <p>&quot;Cả đời đệ tử có hai vị sư tôn, một là Lý Thanh Phong sư tôn đối đãi chân thành với đệ tử, một là người.&quot;</p>
+                <p>&quot;Trong những lúc tình cảm khốn đốn nhất của đời đệ tử, Lý Thanh Phong sư tôn dạy đệ tử buông bỏ, còn người lại ban cho đệ tử sự thành toàn.&quot;</p>
+                <p>&quot;Nại Hà đệ tử không tranh khí, vừa không thể buông bỏ trong lòng, cũng không thể dũng cảm đối mặt với Giang Phàm.&quot;</p>
+                <p>&quot;Nhưng, đệ tử đã tìm thấy con đường của riêng mình rồi, đệ tử muốn đi đến một thiên địa rộng lớn hơn, đi đến tận cùng con đường đó mà xem.&quot;</p>
+                <p>&quot;Bất kể thành hay không, đệ tử có lẽ sẽ không trở về nữa.&quot;</p>
+                <p>&quot;Tình sư tôn, chỉ có thể kiếp sau báo đáp.&quot;</p>
+                <p>&quot;Xin người tha thứ cho sự ra đi không từ biệt của đệ tử, nguyện trong những năm tháng không có đệ tử, sư tôn mãi mãi thanh xuân, bình an thuận lợi.&quot;</p>
+                <p>&quot;Cũng nguyện sư tôn, sớm tìm được bạn đời, không còn cô độc một mình.&quot;</p>
+                <p>&quot;Đặc biệt từ biệt.&quot;</p>
+                <p>&quot;Di Ninh, khấu thượng.&quot;</p>
+                <p>Quần Tinh Sơn Chủ im lặng không nói. Nhìn biển mây mênh mông, khóe miệng tràn ra vị đắng chát, khẽ thở dài: &quot;Các ngươi... đều sẽ hối hận.&quot;</p>
+                <p>Thái Thương Đại Châu, Nam Hải.</p>
+                <p>Trên một hòn đảo cô lập giữa biển sâu, vô số đóa hoa đua nhau khoe sắc. Đào xuân, sen hạ, cúc vàng thu, mai tuyết đông. Những loài hoa nở rộ theo mùa trong một năm của nhân gian, nay đồng loạt nở rộ, tranh nhau khoe sắc. Hương thơm ngào ngạt và ánh sáng rực rỡ, điểm tô cho hòn đảo tràn đầy sức sống.</p>
+                <p>Chỉ có hai bên bậc đá dài dẫn lên đỉnh đảo, những chậu hoa quỳnh đang hé nụ lại có vẻ lạc lõng. Trước một cây quỳnh, một lão phụ nhân dáng người cao ráo mảnh mai, mặc váy dài màu xanh, tóc bạc phơ đang ngồi xổm. Bà ta dùng ngón tay gầy guộc và thon dài, kẹp một lọ ngọc nhỏ, đổ linh dịch tràn đầy sinh khí vào chậu.</p>
+                <p>Nhưng, hoa quỳnh vẫn bất động. Chậm chạp không chịu nở. Bà ta khẽ thở dài, phát ra giọng nói dịu dàng nhưng già nua. &quot;Tất cả các loài hoa đều đã nở, vì sao chỉ có ngươi không chịu nở?&quot;</p>
+                <p>&quot;Ngươi, đang đợi ai sao?&quot;</p>
+                <p>Hai ngày rưỡi sau.</p>
+                <p>Trên lưng chó đen, Giang Phàm toàn thân đỏ rực, tựa như một pho tượng người sắt nung vừa ra lò. Khắp người tỏa ra nhiệt độ kinh hoàng, lượng lớn hơi trắng bốc lên xì xì. Đại Hắc Cẩu quay đầu nhìn lại, tặc lưỡi không ngớt. &quot;Thứ này tuy đáng ghét, nhưng đối với bản thân thì thật sự tàn nhẫn a.&quot;</p>
+                <p>&quot;Dùng lực lượng pháp tắc cưỡng ép tôi luyện thể phách, quả thực là tự tìm ngược đãi!&quot;</p>
+                <p>Đại Hắc Cẩu đã chứng kiến toàn bộ quá trình tu luyện của Giang Phàm, cái gọi là tôi thể, chính là dùng lực lượng pháp tắc từng tấc từng tấc hủy diệt nhục thể, sau đó tái sinh ra một thân thể hoàn toàn mới. Rồi lại hủy diệt, lại tái sinh. Cứ thế lặp đi lặp lại, cho đến khi một tia lực lượng pháp tắc cũng không thể hủy diệt nhục thân nữa.</p>
+                <p>Đại Hắc Cẩu chỉ nhìn thôi cũng thấy xương cốt ê ẩm. Dù có cho nó cục phân thơm nhất thiên hạ, nó cũng tuyệt đối không tu luyện công pháp kinh khủng này. &quot;Tuy nhiên, công pháp này cũng có chút ý nghĩa a.&quot;</p>
+                <p>&quot;Hơn hai ngày tôi luyện, thể phách của hắn đã đạt đến cảnh giới Thiên Nhân Ngũ Suy rồi.&quot;</p>
+                <p>&quot;Nếu tiếp tục tu luyện, sẽ không phá vỡ thiên kiếp Hóa Thần và Hiền Giả, đạt đến Hiền Giả Chi Thể sao?&quot;</p>
+                <p>Trong lúc nó suy tư, cơ thể Giang Phàm dần dần nguội đi. Đôi mắt đột nhiên mở ra, ánh mắt như có thực chất, chấn động hư vô phía trước khẽ rung chuyển. Hai nắm đấm siết chặt, càng có lực lượng thể phách cường đại vô cùng cuồn cuộn trong huyết nhục.</p>
+                <p>&quot;Thiên Nhân Ngũ Suy đã có thực lực như vậy sao?&quot; Giang Phàm lộ vẻ mừng rỡ. Quá trình luyện thể tuy gian nan như địa ngục, nhưng lợi ích thu được là thật sự!</p>
+                <p>Điểm thiếu sót duy nhất là thể phách hiện tại của hắn vẫn còn quá yếu, tốc độ tôi luyện quá chậm. Lần đầu tiên dùng pháp tắc luyện thể, mất ba ngày. Hiện tại, trên cơ sở thể phách Thiên Nhân Tứ Suy, tôi luyện một lần vẫn cần hai ngày rưỡi.</p>
+                <p>Mà hắn còn cần dùng Hư Không Vũ Y để赶路, đi tìm Đại Tửu Tế. Sẽ tốn thêm nhiều thời gian luyện thể. Vỗ vỗ đầu Đại Hắc Cẩu, Giang Phàm nói: &quot;Dừng lại, tiếp theo ngươi nhận đường, ta phụ trách赶路.&quot;</p>
+                <p>Đại Hắc Cẩu nhanh chóng dừng lại, nó mong Giang Phàm sớm đến đó. Giang Phàm lấy Hư Không Vũ Y khoác lên, vừa định thúc giục, mảnh Nguyệt Cảnh trong lòng đã lâu không vang lên lại chợt động. &quot;Ơ? Ai gửi tin nhắn?&quot;</p>
+                <p>Giang Phàm lấy mảnh Nguyệt Cảnh ra, phát hiện là một thành viên đã lâu không xuất hiện. &quot;Hoa Khai Phú Quý: Chư vị, ta như đã hẹn, đến bao nuôi Thủ Cái Hảo Danh của chúng ta đây.&quot;</p>
+                <p>Ngay sau đó, hai tin nhắn nữa hiện lên. &quot;Tử Vong Nhật Ký: Tại sao lại rẻ cho hắn?&quot;</p>
+                <p>&quot;Tòng Bất Ngao Phong Cảnh: Không phải chứ, ngươi thật sự là phú bà sao? Có thể cân nhắc ta không? Ta sẽ liếm.&quot;</p>
+                <p>Trán Giang Phàm nổi lên một hàng vạch đen. Cái Hoa Khai Phú Quý kia, lại còn nhớ đến việc &quot;offline&quot; hắn! Mình lúc trước chỉ nói đùa xin bao nuôi, sao nàng ta lại thật sự đến chứ?</p>
+                <p>May mà mình đã rời khỏi Trung Thổ, nếu không, thật sự sẽ rất xấu hổ. Hắn tùy tiện trả lời trong Nguyệt Cảnh. &quot;Thủ Cái Hảo Danh: Hoan nghênh đến, chỉ cần ngươi tìm được ta.&quot;</p>
+                <p>&quot;Hoa Khai Phú Quý: Đây là ngươi nói đó!&quot;</p>
+                <p>Giang Phàm vừa thấy tin nhắn này, bên cạnh đột nhiên vang lên tiếng ầm ầm. Một cầu vồng xanh biếc xé toạc hư vô đen tối, kích khởi vạn trượng dòng chảy hỗn loạn hư vô ập tới. Đại Hắc Cẩu bốn chân ghì chặt, mới không bị cuốn đi.</p>
+                <p>Giang Phàm và Đại Hắc Cẩu ngẩng đầu nhìn lên. Trước mặt họ, một chiếc thuyền đồng cổ xưa chắn ngang. Trên thuyền đồng, một lão thái bà chống gậy đang đứng, nhe răng cười với Giang Phàm.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2072">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2072: Bên ngoài đời thực</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Đại Hắc Cẩu ba con mắt chó nhìn một cái, bị dáng vẻ lôi thôi lếch thếch của bà lão, lại còn mỉm cười với mình, dọa cho toàn thân lông chó dựng ngược, gầm lên: &quot;Lão già chết tiệt, Đại Hư Vô, bà giả ma dọa người đấy à?&quot;</p>
+                <p>Lão già ha hả cười, nói: &quot;Ta là tìm Giang Phàm.&quot;</p>
+                <p>Giang Phàm trừng mắt nhìn bà ta, nuốt khan một ngụm nước bọt, giơ giơ mảnh Nguyệt Cảnh trong tay: &quot;Ngươi... ngươi ngàn vạn lần đừng nói cho ta biết, ngươi là Hoa Khai Phú Quý!&quot;</p>
+                <p>Lão già ha hả cười một tiếng, dưới ánh mắt đờ đẫn của Giang Phàm, lấy ra một mảnh Nguyệt Cảnh. Rồi vô cùng thuần thục viết chữ lên đó: &quot;Hoa Khai Phú Quý: Các bạn hữu, ta đã gặp mặt Thủ Cái Hảo Danh ngoài đời rồi, quả là một tiểu tử trẻ tuổi anh tuấn nha, lão thân yêu rồi.&quot;</p>
+                <p>Trong Nguyệt Cảnh lập tức vang lên một tràng.</p>
+                <p>&quot;Tử Vong Nhật Ký: Lão thân? Ngươi là lão già sao?&quot;</p>
+                <p>&quot;Tòng Bất Ngao Phong Cảnh: Câm miệng! Không cho phép ngươi phỉ báng tỷ Phú Quý của ta như vậy! Trong lòng ta, tỷ Phú Quý vĩnh viễn là bảo bối mười tám tuổi!&quot;</p>
+                <p>&quot;Hoa Khai Phú Quý: Ha ha ha, không già, cũng chỉ là dáng vẻ chín mươi tuổi của phàm nhân thôi.&quot;</p>
+                <p>&quot;Tòng Bất Ngao Phong Cảnh: Hít hà~ Xin lỗi, liếm không nổi, vượt quá khả năng của ta rồi! Thủ Cái Hảo Danh, ngươi... ngươi đừng có gánh nặng tâm lý, tắt đèn đi thì cũng như nhau cả thôi.&quot;</p>
+                <p>&quot;Tử Vong Nhật Ký: Chín mươi tuổi? Ha ha ha ha... ha ha ha ha... Báo ứng, báo ứng, ngươi cũng có ngày hôm nay!&quot;</p>
+                <p>Giang Phàm đã không còn tâm trí để ý đến những lời trêu chọc trong Nguyệt Cảnh nữa.</p>
+                <p>Một khuôn mặt đã đen sạm, chắp tay nói: &quot;Vị Nguyệt Cảnh bạn hữu này, rất vinh hạnh được chân chính gặp mặt.&quot;</p>
+                <p>&quot;Ngươi đây là đi đâu? Vì sao cũng ở trong Hư Vô?&quot;</p>
+                <p>Lão già, tức là Băng Tâm Đại Tôn, nói chính xác hơn, nên gọi là Băng Tâm Hiền Giả. Nàng chính là người thứ năm chứng đạo Hiền Giả ở Trung Thổ gần đây! Sau khi chuẩn bị sẵn sàng, nàng đã không thể chờ đợi được nữa mà đến gặp Giang Phàm ngoài đời! Nhìn Giang Phàm vẻ mặt khó chịu, trong lòng nàng không khỏi vui mừng khôn xiết, thầm cười lớn không ngừng: &quot;Tên khốn kiếp, còn dám nói ta dã man bẩn thỉu sao?&quot;</p>
+                <p>&quot;Còn dám dùng Thần Mộc gõ đầu ta không?&quot;</p>
+                <p>&quot;Còn dám nói cứu người khác, ta suýt bị đánh chết mới ra tay sao?&quot;</p>
+                <p>&quot;Ngươi cũng có ngày hôm nay! Hừ hừ, chuyện này còn chưa kết thúc đâu!&quot;</p>
+                <p>Nàng nhe hàm răng vàng ố ra, cười nói: &quot;Ta đương nhiên là đến tìm ngươi rồi!&quot;</p>
+                <p>&quot;Lão thân xưa nay có cầu tất ứng, đã ngươi trong Nguyệt Cảnh cầu ta bao nuôi, vậy ta liền thực hiện nguyện vọng của ngươi.&quot; Nói rồi, thân thể đột nhiên hư hóa.</p>
+                <p>Giang Phàm tim đập thình thịch, chết tiệt, Hoa Khai Phú Quý lại là một Hiền Giả sao? Không đúng nha! Trung Thổ đâu ra Hiền Giả già như vậy? Cho dù là người mới đột phá gần đây, cũng chưa từng nghe nói qua a? Không đợi hắn phản ứng lại, một trận mùi hôi thối truyền đến, ngay sau đó cánh tay phải căng thẳng, liền bị lão già đã hóa thực ôm chặt lấy. Lão già mặc áo vải thô, nửa người đổ vào hắn. Khuôn mặt già nua đầy nếp nhăn, cáu bẩn lấp đầy các rãnh nhăn, tỏa ra mùi hôi thối, lại còn chu môi hôn tới. &quot;Thủ Cái Hảo Danh, ngươi thật là đẹp trai, lão thân thật là thích.&quot;</p>
+                <p>Ta dựa vào! Giang Phàm chỉ cảm thấy lộn ruột lộn gan, toàn thân nổi da gà. Hắn cố gắng giãy thoát, nhưng bị một Hiền Giả ôm sát như vậy, làm sao mà giãy thoát được? Hắn hiếm khi hoảng loạn, vội vàng kêu lên: &quot;Chó chết, còn không ra tay?&quot;</p>
+                <p>Đại Hắc Cẩu chỉ mong Giang Phàm bị hôn chết, nghe vậy, không nhanh không chậm nói: &quot;Chủ nhân ơi, tự mình hẹn, có khóc cũng phải đánh xong nha.&quot;</p>
+                <p>Dựa vào! Giang Phàm không kịp thu thập Đại Hắc Cẩu, vội vàng lấy tay che mặt, nhanh chóng nói: &quot;Tiền bối tiền bối, có chuyện gì từ từ thương lượng, chúng ta đều là người văn minh, đừng động miệng!&quot;</p>
+                <p>&quot;Mô mô mô...&quot; Băng Tâm cười toe toét, không nghe lời khuyên, cứ thế hôn lên lòng bàn tay Giang Phàm. Giang Phàm lập tức cảm thấy ghê tởm, hận không thể chặt đứt bàn tay. Thấy cái miệng già nua của đối phương sắp hôn tới, hắn vội vàng vận dụng Đại Càn Thần Uy trong cơ thể. Cờ Quán Quân Hầu vừa xuất hiện, uy áp vô biên lập tức ập tới. Băng Tâm dưới áp lực này, buộc phải buông Giang Phàm ra, lùi lại một bước cúi người ôm quyền, không cam lòng nói: &quot;Tham kiến Quán Quân Hầu.&quot;</p>
+                <p>Nhân cơ hội này, Giang Phàm kẹp chặt Đại Hắc Cẩu giữa hai chân. Hư Không Vũ Y đột nhiên sáng rực, bùng nổ tốc độ vô địch gần cảnh giới Tam Tai, dịch chuyển tức thời biến mất tại chỗ. Băng Tâm đứng thẳng người dậy, nhìn bóng lưng Giang Phàm chật vật bỏ chạy, không nhịn được nữa, ôm bụng cười gập cả người: &quot;Ha ha ha ha, Giang Phàm a Giang Phàm, không ngờ tới chứ, người trị ngươi đã đến rồi!&quot;</p>
+                <p>&quot;Nhưng mà, như vậy ngươi đã muốn kết thúc sao?&quot;</p>
+                <p>&quot;Ta nhất định phải biến hôm nay thành ác mộng của ngươi, ta muốn ngươi cả đời nhớ kỹ ta Hoa Khai Phú Quý!&quot; Ngay sau đó nhảy lên Hư Vô Chu, thúc giục nó đến trạng thái tối đa, đuổi theo Giang Phàm.</p>
+                <p>Giang Phàm phía trước, sắc mặt đen không thể đen hơn. &quot;Đây là đang đùa giỡn ta sao?&quot;</p>
+                <p>&quot;Người nắm giữ mảnh Nguyệt Cảnh thứ sáu, lại là một lão già?&quot; Hắn cảm nhận được sự ác ý tràn đầy của ông trời đối với hắn.</p>
+                <p>Từng có lúc Giang Phàm cảm thấy trong lời nói và cử chỉ của Hoa Khai Phú Quý, hắn mơ hồ nhận ra Hoa Khai Phú Quý là một người có địa vị khá tôn quý, lại có khí chất cao sang. Vạn vạn không ngờ, lại là một lão già! Rốt cuộc là có vấn đề ở đâu?</p>
+                <p>Lúc này, trải qua vài lần lóe sáng, Thánh Lực trong Hư Không Vũ Y đã tiêu hao hết, không thể tiếp tục duy trì dịch chuyển tức thời. Nhưng, lại không biết Hoa Khai Phú Quý đã đuổi kịp hay chưa. Đột nhiên, hắn mắt sáng rực lấy ra Nguyệt Cung Chủ Lệnh Bài. Lão Cung Chủ từng nói, hắn dùng Cung Chủ Lệnh Bài, thông qua mảnh Nguyệt Cảnh quan sát Giang Phàm. Chỉ là, cần phải vào lúc trăng tròn hàng tháng mới có thể phát động. Giang Phàm đã tu luyện Nguyệt Hoa Chi Lực, đã biết lời nói đó là để lấp liếm hắn. Trăng tròn hay không trăng tròn không quan trọng, quan trọng là phải có Nguyệt Hoa Chi Lực cường đại, chỉ là khi trăng tròn Nguyệt Hoa Chi Lực giữa trời đất càng dồi dào. Lão Cung Chủ có thể dễ dàng hơn để dò xét phía bên kia mảnh Nguyệt Cảnh mà thôi.</p>
+                <p>Hiện giờ Giang Phàm cũng đã tu luyện Nguyệt Hoa Chi Lực, có thể thử dò xét mảnh Nguyệt Cảnh rồi, khóa chặt trạng thái hiện tại của Hoa Khai Phú Quý. Tiện thể, hắn còn có thể xem trạng thái của Liễu Khuynh Tiên, Hạ Triều Ca, Thanh Tửu. Vừa rồi ba người bọn họ đều không trả lời tin nhắn Nguyệt Cảnh. Hắn trước tiên kích hoạt một tia Thánh Huyết huyết mạch của Tiểu Nhu trong Thiên Châu, lập tức, Thánh Lực cường đại không ngừng rót vào Hư Không Vũ Y. Hắn lại dịch chuyển tức thời, vừa đi đường, vừa thúc giục Cung Chủ Lệnh Bài. Nguyệt Hoa Chi Lực khổng lồ dũng mãnh tràn vào lệnh bài hình trăng tròn màu xanh lam, sau đó lệnh bài dần trở nên sáng chói.</p>
+                <p>Sau đó hiện ra bảy bức họa. Trong đó hai bức họa, một bức bị Thánh Quang cường đại che khuất, căn bản không nhìn rõ bên trong là gì. Đây hẳn là của Hạ Triều Ca. Nàng trở về Bắc Thiên Giới, xem ra là đã mất đi một phần tự do, không thể dễ dàng sử dụng Nguyệt Cảnh. Bức họa còn lại tràn ngập kiếm khí cường đại, mơ hồ có thể thấy một nữ tử váy dài màu tím, đang kịch liệt tỷ thí kiếm thuật với người khác. Hẳn là Liễu Khuynh Tiên. Thấy nàng bình an vô sự, Giang Phàm thở phào nhẹ nhõm.</p>
+                <p>Sau đó, hắn nhìn thấy Cố Hinh Nhi và Hồng Ma Đại Tôn, đang phi nước đại trong một vùng Hư Vô tối tăm. Còn phát hiện Lương Phi Yên mày râu nhếch nhác cầm mảnh Nguyệt Cảnh cho Nhậm Cô Hồng, Vương Sung Linh và Sơ Nguyệt cùng xem, năm người trên mặt đều nở hoa. Bọn chó chết này! Giang Phàm thầm mắng một tiếng, lại nhìn thấy Thanh Tửu cũng đang phi nước đại trong Hư Vô, hẳn là đang đi đến Tu Di Thần Lao. Nhưng mà, bên cạnh nàng hình như có thêm một người. Cuối cùng chính là lão già đáng chết, Hoa Khai Phú Quý!</p>
+                <p>Điều khiến khóe miệng Giang Phàm co giật là, Hoa Khai Phú Quý đang điều khiển chiếc thuyền đồng cổ quái, đuổi theo hắn. &quot;Nàng là không phải ta không được sao?&quot; Giang Phàm mặt mày đen sạm.</p>
+                <p>Đang định cất lệnh bài, chuyên tâm chạy trốn. Đột nhiên, trong bức họa của Hoa Khai Phú Quý xuất hiện một điểm bất thường. Ngực Hoa Khai Phú Quý bùng cháy một mảnh băng quang, một mặt dây chuyền băng tinh treo trên ngực hiện ra.</p>
+                <p>Tiếp đó, băng quang lướt qua toàn thân. Chiếc áo vải thô, mái tóc rối bù, khuôn mặt già nua đầy nếp nhăn và cáu bẩn của nàng, hóa thành từng mảnh băng vụn vỡ tan. Lộ ra một thân ảnh với khuôn mặt tươi cười rạng rỡ, làn da trắng nõn, dung mạo tú mỹ, tràn đầy sức sống thanh xuân. Giang Phàm đột nhiên dừng lại, mắt trợn tròn.</p>
+                <p>&quot;Băng Tâm?&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2073">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2073: Vừa yếu lại ham chơi</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Trong màn ảnh.Băng Tâm cũng phát hiện băng tinh điêu trụy của mình đã mất hiệu lực, liền lập tức rót băng chi pháp tắc vào trong đó. Điêu trụy lại lần nữa kích hoạt, phóng ra băng quang, ngụy trang nàng thành một lão bà.</p>
+                <p>&quot;Hì hì, Giang Phàm chết tiệt, lão bà ta đến đây!&quot;</p>
+                <p>Thông qua lệnh bài cung chủ, Giang Phàm, người đang theo dõi toàn bộ quá trình, toàn thân run rẩy.</p>
+                <p>Rắc!Ngũ chỉ của hắn siết chặt lệnh bài, bóp đến mức lệnh bài kêu răng rắc! Từ Cô Chu Thành đến nay, hắn chưa từng chật vật đến thế, dù là kẻ địch mạnh mẽ đến đâu cũng có cách đối phó. Vạn vạn không ngờ, hắn lại ngã vào tay tiểu nha đầu ngây thơ Băng Tâm này! Hắn đưa tay vuốt mặt, nghiến răng nghiến lợi nói: &quot;Cả ngày đi săn nhạn, cuối cùng lại bị nhạn mổ!&quot;</p>
+                <p>&quot;Băng Tâm à Băng Tâm, ngươi không chọc ai lại đi chọc ta?&quot;&quot;Hoa Khai Phú Quý đúng không? Lão bà đúng không?&quot;&quot;Ta sẽ thành toàn cho ngươi!&quot;</p>
+                <p>Nghĩ đến bộ dạng hoảng loạn khi bị Băng Tâm trêu chọc vừa rồi, mắt hắn phun lửa! Quay đầu nhìn về phía Băng Tâm, hắn thu liễm thánh lực trong cơ thể, giả vờ thánh lực khô kiệt, không thể tiếp tục chạy trốn, giả bộ chậm rãi lướt đi.</p>
+                <p>Không lâu sau.Phía sau tiếng ầm ầm vang dội, Băng Tâm điều khiển thanh đồng chu chắn ngang trước mặt hắn. Nàng chống gậy, cười hì hì nói: &quot;Chạy đi, sao ngươi không chạy nữa! Chạy không nổi sao?&quot;&quot;Có cần ta giúp không?&quot;Giờ phút này nàng đắc ý vô cùng! Giang Phàm bây giờ chơi cũng không lại nàng, chạy cũng không thoát nàng. Ha ha ha!</p>
+                <p>Giang Phàm mặt mày đen sạm, nói: &quot;Hoa Khai Phú Quý, rốt cuộc ngươi muốn thế nào mới chịu buông tha ta?&quot; Băng Tâm nhe hàm răng vàng ố ra nói: &quot;Ngươi nói gì vậy? Ngươi đang nói muốn nằm yên trong Nguyệt Cảnh sao?&quot;&quot;Đến đây, ngoan ngoãn để lão thân hôn một cái.&quot;&quot;Đồ của lão thân sau này đều là của ngươi.&quot;Nói xong, thân ảnh lại lần nữa hư hóa.</p>
+                <p>Sắc mặt Giang Phàm biến đổi, kẹp lấy Đại Hắc Cẩu liền muốn chạy, nhưng cổ lại bị một cánh tay ôm lấy. Gương mặt già nua đầy nếp nhăn, bẩn thỉu của Băng Tâm ở ngay trước mắt. Miệng nàng phả ra mùi hôi thối nồng nặc, cười hì hì nói: &quot;Ai da, nhắm mắt lại là được rồi, ngươi sợ gì chứ?&quot; Lời còn chưa dứt, một cái miệng già nua đã hôn tới.</p>
+                <p>Vốn tưởng Giang Phàm sẽ lại né tránh, sẽ dùng tay chặn miệng nàng. Thế nhưng, điều khiến Băng Tâm ngây người là, Giang Phàm không né không tránh, còn cúi đầu, đón lấy môi nàng mà hôn lên. Cảm giác mềm mại, nóng bỏng khiến Băng Tâm sững sờ, đại não rơi vào khoảng trống ngắn ngủi.</p>
+                <p>Khoan đã!Giang Phàm... Giang Phàm sao lại không theo kịch bản? Nàng sợ hãi vội vàng rụt môi lại, nào ngờ, Giang Phàm đuổi theo, một ngụm ngậm lấy môi nàng, hôn sâu. &quot;Ưm ưm ưm~&quot; Băng Tâm hoảng loạn đẩy hắn ra, thân thể lảo đảo liên tục lùi lại. Nàng ôm lấy đôi môi hơi sưng tấy, hoảng hốt nói: &quot;Ngươi... ngươi làm gì?&quot;</p>
+                <p>Nụ hôn đầu của nàng, cứ thế mà mất rồi sao? Hơn nữa, Giang Phàm còn cắn mạnh môi nàng một cái. Nếu không phải nàng đã đột phá đến Hiền Cảnh, thể phách cường đại, e rằng môi đã bị cắn rách. Giang Phàm lau miệng, cười hì hì đi về phía nàng, nói: &quot;Ta nghĩ thông rồi, ta không muốn cố gắng nữa~&quot;&quot;Phú Quý tỷ, từ hôm nay trở đi, ta theo tỷ.&quot;&quot;Ngày ba bữa, lượng lớn no đủ!&quot;&quot;Thế nào?&quot;</p>
+                <p>Ê?Băng Tâm ngây người, không đúng nha, kịch bản không phải thế này! Nhìn Giang Phàm từng bước ép sát, Băng Tâm có chút sợ hãi lùi lại: &quot;Ngươi không chê ta già sao? Ta đã tám chín mươi tuổi rồi...&quot; Giang Phàm bước tới, nâng cằm nàng lên, nói: &quot;Ta không cho phép tỷ nói mình già, trong lòng ta, tỷ mãi mãi là bảo bối mười tám tuổi của ta.&quot;</p>
+                <p>Sì!Lần này đến lượt Băng Tâm nổi da gà toàn thân. Nàng xoa xoa cánh tay, răng ê ẩm nói: &quot;Giang Phàm, ngươi thật sự không kén chọn sao?&quot; Giang Phàm một tay ôm lấy eo nàng, kéo vào lòng, nói: &quot;Ta đối với tỷ nhất kiến chung tình~&quot;&quot;Nóng lòng muốn được tỷ bao nuôi rồi.&quot;&quot;Đến đây, đừng lãng phí thời gian nữa, xuân tiêu một khắc đáng ngàn vàng.&quot;Nói rồi, hắn giật phăng sợi tơ thắt lưng nàng, bàn tay thăm dò vào trong lòng.</p>
+                <p>Vừa chạm đến sự mềm mại chân thật, Băng Tâm liền bật nhảy tránh ra, gương mặt già nua đỏ bừng vì xấu hổ, tim đập thình thịch: &quot;Ngươi, ngươi đồ vô sỉ dâm tặc!&quot; Giang Phàm bật cười. Nha đầu chết tiệt, bây giờ mới biết sợ sao? Hắn cười hì hì nói: &quot;Phú Quý tỷ, tỷ không quản ngàn dặm đến tìm ta, lại còn hôn còn ôm ta, bây giờ ta đã đồng ý, sao tỷ lại hối hận?&quot;</p>
+                <p>Băng Tâm khẽ cắn môi đỏ mọng, nàng không thể hiểu nổi, mọi chuyện sao lại thành ra thế này: Không những không chọc tức được Giang Phàm, mình còn mất nụ hôn đầu, còn bị sờ... sờ vào sự mềm mại chân thật. Nàng tức giận trừng mắt nhìn Giang Phàm: &quot;Ngươi cứ đợi đấy, ta sẽ không tha cho ngươi!&quot; Nàng quay người nhảy lên thanh đồng chu, thúc giục chiếc thuyền này muốn chạy trốn.</p>
+                <p>Giang Phàm hừ một tiếng. Muốn trêu chọc hắn thì trêu chọc, muốn đi thì đi? Làm gì có chuyện dễ dàng như vậy? Hắn giơ tay vung lên, trong lòng bàn tay xuất hiện hư không cần câu, lưỡi câu dịch chuyển tức thời móc lấy thanh đồng chu. Băng Tâm giật mình. Chiếc hư không cần câu từng câu đi yếm của nàng, sao nàng có thể không nhận ra? Lập tức sắc mặt biến đổi, một tay kéo chặt thanh đồng chu.</p>
+                <p>Lực lượng Hiền Giả, rốt cuộc là linh khí cực phẩm có thể chống lại, lưỡi câu không thể kéo nàng lại. Băng Tâm nhân cơ hội này, một tay giật phăng lưỡi câu, điều khiển thanh đồng chu hóa thành một đạo thanh mang lao vút đi. Vừa chạy được không xa, liền quay người cười hì hì gọi lớn: &quot;Hừ hừ, muốn cướp thanh đồng chu của ta sao?&quot;&quot;Ta đã không còn là Băng Tâm của năm xưa nữa rồi, lêu lêu lêu...&quot;</p>
+                <p>Nàng làm một khuôn mặt quỷ, rồi lao thẳng vào sâu trong hư vô, suy nghĩ: &quot;Sở dĩ ta thất bại, là vì khẩu vị của Giang Phàm quá tốt, cái này hắn cũng có thể nuốt trôi.&quot;&quot;Ta phải thay đổi thân phận để bắt đầu lại.&quot;&quot;Hay là, ngụy trang thành Cố Hinh Nhi đi? Ta không tin, hắn còn có thể nuốt trôi!&quot;</p>
+                <p>Nhưng, ngay khi nàng đang lên kế hoạch xem nên biến hóa thân phận ở đâu, ngực nàng đột nhiên lóe lên một tia kim quang. Chính là hư không cần câu lại lần nữa vung tới. Băng Tâm theo bản năng cho rằng, lưỡi câu muốn móc lấy thanh đồng chu, liền vội vàng ngồi xổm xuống ấn chặt thanh đồng chu. Nào ngờ, lưỡi câu hư chiêu một cái, lướt qua ngực nàng. Lớp ngụy trang trên người Băng Tâm hóa thành những mảnh băng quang rơi rụng. Nàng cúi đầu nhìn, lúc này mới phát hiện băng tinh điêu trụy trên ngực mình đã biến mất.</p>
+                <p>&quot;A! Giang Phàm chết tiệt, ngươi đã câu mất pháp bảo dịch dung của ta!&quot; Băng Tâm kinh hô một tiếng. Quay đầu muốn đuổi theo, chợt nghĩ lại, chẳng phải mình sẽ lộ chân dung sao? &quot;Không được không được, không thể để tên này biết ta chính là Hoa Khai Phú Quý~&quot;&quot;Nếu không, hắn sẽ cười nhạo ta chết mất một năm!&quot;</p>
+                <p>Thế nhưng, sau chuyện này, mình bị cướp nụ hôn đầu, bị sờ sự mềm mại chân thật, còn bị cướp pháp bảo. Nàng càng nghĩ càng thấy thiệt thòi, tức giận đến mức giậm chân thình thịch: &quot;Ta! Ta với ngươi không xong đâu!&quot;&quot;Nhưng mà, ta đã không còn băng tinh điêu trụy, làm sao có thể trêu chọc hắn nữa đây?&quot;&quot;Đúng rồi, băng tinh điêu trụy đến từ Băng Giới, ta đi một chuyến đến Băng Giới lấy một cái nữa không phải là được sao?&quot;&quot;Hừ hừ, Giang Phàm thối tha, để ngươi đắc ý một lát~&quot;&quot;Ta sớm muộn gì cũng sẽ trả lại cả vốn lẫn lời, nhớ kỹ, là cả vốn lẫn lời!&quot;Nói xong, điều khiển thanh đồng chu, hướng về phía Băng Giới phi nhanh mà đi.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2074">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2074: Mỹ phụ chăm chú nhìn ngắm</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm dõi theo bóng lưng Băng Tâm vội vã rời đi trong cơn tức giận qua lệnh bài, khóe môi khẽ cong lên một nụ cười nhạt: &quot;Nha đầu chết tiệt, dám đấu với ta sao?&quot;</p>
+                <p>Xoẹt một tiếng, Băng Tinh Điếu Trụy đã bị lưỡi câu mang về. Hắn một tay nắm chặt, cẩn thận kiểm tra một lượt, không khỏi kinh ngạc: &quot;Chuẩn Giới Khí?&quot;</p>
+                <p>&quot;Không phải chứ, nha đầu chết tiệt này từ đâu mà có vậy? Nàng không phải chỉ là một Đại Tôn bình thường thôi sao?&quot;</p>
+                <p>Khoan đã! Giang Phàm chợt nhớ ra, Băng Tâm chưa chắc đã là người bình thường.</p>
+                <p>Vẫn còn nhớ rõ, trong Đại Quyết Chiến, Từ Tâm Hiền Giả đối với các Đại Tôn khác đều cao cao tại thượng, duy chỉ thái độ đối với Băng Tâm lại khá ôn hòa. Phảng phất còn mang theo một tia kiêng kỵ.</p>
+                <p>Lại liên tưởng, Tu La Thánh Tử cũng khá để tâm đến Băng Tâm.</p>
+                <p>Lại thêm công đức của hai trận đại chiến, Băng Tâm đáng lẽ không đủ để nhập Hiền, nhưng lại thần bí trở thành Hiền Giả.</p>
+                <p>Giang Phàm vuốt cằm nói: &quot;Nha đầu chết tiệt này, chẳng lẽ có lai lịch gì đó chăng?&quot;</p>
+                <p>&quot;Ừm, mong nàng ta lại đến tìm ta, lần sau tiếp tục cướp trang bị của nàng ta!&quot;</p>
+                <p>Cất Băng Tinh Điếu Trụy có thể ẩn thân, Giang Phàm xác định lại phương hướng, kẹp Đại Hắc Cẩu dưới nách, thôi động Hư Không Vũ Y lóe lên mà đến.</p>
+                <p>Vụt một tiếng! Thế nhưng, rõ ràng có thể dịch chuyển tức thời đến nơi cực xa, hắn lại như thể va phải một tấm bình phong vô hình, cách ngàn trượng đã bị thứ gì đó chặn lại.</p>
+                <p>Sắc mặt Giang Phàm đột nhiên biến đổi, cúi đầu nhìn Đại Hắc Cẩu: &quot;Tình huống gì đây?&quot;</p>
+                <p>Đại Hắc Cẩu hít hít mũi, cũng cảnh giác: &quot;Mùi hương, mùi hương của nữ nhân!&quot;</p>
+                <p>Gần đây còn có người? Hắn dứt khoát đổi hướng, thôi động Hư Không Vũ Y dịch chuyển tức thời đi.</p>
+                <p>Nhưng, lại cách ngàn trượng bị vật thể không rõ chặn lại.</p>
+                <p>Tiếp đó, hắn liên tục đột phá theo mấy hướng khác nhau, kết quả đều như nhau.</p>
+                <p>Trên trời dưới đất, bốn phương tám hướng, đều có vật vô hình chặn hắn lại.</p>
+                <p>&quot;Là ai?&quot; Giang Phàm khẽ quát.</p>
+                <p>Lời vừa dứt, vai hắn đột nhiên hơi nặng xuống. Một bàn tay trắng nõn như ngọc đã đặt lên vai hắn.</p>
+                <p>Đồng tử Giang Phàm co rút mạnh! Người nào, có thể trong khi Đại Hắc Cẩu không hề phản ứng, trực tiếp xuất hiện sau lưng hắn?</p>
+                <p>Gần như không hề suy nghĩ, Giang Phàm bản năng rút Tà Kiếm ra, trở tay đâm tới.</p>
+                <p>Một tiếng &quot;đinh&quot; khẽ vang lên. Tà Kiếm như thể công kích vào kim loại, phát ra tiếng va chạm lạnh lẽo, trong trẻo.</p>
+                <p>Một giọng nói trong trẻo như chuông bạc, mang theo vài phần ý vị trêu đùa, vang lên bên tai hắn: &quot;Phản ứng cũng nhanh đấy chứ.&quot;</p>
+                <p>Giang Phàm hồn vía lên mây, quay đầu nhìn lại, một mỹ phụ trung niên búi tóc kiểu đọa mã kế, mặt như mâm bạc, ngũ quan tuấn tú, thần không biết quỷ không hay đã đứng sau lưng hắn.</p>
+                <p>Một tay đặt trên vai Giang Phàm, một tay khác duỗi ngón giữa và ngón trỏ ra, nhẹ nhàng kẹp lấy Tà Kiếm.</p>
+                <p>Tà Kiếm vốn là Chuẩn Giới Khí, lại trong hai ngón tay nàng ta phát ra tiếng &quot;ong ong&quot; không chịu nổi gánh nặng.</p>
+                <p>Thần sắc Giang Phàm đột biến, lập tức thôi động đặc tính của Tà Kiếm: &quot;To! Dài!&quot; Thế nhưng, Tà Kiếm trong hai ngón tay nàng ta kẹp chặt lại ngoan ngoãn, hoàn toàn không thể dài ra.</p>
+                <p>Giang Phàm quát khẽ một tiếng: &quot;Chó chết, cắn người đi chứ!&quot;</p>
+                <p>Đại Hắc Cẩu dưới thân cũng bị mỹ phụ trung niên đột nhiên xuất hiện làm cho kinh hãi, há miệng chó cắn về phía đùi nàng ta.</p>
+                <p>Thế nhưng. Thân là Đại Hắc Cẩu cảnh giới Nhị Tai, một ngụm cắn xuống, lại như thể cắn vào tấm sắt. Đầy miệng răng chó suýt nữa gãy rụng.</p>
+                <p>&quot;Xì xì xì... Răng chó của ta...&quot;</p>
+                <p>Hoàng Sam Mỹ Phụ cúi đầu nhìn Đại Hắc Cẩu, nụ cười như có như không trên mặt biến mất, thay vào đó là vẻ ghét bỏ sâu sắc.</p>
+                <p>&quot;Cút! Con chó chết ăn uống thô tục!&quot;</p>
+                <p>Không thấy nàng ta có bất kỳ động tác nào, chỉ vừa mở miệng, liền có pháp tắc giáng lâm. Đại Hắc Cẩu như bị sét đánh, &quot;vụt&quot; một tiếng bị đánh bay ngược ra, đâm vào tấm bình phong vô hình.</p>
+                <p>Tấm bình phong chấn động, như tấm màn lớn bị vén lên, lộ ra chân dung của nó. Hóa ra là từng thanh linh kiếm vắt ngang chân trời, xếp thành một kiếm trận khổng lồ, đồng thời, trên dưới cũng có một thanh đại kiếm trấn áp.</p>
+                <p>Bọn họ đã bị vây khốn trong kiếm trận khổng lồ!</p>
+                <p>Giang Phàm kinh hãi không thôi, những thanh kiếm này, toàn bộ đều là Cực Phẩm Linh Kiếm!</p>
+                <p>Trọn vẹn hơn chín mươi thanh! Kỳ Kỳ khắp tinh không sưu tầm Cực Phẩm Linh Kiếm, cũng chỉ tìm được hai ba thanh mà thôi.</p>
+                <p>Nữ nhân này, một mình lại độc chiếm hơn chín mươi thanh Cực Phẩm Linh Kiếm! Rốt cuộc nàng ta có lai lịch gì?</p>
+                <p>Giang Phàm cố gắng giãy thoát khỏi bàn tay nữ nhân, lại phát hiện lực lượng trong cơ thể mình bị áp chế đến mức không thể điều động chút nào, như thể biến thành một phàm nhân.</p>
+                <p>Trong lòng hắn thầm kinh hãi. Kẻ có thể một lời đánh bay Đại Hắc Cẩu, lại có thể dễ dàng trấn áp mình. Đối phương là tồn tại như thế nào, đã không cần nói thêm.</p>
+                <p>Tam Tai Cảnh! Một Tam Tai Cảnh nắm giữ kiếm đạo chí cao!</p>
+                <p>Hắn trầm giọng nói: &quot;Tiền bối, xin người buông tay, bằng không ta sẽ kêu người!&quot;</p>
+                <p>Hoàng Sam Mỹ Phụ lại nhìn Giang Phàm, trên mặt lại tràn ra ý cười trêu đùa: &quot;Ồ, ngươi có kêu rách họng cũng chẳng ai để ý đâu.&quot;</p>
+                <p>&quot;Ta đã theo dõi ngươi ba ngày, xác định ngươi đã rời xa Trung Thổ mới ra tay.&quot;</p>
+                <p>&quot;Bây giờ, không ai có thể giúp ngươi.&quot;</p>
+                <p>Trong lòng Giang Phàm thầm chùng xuống. Lại là vì hắn mà đến, lại còn có chuẩn bị trước!</p>
+                <p>Trong lòng hắn nhanh chóng suy nghĩ, có nên thả Linh Lung ra, dùng kế &quot;đuổi sói nuốt hổ&quot; chăng.</p>
+                <p>Nghĩ lại liền dập tắt ý niệm này. Với sự hận ý của Linh Lung đối với mình, cục diện không phải là đuổi sói nuốt hổ, mà là trước có sói sau có hổ. Hai nàng ta tám phần là sẽ đánh hội đồng mình.</p>
+                <p>Mắt đảo một vòng, Giang Phàm nói: &quot;Không biết tiền bối đặc biệt tìm vãn bối, là vì chuyện gì?&quot;</p>
+                <p>&quot;Nếu có nơi nào vãn bối có thể cống hiến sức lực, vãn bối nhất định không từ chối.&quot;</p>
+                <p>&quot;Chỉ xin tiền bối trước tiên buông vãn bối ra.&quot;</p>
+                <p>Hoàng Sam Mỹ Phụ mím môi cười: &quot;Buông ra?&quot;</p>
+                <p>&quot;Thủ đoạn của ngươi quá nhiều, cho dù là ta, cũng có khả năng để ngươi trốn thoát.&quot;</p>
+                <p>Nói xong, nàng tiện tay rút Tà Kiếm trong tay Giang Phàm ra. Trong lòng bàn tay vuốt ve một chút, tán thưởng nói: &quot;Một thanh kiếm tốt có thể trưởng thành, đáng tiếc, tiềm lực đã đến giới hạn.&quot;</p>
+                <p>&quot;Nếu chịu đến Võ Khố của ta, ta ngược lại có thể nghĩ cách bồi dưỡng lại thanh kiếm này, khiến nó có tiềm năng xung kích Giới Khí.&quot;</p>
+                <p>Võ Khố? Giang Phàm nghi hoặc nhìn nữ nhân này, nàng ta là người đến từ Võ Khố nơi Liễu Khuynh Tiên đang ở sao? Hơn nữa, nghe có vẻ không có ác ý quá lớn.</p>
+                <p>Hắn hơi yên tâm, lại hoạt bát trở lại, chắp tay nói: &quot;Võ Khố là một trong Tứ Đại Thế Giới, ta nếu có thể gia nhập Võ Khố, là vinh hạnh của ta.&quot;</p>
+                <p>&quot;Nhưng, vãn bối hiện tại muốn gấp rút đến một nơi, sau khi xong việc sẽ lập tức đi theo tiền bối đến Võ Khố.&quot;</p>
+                <p>Nếu Đại Tửu Tế và Loạn Cổ Huyết Lữ vẫn đang khó khăn giằng co, vừa hay có thể lợi dụng nữ nhân này mà.</p>
+                <p>Nào ngờ, Hoàng Sam Mỹ Phụ &quot;hề hề&quot; cười một tiếng, nhét Tà Kiếm trở lại tay Giang Phàm, nói: &quot;Hề hề, ánh mắt của ngươi nói cho ta biết, ngươi muốn lợi dụng ta.&quot;</p>
+                <p>Chết tiệt! Giang Phàm thầm rùng mình.</p>
+                <p>Lão quái vật Tam Tai Cảnh, không ai là dễ tính toán cả. Mấy trò vặt của mình trong mắt nàng ta đều rõ như ban ngày.</p>
+                <p>&quot;Thu lại mấy cái tâm tư nhỏ nhặt của ngươi đi, ngoan ngoãn đi theo ta.&quot; Hoàng Sam Mỹ Phụ vẫn đặt tay lên vai Giang Phàm, nói: &quot;Trước tiên đi cùng ta đến Nam Càn một chuyến, giải quyết xong chuyện.&quot;</p>
+                <p>&quot;Sau đó, ta sẽ đưa ngươi về Võ Khố, nếu ngươi nghe lời, ta đích thân thu ngươi làm đệ tử cũng không phải là không thể.&quot;</p>
+                <p>Trong lòng Giang Phàm sốt ruột. Đại Tửu Tế giờ phút này sống chết không rõ, hắn nào có thời gian lãng phí ở nơi khác?</p>
+                <p>Nhưng, lão nữ nhân Tam Tai Cảnh này hiển nhiên sẽ không thả hắn đi. Hắn trong tay nàng ta lại không có chút sức phản kháng nào..</p>
+                <p>Phải làm sao đây?</p>
+                <p>Đúng lúc này. Hoàng Sam Mỹ Phụ đột nhiên nhíu mũi, bàn tay theo bản năng buông Giang Phàm ra, hơi lùi lại mấy bước, ghét bỏ nhìn Giang Phàm: &quot;Trên người ngươi có mùi gì vậy?&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2075">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2075: Thời gian chi kiếm</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Ân? Giang Phàm ngẩn người, hắn có mùi gì chứ? Đưa tay lên ngửi, cuối cùng hắn cũng ngửi thấy một luồng hơi hôi thối còn sót lại, là mùi của Băng Tâm giả dạng lão bà. Băng Tâm từng ôm cánh tay hắn, nên mới lưu lại khí vị.</p>
+                <p>Thế nhưng, mùi này cũng đâu quá nồng? Không ngửi kỹ, căn bản không thể phát hiện, phản ứng của Hoàng Sam Mỹ Phụ Nhân có phải quá mức rồi không?</p>
+                <p>&quot;Ta nhớ ra rồi, là của lão bà kia?&quot;</p>
+                <p>Trong đầu Hoàng Sam Mỹ Phụ Nhân hiện lên hình ảnh lão bà răng vàng khè, mấy ngày không tắm rửa, không khỏi một trận buồn nôn. Nàng giơ tay đánh ra kiếm khí kinh khủng, tạo thành một trận kiếm vũ xối rửa toàn thân Giang Phàm. Không chỉ loại bỏ mùi hôi thối còn sót lại, mà còn tẩy rửa sạch sẽ cả cơ thể Giang Phàm.</p>
+                <p>Người hắn bị tẩy trắng cả một vòng! Giang Phàm một trận câm nín, lão nữ nhân này có phải mắc bệnh sạch sẽ không? Nghĩ đến sự ghét bỏ của nàng đối với Đại Hắc Cẩu, hắn càng thêm xác nhận suy đoán trong lòng.</p>
+                <p>Sạch sẽ, sạch sẽ...</p>
+                <p>Bỗng nhiên, trong mắt Giang Phàm lóe lên một tia tinh quang. Có rồi! Có cách thoát khỏi lão nữ nhân này rồi! Hoàng Sam Mỹ Phụ Nhân đánh giá Giang Phàm đã hoàn toàn đổi mới, trên mặt nàng lại lộ ra vẻ hài lòng, nói: &quot;Sạch sẽ rồi?&quot;</p>
+                <p>&quot;Đi theo ta.&quot;</p>
+                <p>Nàng lại tiến lên, một tay đặt lên vai Giang Phàm, tay còn lại nhẹ nhàng vẫy một cái.</p>
+                <p>Keng keng keng —</p>
+                <p>Trận kiếm khí ngập trời hóa thành từng luồng kiếm quang, thu về trong vỏ kiếm sau lưng. Hóa ra, sau lưng nàng không phải một thanh kiếm, mà là không gian kiếm hạp ẩn chứa càn khôn! Giang Phàm đảo mắt, nói: &quot;Tiền bối, người không cần phải làm khó ta nữa, ta sẽ cởi Hư Không Vũ Y ra, tạm thời giao cho người bảo quản, thế nào?&quot;</p>
+                <p>Hoàng Sam Mỹ Phụ Nhân suy nghĩ một chút, liền gật đầu đồng ý. Hư Không Vũ Y là chìa khóa để Giang Phàm có thể dịch chuyển tức thời, mất đi y phục này, Giang Phàm rất khó thoát khỏi lòng bàn tay nàng.</p>
+                <p>Rất nhanh, một kiện Hư Không Vũ Y còn vương hơi ấm đã nằm trong tay Hoàng Sam Mỹ Phụ Nhân. Nàng lộ ra một tia kinh ngạc: &quot;Ngươi quả nhiên có bản lĩnh, Hư Không Vũ Y của Thiên Sứ tộc là chí bảo của quý tộc Thiên Sứ.&quot;</p>
+                <p>&quot;Hầu như không lưu truyền ra bên ngoài, ngươi lại có thể có được một kiện.&quot;</p>
+                <p>Giang Phàm cười nói: &quot;Do cơ duyên xảo hợp mà có được, tiền bối có thể yên tâm về ta rồi chứ?&quot; Hắn ý niệm lướt qua Thiên Lôi Thạch, nhìn thấy ba kiện Hư Không Vũ Y chưa tặng đi, khẽ thở phào nhẹ nhõm.</p>
+                <p>Hoàng Sam Mỹ Phụ Nhân buông tay, dưới chân ngưng tụ thành một luồng kiếm quang. Nàng khoanh chân ngồi xuống, nói: &quot;Ngồi xuống đi.&quot; Giang Phàm gật đầu, lại nhìn Đại Hắc Cẩu ở đằng xa, nói: &quot;Vậy còn thú cưng của ta?&quot;</p>
+                <p>Hoàng Sam Mỹ Phụ Nhân nhíu mày, nói: &quot;Trước tiên thu nó lại, nhốt kỹ vào, đừng để nó ra ngoài.&quot;</p>
+                <p>&quot;Nhìn thấy là ghê tởm.&quot;</p>
+                <p>Giang Phàm lập tức lấy ra Không Gian Kính Tử, triệu Đại Hắc Cẩu đang bị thương vào trong. Sau đó ngoan ngoãn ngồi phía sau Hoàng Sam Mỹ Phụ Nhân, mắt không ngừng đảo. Trong đầu hắn đang ấp ủ đủ loại kế hoạch thoát thân.</p>
+                <p>Hoàng Sam Mỹ Phụ Nhân thúc giục kiếm ảnh, lao nhanh về phía ngược lại, trong lòng khẽ lắc đầu: &quot;Dễ dàng nắm giữ như vậy, vị Quán Quân Hầu này thật khiến người ta có chút thất vọng.&quot;</p>
+                <p>&quot;Có lẽ, Quán Quân Hầu của hắn, là vì người đầu tiên khôi phục thế giới hắc ám, mới được phá cách ban tặng chăng.&quot;</p>
+                <p>Nàng từng mong đợi Giang Phàm sẽ thể hiện một loạt thủ đoạn để chống lại nàng, thậm chí khiến nàng phải tốn sức mới bắt được. Nhưng, tất cả đều không có. So với ấn tượng về Quán Quân Hầu vang danh chư thiên mà nàng từng nghe, khác biệt quá xa.</p>
+                <p>&quot;Thôi vậy, mang về rồi tính, dù hắn không phải nhân tài gì, làm một chiêu trò cũng không tệ.&quot; Nàng có chút mất hứng, không quay đầu lại nói: &quot;Chuyến đi đến Nam Thiên Giới cần một thời gian, ngươi cứ tiếp tục tôi luyện thể phách đi.&quot;</p>
+                <p>Dọc đường âm thầm theo dõi, nàng đã thấy Giang Phàm tu luyện. Công pháp đó, vẫn có chút danh tiếng. Giang Phàm đang bò lết chạy trốn, đâu có tinh lực để tu luyện, liền tùy tiện thoái thác: &quot;Pháp môn luyện thể hoàn mỹ, khá tốn thời gian, vẫn nên đợi khi nào có cơ hội rảnh rỗi rồi nói.&quot;</p>
+                <p>Hoàng Sam Mỹ Phụ Nhân quay đầu liếc nhìn Giang Phàm, suy nghĩ một chút. Trong vỏ kiếm sau lưng nàng &quot;keng&quot; một tiếng, một thanh linh kiếm cực phẩm màu bạc trắng, quanh thân bao quanh bởi hư ảnh một dòng sông dài, bay ra.</p>
+                <p>Vừa mới xuất hiện, tiếng gió xung quanh Giang Phàm đều trở nên chậm lại rất nhiều. Những thiên thạch bụi bặm lẽ ra phải bay vụt qua bên cạnh, tốc độ cũng chậm chạp vô cùng.</p>
+                <p>&quot;Pháp tắc thời gian?&quot; Giang Phàm kinh ngạc nói. Hoàng Sam Mỹ Phụ Nhân thản nhiên nói: &quot;Đây là Thời Gian Chi Kiếm, được rèn từ xương sống của một Thời Gian Đại Hiền, trời sinh ẩn chứa pháp tắc thời gian.&quot;</p>
+                <p>&quot;Trước khi đến Nam Càn, giao cho ngươi.&quot;</p>
+                <p>Giang Phàm thầm kinh ngạc. Quả nhiên là Tam Tai Cảnh, trong hơn chín mươi thanh kiếm, tùy tiện một thanh cũng phi phàm như vậy. Hắn hai tay nâng Thời Gian Chi Kiếm, lập tức phát hiện thời gian xung quanh mình nhanh gấp ba lần so với bên ngoài.</p>
+                <p>Mặc dù không có Thời Không Lậu Sái, có thể khiến thời gian của bản thân nhanh gấp mười lần. Nhưng, đây là một thanh kiếm có thể không ngừng phát ra pháp tắc thời gian. Xa không thể so với Thời Không Lậu Sái là vật phẩm tiêu hao. Sau này có kiếm này, tốc độ tôi luyện thể phách của hắn sẽ tăng lên rất nhiều.</p>
+                <p>Còn về việc phải trả lại cho Hoàng Sam Mỹ Phụ Nhân... Kiếm hoang dã, dựa vào đâu mà trả? Hắn đặt Thời Gian Chi Kiếm ngang trên đầu gối, tâm niệm nhanh chóng xoay chuyển. Từng có kinh nghiệm giao đấu với Mãng Thiên Thánh Thú, hắn quá hiểu sự đáng sợ của Tam Tai Cảnh. Một ánh mắt cũng đủ khiến đạo thể hắn hủy diệt.</p>
+                <p>Vì vậy, hắn chỉ có một cơ hội, và phải khiến Hoàng Sam Mỹ Phụ Nhân không kịp bận tâm đến hắn. Sai một bước là công dã tràng. Nếu thất bại, kết cục chờ đợi hắn, chắc chắn là bị giam cầm triệt để, đừng hòng đi cứu Đại Tửu Tế nữa. Hắn tâm niệm nhanh chóng xoay chuyển, suy nghĩ đủ loại chi tiết, đảm bảo vạn vô nhất thất.</p>
+                <p>Đủ nửa chén trà sau. Hắn giả vờ điều tức hít sâu một hơi, nói: &quot;Tiền bối, ta bắt đầu tu luyện đây.&quot;</p>
+                <p>&quot;Nếu có làm phiền người, xin hãy lượng thứ.&quot;</p>
+                <p>Hoàng Sam Mỹ Phụ Nhân nhắm mắt, khẽ gật đầu, rất nhanh liền cảm ứng được Giang Phàm mở túi không gian sinh mệnh. Chờ đã, tại sao lại là túi không gian sinh mệnh? Nàng đột nhiên mở to mắt, nhìn về phía sau.</p>
+                <p>Ánh mắt đáng sợ phát ra thế hủy thiên diệt địa, đủ để trấn áp mọi hành động của Giang Phàm. Tuy nhiên. Một luồng khí tức hung tàn khiến sắc mặt nàng kịch biến ập đến. Luồng khí tức đó, mang theo sự khát máu và bạo ngược cực độ, như thể nó đến từ một thời đại cực kỳ cổ xưa, còn ẩn chứa uy áp thần bí.</p>
+                <p>Càng đáng sợ hơn, đối phương có khí tức của Tam Tai Cảnh! Đừng nói ánh mắt nàng bắn tới, ngay cả kiếm ảnh dưới chân nàng, cũng trong khoảnh khắc nó xuất hiện mà bị chấn nát. Khi nhìn rõ, hóa ra là một con hung thú có đầu rồng, toàn thân phủ vảy đen, phát ra khí tức hung lệ ngập trời!</p>
+                <p>&quot;Mãng Thiên Thánh Thú!&quot;</p>
+                <p>Hoàng Sam Mỹ Phụ Nhân đại kinh thất sắc, tim đột nhiên đập loạn, theo bản năng muốn rút kiếm nghênh địch. Nhưng rất nhanh phát hiện không đúng. Mãng Thiên Thánh Thú khí tức thoi thóp, rõ ràng có thương thế trên người. Hơn nữa, sau khi xuất hiện, nó nằm yên tại chỗ, kiêu ngạo ngẩng cổ, không có ý định tấn công bất kỳ ai..</p>
+                <p>Hoàng Sam Mỹ Phụ Nhân dù sao cũng là Tam Tai Cảnh, lập tức trấn tĩnh lại, ánh mắt sắc bén bắn về phía Giang Phàm trên lưng nó: &quot;Thằng nhóc này, muốn lợi dụng Mãng Thiên Thánh Thú để đối phó ta?&quot;</p>
+                <p>&quot;Đáng tiếc, quan giai của ngươi không đủ, không thể chỉ huy nó!&quot; Giang Phàm khẽ cười, lấy ra một chiếc chuông đen, nói: &quot;Ai nói ta muốn dùng nó để đối phó người?&quot;</p>
+                <p>&quot;Chuẩn bị đón nhận đại lễ ta tặng người đi!&quot;</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_414.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_414.html" class="page-btn">414</a>
+            <a href="page_415.html" class="page-btn current">415</a>
+            <a href="page_416.html" class="page-btn">416</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_416.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

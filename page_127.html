@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 127">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 127</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_126.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_128.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_631">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 631: Sỉ nhục</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Toàn trường hoàn toàn tĩnh mịch.</p>
+                <p>Tứ kiệt đệ nhất chiến, liền bại thảm như vậy?</p>
+                <p>Mười năm trước, một màn có thể xưng ác mộng lại lần nữa tái hiện!</p>
+                <p>Lưu Ly giật mình, ánh mắt có chút đăm đăm.</p>
+                <p>Thật làm cho Giang Phàm nói trúng.</p>
+                <p>Bọn hắn sẽ thảm bại!</p>
+                <p>Bị bại không còn mặt mũi!</p>
+                <p>&quot;Giang Phàm, chúng ta sẽ thua sao?&quot; Lưu Ly cắn chặt môi đỏ.</p>
+                <p>Bởi vì dùng sức, bờ môi đều cắn ra từng tia huyết ấn.</p>
+                <p>Gặp nàng khó chịu như thế, Giang Phàm đặt dưa trong tay xuống.</p>
+                <p>Hơi hơi thở dài: &quot;Không có gì bất ngờ xảy ra, sẽ thua.&quot;</p>
+                <p>Vẻn vẹn Tây Quân yếu nhất, còn có thực lực miểu sát Hỗn Nguyên.</p>
+                <p>Thật sự nhìn không ra, đại lục yêu tộc có hy vọng thắng lợi gì.</p>
+                <p>&quot;Ta tới!&quot;</p>
+                <p>Một tiếng lạnh lùng mà bình tĩnh truyền khắp đại điện.</p>
+                <p>Là Thân Đồ.</p>
+                <p>Tại lúc đám yêu tộc sĩ khí thấp thỏm, hắn vẫn như cũ giữ bình tĩnh.</p>
+                <p>Nện bước chân nặng nề, đi thẳng về phía Vô Mộng.</p>
+                <p>Vô Mộng mặt không biểu tình, nhấc chưởng liền là màu lam nước buộc.</p>
+                <p>Phốc phốc ――</p>
+                <p>Sau lưng Thân Đồ lóe lên tàn ảnh, màu lam nước buộc này liền bị toàn bộ tiếp lấy.</p>
+                <p>Ngay sau đó.</p>
+                <p>Tàn ảnh huy sái, màu lam nước buộc dùng tốc độ nhanh hơn đảo cuốn tới!</p>
+                <p>Vô Mộng trên mặt vẫn như cũ biểu lộ nhàn nhạt.</p>
+                <p>Áo bào xám dưới, lại lần nữa nhô ra xúc tu tập trung, đánh nát nước buộc.</p>
+                <p>Nhưng trước mắt hắn hắc ảnh lóe lên.</p>
+                <p>Thân Đồ lại như thuấn di, xuất hiện ở trước người Vô Mộng.</p>
+                <p>Lúc này Vô Mộng, trên mặt cuối cùng có chút biến hóa, bắt đầu nghiêm túc.</p>
+                <p>Xúc tu trong ngực lốp bốp đánh về phía Thân Đồ.</p>
+                <p>Nhưng, tàn ảnh sau lưng Thân Đồ chớp liên tục.</p>
+                <p>Vô Mộng liền con ngươi co rụt lại, lộ ra vẻ thống khổ.</p>
+                <p>Chỉ thấy xúc tu của nàng không biết gặp phải cái gì, trong nháy mắt bị chặt đứt!</p>
+                <p>Định thần nhìn lại mới phát hiện, sau lưng Thân Đồ, có chín cái đuôi sắc bén như lưỡi đao.</p>
+                <p>Chặt đứt xúc tu xong, liền cùng nhau đâm về phía Vô Mộng.</p>
+                <p>Đại khái Vô Mộng cũng không nghĩ tới, thực lực Thân Đồ lại mạnh hơn Hỗn Nguyên nhiều như vậy.</p>
+                <p>Nàng vội vàng lui lại, tránh một kích này, sau đó đánh ra đạo đạo màu lam nước buộc.</p>
+                <p>Thân Đồ thì bay nhanh lướt đến, thiếp thân mà chiến.</p>
+                <p>Đại lục đám yêu tộc lập tức phấn chấn!</p>
+                <p>Vô Mộng này, cũng không phải là cường đại đến không thể chiến thắng!</p>
+                <p>Còn không phải bị Thân Đồ đuổi theo chạy?</p>
+                <p>Ngay tại lúc đại lục yêu tộc cảm thấy, hai bên sẽ bắt đầu đánh giằng co.</p>
+                <p>Dị biến nảy sinh.</p>
+                <p>Đám xúc tu bị trảm rơi xuống đất, vậy mà thừa dịp lúc Thân Đồ đi ngang qua.</p>
+                <p>Không có dấu hiệu nào làm loạn, cùng một chỗ cuốn lấy song chân và hông chi Thân Đồ.</p>
+                <p>Không đợi Thân Đồ phát động cái đuôi chặt đứt.</p>
+                <p>Nhìn như đang trốn tránh, Vô Mộng vận sức chờ phát động một cái hồi mã thương.</p>
+                <p>Một đạo màu lam nước buộc, đâm xuyên eo Thân Đồ, khiến hắn trọng thương trên mặt đất!</p>
+                <p>Vô Mộng nhẹ nhàng rơi xuống đất, trên mặt khôi phục vẻ đạm mạc:</p>
+                <p>&quot;Tiếp theo cái!&quot;</p>
+                <p>Yêu Hoàng điện lại lần nữa lặng ngắt như tờ.</p>
+                <p>Hết thảy yêu tộc biểu lộ đều ngưng trọng vô cùng.</p>
+                <p>Ai cũng không nghĩ tới, Thân Đồ chiếm hết ưu thế, bị bại đột nhiên như thế!</p>
+                <p>Lưu Ly hai tay giảo vào nhau, trong mắt đầy vẻ không thể nào tiếp thu được.</p>
+                <p>&quot;Nàng gian lận!&quot;</p>
+                <p>Giang Phàm lạnh nhạt nói: &quot;Chế tạo bẫy rập, là sáo lộ thường dùng trong sinh tử chém giết.&quot;</p>
+                <p>&quot;Luận bàn rất ít thấy.&quot;</p>
+                <p>&quot;Thân Đồ bị bại không oan.&quot;</p>
+                <p>Hắn nhìn về phía Vô Mộng, lộ ra một luồng tán thưởng.</p>
+                <p>Vốn tưởng cô gái này cực độ ngạo mạn, sẽ lộ ra rất nhiều sơ hở.</p>
+                <p>Không ngờ, nàng thật có vốn ngạo mạn.</p>
+                <p>Trong tình thế xấu rõ ràng bị khắc chế thủ đoạn, còn có thể thiết kế hạ gục Thân Đồ.</p>
+                <p>Không có đại lượng kinh nghiệm chém giết, rất khó dễ dàng làm đến bước này.</p>
+                <p>Lúc này.</p>
+                <p>Yêu Hoàng đều hơi ngồi không yên.</p>
+                <p>Nhìn về phía hy vọng duy nhất trong tứ kiệt.</p>
+                <p>&quot;Mịch Long, nhìn ngươi.&quot;</p>
+                <p>Mịch Long nhẹ nhàng gật đầu, trên mặt không có tâm tình gì.</p>
+                <p>Chỉ lẳng lặng đi về phía Vô Mộng.</p>
+                <p>Thủy chung bình tĩnh quan chiến, ba vị Quân khác, vẻ mặt hơi biến đổi.</p>
+                <p>Bằng hữu Nam Quân, hơi nhăn lông mày, nhắc nhở: &quot;Vô Mộng, lưu tâm người này.&quot;</p>
+                <p>&quot;Hắn khác hai người kia.&quot;</p>
+                <p>Hàng năm sinh tử chém giết bọn hắn, có bẩm sinh phán đoán về nguy hiểm.</p>
+                <p>Mịch Long cho bọn hắn cảm giác rất khác biệt.</p>
+                <p>Không cần bọn hắn nhắc nhở, Vô Mộng cũng rất cảnh giác, nói:</p>
+                <p>&quot;Là ta xem nhẹ đại lục yêu tộc.&quot;</p>
+                <p>&quot;Thế hệ đồng lứa này, thật có tồn tại không tầm thường!&quot;</p>
+                <p>Xoẹt ――</p>
+                <p>Nàng chủ động tế ra xúc tu dưới bào, dùng làm phòng ngự.</p>
+                <p>Nhưng sau khắc.</p>
+                <p>Bên tai hắn xuất hiện một giọng nói trong sáng.</p>
+                <p>&quot;Kết thúc.&quot;</p>
+                <p>Vô Mộng con ngươi co rụt lại!</p>
+                <p>Chuyện gì xảy ra?</p>
+                <p>Mịch Long không phải còn đang đi về phía nàng sao?</p>
+                <p>Tại sao lại xuất hiện ở sau lưng?</p>
+                <p>Là huyễn thuật! !</p>
+                <p>Chính mình trúng huyễn thuật!</p>
+                <p>Nàng trong lòng kinh hoàng, lập tức điều động xúc tu đánh úp về phía sau lưng.</p>
+                <p>Có thể theo tiếng thổi phù.</p>
+                <p>Một bàn tay xuyên qua bụng.</p>
+                <p>Vô Mộng vừa rồi ra tay tàn nhẫn vô tình, Mịch Long tự nhiên ăn miếng trả miếng.</p>
+                <p>Theo tay rút trở về, Vô Mộng tựa như mất khí lực ngã xuống đất.</p>
+                <p>&quot;Tiếp theo cái!&quot;</p>
+                <p>Lần này, câu nói này đến lượt Mịch Long nói!</p>
+                <p>Yêu tộc lập tức phấn chấn!</p>
+                <p>&quot;Không hổ là tứ kiệt đứng đầu, không tầm thường!&quot;</p>
+                <p>&quot;Chúng ta trận chiến này có hi vọng a!&quot;</p>
+                <p>&quot;Mịch Long mới là vũ khí chung cực của chúng ta!&quot;</p>
+                <p>Lưu Ly trên mặt cũng viết đầy vẻ vui mừng.</p>
+                <p>Hướng Giang Phàm nói nhỏ: &quot;Ai nói chúng ta đại lục yêu tộc sẽ thua rồi?&quot;</p>
+                <p>&quot;Ngươi hãy chờ xem!&quot;</p>
+                <p>&quot;Xem Mịch Long giết Bắc Hải Tứ Quân thế nào đi!&quot;</p>
+                <p>Giang Phàm khẽ lắc đầu: &quot;Mịch Long, muốn dừng bước tại đây.&quot;</p>
+                <p>Lưu Ly cả giận: &quot;Ngươi nói bậy!&quot;</p>
+                <p>&quot;Cho dù tiếp theo cái ra tay là Đông Quân, cũng sẽ không thua!&quot;</p>
+                <p>Giang Phàm không nói gì.</p>
+                <p>Hắn thấy, bại lộ huyễn thuật áp đáy hòm, liền mất tư cách tiếp tục đánh.</p>
+                <p>Thuật này, chỉ có thể đánh kẻ địch bất ngờ.</p>
+                <p>Nếu bị kẻ địch biết, sẽ mất hiệu quả này.</p>
+                <p>Bá ――</p>
+                <p>Bằng hữu Nam Quân kéo tới.</p>
+                <p>Hắn vừa ra trận, toàn thân liền phun ra lượng lớn khói mù màu tím, bao phủ toàn bộ lôi đài.</p>
+                <p>Không chỉ che giấu thân hình mình.</p>
+                <p>Còn hiệu quả ngăn chặn Mịch Long phát động huyễn thuật.</p>
+                <p>Càng khó giải quyết hơn là, khói mù màu tím có kịch độc.</p>
+                <p>Căn bản không nên đánh lâu trong đó.</p>
+                <p>Đám cường giả yêu tộc bốn phía, đều không thể nhìn thấu tình hình trong sương mù tím.</p>
+                <p>Chỉ nghe được tiếng đại chiến kịch liệt vô cùng.</p>
+                <p>Trong lòng bọn họ nóng bỏng vô cùng.</p>
+                <p>Cuối cùng, sau một chén trà.</p>
+                <p>Bịch một tiếng, một thân ảnh khạc máu bay ngược ra sương mù tím.</p>
+                <p>Rõ ràng là Mịch Long!</p>
+                <p>Hắn toàn thân phát tím, rõ ràng trúng độc rất sâu.</p>
+                <p>Trên thân càng có vài vết thương.</p>
+                <p>Khụ khụ ――</p>
+                <p>Sương mù màu tím thu lại, đã thấy bằng hữu cũng không tốt hơn.</p>
+                <p>Cánh tay bị xé đứt một cái, trên người mấy vết thương xuyên thủng trước sau ghê rợn.</p>
+                <p>Thân thể lung la lung lay, khó mà đứng vững.</p>
+                <p>Trên mặt hắn tràn đầy kinh ngạc: &quot;Ta thừa nhận là chính mình xem thường đại lục yêu tộc.&quot;</p>
+                <p>&quot;Trong sương mù tím của ta, còn có thể trọng thương ta như vậy.&quot;</p>
+                <p>&quot;Ngươi vẫn là người đầu tiên!&quot;</p>
+                <p>&quot;Nếu không phải ngươi trúng độc sâu hơn, hôm nay bại chính là ta!&quot;</p>
+                <p>Lời khen từ kẻ địch, không nghi ngờ gì là sự khẳng định cao nhất đối với thực lực Mịch Long.</p>
+                <p>Có thể bên yêu tộc, không có bất kỳ người nào thấy vui.</p>
+                <p>Bởi vì, bọn hắn bại!</p>
+                <p>Thua triệt để!</p>
+                <p>Tứ kiệt thập tinh, đều thảm bại!</p>
+                <p>Chiến thắng duy nhất, chẳng qua là đánh bại Tây Quân yếu nhất trong Bắc Hải Tứ Quân!</p>
+                <p>Cái này so mười năm trước, tốt hơn một chút!</p>
+                <p>Yêu Hoàng chán nản tựa vào hoàng tọa.</p>
+                <p>Lấy tay nâng trán.</p>
+                <p>Không nói một lời.</p>
+                <p>Ai cũng có thể cảm nhận được, sự sụp đổ của Yêu Hoàng lúc này.</p>
+                <p>Mười năm tâm huyết, lại không chịu nổi một kích!</p>
+                <p>Một cảm giác thất bại thật sâu, xông lên lòng đám yêu tộc.</p>
+                <p>Bọn hắn giờ phút này, cảm nhận được không còn là sỉ nhục.</p>
+                <p>Mà là vô lực!</p>
+                <p>Hăng hái mười năm, vẫn như cũ bị đối phương quét ngang.</p>
+                <p>Đại lục yêu tộc thật kém xa Bắc Hải Yêu tộc.</p>
+                <p>Người ta không nguyện ý giao lưu học tập nữa, là quyết định quá chính xác!</p>
+                <p>Lưu Ly cúi đầu, khổ sở rơi lệ.</p>
+                <p>&quot;Tại sao lại thế này?&quot;</p>
+                <p>&quot;Vì sao. . .&quot;</p>
+                <p>Từng giọt nước mắt trong veo, rơi vào bàn tay nàng.</p>
+                <p>Làm dịu vết thương bị móng tay nàng bóp chảy máu.</p>
+                <p>Nước mắt kích thích vết thương, sinh ra trận trận nhói nhói, Lưu Ly lại không hề phát giác.</p>
+                <p>Chẳng qua là vai không ngừng tốc động, không ngừng rơi lệ.</p>
+                <p>Giang Phàm để mắt thấy, lộ ra suy tư.</p>
+                <p>Lúc này.</p>
+                <p>Ngư Thanh Huyền chậm rãi đứng dậy, hắn cũng không cười trên nỗi đau của người khác, cũng không đắc ý gì.</p>
+                <p>Bởi vì, kết quả hoàn toàn trong dự liệu.</p>
+                <p>Nếu nói có chút ngoài ý muốn, đó chính là Tây Quân sẽ bại.</p>
+                <p>Trong kế hoạch, Bắc Hải Tứ Quân toàn thắng.</p>
+                <p>Như vậy cũng tốt, bại một cái, cũng coi như cho đại lục yêu tộc miễn cưỡng lưu lại một chút mặt mũi.</p>
+                <p>&quot;Yêu Hoàng, nếu quý tộc toàn bại, vậy. . .&quot;</p>
+                <p>Đang nói xong.</p>
+                <p>Một giọng nói trong sáng, phá vỡ yên lặng của đại điện.</p>
+                <p>Lại là Giang Phàm.</p>
+                <p>Hắn chậm rãi đứng dậy, nói:</p>
+                <p>&quot;Ai nói đại lục yêu tộc toàn bại?&quot;</p>
+                <p>&quot;Trong tứ kiệt, không phải còn có Linh Sơ chưa ra tay sao?&quot;.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_632">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 632: Giang Phàm lễ vật</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Một lời nói ra, các cường giả Yêu tộc khẽ thở dài.</p>
+                <p>Linh Sơ ư? Nàng ra trận thì làm được gì? Mịch Long còn bại trận, nói gì đến Linh Sơ?</p>
+                <p>Yêu Hoàng từ xa nhìn Linh Sơ, trong mắt không chút gợn sóng. Toàn cục đã định. Để Linh Sơ ra trận, chẳng còn ý nghĩa gì.</p>
+                <p>Thân thể mềm mại của Linh Sơ khẽ chấn động. Nàng hiểu rõ sự lợi hại của Tây Quân và Nam Quân. Làm sao nàng không biết, mình lên sân khấu cũng chỉ là bước theo Hỗn Nguyên xuống đài? Có điều, dưới con mắt bao người, bị Giang Phàm điểm tên, nàng nghĩ không chiến cũng khó.</p>
+                <p>Răng ngà hơi cắn nhẹ, nàng nói: &quot;Đúng! Chúng ta tứ kiệt vẫn chưa bại hoàn toàn! Còn có ta!&quot;</p>
+                <p>Mọi người không khỏi nhíu mày, nhìn Giang Phàm với ánh mắt trách cứ. Không phải ép Linh Sơ ra trận làm gì? Để nàng cũng rơi vào cảnh khó xử, khiến tứ kiệt thật sự toàn bại có tốt hơn không?</p>
+                <p>&quot;Ngươi lại đây.&quot; Giang Phàm gọi Linh Sơ, người đang định bước ra sân. &quot;Ta có lời muốn nói với ngươi.&quot;</p>
+                <p>Linh Sơ gật đầu, xách váy chạy đến trước mặt Giang Phàm. Dù trên mặt có thấp thỏm, nàng vẫn cố gắng duy trì vẻ mặt không màng danh lợi.</p>
+                <p>&quot;Ca ca có dặn dò gì ạ?&quot;</p>
+                <p>Giang Phàm lấy ra Vạn Yêu Thạch. Theo lời kẻ phản bội, Yêu tộc đeo nó trên người có thể tăng gấp đôi Yêu lực. Nếu lời này không giả, Linh Sơ đeo nó hẳn có thể đạt Yêu lực Kết Đan tầng tám. Dù không địch lại, tin rằng cũng sẽ không quá chật vật.</p>
+                <p>Hắn dùng dây thừng xâu Vạn Yêu Thạch thành một vòng cổ, nói: &quot;Ta đeo cho ngươi.&quot;</p>
+                <p>Khuôn mặt nhỏ của Linh Sơ hơi đỏ lên. Dù ở Yêu tộc, tặng vòng cổ cho nữ hài cũng có ý nghĩa đặc biệt. Lại còn trước mặt nhiều người Yêu tộc như vậy.</p>
+                <p>Do dự một chút, nàng mím nhẹ môi đỏ, ngượng ngùng cúi đầu.</p>
+                <p>Giang Phàm đeo vòng cổ lên cho nàng, rồi nhét viên Vạn Yêu Thạch làm mặt dây chuyền vào trong ngực nàng, đeo sát thân.</p>
+                <p>&quot;Thả lỏng mà chiến, thắng được càng tốt, bại cũng không cần vội.&quot;</p>
+                <p>Linh Sơ vuốt ve viên Vạn Yêu Thạch qua lớp quần áo. Trong lòng được cổ vũ, nói: &quot;Cảm ơn quà tặng của ca ca. Linh Sơ nhất định toàn lực ứng phó.&quot;</p>
+                <p>Nàng xoay người, bước về phía Nam Quân bạn cũ.</p>
+                <p>Nam Quân lau máu nơi khóe miệng, cười ha hả: &quot;Khói độc của ta bất kể ngươi có xinh đẹp hay không, có phải là nữ hài hay không. Ngươi vẫn đừng đến.&quot;</p>
+                <p>Linh Sơ hít sâu một hơi, nói: &quot;Ba vị đại ca của ta đều ngã xuống. Tới lượt ta!&quot;</p>
+                <p>Thấy thái độ nàng kiên định, Nam Quân bất đắc dĩ nói: &quot;Được thôi, nhưng ta nhắc nhở ngươi. Dù ta bị thương, ngươi cũng không thể nào là đối thủ của ta!&quot;</p>
+                <p>Nói xong, hắn lại lần nữa tuôn ra sương mù màu tím mãnh liệt, bao phủ lẫn nhau.</p>
+                <p>Tiếng giao chiến lập tức vang lên. Nhưng không lâu sau, một thân ảnh ho ra máu ngang nhiên bay ra.</p>
+                <p>Các cường giả Yêu tộc không dám nhìn.</p>
+                <p>&quot;Đã bảo đừng để nàng lên, không chịu nghe.&quot;</p>
+                <p>&quot;Có ý nghĩa gì đâu?&quot;</p>
+                <p>&quot;Vô cớ bị người làm bị thương.&quot;</p>
+                <p>&quot;Nữ hài tử xinh đẹp thế, bị đánh cho chật vật thế này, ai.&quot;</p>
+                <p>&quot;Cái tên Giang Phàm này, có thể làm chút chuyện tốt được không...&quot;</p>
+                <p>Nhưng thân ảnh bay ngang ra, sau khi đụng đất, lại phát ra tiếng kinh ngạc của nam tử: &quot;Ngươi... Ngươi là Kết Đan tầng tám?&quot;</p>
+                <p>&quot;Làm sao có thể?&quot;</p>
+                <p>Các cường giả Yêu tộc sửng sốt, đồng loạt nhìn về phía người đang nằm trên đất, cả người là máu. Đó căn bản không phải Linh Sơ, là Nam Quân bạn cũ!</p>
+                <p>Hắn ngạc nhiên nhìn về phía đám sương mù màu tím dần tiêu tán.</p>
+                <p>Trong sương mù tím, Linh Sơ xinh đẹp mà đứng thẳng. Váy bay phấp phới, tóc đen phất qua vai. Giống như liễu rủ bên dòng suối, tươi mát mà mảnh mai.</p>
+                <p>Chỉ như vậy nàng, lại đánh bại cao thủ mà Mịch Long còn không địch nổi!</p>
+                <p>&quot;Linh... Linh Sơ... Thắng?&quot; Lưu Ly che môi đỏ, đôi mắt xinh đẹp trừng lớn, lắp bắp nói.</p>
+                <p>Một câu bừng tỉnh người trong mộng. Các cường giả Yêu tộc cùng nhau phát ra tiếng kinh hô.</p>
+                <p>&quot;Linh Sơ thắng?&quot;</p>
+                <p>&quot;Ta không nhìn lầm đi! Là người của chúng ta thắng!&quot;</p>
+                <p>&quot;Trời ạ!&quot;</p>
+                <p>&quot;Linh Sơ thế mà thắng!&quot;</p>
+                <p>Yêu Hoàng đang nhắm mắt trầm tư, nghe vậy choàng mắt. Khi biết rõ tình hình trước mắt, hắn kích động đứng lên, trên mặt không kìm nén được niềm vui: &quot;Tốt! Linh Sơ! Làm tốt lắm!&quot;</p>
+                <p>Ai có thể ngờ tới, một kẻ không được coi trọng nhất trong tứ kiệt, thế mà đánh bại bạn cũ mà Mịch Long còn không địch nổi!</p>
+                <p>Kể từ đó, Bắc Hải Tứ Quân, bại hai vị! Trận chiến này của Đại lục Yêu tộc dù bại, lại tốt hơn mười năm trước rất nhiều!</p>
+                <p>Ngư Thanh Huyền vẻ mặt cứng đờ, cảm thấy ngoài ý muốn. Bạn cũ thế mà thua? Lại còn thua Linh Sơ, người hắn không để vào mắt?</p>
+                <p>Thanh tuyến hắn siết chặt, nói: &quot;Chiếu Nhật! Ngươi lên!&quot;</p>
+                <p>Bắc Quân Chiếu Nhật cũng lộ vẻ nghiêm túc. Thực lực của bạn cũ, ngang ngửa với hắn. Dù là bị thương sau trận chiến với Mịch Long, cũng không đến mức thua trong tay Linh Sơ! Cô gái này chắc chắn có chỗ quỷ dị!</p>
+                <p>Hắn lập tức ra tay đánh đòn phủ đầu! Thân thể chấn động, liền tại chỗ ẩn thân!</p>
+                <p>Linh Sơ vẫn còn đắm chìm trong sự bất ngờ khi chiến thắng bạn cũ. Nàng nhìn nhìn hai nắm đấm của mình, mặt mũi tràn đầy khó hiểu. Khi chiến đấu với bạn cũ, nàng cảm giác lực lượng của mình, dường như tăng lên rất nhiều!</p>
+                <p>Đột nhiên, nàng mơ hồ phát giác điều gì đó. Vung tay áo, một tay áo linh quang màu xanh lá vãi ra ngoài, bao trùm bốn phía.</p>
+                <p>&quot;Bạo!&quot; Cái miệng nhỏ nhắn của nàng khẽ nhả.</p>
+                <p>Những linh quang đó đồng thời nổ tung! Uy lực dù không coi là quá kinh người, nhưng thắng ở số lượng rất nhiều! Nàng quanh thân tạo thành một mảnh tia lửa nổ tung vô cùng tập trung!</p>
+                <p>Chiếu Nhật vội vàng không kịp chuẩn bị, bị một mảnh nổ tung làm lộ ra thân hình. Quần áo trên người, lông tóc đều bị tạc quang.</p>
+                <p>Hắn có chút tức giận xuyên qua làn khói nổ tung, hóa thành một đạo tàn ảnh, dùng đầu hung hăng húc vào Linh Sơ. Đầu của hắn, tản ra hồng mang nguy hiểm.</p>
+                <p>Linh Sơ dù không biết có nguy hiểm gì, nhưng cũng kịp thời phản ứng. Linh quang màu xanh lá giữa song chưởng, ngưng tụ thành một cây côn bổng, hung hăng đập tới.</p>
+                <p>Phanh ——</p>
+                <p>&quot;Ngao&quot;</p>
+                <p>Chỉ thoáng chốc, Chiếu Nhật bị một gậy nện đến kêu thảm bay ra ngoài. Cái đầu cứng rắn kia, bị vỡ sọ, máu tươi chảy ngang.</p>
+                <p>&quot;Ngươi, ngươi là Kết Đan tầng tám!&quot; Chiếu Nhật nặng nề ngã xuống đất, kinh ngạc lại phẫn nộ: &quot;Cá Chủ, chúng ta bị lừa rồi! Cái tên Linh Sơ này mới là tứ kiệt đứng đầu, nàng mới là vương bài ẩn giấu!&quot;</p>
+                <p>Cái gì? Ngư Thanh Huyền giật nảy cả mình! Kết Đan tầng tám?</p>
+                <p>Yêu thú Kết Đan, càng về sau, chênh lệch thực lực giữa mỗi cấp bậc càng xa. Kết Đan tầng bảy dù chơi ra đủ hoa hòe, cũng rất khó chống lại Kết Đan tầng tám.</p>
+                <p>Sắc mặt hắn bình tĩnh vô cùng! Thật không ngờ, cái cô tiểu cô nương mà Tây Quân còn không nhìn thuận mắt này, mới là nhân vật hung tàn nhất! Một thoáng hạ gục hai vị trong Bắc Hải Tứ Quân!</p>
+                <p>Trái lại, bên phía Yêu tộc, bùng phát ra tiếng hò reo kinh hỉ!</p>
+                <p>&quot;Lại thắng một cái!&quot;</p>
+                <p>&quot;Nếu nói thắng bạn cũ là do đối phương bị thương.&quot;</p>
+                <p>&quot;Cái tên Chiếu Nhật này không phải chứ?&quot;</p>
+                <p>&quot;Không ngờ, thật không ngờ a, cuối cùng cứu vãn cục diện lại là Linh Sơ!&quot;</p>
+                <p>Mịch Long, Thân Đồ và Hỗn Nguyên ba người, vẻ mặt như gặp quỷ. Bọn họ sớm tối ở chung, còn có thể không rõ thực lực của Linh Sơ? Sao lại đột nhiên khủng bố như vậy?</p>
+                <p>Yêu Hoàng thì vỗ tay liên tục, ha hả cười nói: &quot;Tốt! Tốt! Tốt! Linh Sơ, ngươi quá làm cho bản hoàng ngoài ý muốn! Trận chiến cuối cùng, bất luận thắng bại, bản hoàng đều sẽ thỏa mãn bất kỳ yêu cầu nào của ngươi!&quot;</p>
+                <p>Sau khi Linh Sơ cứu vãn, cục diện song phương đã là ba so ba, không thua không thắng. Kết quả này, so với thảm bại ngay từ đầu, chắc chắn tốt hơn vô số lần! Dù cuối cùng không địch lại Đông Quân, Đại lục Yêu tộc lúc này, cũng tuyệt đối không mất mặt. Thậm chí có thể nói, là dùng thực lực hung hăng chứng minh Đại lục Yêu tộc không kém Bắc Hải Yêu tộc bao nhiêu!</p>
+                <p>Linh Sơ mừng rỡ, nhưng thông minh như nàng, đã hiểu rõ. Nàng có thể thắng, cũng không phải dựa vào bản sự của mình.</p>
+                <p>Xuyên Thành Vị Hôn Thê Chưa Cưới Của Nam Phụ Dẫn Đường Quy Tắc Sắm Vai Quái Đàm Điên Rồi! Ngươi Xác Định Ngươi Là Ngự Thú Sư Xuyên Vào Tiểu Thuyết Tôi Chống Lại Nam Chính</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_633">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 633: Sử dụng hết đưa ta</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Ngư Thanh Huyền lúc này bắt đầu khẩn trương. Tứ Quân đã bại, chỉ còn lại Đông Quân.</p>
+                <p>&quot;Trắng Sơ, trông cả vào ngươi!&quot; Ngư Thanh Huyền hít sâu một hơi.</p>
+                <p>Hiện tại, hắn không còn quan tâm Tứ Quân có ở lại đại lục yêu tộc đào tạo sâu hay không. Hắn quan tâm là mặt mũi của Bắc Hải yêu tộc.</p>
+                <p>Từ trước đến nay, Bắc Hải yêu tộc đều tự xưng ưu tú hơn đại lục yêu tộc. Tiểu bối càng vượt xa đối phương. Thế nhưng kết quả lại thê thảm: thua liên tiếp hai trận. Nếu ngay cả Trắng Sơ cũng thua, Bắc Hải yêu tộc lần này thật sự là &quot;ngàn dặm đưa mặt cho người ta tát&quot;.</p>
+                <p>Đông Quân Trắng Sơ chậm rãi ngẩng đầu. Đôi mắt vốn nhắm chặt từ từ mở ra. Ánh mắt hắn rất bình thản, là sự bình thản của kẻ vô địch tịch mịch, không có đối thủ xứng tầm. Dù Linh Sơ có chiến tích hai thắng liên tiếp kinh người, cũng không chút nào kích động nổi chiến ý của hắn.</p>
+                <p>&quot;Ba chiêu.&quot; Trắng Sơ hai tay đan vào nhau trước ngực, nhàn nhạt phun ra hai chữ.</p>
+                <p>Sau đó, hắn bước một bước. Chỉ thoáng chốc, sau lưng hắn, hai màu đen trắng xen lẫn, ngưng tụ thành một tôn Pháp Tướng mơ hồ cao mười trượng.</p>
+                <p>Giang Phàm hơi ngạc nhiên. Pháp Tướng này cũng có cách làm tương đồng với 《Phạm Thánh Chân Linh Công》 của hắn. Chỉ là không biết uy lực thế nào.</p>
+                <p>Hô hấp của Linh Sơ dồn dập. Sức mạnh của Tứ Quân đứng đầu, cách nửa đại điện vẫn khiến nàng cảm thấy nghiêm nghị. Dáng người đối phương dậm chân bước đến, cho nàng cảm giác áp bách như mãnh sư đang tiến lại gần.</p>
+                <p>Người này tuyệt đối mạnh đến đáng sợ! Bằng không, Yêu Hoàng sẽ không nói rằng, bất luận thắng bại đều sẽ trọng thưởng nàng.</p>
+                <p>Nhưng nàng vẫn lấy hết dũng khí, ra tay trước với Trắng Sơ!</p>
+                <p>Nàng đưa tay chỉ, cuồng phong bạo vũ linh quang màu xanh lá cây từ trong cơ thể tuôn ra, bao phủ Trắng Sơ đang tiến lại gần. Ngay sau đó, là tiếng nổ tung vang trời.</p>
+                <p>Linh Sơ ra một chiêu, cũng không ngừng lại. Lòng bàn tay lại tế ra một cây trường kiếm bóng mờ màu xanh lá dài mười trượng, giơ cao rồi hung hăng chém xuống. Dưới sự gia trì của yêu lực Kết Đan tám tầng, kiếm này bộc phát ra uy lực khiến bốn vị phó sứ, cùng rất nhiều cường giả yêu tộc Kết Đan tám tầng đều kinh sợ.</p>
+                <p>Ầm ầm ――</p>
+                <p>Kiếm đánh xuống, đại địa cũng rung lên.</p>
+                <p>Trắng Sơ rõ ràng nhận công kích, nhưng lại không hề bị thương.</p>
+                <p>Tuy nhiên, khói mù do vụ nổ, bị một luồng khí lưu mạnh mẽ thổi tan. Lại là Trắng Sơ, không hề bị thương chút nào bước ra. Hắn vẫn giữ tư thế hai tay đan vào nhau trước ngực. Thậm chí nếu cẩn thận sẽ phát hiện, bước chân của Trắng Sơ chưa từng ngừng lại. Những công kích tưởng chừng uy lực lớn lao đó, đối với hắn không có một chút hiệu quả.</p>
+                <p>Yêu Hoàng cũng không khỏi biểu lộ ngưng trọng, lẩm bẩm nói: &quot;Bắc Hải yêu tộc đã sinh ra một tồn tại đáng gờm a.&quot;</p>
+                <p>Năm vị Yêu Vương cũng đều nhìn ra manh mối. Kẻ này, tương lai ít nhất là tồn tại cấp bậc Kết Đan chín tầng viên mãn. Nếu có đại khí vận, đột phá Nguyên Anh cảnh đều là chuyện đương nhiên.</p>
+                <p>Bởi vì tu vi đã đạt đến Kết Đan tám tầng, hơn nữa là trạng thái đỉnh phong, tùy thời có thể đột phá Kết Đan chín tầng!</p>
+                <p>Nhưng hắn nhìn chỉ khoảng hai mươi tuổi. Cho hắn thời gian, không dám tưởng tượng giới hạn trên sẽ cao bao nhiêu.</p>
+                <p>Mà Linh Sơ, hẳn là không có chút phần thắng nào.</p>
+                <p>Trắng Sơ tiếp tục tiến về phía Linh Sơ, thản nhiên nói: &quot;Ngươi còn một chiêu.&quot;</p>
+                <p>Lúc này, mọi người mới kinh hãi. Hóa ra Trắng Sơ nói tới ba chiêu, là nhường Linh Sơ ba chiêu!</p>
+                <p>Linh Sơ chợt cảm thấy nhục nhã, nói: &quot;Ai muốn ngươi nhường? Mặc kệ thắng thua, nàng đều muốn đường đường chính chính!&quot;</p>
+                <p>Trắng Sơ khẽ gật đầu: &quot;Được. Vậy, cuộc tỷ thí giữa chúng ta kết thúc!&quot;</p>
+                <p>Tiếng nói vừa dứt, Pháp Tướng đen trắng sau lưng hắn động. Pháp Tướng co nắm tay phải, sau đó bình thản tung ra. Nhìn như không có gì lạ, nhưng lại bao hàm một tia thiên địa uy năng. Không khí sôi sục cuộn trào, kình phong tùy ý chấn động. Tựa như dưới một quyền này, ngay cả một ngọn núi cũng phải bị đánh xuyên thủng.</p>
+                <p>Yêu Hoàng biến sắc, quả quyết nói: &quot;Linh Sơ lui ra!&quot;</p>
+                <p>Linh Sơ cũng ý thức được cực kỳ nguy hiểm, lập tức lùi ra. Nhưng vẫn đến muộn một bước. Quyền này mạnh đến cực hạn, làm vỡ nát trời cao, thẳng tắp đánh về phía ngực Linh Sơ.</p>
+                <p>Linh Sơ hoa dung thất sắc, vội vàng trước người tụ vô số linh quang, cố gắng tiêu trừ một chút quyền phong. Nhưng linh quang trong chớp mắt bị quyền phong xuyên thủng. Quyền phong hầu như không suy yếu chút nào, vô tình đập mạnh về phía nàng.</p>
+                <p>Thấy thế, Yêu Hoàng biến sắc, quyết định ra tay cứu viện. Nhưng còn chưa kịp, một tòa núi nhỏ ngũ sắc rực rỡ, đột nhiên từ trên trời giáng xuống, nằm ngang trước người Linh Sơ.</p>
+                <p>Ầm ầm ――</p>
+                <p>Với sự nặng nề của Ngũ Từ Nguyên Sơn, dưới một kích này, nó lại dịch chuyển nhẹ nhàng. Cần biết, núi này nặng đến mức Kết Đan chín tầng cũng chỉ có thể miễn cưỡng trấn áp được. Không dám tưởng tượng, Linh Sơ nếu bị một kích này đánh trúng, thân thể sẽ vỡ thành bao nhiêu mảnh.</p>
+                <p>Linh Sơ lộ vẻ sống sót sau tai nạn, vội vàng nói: &quot;Ta nhận thua!&quot;</p>
+                <p>Một kích này quá kinh khủng, vượt xa giới hạn mà tiểu bối có thể chịu đựng. Khuôn mặt nhỏ của nàng hơi tái nhợt, một mặt nghĩ mà sợ trốn sau lưng Giang Phàm. Khí tức thở nhẹ: &quot;Cảm ơn ca ca. Ca ca cứu được Linh Sơ một mạng.&quot;</p>
+                <p>Giang Phàm không nói nhiều, nhấc chưởng một chiêu, Ngũ Từ Nguyên Sơn một lần nữa hóa thành lớn chừng bàn tay, bay vào lòng bàn tay.</p>
+                <p>Cả sảnh đường đều nhẹ nhàng thở ra. Yêu Hoàng cũng ném cho Giang Phàm vẻ tán thưởng, mắt lộ ý cười nói: &quot;Tốt, song phương tỷ thí đến đây chấm dứt. Coi như đại lục yêu tộc chúng ta thua một ván vậy.&quot;</p>
+                <p>Thua bởi Trắng Sơ có thực lực như thế, không chút mất mặt. Theo hắn biết, Trắng Sơ trong toàn bộ Bắc Hải yêu tộc đều là tồn tại vô địch cùng cảnh. Đừng nói cùng thế hệ, ngay cả thế hệ trước Kết Đan tám tầng cũng không phải đối thủ. Pháp Tướng trời sinh kia, thật sự quá mạnh.</p>
+                <p>Ngư Thanh Huyền đầy mặt bình tĩnh. Thắng thì thắng, nhưng thắng hết sức không thoải mái! Linh Sơ không bị thương chút nào nhận thua. Điều đáng bực nhất là, một kích của Trắng Sơ, lại bị một tên tiểu bối dễ dàng chặn lại. Điều này khiến sức mạnh của Trắng Sơ, cũng không được thể hiện trọn vẹn. Phong cách vô địch của Bắc Hải yêu tộc, cũng như có như không.</p>
+                <p>Tóm lại, như nghẹn ở cổ họng! Không nhả ra được, cũng không nuốt trôi. Mộc Tử Cá và ba vị phó sứ khác cũng có cảm giác tương tự. Nếu là Yêu Hoàng ra tay, ngược lại có thể làm nổi bật Trắng Sơ tuyệt thế vô địch, cần Yêu Hoàng tự mình ra tay mới có thể cứu người. Nhưng bị Giang Phàm một người cùng thế hệ hời hợt cứu, lại khiến người ta có cảm giác Trắng Sơ không quá mạnh.</p>
+                <p>Thế nhưng Linh Sơ đã nhận thua, tỷ thí liền tuyên bố kết thúc. So với sự khó chịu của Bắc Hải yêu tộc, bên đại lục yêu tộc đã có thể tâm tình thoải mái hơn nhiều, dồn dập tán dương Linh Sơ. Nào là &quot;nữ anh hùng&quot;, &quot;nữ trung hào kiệt&quot;, &quot;yêu tộc vinh quang&quot; vân vân, rõ ràng là những xưng hô học từ nhân loại, không cần tiền ném lên người nàng.</p>
+                <p>Linh Sơ hồng quang đầy mặt, môi đỏ khẽ mím, biểu lộ không tự nhiên. Nàng chưa từng nghĩ tới, mình lại có một ngày phong quang như thế. Tất cả những điều này, may mắn nhờ Giang Phàm tặng vòng cổ. Nàng sờ lên viên đá trong ngực, tự nhiên hiểu rõ, linh lực đột nhiên tăng gấp bội của nàng từ đâu tới.</p>
+                <p>&quot;Ca ca, lễ vật của ca ca Linh Sơ rất thích.&quot; Linh Sơ sát bên Giang Phàm, mặt mũi tràn đầy ngượng ngập nói. Trong lòng lại không khỏi đắc ý. Hừ hừ. Tinh anh nhân tộc, yêu tộc phò mã gia, nam nhân lưu ly? Còn không phải ngã vào dưới chân ta? Ngay cả lễ vật kinh người bực này cũng cam lòng tặng ta.</p>
+                <p>Giang Phàm nhẹ gật đầu, bàn tay đưa ra: &quot;Nếu tỷ thí xong, vậy đưa ta đi.&quot;</p>
+                <p>Linh Sơ sửng sốt, hai con mắt xinh đẹp chớp chớp, lộ vẻ hơi vội vàng không kịp chuẩn bị. Lễ vật này... không phải tặng cho nàng sao?</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_634">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 634: Hóa Thần di tích ra trận tư cách</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm nhắc nhở:&quot;Dây chuyền này rất quý giá. Chỉ có thể tạm thời cho ngươi mượn dùng.&quot;</p>
+                <p>Linh Sơ nghe vậy, xấu hổ đỏ bừng cả khuôn mặt, vội vàng tháo xuống, lắp bắp nói:&quot;Ồ a, ta, ta đương nhiên biết. Ta làm sao lại muốn ca ca đồ vật đâu?&quot;</p>
+                <p>Phốc phốc ――</p>
+                <p>Một bên Lưu Ly nhịn không được, che miệng cười ra tiếng.&quot;Ha ha ha! Lưu Ly, ngươi sẽ không coi là dây chuyền này Giang Phàm là tặng cho ngươi a?&quot;</p>
+                <p>Nhìn xem Linh Sơ bị đòi lại xiềng xích lúc, một mặt mờ mịt bộ dáng, nàng liền không nhịn được cười. Nữ nhân này đối phó nam nhân trăm phát trăm trúng, không nghĩ tới tại Giang Phàm trên thân lại lật thuyền! Ha ha!</p>
+                <p>Linh Sơ xấu hổ hận tìm không được một cái lỗ để chui vào. Chính mình vậy mà trước mặt mọi người mất đi lớn như vậy một thể diện, còn bị Lưu Ly trước mặt mọi người chế giễu!</p>
+                <p>Mắt đẹp khẽ chuyển, nàng hướng Yêu Hoàng chắp tay nói:&quot;Yêu Hoàng, Linh Sơ cả gan muốn mời Yêu Hoàng thực hiện vãn bối nguyện vọng.&quot;</p>
+                <p>Yêu Hoàng tâm tình thật tốt:&quot;Ngươi nói! Chỉ cần bản hoàng có thể làm được đều đồng ý!&quot;Linh Sơ hôm nay coi như vì đại lục yêu tộc hung hăng tranh một hơi, sao thưởng đều không quá đáng.</p>
+                <p>&quot;Linh Sơ muốn mời Yêu Hoàng giải trừ Giang Phàm cùng Lưu Ly thiếu chủ đính hôn. Đem Giang Phàm ban cho Linh Sơ.&quot;</p>
+                <p>Toàn bộ Yêu Hoàng điện đột nhiên an tĩnh lại.</p>
+                <p>Lưu Ly không cười nổi, đột nhiên vỗ bàn đứng dậy, bực tức nói:&quot;Linh Sơ! Ngươi ý tứ gì?&quot;</p>
+                <p>Linh Sơ ôn nhu cười một tiếng:&quot;Mặt chữ ý tứ. Lưu Ly muội muội tính tình như thế táo bạo, Giang Phàm ca ca ở bên cạnh ngươi sẽ rất mệt mỏi. Vẫn là ta càng có thể chiếu cố tốt Giang Phàm ca ca.&quot;</p>
+                <p>Một bộ chỉ có ta vì ca ca tốt hình ảnh thời thời khắc khắc đều hiển hiện.</p>
+                <p>Lưu Ly giận đến một tay lật ngược cái bàn.&quot;Linh Sơ! Ngươi muốn ăn đòn!&quot;</p>
+                <p>Vậy mà công khai cùng nàng đoạt nam nhân? Lẽ nào lại như vậy! Đơn giản lẽ nào lại như vậy nha!! Nàng không bão nổi, muốn bị toàn yêu tộc coi như trò cười!</p>
+                <p>&quot;Lưu Ly!&quot;</p>
+                <p>Yêu Hoàng trừng nàng liếc mắt. Nhân gian bắc Hải yêu tộc còn chưa đi sao! Hai cái yêu tộc đứng đầu nhất nữ thiên kiêu liền trước mặt mọi người tranh đoạt nam nhân! Không ngại mất mặt sao?</p>
+                <p>Hắn nhìn về phía Linh Sơ, nói:&quot;Đổi một cái điều kiện đi.&quot;Giang Phàm có thể là tấm màn che của hắn, gả cho những nữ nhân khác thì thai nhi trong bụng con gái hắn đi đâu tìm cha mới?</p>
+                <p>Vốn cho rằng Linh Sơ sẽ vì điều này dây dưa một hồi, dù sao Yêu Hoàng đã hứa hẹn bất kỳ yêu cầu gì đều có thể thỏa mãn. Hiện tại lật lọng, Linh Sơ là đã chiếm lý lẽ lớn. Ai ngờ...</p>
+                <p>Linh Sơ không hề nghĩ ngợi, buột miệng thốt ra:&quot;Vậy thì mời Yêu Hoàng cho phép, nhường Giang Phàm theo ta cùng đi bắc địa bí cảnh!&quot;</p>
+                <p>Ách ――</p>
+                <p>Yêu Hoàng chợt tỉnh ngộ. Nguyên lai Linh Sơ căn bản không hy vọng một yêu cầu liền có thể chia rẽ Lưu Ly cùng Giang Phàm. Bản ý của nàng cũng chính là nhường Giang Phàm theo nàng đi bắc địa bí cảnh. Chẳng qua là nếu ngay từ đầu đưa ra yêu cầu này, Yêu Hoàng sẽ trùng trùng lo lắng không đáp ứng. Cho nên nàng cố ý đưa ra một yêu cầu mà Yêu Hoàng chắc chắn sẽ cự tuyệt, sau đó lại đưa ra yêu cầu tương đối đơn giản này. Đã cự tuyệt một lần Yêu Hoàng, tổng ngượng ngùng cự tuyệt lần thứ hai a?</p>
+                <p>Hiểu được, hắn buồn cười:&quot;Thế mà tính tới trên đầu ta tới. Ngươi cùng Vân Hà, thật là có giống đây.&quot;</p>
+                <p>Nhìn lên trước mắt dung mạo thanh tú mỹ lệ, dáng vẻ thướt tha mềm mại, khí chất tươi mát linh động thiếu nữ. Tán thưởng sau khi, trong mắt nhiều một vệt khác màu sắc.</p>
+                <p>&quot;Thỉnh Yêu Hoàng bệ hạ ân hứa.&quot; Linh Sơ lần nữa thỉnh cầu nói.</p>
+                <p>Yêu Hoàng đưa mắt về phía Giang Phàm. Hơi trầm ngâm. Hắn thật không yên lòng Giang Phàm đi bắc địa. Một phần vạn hắn trốn thì làm sao? Bất quá, hắn đã vi phạm lời hứa một lần, cũng không thể lại vi phạm lần thứ hai a?</p>
+                <p>Suy đi nghĩ lại, hắn vuốt cằm nói:&quot;Đi. Đến lúc đó ta sẽ cắt cử một vị Yêu Vương tùy các ngươi đồng hành.&quot;</p>
+                <p>Linh Sơ nở nụ cười vui vẻ:&quot;Tạ ơn Yêu Hoàng!&quot;</p>
+                <p>Lần này đi bắc địa, đi về liền cần vài ngày. Bí cảnh tu hành lại cần vài ngày nữa. Trong lúc đó còn sợ không có cơ hội đả động Giang Phàm tâm sao?</p>
+                <p>Lưu Ly không chịu, nói:&quot;Phụ hoàng, ta cũng muốn đi.&quot;</p>
+                <p>Nàng thật không yên lòng Giang Phàm đơn độc cùng Linh Sơ ở cùng một chỗ. Nữ nhân này thủ đoạn rất nhiều. Một phần vạn thật sự nắm Giang Phàm cướp đi, nàng sẽ vênh váo tự đắc trước mặt mình cả đời.</p>
+                <p>&quot;Ngươi đi làm gì? Có Yêu Vương cùng đi, còn cần lo lắng cái gì hay sao? Các ngươi ngay trong ngày xuất phát.&quot;</p>
+                <p>Linh Sơ chắp tay cười nói:&quot;Tạ ơn Yêu Hoàng.&quot;</p>
+                <p>Giang Phàm thì lộ ra vẻ không quan trọng:&quot;Đúng, Yêu Hoàng.&quot;</p>
+                <p>Trong lòng hắn thì mừng như điên. Chỉ cần Yêu Hoàng không ở đó, hắn muốn đi, có Yêu Vương nhìn chằm chằm thì có ích lợi gì? Thực lực của Vân Hà Phi Tử còn mạnh hơn Yêu Vương một chút, đồng thời thông minh đa trí. Kết quả còn không phải bị hắn hai độ bắt sống? Đi lần này, Giang Phàm là triệt để chim bay trời cao, cá lượn biển lớn, từ đó một đi không trở lại. Linh Sơ đơn giản chính là thân muội muội của hắn! Ai nói nàng là trà xanh, Giang Phàm sẽ lập tức phản ứng.</p>
+                <p>Sự tình đến đây.</p>
+                <p>Yêu Hoàng ngước mắt nhìn về phía Ngư Thanh Huyền, thẳng thắn nói:&quot;Nếu bắc Hải yêu tộc Tứ Quân không muốn tại đại lục đào tạo sâu, bản hoàng cũng không ép ở lại. Đi hay ở đều tùy các ngươi ý. Các ngươi nếu là nguyện ý lưu lại đào tạo sâu, ta tự sẽ an bài người chỉ bảo các ngươi tu hành. Nếu như muốn đi, không ngại chơi nhiều mấy ngày lại đi.&quot;</p>
+                <p>Hắn đã sớm không quan tâm hai bên đào tạo sâu trao đổi. Quan tâm là trận chiến hôm nay vinh nhục. Còn tốt, lần này hai bên ai cũng không có chiếm lợi thế, coi như ngang tài ngang sức. Cho nên bắc Hải yêu tộc thích thế nào thì tùy.</p>
+                <p>Ngư Thanh Huyền trầm mặt, làm sao còn có tâm tư tại đại lục yêu tộc dừng lại lâu. Hắn lên dây cót tinh thần, nói:&quot;Hôm nay đa tạ Yêu Hoàng khoản đãi. Nếu Tứ Quân đều không muốn lưu lại, vậy chúng ta như vậy dẹp đường hồi phủ, liền không quấy rầy Yêu Hoàng cùng quý tộc. Lần sau mười năm, hai chúng ta tộc tạm biệt.&quot;</p>
+                <p>Yêu Hoàng đứng dậy đưa tiễn. Ngư Thanh Huyền, bốn vị phó sứ, Chiếu Nhật, bạn cũ, Vô Mộng đều cáo từ.</p>
+                <p>Duy chỉ có Đông Quân Bạch Sơ, hai tay đan xen trước ngực, cũng chưa động đậy, tựa hồ đang trầm tư.</p>
+                <p>&quot;Bạch Sơ?&quot; Ngư Thanh Huyền nhắc nhở.</p>
+                <p>Nghe vậy, Bạch Sơ từ trong trầm tư lấy lại tinh thần. Tầm mắt nhìn phía Giang Phàm, nói:&quot;Ngươi bao lớn?&quot;</p>
+                <p>Giang Phàm bị hỏi đến không hiểu ra sao:&quot;Ta sao? Mười tám.&quot;</p>
+                <p>Trong mắt Bạch Sơ bình thản nổi lên một tầng gợn sóng:&quot;Ngươi rất mạnh.&quot;</p>
+                <p>Giang Phàm không hiểu ra sao, nói:&quot;Quá khen.&quot;</p>
+                <p>Nhưng Bạch Sơ lại khẽ lắc đầu:&quot;Ta từ trước tới giờ không khen người. Ta nói thật. Ngươi, rất mạnh.&quot;</p>
+                <p>Giang Phàm làm không rõ cái tên này muốn làm gì, nói:&quot;Cảm ơn.&quot;</p>
+                <p>Bạch Sơ buông xuống hai tay đan xen trước ngực. Nhìn chăm chú Giang Phàm, nói:&quot;Ta muốn khiêu chiến ngươi.&quot;</p>
+                <p>Giang Phàm ngẩn người, chỉ chỉ chính mình:&quot;Ta là nhân tộc, không phải yêu tộc, ngươi đừng nhầm đối tượng.&quot;</p>
+                <p>Hôm nay là vinh dự chi tranh của đại lục yêu tộc cùng bắc Hải yêu tộc, không liên quan đến hắn một ngoại nhân.</p>
+                <p>Ngư Thanh Huyền cũng run lên, nói:&quot;Bạch Sơ, không muốn thêm chuyện.&quot;</p>
+                <p>Bạch Sơ lại coi như không nghe thấy. Quanh thân huyết khí sôi trào, trong mắt chiến ý ẩn hiện.&quot;Quá lâu không có cường địch chiến một trận. Hôm nay nếu gặp gỡ, tất nhiên muốn chiến thống khoái!&quot;</p>
+                <p>Giang Phàm im lặng. Thật là một cái võ si. Nhưng vô duyên vô cớ chiến đấu, hắn mới không hứng thú.&quot;Ngượng ngùng, không có lý do gì, ta sẽ không cùng người động thủ.&quot;</p>
+                <p>Giang Phàm hết sức gọn gàng dứt khoát cự tuyệt.</p>
+                <p>Bạch Sơ một ngón tay điểm tại mi tâm. Một đạo nhảy lên ngọn lửa màu lam từ trong linh hồn hắn được lấy ra ngoài.&quot;Hóa Thần di tích ra trận tư cách. Lý do này, đủ hay không?&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_635">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 635: Kịch chiến</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Cái gì?</p>
+                <p>Con ngươi Giang Phàm kịch liệt co lại.</p>
+                <p>Di tích Hóa Thần?</p>
+                <p>Bắc Hải Yêu tộc phát hiện di tích Hóa Thần?</p>
+                <p>Giang Phàm đơn giản không thể tin được, Bạch Sơ thế mà lại đem tư cách vào trận này ra đặt cược!</p>
+                <p>Chẳng lẽ đây là giả?</p>
+                <p>&quot;Bạch Sơ! Ngươi làm gì?&quot;</p>
+                <p>Ngư Thanh Huyền giật nảy mình: &quot;Ai cho phép ngươi cầm vật này làm tiền đặt cược?&quot;</p>
+                <p>&quot;Lập tức thu hồi đi!&quot;</p>
+                <p>Chỗ di tích Hóa Thần kia cực kỳ yếu ớt.</p>
+                <p>Mỗi lần chỉ cho phép số lượng nhất định người đi vào.</p>
+                <p>Nhóm đầu tiên vào bên trong, chỉ có mười người.</p>
+                <p>Bạch Sơ chính là một trong số đó.</p>
+                <p>Nếu hắn đem tư cách thua cho người khác, chính mình còn làm sao đi vào?</p>
+                <p>Bạch Sơ toàn thân huyết khí càng sục sôi, nói:</p>
+                <p>&quot;Tu luyện một thân thực lực, không phải là đấu với trời, đấu với người, cùng mình đấu sao?&quot;</p>
+                <p>&quot;Nếu như ngay cả địch nhân cũng không thấy một cái.&quot;</p>
+                <p>&quot;Tu hành có ý nghĩa gì?&quot;</p>
+                <p>&quot;Hôm nay nếu bại bởi Giang Phàm, không cần di tích Hóa Thần, ta cũng sẽ quyết chí tự cường, siêu việt bản thân cũ.&quot;</p>
+                <p>&quot;Nếu thắng Giang Phàm, đi di tích Hóa Thần, cũng khó có lòng cầu tiến!&quot;</p>
+                <p>Một phen này khiến Ngư Thanh Huyền có khí không chỗ phát tiết.</p>
+                <p>Vậy ngươi cũng không đáng cầm tư cách di tích Hóa Thần ra đánh cược a!</p>
+                <p>Giang Phàm nghe xong, tim đập thình thịch.</p>
+                <p>Tư cách này lại là thật!</p>
+                <p>Vậy hắn còn do dự cái gì?</p>
+                <p>&quot;Được! Ta đáp ứng một trận chiến!&quot;</p>
+                <p>&quot;Bất quá, ta lại không có thứ gì để đánh cược.&quot;</p>
+                <p>Giang Phàm nói đầy miệng.</p>
+                <p>Khóe miệng mọi người giật giật.</p>
+                <p>Ngươi không có thứ gì?</p>
+                <p>Vừa rồi cái Ngũ Từ Nguyên Sơn thần kỳ kia không phải sao?</p>
+                <p>Tên này, đoán chắc Bạch Sơ cấp thiết muốn một trận chiến, thậm chí ngay cả tiền đặt cược cũng muốn bớt đi.</p>
+                <p>Yêu Hoàng cũng nhịn không được liếc nhìn Giang Phàm.</p>
+                <p>Tiểu tử này!</p>
+                <p>Thật là vô sỉ!</p>
+                <p>&quot;Tốt!&quot; Bạch Sơ cười ha ha một tiếng.</p>
+                <p>Hắn muốn cũng không phải thứ gì của Giang Phàm.</p>
+                <p>Mà là Giang Phàm có thể dốc hết sức, khiến hắn thống khoái một trận chiến!</p>
+                <p>Mắt thấy hai bên một trận chiến đã là kết cục đã định.</p>
+                <p>Ngư Thanh Huyền nổi nóng nói: &quot;Đều lui ra phía sau!&quot;</p>
+                <p>&quot;Càng xa càng tốt!&quot;</p>
+                <p>Bạch Sơ vừa ra tay, cũng không giống như ba quân khác ôn hòa.</p>
+                <p>Bị vạ lây, rất có thể mất mạng.</p>
+                <p>Mộc Tử Cá nhìn xem Ngư Thanh Huyền mặt mũi âm trầm, an ủi:</p>
+                <p>&quot;Cá chủ, đừng lo lắng.&quot;</p>
+                <p>&quot;Ngươi đối với Bạch Sơ còn lo lắng sao?&quot;</p>
+                <p>&quot;Hắn cả đời chiến đấu vô số, mới mấy trận thua trận?&quot;</p>
+                <p>Sắc mặt Ngư Thanh Huyền âm trầm, lúc này mới hơi dịu bớt.</p>
+                <p>Cũng đúng.</p>
+                <p>Trong số những người đồng lứa, đối thủ sánh vai Bạch Sơ còn chưa ra đời.</p>
+                <p>Nhưng hắn vẫn liếc nhìn Mộc Tử Cá, khẽ nói:</p>
+                <p>&quot;Ngươi cũng vui lòng Bạch Sơ cùng tên này một trận chiến đây.&quot;</p>
+                <p>Mộc Tử Cá cũng không giấu diếm.</p>
+                <p>Nhìn về phía Giang Phàm, nhịn không được hận đến nghiến răng: &quot;Tiểu vương bát đản này, đánh ta cướp nguồn nước tinh túy.&quot;</p>
+                <p>&quot;Không tận mắt thấy hắn chịu thiệt, ta sẽ một tháng ngủ không yên, ăn không ngon.&quot;</p>
+                <p>Ngư Thanh Huyền nghĩ lại cũng thấy thế.</p>
+                <p>Đoàn viếng thăm lần này, không chiếm được bao nhiêu tiện nghi trong cuộc luận bàn giữa hai tộc.</p>
+                <p>Lại cũng không thể mang theo một ngụm uất khí trở về được sao?</p>
+                <p>Giang Phàm này, nói gì cũng phải giáo huấn một chút mới được.</p>
+                <p>Yêu Hoàng nhìn chằm chằm ngọn lửa màu xanh lam kia, lộ ra vẻ khát vọng.</p>
+                <p>Di tích Hóa Thần.</p>
+                <p>Chẳng phải là mang ý nghĩa, bên trong rất có khả năng, tồn tại bảo vật giúp tăng lên đến Hóa Thần trung kỳ sao?</p>
+                <p>Nếu có được một kiện, Thiên Cơ Các chủ tính là gì?</p>
+                <p>Hắn sắp trở thành chủ nhân của mảnh đại lục này!</p>
+                <p>&quot;Giang Phàm, ngươi dụng tâm một trận chiến, nếu thắng, bản hoàng có thể cân nhắc cởi bỏ xiềng xích của ngươi.&quot;</p>
+                <p>Yêu Hoàng nói.</p>
+                <p>Giang Phàm cười lạnh trong lòng.</p>
+                <p>Làm sao không nhìn ra, Yêu Hoàng là muốn chiếm lấy ấn ký ngọn lửa màu lam kia?</p>
+                <p>Càng buồn nôn hơn chính là, ban thưởng cho Giang Phàm là cởi bỏ xiềng xích.</p>
+                <p>Hơn nữa, còn là cân nhắc một chút.</p>
+                <p>Ý là, tâm trạng tốt thì cởi bỏ, tâm trạng không tốt thì tiếp tục khóa lại.</p>
+                <p>Chỉ vậy thôi, còn muốn người ta vì ngươi liều mạng sao?</p>
+                <p>Nhớ lại ấn ký ngọn lửa màu lam kia, là lấy ra từ trong linh hồn của Bạch Sơ.</p>
+                <p>Giang Phàm hơi yên tâm.</p>
+                <p>Lát nữa nếu thắng được vật này, đem hắn đánh vào trong linh hồn, Yêu Hoàng muốn cướp đi cũng khó.</p>
+                <p>Không còn lo lắng về sau.</p>
+                <p>Giang Phàm liền nghiêm túc nhìn chằm chằm Bạch Sơ, nói: &quot;Không cho ta ba chiêu?&quot;</p>
+                <p>Bạch Sơ cười ha ha một tiếng, tóc dài phiêu dương, ánh mắt tràn ngập một tia chiến ý:</p>
+                <p>&quot;Đối thủ không có hứng thú có thể nhường.&quot;</p>
+                <p>&quot;Đối với ngươi, một chiêu cũng không muốn!&quot;</p>
+                <p>&quot;Xem chiêu!&quot;</p>
+                <p>&quot;Cửu Dương Thần Quang!&quot;</p>
+                <p>Bạch Sơ hét lớn một tiếng.</p>
+                <p>Sau lưng bắn ra chín đạo chùm sáng trắng nhợt, hiện lên hình bán nguyệt hướng về phía Giang Phàm đột nhiên đâm tới.</p>
+                <p>Không khí đều bị đâm xuyên phát ra tiếng kêu sắc nhọn.</p>
+                <p>Tốc độ lại càng nhanh đến mức khiến người ta tê dại da đầu.</p>
+                <p>Nhất là Linh Sơ, người đã từng giao thủ với hắn, không kìm lòng được dùng tay đè chặt nhịp tim đang đập loạn.</p>
+                <p>Một kích này, nàng căn bản không ngăn được.</p>
+                <p>Nàng coi như hiểu rõ, Bạch Sơ nhường nàng ba chiêu, cũng không phải là nhục nhã.</p>
+                <p>Mà là, Bạch Sơ tiện tay nhất kích đều không phải là nàng có thể tiếp nhận.</p>
+                <p>Mịch Long hai quả đấm nắm chặt, nhìn chằm chằm chín chùm sáng.</p>
+                <p>Mặc dù không thể giao thủ với Bạch Sơ, nhưng bây giờ cái vẫy tay tùy ý này, cũng khiến hắn cảm nhận được nguy hiểm to lớn.</p>
+                <p>Đồng là thiên kiêu trẻ tuổi nhất tộc.</p>
+                <p>Chênh lệch thực lực giữa hai bên, phảng phất là hình dốc.</p>
+                <p>Hoàn toàn không cùng cấp độ!</p>
+                <p>Theo ánh mắt hắn di chuyển, Mịch Long nhìn về phía Giang Phàm.</p>
+                <p>Hắn khẽ lắc đầu.</p>
+                <p>Hắn không cảm thấy, thiên kiêu nhân tộc, có thể đối phó được công kích cấp độ như vậy.</p>
+                <p>Nhưng khoảnh khắc tiếp theo.</p>
+                <p>Con ngươi hắn co rút lại.</p>
+                <p>Chỉ thấy Giang Phàm đứng tại chỗ không nhúc nhích.</p>
+                <p>Chỉ khẽ mở miệng, nói ra hai chữ &quot;Thân Kiếm&quot;.</p>
+                <p>Cảnh tượng thần kỳ xuất hiện!</p>
+                <p>Toàn thân Giang Phàm, mỗi lỗ chân lông đều bắn ra từng đạo kiếm khí nhỏ như sợi tóc.</p>
+                <p>Rậm rạp.</p>
+                <p>Có tới vạn đạo!</p>
+                <p>Vô số kiếm khí, ngưng tụ ra hình thể đường nét của Giang Phàm.</p>
+                <p>Đột nhiên trở thành một tôn kiếm khí hình người!</p>
+                <p>&quot;Đi!&quot;</p>
+                <p>Theo tâm niệm Giang Phàm vừa động.</p>
+                <p>Kiếm khí hình người gào thét mà đi.</p>
+                <p>Trong nháy mắt liền giao hòa với chín đạo thần quang trắng nhợt.</p>
+                <p>Mảng lớn kiếm khí bị thần quang có uy lực kinh người đánh tan.</p>
+                <p>Cũng có rất nhiều thần quang, bị kiếm khí hình người tách ra.</p>
+                <p>Một kích chưa phân thắng bại.</p>
+                <p>Giang Phàm cùng Bạch Sơ gần như đồng thời ra chiêu tiếp theo.</p>
+                <p>&quot;Ngũ Lôi Chính Thiên Chưởng!&quot;</p>
+                <p>&quot;Cửu Âm Tà Quang!&quot;</p>
+                <p>Phanh ba --</p>
+                <p>Hai cỗ sóng gợn mãnh liệt, lần nữa bộc phát ra.</p>
+                <p>Sóng khí cuồn cuộn, hồ quang bắn ra bốn phía.</p>
+                <p>Dư chấn trùng kích khiến đám yêu tộc dưới Kết Đan bảy tầng kinh hồn táng đảm.</p>
+                <p>Ai dám tin tưởng.</p>
+                <p>Đây là đại chiến giữa hai tiểu bối sao?</p>
+                <p>Hơn nữa, chỉ là những công kích thăm dò ban đầu!</p>
+                <p>Mịch Long giật mình không thôi: &quot;Giang Phàm... có thể cùng Bạch Sơ so chiêu?&quot;</p>
+                <p>Đôi mắt đẹp của Linh Sơ dị sắc liên liên.</p>
+                <p>Người chưa đích thân trải nghiệm sự khủng bố của Bạch Sơ, sẽ không hiểu được áp lực mạnh mẽ kia.</p>
+                <p>Có thể Giang Phàm lại có thể chính diện so chiêu!</p>
+                <p>Giang Phàm mạnh mẽ, vượt ra khỏi tưởng tượng của nàng.</p>
+                <p>Yêu Hoàng cũng nhịn không được lẩm bẩm: &quot;Tên này, thật đúng là có tài.&quot;</p>
+                <p>&quot;Hắn sẽ không thật sự có hy vọng chiến thắng chứ?&quot;</p>
+                <p>Ngay từ đầu, hắn đối với Giang Phàm là không có chút nào lòng tin.</p>
+                <p>Giờ phút này, lại khiến hắn không thể không một lần nữa xem xét thực lực chân chính của Giang Phàm.</p>
+                <p>Bạch Sơ thét dài cười một tiếng: &quot;Ha ha ha! Ta quả nhiên không nhìn lầm!&quot;</p>
+                <p>&quot;Ngươi thật sự rất mạnh!&quot;</p>
+                <p>Đã rất ít người đồng lứa tiếp được công kích chính diện của hắn.</p>
+                <p>Giang Phàm là đối thủ mà hắn gặp được đã lâu.</p>
+                <p>&quot;Tốt! Ta có thể yên tâm đánh một trận!&quot;</p>
+                <p>Trong mắt Bạch Sơ chiến ý bốc lên, thân ảnh lôi động.</p>
+                <p>Một bước vượt qua bầu trời, hai tay riêng phần mình quấn quanh một đen một trắng hai loại thanh quang, hung hăng va chạm Giang Phàm.</p>
+                <p>Giang Phàm nhíu mày.</p>
+                <p>Thân ảnh cũng vào lúc này chớp động.</p>
+                <p>Hóa thân Lôi Đình, phóng lên trời, tránh đi uy lực lớn lao nhất kích này.</p>
+                <p>Sau đó lại dùng thân thể Lôi Đình từ trên trời giáng xuống!</p>
+                <p>Hắn đạp Ngũ Từ Nguyên Sơn, ầm ầm trấn áp xuống.</p>
+                <p>Thân hình Bạch Sơ bùng lên, cố gắng tránh đi đè ép này.</p>
+                <p>Nhưng hắn kinh ngạc phát hiện, chính mình lại bị khóa chặt, dù thế nào trốn tránh, cũng không thể tránh đi.</p>
+                <p>Hắn cũng không hoảng hốt, ngược lại càng ngày càng khơi dậy chiến ý của hắn.</p>
+                <p>Song chưởng hướng trời mãnh kích.</p>
+                <p>Không biết là hắn thiên sinh thần lực, hay là tác dụng của hai cỗ hào quang hắc bạch thần bí.</p>
+                <p>Ngũ Từ Nguyên Sơn có thể trấn áp Kết Đan chín tầng.</p>
+                <p>Lại bị đánh bay ra ngoài.</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_126.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_126.html" class="page-btn">126</a>
+            <a href="page_127.html" class="page-btn current">127</a>
+            <a href="page_128.html" class="page-btn">128</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_128.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

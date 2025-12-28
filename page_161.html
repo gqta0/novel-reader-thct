@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 161">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 161</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_160.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_162.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_801">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 801: Địa ngục Hoang thú</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Vu Mạn Nguyệt và Nhậm Cô Hồng đi đến. Cả hai đều bị sốc nặng.</p>
+                <p>“Này, này, này, trò đùa này hơi quá rồi đấy?”</p>
+                <p>“Cái gò đất nhỏ xíu trước mắt, còn không to bằng nấm mồ con chó già nhà ta nữa.”</p>
+                <p>Vu Mạn Nguyệt trợn tròn mắt. Nếu không phải trên tấm bia gỗ ghi rõ ràng là “Mộ Tiểu Phượng”, nàng có nói gì cũng không tin đây là một ngôi mộ đại hiền.</p>
+                <p>Nhậm Cô Hồng hít vào một hơi khí lạnh: “Hèn chi tổ sư gia Linh Thú Tông không lấy vật tùy táng.”</p>
+                <p>“Thì ra, nơi này đến một cọng lông cũng không có.”</p>
+                <p>“Muốn lấy cũng chẳng có gì mà lấy.”</p>
+                <p>Giang Phàm khóe miệng giật giật. “Ta thật muốn biết, người của Thần Hành Tông lúc này sẽ nghĩ gì đây.”</p>
+                <p>Ba đời người tìm kiếm, mười năm tiềm phục. Cuộc khai quật đã đặt cược vào vận mệnh tông môn. Kết quả, lại chỉ có thế này.</p>
+                <p>Bọn họ ngẩng đầu nhìn lại. Quả nhiên thấy mười người toàn thân áo choàng đen, đứng trước gò đất nhỏ mà im lặng không nói. Rõ ràng, họ cũng đang rơi vào trạng thái nghi ngờ nhân sinh.</p>
+                <p>“Đại nhân.” Một người áo choàng đen hỏi vị thần bí nhân duy nhất mặc trường bào đỏ trong số họ: “Ngôi mộ này, còn đào nữa không?”</p>
+                <p>Người áo choàng đỏ là một lão giả. Giọng nói già nua của lão mang theo vài phần trầm thấp: “Đào! Được gì thì lấy nấy!”</p>
+                <p>Hiển nhiên, lão cũng không ngờ tới. Cái gọi là mộ Thổ Phượng, vậy mà lại ra cái kết quả như thế này.</p>
+                <p>Cảnh tượng trong tưởng tượng về truyền thừa khắp nơi, linh bảo bí dược đâu đâu cũng có, kỳ vật kinh thế liên tục xuất hiện đã không hề xảy ra.</p>
+                <p>Nếu như, ngay cả trong gò đất nhỏ cũng trống rỗng, lão sẽ phát điên. Thần Hành Tông cũng sẽ triệt để phát điên.</p>
+                <p>Một tiếng ra lệnh. Một người áo choàng đen liền lấy ra một chiếc móc, cách không cuốn lấy bia mộ, cẩn thận kéo xuống.</p>
+                <p>Vốn tưởng rằng sẽ cực kỳ nguy hiểm, nên họ đã đề phòng hết mức. Ai ngờ, vừa dùng sức, tấm bia mộ đã vỡ tan thành vụn gỗ.</p>
+                <p>Tấm bia gỗ đã tồn tại quá lâu, sớm đã mục nát không còn nguyên vẹn.</p>
+                <p>Điều này khiến sắc mặt của lão giả áo choàng đỏ lại càng thêm nặng nề. Đây thật sự là mộ đại hiền sao? Làm gì có ngôi mộ nào lại sơ sài đến vậy?</p>
+                <p>“Đào!” Nhưng, vẫn còn một tia hy vọng. Nếu có thể đào được quan tài…</p>
+                <p>Đáng tiếc, ý nghĩ còn chưa dứt trong lòng. Hai đệ tử giơ cuốc lên đào nhẹ một cái, liền dễ dàng đào bới gò đất nhỏ ra. Lộ ra mấy cọng lông đã mục nát chỉ còn lại phần gốc.</p>
+                <p>“Đại nhân, đã đào đến đáy rồi.” Hai đệ tử đang đào bới đều ngây người ra.</p>
+                <p>Lão giả áo choàng đỏ mắt đờ đẫn, một tay đoạt lấy cái cuốc: “Ta làm!”</p>
+                <p>Lão hổn hển đào bới mấy cái. Nhưng bên dưới, toàn là đất. Hoàn toàn không có quan tài gì cả. Trong gò đất nhỏ, chỉ có mấy cọng lông mục nát mà thôi.</p>
+                <p>Vụt vụt vụt — Lão giả áo choàng đỏ loạng choạng, suýt nữa thì ngồi phịch xuống đất. May mà hai người bên cạnh đã kịp đỡ lão.</p>
+                <p>“Đại nhân, đừng… đừng kích động.”</p>
+                <p>Lão giả áo choàng đỏ hất tay hai người ra, toàn thân run rẩy mà cười thảm: “Trăm năm tìm kiếm!”</p>
+                <p>“Chỉ có mấy cọng lông?”</p>
+                <p>“Trời xanh ơi! Ngươi đối với Thần Hành Tông ta, vì sao lại tàn nhẫn đến vậy?”</p>
+                <p>Chín người áo choàng đen còn lại, cũng đều im lặng không nói. Rõ ràng là đã phải chịu đả kích vô cùng to lớn.</p>
+                <p>Vu Mạn Nguyệt trong lòng cười lớn không ngừng: “Ha ha ha! Cười chết ta rồi, để bọn họ làm vẻ vang oai phong, kết quả cuối cùng lại chỉ có mấy cọng lông. Ha ha ha ha!”</p>
+                <p>Nhậm Cô Hồng trong lòng cũng vui vẻ không ít. “Bỏ ra cái giá lớn đến vậy, nhận được lại là thứ này ư?” “Ha ha.”</p>
+                <p>Riêng Giang Phàm, hắn xoa cằm, chìm vào suy tư. “Nếu trong gò đất, chỉ có mấy cọng lông thối nát.” “Vậy còn thổ phượng thảo trấp bên ngoài là sao?”</p>
+                <p>“Chẳng lẽ lại tự nhiên mọc ra ư?”</p>
+                <p>Ờ — Cả hai dừng cười, bắt đầu trầm tư.</p>
+                <p>Vu Mạn Nguyệt nghi hoặc nói: “Đừng nói là…”</p>
+                <p>“Trong cái gò đất đó, nói không chừng thật sự có đồ vật.”</p>
+                <p>“Chỉ là bọn họ kỳ vọng quá lớn, vội vàng đào bới đất đai mà không tìm kiếm kỹ lưỡng.”</p>
+                <p>“Nếu như bẻ nát từng khối đất, tìm kiếm từng chút một, rất có thể sẽ tìm được thứ gì đó hữu dụng.”</p>
+                <p>Vừa nghĩ đến đây. Lão giả áo choàng đỏ sau khi tự giễu một lát, từ từ bình tĩnh lại. Ánh mắt lại một lần nữa đặt vào gò đất nhỏ.</p>
+                <p>Như thể cũng ý thức được vấn đề, mắt lão lộ ra từng tia tinh quang: “Bới hết đống đất đó ra.”</p>
+                <p>“Tìm kiếm cẩn thận một lần nữa!”</p>
+                <p>Mấy người áo choàng đen đang định tiếp tục đào bới. Lão giả áo choàng đỏ chợt như cảm ứng được điều gì đó. Đột nhiên trầm giọng quát: “Ai đó?”</p>
+                <p>“Ra đây!”</p>
+                <p>Ánh mắt lạnh lẽo và sắc bén của lão quét nhìn bốn phía. Không khí khẽ run rẩy. Một luồng khí tức kinh khủng cấp độ Nguyên Anh, từ cơ thể lão tỏa ra, quét ngang khắp xung quanh.</p>
+                <p>Sắc mặt Giang Phàm đại biến. Trong đầu hắn, liên tiếp xuất hiện tiếng kinh hoảng kêu lên của Vu Mạn Nguyệt và Nhậm Cô Hồng.</p>
+                <p>“Là cảnh giới Nguyên Anh!”</p>
+                <p>“Bọn chúng đã phái một cường giả cảnh giới Nguyên Anh đến trấn giữ!”</p>
+                <p>“Chúng ta bị phát hiện rồi! Mau rút lui!”</p>
+                <p>Nguyên Anh ngay trước mặt, đâu phải ba vị đệ tử bọn họ có thể chống lại? Liệu có thể thoát khỏi hiểm cảnh này hay không, đều là chuyện vô cùng xa vời.</p>
+                <p>Giang Phàm trong lòng chấn động mạnh. Cho dù hắn giờ đây có thêm vài món pháp bảo lợi hại, cũng tuyệt đối không thể đối đầu trực diện với Nguyên Anh.</p>
+                <p>Hắn đang chuẩn bị rút lui, nhưng khóe mắt chợt liếc thấy điều gì đó. Đồng tử co rụt lại, hắn nói: “Hắn không phải phát hiện ra chúng ta!”</p>
+                <p>Vu Mạn Nguyệt và Nhậm Cô Hồng cố nén sự kinh hoàng. Nhìn kỹ mới phát hiện, lão giả áo choàng đỏ không hề nhìn về phía bọn họ, mà là cố định đôi mắt già nua của lão về phía bóng tối đằng xa.</p>
+                <p>Hai người thuận theo ánh mắt mà nhìn tới. Đồng tử của bọn họ cũng theo đó mà co rụt lại. Chỉ thấy trong bóng tối kia, dường như có một cái bóng khổng lồ như núi, từ từ nổi lên khỏi mặt đất.</p>
+                <p>Đùng — Nó cất bước. Cả mặt đất đều đang rung chuyển. Một luồng khí tức hung bạo, tàn nhẫn, theo đó như một cơn bão quét tới.</p>
+                <p>Lão giả áo choàng đỏ ánh mắt ngưng trọng, trầm giọng quát: “Nhanh!”</p>
+                <p>“Đóng gói đất mộ mang đi!”</p>
+                <p>“Có thứ gì đó lợi hại, đang tiềm phục ở đây!”</p>
+                <p>Giang Phàm khẽ nheo mắt. Hắn nhớ lại lời Cung Thải Y từng nói, cách đây không lâu, những linh thú đi thu thập thổ phượng thảo trấp không muốn xuống nữa. Thì ra, là do chúng cảm nhận được dưới lòng đất có thứ gì đó cực kỳ nguy hiểm đang tới gần.</p>
+                <p>Đùng — Vật thể khổng lồ như núi, lại một lần nữa cất bước. Mặt đất lại rung chuyển.</p>
+                <p>Trái tim Giang Phàm, cũng bắt đầu đập thình thịch như trống theo từng bước chân của nó.</p>
+                <p>Hắn đã gặp không ít cường giả Nguyên Anh hoặc Yêu Hoàng. Thậm chí còn từng bị Địa Ngục Khuyển hai đầu truy sát.</p>
+                <p>Nhưng, từ trước đến nay, chưa từng có bất kỳ thứ gì có thể mang lại cho hắn cảm giác áp bức to lớn đến vậy, như cái đang ở trước mắt này.</p>
+                <p>Khiến hắn có một loại cảm giác ngạt thở như rơi vào đáy biển sâu vạn trượng.</p>
+                <p>Cùng với việc cái bóng khổng lồ kia càng ngày càng tiến đến gần, dòng máu trong người hắn cũng không tự chủ mà bắt đầu chảy nhanh hơn. Trên da, nổi lên từng lớp da gà.</p>
+                <p>Từng tia sợ hãi, không thể kiềm chế mà lan tràn trong lòng.</p>
+                <p>Hắn hơi lùi lại. Bất cẩn đụng vào Vu Mạn Nguyệt. Thân thể mềm mại của nàng, giờ phút này lại trở nên cứng ngắc lạ thường. Rõ ràng là đã bị khí thế đáng sợ kia làm cho khiếp sợ.</p>
+                <p>“Rút lui!”</p>
+                <p>“Hung vật này, không phải chúng ta có thể đối phó.”</p>
+                <p>“Thậm chí, có lẽ cường giả Nguyên Anh của Thần Hành Tông cũng không đối phó được?”</p>
+                <p>Đùng — Đùng đùng — Bóng đen khổng lồ từ từ đạp bước tới. Một đôi mắt khổng lồ màu đỏ máu, trong bóng tối, tựa như hai vầng huyết nguyệt treo cao. Tỏa ra huyết quang kinh người!</p>
+                <p>Khí tức viễn cổ tàn bạo và hung ác, cũng theo đó mà lan tỏa ra.</p>
+                <p>Bịch — Cuối cùng. Cái bóng khổng lồ cũng đã tới. Một cái vuốt khổng lồ màu đen, nhẹ nhàng hạ xuống trong ánh sáng của ngọn đuốc.</p>
+                <p>Cái vuốt khổng lồ đen nhánh như mực. Dưới ánh lửa mờ ảo, nó phản chiếu những tia ô quang lạnh lẽo.</p>
+                <p>Giang Phàm nhìn sang. Đồng tử co lại thành một cây kim! Bởi vì, cái vuốt khổng lồ này. Thiếu mất một ngón!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_802">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 802: Vô Địch</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Ọc ——</p>
+                <p>Giang Phàm khẽ nuốt nước bọt.</p>
+                <p>Hắn đã biết đây là thứ gì.</p>
+                <p>Địa Ngục Hoang Thú!</p>
+                <p>Con Địa Ngục Hoang Thú bị phong ấn ít nhất một giáp tử, nay đã phá vỡ phong ấn mà thoát ra!!!</p>
+                <p>Nó lại ẩn nấp dưới đáy núi Linh Thú Tông!</p>
+                <p>“Chạy mau!”</p>
+                <p>Người thốt lên tiếng kêu này là lão giả áo bào đỏ.</p>
+                <p>Hung khí ngập trời tỏa ra từ móng vuốt kia khiến lão ta kinh hồn bạt vía!</p>
+                <p>Đám đệ tử kia, vừa khéo đã thu gom xong đất mộ, cho vào một không gian trữ vật. Nghe thấy động tĩnh, vừa quay đầu nhìn lại đã thấy cự thú đang áp sát, ai nấy đều sợ đến dựng cả tóc gáy.</p>
+                <p>“Đất mộ ta giữ!”</p>
+                <p>Một trong số đó là người mặc áo bào xám, hiển nhiên là đệ tử thân cận của lão giả áo bào đỏ, lời nói cực kỳ có trọng lượng. Vừa dứt lời, không gian trữ vật đã được trao vào tay hắn.</p>
+                <p>Mười tên áo đen, cộng thêm hai nội ứng của Linh Thú Tông, da đầu tê dại mà chạy ra ngoài.</p>
+                <p>Lão giả áo bào đỏ thần sắc cực kỳ cảnh giác. Vừa lùi về phía lối ra, lão ta vẫn không quên chắp tay nói: “Các hạ, bọn ta vô ý quấy rầy. Giờ xin cáo lui, mong thứ lỗi.”</p>
+                <p>Một con hung thú lợi hại đến thế, dù chưa hóa hình, linh trí cũng cực cao. Dù không hiểu ngôn ngữ nhân tộc, cũng nên nhìn ra thiện ý của lão ta. Đối phương hẳn sẽ cân nhắc một chút…</p>
+                <p>Ý nghĩ còn đang quanh quẩn trong lòng.</p>
+                <p>Một vuốt đen khổng lồ che trời, xuyên thấu không gian, hung hăng vồ tới lão giả áo bào đỏ. Trong bóng tối, đôi mắt tựa huyết nguyệt kia, tỏa ra vẻ khinh miệt.</p>
+                <p>Lão giả áo bào đỏ sắc mặt trầm xuống, kinh hãi xen lẫn phẫn nộ nói: “Nếu ngươi đã không biết điều, thì đừng trách lão phu bất lễ trước rồi động binh sau! Lò Lửa Chiếu Thiên!”</p>
+                <p>Lão ta vỗ mạnh hai lòng bàn tay, liệt hỏa cực kỳ đáng sợ tuôn ra, tạo thành hai luồng lửa. Một luồng đón lấy vuốt nhọn đang vồ tới, luồng còn lại thẳng tiến vào mắt cự thú. Ngay khoảnh khắc ngọn lửa xuất hiện, toàn bộ không gian dưới lòng đất chợt bừng sáng, nhiệt độ tăng vọt. Dù cách xa trăm trượng, mọi người vẫn cảm thấy da thịt bỏng rát, quần áo trên người sắp tự bốc cháy.</p>
+                <p>Uy lực của một đòn này, còn mạnh hơn hai phần so với Hỏa Diễm Ngọc Phù Giang Phàm vừa dùng khi nãy.</p>
+                <p>Thế nhưng.</p>
+                <p>Điều khiến Giang Phàm, khiến tất cả mọi người có mặt, thậm chí là chính lão giả áo bào đỏ cũng phải chấn động là: cự thú thậm chí không hề có ý định né tránh.</p>
+                <p>Vuốt lớn khẽ vỗ xuống, đè nát luồng lửa xuống đất, giống hệt như đập chết một con đom đóm. Luồng sáng bắn thẳng vào mắt huyết nguyệt, đối phương cũng không hề tránh né, chỉ nhắm nhẹ mắt lại. Luồng lửa đánh vào mí mắt mỏng manh kia, lại như ngọn lửa thông thường, đập vào tấm thép, hóa thành vô số tia lửa bắn tung tóe.</p>
+                <p>“Hít!”</p>
+                <p>Lão giả áo bào đỏ hít sâu một hơi khí lạnh, một luồng hàn khí từ gan bàn chân xông thẳng lên đỉnh đầu.</p>
+                <p>“Thứ này là thứ gì?”</p>
+                <p>Thân thể già nua của lão ta run rẩy, ngay lập tức ý thức được, bản thân và hung vật trước mắt hoàn toàn không phải tồn tại cùng đẳng cấp.</p>
+                <p>Không nói hai lời, lão ta trực tiếp thi triển thân pháp bỏ chạy.</p>
+                <p>Giang Phàm cùng những người khác chạy còn nhanh hơn. Ngay từ khi lão giả áo bào đỏ ra tay, Giang Phàm đã biết sẽ là tình huống trước mắt này, thế nên hắn đã sớm chạy trước. Giờ phút này đã xuyên qua bức tường bị phá vỡ, tiến vào không gian có Dịch Thổ Phượng Thảo.</p>
+                <p>“Đừng trúng chiêu.”</p>
+                <p>Giang Phàm nhắc nhở một tiếng, dặn Nhậm Cô Hồng và Vu Mạn Nguyệt đi vòng quanh hai bên không gian, tuyệt đối đừng tới gần trung tâm, tránh bị liên lụy.</p>
+                <p>Gầm ——</p>
+                <p>Thế nhưng ngay khi Giang Phàm vừa chạy ra khỏi khe hở, đại địa chấn động.</p>
+                <p>Địa Ngục Hoang Thú, một vuốt vỗ mạnh xuống đại địa. Một luồng sáng đen, lấy móng vuốt của nó làm trung tâm, tỏa ra bốn phía.</p>
+                <p>Mọi người đang lao đi, đột nhiên dưới chân chìm xuống, như thể dẫm vào bùn lầy. Thân hình chợt chậm lại, hơn nữa, ngày càng khó khăn hơn. Sau ba hơi thở, tất cả đều như lún sâu vào đầm lầy, đi một bước cũng vô cùng khó khăn.</p>
+                <p>Lão giả áo bào đỏ cũng bị ảnh hưởng. May mắn lão ta kịp thời lơ lửng giữa không trung, mới thoát khỏi luồng sáng đen trên mặt đất. Đồng tử lão ta co rút mạnh, giọng run rẩy: “Hoang Thú Lĩnh Vực! Đây… đây là tuyệt kỹ của Địa Ngục Hoang Thú!”</p>
+                <p>Quay đầu nhìn về phía cự thú đang thong dong bước tới trong bóng tối, tim lão ta đập thình thịch như muốn nhảy ra khỏi cổ họng.</p>
+                <p>“Chúng ta giả dạng Địa Ngục Hoang Thú, lại giả ngay trước mặt nó!!! Đúng rồi! Địa Ngục Hoang Thú vừa xuất quan, là lúc yếu ớt nhất, là lúc cần đại bổ nhất. Không có gì có thể hấp dẫn nó hơn di hài của Đại Hiền!”</p>
+                <p>Đúng như câu nói kia, nửa đêm giả quỷ gặp quỷ thật!</p>
+                <p>Lão ta hồn phi phách tán, không chút nghĩ ngợi, liền bay vọt qua đầu đám đệ tử, lao về phía bức tường bị phá vỡ.</p>
+                <p>“Sư tôn!”</p>
+                <p>“Tiêu Dao Thượng Nhân!”</p>
+                <p>Đám người đang lún sâu vào vũng lầy, thấy Tiêu Dao Thượng Nhân bỏ mặc mình không quản, đều phát ra tiếng thét kinh hoàng.</p>
+                <p>Rắc ——</p>
+                <p>Cũng chính vào lúc này, Địa Ngục Hoang Thú đã bước tới. Vuốt lớn nhẹ nhàng ấn xuống, một đệ tử có thực lực đạt đến Kết Đan Cửu Tầng, liền như một quả dưa hấu nhỏ, bị giẫm nát bấy. Máu tươi hòa lẫn thịt nát, bắn tung tóe khắp người các đệ tử xung quanh. Điều này càng khiến bọn họ kinh hoàng tột độ.</p>
+                <p>Thế nhưng bọn họ lại di chuyển vô cùng khó khăn.</p>
+                <p>Rắc ——</p>
+                <p>Lại thêm một đệ tử nữa bị giẫm nát. Trong mắt Địa Ngục Hoang Thú lộ ra một tia cười tàn nhẫn, dường như chỉ xem bọn họ như món đồ chơi tiêu khiển nhỏ, thậm chí không có hứng thú ăn thịt.</p>
+                <p>Tiêu Dao Thượng Nhân quay đầu nhìn thấy cảnh tượng này, mắt rách cả khóe. Lão ta gầm lên: “Súc sinh!”</p>
+                <p>Lão ta cắn răng, đau lòng lấy ra một cây trường thương cổ kính đã gãy, trên đó còn lưu lại từng tia uy lực của linh khí.</p>
+                <p>“Đi!”</p>
+                <p>Dùng sức ném một cái, cây trường thương đã gãy liền hóa thành tàn ảnh màu đen, lao tới Địa Ngục Hoang Thú. Trong đôi mắt huyết nguyệt đầy vẻ trêu ngươi kia, hiện lên một tia kiêng kỵ. Nó giơ vuốt nhọn cực kỳ kiên cố lên, chắn trước người.</p>
+                <p>Keng.</p>
+                <p>Vuốt nhọn bị đâm ra từng chuỗi tia lửa, nhưng không hề bị thương tổn chút nào. Tiêu Dao Thượng Nhân kinh hãi tột độ.</p>
+                <p>Nhưng, cũng chính một đòn này, đã ngăn cản Địa Ngục Hoang Thú tiếp tục phát động Hoang Thú Lĩnh Vực. Luồng sáng đen trên mặt đất rút lui, đám đệ tử khôi phục tự do.</p>
+                <p>“Chạy mau! Đừng dừng lại! Ta sẽ cản nó một chút.”</p>
+                <p>Tiêu Dao Thượng Nhân quát khẽ, lại lấy ra mấy cây linh khí tàn phá đã gãy. Những đệ tử này, đều mang theo sứ mệnh của tông môn, cùng lão ta ra ngoài. Trong đó, còn có mấy đệ tử thân truyền của lão ta. Nếu tất cả đều bỏ mạng trong miệng Địa Ngục Hoang Thú, lão ta sẽ là tội nhân của Thần Hành Tông, không cách nào giải thích với tông môn, càng không cách nào giải thích với chính mình, người đã tốn mười mấy năm tâm huyết bồi dưỡng đệ tử.</p>
+                <p>Dù sao cũng chỉ cản một chút, nếu thật sự không được, vứt bỏ đám đệ tử cũng chưa muộn. Nghĩ đến đây, lão ta lập tức ném ra từng cây linh khí tàn phá.</p>
+                <p>Điều khiến lão ta khá vui mừng là, con Địa Ngục Hoang Thú này thực sự đã yếu đi rồi. Đối với uy lực của linh khí, cực kỳ kiêng kỵ. Trong chốc lát, nó lại dừng bước tiến tới.</p>
+                <p>Và nhân cơ hội này, đám đệ tử mừng như điên chạy lướt qua lão ta.</p>
+                <p>Đệ tử cầm không gian trữ vật giới kia nói: “Sư tôn, người cẩn thận!”</p>
+                <p>Tiêu Dao Thượng Nhân nói: “Đừng nói nhảm! Chạy mau! Ngoài ra, khi lên trên nhanh chóng kiểm tra xem có ai còn sống sót không. Tuyệt đối không thể để người khác biết, là do Thần Hành Tông chúng ta làm!”</p>
+                <p>Một khi tin tức lộ ra, là người của Thần Hành Tông đã đào mở mộ Đại Hiền, bị người ta đánh tới cửa đòi lợi lộc, Thần Hành Tông làm sao đáp lại? Nói rằng họ thực ra chỉ thu được mấy sợi lông? Lời này ngay cả bản thân họ cũng không dám tin, huống hồ là người ngoài? Đến lúc đó, Thần Hành Tông không lấy ra được bảo vật, chỉ sẽ lún sâu vào rắc rối lớn hơn. Vì vậy, nhất định phải giết sạch người của Linh Thú Tông, không chừa một ai!</p>
+                <p>“Đệ tử đã rõ!”</p>
+                <p>Hắn dứt khoát đáp lại, rồi quả quyết lướt qua mà đi.</p>
+                <p>Tiêu Dao Thượng Nhân trong lòng đại định. Thường Trạch Vân là đại đệ tử của lão ta, làm việc trầm ổn nhanh nhẹn, được lão ta tin tưởng nhất. Có hắn xử lý việc này, hoàn toàn có thể kê cao gối mà ngủ.</p>
+                <p>Phụt ——</p>
+                <p>Đột nhiên, một tiếng động trầm đục truyền đến từ phía sau.</p>
+                <p>Tiêu Dao Thượng Nhân quay đầu nhìn lại. Đầu của Thường Trạch Vân bay lên. Trên vai hắn, không biết từ lúc nào đã có thêm một hạt giống nhỏ bé đáng yêu. Mầm cây nhú ra từ đỉnh, há miệng rộng hoác, cắn mạnh vào cổ hắn, khiến thân thể hắn không thể nhúc nhích.</p>
+                <p>Cái đầu kia, thì bị người ta nhân cơ hội chém xuống. Ngay sau đó, có thứ gì đó trong không khí chợt nắm lấy cái đầu, khiến nó biến mất không dấu vết.</p>
+                <p>Một giọng nói lạnh lẽo, cũng truyền đến lạnh lùng vào lúc này.</p>
+                <p>“Quả thật sẽ không ai biết các ngươi là người của Thần Hành Tông. Bởi vì, tất cả các ngươi đều phải chết!”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_803">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 803: Cướp thức ăn từ miệng hổ</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Tiêu Dao Thượng Nhân lúc này mới phản ứng lại, đồng tử trợn trừng.“Trạch Vân!!!”Hắn không dám tin.Đệ tử đắc ý của mình, cứ thế mà chết rồi!</p>
+                <p>Tiếng gầm lớn, tạo ra một lực xung kích mạnh mẽ.Khiến Giang Phàm đang giữa không trung bị chấn động lảo đảo, Vô Trần Phù trên người cũng theo đó bị vỡ vụn.Thân hình hắn tức khắc lộ rõ!</p>
+                <p>Không đợi Tiêu Dao Thượng Nhân kịp phản ứng.Giang Phàm dứt khoát lấy lại hạt giống, đồng thời còn móc từ trong ngực hắn ra chiếc Không Gian Trữ Vật Khí chứa đất mộ kia.Rồi không nghĩ ngợi gì mà bỏ chạy ngay.</p>
+                <p>“A!!! Tiểu súc sinh!”“Ngươi dám giết đồ nhi của ta!”Tiêu Dao Thượng Nhân gầm lên một tiếng giận dữ, liên tiếp ném những tàn phá Linh Khí trong tay ra để ngăn chặn Địa Ngục Hoang Thú.Rồi với vẻ mặt đầy sát ý, hắn đuổi theo Giang Phàm.</p>
+                <p>Khi đi ngang qua khe hở.Hắn chợt dừng lại, giơ tay lên là một luồng hỏa quang, quét sạch phía trước và sau khe hở.Bất cứ thứ gì mai phục tại đây đều sẽ bị hủy diệt.Thứ không thể hủy diệt, cũng sẽ bị lộ ra.</p>
+                <p>Ở xa, Vu Mạn Nguyệt và Nhậm Cô Hồng đang men theo góc tường, thầm kinh hãi.Thật sự đúng y như Giang Phàm đã dự đoán.Đối với nhóm người cực kỳ cảnh giác trước mắt này, những nơi họ cho là thích hợp để mai phục, đối phương cũng sẽ cảnh giác.Ngay cả khi Tiêu Dao Thượng Nhân đang cực kỳ tức giận, hắn vẫn giữ đủ sự cảnh giác.Không dễ dàng mắc bẫy.</p>
+                <p>Giang Phàm quay đầu nhìn lại, lòng kinh hãi.Hắn từng có hai lần ghi nhận chém giết Nguyên Anh.Một lần là Thanh Hạc Thượng Nhân trọng thương hấp hối.Một lần là lừa Nhan Đạo An uống Minh Độc.Căn bản chưa từng trực diện giao đấu với cường giả Nguyên Anh.</p>
+                <p>Hiện tại bị hắn truy sát, nói không căng thẳng là giả dối.Nhưng đã ra tay rồi thì còn gì phải e ngại nữa?Trong lúc chạy về phía trước, hắn đuổi kịp hai tên đệ tử đang hoảng loạn chạy thục mạng.Không nghĩ ngợi gì, hắn vung kiếm chém một nhát, trực tiếp chặt đứt cổ hắn rồi thu vào.</p>
+                <p>Tên còn lại kịp phản ứng, kinh hãi né sang một bên.Nhưng không khí phía sau hắn vặn vẹo, hóa ra Nhậm Cô Hồng bất ngờ ra tay, một quyền xuyên thủng tim đối phương.Rồi nhanh chóng chém đứt đầu và mang đi.</p>
+                <p>“Cuối cùng cũng để ta nhặt được một món hời!”Nhậm Cô Hồng cười ha hả.Dọc đường, hắn cứ đứng nhìn Giang Phàm và Vu Mạn Nguyệt hai tên gian xảo tranh giành đầu người.Hắn chỉ có thể đứng nhìn một bên, không làm gì được.Thật sự đã làm hắn bực bội muốn chết.</p>
+                <p>Vu Mạn Nguyệt tặc lưỡi nói: “Các ngươi thật sự không cần mạng nữa rồi.”“Ngay trước mặt vị Thượng Nhân đó mà còn giết đệ tử của người ta ư?”“Mau chạy đi thôi.”</p>
+                <p>Nhưng nàng vừa khuyên người khác chạy.Thì bản thân lại chợt lộ ra ánh mắt lạnh lẽo.Bất ngờ phát động ám khí, chặt đứt đầu của một đệ tử không xa đó.</p>
+                <p>Nhậm Cô Hồng trợn trắng mắt: “Ha! Bảo chúng ta đi trước, còn ngươi thì giành đầu người ư?”“Vì muốn có bảo bối trong tay chúng ta, ngươi quả là điên rồ!”</p>
+                <p>Trán Giang Phàm gân xanh nổi lên.Hắn thu hút hỏa lực của Tiêu Dao Thượng Nhân, còn hai tên khốn này lại thừa cơ giành đầu người.“Các ngươi cứ giành đi.”“Ta chạy trước đây!”</p>
+                <p>Hắn lao nhanh vào địa đạo, vừa xông qua.Một đạo hàn quang có uy lực cực lớn đã bắn tới.Ngẩng đầu nhìn lên, hóa ra là một đệ tử phát hiện Giang Phàm đang tàn sát đồng môn của mình.Hắn ta nấp trong góc tối của địa đạo, chờ cơ hội tung ra một đòn có uy lực không kém Kết Đan Cửu Tầng Viên Mãn.</p>
+                <p>Đùng—Dù có mặc Xích Liên Bảo Giáp, hắn vẫn bị đòn tấn công bất ngờ đánh cho cổ họng tanh ngọt.</p>
+                <p>“Kinh Hồn Thích!”Đối phương ra đòn không thành muốn chạy, Giang Phàm dứt khoát dùng Kinh Hồn Thích, khiến thân hình hắn run rẩy.Ngay sau đó, Âm Tủy Hổ Phù phát động.Một luồng âm vân quấn lấy hắn, đợi đến khi hắn kinh hãi tỉnh lại, Kim Đan trong cơ thể đã bị âm khí xâm chiếm, ngưng trệ không thể vận chuyển.</p>
+                <p>Tiêu Dao Thượng Nhân nhìn thấy cảnh này từ xa, vội vàng quát: “Mau dùng Pháp Bảo giữ mạng!”Thực tế.Không đợi hắn nhắc nhở, tên đệ tử kia đã nhận ra điều chẳng lành.Vội vàng lôi ra một tấm Không Gian Cuộn Trục.</p>
+                <p>Giang Phàm đã từng ăn một vố từ Khang Lâm, làm sao có thể cho hắn ta cơ hội dùng Cuộn Trục giữ mạng nữa?Thấy hai người cách nhau không xa.Chỉ khoảng ba bốn trượng.Giang Phàm dứt khoát rút từ trong Không Gian Trữ Vật Khí ra cây Lang Nha Bổng dài năm sáu trượng.Không nghĩ ngợi gì, hắn hung hăng giáng xuống.</p>
+                <p>Khi đối phương phát hiện ra thì đỉnh đầu đã tối sầm.Ngay sau đó, đầu óc đau nhói, ý thức trở nên mơ hồ.Rồi lại thêm một gậy nữa.Người bằng sắt cũng không chịu nổi.Huống hồ là thân thể bằng xương bằng thịt?Tại chỗ đã ngất lịm đi.Người đó còn đang đổ gục, Giang Phàm rút kiếm chém một nhát, cực kỳ dứt khoát chặt đầu rồi mang đi.</p>
+                <p>“A! Súc sinh!”Tiêu Dao Thượng Nhân mắt đỏ hoe.Bùng phát ra luồng hỏa quang hủy diệt, oanh tạc về phía địa đạo.</p>
+                <p>Nhưng chợt thay đổi ý nghĩ, hắn kịp thời thu công, đánh sang chỗ khác.Nếu địa đạo sụp đổ, chính hắn cũng sẽ chết ở đây!Chỉ là, đánh sang chỗ khác, lại làm khổ Nhậm Cô Hồng và Vu Mạn Nguyệt.</p>
+                <p>Mặc dù chỉ là bị ảnh hưởng.Hai người lập tức bị thiêu cháy đến mức hiện hình, quần áo bị cháy rách tả tơi, toàn thân da thịt bị bỏng rát đỏ ửng.Giống như heo sữa quay cháy đỏ sẫm.</p>
+                <p>“Híc híc!”Hai người đau đớn kêu la, làm sao còn dám nán lại?Lập tức chui vào địa đạo rồi chạy vút lên trên.</p>
+                <p>Tiêu Dao Thượng Nhân sát ý ngập trời: “Ba tên các ngươi đều phải chết!”Oanh—Hắn vút mình lên, với tốc độ khó tin mà truy đuổi theo.</p>
+                <p>Giang Phàm ngoảnh đầu lại, lạnh lùng nói: “Vẫn là ngươi chết trước đi!”“Nổ!”Ong—</p>
+                <p>Một tiếng ong ong mạnh mẽ.Tiêu Dao Thượng Nhân đang đi tới giữa trung tâm, bỗng nhiên thân thể không khống chế được mà run lên.Ngay sau đó.Dưới chân hắn lại dâng lên một vầng sáng hình tròn có đường kính bảy tám mươi trượng.Từng đạo văn tự phức tạp vô cùng, nối liền với nhau trên mặt đất thành những sợi xích chói mắt, đan thành một tòa lao tù.Hắn như chim trong lồng, bị giam cầm bên trong.</p>
+                <p>“Trận Pháp?”“Ngươi bố trí mai phục?”Tiêu Dao Thượng Nhân có chút không dám tin.Không ngờ rằng, ở nơi trống trải thế này, lại còn có cạm bẫy.</p>
+                <p>“Một chút Trận Pháp cỏn con mà muốn giam cầm ta ư?”Hắn giận dữ đánh ra hai luồng hỏa quang, oanh kích vào Trận Pháp trước mặt.Nhưng những sợi xích lại cực kỳ kiên cố.Sau một hồi rung lắc, chúng liền khôi phục như ban đầu.</p>
+                <p>“Cái gì?”“Đây là Trận Pháp của chi nào trong Thập Can Thập Nhị Chi?”“Lại có thể giam cầm cường giả Nguyên Anh cấp bậc chúng ta sao?”</p>
+                <p>Nhưng, hắn không kịp suy nghĩ nữa rồi.Từ khe hở phía sau, tiếng bước chân nặng nề đang ùa tới.Địa Ngục Hoang Thú.Đến rồi!</p>
+                <p>Mà hắn lại bị phong ấn tại đây, không thể chạy thoát!Tiêu Dao Thượng Nhân kinh hãi tột độ, quát lớn: “Tiểu tử, mau giải khai Trận Pháp!”Giang Phàm lạnh lùng liếc hắn một cái: “Các ngươi không phải thích giả dạng Địa Ngục Hoang Thú, tạo ra các vụ thảm sát sao?”</p>
+                <p>“Vậy thì để ngươi và Địa Ngục Hoang Thú thật sự, tiếp xúc thân mật một chút, để hiểu rõ nhau hơn đi.”Nói xong, hắn lập tức đi lên trên.</p>
+                <p>Tiêu Dao Thượng Nhân sợ hãi, vội vàng nói: “Thiếu niên, đừng đi!”“Giải khai Trận Pháp này, lão phu sẽ tặng ngươi tạo hóa.”Giang Phàm khẽ “hừ” một tiếng.</p>
+                <p>Không thèm quay đầu lại, hắn lao vút lên trên.Dọc đường, thấy đệ tử Thần Hành Tông nào bị tụt lại phía sau, hắn trực tiếp đại khai sát giới.Cộng thêm hai tên giành đầu người là Nhậm Cô Hồng và Vu Mạn Nguyệt.Trong chốc lát, tiếng kêu thảm thiết vang vọng khắp địa đạo.</p>
+                <p>Tiêu Dao Thượng Nhân mắt đỏ hoe: “Ba tên tiểu súc sinh các ngươi!”“Ta nhất định phải nghiền xương các ngươi thành tro bụi!!!”Hắn nằm mơ cũng không nghĩ tới.Người của mình không chết trong tay Địa Ngục Hoang Thú.Mà ngược lại, lại bị tổn hại trong tay ba tên tiểu bối xảo quyệt!</p>
+                <p>Tuy nhiên.Khi Địa Ngục Hoang Thú phát ra một giọng nói âm lãnh từ trong miệng.Tiêu Dao Thượng Nhân như rơi vào hầm băng.“Ồ? Các ngươi đang mạo danh ta sao?”Địa Ngục Hoang Thú đi tới, trên khuôn mặt hung tợn lộ ra vẻ chơi đùa.Nó lại có thể nói tiếng người!</p>
+                <p>Hơn nữa, nếu Giang Phàm có mặt ở đây, chắc chắn sẽ nghe ra.Đây lại chính là giọng nói của Nhan Đạo An!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_804">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 804: Tôi đã chiến thắng</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nói về ba người Giang Phàm.Dọc đường, họ vừa đi vừa chiến đấu.Khi xông ra khỏi địa đạo, mười người áo đen cùng hai nội ứng của Linh Thú Tông, không một ai thoát được.Tất cả đều trở thành những thi thể không đầu.Ba người không dám dừng lại.Họ phi thẳng xuống núi, nhảy lên lưng phi cầm rồi dứt khoát bỏ chạy.</p>
+                <p>“Được rồi, được rồi, mở kèo thôi!”Vừa mới bay lên không lâu.Vu Mạn Nguyệt đã xoa xoa hai tay nhỏ, chẳng màng đến vết bỏng trên người, vội vàng lấy ra số đầu người đã chém được.Lần này nàng ta chém được sáu cái, cộng với bốn cái trước đó, tổng cộng là mười cái đầu người.Sắc mặt Nhậm Cô Hồng chùng xuống, tức đến mức đập đập chân: “Ngươi đúng là có thể giành đầu người thật đấy!”Hắn ta cũng lấy ra chiến lợi phẩm của mình.Lần này giết được năm cái, cộng với bốn cái trước đó, vừa đúng chín cái đầu người.Vu Mạn Nguyệt lập tức bật cười thành tiếng như ngỗng kêu.“Ôi chao chao!”“Lần này cuối cùng cũng đến lượt ta phát tài rồi!”“Mau mau lấy ra, Ngũ Sắc Linh Dịch của Nhậm sư huynh, Bồ Đề Đan của Giang sư đệ!”“Tất cả đều là của ta rồi!”</p>
+                <p>Giang Phàm quay đầu nhìn Linh Thú Tông đang lùi dần phía sau.Tâm trạng đang treo lơ lửng cũng thoáng thả lỏng.Nghe vậy, hắn cười một tiếng: “Ai nói ngươi thắng?”Vu Mạn Nguyệt cười khẩy một tiếng: “Muốn giở trò không chịu thua à?”“Ta giúp ngươi tính toán một chút.”“Lần này dưới địa đạo, cộng thêm hai nội ứng của Linh Thú Tông, tổng cộng là mười bốn đệ tử.”“Ta giết sáu, Nhậm sư huynh giết năm, ba cái còn lại cứ coi như đều là ngươi giết đi.”“Cộng thêm trước đó, ngươi chém giết được bốn cái, gộp lại là bảy cái.”“Ta chín, Nhậm sư huynh tám, ngươi bảy.”“Rõ ràng rành mạch.”“Đồ đâu, mau đưa đây!”Nàng ta đắc ý vươn bàn tay thon dài, trông như một con công nhỏ đầy tự mãn, vô cùng đắc ý.</p>
+                <p>Nhậm Cô Hồng mặt đen sầm, lấy ra thùng Ngũ Sắc Linh Dịch kia.Hắn vỗ vỗ vai Giang Phàm, nói: “Giang sư đệ, đã cược thì phải chịu thua thôi.”“Ngươi và ta cùng chung số phận.”“Đợi an toàn rồi, chúng ta tìm một nơi nào đó uống một chén, mượn rượu giải sầu.”Giang Phàm cười như không cười: “Nhậm sư huynh, rượu này huynh phải tự mình uống rồi.”Hắn im lặng lấy ra ba cái đầu người.Tiếp đó lại lấy ra bốn cái đầu người.Rồi ngay sau đó, lại lấy ra mười hai cái đầu người.</p>
+                <p>“Xin lỗi, ta thắng rồi.”Biểu cảm của Nhậm Cô Hồng và Vu Mạn Nguyệt đều cứng đờ lại.Họ không chớp mắt nhìn chằm chằm, số đầu người đó còn nhiều hơn gấp đôi tổng số của hai người họ cộng lại.“Giang… Giang sư đệ, mười hai cái đầu dư ra kia từ đâu mà có?”Nhậm Cô Hồng ngạc nhiên hỏi: “Chúng ta đã gặp chúng khi nào sao?”Giang Phàm lắc đầu: “Các ngươi không gặp.”“Ta gặp, rồi chặt hết bọn chúng.”Trời ơi!Nhậm Cô Hồng trợn tròn mắt: “Ngươi đã làm một vố lớn trước khi hội hợp với chúng ta sao?”Thấy Giang Phàm gật đầu, Nhậm Cô Hồng ngẩn người: “Vậy là…”“Trận đấu còn chưa bắt đầu đã kết thúc rồi ư?”Giang Phàm lại gật đầu một lần nữa.Nhậm Cô Hồng giơ hai tay ra, muốn bóp chết Giang Phàm: “Sao ngươi không nói sớm chứ?”“Khiến ta như bị tiêm thuốc kích thích, liều mạng chém giết như vậy sao?”Giang Phàm cười tránh đi, nói: “Phải cho các ngươi một chút hy vọng vào cuộc đời chứ.”Nhậm Cô Hồng nghiến chặt răng, tức đến mức run rẩy:“Ngươi đúng là đồ chó má mà!”Còn Vu Mạn Nguyệt thì ngồi xổm xuống, không cam tâm kiểm tra mười hai thi thể kia.Nàng phát hiện dấu ấn phía sau gáy của bọn chúng giống hệt với những người đã bị giết sau này.Cũng hoàn toàn không nhịn được nữa.Oa oa khóc lớn vì tủi thân.“Oa oa oa!”“Ngươi quá đáng lắm rồi!”“Sau này ta sẽ không chơi với ngươi nữa!”Nàng vừa khóc vừa móc ra trâm cài tóc, hung hăng ném vào lòng Giang Phàm.Sau đó quay lưng lại với Giang Phàm, ngồi xổm trên lưng chim mà khóc ầm ĩ.Để thắng Giang Phàm một lần, lần này nàng ta thật sự đã liều mạng.Chưa bao giờ nàng ta lại nghiêm túc như vậy.Thế nhưng cuối cùng lại thua trắng tay.</p>
+                <p>Giang Phàm xoa xoa mũi, không khỏi lẩm bẩm:“Có phải thắng quá nặng tay rồi không?”“Biết thế đã mang ít đầu người hơn, để ngươi dễ chịu một chút.”Vừa nói xong câu này.Vu Mạn Nguyệt khóc càng thêm thảm thiết, đập đập chân nói:“Hắn còn chê ta vô dụng!!!”“Oa oa oa!”Giang Phàm ngượng nghịu không thôi.Dứt khoát không nói nữa, hắn thu hồi trâm cài tóc và cả Ngũ Sắc Linh Dịch trên đất.</p>
+                <p>Hắn hắng giọng một tiếng, đi đến phía sau Vu Mạn Nguyệt, nhẹ nhàng vỗ vỗ vai nàng nói:“Các ngươi cũng không phải là không có thu hoạch.”“Đừng quên, chúng ta đã phát hiện ra điều gì.”Vu Mạn Nguyệt bỗng nhiên không khóc nữa, đôi mắt đẹp dần mở to, ngay sau đó mừng rỡ ra mặt nói:“Địa Ngục Hoang Thú!”“Chúng ta đã phát hiện ra Địa Ngục Hoang Thú rồi!”Nhậm Cô Hồng đang vẻ mặt u sầu, cũng chợt bừng tỉnh.“Suýt nữa quên mất!”“Đây mới là thu hoạch lớn nhất của chuyến đi này!”Hắn vội vàng lấy ra thân phận lệnh bài.Dùng tay làm bút, viết lên lệnh bài dòng chữ “Linh Thú Tông xuất hiện Địa Ngục Hoang Thú, Nhậm Cô Hồng”.</p>
+                <p>Giang Phàm cũng lập tức lấy ra lệnh bài, bắt chước làm theo.Thấy Giang Phàm không mấy hiểu rõ, Nhậm Cô Hồng nói:“Thân phận lệnh bài của Thiên Cơ Các chúng ta có công dụng như Truyền Tấn Ngọc Phù.”“Nhưng chỉ giới hạn trong việc truyền tin đến Thiên Cơ Các.”“Thiên Cơ Các không thể truyền tin cho chúng ta, các đệ tử giữa chúng ta cũng không thể liên lạc với nhau.”Giang Phàm đã hiểu.Chỉ là một loại pháp khí truyền tin một chiều thôi mà.Đệ tử cầm lệnh bài này, Thiên Cơ Các liền có vô số tai mắt.Vu Mạn Nguyệt cũng hớn hở viết xuống dòng chữ.Nàng khựng lại một chút, rồi nói: “Tuy nhiên, khi thống kê cuối cùng, sẽ lấy thông tin mới nhất làm chuẩn.”“Nếu cường giả trong Các kịp đến, Địa Ngục Hoang Thú vẫn còn ở đây, công lao của người phát hiện đương nhiên sẽ tính cho chúng ta.”“Nhưng nếu Địa Ngục Hoang Thú chạy đến nơi khác, đệ tử ở đó phát hiện và dẫn cường giả trong Các đến, công lao sẽ được tính cho đối phương.”Giang Phàm khẽ gật đầu.Đương nhiên là phải vậy.Thông tin phải tạo ra giá trị thì mới được tính toán.Nếu không, giả sử công lao phát hiện Địa Ngục Hoang Thú đầu tiên của Giang Phàm và đồng bọn được tính trực tiếp cho họ, thì Địa Ngục Hoang Thú sau này chạy mất, ai còn muốn tiếp tục mạo hiểm truy tìm tung tích Địa Ngục Hoang Thú nữa chứ?Chỉ có thể hy vọng Các chủ và những người khác sẽ đến sớm.Và rồi thuận lợi chém giết Địa Ngục Hoang Thú.</p>
+                <p>Ngay vào lúc này!Phía chân trời đằng sau họ.Tòa Linh Thú Tông cao ngất mây xanh kia, bỗng nhiên bùng nổ một tiếng động ầm ĩ.Một tàn ảnh màu đỏ lao ra từ cuồn cuộn khói bụi.Và sau một vòng quét mắt, nó lại khóa chặt họ, lao nhanh về phía họ.Trời ơi!Giang Phàm giật mình kinh hãi: “Thế mà hắn ta cũng thoát ra được sao?”“Con Địa Ngục Hoang Thú kia làm gì mà ăn hại thế?”Nhậm Cô Hồng và Vu Mạn Nguyệt cũng cảm thấy da đầu tê dại.Vu Mạn Nguyệt vội vàng xé toạc một quyển trục không gian, nói:“Giang Phàm, ngươi giết nhiều nhất, chắc chắn là tìm ngươi rồi!”Sắc mặt Giang Phàm tối sầm: “Nhưng ngươi mới là kẻ giết hăng nhất!”Hắn triệu hồi Cửu Thiên Lôi Long, dứt khoát bỏ chạy.Nhậm Cô Hồng run rẩy một cái: “Hai ngươi là kẻ âm hiểm nhất, Tiêu Dao Thượng Nhân chắc chắn hận các ngươi nhất.”Hắn ta rút ra đôi cánh khô héo kia.Ba người không nói hai lời, đồng thời hóa thành luồng sáng bay trốn về phía chân trời.</p>
+                <p>Không lâu sau đó.Tiêu Dao Thượng Nhân đã đuổi kịp phi cầm.Lúc này, hắn ta bị thương khá nặng.Toàn thân áo bào đỏ rách thành từng mảnh, gần nửa cái đầu bị chém mất, óc trắng xóa chảy dọc theo vành tai xuống.Một con mắt thậm chí còn rơi ra ngoài.Nếu là Vũ giả Kết Đan cảnh, e rằng đã chết từ lâu rồi.Nhưng Tiêu Dao Thượng Nhân, lại vẫn duy trì được sinh lực vô cùng mạnh mẽ.“Tiểu súc sinh!”Hắn ta tràn đầy vẻ oán độc.Dốc hết những lá bài tẩy giữ mạng cất giấu kỹ nhất, hắn ta mới may mắn thoát chết từ tay Địa Ngục Hoang Thú.Mà kẻ đã hại hắn ra nông nỗi này, chính là thằng nhóc áo đen kia!Khi hắn nhìn rõ những cái đầu người to lớn trên lưng phi cầm.Biểu cảm vốn đã oán độc, nay biến thành sự cuồng nộ vô biên.“A!”“Các ngươi dám giết sạch môn nhân của ta!!!”“Tìm chết!!!”Hắn ta trợn mắt đỏ ngầu, khóa chặt phương hướng của Lôi Long Giang Phàm, gầm lên rồi lao tới!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_805">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 805: Bị Bắt</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Gần như cùng lúc đó, dưới lòng đất Linh Thú Tông vang lên một tiếng gầm rống xé toạc sơn hà.</p>
+                <p>Ngọn núi rộng lớn bất ngờ bị tách làm đôi, bị uy lực tuyệt đỉnh oanh phá. Một bóng đen khổng lồ tỏa ra hung khí ngút trời, từ đó vọt ra. Đôi mắt huyết nguyệt của nó quét một lượt, nhìn chằm chằm Tiêu Dao Thượng Nhân… không, nó nhìn về phía Giang Phàm! Ngay lập tức đạp hư không truy đuổi.</p>
+                <p>Xoẹt —</p>
+                <p>Tận cùng trời đất, Giang Phàm, người đã liên tục thi triển Vân Trung Ảnh tám lần, xuất hiện ở nơi cách gần ba trăm dặm.</p>
+                <p>Đây là một vùng đồi núi, xa xa ven sông điểm xuyết một thôn làng nhỏ. Lúc này đang là hoàng hôn, khói bếp lượn lờ trong thôn. Mục đồng cưỡi trâu nước già, thổi chiếc còi làm từ vỏ cây liễu, vui vẻ vội về nhà. Những lão nhân ở đầu thôn tản đi, mỗi người xách ghế đẩu nhỏ về nhà.</p>
+                <p>Giang Phàm tâm niệm khẽ chuyển, lấy ra Thiên Huyễn Phát Quán đội lên đầu. Dưới sự thúc đẩy của linh lực, một tầng ánh sáng trắng sữa nhàn nhạt tuôn ra, bao phủ lên mặt. Trong nháy mắt, hắn đã biến thành một hán tử trung niên thô kệch, da ngăm đen. Kế đó, hắn cởi bỏ trường bào đen, thay bằng y phục giản dị đã mặc từ rất lâu trước đây. Sau đó, hắn giả vờ nhặt một bó củi, tùy tiện buộc lại rồi vác lên vai, như không có chuyện gì mà đi về phía chân núi.</p>
+                <p>Oanh —</p>
+                <p>Bầu trời ầm ĩ, rừng núi cuồng phong nổi lớn. Tiêu Dao Thượng Nhân lần theo tàn dư lôi tức mà đuổi tới. Hắn cúi đầu liền thấy tiều phu cách đó không xa. Hắn tung mình bay xuống trước mặt đối phương.</p>
+                <p>“A! Quỷ!”</p>
+                <p>Tiều phu sợ tới mức vứt cả bó củi trên vai, quay người chạy lên núi.</p>
+                <p>Tiêu Dao Thượng Nhân sờ lên khuôn mặt trái đầy óc, máu thịt be bét của mình. Thần sắc dữ tợn quát: “Ta hỏi ngươi, vừa rồi có thấy ai không?”</p>
+                <p>Tiều phu sợ hãi ngã lăn ra đất, xoay người dùng chân đạp lùi về sau, toàn thân run rẩy không ngừng, ngay cả môi cũng run lên bần bật.</p>
+                <p>“Người nào cơ ạ?”</p>
+                <p>“Ta… ta không thấy ai cả.”</p>
+                <p>Tiêu Dao Thượng Nhân bực mình nhưng không hề nghi ngờ gì. Giang Phàm có Phù Ẩn Thân trên người, hắn muốn qua mặt một tiều phu sơn dã dễ như trở bàn tay. Hắn híp mắt quét nhìn bốn phía, xác định không có dấu vết của Phù Ẩn Thân. Hắn quay đầu nhìn về thôn làng cách đó không xa, mũi khịt một tiếng, hóa thành tàn ảnh màu đỏ lướt đi.</p>
+                <p>Nào ngờ, không lâu sau khi hắn rời đi, tiều phu đứng dậy vỗ vỗ mông, lộ ra một tia cười.</p>
+                <p>“Ngươi chỉ cần hơi nghi ngờ thân phận của ta một chút, liền có thể nhìn ra vấn đề rồi.”</p>
+                <p>Thiên Huyễn Phát Quán chỉ có tác dụng khi cường giả Nguyên Anh không cố ý dò xét. Nếu đã sinh nghi, ánh mắt quét qua là có thể phát hiện manh mối.</p>
+                <p>Ngay sau đó, hắn nhanh chóng tháo bỏ lớp ngụy trang trên mặt. Đúng như Vụ Mạn Nguyệt đã nói, chiếc phát quán này khi phát động năng lực ngụy trang, cực kỳ hao tổn linh lực. Chỉ trong chốc lát như vậy, linh lực của hắn đã hao phí hơn một nửa!</p>
+                <p>“Nếu Tiêu Dao Thượng Nhân cứ tra hỏi thêm một lúc nữa, ta e là sẽ lộ sơ hở rồi.”</p>
+                <p>Hắn kích hoạt hiệu quả ẩn thân của Thiên Huyễn Phát Quán, lặng lẽ mò vào sâu trong núi. Nơi đây đồi núi bát ngát, chỉ cần vào trong đó rồi ẩn nấp kỹ càng, Tiêu Dao Thượng Nhân muốn tìm được hắn, chẳng khác nào mò kim đáy bể.</p>
+                <p>Bỗng nhiên, một tiếng động lớn truyền đến từ ngôi làng dưới chân núi. Hắn lấy ra Giám Thiên Bảo Giám, cách một khoảng cách quan sát tình hình trong làng.</p>
+                <p>Chỉ nhìn một cái, sắc mặt hắn liền trở nên âm trầm. Tiêu Dao Thượng Nhân hỏi thăm ở cổng làng không có kết quả, vậy mà lại tiện tay phá hủy căn nhà tranh của một lão nhân ven đường. Lão nhân không kịp chạy thoát, bị căn nhà tranh đè ở phía dưới, cái đầu lộ ra từ đống đổ nát, thoi thóp hơi thở.</p>
+                <p>Dân làng ở đầu thôn sợ tới mức tê liệt ngã xuống đất, mất kiểm soát đại tiểu tiện. Có người quỳ trên đất, cầu xin như vái Bồ Tát. Tiêu Dao Thượng Nhân chỉ vào bọn họ, từ trên cao hỏi han điều gì đó. Giám Thiên Bảo Giám không có âm thanh, nhưng có thể tưởng tượng được, là đang hỏi tung tích của Giang Phàm.</p>
+                <p>Dân làng nào biết được chứ? Không có được thứ mình muốn, Tiêu Dao Thượng Nhân nhìn quanh thôn làng, trong mắt lộ ra vẻ hung ác. Hắn nhanh chóng giơ bàn tay lên, hai chùm lửa liên tục bùng lên rồi tắt đi trong lòng bàn tay.</p>
+                <p>Giang Phàm tim đập mạnh. Tiêu Dao Thượng Nhân cho rằng Giang Phàm ẩn nấp trong thôn, với ý niệm &quot;thà giết nhầm một ngàn chứ không bỏ sót một&quot;, hắn định đồ sát toàn bộ thôn làng. Mà dân làng vẫn chưa biết chuyện gì sắp xảy ra. Mục đồng kia, còn thò nửa cái đầu ra từ sau lưng người mẹ đang quỳ dưới đất, tò mò nhìn ngó chùm lửa trong lòng bàn tay lão. Hắn cảm thấy hơi giống pháo tép chỉ được đốt vào dịp Tết, sau khi nổ, vừa to tiếng vừa đẹp. Hoàn toàn không biết, hắn sắp phải đón chào nhân gian luyện ngục.</p>
+                <p>“Mẹ kiếp!”</p>
+                <p>“Ngươi cái lão súc sinh!”</p>
+                <p>Giang Phàm mắt đỏ ngầu. Hắn thu hồi Thiên Huyễn Phát Quán, đứng trên đỉnh núi gầm lên giận dữ:</p>
+                <p>“Lão tử ở đây!”</p>
+                <p>“Ngươi mẹ nó có gan thì đuổi theo đi!”</p>
+                <p>Ngay sau đó, hắn rút Tử Kiếm, quyết đoán ngự kiếm bỏ chạy. Vừa vặn bay ra mấy trăm trượng, nơi vừa đứng, một bóng người màu đỏ khủng bố mang theo thế núi đổ nát mà hung hăng lao xuống. Đồi nhỏ trực tiếp bị đập nát. Khí lưu cuồng mãnh bắn lên, chấn động Giang Phàm cách đó mấy trăm trượng đến mức lung lay, lập tức rơi khỏi phi kiếm.</p>
+                <p>Chưa kịp đợi hắn tiếp đất, một luồng hỏa quang hủy thiên diệt địa quét về phía hắn. Giang Phàm đồng tử co rụt lại, quát lớn: “Còn muốn mộ thổ nữa không?”</p>
+                <p>Xoẹt —</p>
+                <p>Chùm lửa hiểm nguy thay đổi hướng, lướt qua cách hắn trăm trượng. Trong chốc lát, nửa bên y phục của hắn đều bị hòa tan, làn da lộ ra đỏ au, cứ như bị luộc chín vậy. Cơn đau rát dữ dội khiến Giang Phàm không nhịn được hít ngược một hơi khí lạnh. Mà không khí hít vào cũng nóng bỏng vô cùng, khiến hắn vô cùng khó chịu.</p>
+                <p>Cảm nhận được một bóng người vụt sáng tới, hắn vội vàng nắm chặt một cái không gian trữ vật khí, giận dữ quát:</p>
+                <p>“Động vào ta một cái, ta sẽ bóp nát không gian trữ vật khí!”</p>
+                <p>Ông —</p>
+                <p>Ngay trước hắn ba thước, bàn tay rực lửa của Tiêu Dao Thượng Nhân dừng lại. Hắn híp đôi mắt già đầy oán độc, nhìn chằm chằm không gian trữ vật khí trong lòng bàn tay Giang Phàm. Với thực lực của Giang Phàm, bóp nát một không gian trữ vật khí, căn bản không thành vấn đề. Mà một khi không gian trữ vật khí vỡ nát, tất cả mọi thứ bên trong sẽ bị không gian bùng nổ nuốt chửng.</p>
+                <p>Vốn dĩ, hắn muốn tra tấn Giang Phàm đến mức không còn ra hình người, khiến hắn sống không được, chết không xong, rồi từng chút một tra hỏi chú ngữ của không gian trữ vật khí. Giờ đây, hắn lại ném chuột sợ vỡ đồ, không dám quá đắc tội Giang Phàm.</p>
+                <p>“Giao không gian trữ vật khí ra, giao chú ngữ ra!”</p>
+                <p>“Ta sẽ cho ngươi một cái chết sảng khoái!”</p>
+                <p>Tiêu Dao Thượng Nhân dữ tợn vô cùng trừng mắt nhìn Giang Phàm, hơn cả dã thú hoang dã địa ngục, càng giống một mãnh thú ăn thịt người.</p>
+                <p>Giang Phàm lúc này mới lăn xuống đất. Hắn nắm chặt không gian trữ vật khí, cảnh giác bò dậy, sắc mặt âm tình bất định.</p>
+                <p>Tiêu Dao Thượng Nhân âm trầm nói: “Đừng ôm thái độ may mắn nữa. Trước mặt Nguyên Anh, bất kỳ thủ đoạn nào của ngươi cũng vô dụng! Trước khi ngươi ra tay, ta đã có thể giết ngươi rồi!”</p>
+                <p>Tim Giang Phàm thẳng tắp chìm xuống. Lời này quả thực không sai. Thủ đoạn có lợi hại đến mấy, cũng cần thời gian để thi triển. Hắn dám có dị động, đối phương liền có thể giết chết hắn trước, giết chết không chút nghi ngờ.</p>
+                <p>Trầm mặc nửa ngày, Giang Phàm nói: “Được, có thể cho ngươi.”</p>
+                <p>“Nhưng ta phải đi một nơi trước.”</p>
+                <p>Tiêu Dao Thượng Nhân hừ nói: “Đừng giở trò, bằng không, thà rằng không cần mộ thổ kia, ta cũng phải giết ngươi! Giết sạch đệ tử mà ngươi mang tới, còn hại ta thành ra cái bộ dạng không ra người không ra quỷ này! Hôm nay, dù là Thiên Vương lão tử có đến, cũng không thể không giết hắn!”</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_160.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_160.html" class="page-btn">160</a>
+            <a href="page_161.html" class="page-btn current">161</a>
+            <a href="page_162.html" class="page-btn">162</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_162.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

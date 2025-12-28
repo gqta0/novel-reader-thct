@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 305">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 305</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_304.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_306.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_1521">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1521: Khổng lồ cuối cùng hạ thế</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Sau khi phân phát xong linh đan, Giang Phàm trầm tư, đoạn lấy ra Thánh Nhân Tinh Thối. Viên tinh thạch thần kỳ này, trong sạch vô ngần, có thể nghịch chuyển Cự Nhân Viễn Cổ, Giang Phàm tất nhiên không quên. Theo thông tin hắn có được, trong một ngàn Cự Nhân Viễn Cổ, ít nhất một nửa là do Tu La tộc chuyển hóa mà thành. Nếu trong đại chiến, bọn họ có thể khiến bộ phận Cự Nhân Viễn Cổ này chuyển hóa trở lại thành Tu La tộc, áp lực sẽ giảm đi đáng kể.</p>
+                <p>Đáng tiếc, tinh thạch chỉ có một viên, không thể chiếu cố tất cả mọi người. Hắn đành để lại cho chúng nhân Thiên Cơ Các, dùng trong thời khắc tuyệt cảnh. Vạn nhất bị một đầu Cự Nhân Viễn Cổ bức đến đường cùng, có thể thử dùng vật này rắc lên thân nó. Nếu nó vừa vặn là Tu La tộc chuyển hóa, có lẽ đối phương sẽ ngừng tấn công.</p>
+                <p>Nghĩ đến đây, hắn năm ngón tay siết nhẹ, đập nát tinh thạch thành bột mịn, sau đó phân phát cho từng người trong Thiên Cơ Các. Đây được xem là vật giữ mạng cuối cùng dành cho họ.</p>
+                <p>Cuối cùng, Giang Phàm lấy ra U Hồn Thủy Tinh và Kính Không Gian. Trong U Hồn Thủy Tinh, có linh hồn Tiêu Hoàng Dần và Huyền Tinh. Một người là thành viên Bạch Cốt Minh năm xưa, một người là hộ pháp Tam Thanh Sơn.</p>
+                <p>Giang Phàm mở U Hồn Thủy Tinh, nhàn nhạt nói: “Ân oán quá khứ, ta một bút xóa bỏ. Hôm nay phóng thích các ngươi, hai người các ngươi tự tìm thi thể, đoạt xá trọng sinh đi. Nếu có thể vì kháng chiến Cự Nhân Viễn Cổ mà cống hiến một phần sức lực thì tốt nhất, nếu không muốn, cũng tùy các ngươi.”</p>
+                <p>So với đại địch diệt thế như Cự Nhân Viễn Cổ, ân oán giữa hắn và hai người này hiển nhiên trở nên nhỏ bé không đáng kể.</p>
+                <p>Tiêu Hoàng Dần chắp tay thở dài: “Đa tạ Giang đạo hữu vẫn nguyện cấp cho ta một con đường sống. Ta trước kia làm không ít chuyện xấu, nay đại kiếp ở ngay trước mắt, ta tự sẽ lập công chuộc tội, vì quá khứ mà chuộc lỗi!” Dứt lời, thân hình hắn chợt lóe, chui vào hư vô.</p>
+                <p>Huyền Tinh cũng khẽ thở dài, chắp tay nói: “Môi hở răng lạnh, nếu Trung Thổ hủy diệt, ta một tàn hồn làm sao nương tựa? Tàn hồn này của ta, cứ để nó cháy hết trên chiến trường đi!” Lập tức, hắn cũng chui vào hư vô.</p>
+                <p>Đại chiến nổ ra, ắt sẽ có rất nhiều người ngã xuống. Bọn họ sẽ không thiếu thi thể thích hợp để đoạt xá.</p>
+                <p>Thả xong bọn họ, Giang Phàm lại từ Kính Không Gian &#039;đổ&#039; ra hai người.</p>
+                <p>Một người là tân Đạo thủ Tam Thanh Sơn, Huyền Y Thượng Nhân. Nhục thân của hắn vẫn còn, tu vi cũng vẫn còn. Giang Phàm cởi bỏ cấm cố trên người hắn, nói: “Khi xưa ta giam cầm ngươi, ta đã nói rồi, không giết ngươi, mà cho ngươi cơ hội chết trên chiến trường. Nay, ta thực hiện lời hứa của mình.”</p>
+                <p>Huyền Y Thượng Nhân ánh mắt phức tạp nhìn chằm chằm Giang Phàm. Đường đường là Đạo thủ Tam Thanh Sơn, bị Giang Phàm giam cầm, ban đầu hắn thống hận Giang Phàm. Nhưng tận mắt chứng kiến Giang Phàm ở Thiên Giới, vì cứu Tinh Uyên Đại Tôn, không tiếc mạng mình ở lại đối đầu với Vô Cấu Đại Tôn, Ngũ Tinh Cự Nhân Vương. Thâm tâm hắn là sự kính phục. Đây là một nam nhân khiến hắn, khiến Tam Thanh Sơn, vừa hận vừa kính trọng.</p>
+                <p>Hắn lắc lắc cánh tay, lạnh lùng hừ một tiếng: “Không phải chỉ có mình ngươi, mới biết giết Cự Nhân Viễn Cổ! Tam Thanh Sơn ta, cũng sẽ làm được!” Ngay lập tức, hắn quay đầu trở lại giữa chúng nhân Tam Thanh Sơn, gây ra một trận xôn xao không nhỏ.</p>
+                <p>Cuối cùng, Giang Phàm nhìn về phía lão ẩu đang ngủ say sưa trên mặt đất. Đây cũng là người của Tam Thanh Sơn, lại là Phùng tiền bối, một trong bốn Cửu Khiếu Nguyên Anh của Tam Thanh Sơn. Nàng tu luyện con đường ngủ say, một khi ý điên phát tác, sẽ khiến sinh linh xung quanh rơi vào giấc ngủ sâu. Giang Phàm nghĩ nghĩ, vẫn quyết định giữ nàng ta bên cạnh. Ý điên của người này rất phiền phức, không phân biệt địch ta. Giang Phàm mang trong mình Hiền Giả Chi Huyết, lại có Nguyên Anh chi thương, không sợ ảnh hưởng của nàng. Thế là, hắn lại đặt nàng trở lại Kính Không Gian.</p>
+                <p>“Hô...” Giang Phàm thở ra một hơi thật dài. Đến đây, mọi sự chuẩn bị để đối phó Cự Nhân Viễn Cổ đều đã hoàn tất. Chỉ còn chờ Cự Nhân Viễn Cổ giáng lâm!</p>
+                <p>Lúc này, Đại Tửu Tế bay lướt đến không trung, Bạch Tâm, Lục Đạo Thượng Nhân cùng các thành viên Khâm Thiên Giám đều đã tập trung bên cạnh hắn. Đại Tửu Tế đảo mắt nhìn mọi người, chắp tay hướng về tất cả, cúi mình thật sâu, giọng nói trầm thấp mà bi tráng: “Thái Thương Đại Châu, xin nhờ cậy chư vị!”</p>
+                <p>Chúng nhân cảm động trong lòng, rối rít cúi đầu đáp lễ. Ai nấy đều hiểu, đại chiến, đã đến rồi!</p>
+                <p>Đại Tửu Tế cúi mình hồi lâu, chậm rãi đứng thẳng dậy, phất trần trong tay xa xa vung lên về phía Khâm Thiên Giám. Tức thì, một tầng bức xạ không gian hùng vĩ vô song, từ hướng Khâm Thiên Giám, quét về bốn phía. Truyền tống trận cấp Châu đã đóng. Điều này có nghĩa là, Thái Thương Đại Châu sẽ không có bất kỳ ngoại viện nào. Bọn họ không có đường lui! Chỉ có thể tử chiến!</p>
+                <p>Tất cả mọi người đều chăm chú nhìn vào cây cột sáng màu đen thẳng tắp lên trời trong cấm địa. Giang Phàm cũng không kìm được hít sâu một hơi, gắt gao nhìn chằm chằm Hắc Trụ Tiếp Thiên. Cả trường dần trở nên yên tĩnh, tựa như sự bình yên trước cơn bão lớn.</p>
+                <p>Thiên Giới. Hắc Nhật Vương Đình.</p>
+                <p>Hơn ngàn Cự Nhân Viễn Cổ trưởng thành, chỉnh tề đứng trước trướng của Ngũ Tinh Cự Nhân Vương. Bọn chúng vác theo Lang Nha Bổng mới tinh, bên hông treo mấy cái túi vải nhuộm đỏ. Bên trong, là thi thể của Tu La tộc Thiên Giới, đó là lương khô cho cuộc viễn chinh Trung Thổ của chúng. Sau khi ăn xong, sẽ đến lượt sinh linh Trung Thổ.</p>
+                <p>Cũng đứng ngoài trướng, còn có Lục Châu. Nàng ta cúi đầu, lòng thấp thỏm không yên, đôi môi đỏ mím chặt, chờ đợi Ngũ Tinh Cự Nhân Vương trách phạt. Dù không chết, hẳn cũng khó thoát tội chết. Không chừng, sẽ bị ném vào huyết trì, chuyển hóa thành Cự Nhân Vương.</p>
+                <p>Nàng ta giơ đầu người lên, trầm giọng nói: “Bẩm Hắc Nhật Vương, thuộc hạ đã thành công chém giết Tâm Nghiệt Tôn Giả. Đây là đầu của hắn.” Nói xong, nàng ta không dám thở mạnh, yên lặng chờ Ngũ Tinh Cự Nhân Vương quyết định.</p>
+                <p>Bằng trực giác, nàng ta cảm nhận được một đôi mắt đang chiếu tới từ trong trướng. Ánh mắt đó, tựa như có thực chất, khiến toàn thân nàng ta không kìm được run rẩy, cơ thể gần như sắp nứt ra. Tim nàng ta đập thình thịch. Ngũ Tinh Cự Nhân Vương quả nhiên đã thấu suốt mọi chuyện, chuẩn bị giết nàng rồi.</p>
+                <p>Nhưng, ngay khi Lục Châu đang nơm nớp lo sợ, ánh mắt hủy diệt từ trong trướng đột nhiên thu lại. Một giọng nói thô kệch mà bình thản, từ tốn truyền đến: “Về là tốt rồi.”</p>
+                <p>Xoẹt một tiếng, trướng bị vén lên, lộ ra pho Cự Nhân cao ba mươi trượng, toàn thân da thịt màu vàng kim, trên trán có năm ngôi sao! Hắn, chính là Ngũ Tinh Cự Nhân Vương của Hắc Nhật Vương Đình đã lâu không gặp!</p>
+                <p>Con mắt dọc màu vàng kim khổng lồ của hắn, bình thản nhìn chằm chằm Lục Châu, không vui cũng không giận. Lục Châu lòng thắt lại, cố ép bản thân không run rẩy, cung kính dâng lên đầu người.</p>
+                <p>“Hắc Nhật Vương, đây là đầu của Tâm Nghiệt Tôn Giả.”</p>
+                <p>Hắc Nhật Vương chỉ nhàn nhạt liếc nhìn một cái, nói: “Chính là hắn có thể di chuyển Hắc Trụ Tiếp Thiên sao? Chết rồi thì tốt, chết rồi thì tốt a.”</p>
+                <p>Lời vừa dứt, đầu người nổ tung thành một vũng máu, bắn tung tóe khắp người Lục Châu. Điều này khiến tim Lục Châu run lên, nàng ta nói: “Đại họa của Thiên Giới chúng ta, đã được giải trừ. Chiếm lĩnh Hạ Giới, không còn trở ngại.”</p>
+                <p>Hắc Nhật Vương nhìn Lục Châu, nhàn nhạt nói: “Ngươi vất vả rồi. Hiện giờ Hắc Trụ Tiếp Thiên, đang nối liền với nơi nào ở Trung Thổ?”</p>
+                <p>Lục Châu âm thầm thở phào nhẹ nhõm. Đại Tửu Tế từng dự đoán được Hắc Nhật Vương sẽ hỏi câu này, bởi vậy đã nói cho Lục Châu biết phải trả lời thế nào. Lục Châu thành thật đáp: “Bẩm Hắc Nhật Vương, ở sâu trong Trung Thổ, tại cấm địa Ách Vận.”</p>
+                <p>Mắt Hắc Nhật Vương hơi híp lại, nhìn chằm chằm Lục Châu đủ ba hơi thở, ánh mắt mới dịu đi: “Quả nhiên không ngoài dự liệu, Thái Thương Đại Châu sẽ đưa Hắc Trụ Tiếp Thiên đến đó, để lấy sức chờ giặc.” Hắn phóng tầm mắt nhìn về phía xa, khóe miệng cong lên một nụ cười tàn nhẫn. “Vậy thì, ta sẽ cùng các ngươi chơi đùa một trận thật vui!”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1522">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1522: Thiên giới động hướng</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Lục Châu khẽ thắc mắc. Lẽ nào Hắc Nhật Vương biết sự tồn tại của Đoạn Kiếp Cấm Địa? Vì sao hắn lại quen thuộc Thái Thương Đại Châu đến thế? Lục Châu từng đích thân đến Thái Thương Đại Châu, nhưng cũng chỉ là từ miệng Đại Tửu Tế mới biết được sự tồn tại của nơi này.</p>
+                <p>“Lục Châu, ngươi ở lại Thiên Giới, cùng các tộc nhân chưa trưởng thành trấn thủ Hắc Nhật Vương Đình.” Hắc Nhật Vương lạnh lùng ra lệnh.</p>
+                <p>Lục Châu hé miệng. Hắc Nhật Vương từng hứa, chỉ cần nàng mang đầu của Tâm Nghiệt Tôn Giả về, sẽ trả lại linh hồn cho nàng. Lời đến khóe miệng, nàng vẫn không dám hỏi. Trực giác mách bảo nàng, Hắc Nhật Vương đang nghi ngờ nàng.</p>
+                <p>“Vâng, Hắc Nhật Vương!”</p>
+                <p>Như vậy, Hắc Nhật Vương mới chắp tay sau lưng, quét mắt nhìn đám Viễn Cổ Cự Nhân sát khí đằng đằng. Đôi mắt dọc khổng lồ, tinh quang bắn ra:</p>
+                <p>“Một ngàn năm rồi, cuối cùng chúng ta cũng có thể lần nữa giáng lâm mảnh đất truyền thuyết kia! Ở đó, có huyết dịch tươi mới nhất của Tam Giới, có thịt béo ngon nhất, có con mồi xảo quyệt nhất, mạnh mẽ nhất! Các ngươi có may mắn, được sinh ra trong thời đại này. Có thể theo bản vương, chinh phục Thái Thương Đại Châu, săn lùng sinh linh mạnh mẽ nhất! Đây, là vinh hạnh của các ngươi!!!”</p>
+                <p>Các Viễn Cổ Cự Nhân nhao nhao giơ cao chùy răng sói, trong đôi mắt dọc khổng lồ bắn ra vẻ tham lam và hưng phấn. Từ miệng phát ra tiếng gầm vang vọng.</p>
+                <p>“Theo chân Hắc Nhật Vương, chinh phục Thái Thương Đại Châu!”“Theo chân Hắc Nhật Vương, chinh phục Thái Thương Đại Châu!!”“Theo chân Hắc Nhật Vương, chinh phục Thái Thương Đại Châu!!!”</p>
+                <p>Tiếng gầm một khắc cao hơn một khắc, chấn động Vương Đình rung chuyển dữ dội, chấn động mây trắng trên trời bay tán loạn, cũng chấn động toàn bộ thế giới của Hắc Nhật Vương Đình run rẩy! Giờ phút này, bản tính săn mồi khắc sâu trong linh hồn bọn chúng, đã hoàn toàn bùng nổ!</p>
+                <p>Hắc Nhật Vương phất tay. Chín con Thái Cổ Hung Thú kéo cỗ chiến xa cổ xưa, cưỡi mây đến, quỳ rạp trước mặt hắn. Hắc Nhật Vương bước lên chiến xa, giơ cao tay phải, nhẹ nhàng vung về phía Hắc Trụ Nối Trời, hô lớn:</p>
+                <p>“Theo bản vương! Giáng lâm Thái Thương!!!”</p>
+                <p>Ầm ầm! Hơn ngàn Viễn Cổ Cự Nhân, sải bước theo sau chiến xa hùng dũng tiến đi. Bọn chúng như từng ngọn núi cao, bước chân giẫm đạp khiến trời đất ầm ầm, khói bụi mịt trời. Sát khí kinh thiên bùng nổ, chấn động đất trời! Ngay cả mười vị Cự Nhân Vương, cũng khó lòng địch nổi!</p>
+                <p>Lục Châu nhìn bọn chúng đi xa, trong lòng dấy lên cảm giác tuyệt vọng tột cùng.</p>
+                <p>“Giang Phàm, nguyện Thượng Thương phù hộ các ngươi!”</p>
+                <p>Trong đầu nàng đã hiện lên cảnh tượng tận thế: Thái Thương Đại Châu biến thành từng phế tích nhuốm máu, từng người tộc bị Viễn Cổ Cự Nhân ném vào miệng nhai nát. Ngoại trừ Thượng Thương hiển linh, nàng không nghĩ ra Thái Thương Đại Châu sẽ thắng bằng cách nào!</p>
+                <p>Bỗng nhiên, một bóng dáng quỷ dị lén lút thoát ra từ kho vũ khí. Lục Châu thoắt cái đã đến nơi, phát hiện đó là một thanh niên nhân tộc mắt láo liên, gầy trơ xương, đang ôm một khối đài đá âm khí dày đặc bỏ trốn.</p>
+                <p>“À? Dưới mí mắt Hắc Nhật Vương, lại có một nhân tộc lẻn vào kho vũ khí? Sao có thể như vậy? Hơn nữa, thứ hắn trộm đi là chí bảo có uy lực diệt tuyệt Viễn Cổ Cự Nhân phải không?”</p>
+                <p>Nàng theo bản năng định đuổi theo, nhưng rồi lại nghĩ lại. Nàng khẽ nhìn quanh, phát hiện các Viễn Cổ Cự Nhân ở lại bộ lạc không hề hay biết. Nàng bèn dừng bước, giả vờ không hay biết gì. Chỉ là ánh mắt liếc nhìn hướng đối phương bỏ trốn, trong mắt lộ ra một tia hy vọng.</p>
+                <p>“Cố lên đi, hy vọng thứ này có thể mang đến một tia hy vọng xoay chuyển tình thế cho Thái Thương Đại Châu các ngươi!”</p>
+                <p>Cùng lúc đó.</p>
+                <p>Trong một ngôi trại bỏ hoang của tộc Tu La. Một lão Tu La ánh mắt sắc bén, khuôn mặt vô cùng tinh ranh, đang dồn một tộc nhân Tu La vào góc tường.</p>
+                <p>“Minh Dạ thủ lĩnh, tha cho ta đi!”</p>
+                <p>Lão Tu La không phải ai khác. Chính là trại chủ Hắc Vân Trại, Minh Dạ! Hắn lừa Giang Phàm và những người khác đến kho báu của Hắc Nhật Vương Đình, dùng Lôi Đình Chi Lực mở mật thất, sau đó cướp đi Thị Huyết Quỷ Nhãn. Từ đó bặt vô âm tín!</p>
+                <p>Minh Dạ lạnh lùng nói: “Ngươi hiến tế tộc nhân ẩn náu cho Viễn Cổ Cự Nhân, chỉ để cầu thoát chết trong Đại Thú Liệp, lúc đó có từng nghĩ tới mình cũng có ngày hôm nay không?”</p>
+                <p>Hắn lắc đầu, xòe lòng bàn tay, một con mắt huyết sắc hung ác hiện ra.</p>
+                <p>“Thị Huyết Quỷ Nhãn, chỉ còn thiếu một loại huyết của tộc Tu La cuối cùng thôi. Hãy dùng máu của ngươi, hoàn thành con đường Tu La Vương của ta!”</p>
+                <p>Cong ngón tay búng một cái, Thị Huyết Quỷ Nhãn hóa thành tàn ảnh huyết sắc, chui vào lồng ngực đối phương. Tu La lập tức phát ra tiếng kêu thảm thiết đau đớn. Nhưng, tiếng kêu thảm thiết không kéo dài quá lâu. Bởi vì chỉ mười tức sau, đối phương đã hóa thành một bộ thi thể da bọc xương. Máu thịt, không còn một chút nào.</p>
+                <p>Sau đó, Thị Huyết Quỷ Nhãn chui ra. Hấp thu mười loại huyết của Tu La, nó dần hòa tan thành một chiếc vương miện huyết sắc. Rồi sau đó, bay về phía Minh Dạ.</p>
+                <p>Trung Thổ.</p>
+                <p>Thái Thương Đại Châu.</p>
+                <p>Cuồng phong gào thét, cát vàng bay lượn. Hơi thở của mọi người bắt đầu dồn dập. Bởi vì, bầu trời trên đầu bọn họ, bắt đầu hơi ửng đỏ. Giống như một chậu máu bị đổ vào hồ nước trong vắt. Hơn nữa, theo thời gian trôi đi, bầu trời càng lúc càng đỏ. Cảnh tượng này, bọn họ không hề xa lạ. Một tháng trước, khi Viễn Cổ Cự Nhân Đại Thú Liệp, trời đất cũng sinh ra dị tượng như vậy.</p>
+                <p>Giờ đây.</p>
+                <p>Đến lượt Thái Thương Đại Châu rồi! Viễn Cổ Cự Nhân, đã đang giáng lâm!</p>
+                <p>Đại Tửu Tế ngẩng đầu nhìn trời, đột nhiên tâm có sở cảm, giơ phất trần lên, vung về phía bầu trời. Trong khoảnh khắc. Bầu trời bị đánh nứt một khe hở, một luồng thanh khí từ bên ngoài tuôn vào, ngưng tụ thành chín bức họa!</p>
+                <p>Trong đó một bức, chính là của Thái Thương Đại Châu. Là Đại Tửu Tế dẫn dắt chúng sinh, nghênh chiến tại Đoạn Kiếp Cấm Địa. Tám bức còn lại, không nghi ngờ gì chính là của tám châu khác. Trong đó, có những nơi Giang Phàm quen biết.</p>
+                <p>Hắn nhìn thấy Đại Hoang Châu, nữ Đại Tửu Tế ham rượu như mạng, dẫn dắt một đám Ma Tu, bao vây Hắc Trụ Nối Trời. Cũng nhìn thấy Hỗn Nguyên Châu, nữ thanh niên Đại Tửu Tế đa tình, dẫn dắt Tinh Uyên Đại Tôn cùng một đám Nho Tu, ngẩng đầu nhìn Hắc Trụ Nối Trời. Còn nhìn thấy Đại Tửu Tế thích khóc của Quy Khư Châu, nhìn thấy Vong Tình Dã Lão và Nguyệt Minh Châu, còn nhìn thấy Quần Tinh Sơn Chủ, cùng Hứa Di Ninh. Càng nhìn thấy Đại Tửu Tế thích cười của Vạn Yêu Đại Châu, nhìn thấy Kim Lân Đại Tôn, còn có hai cô bé Linh Sơ và Lưu Ly. Ngoài ra, hắn còn nhìn thấy Vưu Phó Cung Chủ của Đan Châu. Nhìn thấy Băng Tâm Đại Tôn của Thánh Linh Châu. Nhìn thấy Thần Binh Châu.</p>
+                <p>Duy chỉ có một châu, cảnh tượng mơ hồ, không thể nhìn rõ. Đó, chính là Thiên Châu. Không hiểu vì sao, tin tức về Thiên Châu không thể nắm bắt.</p>
+                <p>Nhưng, điều này đã không còn quan trọng. Bởi vì, Hắc Trụ Nối Trời của Đại Hoang Châu đang chấn động dữ dội! Có gì đó đang theo Hắc Trụ Nối Trời, từ trên trời giáng xuống, nhanh chóng tiếp cận mặt đất! Người của Đại Hoang Châu như gặp phải đại địch. Vô Dục Tôn Giả, Hồng Trần Tôn Giả thân đi đầu, cản trước chúng sinh. Trên mặt tràn đầy vẻ ngưng trọng.</p>
+                <p>Đột nhiên! Một trận mưa máu theo Hắc Trụ Nối Trời đổ xuống, ngưng tụ thành một vũng máu! Tiếp đó. Vũng máu nhanh chóng ngưng tụ, trở thành một cự nhân đáng sợ cao hai mươi trượng, da thịt xanh nhạt, trên trán có ba ngôi sao huyết sắc!</p>
+                <p>Đây là, Tam Tinh Cự Nhân Vương! Hắn dang rộng hai tay, tham lam hít thở không khí của Trung Thổ. Trong đôi mắt dọc khổng lồ, lộ ra vẻ hưng phấn, ngửa mặt lên trời phát ra tiếng rống dài chấn động bầu trời:</p>
+                <p>“Trung Thổ! Ta, cuối cùng cũng đến rồi!”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1523">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1523: Đại chiến tựa như một màn kịch.</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Đồng tử của chúng ma tu Đại Hoang Châu co rút kịch liệt. Ngước nhìn Cự Nhân Vương cao hai mươi trượng, tựa một ngọn núi sừng sững, chúng thở dồn dập, toàn thân run rẩy không ngừng.</p>
+                <p>Cự Nhân trong truyền thuyết, sau ngàn năm xa vắng, lại một lần nữa giáng lâm Trung Thổ đại địa!</p>
+                <p>Dù đã xem qua hình ảnh Giang Phàm truyền về từ Thiên Giới, từng thấy qua Cự Nhân, nhưng khi thực sự đối mặt, cảm giác áp bách ập tới, cùng khí tức man hoang có sức mạnh nuốt chửng, là điều hình ảnh không thể hiện được.</p>
+                <p>Phàm là những tu sĩ Nguyên Anh Cảnh có mặt tại đó, ai nấy đều không khỏi kinh sợ. Một số võ giả trẻ vừa đột phá Nguyên Anh Cảnh thì run rẩy cả hai chân. Cá biệt thậm chí còn tè ra quần!</p>
+                <p>Bọn họ vốn dĩ đều là Nguyên Anh tu sĩ trải qua Thiên Kiếp tẩy lễ, chín phần chết một phần sống, xông phá mọi xiềng xích. Đáng lẽ tâm tính phải kiên cường, không sợ hãi bất cứ điều gì. Thế nhưng, khi đối mặt với Cự Nhân Vương, bọn họ chẳng khác gì những sinh linh bình thường!</p>
+                <p>May mắn thay, các Tôn Giả của Đại Hoang Châu cũng có mặt. Bọn họ đã trải qua muôn vàn gian nan hiểm trở của Hóa Thần, tâm trí kiên cố như bàn thạch, không hề sợ hãi.</p>
+                <p>Vô Dục Tôn Giả chấn thanh rống lên: “Sợ cái gì?”</p>
+                <p>“Ta bối ma tu, tu chính là kẻ thuận ta thì sống, kẻ nghịch ta thì chết; tu chính là tùy tâm sở dục, thiên địa không thể trói buộc ý của ta!”</p>
+                <p>“Một cổ Cự Nhân cỏn con cũng sợ hãi, còn tu Ma Đạo làm gì?”</p>
+                <p>Mắt sói của hắn đầy hung hiểm, giận dữ nhìn chằm chằm Tam Tinh Cự Nhân Vương:</p>
+                <p>“Đã dám tới trước, hẳn là đã chuẩn bị tan xương nát thịt rồi!”</p>
+                <p>Hắn lập tức khởi động Vực Trường sau gáy, những gợn sóng vô hình quét ngang ra.</p>
+                <p>Tam Tinh Cự Nhân Vương cười nhạt, nhún vai: “Ha ha ha!”</p>
+                <p>“Thiên Nhân Nhị Suy cỏn con, lại dám ra tay với Tam Tinh Cự Nhân Vương.”</p>
+                <p>“Thật thú vị, so với đám phế vật Tu La Tộc đã mất khả năng phản kháng, ngươi có khí phách hơn nhiều!”</p>
+                <p>“Như vậy, mới có cảm giác đi săn chứ!”</p>
+                <p>Nhìn Vực Trường ập tới, hắn chắp tay sau lưng, cười tà mị đứng yên không động đậy. Mặc cho Vực Trường cuồn cuộn tràn vào cơ thể.</p>
+                <p>Kết quả là, Vực Trường như trâu đất xuống biển, chẳng gây chút ảnh hưởng nào đến Tam Tinh Cự Nhân Vương.</p>
+                <p>“Ha ha, ngươi chẳng biết gì về chúng ta, Cự Nhân đâu!”</p>
+                <p>Viễn Cổ Cự Nhân chính là thể tập hợp của những cảm xúc tiêu cực như tham lam, bạo ngược. Sự tham lam nuốt chửng của bọn hắn là vô tận. Một Vực Trường cỏn con làm sao có thể khiến bọn hắn mất đi ham muốn, cam chịu bị xẻ thịt?</p>
+                <p>“Thấy ngươi dũng khí đáng khen... ta quyết định rồi, để ngươi trở thành con mồi đầu tiên của ta!”</p>
+                <p>“Cũng để ngươi trở thành người đầu tiên bị ăn thịt ở Đại Hoang Châu sau ngàn năm!”</p>
+                <p>Tam Tinh Cự Nhân Vương cười tà một tiếng. Khoảnh khắc tiếp theo, chân phải hắn khẽ đạp.</p>
+                <p>Một tiếng sấm trầm vang lên, Tam Tinh Cự Nhân Vương biến mất tại chỗ.</p>
+                <p>Vô Dục Tôn Giả sắc mặt biến đổi, cũng lập tức khởi động năng lực Thuấn Di của Hóa Thần Tôn Giả.</p>
+                <p>Chỉ là, khoảnh khắc tiếp theo, hắn đã phun máu đầy người, rơi ra từ trong không gian. Cơ thể hắn nứt ra mấy vết nứt rộng bằng ngón tay, lồng ngực lại lõm xuống một dấu quyền, toàn thân xương cốt đều vỡ nát. Máu tươi như nước cà chua bị bóp nát, phun ra dọc theo những vết nứt.</p>
+                <p>Trong chớp mắt, đã bị đánh cho thân thể nát bấy.</p>
+                <p>Nhưng, điều này chưa kết thúc.</p>
+                <p>Một bàn chân khổng lồ màu vàng nhạt, với quỹ đạo nhanh không thể nắm bắt được, lập tức giáng Vô Dục Tôn Giả xuống đất.</p>
+                <p>Thân thể khổng lồ của Tam Tinh Cự Nhân Vương lúc này mới hiển hiện ra.</p>
+                <p>Hắn khoanh tay trước ngực, cúi đầu, trong đôi mắt dọc khổng lồ tràn ngập vẻ giễu cợt:</p>
+                <p>“Cho dù là Thiên Nhân Tam Suy của nhân tộc các ngươi, gặp phải ta cũng chín phần chết một phần sống.”</p>
+                <p>“Huống hồ, ngươi chỉ là một Thiên Nhân Nhị Suy cỏn con?”</p>
+                <p>Khóe miệng hắn nhếch lên một nụ cười tàn nhẫn, gân xanh trên bàn chân căng lên, đột nhiên dùng sức:</p>
+                <p>“Chết đi!”</p>
+                <p>Vô Dục Tôn Giả lập tức bị giẫm nát tại chỗ, hóa thành một vũng máu tươi văng khắp nơi.</p>
+                <p>Chỉ là, Tam Tinh Cự Nhân Vương không những không cười nhạo, ngược lại, nụ cười tàn nhẫn trên khóe miệng chợt thu lại, đôi mắt dọc đột ngột co rút.</p>
+                <p>Nhưng thấy vũng máu tươi văng khắp nơi, lại ngưng tụ trở lại thành hình người. Chính là Vô Dục Tôn Giả!</p>
+                <p>Tam Tinh Cự Nhân Vương nheo mắt, lạnh giọng nói: “Ngươi đã phục chế Bản Nguyên của ta?”</p>
+                <p>Lúc hắn vừa hiện thân, chính là dùng mưa máu ngưng tụ thành hình người. Đây là Bản Nguyên Chi Lực của hắn. Không ngờ, Vô Dục Tôn Giả không biết dùng bí pháp gì, lại có thể phục chế Bản Nguyên của hắn!</p>
+                <p>Vô Dục Tôn Giả sắc mặt hơi tái, ôm ngực đã nứt toác, hừ lạnh: “Tam Tinh Cự Nhân Vương, cũng chỉ đến thế mà thôi!”</p>
+                <p>Ánh sáng lạnh lẽo trong mắt Tam Tinh Cự Nhân Vương chợt lóe lên: “Chẳng qua là thêm một chút phiền phức mà thôi!”</p>
+                <p>Hắn há miệng, từ trong miệng phun ra một cái lưỡi dài màu đỏ tươi, cọ xát không gian, vẽ ra những vết tích hư vô đen nhạt ẩn hiện.</p>
+                <p>Khoảnh khắc tiếp theo, khiến Vô Dục Tôn Giả, ngay cả phản ứng cũng không kịp, đã bị nó quấn chặt!</p>
+                <p>Ngoài Bản Nguyên và thể phách cường hãn vô địch, chiếc lưỡi dài cũng là năng lực cốt lõi của Viễn Cổ Cự Nhân.</p>
+                <p>Tam Tinh Cự Nhân Vương âm trầm nói: “Đến lúc lên đường rồi...”</p>
+                <p>Hắn khẽ động lưỡi, định cuốn Vô Dục Tôn Giả trở lại miệng để ăn sống.</p>
+                <p>Nhưng đột nhiên, thân thể Tam Tinh Cự Nhân Vương lay động, ánh mắt một trận mê ly. Hai chân hắn không tự chủ được mà loạng choạng, khuôn mặt màu vàng nhạt dần ửng đỏ.</p>
+                <p>“Ta... ngươi đã làm gì...” Tam Tinh Cự Nhân Vương hành động loạng choạng, ngay cả lời nói cũng trở nên không rõ ràng, như thể đã uống say.</p>
+                <p>Vô Dục Tôn Giả lau máu ở khóe miệng, cất tiếng cười dài: “Ha ha ha!”</p>
+                <p>“Vực Trường của ta, ngươi hãy nếm thử lại lần nữa xem sao.”</p>
+                <p>Tam Tinh Cự Nhân Vương giật mình kinh hãi, cẩn thận cảm nhận trong cơ thể. Vực Trường vốn dĩ như trâu đất xuống biển, bị hắn dễ dàng đánh tan, vậy mà lại còn sót lại một tia.</p>
+                <p>Không, đó không phải Vực Trường!</p>
+                <p>Là Pháp Tắc!</p>
+                <p>Pháp Tắc Say Rượu!</p>
+                <p>Hắn sắc mặt hoảng sợ biến đổi, kinh hô: “Là Pháp Tắc của Đại Tửu Tế các ngươi!”</p>
+                <p>“A! Đáng chết!”</p>
+                <p>Vô Dục Tôn Giả há có thể liều lĩnh chịu chết? Đại Tửu Tế lại há có thể biết rõ Đại Hoang Châu không địch nổi mà không để lại hậu chiêu cho các Hóa Thần Tôn Giả?</p>
+                <p>Vô Dục Tôn Giả chờ chính là khoảnh khắc này!</p>
+                <p>Pháp Tắc Say Rượu vừa phát động, Tam Tinh Cự Nhân Vương liền mất đi chiến lực.</p>
+                <p>Hắn há miệng phun ra một thanh hắc đao đầy ma khí âm u, hiển nhiên là một thanh trường đao Linh Khí Cực Phẩm.</p>
+                <p>Chém đứt phăng cái lưỡi đang quấn lấy mình.</p>
+                <p>Sau đó tay nắm chặt trường đao, Thuấn Di đến đỉnh đầu Tam Tinh Cự Nhân Vương, một đao chém ra luồng đao khí kinh khủng dài ngàn trượng.</p>
+                <p>Tam Tinh Cự Nhân Vương kinh hãi lẫn tức giận, hắn vụng về vươn tay, cố gắng cản lại đao khí.</p>
+                <p>Phụt một tiếng.</p>
+                <p>Đao khí chém thẳng xuống, cắt đứt gọn gàng năm ngón tay phải của hắn.</p>
+                <p>“Kẻ nào phạm Đại Hoang Châu của ta, tất phải kết thúc bằng máu!”</p>
+                <p>Vô Dục Tôn Giả gầm lên, trường đao tiếp tục chém xuống.</p>
+                <p>Luồng đao khí ngàn trượng, chém sâu vào đầu Tam Tinh Cự Nhân Vương.</p>
+                <p>“A!!!”</p>
+                <p>“Dừng tay!!!” Tam Tinh Cự Nhân Vương phát ra tiếng gào thét đau đớn thảm thiết, ba ngôi sao màu máu trên trán hắn quay tròn cấp tốc. Thân thể hắn cùng với cái đầu, nhanh chóng tan chảy thành máu.</p>
+                <p>Vô Dục Tôn Giả nào có cho hắn cơ hội?</p>
+                <p>“Chết đi!”</p>
+                <p>Hắn cắn chặt răng, trường đao hung hăng chém xuống!</p>
+                <p>Trước khi cái đầu hắn hoàn toàn hóa thành máu, đã chém hắn làm hai nửa.</p>
+                <p>“A” Một tiếng kêu thảm thiết đột ngột im bặt, chấn động cả bầu trời.</p>
+                <p>Đầu của Tam Tinh Cự Nhân Vương, bị chém làm hai, não và máu tươi bắn ra như suối phun.</p>
+                <p>Nhưng, điều này vẫn chưa đủ để giết hắn! Sinh mệnh lực của Cự Nhân Vương mạnh đến mức hoang đường, dù chỉ còn một giọt máu cũng có thể trọng sinh! Muốn giết bọn hắn, nhất định phải hủy diệt Tinh Thần!</p>
+                <p>Vô Dục Tôn Giả ánh mắt như điện, nhanh chóng khóa chặt ba ngôi sao, năm ngón tay khẽ vồ, hút ba ngôi sao vào lòng bàn tay.</p>
+                <p>Hắn không chút do dự, trong lòng bàn tay bùng phát ra Ma Khí cực mạnh.</p>
+                <p>Nhưng, ngay lúc này!</p>
+                <p>Một giọng nói lãnh đạm đáng sợ, đủ khiến cả Đại Hoang Châu run rẩy, không hề có dấu hiệu báo trước, truyền đến từ phía sau Vô Dục Tôn Giả.</p>
+                <p>“Bỏ xuống.”</p>
+                <p>Đó không phải lời đe dọa, mà là mệnh lệnh.</p>
+                <p>Thân thể Vô Dục Tôn Giả chấn động mạnh, quay đầu nhìn lại.</p>
+                <p>Sau lưng hắn đứng sừng sững một Cự Nhân hùng vĩ toàn thân vàng rực, cao ba mươi trượng. Giữa trán hắn, có năm ngôi sao màu đen!</p>
+                <p>Đây là... Ngũ Tinh Cự Nhân Vương!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1524">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1524: Trung thổ, giao cho các ngươi</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Vô Giải Thế Gả Giang Phàm Hứa Di Ninh</p>
+                <p>Hắn giáng lâm lúc nào, lại không ai hay biết!Khi cảm nhận được một tia bản nguyên ẩn thân ý cảnh còn sót lại, Vô Dục Tôn Giả liền hiểu ra.Cái vị Ngũ Tinh Cự Nhân Vương của Vĩnh Dạ Vương Đình trên đỉnh Đại Hoang Châu kia, bản nguyên của hắn chính là ẩn thân!Tam Tinh Cự Nhân Vương giáng lâm là để thăm dò, xem xung quanh có sinh linh hay pháp bảo nào đe dọa Ngũ Tinh Cự Nhân Vương hay không. Chứng kiến Vô Dục Tôn Giả cửu tử nhất sinh chống lại Tam Tinh Cự Nhân Vương, lại không có bao nhiêu thủ đoạn mạnh mẽ, Vĩnh Dạ Vương lúc này mới hiện thân.</p>
+                <p>Hắn thờ ơ nhìn xuống Vô Dục Tôn Giả, dùng ngữ khí hời hợt nhất nói ra lời ra lệnh không thể nghi ngờ nhất.Thân thể Vô Dục Tôn Giả chấn động kịch liệt. Ở cự ly gần như vậy, mỗi một chữ của Vĩnh Dạ Vương đều như một đạo lôi đình giáng xuống người hắn. Thân thể vốn đã tan hoang trăm lỗ phát ra tiếng kêu kẽo kẹt không chịu nổi gánh nặng. Hai đầu gối không ngừng cong xuống, lục phủ ngũ tạng bên trong cơ thể tan chảy cấp tốc. Chỉ cần Vĩnh Dạ Vương khẽ động một ý niệm, Vô Dục Tôn Giả sẽ tan thành tro bụi, ngay cả linh hồn cũng không thoát được.Đây, chính là thực lực của một Ngũ Tinh Cự Nhân Vương!</p>
+                <p>Vô Dục Tôn Giả nếu buông Bổn Nguyên Tinh Thần trong tay, có lẽ vẫn khó thoát khỏi cái chết. Nhưng nếu không buông, chắc chắn sẽ chết!Một dòng máu tươi từ vết thương trên đầu hắn phun ra, chảy qua trán, men theo xương lông mày nhỏ xuống, tràn vào hốc mắt, làm mờ đi tầm nhìn của hắn.Trong lòng hắn lóe lên một tia do dự. Đối mặt với cái chết thực sự, ai có thể thật sự vô úy?Chỉ là, khi hắn ngẩng đầu lên, nhìn thấy vô số tu sĩ Đại Hoang Châu. Nhìn thấy từng khuôn mặt tuyệt vọng và sợ hãi, nhìn thấy từng đôi mắt vô vọng ảm đạm. Dưới sự lọc của máu tươi, bọn họ trông như những sinh linh đang sống trong địa ngục.Sự do dự trong lòng Vô Dục Tôn Giả tiêu tan.</p>
+                <p>Hắn muốn trao cho Đại Hoang Châu, cho chúng sinh Trung Thổ Cửu Châu đang dõi theo họ một tia hy vọng. Đó chính là để bọn họ biết rằng: Cự nhân, tuyệt không phải không thể chiến thắng!Ma khí trong lòng bàn tay hắn tức khắc bộc phát. Ba viên Bổn Nguyên Tinh Thần tại chỗ hóa thành bột phấn vỡ nát. Một tiếng linh hồn thê lương gào thét, từ ba viên Bổn Nguyên Tinh Thần kia bay tán loạn.Con mắt dọc màu vàng kim của Ngũ Tinh Cự Nhân Vương lóe lên một tia lạnh lẽo. Uy áp kinh khủng, tức khắc áp xuống.Khuôn mặt đẫm máu của Vô Dục Tôn Giả, nở nụ cười:&quot;Đại Hoang Châu, giao cho các ngươi rồi...&quot;Khoảnh khắc tiếp theo.Một tiếng &quot;bịch&quot; trầm đục vang lên, Vô Dục Tôn Giả tại chỗ hóa thành máu bùn bay tán loạn, ngay cả linh hồn cũng không thoát được, biến thành những đốm sáng linh hồn, bay lả tả trong trời đất.</p>
+                <p>Các Ma tu của Đại Hoang Châu ngây người.Vô Dục Tôn Giả... đã vẫn lạc rồi sao?Ma đầu hung ác nhất kia, lại dùng mạng sống của mình, đổi lấy một Tam Tinh Cự Nhân Vương?Chỉ để cổ vũ bọn họ, chỉ để tạo cho bọn họ một chút hy vọng?Vì sao vậy?Bọn họ là Ma tu, chẳng phải đều là lũ khốn ích kỷ, chỉ biết nghĩ cho bản thân sao? Hắn vì sao lại vì mọi người mà làm đến bước này?</p>
+                <p>Trong đôi mắt tinh thể của Hồng Trần Tôn Giả ngấn lệ, đôi môi đỏ mọng khẽ mím lại:&quot;Đồ chết tiệt, làm gì mà ra vẻ anh hùng chứ?&quot;&quot;Ngươi chết rồi, lại vứt Đại Hoang Châu cho một mình ta sao?&quot;Từng giọt lệ châu, theo thân hình mềm mại dần run rẩy, ào ạt lăn xuống.Bên tai nàng vẫn văng vẳng lời nói của Vô Dục Tôn Giả trước khi lâm tử.&quot;Trung Thổ, giao cho các ngươi rồi...&quot;Nàng siết chặt nắm đấm, trong đôi mắt đỏ hoe, sát ý cuồn cuộn.&quot;Các ngươi lũ súc sinh!!!&quot;Vầng thần quang sau gáy nàng chấn động kịch liệt, lĩnh vực toàn bộ mở ra. Vô số túi hương trong lòng nàng đồng loạt bay lên không trung, từng cái từng cái được phóng thích.Nàng muốn cùng Ngũ Tinh Cự Nhân Vương liều chết!</p>
+                <p>Cũng bị chấn động và cổ vũ, còn có rất nhiều Ma tu khác.Bọn họ tràn đầy bi phẫn, nhìn bóng lưng của Hồng Trần Tôn Giả, lũ lượt phát động lĩnh vực của mình, rút ra pháp khí.Từng tiếng bi phẫn gào thét vang lên, tiếng sau lấn át tiếng trước:&quot;Lũ cự nhân chết tiệt! Hôm nay giết một thằng không lỗ, giết đôi là lời to!!!&quot;&quot;Chẳng phải chết thôi sao? Lão tử không sợ!&quot;&quot;Giết! Đại Hoang Châu chúng ta, không có thằng hèn!&quot;Tiếng gào thét lúc đầu chỉ lác đác vài tiếng. Sau đó, như những đốm lửa rải rác trên thảo nguyên, nhóm lên mấy mảnh. Cuối cùng, thiêu rụi cả trời đất.Tiếng gào thét phẫn nộ ồn ào, chấn động đến điếc tai, vang vọng tận chân trời. Vô số Ma tu hùng hổ, càng như một dòng lũ không quay đầu. Cái sát ý ấy, cái khí thế ấy, cái ý chí thà chết không chịu khuất phục, đoàn kết thành một tuyến ấy.Khiến Vĩnh Dạ Vương cũng hơi động dung.</p>
+                <p>&quot;Đây, chính là chủng tộc đã đối đầu với huyết mạch viễn cổ cự nhân của ta vạn năm sao?&quot;&quot;Đáng kính, mà cũng đáng buồn!&quot;Dứt lời.Sau lưng hắn, Cự Trụ Nối Trời giáng xuống từng vị Cự Nhân Vương cao hai mươi trượng, khiến đại địa chấn động.Từng vị Viễn Cổ Cự Nhân cao mười trượng, thì như mưa rơi, không ngừng giáng lâm.Phát ra tiếng &quot;đông đông&quot; dày đặc như sấm sét.Bắn tung vô biên khói bụi che trời lấp đất.</p>
+                <p>Tại Thái Thương Đại Châu.Mọi người ngưng thị cảnh tượng này, trong lòng dâng lên vô vàn cảm xúc không tên. Hoặc bi tráng, hoặc phẫn nộ, hoặc thị tử như quy.Lương Phi Yên hai mắt đỏ hoe, nắm chặt quyền, ngẩng đầu giận dữ nhìn Cự Trụ Nối Trời:&quot;Đồ khốn nạn! Chúng mày sao lại không nhanh xuống đi!&quot;&quot;Lão tử hôm nay liều mạng tới cùng!&quot;Vô Dục Tôn Giả, một câu &quot;Trung Thổ, giao cho các ngươi...&quot;Đã đốt cháy ý chí chiến đấu của tất cả võ giả Trung Thổ, xua tan nỗi sợ hãi của họ đối với Viễn Cổ Cự Nhân. Hắn dùng sinh mệnh của mình, để lại cho Trung Thổ, không chỉ là giết một Tam Tinh Cự Nhân Vương.Mà là, ban cho tất cả mọi người một đốm lửa.Một đốm lửa có thể nhóm lên thảo nguyên cháy rực!</p>
+                <p>Giang Phàm nhìn màn hình chiếu cảnh Đại Hoang Châu, trong lòng sóng trào mãnh liệt, không sao bình tĩnh được.Vô Dục Tôn Giả, cái tên ma đạo hung tàn mà hắn đã gặp lần đầu, để lại ấn tượng sâu sắc.Hắn, lại là sinh linh đầu tiên ngã xuống trong trận đại chiến Viễn Cổ Cự Nhân.Lần gặp mặt cuối cùng của bọn họ, là khi Giang Phàm bị Nhị Tinh Cự Nhân Vương tập kích, đứng trước nguy cơ sinh tử. Lúc đó, Vô Dục Tôn Giả đột nhiên xuất hiện, đánh lui Nhị Tinh Cự Nhân Vương.Hắn thậm chí còn chưa kịp nói một tiếng cảm ơn.Giờ đây, đã không còn cơ hội để nói nữa rồi.&quot;Vô Dục Tôn Giả!&quot; Giang Phàm lẩm nhẩm tên hắn.Hắn chậm rãi xoay người, khi nhìn về phía Cự Trụ Nối Trời một lần nữa, ánh mắt càng thêm lạnh lẽo.Viễn Cổ Cự Nhân, đều đáng chết!</p>
+                <p>Lúc này.Chín màn hình chiếu trên bầu trời lại xuất hiện biến hóa.Là Đan Châu.Từ Cự Trụ Nối Trời của họ, một vị Viễn Cổ Cự Nhân thân hình khủng bố đã giáng lâm.&quot;Thần Binh Châu, Viễn Cổ Cự Nhân cũng đã giáng lâm rồi!&quot;&quot;Thánh Linh Châu đến rồi!&quot;&quot;Quy Khư Châu xuất hiện!&quot;&quot;Hỗn Nguyên Châu, Vạn Yêu Đại Châu đều đã đến!&quot;Trung Thổ Cửu Châu, bảy châu đã đại loạn.Hiện tại, chỉ còn lại Thiên Châu không thể tiếp nhận tin tức.Cùng với Thái Thương Đại Châu nơi bọn họ đang ở!Một tiếng chấn động vang lên, Cự Trụ Nối Trời của Thái Thương Đại Châu kịch liệt rung chuyển.Bầu trời đã đỏ tươi như máu vẩy!Cự nhân của Hắc Nhật Vương Đình, đã đến rồi!</p>
+                <p>Đột nhiên, đại địa chấn động dữ dội!Một vị cự nhân cao hai mươi trượng, hệt như thiên thạch, hung hăng đập xuống cấm địa!Thân thể hắn vô cùng cường tráng, vượt xa các Cự Nhân Vương bình thường.Tòa phế tích tồn tại ngàn năm trong cấm địa đó, dưới sự va chạm khi hắn giáng xuống, hoàn toàn hóa thành bụi phấn, chấn tán ra bốn phía.Giang Phàm cùng những người ở Thái Thương Đại Châu đều nhận ra.Bởi vì.Đây chính là vị Cự Nhân Vương đầu tiên Giang Phàm gặp phải ở Thiên Giới!Thạch Chi Cự Nhân Vương!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1525">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1525: Chiến tranh Đại Chương Đại Châu</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Vô Giải Thế Gả Giang Phàm Hứa Di Ninh</p>
+                <p>Hắn truy sát Giang Phàm cùng những nhân viên trinh sát và thiếu chủ Hắc Vân Trại. Thể phách cường đại vô địch ấy đã để lại ấn tượng không thể phai mờ trong lòng mọi người.</p>
+                <p>Giờ đây gặp lại, vẫn khiến người ta kinh hồn bạt vía!</p>
+                <p>Xèo xèo xèo!</p>
+                <p>Vừa vặn rơi xuống, da thịt hắn đã bị ăn mòn xèo xèo, những sợi tóc đen dày thẳng tắp sau gáy bốc lên từng đợt khói đen.</p>
+                <p>Thạch Chi Cự Nhân Vương không để tâm, mà sốt ruột nhìn quanh. Hắn nhìn mặt đất dưới chân, nhìn bầu trời Trung Thổ, rồi lại nhìn non sông vạn dặm tươi đẹp vô tận bên ngoài cấm địa.</p>
+                <p>Con mắt dọc khổng lồ rung động, lộ rõ vẻ kích động và hưng phấn không thể kiềm chế:“Ta cuối cùng cũng đến rồi!”“Trung Thổ trong truyền thuyết, thánh địa săn bắn mà biết bao thế hệ cự nhân hằng mơ ước!”“Ha ha ha ha ha ha!”</p>
+                <p>Tiếng cười ngông cuồng, xé toang mây trời, càn quét khắp tứ phương thiên địa. Rơi vào tai chúng sinh, khiến người ta rợn tóc gáy.</p>
+                <p>Nhưng sự hi sinh của Vô Dục Tôn Giả lại khiến họ lấy lại dũng khí. Tâm Ma Tôn Giả hít sâu một hơi, chấn động quát lên: “Vạn Kiếp Thánh Điện, chuẩn bị chiến đấu!!”</p>
+                <p>Bồ Tát chắp hai tay lại, giọng nói không còn trầm ấm và chậm rãi như trước, mà trở nên sắc bén và hùng hồn:“Chúng tăng Bạch Mã Tự, diệt ma!”</p>
+                <p>Phùng Viễn Tông quay người cúi chào đám người Đại Âm Tông: “Chư vị đồng môn, chúng ta hoàng tuyền tương kiến!”</p>
+                <p>Tam Thần Tông, Thất Đại Giáo, cùng hơn trăm tông môn đã phát ra tiếng tuyên chiến vang dội, mạnh mẽ! Vô số âm thanh hội tụ lại, chấn vỡ mây trời, bắn tung vô tận khói rồng, làm tan nát tiếng gào thét của Thạch Chi Cự Nhân Vương!</p>
+                <p>Thạch Chi Cự Nhân Vương ngừng cười lớn, lạnh lùng nhìn chằm chằm đám người bên ngoài cấm địa, cười tủm tỉm một cách đáng sợ:“Con mồi biết phản kháng thì mới thú vị chứ!”</p>
+                <p>Mấy vị Tôn Giả không nói một lời, đầy sát khí nhìn chằm chằm sự biến đổi cơ thể hắn. Cấm địa sẽ ăn mòn hắn, cũng sẽ cắm rễ tai ương vào trong cơ thể hắn. Thạch Chi Cự Nhân Vương ở lại thêm một chút nữa, không cần họ ra tay, cũng sẽ chết trong đó!</p>
+                <p>“Ha ha.” Nhận thấy ánh mắt của họ, Thạch Chi Cự Nhân Vương cười nhạt:“Không phải chỉ là cấm địa của Hiền Giả Tai Ương thôi sao?”“Chẳng làm gì được ta!”</p>
+                <p>Ngôi sao trên trán hắn xoay chuyển, làn da màu vàng sẫm nhanh chóng hóa thành xám đá. Ngay cả mắt và tóc cũng đều biến đổi. Trong nháy mắt đã hóa thành một pho tượng đá!</p>
+                <p>Sự ăn mòn trên bề mặt cơ thể hắn dần biến mất, sự xâm thực của tai ương cũng nhanh chóng suy yếu. Thạch hóa, chính là bản nguyên của Thạch Chi Cự Nhân Vương! Thạch Hóa Chi Khu, không chỉ cường hãn tuyệt luân, còn có thể chống lại sự xâm lấn của ngoại giới đối với cơ thể.</p>
+                <p>Hắn khinh miệt liếc nhìn đám người bên ngoài, rồi ngẩng đầu hướng về Hắc Trụ Nối Trời hô lên:“Có thể xuống rồi!”</p>
+                <p>Theo tiếng nói vừa dứt, trên bầu trời lại một lần nữa rơi xuống một cự nhân cao hai mươi trượng. Giữa lông mày hắn có một ngôi sao màu đỏ lửa. Cả thân thể hắn giống như ruộng lúa khô cằn, nứt nẻ vô cùng. Trong những vết nứt, khói đen đặc quánh cuồn cuộn, nhìn kỹ vào, bên trong ẩn hiện những dòng dung nham đỏ sẫm.</p>
+                <p>Vừa rơi xuống, đã tạo nên từng đợt sóng nhiệt cuồn cuộn, xung kích khắp tám phương.</p>
+                <p>Giang Phàm sắc mặt hơi trầm xuống. Đây, không nghi ngờ gì nữa, chính là Hỏa Chi Cự Nhân Vương! Mà bản nguyên Hỏa, lại có thể xua tan ảnh hưởng của cấm địa! Nói cách khác, hắn có thể tạm thời mở ra một con đường cho những Cự Nhân Viễn Cổ giáng lâm. Giống như Đại Tửu Tế bảo vệ Giang Phàm tiến vào trong cấm địa vậy.</p>
+                <p>Muốn dựa vào cấm địa mà một lần dứt điểm Cự Nhân Viễn Cổ, vẫn là đã nghĩ bọn chúng quá đơn giản rồi. Những Cự Nhân Vương này không chỉ xảo quyệt, mà còn hiểu biết sâu sắc về Thái Thương Đại Châu, lại càng mang trong mình các loại bản nguyên lợi hại.</p>
+                <p>Quả nhiên, Hỏa Chi Cự Nhân liếc nhìn xung quanh, khinh miệt cười:“Muốn dựa vào một cấm địa nhỏ bé mà trốn thoát khỏi chúng ta sao?”“Ha ha, ngây thơ!”</p>
+                <p>Ngôi sao đỏ lửa giữa lông mày hắn nhanh chóng xoay tròn. Trong cơ thể lập tức phun ra một lượng lớn dung nham, nơi nào đi qua, không gian đều bị đốt cháy. Trong hơi thở, đã hình thành một “đường lửa” thẳng tắp từ trung tâm cấm địa, kéo dài ra bên ngoài! Đi lại xung quanh con đường lửa này, có thể không sợ sự ăn mòn của cấm địa!</p>
+                <p>Hỏa Chi Cự Nhân Vương ngẩng đầu nói: “Hỏa Chi Chiến Đoàn, xuống đi!”</p>
+                <p>Vút vút vút!</p>
+                <p>Từng cự nhân viễn cổ màu đen xanh cao từ mười đến mười mấy trượng, lần lượt nhảy xuống dọc theo Hắc Trụ Nối Trời. Chúng răng nanh cuộn ngược, mắt dọc lưỡi dài, diện mạo dữ tợn và hung ác. Mỗi một pho tượng, đều là quái vật khát máu có thể dễ dàng diệt sạch một tông môn cỡ vừa và nhỏ, nuốt chửng một thành trì của loài người!</p>
+                <p>“Săn bắt, bắt đầu rồi!” Hỏa Chi Cự Nhân Vương cười một cách đáng sợ.</p>
+                <p>Sải bước lớn tiến về phía chính đông.</p>
+                <p>Thạch Chi Cự Nhân Vương nhìn chằm chằm Giang Phàm ở chính đông, khẽ hừ một tiếng, nói: “Phía đó để lại cho ta!”“Ta có một kẻ muốn tự tay giết chết!”</p>
+                <p>Hỏa Chi Cự Nhân Vương cười nhạt: “Vương Xung Tiêu sao?”“Xin lỗi, hắn là của ta!”</p>
+                <p>Con mắt dọc của hắn tàn nhẫn nhìn chằm chằm Giang Phàm, liếm môi:“Hắn chính là kẻ được Hắc Nhật Vương đích thân chỉ điểm phải ưu tiên tiêu diệt!”“Cái đầu của hắn rất đáng giá!”</p>
+                <p>Dứt lời, dẫn dắt Hỏa Chi Chiến Đoàn, sải bước như sấm sét xông ra ngoài cấm địa. Mục tiêu trực chỉ Giang Phàm!</p>
+                <p>Thiên Cơ Các Chủ bên cạnh Giang Phàm trầm giọng nói: “Hắn nói cái đầu của ngươi rất đáng giá!”“Xem ra, ngươi đã nằm trong danh sách phải giết của Thiên Giới, sẽ có rất nhiều Cự Nhân Viễn Cổ vây công ngươi.”</p>
+                <p>Giang Phàm lúc này mới chợt nhận ra, Hỏa Chi Cự Nhân Vương, Thạch Chi Cự Nhân Vương, bao gồm cả Ngũ Tinh Cự Nhân Vương và Tam Tinh Cự Nhân Vương của Đại Hoang Châu, bọn chúng vậy mà đều nói tiếng người. Chứ không phải ngôn ngữ địa ngục! Lần trước khi đến Thiên Giới, bọn chúng rõ ràng vẫn chưa biết ngôn ngữ nhân tộc.</p>
+                <p>Chỉ có một cách giải thích, trong khoảng thời gian này, có người đã dạy chúng ngôn ngữ nhân tộc của Trung Thổ! Kết hợp với việc, Cự Nhân Viễn Cổ đã sớm có chiến lược chuẩn bị cho cấm địa nơi chúng giáng lâm. Giải thích này càng hợp lý!</p>
+                <p>Trung Thổ, có kẻ phản bội rồi!</p>
+                <p>Nhưng bây giờ không có thời gian để bận tâm kẻ phản bội là ai!</p>
+                <p>Hắn trầm giọng nói: “Tất cả mọi người ở tuyến đông, chuẩn bị tử chiến!”</p>
+                <p>Hỏa Chi Chiến Đoàn dưới sự bảo vệ của bản nguyên Hỏa, đang ở trạng thái toàn thịnh. Mỗi một pho tượng đều là tồn tại cấp độ Nguyên Anh trung kỳ, thậm chí là hậu kỳ. Số lượng, đủ một trăm!</p>
+                <p>Mà tuyến đông của bọn họ, thế lực phòng thủ cốt lõi nhất là Bái Hỏa Giáo. Cường giả trên Nguyên Anh trung kỳ, chỉ hơn ba mươi người. Cộng thêm Thiên Cơ Các có bốn vị Nguyên Anh trung kỳ, cũng chưa đến bốn mươi người. Còn về Nguyên Anh sơ kỳ, thì có một trăm người.</p>
+                <p>Với lực lượng như vậy, đối mặt với một trăm Cự Nhân Vương ở thời kỳ toàn thịnh, thật sự có phần thắng sao? Hơn nữa, còn có một Hỏa Chi Cự Nhân Vương!</p>
+                <p>Giang Phàm cắn chặt răng, nói: “Hỏa Chi Cự Nhân Vương giao cho ta!”“Cự Nhân Viễn Cổ, tự các ngươi lo liệu!”</p>
+                <p>Tim mọi người đập thình thịch, mỗi người đều siết chặt pháp khí hoặc phù triện trong tay, chăm chú nhìn chằm chằm từng cự nhân to lớn như ngọn núi nhỏ đang lao ra khỏi màn sương đen.</p>
+                <p>Màn sương đen của cấm địa kịch liệt cuộn trào. Hỏa Chi Cự Nhân Vương cao hai mươi trượng hùng vĩ, dẫn đầu bước ra khỏi cấm địa. Thân hình đáng sợ cao không thấy đỉnh, cùng khí tức man rợ bạo ngược tỏa ra, mang đến cảm giác áp bách rợn người. Những Cự Nhân Viễn Cổ màu xanh lục nối tiếp xông ra phía sau, há rộng miệng như chậu máu, hệt như mãnh thú sắp nuốt chửng huyết thực.</p>
+                <p>Hỏa Chi Cự Nhân Vương cười cợt, phát ra giọng nói lạnh lẽo như từ địa ngục:“Cứ thoải mái ăn đi!”“Đừng khách sáo!”</p>
+                <p>Hắn nhìn chằm chằm Giang Phàm, hai chân đột nhiên đạp mạnh, hóa thành tàn ảnh biến mất.</p>
+                <p>Giang Phàm trong lòng khẽ rùng mình, Bản Nguyên Phong đã sớm được khởi động. Chỉ là, điều khiến mi tâm hắn kịch liệt nhảy lên là, mục tiêu của Hỏa Chi Cự Nhân Vương không phải hắn! Mà là Cố Hinh Nhi cách đó không xa!</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_304.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_304.html" class="page-btn">304</a>
+            <a href="page_305.html" class="page-btn current">305</a>
+            <a href="page_306.html" class="page-btn">306</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_306.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

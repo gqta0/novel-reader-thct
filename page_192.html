@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 192">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 192</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_191.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_193.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_956">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 956: Thanh Vân Tông cựu nhân</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Hóa ra, Phật đạo thần thông xóa bỏ ký ức mà Bồ Tát vừa phát ra, là nhằm vào tất cả mọi người, trừ Phổ Quang trụ trì.Kể cả Giang Phàm!Thế nhưng, ký ức của Giang Phàm lại không bị xóa bỏ!Hắn vẫn nhớ rõ mọi chuyện đã xảy ra!Phật tâm tĩnh lặng bao năm của Phổ Quang trụ trì, dấy lên từng đợt sóng cuộn.Ngay cả lão cũng không thể ngăn cản Phật pháp xóa bỏ ký ức của Bồ Tát.Nhưng Giang Phàm lại có thể!Lão cuối cùng cũng hiểu, vì sao Bồ Tát lại đồng ý yêu cầu vô lý của Giang Phàm, là cấp cho hắn manh mối theo từng đợt.Bởi vì, Bồ Tát có sự kiêng dè đối với Giang Phàm.</p>
+                <p>Thiên Nguyên Cổ Thành.Trung tâm.&quot;Thái Thương Đại Châu rốt cuộc lớn cỡ nào?&quot;Giang Phàm theo sau Thất Âm thượng nhân, đã phi tốc suốt năm ngày trời.Đối phương là Nhị Khiếu Nguyên Anh, với tốc độ như vậy, xuyên qua đại lục cũng không cần đến nửa ngày.Thế nhưng ở Thái Thương Đại Châu, năm ngày trời mới từ bờ biển đến được trung tâm.Xuyên qua Thái Thương Đại Châu chẳng phải cần hơn mười ngày sao?Thất Âm thượng nhân đáp: &quot;Phải xem ngươi so với cái gì?&quot;&quot;Nếu so với đại lục của các ngươi thì đại lục là một hạt nho, còn Thái Thương Đại Châu là một quả dưa hấu.&quot;Giang Phàm không biết nên nói là đại lục quá nhỏ, hay Thái Thương Đại Châu quá lớn.&quot;Vậy đại lục của chúng ta tên là gì?&quot; Giang Phàm lại hỏi.Nói đến đây, hắn từng nghe nhiều người ngoài vực gọi nơi bọn họ đến là &quot;đại lục&quot;, chưa bao giờ có tên.Vẫn luôn là cách gọi &quot;đại lục&quot;, &quot;đại lục&quot;.Chỉ riêng Địa Ngục Hoang Thú, từng nói nơi bọn họ là &quot;hòn đảo&quot;.Thất Âm thượng nhân lắc đầu, nói: &quot;Nơi của các ngươi, tên là đại lục.&quot;Địa danh nào lại gọi là &quot;đại lục&quot; chứ?&quot;Đây không phải chuyện đùa sao?&quot; Giang Phàm ngạc nhiên hỏi.Thất Âm thượng nhân bật cười: &quot;Nơi đó của các ngươi, quả thực gọi là đại lục.&quot;&quot;Ta nghe nói, rất lâu trước kia, nơi đó của các ngươi gọi là Linh Châu Đảo.&quot;&quot;Sau này, trên đảo của các ngươi có một người bí ẩn định cư, nói tên Linh Châu Đảo quá tầm thường, nàng không thích, bèn đổi tên thành &#039;đại lục&#039;, nghe có vẻ dễ chịu hơn.&quot;&quot;Sau đó, tất cả văn hiến của Thái Thương Đại Châu, chỉ trong một đêm đã xóa bỏ tên Linh Châu Đảo, đổi thành &#039;đại lục&#039;, xưng hô này cứ thế kéo dài cho đến nay.&quot;Giang Phàm cùng Vân Hà phi tử nhìn nhau, cứ như đang nghe một câu chuyện vậy.Trên đời lại có người tùy hứng, lại còn lợi hại đến mức không tưởng như thế sao?Thái Thương Đại Châu vì một câu nói của nàng mà thay đổi văn hiến ngay trong đêm?Đây phải là một cao thủ vĩ đại đến mức nào, mới có được sức ảnh hưởng như vậy?&quot;Đương nhiên, đây là chuyện ta nghe nói, đã là chuyện của ngàn năm trước, thật giả khó mà khảo chứng.&quot;&quot;Nhưng hòn đảo đó của các ngươi, quả thực tên là đại lục thì không sai.&quot;Cái này…Được thôi.</p>
+                <p>Giang Phàm phóng tầm mắt về phía trước, giữa những tầng mây che khuất, từng tầng bậc thang đá khổng lồ lơ lửng, bậc nối bậc, chìm sâu vào Thanh Minh.Mỗi bậc thang dài ước chừng vạn trượng, hệt như một tòa cổ thành che trời khuất đất.Tất cả đều lơ lửng giữa không trung.Cảnh tượng vô cùng hùng vĩ.&quot;Lớn đến vậy sao?&quot; Giang Phàm cảm động sâu sắc.Trong tưởng tượng của hắn, đó chỉ là những bậc thang cổ xưa bình thường, kéo dài lên tận trời xanh.Nhưng trước mắt đây là cái gì?Trong mắt Thất Âm thượng nhân cũng lộ rõ vẻ chấn động sâu sắc, cùng với sự tiếc nuối khôn nguôi vì không thể tự mình khám phá.&quot;Những bậc thang ngươi thấy, chưa bằng một phần trăm của toàn bộ.&quot;&quot;Theo những người từng lên đó nói, bậc thang tổng cộng có một vạn bậc, nối lại thành một đường dài hơn cả chiều Bắc Nam của đại lục các ngươi.&quot;Đồng tử Giang Phàm co rút lại, trong mắt tràn đầy kinh ngạc: &quot;Thứ này từ đâu mà có?&quot;Nhiều bậc thang khổng lồ như vậy, không lẽ người Thái Thương Đại Châu chưa từng phát hiện ra sao?Thất Âm thượng nhân lắc đầu: &quot;Không biết.&quot;&quot;Nó xuất hiện cùng với một trận sương mù bao trùm Thái Thương Đại Châu, khi sương mù tan đi, thì chỉ còn lại con đường cổ thông thiên dài dằng dặc này.&quot;Một trận sương mù bao phủ toàn bộ Thái Thương Đại Châu?Sương mù đó phải lớn đến cỡ nào?Giang Phàm lộ vẻ suy tư, bậc thang này xuất hiện thật kỳ lạ.Hắn ánh mắt lóe lên, nói: &quot;Tiền bối nói có người đã lên đó rồi sao?&quot;Thất Âm thượng nhân do dự một lát, gật đầu: &quot;Ừm, đúng vậy.&quot;&quot;Là một vị Tôn giả, sau khi nàng trở về đã hạ lệnh, để cơ duyên này cho các đệ tử dưới Nguyên Anh, cường giả không được tham gia.&quot;Tôn giả ư?Đó là tồn tại cấp độ Hóa Thần cảnh!Ngay cả nàng cũng không nhìn ra hiểm nguy, vấn đề chắc không lớn.</p>
+                <p>Cùng với cuộc trò chuyện của hai người, bọn họ đã đến trước bậc thang đầu tiên.Nơi đây, không trung lơ lửng không ít cường giả Nguyên Anh cảnh, tất cả đều là các tồn tại cấp Nguyên Anh của các thần tông đại giáo.Thấy Thất Âm thượng nhân dẫn theo hai người trẻ tuổi một nam một nữ đến, không khỏi ngạc nhiên.&quot;Thất Âm, sao ngươi bây giờ mới đến?&quot;&quot;Đăng Thiên Cổ Lộ đã bắt đầu từ bảy ngày trước rồi, giờ còn đưa đệ tử lên thì quá muộn rồi chứ?&quot;&quot;Có lẽ mấy vị trên danh sách độ hóa của Pháp Ấn Kim Cương đã đến tận trên cùng rồi.&quot;Thất Âm thượng nhân không nói gì nhiều, chỉ mỉm cười.Lão đến trước mặt một thanh niên trông rất trẻ, mặc áo choàng xanh, gương mặt hơi lạnh lùng.&quot;Trần Kính tiền bối.&quot;Thất Âm thượng nhân là Nhị Khiếu Nguyên Anh, thế mà lại phải xưng hô thanh niên trước mắt một tiếng tiền bối.Những người khác xung quanh khi nhìn về phía Trần Kính thượng nhân trẻ tuổi cũng đều lộ ra một tia kính ý.Trần Kính thượng nhân không chỉ là một Tứ Khiếu Nguyên Anh tuổi còn trẻ, là một cường giả lừng lẫy, mà còn là đệ tử của Chân Ngôn Tôn giả!Lần này, vâng lệnh sư phụ, hắn giám sát Đăng Thiên Cổ Lộ.Chỉ cho phép các đệ tử tiến vào, cường giả Nguyên Anh tuyệt đối cấm bước.Trần Kính thượng nhân cầm một cuốn danh sách trong tay, hắn nhìn Thất Âm thượng nhân, rồi lật xem danh sách trong tay, nói:&quot;Đệ tử của ngươi là Dư Phi Uyên và Ngụy Triều Nhiên, chẳng phải đã lên rồi sao?&quot;&quot;Hai vị này là ai?&quot;Theo quy tắc, mỗi trưởng lão chỉ được dẫn hai đệ tử.Số lượng của Thất Âm thượng nhân đã dùng hết.Thất Âm thượng nhân cười xòa nói: &quot;Hai vị này là vãn bối của ta.&quot;&quot;Cũng muốn đến Đăng Thiên Cổ Lộ xem thử, liệu có thể phiền Trần Kính thượng nhân nể tình một chút không?&quot;&quot;Hôm khác đến Thiên Nhai Hải Các của ta, chúng ta đang nghiên cứu một loại Linh Chu mới, có thể đi lại trên đất liền.&quot;&quot;Khi đó, mong Trần Kính thượng nhân đến chỉ điểm một chút nhé.&quot;Lời nói ẩn ý là muốn tặng hắn thứ tốt.Trần Kính thượng nhân có chút động lòng, nhưng lại rất bất lực, truyền âm nói:&quot;Ngươi đến muộn rồi.&quot;&quot;Sư tôn của ta hôm qua còn đến một chuyến, đã răn dạy ta, thực sự không dám tùy tiện thả người lên nữa.&quot;Thất Âm thượng nhân lộ vẻ lúng túng.Sở dĩ lão dám bảo đảm đưa Giang Phàm và những người khác lên, là vì lão có chút giao tình với Trần Kính thượng nhân.Thêm chút lợi lộc nữa thì vấn đề không lớn.Ai ngờ, tiểu tử này trước đó đã quá tham lam, chọc giận Chân Ngôn Tôn giả quở trách.Khiến hắn không dám tùy tiện thả người nữa.Thế này thì phiền phức rồi.Lão lúng túng nhìn Giang Phàm, đã cất công dẫn bọn họ đi ngàn dặm, kết quả lại không thể lên.Giang Phàm nghĩ nghĩ, lấy ra lệnh bài của Bạch Tâm, nói: &quot;Vị tiền bối này, liệu có thể nể tình một chút không?&quot;Thấy lệnh bài này.Trần Kính thượng nhân hơi ngạc nhiên: &quot;Ngươi là Giám Thiên Vệ của Bạch Tâm?&quot;&quot;Ta nghe Bạch Tâm nói qua, nàng đã tặng lệnh bài cho một đệ tử Thiên Cơ Các ở đại lục.&quot;&quot;Người đó là ngươi?&quot;Giang Phàm đáp: &quot;Chính là vãn bối Giang Phàm.&quot;Trần Kính thượng nhân chậm rãi gật đầu: &quot;Được thôi, đã là người của Bạch Tâm, thả ngươi lên, tin rằng sư tôn cũng sẽ không nói gì.&quot;Nghe có vẻ Bạch Tâm rất có tiếng nói, ngay cả Tôn giả cũng không mấy bài xích hắn.Giang Phàm ôm quyền nói: &quot;Đa tạ tiền bối.&quot;</p>
+                <p>Hai người đến trước bậc thang.Đang chuẩn bị đi lên.Trần Kính thượng nhân hơi do dự, hỏi: &quot;Ngươi đã là đệ tử Thiên Cơ Các, vậy có biết Cửu Tông không?&quot;Giang Phàm khẽ giật mình, không biết Trần Kính thượng nhân trước mắt vì sao lại hỏi điều này, hắn đáp:&quot;Bẩm tiền bối, vãn bối chính là xuất thân từ Cửu Tông.&quot;Trần Kính thượng nhân gật đầu: &quot;Vậy ngươi là từ tông nào ra?&quot;Giang Phàm đáp: &quot;Thanh Vân Tông.&quot;Ánh mắt Trần Kính thượng nhân chợt run lên.Hắn đánh giá lại Giang Phàm, ánh mắt nhìn hắn khác hẳn lúc trước.Vừa có sự kinh ngạc sâu sắc, lại có một tia vui mừng chợt lóe lên, dường như muốn hỏi điều gì đó.Nhưng lời đến khóe miệng lại thu về, phất tay nói: &quot;Đi đi.&quot;Giang Phàm vẻ mặt nghi hoặc, rõ ràng vị Trần Kính thượng nhân này muốn nói rồi lại thôi.Gật đầu, hắn cùng Vân Hà phi tử nắm tay nhau bước lên bậc thang.Thất Âm thượng nhân nghe Giang Phàm đến từ Thanh Vân Tông, cũng vô cùng kinh ngạc, nói:&quot;Tiền bối, ngài cũng đến từ Thanh Vân Tông phải không?&quot;&quot;Vừa rồi vì sao không nói rõ thân phận?&quot;Lão từng nghe nói, Trần Kính thượng nhân đến từ Thanh Vân Tông, dựa vào tư chất mạnh mẽ mà xông pha Thái Thương Đại Châu, đạt được địa vị như ngày nay.Đã là đồng môn, vì sao Trần Kính thượng nhân lại không nhận người thân?Trần Kính thượng nhân nhìn bóng lưng Giang Phàm, khẽ lắc đầu nói:&quot;Thôi đi, hắn đã là Kết Đan Cửu Tầng viên mãn, đang là lúc thiếu cơ duyên Nguyên Anh.&quot;&quot;Nếu biết ta từng là đồng môn của hắn, lại mặt dày đến cầu xin cơ duyên từ ta, ta phải làm sao đây?&quot;&quot;Cho thì ta phải cầu xin sư tôn ban cho, không cho thì hắn lại cho rằng ta vô tình.&quot;&quot;Cho nên, thà ít chuyện còn hơn nhiều chuyện, cứ giả vờ không quen biết vậy.&quot;&quot;Hắn về đại lục, làm Phó Các chủ Thiên Cơ Các cũng khá tốt.&quot;&quot;Thà làm đầu gà, còn hơn làm đuôi phượng mà.&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_957">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 957: Lâm Lãng Thú Liệp</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Thất Âm Thượng Nhân nghe ra ý của Trần Kính Thượng Nhân. Hắn sợ mình bị đồng môn Thanh Vân Tông quấn lấy! Hắn hiện đã phú quý, không muốn dính dáng đến Thanh Vân Tông ở vùng đất cằn cỗi đó nữa, đây là lẽ thường tình.</p>
+                <p>&quot;Vậy thì đáng tiếc rồi.&quot; Thất Âm Thượng Nhân khẽ thở dài, nói: &quot;Tử này kỳ thực rất xuất sắc, nếu có người chịu nâng đỡ một tay, hắn hoàn toàn có thể đứng vững gót chân ở Thái Thương Đại Châu.&quot;</p>
+                <p>Hồi tưởng lại kỳ tích Giang Phàm Kết Đan giết Nguyên Anh, hắn vẫn còn kinh hãi không thôi. Thái Thương Đại Châu không phải chưa từng xuất hiện yêu nghiệt Yêu Đan giết Nguyên Anh. Nhưng người trước đó đã là từ mười năm trước. Người đó hiện đã là cự phách Nguyên Anh Cửu Khiếu của Thái Thương, đang lĩnh ngộ đạo để xung kích Hóa Thần.</p>
+                <p>&quot;Xuất sắc ư?&quot; Trần Kính Thượng Nhân lắc đầu: &quot;Nơi đại lục cằn cỗi đó thì làm gì có nhân tài xuất chúng?&quot; &quot;Kết Đan Cửu Tầng viên mãn, rất có thể chính là điểm cuối cùng trong cuộc đời hắn.&quot;</p>
+                <p>Thất Âm Thượng Nhân mỉm cười, không nói gì nữa. Rõ ràng Trần Kính Thượng Nhân không muốn có giao thiệp với Giang Phàm. Nói thêm nữa sẽ chọc hắn phật lòng. Trận chiến trước cửa Bạch Mã Tự, tin rằng không lâu sau sẽ sớm truyền ra ngoài, đến lúc đó hắn tự nhiên sẽ biết sư đệ của mình nghịch thiên đến mức nào. Mạnh hơn hắn năm xưa nhiều!</p>
+                <p>Trên Cổ Lộ Đăng Thiên. Giang Phàm mang Vân Hà Phi Tử ngự kiếm mà đi, bay vút lên không trung phía trên bậc thềm đầu tiên. Cúi đầu nhìn xuống, bậc thềm vạn trượng khắc đầy vô số phù văn, một luồng khí tức cổ xưa tang thương ập thẳng vào mặt.</p>
+                <p>Lúc này, có mấy đệ tử Kết Đan Thất Tầng đang dừng lại trên bậc thềm, ra sức công kích hư không.</p>
+                <p>&quot;Giang Lang, bậc thềm dường như có thể khiến người ta rơi vào ảo cảnh.&quot; Vân Hà Phi Tử phỏng đoán. Giang Phàm gật đầu.</p>
+                <p>Bởi vì không gian xung quanh bọn họ đang vặn vẹo. Bọn họ rõ ràng đang ở giữa không trung, nhưng xung quanh lại đã hóa thành một thành phố dưới màn đêm đèn hoa rực rỡ. Bách tính dạo chơi ở chợ đêm, quyền quý trên lầu cao ca hát nhảy múa. An định mà tường hòa, mang đến cảm giác quốc thái dân an.</p>
+                <p>Lúc này, bầu trời đêm đột nhiên rực sáng lên. Ba viên vẫn thạch va chạm mặt đất, đập vào thành phố, lập tức biến thành phố thành biển lửa. Đại đa số người chết ngay tại chỗ. Những người sống sót cũng kinh hoàng và hoảng loạn chạy trốn. Mọi điều tốt đẹp đều chợt dừng lại ngay khoảnh khắc này.</p>
+                <p>Điều đáng sợ hơn là. Trong ba hố vẫn thạch, bò ra ba con cự thú đỏ máu với vẻ ngoài hung tợn. Chúng là những kẻ theo vẫn thạch cùng đến vùng đất này. Sau khi bò ra, chúng liền phát động công kích vào sinh linh trên mặt đất. Có con bị một móng vuốt xé nát, lòng mề vương vãi khắp nơi. Có con bị ném vào miệng rộng như chậu máu mà nhai, kèm theo tiếng kêu thảm thiết. Lại có con một nửa thân thể còn thòi ra bên ngoài miệng, phát ra tiếng kêu tuyệt vọng và đau đớn.</p>
+                <p>Có cường giả nhân tộc rút kiếm đứng lên, nhưng bị chúng dễ dàng xuyên thủng thân thể, ném vào miệng làm thức ăn. Chỉ trong chốc lát, nơi đây liền hóa thành nhân gian luyện ngục.</p>
+                <p>Vân Hà Phi Tử dung nhan xinh đẹp hơi tái nhợt: &quot;Đây là ảo cảnh... hay là chuyện đã từng xảy ra?&quot; Keng! Giang Phàm đã rút kiếm, ánh mắt băng hàn: &quot;Giết là được!&quot;</p>
+                <p>Bởi vì, hắn nhìn thấy trong một phủ đệ đổ nát, có một thiếu nữ áo đỏ chạy ra. Một bộ áo cưới thêu chỉ vàng hình phượng hoàng, giữa biển lửa cháy rực, giữa núi xác đầy khắp thành, trông thật lạc lõng.</p>
+                <p>Một con cự thú đỏ máu nhắm vào nàng. Nó giơ móng vuốt, giáng xuống một đòn nặng nề, muốn nghiền nát cái bóng hình xinh đẹp màu đỏ ấy thành thịt nát. Tử quang chợt lóe, móng vuốt của cự thú đỏ máu bị một kiếm chém đứt.</p>
+                <p>Không đợi cự thú hoàn hồn, cái đầu khổng lồ đã bị một kiếm chém rụng. Thiếu nữ cô dâu ngạc nhiên ngẩng đầu nhìn lên, thấy Giang Phàm và một nữ tử đẹp như tranh vẽ.</p>
+                <p>&quot;Cảm ơn... cảm ơn.&quot; Thiếu nữ cô dâu vừa khóc vừa nói. Giang Phàm lặng lẽ nhìn một hồi lâu, mới chậm rãi nói: &quot;Trốn đi, đừng chết nữa.&quot; Sau đó hắn xoay người, vung kiếm giết về phía hai con cự thú khác.</p>
+                <p>Vân Hà Phi Tử nhìn thiếu nữ cô dâu một cái, trong lòng hơi đau xót. Linh Sơ trong bộ hồng trang, sẽ là vết sẹo mà Giang Phàm vĩnh viễn không thể lành lại được.</p>
+                <p>Cự thú đỏ máu cũng không mạnh lắm. Kết Đan Ngũ Tầng. Giết chết chúng rất dễ dàng. Khi con thứ ba bị giết chết, không gian trước mắt vặn vẹo lại, tầm nhìn trước mắt lại khôi phục thành bậc thềm dài hun hút không thấy điểm cuối.</p>
+                <p>&quot;Giang Lang, đừng đau lòng, những gì vừa rồi đều không phải thật.&quot; Vân Hà Phi Tử nhẹ nhàng khuyên nhủ. Chợt, nàng dường như phát hiện ra điều gì đó, nhìn về phía sau lưng Giang Phàm, ngưng trọng nói: &quot;Giang Lang, nhìn sau lưng ngươi.&quot;</p>
+                <p>Giang Phàm quay đầu nhìn, sắc mặt hơi biến đổi. Sau lưng hắn không biết từ khi nào lại xuất hiện một luồng cột sáng đỏ máu dài chừng một tấc. Giang Phàm thân ảnh lóe lên, cố gắng hất văng nó, nhưng lại phát hiện cột sáng đỏ máu cứ bám chặt lấy sau lưng hắn, hệt như mọc trên cơ thể vậy.</p>
+                <p>&quot;Đây là gì?&quot; Giang Phàm sắc mặt âm tình bất định.</p>
+                <p>Vân Hà Phi Tử nhìn nhìn sau lưng mình trống không, nói: &quot;Chắc là có liên quan đến việc Giang Lang đã giết ba con cự thú đỏ máu.&quot; &quot;Ồ, trên cột sáng còn có chữ.&quot; Nàng tinh mắt phát hiện ra, phía trên khắc chi chít những chữ. Cúi đầu nhìn xuống, lại là chữ của yêu tộc.</p>
+                <p>&quot;Lâm Lang Săn Bắn Trường, Thợ Săn số 888, số lượng con mồi thu hoạch được: Ba.&quot;</p>
+                <p>&quot;Cái gọi là Cổ Lộ Đăng Thiên, kỳ thực là một cuộc săn bắn sao?&quot; &quot;Vậy những gì chúng ta vừa nhìn thấy, không phải là ảo cảnh, mà là tiến vào một không gian thần bí, những gì xảy ra bên trong đều là thật sao?&quot; Vân Hà Phi Tử nhớ lại cảnh tượng thảm khốc của những người đó, nhớ lại lời cảm ơn đầy nước mắt của thiếu nữ cô dâu. Lòng nàng chấn động không thôi!</p>
+                <p>Giang Phàm siết chặt nắm đấm, trong lòng cảm thấy may mắn. May mắn vì mình đã không coi đó là ảo cảnh, mà ra tay cứu được thiếu nữ ấy. Khiến thế gian bớt đi một cô dâu hương tiêu ngọc殒.</p>
+                <p>&quot;Tiếp tục!&quot; Giang Phàm nhảy vọt lên bậc thềm thứ hai. Nếu Cổ Lộ này kỳ thực là săn bắn, vậy thì các loại kỳ cảnh thiên địa ở phía trên cùng là phần thưởng, vậy cuối cùng ắt hẳn phải dựa vào số lượng con mồi để quyết định đúng không? Nghĩ đến đây, trong mắt hắn tràn đầy ánh sáng sắc bén.</p>
+                <p>Cùng với bước chân của bọn họ, ảo cảnh lại tái hiện. Lần này là một chiến trường, một nhóm cường giả Yêu tộc bi tráng, từng đàn công kích sáu con cự thú đỏ máu trước mặt.</p>
+                <p>Cự thú đỏ máu vẫn như tầng thứ nhất, là một loại cự thú hung tàn giống loài thằn lằn, nhưng lại có thể đứng thẳng người lên. Nhưng chúng mạnh hơn tầng thứ nhất một chút, năm con là Kết Đan Ngũ Tầng, nhưng có một con đạt đến Kết Đan Lục Tầng. Vừa ra tay, liền gây ra thương vong thành từng đám cho các cường giả Yêu tộc.</p>
+                <p>Phát hiện là Yêu tộc giống mình, Vân Hà Phi Tử nâng tay lên, muốn tự mình ra tay. Giang Phàm lại ngăn nàng lại. &quot;Ngươi đừng ra tay.&quot; Hắn vận dụng một đạo Ngự Kiếm Thuật, lập tức xuyên thủng đầu của sáu con Huyết Tê.</p>
+                <p>Cột sáng dài một tấc phía sau lưng, biến thành cao ba tấc, con số phía trên cũng thay đổi thành chín. Giang Phàm nhìn về phía sau lưng trống không của Vân Hà Phi Tử nói: &quot;Trên trời không có bánh từ trên trời rơi xuống, một trận sương mù lớn, vô duyên vô cớ mà mang đến một cuộc săn bắn cho Thái Thương Đại Châu, không thể không phòng bị.&quot;</p>
+                <p>Vân Hà Phi Tử lúc này mới hiểu được ý đồ của Giang Phàm. Trong hai người bọn họ, tốt nhất là có một người đứng ngoài cuộc săn bắn. Nếu có biến cố, nàng còn có thể nhúng tay vào giúp, sẽ không cùng nhau sa bẫy.</p>
+                <p>Cứ như vậy, hai người một đường tiến về phía trước tiêu diệt. Với thực lực của Giang Phàm, một đường thế như chẻ tre. Mấy ngày sau.</p>
+                <p>Cùng với việc Cổ Lộ Đăng Thiên đã kéo dài mười ngày, lần lượt có các thiên kiêu đến tầng thứ chín nghìn mấy. Một số cường giả Thần Tông Đại Giáo không thể kiềm chế được, lần lượt chạy đến.</p>
+                <p>Thất Âm Thượng Nhân nhìn thấy một người trung niên hai mắt lượn lờ ánh tím nhạt, thân mặc hoa phục, lập tức tiến lên đón. &quot;Tham kiến Các chủ.&quot; Người đến chính là Các chủ Thiên Nhai Hải Các, một Đại Tu Sĩ tu vi đạt đến Thất Khiếu Nguyên Anh.</p>
+                <p>Các chủ Thiên Nhai Hải Các nhìn quanh bốn phía, tinh quang chợt lóe, nói: &quot;Còn những Đại Giáo Chi Chủ nào đến nữa?&quot; Thất Âm Thượng Nhân cẩn trọng đáp: &quot;Bẩm Các chủ, Tam Thần Tông Thất Đại Giáo, trừ Bái Hỏa Giáo và Bạch Mã Tự, Các Chủ của những Thần Tông Đại Giáo còn lại đều đã đến.&quot;</p>
+                <p>Thần Tông Đại Giáo, là tên gọi chung của các thế lực đỉnh cao ở Thái Thương Đại Châu. Nói đúng hơn, nên là Tam Thần Tông, Thất Đại Giáo. Tiêu chuẩn để được gọi là Đại Giáo là, trong tông môn có Vô Song Đại Sĩ Nguyên Anh Cửu Tầng tọa trấn. Mà Thần Tông, thì là thế lực lớn có Hóa Thần cảnh tọa trấn. Thiên Nhai Hải Các chỉ có thể coi là một trong Thất Đại Giáo.</p>
+                <p>Các chủ Thiên Nhai Hải Các khẽ cười lạnh một tiếng: &quot;Thật là quá tích cực.&quot; &quot;Cũng chẳng trách được, Tâm Nghiệt Tôn Giả của Thiên Châu kia từng nói, hắn sẽ chờ ở cuối Cổ Lộ Đăng Thiên.&quot; &quot;Người đầu tiên đặt chân lên Cổ Lộ này, sẽ được thu làm đệ tử.&quot; &quot;Ai mà không động lòng chứ?&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_958">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 958: Nguy cơ tái phát</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nghe vậy, Thất Âm Thượng Nhân lộ vẻ vô cùng ngưỡng mộ.</p>
+                <p>Từ rất lâu trước khi Đăng Thiên Cổ Lộ mở ra, Tôn giả Phong Tâm Nghiệt đã tuyên bố, hắn sẽ thu nhận đệ tử có biểu hiện xuất sắc nhất làm đồ đệ, sau đó mang về Thiếu Đế Sơn.</p>
+                <p>Thiếu Đế Sơn, đó là một thế lực bí ẩn được đồn rằng phía sau có một Đại Hiền còn sống. Mỗi đời Thiếu Đế đều cường hãn tuyệt luân. Thiếu Đế đương thời, nghe nói là một Tuyệt Điên Tôn giả đã tu luyện Hư Lưu Lôi Kình đạt đến cảnh giới đại thành, đã chạm tới pháp tắc Lôi Đình, nửa bước đặt chân vào cảnh giới Đại Hiền.</p>
+                <p>Nếu ai có thể gia nhập Thiếu Đế Sơn, thành tựu tương lai sẽ không thể đong đếm. Biết đâu đấy, có hy vọng đạt đến cảnh giới Hóa Thần, trở thành một Tôn giả đứng trên một châu.</p>
+                <p>Vì thế, các chủ nhân của Thần Tông Đại Giáo đều khẩn thiết mong môn nhân của mình biểu hiện xuất chúng, được Tôn giả Tâm Nghiệt để mắt đến. Một khi đã như vậy, nếu đệ tử kia tu luyện có thành trở về, tông môn chắc chắn sẽ thăng cấp, bước vào hàng ngũ Thần Tông. Dù cho không muốn trở về, cũng xem như đã kết thiện duyên với Tôn giả Hóa Thần. Chỉ có lợi mà không có hại.</p>
+                <p>Thất Âm Thượng Nhân ngưỡng mộ nói: &quot;Đệ tử khóa này quả là may mắn, gặp được tạo hóa như vậy. Không biết kẻ may mắn nào sẽ nắm bắt được cơ duyên này đây.&quot;</p>
+                <p>Đang nói, hắn đột nhiên khựng lại.</p>
+                <p>Chẳng lẽ cuối cùng lại để Giang Phàm chiếm tiện nghi mất rồi?</p>
+                <p>Lúc này.</p>
+                <p>Những bậc thang của Đăng Thiên Cổ Lộ đột nhiên rung chuyển. Từng đạo thần quang bắn tới, tại lối vào bậc thang, giao织 thành một tấm bia đá rực rỡ. Phía trên khắc kín đặc những cái tên.</p>
+                <p>Vút vút vút——</p>
+                <p>Từng vị cường giả vĩ đại, khí tức mạnh mẽ, đạt tới cảnh giới Nguyên Anh Lục Khiếu thậm chí là Thất Khiếu, lũ lượt kéo đến. Trong đó có các chủ nhân của Tam Thần Tông Thất Đại Giáo, cùng với các thủ lĩnh của những thế lực hạng nhất, gia tộc có thực lực cường hãn.</p>
+                <p>Bọn họ nhao nhao nhìn về phía bia đá.</p>
+                <p>&quot;Đây là bảng xếp hạng chiến lợi phẩm của các đệ tử đã vào trong sao?&quot;</p>
+                <p>&quot;Người đứng đầu là số tám mươi tám.&quot;</p>
+                <p>&quot;Số tám mươi tám là Phùng Viễn Tông của Đại Âm Tông ta!&quot;</p>
+                <p>&quot;Ha ha ha, ta biết ngay mà, nơi thế này thích hợp nhất với Đại Âm Tông chúng ta!&quot;</p>
+                <p>Các chủ nhân của Thần Tông Đại Giáo đều lộ vẻ mặt phức tạp, có người ngưỡng mộ, có người ghen tị, cũng có người oán giận bất công. Trong Đại Âm Tông có nhiều phái đệ tử, đều là những pháp môn khá âm tà, đặc biệt là phái Âm Thi. Quả thực là phạm quy, thi thể vừa thả ra, hoàn toàn là thế trận nghiền ép.</p>
+                <p>&quot;Người thứ hai, số ba trăm sáu mươi là của Vạn Kiếp Thánh Điện ta, cũng không kém cạnh nhỉ, còn một ngàn bậc thang nữa, thắng bại chưa thể nói trước.&quot;</p>
+                <p>&quot;Người thứ ba, số chín là của Tam Thanh Sơn ta.&quot;</p>
+                <p>&quot;Thứ tư là...&quot;</p>
+                <p>Không ít tông môn hạng nhất nhìn xuống, lộ vẻ mặt cay đắng. Mười hạng đầu toàn là người của Tam Thần Tông Thất Đại Giáo, thậm chí trong toàn bộ hai mươi hạng cũng hiếm có người ngoài bọn họ. Rốt cuộc cũng là Thần Tông Đại Giáo, biểu hiện của đệ tử chính là sự phản ánh trực tiếp nhất về nội tình của bọn họ.</p>
+                <p>&quot;Ồ, bảng xếp hạng hai mươi hạng đầu có thay đổi rồi.&quot;</p>
+                <p>&quot;Có một người số tám trăm tám mươi tám đã lọt vào, đây là đệ tử nhà nào vậy?&quot;</p>
+                <p>Số thứ tự của cột sáng trên người mỗi người đều được phân phối ngẫu nhiên. Số thứ tự ở sau không có nghĩa là người cuối cùng tiến vào. Do đó, cho dù là Trần Kính Thượng Nhân, người đang nắm giữ danh sách những người đã vào, cũng không thể tra ra người đó là ai.</p>
+                <p>Hắn nhìn ngắm số tám trăm tám mươi tám trên bia đá, suy đoán:</p>
+                <p>&quot;Chắc vẫn là người của Tam Thần Tông Thất Đại Giáo.&quot;</p>
+                <p>&quot;Vị trí trong hai mươi hạng đầu đều là Tả Đạo Nguyên Anh, các tông môn khác không có nội tình để bồi dưỡng ra đệ tử Tả Đạo Nguyên Anh.&quot;</p>
+                <p>Đúng lúc này.</p>
+                <p>Bảng xếp hạng lại thay đổi.</p>
+                <p>&quot;Hạng mười chín rồi! Chiến lợi phẩm của hắn lại vượt qua một người nữa!&quot;</p>
+                <p>&quot;Khoan đã, vẫn đang thay đổi! Hạng mười tám!&quot;</p>
+                <p>&quot;Hạng mười bảy!&quot;</p>
+                <p>&quot;Hạng mười sáu rồi!&quot;</p>
+                <p>&quot;Điên rồi sao! Hắn không phải là một Tôn giả cảnh giới Nguyên Anh đó chứ? Giết con mồi nhanh đến vậy sao?&quot;</p>
+                <p>&quot;Theo tin tức đồ nhi ta truyền về, sau bậc thang thứ chín ngàn, bên trong đều là Tả Đạo Nguyên Anh!&quot;</p>
+                <p>&quot;Mỗi con đều rất khó giết, nhưng người này lại hoàn toàn là thế diệt sát chớp nhoáng!&quot;</p>
+                <p>&quot;Có phải đã thả một Nguyên Anh cảnh vào trong rồi không?&quot;</p>
+                <p>Trần Kính Thượng Nhân nghe vậy, sắc mặt cũng biến đổi. Hắn trầm giọng nói: &quot;Làm sao có thể? Mỗi người đi lên đều do ta đích thân kiểm tra, làm sao có Nguyên Anh cảnh trà trộn vào được? Hơn nữa, sư tôn ta đã đích thân ra lệnh, cấm Nguyên Anh bước vào. Kẻ nào tìm chết mà dám mạo danh xông vào?&quot;</p>
+                <p>Chỉ là, nhìn vị trí vẫn đang nhanh chóng nhảy vọt, Trần Kính Thượng Nhân cũng im lặng. Bởi vì chỉ trong hơn mười hơi thở, người này đã nhảy vọt lên hạng mười ba! Tốc độ như thế này, làm sao một đệ tử Tả Đạo Nguyên Anh có thể làm được?</p>
+                <p>&quot;Rốt cuộc đây là người nào?&quot; Trần Kính Thượng Nhân vô cùng ngưng trọng. Hắn cố chết cũng không thể nhớ ra, mình đã thả vào một kẻ hung hãn như vậy.</p>
+                <p>Trên bậc thang thứ chín ngàn năm trăm.</p>
+                <p>Dư Bội Uyên phun ra một ngụm huyết tiễn từ miệng, bị thương bay ngược ra sau, đập vào bậc đá cứng vô cùng. Máu tươi nhuộm đỏ vạt áo, khuôn mặt xinh đẹp lộ ra chút thống khổ.</p>
+                <p>&quot;Tiện nhân nhỏ bé, dám dẫn chúng ta đến sào huyệt của mười đầu Tả Đạo Nguyên Anh Cự Thú? Ngươi muốn hại chết chúng ta, vậy ngươi cũng đừng hòng sống sót!&quot;</p>
+                <p>Một đạo nhân trẻ tuổi của Tam Thanh Sơn, ôm cánh tay bị cắn đứt, mặt đầy hung quang. Phất trần nhuốm máu trong tay, ngưng tụ thành một thanh đao, từ xa chỉ về phía Dư Bội Uyên!</p>
+                <p>Dư Bội Uyên cố nén cơn đau dữ dội trong cơ thể, nhìn Ngụy Triều Nhiên, người cũng bị thương không nhẹ bên cạnh, nói: &quot;Ngụy sư huynh, huynh còn có thể kiên trì không?&quot;</p>
+                <p>Ngụy Triều Nhiên nghiến răng nói: &quot;Sư muội, muội không nên chọc giận bọn họ.&quot;</p>
+                <p>Dư Bội Uyên lộ vẻ tự trách.</p>
+                <p>Năng lực tiên tri lành dữ của nàng, khi vận dụng trong Đăng Thiên Cổ Lộ quả thực là như cá gặp nước. Mỗi khi tiến vào một không gian, nàng đều có thể dựa vào năng lực dự cảm để phán đoán bên nào có con mồi nguy hiểm, bên nào là phương vị có lợi cho bọn họ. Do đó, bọn họ có thể tránh được nguy hiểm, tìm kiếm những con mồi dễ dàng diệt sát, không những nhẹ nhàng an toàn mà số lượng chiến lợi phẩm còn cực nhiều. Đến nỗi, thực lực vốn dĩ chỉ đủ để miễn cưỡng lọt vào top hai mươi của hai người, giờ đây lại như một con hắc mã, một đường xông thẳng đến cuối top mười.</p>
+                <p>Nào ngờ, cảnh đẹp chẳng mấy khi còn. Bọn họ đã thu hút sự chú ý của hai đệ tử tinh anh Tả Đạo Nguyên Anh của Tam Thanh Sơn, bọn chúng đề nghị muốn cùng bọn họ lập đội. Dư Bội Uyên đương nhiên không chịu, thế là hai bên đã giao thủ. Kết quả có thể đoán trước được, bọn họ, những người một đường dựa vào bói toán lành dữ để chiếm lợi thế, làm sao có thể là đối thủ của hai người này chứ. Sau mấy chục hiệp, bọn họ đã bị bắt giữ, nàng bị ép buộc phải lợi dụng năng lực bói toán để giúp bọn chúng làm việc.</p>
+                <p>Dư Bội Uyên liền cố ý dẫn bọn chúng đến nơi nguy hiểm, hòng mượn tay cự thú lợi hại để tiêu diệt bọn chúng. Không ngờ, thực lực của hai người kia quá mạnh, chỉ bị thương mà thôi.</p>
+                <p>Thế là có cảnh tượng trước mắt.</p>
+                <p>Dư Bội Uyên nghiến răng nói: &quot;Sư huynh, là muội đã làm liên lụy huynh. Huynh đi đi, muội sẽ cản chân bọn chúng.&quot;</p>
+                <p>Hai bên đã náo loạn đến mức này, xung quanh lại chẳng có ai, hai vị thiên kiêu của Tam Thanh Sơn kia há có thể bỏ qua cho bọn họ sao? E rằng sẽ giết bọn họ để hả giận.</p>
+                <p>Ngụy Triều Nhiên chần chừ một lát, nghiến răng nói: &quot;Được, sư huynh sau này sẽ giúp muội báo thù.&quot;</p>
+                <p>Vừa định quay người bỏ đi, Ngụy Triều Nhiên lại khựng lại, nói: &quot;Sư muội, hạt giống màu xanh kia, ta cũng sẽ giúp muội mang về, giao cho sư tôn xử lý đi.&quot;</p>
+                <p>Dư Bội Uyên mơ hồ nhận ra có điều không đúng. Nàng sắp chết rồi, Ngụy Triều Nhiên vẫn còn nhớ đến hạt giống của nàng sao? Nàng có một cảm giác không thể nói thành lời. Nhưng tình hình nguy cấp, nàng không nghĩ nhiều, tháo nhẫn không gian ra ném cho hắn: &quot;Tất cả cho huynh đấy!&quot;</p>
+                <p>Ngụy Triều Nhiên kinh ngạc vui mừng đón lấy, lén lút liếc mắt với hai đệ tử Tam Thanh Sơn kia, dành cho bọn chúng một ánh mắt cảm kích. Sau đó giả vờ vẻ mặt rất hổ thẹn: &quot;Vậy chú ngữ là gì?&quot;</p>
+                <p>Dư Bội Uyên không chút suy nghĩ nói: &quot;Thuyền...&quot;</p>
+                <p>Vừa mới thốt ra một chữ.</p>
+                <p>Một tiếng &quot;xé toạc&quot; không hề báo trước xuất hiện trước mặt Ngụy Triều Nhiên! Ngay sau đó, một bàn tay lớn đã nắm chặt lấy lòng bàn tay Ngụy Triều Nhiên, đoạt lại chiếc nhẫn không gian từ trong đó.</p>
+                <p>Một giọng nói quen thuộc khiến thân thể Dư Bội Uyên run lên bần bật, cắt ngang lời nàng:</p>
+                <p>&quot;Dư sư tỷ, đồ mà Tiền bối Bích Lạc tặng tỷ, sao lại tùy tiện tặng cho người khác thế?&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_959">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 959: Đại hung</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Dư Bái Uyên không thể tin nổi mà nhìn.</p>
+                <p>Một thiếu niên anh tuấn da trắng nõn, vận hắc y, một tay đã chế ngự Nguỵ Triều Nhiên. Nàng không dám tin vào mắt mình: &quot;Giang… Giang sư đệ?&quot; Không trách nàng nghi ngờ, bởi vì ngay cả Nguỵ Triều Nhiên ở một bên cũng cứng đờ nét mặt. Giang Phàm vậy mà lại xuất hiện ở Thái Thương Đại Châu? Xuất hiện ở Đăng Thiên Cổ Lộ? Xuất hiện ở tầng chín ngàn năm trăm? Ai mà tin nổi?</p>
+                <p>Nguỵ Triều Nhiên nhanh chóng phản ứng lại, định đoạt lấy chiếc nhẫn, quát khẽ: &quot;Chỗ này không có việc của ngươi!&quot; &quot;Tránh ra!&quot; Giang Phàm lãnh đạm nhìn hắn một cái, tuỳ tay vung lên, một luồng sức mạnh tuyệt cường khiến Nguỵ Triều Nhiên không thể chống cự bao bọc lấy hắn, ném hắn bay ra ngoài. Nguỵ Triều Nhiên vội vàng ổn định thân hình, lảo đảo tiếp đất, cúi đầu nhìn cổ tay, một vết hằn năm ngón tay đỏ ửng in rõ mồn một. Hắn có chút kinh nghi nhìn Giang Phàm: &quot;Ngươi… ngươi tu vi gì?&quot; Hắn chính là tu sĩ Nguyên Anh cảnh giới Tả Đạo, vậy mà cú ném vừa rồi lại khiến hắn không có chút sức phản kháng nào.</p>
+                <p>Giang Phàm nhìn hắn thật sâu một cái. Nguỵ Triều Nhiên và hai đệ tử Tam Thanh Sơn đưa mắt ra hiệu, hắn đều nhìn thấy trong mắt. Kết hợp với hạt giống màu lam trong tay Dư Bái Uyên, hắn trong lòng đã hiểu rõ tám chín phần. Hắn lạnh giọng nói: &quot;Ngươi cả đời có thể gặp được mấy người chịu vì ngươi mà đỡ đao?&quot; &quot;Người như vậy, ngươi vậy mà lại cấu kết người ngoài làm hại nàng!&quot;</p>
+                <p>Hắn đến trước mặt Dư Bái Uyên, nói: &quot;Sau này hãy tránh xa Nguỵ Triều Nhiên một chút, hắn không xứng đáng với tình sư huynh muội của ngươi.&quot; Dư Bái Uyên vẫn chưa hiểu chuyện gì đang xảy ra. Cho đến khi đệ tử Tam Thanh Sơn cụt một cánh tay kia lạnh lùng chất vấn: &quot;Nguỵ Triều Nhiên, ngươi đâu có nói còn có một ngoại viện!&quot; Người có thể đi đến đây, tất nhiên là đã chém giết xuyên qua chín ngàn năm trăm bậc thang mà đến. Nào có ai là kẻ đơn giản? Đột nhiên xuất hiện một người, bọn họ tự nhiên phải cân nhắc lại việc hợp tác với Nguỵ Triều Nhiên.</p>
+                <p>Lúc này, Dư Bái Uyên mới bừng tỉnh như mơ, không dám tin nói: &quot;Nguỵ sư huynh, ngươi cùng bọn họ… liên thủ lừa ta?&quot; Nàng vẫn luôn thắc mắc, vì sao khi dẫn hai người kia đến hang ổ của cự thú huyết sắc, vào khoảnh khắc cuối cùng, hai người đó lại đột nhiên bừng tỉnh. Hoá ra là Nguỵ Triều Nhiên đã nhắc nhở bọn họ. Nguỵ Triều Nhiên muốn hạt giống màu lam trong tay nàng, hai người Tam Thanh Sơn thì muốn năng lực cảm ứng cát hung của nàng. Thế là bọn họ đã liên thủ. Thật nực cười khi nàng bị Nguỵ Triều Nhiên bán đứng, còn vì hắn mà đỡ một đòn chết người, lại còn tặng hạt giống màu lam cho hắn. &quot;Nguỵ Triều Nhiên!&quot; Cảm giác bị lừa dối mãnh liệt khiến Dư Bái Uyên vừa đau khổ vừa phẫn nộ. Nàng đẫm lệ nhìn chằm chằm Nguỵ Triều Nhiên!</p>
+                <p>Đã bị vạch trần, Nguỵ Triều Nhiên cũng không giả vờ nữa, đi đến bên cạnh hai đệ tử Tam Thanh Sơn. Hắn lạnh lùng nói: &quot;Cái này phải trách chính ngươi!&quot; &quot;Sư tôn vốn dĩ trọng dụng ta nhất, cơ duyên độ kiếp kia cũng vốn nên là để lại cho ta!&quot; &quot;Nhưng ngươi lại nhờ phúc thằng nhóc này, có được hạt giống màu lam, sư tôn liền bắt đầu cân nhắc ban cho ngươi!&quot; &quot;Ngươi đã đoạt mất cơ duyên của ta, ta không tự tay giết ngươi đã là niệm tình sư huynh muội rồi!&quot;</p>
+                <p>Dư Bái Uyên cắn chặt môi đỏ, đau lòng đến mức không nói nên lời. Giang Phàm lãnh đạm nhìn hắn, nói: &quot;Nguỵ Triều Nhiên, nói lời này không biết xấu hổ sao?&quot; &quot;Thất Âm Thượng Nhân ban đầu chỉ định ngươi đi cùng ta hành động ở Hóa Thần di tích, ngươi lo lắng đi theo ta sẽ chịu thiệt, liền để sư muội ngươi đi.&quot; &quot;Bản thân quá ích kỷ, lại để cơ duyên rơi vào tay sư muội.&quot; &quot;Cái này cũng có thể trách người khác sao?&quot;</p>
+                <p>Nguỵ Triều Nhiên hừ lạnh nói: &quot;Lo chuyện bao đồng!&quot; &quot;Hai vị sư huynh, người này chẳng qua chỉ là một đệ tử Thiên Cơ Các, thực lực tuy mạnh nhưng cũng có hạn, ba người chúng ta hợp lực đối phó hắn không khó!&quot; &quot;Đến lúc đó, sư muội ta vẫn cứ giao cho các ngươi định đoạt, chỉ là, mong các ngươi đừng để lại hậu hoạn cho ta.&quot; Ý ngoài lời, sau khi lợi dụng xong Dư Bái Uyên, hãy nhớ trừ khử nàng! Vốn dĩ hắn không định làm vậy. Lừa được hạt giống màu lam là đủ rồi. Nhưng giờ Giang Phàm đã vạch trần hắn, nếu Dư Bái Uyên quay về tố cáo, hắn làm sao mà yên thân được? Giữa các đệ tử có thể nội đấu thế nào cũng được, nhưng cấu kết người ngoài tàn hại đồng môn, nào có vị sư tôn nào có thể dung thứ.</p>
+                <p>Đồng tử Dư Bái Uyên trợn tròn: &quot;Nguỵ Triều Nhiên! Ngươi cái đồ súc sinh!&quot; Vậy mà lại muốn mưu hại nàng! Nguỵ Triều Nhiên mắt lộ lãnh mang: &quot;Muốn trách thì trách Giang Phàm lo chuyện bao đồng!&quot; &quot;Sau khi chết nhớ tìm hắn!&quot; &quot;Ra tay!&quot; Ba người đồng loạt ra tay. Bọn họ không ai là không phải tồn tại cấp Nguyên Anh Tả Đạo, một số phương diện đã đạt đến cấp độ Nguyên Anh. Nếu đối mặt với Nguyên Anh Tả Đạo cùng cấp, ba đối một tự nhiên không có gì đáng nghi ngờ. Đáng tiếc, bọn họ gặp phải là Giang Phàm.</p>
+                <p>&quot;Thần Chủ Thương Mang!&quot; &quot;Thiên Địa Độc Ngã!&quot; Một pho tượng Thần Tượng, một pho tượng Nhân Hoàng Tượng, vai kề vai xuất hiện, giáng ra phong mang cái thế về phía ba người đang lao tới. Sắc mặt ba người Nguỵ Triều Nhiên đại biến, một kích này khiến bọn họ có cảm giác áp lực như đối mặt với Nguyên Anh chân chính. Dưới sự liên thủ chống đỡ, bọn họ cũng bị chấn động đến khí huyết sôi trào, thất khiếu chảy máu ngay tại chỗ. Đặc biệt là đệ tử Tam Thanh Sơn cụt một tay kia, cánh tay còn lại duy nhất cũng bị Đế Vương Kiếm vô tình chém đứt, phát ra tiếng kêu thảm thiết như heo bị chọc tiết. Chỉ một kích, quét ngang ba vị Nguyên Anh Tả Đạo. Nguỵ Triều Nhiên lau vết máu trong mắt, trong mắt đầy vẻ chấn động. Mới một tháng không gặp, đệ tử Thiên Cơ Các mà khi gặp mặt mới chỉ Kết Đan tầng tám kia, vậy mà lại đáng sợ đến vậy?</p>
+                <p>Giang Phàm lãnh đạm nhìn bọn họ một cái, quay đầu nhìn Dư Bái Uyên cũng đang sững sờ, hỏi: &quot;Ba người này xử lý thế nào?&quot; Hai đệ tử Tam Thanh Sơn thì dễ nói rồi. Nguỵ Triều Nhiên lại là đệ tử của Thất Âm Thượng Nhân, lần này Thất Âm Thượng Nhân phái bọn họ đến đây, là để thỉnh Giang Phàm giúp đỡ đệ tử của lão. Nào có đạo lý tự ý giết đệ tử của lão? Trừ phi, Dư Bái Uyên thỉnh hắn ra tay. Nhưng, câu trả lời của Dư Bái Uyên cũng không nằm ngoài dự đoán của hắn.</p>
+                <p>Nàng lạnh lùng nhìn chằm chằm Nguỵ Triều Nhiên đủ năm nhịp thở, rồi mắng: &quot;Cút đi! Ta vĩnh viễn không muốn nhìn thấy cái đồ lang tâm cẩu phế nhà ngươi nữa!&quot; Nguỵ Triều Nhiên thoát chết trong gang tấc, nét mặt phức tạp nhìn Dư Bái Uyên một cái, rồi quả quyết đi xuống bậc thang, không tiếp tục khiêu chiến nữa.</p>
+                <p>Còn về hai đệ tử Tam Thanh Sơn còn lại. Dư Bái Uyên đương nhiên không muốn gây rắc rối lớn cho Giang Phàm, giết bọn họ, Tam Thanh Sơn điên cuồng báo thù Giang Phàm và Thiên Cơ Các là điều tất yếu. Nàng nhìn thoáng qua đệ tử Tam Thanh Sơn bị gãy cả hai cánh tay kia, oán khí trong lòng cũng dịu đi, hừ lạnh nói: &quot;Ta nói thật cho các ngươi biết, trong không gian dưới chân chúng ta đây, còn có một nơi cực kỳ hung hiểm!&quot; &quot;Nếu vừa rồi ta dẫn các ngươi đến đó, các ngươi đã chết từ lâu rồi!&quot; &quot;Ngươi bị đứt lìa hai cánh tay, cũng xem như gieo gió gặt bão, ân oán hôm nay chúng ta coi như huề!&quot; &quot;Nếu các ngươi dám tìm rắc rối cho Giang sư đệ của ta, thì đừng trách ta cũng đem chuyện này nói hết ra, đến lúc đó các ngươi cũng đừng hòng sống yên!&quot; Đệ tử tinh anh của Thiên Nhai Hải Các bị người ta tính kế như vậy, chắc chắn sẽ không bỏ qua. Hai đệ tử Tam Thanh Sơn nhìn nhau một cái, cũng dẹp bỏ ý định báo thù sau này. Một là quả thực kiêng kỵ Thiên Nhai Hải Các, hai là Giang Phàm này thực lực mạnh đến mức khó tin, không dễ trêu chọc. Hai người gật đầu, chật vật rời đi.</p>
+                <p>Dư Bái Uyên thở phào nhẹ nhõm, rồi có chút ngượng ngùng nói: &quot;Giang sư đệ, ta có phải quá yếu đuối không?&quot; &quot;Bọn họ đã như thế rồi, ta còn tha cho bọn họ.&quot; Giang Phàm vỗ vỗ vai nàng: &quot;Cũng có một chút, nhưng ta cũng không ghét.&quot; Chính vì nàng còn giữ lại một phần thiện lương, Giang Phàm mới nguyện ý giúp nàng.</p>
+                <p>&quot;Ngươi vừa nói không gian dưới chân có một nơi cực kỳ hung hiểm? Chuyện gì thế?&quot; Giang Phàm hỏi. Sở dĩ hắn không lập tức đi vào không gian bậc thang, là vì Vân Hà Phi Tử vẫn còn ở bậc thang phía trên. Đợi nàng ta đến, hai người sẽ tiến vào trong đó. Cho nên hắn phải hỏi rõ ràng trước. Dư Bái Uyên lắc đầu, nhíu mày nói: &quot;Không nói rõ được, ta chưa từng cảm nhận được sự hung hiểm lớn đến thế.&quot; &quot;Ngay cả khi gặp hai con hổ yêu Nguyên Anh hậu kỳ trong Hóa Thần di tích, cũng không có cảm giác như vậy.&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_960">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 960: Hào nhiên chính khí, thiên địa trường tồn</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm lập tức trở nên nghiêm trọng.</p>
+                <p>Con hổ đực trong di tích Hóa Thần Cảnh năm xưa kia, đã muốn nuốt sống bọn họ rồi. Sự hung hiểm trước mắt, còn nguy hiểm hơn cả lúc đó sao?</p>
+                <p>Dư Bội Uyên đề nghị: &quot;Giang sư đệ đừng quá lo lắng. Ta sẽ đi cùng các ngươi một lần nữa. Với năng lực cảm ứng hung cát của ta, ta hoàn toàn có thể giúp các ngươi tránh né hung hiểm.&quot;</p>
+                <p>Giang Phàm suy nghĩ một chút, nhẹ nhàng gật đầu.</p>
+                <p>Bốn người bọn họ trước đó đi xuống đều không sao, có thể thấy không gian dưới lòng đất rộng lớn, đủ để dễ dàng tránh khỏi hung hiểm. Hắn vẫy tay gọi Vân Hà Phi Tử ở đằng xa.</p>
+                <p>Vân Hà Phi Tử nhẹ nhàng lướt đến, đi tới bên cạnh Giang Phàm. Dư Bội Uyên nhìn Vân Hà Phi Tử, lập tức kinh ngạc: &quot;Đây là bạn lữ của Giang sư đệ sao? Đẹp quá!&quot;</p>
+                <p>Nàng tự hỏi đã gặp rất nhiều tiên tử ở Thái Thương Đại Châu, nhưng một người như Vân Hà Phi Tử thì thật sự chưa từng thấy qua.</p>
+                <p>Vân Hà Phi Tử khẽ cười: &quot;Đa tạ lời khen. Muội muội cũng rất thuần chân đáng yêu.&quot;</p>
+                <p>Dư Bội Uyên cười gượng: &quot;Tỷ tỷ thật biết khen người.&quot;</p>
+                <p>Khi ấn tượng đầu tiên của một người về ngươi là những tính từ như &quot;đáng yêu&quot;, &quot;thật thà&quot;, &quot;cởi mở&quot;... Ngươi nhất định phải chú ý, đối phương chắc chắn thấy ngươi không đẹp. Vì thật sự không thể khen ngợi dung mạo của ngươi, nên mới tìm tính cách, phẩm chất để nói.</p>
+                <p>May mắn là không gian vặn vẹo, hóa giải sự xấu hổ của Dư Bội Uyên. Bọn họ xuất hiện trong một thế giới đổ nát.</p>
+                <p>Thiên địa một màu u ám, linh khí cạn kiệt, từng tòa tông môn đổ nát mọc đầy cỏ hoang, từng bộ hài cốt hóa thành di hài bị vứt bỏ bên đường không ai quan tâm. Khắp nơi đều hoang tàn, giống như cảnh tượng tận thế.</p>
+                <p>Giang Phàm từ khi đi đến đây, đã trải qua vô số thế giới. Những nơi bị huyết sắc cự thú phá hoại triệt để, trở thành tận thế như thế này không hề ít.</p>
+                <p>Giang Phàm hỏi: &quot;Thế nào?&quot;</p>
+                <p>Dư Bội Uyên nhắm mắt cảm ứng, chốc lát sau khẽ kinh ngạc: &quot;Kỳ lạ, cái cảm ứng đại hung cực độ kia, lại biến mất rồi. Chẳng lẽ trước đó ta đã cảm ứng sai sao? Vật đại hung, còn có thể tự nhiên biến mất sao?&quot;</p>
+                <p>&quot;Không có thì càng tốt, chúng ta cứ chém giết huyết sắc cự thú ở đây trước đã.&quot;</p>
+                <p>Giang Phàm nhìn quanh, rất nhanh đã thấy vài con huyết sắc cự thú đang lang thang trong phế tích, tìm kiếm sinh linh còn sót lại. Huyết sắc cự thú ở đây đã đạt cấp độ Tả Đạo Nguyên Anh, thân dài hơn trăm trượng, vô cùng bắt mắt.</p>
+                <p>Hắn phóng người lướt tới, không nói hai lời liền ra tay giết chóc.</p>
+                <p>&quot;Tu La Nghiệp Hỏa!&quot;</p>
+                <p>&quot;Ngũ Từ Nguyên Sơn!&quot;</p>
+                <p>Hắn tiện tay trấn sát hai con, hai con còn lại vội vàng bỏ chạy. Giang Phàm đuổi kịp một con, một đạo Thần Chủ Thương Mang liền đánh nó ngã xuống đất. Đang chuẩn bị kết liễu tính mạng của nó, nhanh chóng truy sát con còn lại.</p>
+                <p>Quy tắc của không gian này, hắn đã tìm ra rồi: giết chết huyết sắc cự thú trong tầm mắt, liền sẽ bị truyền tống đi.</p>
+                <p>Đang định ra tay giết chóc.</p>
+                <p>Thân thể hắn đột nhiên cứng đờ. Một luồng khí tức đáng sợ đến mức khiến hắn dựng tóc gáy, truyền đến từ trên nóc đại điện của một tông môn bỏ hoang ở đằng xa.</p>
+                <p>Đó là một nam tử trung niên.</p>
+                <p>Mắt sao mày kiếm, ánh mắt sắc bén và có thần, ngũ quan đoan chính, một thân trường bào màu trắng ngà, mái tóc đen được búi bằng ngọc quan. Hắn tay đè lên kiếm hạp, đứng sừng sững trên đại điện.</p>
+                <p>Lúc này, thấy một con dị thú huyết sắc đang bỏ chạy, vô tình xông về phía một ngôi miếu đổ nát. Trong ngôi miếu, vài cái đầu nhỏ của nhân tộc thò ra. Nhìn cự thú giẫm tới, không ai không lộ vẻ tuyệt vọng.</p>
+                <p>Giang Phàm cũng chú ý tới, sắc mặt hơi đổi. Đây không phải huyễn cảnh, mà là nhân tộc thật sự tồn tại!</p>
+                <p>Hắn vừa định ra tay.</p>
+                <p>Nam tử trung niên áo trắng kia tùy tiện nâng tay, trong kiếm hạp liền bay ra một đạo kiếm quang thần bí, đánh vào thể nội huyết sắc cự thú.</p>
+                <p>Một cảnh tượng khiến Giang Phàm chấn động xuất hiện. Huyết sắc cự thú ầm ầm ngã xuống đất.</p>
+                <p>Thân thể lại hóa thành vô số khối thịt nhỏ. Mỗi khối đều có kích thước như nhau, là những cục thịt vuông vức! Đây phải là kiếm thuật đạt đến cảnh giới đăng phong tạo cực nào mới có thể một kiếm cắt thi thể thành hình dạng như vậy?</p>
+                <p>Kiếm sĩ trung niên bay người xuống, đến trước ngôi miếu đổ nát. Hắn lộ vẻ ôn hòa với nhân tộc bên trong: &quot;Mau đổi chỗ khác đi, nơi này không còn an toàn nữa.&quot;</p>
+                <p>Vài người nhân tộc cảm kích vô cùng, chắp tay bái tạ, rồi mang theo gia sản của mình, đi về phía thành phố xa hơn để lánh nạn. Kiếm sĩ trung niên nhìn bọn họ đi xa, ánh mắt lộ vẻ thương xót sâu sắc: &quot;Tà ma cùng nổi dậy, chúng sinh đâu có tội tình gì?&quot;</p>
+                <p>Hắn quay người lướt đến giữa không trung, đáp xuống trước mặt Giang Phàm, lộ vẻ thưởng thức: &quot;Thiếu niên, ngươi cũng đến để cứu vớt chúng sinh sao?&quot;</p>
+                <p>Giang Phàm trong lòng chấn động.</p>
+                <p>Không gian bậc đá hiện tại, sao lại có cường giả nhân tộc mạnh mẽ như vậy? Nhưng, người này trừ bạo an lương, trong lòng ôm chúng sinh, mang lại cảm giác chính khí hạo nhiên, không phải người đại ác. Vì vậy, Giang Phàm vội vàng chắp tay nói: &quot;Không tính là vậy, chỉ có thể xem là thấy chuyện bất bình ra tay tương trợ thôi.&quot;</p>
+                <p>Quy tắc của không gian nơi này, khiến hắn không thể dừng lại trong một không gian để chém giết hết tất cả huyết sắc cự thú. Hắn chỉ có thể làm hết sức mình, thấy một thì cứu một.</p>
+                <p>Kiếm sĩ trung niên mỉm cười: &quot;Ta vừa rồi đã thấy rồi. Khi con dị thú huyết sắc kia định giẫm nát ngôi miếu đổ nát, ngươi cũng định ra tay. Ngươi cũng là người có lòng chính nghĩa vậy.&quot;</p>
+                <p>Giang Phàm nói: &quot;Có tiền bối ở đây, vãn bối đâu cần ra tay?&quot;</p>
+                <p>Kiếm sĩ trung niên vỗ vai Giang Phàm, nói với giọng nặng nề: &quot;Không thể nói như vậy. Hạo nhiên chính khí, thiên địa trường tồn! Chỉ có một mình ta thì làm sao đủ? Cần hàng ngàn hàng vạn người như ta và ngươi, mới có thể duy trì được luồng chính khí này bất diệt.&quot;</p>
+                <p>Giang Phàm trong lòng hổ thẹn.</p>
+                <p>Hắn thật sự không xứng được gọi là chính khí chi sĩ, trái lại người trước mắt, từ trong ra ngoài đều toát ra cảm giác chính khí hào hùng. Như kiêu dương trên trời, ánh sáng tỏa ra xua tan mọi bóng tối trong thiên địa.</p>
+                <p>Giang Phàm không khỏi tự ti nói: &quot;Vãn bối đã được chỉ dạy.&quot;</p>
+                <p>Kiếm sĩ trung niên khẽ gật đầu: &quot;Hiếm khi gặp được đồng đạo, ta tặng ngươi một món quà vậy. Hy vọng, ngươi có thể đi xa hơn trên con đường duy trì chính khí.&quot;</p>
+                <p>Hắn mở kiếm hạp, ngón tay lướt qua bên trong, lấy ra một chút kiếm quang thần bí màu cửu sắc, năm ngón tay siết lại.</p>
+                <p>Một tia kiếm quang này, liền hóa thành một thanh quang kiếm rực rỡ cửu sắc, ngập tràn chính khí vô biên.</p>
+                <p>&quot;Đây là một chút kiếm ý mà ta tu luyện, tặng ngươi đấy. Hãy cảm ngộ thật tốt, sẽ có ích cho kiếm đạo của ngươi.&quot;</p>
+                <p>Kiếm ý?</p>
+                <p>Giang Phàm tuy không biết đó là gì, nhưng tạo nghệ kiếm đạo của người này đã đạt đến độ cao mà Giang Phàm không thể nào hiểu được. Món quà tặng ra há có thể kém cỏi? Hắn lập tức cung kính đưa hai tay đón lấy.</p>
+                <p>Cửu sắc quang kiếm cầm vào nhẹ như lông hồng, và hòa vào huyết nhục hai tay. Theo tâm niệm vừa động, lại lập tức hiện ra, vô cùng thần kỳ.</p>
+                <p>&quot;Vậy thì tạm biệt, thiếu niên.&quot;</p>
+                <p>&quot;Đạo của ta không cô độc, chính khí trường tồn, ha ha ha!&quot;</p>
+                <p>Hắn vác kiếm hạp lên lưng, bước về phía xa. Giang Phàm khom người nói: &quot;Cung tiễn tiền bối.&quot;</p>
+                <p>Không ngờ, trong thế giới tận thế tuyệt vọng này, lại gặp được một vị hiệp sĩ tràn đầy chính khí của trời đất, lại còn tặng cho mình một phần tạo hóa.</p>
+                <p>Vân Hà Phi Tử và Dư Bội Uyên chạy đến.</p>
+                <p>Vân Hà Phi Tử ánh mắt lộ vẻ tán thưởng: &quot;Thật là một vị hiệp sĩ vô song.&quot;</p>
+                <p>Dư Bội Uyên lại không nói gì, chỉ kéo kéo tay áo Giang Phàm, giọng nói mang theo một tia sợ hãi:</p>
+                <p>&quot;Nhanh! Nhanh giết con dị thú này đi! Chúng ta mau rời khỏi không gian này!&quot;</p>
+                <p>Giang Phàm nghi hoặc nhìn lại.</p>
+                <p>Hắn phát hiện Dư Bội Uyên mặt đầy sợ hãi, đôi mắt chăm chú nhìn kiếm sĩ trung niên đang đi xa, thân thể run rẩy. Miệng khẽ kêu lên: &quot;Hắn... hắn chính là đại hung đó!&quot;</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_191.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_191.html" class="page-btn">191</a>
+            <a href="page_192.html" class="page-btn current">192</a>
+            <a href="page_193.html" class="page-btn">193</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_193.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

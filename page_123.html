@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 123">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 123</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_122.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_124.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_611">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 611: Ngự kiếm phi hành</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm mỉm cười.</p>
+                <p>Khom lưng ôm lấy Lưu Ly, thả người nhảy lên, từ trên lưng Phệ Thiên Hổ cao hơn mười trượng nhảy xuống.</p>
+                <p>Đám yêu tộc phía dưới rống kêu lên.</p>
+                <p>&quot;Hắn hạ xuống rồi!&quot;</p>
+                <p>&quot;Đánh! Đánh cho đến chết!&quot;</p>
+                <p>&quot;Không được buông tha hắn!&quot;</p>
+                <p>Đám yêu tộc như thủy triều vọt tới, hung hăng công kích Giang Phàm.</p>
+                <p>Vô số quầng sáng, quyền phong chân kình kéo tới.</p>
+                <p>Đan vào một chỗ, uy lực to lớn, khiến Phệ Thiên Hổ cũng ngưng trọng.</p>
+                <p>Đang muốn xuất thủ bảo vệ hai người.</p>
+                <p>Thình lình.</p>
+                <p>Một đạo tử quang thoáng hiện, chớp đến dưới chân Giang Phàm, nhẹ nhàng nâng hai người, treo lơ lửng giữa không trung.</p>
+                <p>Lưu Ly cảm nhận được tiếng gió vút vút, một đường vô cùng sợ hãi.</p>
+                <p>&quot;Ngươi muốn liên lụy ta cùng bị đánh sao?&quot;</p>
+                <p>Có thể đột nhiên, thế hạ xuống bỗng dừng lại.</p>
+                <p>Nàng còn tưởng rằng là Phệ Thiên Hổ ra tay đón lấy bọn họ.</p>
+                <p>Có thể ngẩng đầu nhìn lên, Phệ Thiên Hổ lại lấy một biểu cảm gặp quỷ nhìn Giang Phàm.</p>
+                <p>Đám yêu tộc phía dưới đang phẫn nộ, cũng như thấy được chuyện cực kỳ khủng bố.</p>
+                <p>Từng tên đột nhiên dừng tay, đầy rẫy kinh ngạc nghi ngờ!</p>
+                <p>Hiện trường vừa rồi tiếng giết một mảnh, bỗng tĩnh lặng.</p>
+                <p>Tất cả mọi người nhìn Giang Phàm không chớp mắt.</p>
+                <p>Bởi vì.</p>
+                <p>Giờ khắc này Giang Phàm chân đạp một thanh kiếm... đứng lơ lửng trên không!</p>
+                <p>Trong nhân tộc.</p>
+                <p>Chỉ có một loại người có thể lăng không.</p>
+                <p>Đó là... Nguyên Anh đại tu!</p>
+                <p>Bốn phía tĩnh lặng.</p>
+                <p>Chỉ có Giang Phàm sắc mặt bình thản, thản nhiên nói: &quot;Đi!&quot;</p>
+                <p>Một lệnh vừa dứt.</p>
+                <p>Vút một tiếng.</p>
+                <p>Tử Kiếm dưới chân liền nâng lấy hai người bay thẳng đến trước cửa sổ bao sương lầu hai.</p>
+                <p>Linh Sơ nhìn Giang Phàm lăng không hư độ mà đến.</p>
+                <p>Nhất thời sửng sốt tại đó.</p>
+                <p>Quên cả né tránh.</p>
+                <p>&quot;Cô nương, không chào đón chúng ta tham gia tụ hội sao?&quot;</p>
+                <p>Tiếng nói ôn nhuận, lọt vào tai.</p>
+                <p>Linh Sơ lúc này mới như tỉnh mộng.</p>
+                <p>Nhanh chóng nghiêng người né tránh.</p>
+                <p>Đại não nàng vẫn còn hơi bối rối.</p>
+                <p>Không thể tin được những gì mình vừa nhìn thấy.</p>
+                <p>Lăng không hư độ?</p>
+                <p>Chỉ có Nhân tộc Nguyên Anh, Yêu tộc Yêu Hoàng mới làm được lăng không hư độ?</p>
+                <p>Chẳng lẽ, vị hôn phu của Lưu Ly vẫn là Nguyên Anh cường giả không thành.</p>
+                <p>Nhưng rất nhanh lại lấy lại tinh thần.</p>
+                <p>Nếu Giang Phàm là Nguyên Anh, sao lại rơi vào cảnh bị bắt làm tù binh?</p>
+                <p>Hẳn là tu luyện một loại công pháp nghịch thiên nào đó, có thể ngự kiếm phi hành.</p>
+                <p>Nhưng dù thế, cũng cực kỳ kinh người.</p>
+                <p>Nàng là lần đầu tiên nghe nói.</p>
+                <p>Có võ giả Kết Đan, có thể thi triển thủ đoạn lăng không hư độ của Nguyên Anh!</p>
+                <p>Cạch ――</p>
+                <p>Giang Phàm hạ xuống đất.</p>
+                <p>Nàng cẩn thận đỡ Lưu Ly ngồi xuống, ôn tồn nói:</p>
+                <p>&quot;Không có hù đến con của chúng ta à?&quot;</p>
+                <p>Đại não Lưu Ly cũng trống rỗng, một lúc lâu mới hoàn hồn.</p>
+                <p>Đang muốn hỏi Giang Phàm, vừa rồi đó là thủ đoạn nghịch thiên gì.</p>
+                <p>Lúc này mới nhận ra, Linh Sơ ở bên cạnh.</p>
+                <p>Nàng lập tức ngồi thẳng thân thể, nén giọng nói: &quot;Không sao.&quot;</p>
+                <p>&quot;Chỉ là lần sau bay chậm một chút, bay bình ổn một chút.&quot;</p>
+                <p>&quot;Ngự kiếm phi hành đơn giản như vậy, bị ngươi tu luyện thành thế này, thật không biết ngươi bình thường luyện thế nào.&quot;</p>
+                <p>Phốc ――</p>
+                <p>Giang Phàm cố nén ý cười.</p>
+                <p>Lưu Ly vừa thấy mặt kẻ thù không đội trời chung, lập tức như biến thành người khác.</p>
+                <p>Cái giọng điệu này, thật đúng là có mùi.</p>
+                <p>Linh Sơ hơi mím môi.</p>
+                <p>Không nghi ngờ gì, nàng bị Lưu Ly khoe khoang trắng trợn.</p>
+                <p>Theo kế hoạch, Giang Phàm sẽ đến đầy bụi đất, khiến Lưu Ly khó xử.</p>
+                <p>Sự thật lại vừa ngược lại.</p>
+                <p>Giang Phàm một tay ngự kiếm phi hành, chấn nhiếp toàn trường.</p>
+                <p>Mang theo Lưu Ly bằng cách gây chấn động nhất, giáng xuống tụ hội!</p>
+                <p>Nàng nén lại sự khó chịu trong lòng, nở nụ cười:</p>
+                <p>&quot;Lưu Ly, thật là ngại quá.&quot;</p>
+                <p>&quot;Ta chỉ là cảm thán một chút vị hôn phu ngươi được hoan nghênh, không ngờ lại dẫn đến hậu quả này.&quot;</p>
+                <p>Lưu Ly cười lạnh trong lòng.</p>
+                <p>Trà xanh chết tiệt!</p>
+                <p>Nếu không phải Giang Phàm thật sự có tài, hôm nay đã bị ngươi lừa thảm rồi.</p>
+                <p>Nàng cười nhạt một tiếng, duy trì dáng vẻ đoan trang của Yêu Hoàng chi nữ:</p>
+                <p>&quot;Chỉ là cảnh nhỏ mà thôi.&quot;</p>
+                <p>&quot;Vị hôn phu ta đối phó được.&quot;</p>
+                <p>Linh Sơ thầm nghiến răng.</p>
+                <p>Khoe khoang chưa xong à?</p>
+                <p>Vị hôn phu, vị hôn phu, không phải chỉ là biết ngự kiếm phi hành sao?</p>
+                <p>Có gì đáng khoe?</p>
+                <p>Nói cứ như chỉ mình ngươi có đàn ông nâng vậy.</p>
+                <p>Nàng vừa nghiêng đầu, nhìn về phía Hỗn Nguyên cách đó không xa.</p>
+                <p>Lúc này Hỗn Nguyên, đang kinh ngạc dò xét Giang Phàm.</p>
+                <p>Một tay ngự kiếm phi hành kia, cũng khiến hắn kinh sợ.</p>
+                <p>Nếu thủ đoạn này không phải lăng không hư độ của Nguyên Anh, hẳn là một loại kiếm thuật cường đại vượt qua hiểu biết của yêu tộc.</p>
+                <p>Khó trách có thể hạ gục Tử Tinh.</p>
+                <p>Người này thật có chút tài năng.</p>
+                <p>Phát giác ánh mắt Linh Sơ, Hỗn Nguyên nghi ngờ nhìn sang, nói:</p>
+                <p>&quot;Sao vậy?&quot;</p>
+                <p>Linh Sơ nói: &quot;Hỗn Nguyên đại ca, hôm nay ngoài chúng ta, còn có Thập Tinh, cùng với một vị yêu tộc lão tiền bối.&quot;</p>
+                <p>&quot;Không thể để bọn họ chờ lâu.&quot;</p>
+                <p>&quot;Mau chuẩn bị đồ ăn đi.&quot;</p>
+                <p>Đang nói chuyện, con ngươi linh động chớp chớp.</p>
+                <p>Cùng là Tứ Kiệt, hai người ở chung đã lâu, lại thường xuyên cùng nhau chấp hành nhiệm vụ.</p>
+                <p>Mười phần ăn ý.</p>
+                <p>Hỗn Nguyên suy tư một chút, lập tức hiểu ý Linh Sơ.</p>
+                <p>Không khỏi khóe miệng giật giật.</p>
+                <p>Linh Sơ bị Lưu Ly lấn át, muốn lấy lại danh dự.</p>
+                <p>Phụ nữ à!</p>
+                <p>Hỗn Nguyên chỉ có thể làm theo.</p>
+                <p>Cười lớn nói: &quot;Đó là tự nhiên!&quot;</p>
+                <p>Hắn lấy ra túi da thú mang theo người.</p>
+                <p>Từ bên trong lấy ra từng khối băng lớn nhỏ bằng nhau.</p>
+                <p>Bên trong đông kết từng đoàn linh nhục óng ánh tươi mới.</p>
+                <p>Hắn từng cái phân phát đến mỗi bàn ăn, giới thiệu nói: &quot;Đây là linh nhục mười năm.&quot;</p>
+                <p>&quot;Chút nữa sẽ chiêu đãi các vị khách quý.&quot;</p>
+                <p>&quot;Lưu Ly thiếu chủ đừng chê.&quot;</p>
+                <p>Lưu Ly liếc nhìn, đều là linh nhục phẩm chất thượng thừa, lại là mười năm.</p>
+                <p>Chỉ có trên yến hội quy cách cao mới có.</p>
+                <p>Sự chiêu đãi này, thật là không thấp.</p>
+                <p>Lúc này.</p>
+                <p>Linh Sơ có chút vô lực ngồi xuống, nói: &quot;Hỗn Nguyên đại ca, đêm qua muội luyện quyền quá lâu.&quot;</p>
+                <p>&quot;Thân thể có chút mệt mỏi.&quot;</p>
+                <p>&quot;Muội nghỉ ngơi một lát, huynh thay muội chiêu đãi tốt Lưu Ly thiếu chủ đi.&quot;</p>
+                <p>Hỗn Nguyên ngầm cười khổ.</p>
+                <p>Làm sao không biết, Linh Sơ muốn hắn nâng nàng lên, nâng cho Lưu Ly thiếu chủ xem chứ?</p>
+                <p>Đường cùng, chỉ có thể lộ vẻ đau lòng.</p>
+                <p>&quot;Linh Sơ muội muội, muội vì Chiến Thần Bắc Hải Yêu tộc, gần đây quả thật quá vất vả.&quot;</p>
+                <p>&quot;Ta đã thăm viếng rất nhiều bộ lạc, tìm cho muội một đoàn linh nhục trăm năm.&quot;</p>
+                <p>&quot;Muội ăn đi để khôi phục thân thể.&quot;</p>
+                <p>Hắn lấy ra một đoàn khối băng.</p>
+                <p>Linh nhục phong ấn bên trong, linh khí rõ ràng dồi dào hơn.</p>
+                <p>Cấp bậc cao hơn so với bày trên bàn ăn.</p>
+                <p>Linh Sơ lộ vẻ thụ sủng nhược kinh: &quot;À? Linh nhục trăm năm?&quot;</p>
+                <p>&quot;Hỗn Nguyên đại ca, cái này, cái này quá quý giá, muội sao nhận được?&quot;</p>
+                <p>Hỗn Nguyên khẽ cười nói: &quot;Chỉ là một chút tâm ý của ta, Linh Sơ muội muội cự tuyệt, ta sẽ rất đau lòng.&quot;</p>
+                <p>Linh Sơ mặt đỏ lên, lộ vẻ ngượng ngùng.</p>
+                <p>Muốn từ chối lại giả vờ miễn cưỡng nói: &quot;Hỗn Nguyên đại ca huynh nói vậy, muội, muội sao có ý tứ?&quot;</p>
+                <p>Chợt, vừa nghiêng đầu nhìn về phía Lưu Ly.</p>
+                <p>&quot;Lưu Ly thiếu chủ, nhiều linh nhục trăm năm như vậy, muội một mình ăn không hết.&quot;</p>
+                <p>&quot;Hay là chúng ta chia nhau ăn đi.&quot;</p>
+                <p>&quot;Một mình muội ăn ngại lắm.&quot;</p>
+                <p>Lưu Ly nổi nóng trong lòng.</p>
+                <p>Trà xanh chết tiệt, có đàn ông tặng linh nhục trăm năm, đến mức khoe khoang thành thế này sao?</p>
+                <p>Nàng mặt không chút thay đổi nói: &quot;Không cần.&quot;</p>
+                <p>&quot;Ta không đói bụng.&quot;</p>
+                <p>Linh Sơ trong lòng sảng khoái, tiếp tục cợt nhả nói: &quot;Lưu Ly, đừng khách sáo với ta nha.&quot;</p>
+                <p>&quot;Ngươi là Yêu Hoàng chi nữ, chẳng lẽ ngươi ăn linh nhục mười năm, ta ăn trăm năm?&quot;</p>
+                <p>&quot;Nếu truyền về bộ lạc, trưởng bối sẽ quở trách ta không hiểu quy củ.&quot;</p>
+                <p>Kẽo kẹt ――</p>
+                <p>Lưu Ly thầm siết chặt nắm đấm.</p>
+                <p>Trong lòng nổi trận lôi đình.</p>
+                <p>Nhưng lại không thể phát tác.</p>
+                <p>Linh nhục trăm năm có thể gặp mà không thể cầu, nàng không cách nào tìm được khối thứ hai.</p>
+                <p>Càng không thể sắp xếp trước cho Giang Phàm, cũng học Hỗn Nguyên diễn một màn.</p>
+                <p>Trận này, nàng rơi vào thế hạ phong!</p>
+                <p>Mí mắt Giang Phàm giật giật.</p>
+                <p>Đều nói hai người phụ nữ là một màn kịch hay.</p>
+                <p>Có thể màn kịch này, cũng quá đủ!</p>
+                <p>Tuy nhiên, hắn không thể để Lưu Ly bị coi thường.</p>
+                <p>Lỡ như quả ớt nhỏ này chịu đủ ấm ức, lật bàn bỏ đi, hắn cũng chỉ có thể đi theo.</p>
+                <p>Muốn xem hộp ngọc của Hổ Yêu Hoàng kia, liền không có cơ hội.</p>
+                <p>Thế là, ôn nhuận khẽ cười nói: &quot;Lưu Ly.&quot;</p>
+                <p>&quot;Linh Sơ tiểu thư nói không sai.&quot;</p>
+                <p>&quot;Linh nhục mười năm quả thật không xứng với thân phận ngươi.&quot;</p>
+                <p>&quot;Huống chi ngươi còn mang con của chúng ta, càng không thể làm oan chính mình.&quot;</p>
+                <p>&quot;Phần linh nhục mười năm này, chút nữa ngươi đừng ăn đi, ăn hỏng bụng thì phiền phức.&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_612">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 612: Bồ Tát sống</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Ăn hỏng bụng?Lưu ly âm thầm im lặng: “Không phải, nhường cái tên này có thể hay không diễn kịch a? Đây cũng quá xốc nổi đi?”</p>
+                <p>Mười năm linh thú có thể là yêu tộc cao cấp yến hội tốt nhất phối trí. Yêu Hoàng đều thường xuyên ăn! Chỗ nào đến phiên nàng một cái Yêu Hoàng chi nữ chọn ba lấy bốn. Còn nói sẽ ăn hỏng bụng? Nói ra những lời này, không sợ cười đến rụng răng sao?</p>
+                <p>Linh Sơ cũng ngẩn người, nhịn không được phốc phốc cười ra tiếng. Nàng vội vàng che miệng, nói: “Ngượng ngùng, Linh Sơ không phải cố ý chê cười. Chỉ là lần đầu tiên nghe được loại lời này, cảm thấy rất không thể tưởng tượng nổi.”</p>
+                <p>Ngoài miệng nói như thế. Trong mắt ý cười làm thế nào đều không dừng được.Giang Phàm thấy lưu ly bị làm hạ thấp đi, nghĩ nâng nàng một thanh, này có thể hiểu được. Nhưng nói mười năm linh nhục sẽ ăn hỏng bụng. Này loại lí do thoái thác, liền hăng quá hoá dở khiến cho người làm trò hề cho thiên hạ.</p>
+                <p>Hỗn Nguyên khóe miệng giật một cái. “Tiểu tử này thực có can đảm nói a!”</p>
+                <p>Mười năm linh nhục, hắn bình thường chính mình cũng không nỡ bỏ ăn. Này mười mấy đoàn, vẫn là vì hôm nay tụ hội, đau lòng chuẩn bị. Giang Phàm lại tới một câu sẽ ăn hỏng bụng. Như thế gièm pha hắn đồ vật, hắn nhưng không cách nào xem như nhìn không thấy.</p>
+                <p>“Mười năm linh nhục đều không nhìn trúng, vậy ngươi nhất định là vì lưu ly thiếu chủ chuẩn bị trăm năm linh nhục a? Không ngại lấy ra ta mở mang tầm mắt?”</p>
+                <p>Lưu ly thầm nghĩ hỏng bét. Xem đi. Nhường ngươi nói mạnh miệng, bị người ta tóm lấy chân đau, mượn đề tài để nói chuyện của mình. Nếu là không bỏ ra nổi trăm năm linh nhục, liền đợi đến mất mặt đi!</p>
+                <p>“Trăm năm linh nhục…” Giang Phàm suy tư một thoáng, khẽ lắc đầu: “Ta không có loại đồ vật này.”</p>
+                <p>Lưu ly trực tiếp liền đem khuôn mặt nhỏ xụ xuống. U oán nhìn chằm chằm hắn. Thầm nói: “Ngươi này người, muốn chọc giận chết ta nha!”</p>
+                <p>Vừa dùng ngự kiếm phi hành để cho nàng đè lên Linh Sơ một đầu, quay người liền để nàng ném một lần mặt.Hỗn Nguyên nhếch miệng: “Nguyên lai không có a. Ngươi lớn như vậy khẩu khí, còn tưởng rằng ngươi vì lưu ly thiếu chủ chuẩn bị nhiều ít đồ tốt đây.”</p>
+                <p>Linh Sơ lập tức sảng khoái. Vừa rồi bị lưu ly hung hăng khoe khoang phiền muộn, trong nháy tức tan thành mây khói. Nàng con ngươi hơi chuyển động, cầm lấy khối kia trăm năm linh nhục nói: “Lưu ly, không quan hệ á. Trăm năm linh nhục có thể ngộ nhưng không thể cầu, ngươi vị hôn phu không có rất bình thường. Chẳng qua là lần sau không nên nói nữa dạng này để cho người ta hiểu lầm là được. Ngươi nếu là thực sự không nguyện ý ăn mười năm linh nhục. Này trăm năm linh nhục, chúng ta phân ra ăn đi.”</p>
+                <p>Ta ăn cái đầu của ngươi a! Lưu ly âm thầm nổi nóng. Truyền đi, nàng Yêu Hoàng chi nữ chưa thấy qua đồ tốt, liền khối linh nhục còn cần người khác bố thí!</p>
+                <p>Lúc này. Giang Phàm lại nói: “Lưu ly, trăm năm linh nhục cũng đừng ăn. Mặc dù so mười năm linh nhục mạnh một điểm. Nhưng không xứng với chúng ta bảo bảo.”</p>
+                <p>Lưu ly muốn đánh người. Ngươi làm sao còn tới nha? Ngại vừa rồi cái kia lời nói không đủ mất mặt sao?Hỗn Nguyên khóe miệng giật một cái, cái tên này, là đầu óc không dùng được sao?Linh Sơ phủi một thoáng miệng, cảm thấy có chút không có ý nghĩa. Đồng dạng lời nói ngu xuẩn, nói một lần nàng cảm thấy buồn cười, nói hai lần, liền tẻ nhạt vô vị.</p>
+                <p>Nhưng mà sau một khắc. Một tia nồng đậm mùi thơm bay tới. Đó là linh nhục đặc thù hương khí. Đối với yêu tộc cũng tốt, nhân loại cũng được, đều có vô pháp chống cự sức hấp dẫn.</p>
+                <p>“Đây là linh nhục hương khí? Có thể… Làm sao lại như thế nồng đậm?” Hỗn Nguyên ngạc nhiên nghi ngờ theo mùi hương đầu nguồn tìm kiếm. Làm yêu bên trong quý tộc, hắn là thấy qua việc đời, trăm năm linh nhục cũng không ăn ít. Thậm chí có một lần, tại Yêu Hoàng tiệc tối bên trên, còn từng ăn vào qua một lần ba trăm năm linh nhục. Tư vị kia, cái kia hương khí, hắn đến nay ký ức vẫn còn mới mẻ.</p>
+                <p>Nhưng mà. Cùng trước mắt hương khí so sánh, trong trí nhớ hương khí lại không đáng giá nhắc tới! Đến mức hắn cũng hoài nghi, trước mắt nghe thấy đến, có phải hay không linh nhục.</p>
+                <p>Linh Sơ cũng đột nhiên ngẩng đầu lên, tò mò bốn phía nhìn chung quanh. Không dám tin chắc nói: “Đây là linh nhục hương khí?” Nàng đồng dạng chưa từng ngửi được qua, như thế nồng đậm linh nhục hương khí.</p>
+                <p>Rất nhanh. Ánh mắt của bọn hắn liền tìm kiếm được đầu nguồn. Giang Phàm trong lòng bàn tay! Giang Phàm trong lòng bàn tay nâng một mảnh xanh biếc Tiểu Hà lá. Lá sen bên trên, có một khối lớn chừng cái trứng gà linh nhục. Màu sắc óng ánh, tốt như thủy tinh một dạng sáng long lanh. Tản ra nồng đậm hương khí, trong nháy mắt tung bay đầy toàn bộ bao sương.</p>
+                <p>Hỗn Nguyên trước tiên nhận ra, hít vào lương khí đạo: “Thể xác như thủy tinh. Cái này… Đây là trong truyền thuyết ngàn năm linh nhục mới có đặc thù!”</p>
+                <p>Cọ ―― Linh Sơ tại chỗ đứng lên, màu trong mắt chớp động lên không thể tin. Này lại là ngàn năm linh nhục! Yêu Hoàng đều chưa từng nếm qua ngàn năm cấp bậc linh nhục a?</p>
+                <p>Lưu ly cũng bị khiếp sợ đến. Há miệng kinh hô: “Ngô!”</p>
+                <p>Vừa há miệng, Giang Phàm liền dùng thìa, bốc lên một khối linh nhục, đút vào trong miệng nàng. Ngăn chặn nàng. Ôn hòa cười một tiếng: “Chúng ta muốn ăn nha, liền ăn ngàn năm linh nhục. Về sau trăm năm linh nhục, ta không cho phép ngươi lại ăn. Mười năm, càng không cho chạm vào. Có nghe hay không?”</p>
+                <p>Lưu ly vừa mới tỉnh ngộ. Mắt liếc mặt mũi tràn đầy giật mình Linh Sơ. Lúc này mới cưỡng chế trong lòng kinh đào hải lãng, tinh tế bắt đầu nhai nuốt. Cửa vào Cam Điềm mỹ vị. Vô cùng cường đại linh khí, càng là cấp tốc tưới nhuần thân thể của nàng. Để cho nàng toàn thân sự thoải mái nói không nên lời. Nếu không phải là người nhiều, nàng đều rên rỉ ra tới.</p>
+                <p>Sau khi ăn xong. Giang Phàm cười hỏi: “Ngàn năm linh nhục mùi vị như thế nào?”</p>
+                <p>Lưu ly lấy ra khăn tay, nhẹ nhàng lau miệng, bắt bẻ nói: “Mùi vị tạm được. Liền là củi điểm. Cảm giác không tốt. Lần sau đổi một loại ngàn năm linh nhục, này loại, ta không thích.”</p>
+                <p>Giang Phàm trong lòng cười ha ha. Mặt ngoài phối hợp nói: “Tất cả nghe theo ngươi. Cái kia còn thừa lại một ngụm ném đi?”</p>
+                <p>Lưu ly mắt nhìn lá sen bên trên còn thừa lại nửa ngụm, cố nén khát vọng, giả trang ra một bộ không thèm để ý dáng vẻ. “Không phải liền là một ngụm ngàn năm linh nhục sao? Ném liền ném thôi, chút chuyện nhỏ này còn muốn hỏi ta?”</p>
+                <p>Giang Phàm gật gật đầu. Tiện tay liền muốn đem hắn ném về phía ngoài cửa sổ.“Ấy!” Linh Sơ vô ý thức hù dọa. Không phải. Đây là ngàn năm linh nhục a! Cứ như vậy ném đi?</p>
+                <p>Lưu ly liếc mắt nhìn nàng, giả ý lộ ra có thiếu suy tính bộ dáng: “Ai nha, làm sao nắm Linh Sơ muội muội quên rồi? Ngươi vừa rồi có trăm năm linh nhục đều không quên điểm ta. Này ngàn năm linh nhục, ta ăn không quen, đưa ngươi đã khỏe.”</p>
+                <p>Linh Sơ âm thầm cắn chặt răng. Có ý tứ gì? Ngươi ăn không muốn, chuẩn bị ném đồ vật đưa ta? Ta là nhặt ve chai người sao? Nàng khuôn mặt nhỏ hơi hơi cứng đờ: “Không cần, ta không lạ gì. Vẫn là ném đi đi.”</p>
+                <p>Hỗn Nguyên nghe xong gấp. Các ngươi hai cái phá của đàn bà! Ngàn năm linh nhục đều ném? Hắn mới mặc kệ mặt mũi không mặt mũi đâu, vội vàng ngăn lại Giang Phàm: “Giang công tử, đừng ném nha. Nếu như có khả năng, có thể hay không đưa cho ta?”</p>
+                <p>Lời này nắm Linh Sơ giận đến quá sức. Người khác muốn rớt rác rưởi, ngươi cũng nhặt về đi? Đây không phải cho nàng mất mặt sao? Nàng dậm chân, nói: “Trộn lẫn Nguyên đại ca, một điểm ngàn năm linh nhục mà thôi! Ném liền ném đi, có gì có thể tiếc?”</p>
+                <p>Giang Phàm gật gật đầu. Tại ba người dưới ánh mắt, tiện tay liền ném ra ngoài cửa sổ. Lúc này Phệ Thiên Hổ, đang ngồi xổm ở dưới cửa sổ trông coi. Thình lình trên trời rơi xuống một khối đồ vật. Hắn Hổ Đầu giương lên, phát hiện là khối thịt, không khỏi nói: “Người nào như thế không có giáo dục, ném loạn rác rưởi?”</p>
+                <p>Nhưng khi thấy rõ là ngàn năm linh nhục về sau, mắt hổ đều trợn tròn. Một ngụm ngậm lấy, hoảng sợ nói: “Mẹ của ta ơi! Trên trời đi linh nhục! Vẫn là ngàn năm linh nhục! Tạ ơn lão thiên gia, tạ ơn Bồ Tát sống!”</p>
+                <p>Trong bao sương. Ba tôn Bồ Tát sống đều cho chỉnh trầm mặc.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_613">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 613: Hoa lệ tự giới thiệu</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Hỗn Nguyên Bồ Tát thổ huyết tâm gan! Mẹ nó, đây là ngàn năm linh nhục! Lưu ly cùng Linh Sơ hai tiện nhân này, vì đấu khí, lại để tiện nghi cho người khác? Hắn dùng sức xoa ngực, cố gắng kìm nén cơn tức điên phổi.</p>
+                <p>Lưu ly Bồ Tát nghe Phệ Thiên Hổ bẹp bẹp gặm nuốt linh nhục, vừa ăn vừa phát ra những âm thanh biết ơn trời đất. Nàng siết chặt hai nắm tay nhỏ bé, thầm đau lòng: &quot;Coi như cho chó ăn!&quot;</p>
+                <p>Linh Sơ Bồ Tát trong lòng khó chịu vô cùng. Ngàn năm linh nhục nàng còn chưa được nếm qua một miếng, vậy mà trong mắt lưu ly lại là rác rưởi. Sự so sánh này khiến nàng như phát điên, đồng thời cũng cảm thấy không đúng. Chuyện gì đang xảy ra vậy? Từ trước đến nay giao phong nàng luôn chiếm thượng phong, sao hôm nay lại liên tục ăn quả đắng? Nàng đưa mắt nhìn Giang Phàm, trong mắt hiện lên một tia khó chịu. Cái tên đàn ông đáng ghét này, thật biết nâng người mà!</p>
+                <p>Mắt đẹp đảo một cái, nàng nói: &quot;Lưu ly này, ngươi còn không mau giới thiệu vị hôn phu đi. Bọn ta chỉ biết hắn có chút tác dụng trong đại chiến Giới Sơn, ngoài ra dường như rất ít nghe về sự tích của hắn.&quot;</p>
+                <p>Lưu ly nghe vậy, biết Linh Sơ muốn chuyển hỏa lực sang Giang Phàm, thông qua hạ thấp hắn để làm mình khó xử. Nàng có chút lo lắng, bởi vì Giang Phàm dù tinh thông ngự kiếm phi hành đến đâu, hắn vẫn chỉ là một đệ tử nhân tộc Kết Đan tầng hai. Nếu không phải vì &quot;châu thai ám kết&quot; với nàng, và Yêu Hoàng cần hắn để giữ gìn thanh danh, thì căn bản hắn chẳng đủ trọng lượng. Đang không biết làm sao thì...</p>
+                <p>Giang Phàm ôn hòa cười một tiếng: &quot;Linh Sơ tiểu thư hữu lễ. Tại hạ Giang Phàm, xin tự giới thiệu một chút: Yêu tộc phò mã gia, Thiên Cơ các ban thưởng hạng nhất công thần. Thanh Vân tông chủ là gia sư, Hợp Hoan tông chủ, Linh Thú tông chủ là bằng hữu của ta. Cửu Tông thiên kiêu số một Hạ Triều Ca là tri kỷ của tại hạ. Cửu Tông đệ nhất cường giả Từ Thanh Dương là người dẫn đường Kiếm đạo của ta. Thiên Cơ các hai vị Phó các chủ tranh nhau muốn thu ta làm đồ đệ. Tại Giới Sơn cuộc chiến, ta diệt vong Linh đại quân mấy ngàn, xoay càn khôn định thắng cục. Tại Yêu tộc phúc địa, ta đoạt được Vân Hà Phi Tử. Tại Yêu Hoàng đại điện, ta trảm nhị tinh chấn động tứ phương...&quot;</p>
+                <p>Linh Sơ xoa xoa trán, vội vàng ngắt lời: &quot;Được rồi, được rồi. Ta... ta biết rồi. Ngươi đừng nói nữa.&quot;</p>
+                <p>Há hốc mồm không nói nổi. Hoàn toàn không nói nổi! Cái lý lịch này, sao mỗi điều lấy ra đều có thể sáng lóa mắt người ta? Huống chi lại tập hợp nhiều như vậy vào một thân! Nàng hoàn toàn không tìm ra điểm nào để đâm chọc.</p>
+                <p>Một bên Hỗn Nguyên cũng trầm mặc. Hắn không coi thường Giang Phàm, nhưng cũng không cảm thấy mình kém hơn. Cho đến khi Giang Phàm tự giới thiệu, khiến hắn sững sờ tại chỗ. Giang Phàm ở trong Cửu Tông đơn giản là vô địch! Trên có Cửu Tông đệ nhất cường giả hộ đạo. Trong có Tông chủ sư tôn, hai vị Tông chủ bằng hữu. Dưới có Cửu Tông thiên kiêu số một tri kỷ. Tương lai có Thiên Cơ các tứ đại Phó các chủ mở đường, tiền đồ vô lượng. Cái này, cái này sao mà so được? Hắn đếm kỹ những thành tích mình vẫn luôn lấy làm kiêu ngạo, căn bản không dám đem ra so sánh.</p>
+                <p>Lưu ly cũng sững sờ, hai mắt trợn tròn. Không phải, vị hôn phu của mình lợi hại đến vậy sao? Nàng hoàn hồn, mặt đỏ bừng, lại vội ho một tiếng, hờn dỗi nói: &quot;Khiêm tốn một chút, chuyện nhỏ như hạt vừng cũng nói ra. Người không biết còn tưởng ngươi đang khoe khoang.&quot;</p>
+                <p>Giang Phàm lộ vẻ áy náy, hướng Linh Sơ cùng Hỗn Nguyên chắp tay: &quot;Chỉ là chút thành tựu nhỏ nhoi, khiến hai vị chê cười rồi.&quot;</p>
+                <p>Khóe miệng Hỗn Nguyên co giật. Ngươi nhìn ta cười sao? Những cái gọi là &quot;thành tựu nhỏ nhoi&quot; của ngươi, cái nào chẳng đâm vào tim ta?</p>
+                <p>Linh Sơ làm một lễ phúc, lúng túng nói: &quot;Giang công tử khiêm tốn. Là tiểu nữ tử kém hiểu biết, không ngờ ngươi lại có uy danh lẫy lừng như vậy.&quot; Nhưng nàng vẫn chưa từ bỏ ý định. Giang Phàm cá nhân rất lợi hại, nàng công nhận. Nhưng lợi hại thì làm được gì? Có thể mang đến lợi ích gì cho lưu ly sao?</p>
+                <p>Nàng tầm mắt nhẹ nhàng chuyển động, dịu dàng nói: &quot;Giang công tử, ngươi cùng lưu ly tình đầu ý hợp. Lần trùng phùng này, chắc chắn đã chuẩn bị không ít kinh hỉ cho nàng rồi chứ?&quot;</p>
+                <p>Giang Phàm là nhân tộc. Công pháp hoặc pháp bảo của hắn đều không thích hợp với yêu tộc. Hắn không thể cho lưu ly cái gì. Sau này cưới lưu ly, cũng rất khó giúp đỡ được nàng. Đây là sự khác biệt giữa hai tộc, tự nhiên đã quyết định. Cũng là nguyên nhân lưu ly gả cho một nhân tộc sẽ bị cười nhạo, bởi vì gả cho nhân tộc chắc chắn sẽ chịu thiệt.</p>
+                <p>Giang Phàm lộ vẻ xấu hổ, nói: &quot;Chúng ta gặp lại thời gian ngắn ngủi. Sau này có cơ hội, ta sẽ cố gắng giúp đỡ lưu ly.&quot;</p>
+                <p>Sau này? Linh Sơ &quot;a&quot; lên một tiếng, đang chuẩn bị châm chọc &quot;sau này&quot; là ngày mai hay sang năm, hay một trăm năm sau, thì lưu ly lại nói: &quot;Giang Phàm, không nên khiêm tốn lúc nào cũng khiêm tốn vậy. Ngươi chẳng phải đối với ta rất tốt sao?&quot; Trong mắt nàng mơ hồ có một tia chờ mong.</p>
+                <p>Trước đây tụ họp, nàng có thể không đến là không đến, mặc cho Linh Sơ khích tướng cũng vô dụng. Lần này lại dễ dàng đáp ứng. Nguyên nhân rất đơn giản: nàng đã đột phá, còn là nhảy cấp đột phá! Từ Kết Đan tầng năm kém xa Linh Sơ, nàng đã đột phá lên Kết Đan tầng bảy!</p>
+                <p>Thực lực là niềm kiêu ngạo lớn nhất, là vốn liếng lớn nhất của Linh Sơ trước mặt lưu ly. Cũng là điều lưu ly muốn vượt qua nhất. Bây giờ, nàng cũng đã đột phá lên Kết Đan tầng bảy. Niềm kiêu ngạo của Linh Sơ đã không còn sót lại chút gì. Cho nên, khi Linh Sơ hỏi câu này, nàng vô cùng kích động. Cuối cùng cũng đến lúc nàng, lưu ly, khoe... à ừm, Hiển Thánh trước mặt mọi người rồi!</p>
+                <p>Linh Sơ ngạc nhiên nhìn lưu ly: &quot;Thật sao? Hắn cho ngươi lợi ích gì? Không ngại biểu diễn ra xem chút đi.&quot; Ha ha ha! Thật đúng là hỏi trúng tim đen! Lưu ly đáy lòng cười to, mặt ngoài lại bình tĩnh vô cùng.</p>
+                <p>&quot;Vẫn là thôi đi.&quot;</p>
+                <p>&quot;Ta sợ ngươi chịu không được.&quot;</p>
+                <p>Ha ha! Linh Sơ xem thường. Giang Phàm cùng lưu ly ở chung được mấy ngày? Hắn dù có nhiều tài nguyên mà yêu tộc có thể dùng, nhưng có thể khiến lưu ly &quot;thoát thai hoán cốt&quot; hay sao?</p>
+                <p>&quot;Lưu ly muội muội nói đùa rồi.&quot;</p>
+                <p>&quot;Ngươi nếu có biến hóa tốt đẹp, làm tỷ tỷ chỉ có vui mừng. Chỗ nào sẽ chịu không được đâu?&quot;</p>
+                <p>&quot;Trình diễn chút đi, ta như thấy không đủ, còn có thể chỉ điểm một chút đấy.&quot;</p>
+                <p>Chỉ bảo? Khẩu khí thật lớn! Kết Đan tầng bảy thì giỏi lắm sao? Vậy xin lỗi, lão nương cũng thế!</p>
+                <p>Lưu ly bất đắc dĩ thở dài: &quot;Được rồi. Hy vọng Linh Sơ tỷ tỷ đừng quá mức giật mình nhé.&quot;</p>
+                <p>Dứt lời, khí huyết trong cơ thể phun trào, một cỗ khí tức cường thịnh từ từ phát ra. Ban đầu trên mặt Linh Sơ còn có vẻ nhẫn nại chờ xem trò hay, dần dần sắc mặt nàng trở nên nghiêm túc. Cuối cùng, khi khí tức của lưu ly hoàn toàn phóng thích, đồng tử Linh Sơ chấn động, hít vào một ngụm khí lạnh: &quot;Kết Đan tầng bảy!&quot;</p>
+                <p>&quot;Sao có thể?&quot;</p>
+                <p>Một bên Hỗn Nguyên cũng bị dọa đến giật mình, kinh hãi nói: &quot;Lưu ly thiếu chủ, ngươi... ngươi sao lại đột phá Kết Đan tầng bảy rồi? Ngươi không phải Kết Đan tầng năm sao?&quot;</p>
+                <p>Gặp quỷ thật! Sao có thể có người một hơi từ Kết Đan tầng năm đột phá đến Kết Đan tầng bảy? Dù là Yêu Hoàng cũng không có bản lĩnh thông thiên như vậy đi!</p>
+                <p>Lưu ly thu hồi khí tức, lắc lắc mái tóc rủ xuống trước ngực, bình tĩnh nói: &quot;Chỉ là chút đột phá nhỏ, khiến hai vị chê cười rồi.&quot;</p>
+                <p>Ngươi gọi đây là đột phá nhỏ sao? Hỗn Nguyên ôm đầu, cẩn thận nhớ lại mình từ Kết Đan tầng năm đột phá Kết Đan tầng bảy đã tốn bao nhiêu thời gian, bao nhiêu tâm huyết. Lại so với lưu ly, Giang Phàm đến có năm ngày, liền để nàng trực tiếp đột phá đến Kết Đan tầng bảy. Hắn lập tức sinh ra nghi ngờ sâu sắc về việc mình khổ luyện bấy lâu. Chịu khổ trong khổ đau không bằng gả cho người tốt. Thế giới này, mẹ nó, quá bất công đi!</p>
+                <p>Tâm thái của Linh Sơ cũng sụp đổ vào lúc này...</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_614">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 614: Trà nghệ biểu diễn</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Thực lực là thứ nàng giỏi nhất có thể mang ra. Sở dĩ dám phân cao thấp với Yêu Hoàng chi nữ, không phải vì Lưu Ly thân là Yêu Hoàng chi nữ, được trời ưu ái, hưởng thụ tài nguyên vượt xa người khác sao? Lẽ nào ngay cả thực lực cũng không bằng nàng?</p>
+                <p>Chính là sự tự tin về thực lực này đã cho nàng sức mạnh để so tài với Lưu Ly.</p>
+                <p>Vậy mà giờ đây… Lưu Ly lại đuổi kịp nàng chỉ sau một đêm?</p>
+                <p>Phát hiện đột ngột này, đối với nàng, chẳng khác nào trời sụp.</p>
+                <p>&quot;Ngươi, ngươi làm sao đột phá?&quot; Linh Sơ không thể chấp nhận được.</p>
+                <p>Lưu Ly chép miệng: &quot;Đương nhiên là ta có một vị hôn phu tốt rồi.&quot;</p>
+                <p>&quot;Hắn vừa gặp mặt đã tặng ta một bình tuyệt thế linh dịch.&quot;</p>
+                <p>&quot;Thế nên ta liền nhảy lớp đột phá.&quot;</p>
+                <p>&quot;Linh Sơ tỷ tỷ, ngươi không phải vừa muốn chỉ điểm ta sao?&quot; Giọng nàng tràn đầy sự trêu chọc.</p>
+                <p>Chỉ bảo? Linh Sơ lúc này còn cần người khác chỉ bảo sai lầm cho mình nữa!</p>
+                <p>Nhà ai người tốt, vừa gặp mặt liền tặng vị hôn thê linh dịch nghịch thiên như vậy? Nàng sao lại không gặp được người đàn ông tốt như thế này?</p>
+                <p>Hỗn Nguyên đã không còn để ý đến màn so tài của hai nữ. Hắn chắp tay hướng Giang Phàm nói: &quot;Giang huynh… Loại linh dịch kia còn chứ?&quot;</p>
+                <p>&quot;Tại hạ nguyện ý đổi lấy với giá cao.&quot;</p>
+                <p>Lưu Ly nghe xong lập tức căng thẳng! Âm thầm hối hận vì đã vì đấu khí mà lỡ lời tiết lộ chuyện quan trọng như vậy. Nàng vội vàng giành trước Giang Phàm: &quot;Không có không có.&quot;</p>
+                <p>&quot;Ta đã uống cạn sạch rồi.&quot;</p>
+                <p>Đùa à, đó là thuốc dưỡng thai cho con nàng sau này. Sao có thể cho người ngoài uống được?</p>
+                <p>Linh Sơ hai mắt sáng lên. Đúng vậy, nếu nàng cũng có được một phần linh dịch, chẳng phải tu vi lại có thể vượt qua Lưu Ly sao?</p>
+                <p>Còn về chuyện Lưu Ly nói đã uống cạn sạch. Hai người phân cao thấp nhiều năm như vậy, sao có thể không nghe ra đó là lời nói dối?</p>
+                <p>Giang Phàm nhất định còn có.</p>
+                <p>Thế là, ánh mắt nàng nhìn Giang Phàm thay đổi.</p>
+                <p>Nàng dịu dàng nói: &quot;Giang Phàm ca ca, loại linh dịch kia thật sự không còn sao?&quot;</p>
+                <p>Giang Phàm âm thầm buồn cười. Vừa nãy còn ở khắp nơi nhằm vào hắn, bây giờ lại đổi giọng gọi &quot;Giang Phàm ca ca&quot;.</p>
+                <p>Hắn lắc đầu, nói: &quot;Đúng như Lưu Ly nói, đã không còn.&quot;</p>
+                <p>Thêm chuyện không bằng bớt chuyện. Loại trứng dịch nghịch thiên kia, vẫn nên ít người biết thì hơn.</p>
+                <p>Nhưng những lời này, sao có thể lừa được Linh Sơ, người nhạy bén như bụi trần? Nàng nhận thấy rõ, khi Giang Phàm trả lời câu hỏi này, Lưu Ly trở nên rất căng thẳng.</p>
+                <p>Khóe miệng nàng hơi nhếch lên. Quả nhiên còn có! Chỉ là, ngại hai bên còn chưa quen thuộc, Giang Phàm không muốn cho nàng mà thôi.</p>
+                <p>Vậy thì nàng sau đó phải làm gì, còn phải nói gì nữa sao?</p>
+                <p>&quot;Được rồi.&quot; Linh Sơ lộ vẻ thất vọng, rồi lại hâm mộ nói:</p>
+                <p>&quot;Giang Phàm ca ca thật là một người ấm áp đâu.&quot;</p>
+                <p>&quot;Đối với Lưu Ly muội muội quan tâm như thế.&quot;</p>
+                <p>&quot;Linh Sơ thật sự hâm mộ.&quot;</p>
+                <p>Lưu Ly nhíu mày. Ánh mắt nhìn Linh Sơ多了 một tia cảnh giác. Cái tên này, không phải là muốn đào góc tường của mình chứ?</p>
+                <p>Phân cao thấp nhiều năm, nàng quá rõ thủ đoạn của Linh Sơ. Một chút chiêu trò này chơi xuống, không có mấy đàn ông chống cự được.</p>
+                <p>Hôm nay người trước Hiển Thánh cũng đủ rồi, nàng cũng thoải mái rồi. Cần phải đi thôi.</p>
+                <p>&quot;Giang Phàm, ta mệt rồi, về Hoàng Đình đi.&quot; Nàng tuyệt đối sẽ không cho Linh Sơ cơ hội.</p>
+                <p>Giang Phàm im lặng. Hắn nâng Lưu Ly lên như vậy, không phải là muốn giữ nàng lại xem hộp di vật của Hổ Yêu Hoàng sao? Bây giờ Lưu Ly thoải mái đủ rồi, phủi mông một cái là muốn đi sao?</p>
+                <p>Hơi chần chờ, hắn nói: &quot;Không phải có một vị lão nhân tộc yêu muốn tới sao?&quot;</p>
+                <p>&quot;Hắn còn chưa tới, chúng ta liền đi, có thể hay không không quá lễ phép?&quot;</p>
+                <p>Lưu Ly nhíu mày. Sao Giang Phàm đột nhiên không nghe lời? Chẳng lẽ một câu &quot;Giang Phàm ca ca&quot; đã gọi hồn hắn đi rồi?</p>
+                <p>Nhưng, lý do của Giang Phàm cũng không phải không có đạo lý. Nàng nhịn xuống sự khó chịu, khẽ nói: &quot;Vậy thì chờ một chút.&quot;</p>
+                <p>Linh Sơ vui vẻ, mắt lộ vẻ mong chờ nói: &quot;Giang Phàm ca ca, các ngươi nhân tộc bình thường đều kính trọng tiền bối như thế này sao?&quot;</p>
+                <p>&quot;Linh Sơ thật sự muốn học tập các ngươi nhân tộc thật giỏi đâu.&quot;</p>
+                <p>Nàng nhìn như là khen ngợi nhân tộc. Kỳ thực là khen ngợi Giang Phàm. Kiểu khen ngợi không khiến người ta xấu hổ này là vũ khí lợi hại trong giao tiếp. Cho dù Giang Phàm biết rõ nàng đang khen ngợi, cũng không cảm thấy phản cảm.</p>
+                <p>Hắn khẽ gật đầu nói: &quot;Hẳn là.&quot;</p>
+                <p>Linh Sơ mắt lộ sao sáng: &quot;Giang Phàm ca ca thật khiêm tốn.&quot;</p>
+                <p>&quot;Chút nữa ngươi ngồi ở đây đi, đối diện chính là vị lão tiền bối yêu tộc của ta ngồi vào.&quot;</p>
+                <p>&quot;Hắn nhất định cũng sẽ thích nhân tộc khiêm tốn lễ phép như ngươi.&quot;</p>
+                <p>Nàng một cách tự nhiên sắp xếp chỗ ngồi cho Giang Phàm. Mà chỗ ngồi này ở bên cạnh, chính là chỗ ngồi của Linh Sơ.</p>
+                <p>Lúc này, nàng như thể mới phát hiện Giang Phàm hành động bất tiện vậy.</p>
+                <p>Thấp giọng hô: &quot;Giang Phàm ca ca, tay chân ngươi sao bị trói lại vậy?&quot;</p>
+                <p>Nàng vội vàng tiến lên, giật giật xiềng xích, phát hiện kéo không ra.</p>
+                <p>Giang Phàm nói: &quot;Không cần phí sức, đây là Khổn Long Tỏa.&quot;</p>
+                <p>&quot;Chìa khóa ở trong tay Vân Hà Phi Tử.&quot;</p>
+                <p>Linh Sơ lộ vẻ không đành lòng. Khi phát hiện cổ tay Giang Phàm bị xiềng xích mài chảy máu. Càng là bưng lấy tay hắn, nhẹ nhàng thổi lên, đau lòng nói:</p>
+                <p>&quot;Giang Phàm ca ca, Yêu Hoàng sao lại như vậy?&quot;</p>
+                <p>&quot;Đã nạp ngươi làm phò mã, vẫn còn muốn trói buộc ngươi.&quot;</p>
+                <p>&quot;Ta nếu là Yêu Hoàng nữ nhi thì tốt, nhất định sẽ quỳ cầu Yêu Hoàng thả ngươi ra.&quot;</p>
+                <p>&quot;Tuyệt đối không để ca ca chịu ủy khuất.&quot;</p>
+                <p>Giang Phàm sờ mũi. Nói thật, hắn vẫn rất hưởng thụ. Trà, nàng là trà thật. Nhưng, dịu dàng cũng là thật dịu dàng a!</p>
+                <p>*Phanh*</p>
+                <p>Lưu Ly giận đến đập lan can ghế, khẽ kêu nói: &quot;Linh Sơ! Bỏ tay ngươi ra!&quot;</p>
+                <p>Ở trước mặt nàng, thổi vết thương cho Giang Phàm sao? Trắng trợn cướp đàn ông như vậy sao?</p>
+                <p>Còn ám chỉ nàng không cầu xin Yêu Hoàng, để Giang Phàm chịu ủy khuất.</p>
+                <p>Linh Sơ sợ hãi vội vàng buông tay, xấu hổ cúi đầu xuống.</p>
+                <p>&quot;Xin lỗi Lưu Ly muội muội.&quot;</p>
+                <p>&quot;Ta chỉ là đau lòng ca ca.&quot;</p>
+                <p>&quot;Nhất thời quên nam nữ hữu biệt.&quot;</p>
+                <p>Lưu Ly bực bội nói: &quot;Đúng nha đúng nha, ta là sư tử cái ghen tuông, chỉ có ngươi đau lòng ca ca đúng không?&quot;</p>
+                <p>&quot;Đồ trà xanh chết tiệt!&quot; Nàng không giả vờ, trực tiếp xé toạc.</p>
+                <p>Theo lẽ thường, Linh Sơ sẽ đối chọi gay gắt. Nhưng lần này, nàng yên lặng cúi đầu xuống. Nước mắt tuôn rơi, nhìn đáng thương vô cùng.</p>
+                <p>Giang Phàm khóe miệng co giật. Nói: &quot;Lưu Ly, bình tĩnh, đừng nóng giận.&quot;</p>
+                <p>Linh Sơ đâu phải trà xanh gì? Rõ ràng là em gái hiền lành quan tâm mà!</p>
+                <p>Thấy Giang Phàm che chở Linh Sơ, Lưu Ly càng tức: &quot;Giang Phàm!&quot;</p>
+                <p>&quot;Ngươi có ý gì?&quot;</p>
+                <p>Linh Sơ âm thầm đắc ý, trà trà nói: &quot;Được rồi được rồi, Lưu Ly muội muội.&quot;</p>
+                <p>&quot;Đều là ta không tốt, ngươi đừng trách ca ca.&quot;</p>
+                <p>&quot;Hắn đã rất đáng thương rồi.&quot;</p>
+                <p>&quot;Không cần hung hắn.&quot;</p>
+                <p>Nàng dáng vẻ chỉ có ta đau lòng ca ca, trà xanh đến cực điểm. Thấy Lưu Ly muốn đánh người. Trà lên không dứt đúng không?</p>
+                <p>Nhưng đúng lúc này, đầu bậc thang truyền đến tiếng bước chân *đông đông đông*. Có khách nhân đến.</p>
+                <p>Lưu Ly không cam tâm thu lại cảm xúc. Linh Sơ lộ ra một tia cười nhạt chiến thắng. Trận chiến này, tiểu thắng một ván.</p>
+                <p>Nàng nhìn về phía đầu bậc thang.</p>
+                <p>Lại là một nhân tộc!</p>
+                <p>Một lão già nhân tộc lưng còng!</p>
+                <p>Giang Phàm đều kinh ngạc. Lại có thể là nhân tộc. Chẳng lẽ là yêu tộc cực kỳ giống nhân loại? Cẩn thận cảm giác, đối phương đích xác là khí tức nhân loại!</p>
+                <p>Lão tiền bối yêu tộc mà Linh Sơ mời đến, sao lại là nhân tộc? Sau khi nghi hoặc, Giang Phàm nhịn không được sinh ra vài phần cảm giác thân thiết. Ở lâu trong yêu tộc, đột nhiên nhìn thấy đồng tộc, khó tránh khỏi sẽ sinh ra cảm giác xa xứ gặp cố nhân.</p>
+                <p>Có thể, đột nhiên hắn nghĩ đến cái gì.</p>
+                <p>Vẻ mặt đột nhiên âm trầm xuống. Hắn nhìn chằm chằm vào lão giả.</p>
+                <p>&quot;Linh Sơ, hộp di vật của Yêu Hoàng có thể lấy ra đi? Lại…&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_615">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 615: Nhân gian</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Hạng người gì tộc, có thể trong bối cảnh nhân yêu lưỡng tộc đại chiến căng thẳng như hiện nay, lại còn như cá gặp nước?</p>
+                <p>Hắn nghĩ tới một người.</p>
+                <p>Thái Thượng trưởng lão Cự Nhân Tông!</p>
+                <p>Phương Thái Cực!</p>
+                <p>Vì đầu hàng yêu tộc, để lấy được sự tin tưởng của yêu tộc. Hắn đã xuống tay tàn sát bảy vị trưởng lão của chính mình! Chỉ để quy hàng yêu tộc!</p>
+                <p>Lão giả nhân tộc trước mắt, chắc chắn đã làm những việc phản bội nhân tộc đến cực độ. Yêu tộc mới có thể yên tâm về hắn, không chút lo lắng về việc hắn quay về Nhân tộc.</p>
+                <p>Linh Sơ có chút kính trọng hắn, tiến lên đón nói: &quot;Hàn lão, ngài xin mời ngồi.&quot;</p>
+                <p>Lưu Ly cũng ngạc nhiên, vội vàng tiến lên đón: &quot;Lão sư, sao lại là ngài?&quot;</p>
+                <p>Lão giả trước mắt không phải ai khác, chính là Hàn Phi Đạo, ngự dụng lão sư mà Yêu Hoàng đã sắp xếp cho Lưu Ly.</p>
+                <p>Ba năm qua, ông đã dạy nàng những kiến thức về ngôn ngữ, văn hóa, tập tục của nhân tộc. Ngoài ra, ông còn truyền dạy cho Lưu Ly rất nhiều đạo lý làm người.</p>
+                <p>Lưu Ly cũng rất tôn kính vị lão sư nhân tộc này.</p>
+                <p>Thực tế, Hàn Phi Đạo không chỉ là lão sư của Lưu Ly, rất nhiều bộ lạc từng thỉnh ông đến giảng bài cho con em trong tộc. Ít nhất ba thành con em quý tộc đều coi Hàn Phi Đạo là học trò.</p>
+                <p>Vì vậy, ông có uy tín rất cao trong yêu tộc. Rất ít yêu tộc coi ông như người nhân tộc mà đối đãi.</p>
+                <p>Linh Sơ gọi thẳng là &quot;yêu tộc lão nhân&quot;, rõ ràng thể hiện sự công nhận của nàng đối với ông.</p>
+                <p>Hàn Phi Đạo đã ngoài tám mươi tuổi, tuổi già sức yếu, đi lại tập tễnh. Dường như không có chút tu vi nào. Nhưng sắc mặt ông nghiêm nghị, ăn nói có ý tứ, toát ra vẻ &quot;người sống chớ gần&quot;.</p>
+                <p>&quot;Lưu Ly cũng tới à?&quot;</p>
+                <p>Hàn Phi Đạo nhìn về phía Lưu Ly, nghiêm mặt nói: &quot;Ta sao nghe nói, ngươi muốn gả cho một người nhân tộc?&quot;</p>
+                <p>&quot;Còn có chuyện này?&quot;</p>
+                <p>Lưu Ly ngượng ngùng, lén lút trừng mắt nhìn Linh Sơ. Tên này cố ý mời Hàn Phi Đạo đến để ép nàng sao?</p>
+                <p>May mà vừa rồi chưa đi. Nếu không, rơi vào tội danh &quot;lãnh đạm Hàn Phi Đạo&quot;, Yêu Hoàng lại trách phạt nàng.</p>
+                <p>&quot;Lão sư, đây đều là do phụ hoàng ta an bài.&quot; Lưu Ly ấp úng nói.</p>
+                <p>Hàn Phi Đạo hừ nhẹ: &quot;Vậy ngươi hãy đi lui đi!&quot;</p>
+                <p>&quot;Nhân tộc chẳng qua là một lũ lục đục, thấy lợi quên nghĩa, vì tư lợi bẩn thỉu.&quot;</p>
+                <p>&quot;Kết hợp với chúng sẽ làm ô uế huyết mạch Yêu Hoàng của ngươi!&quot;</p>
+                <p>Ngay trước mặt Giang Phàm, dám gièm pha hắn và nhân tộc như vậy. Giang Phàm há có thể xem như không nghe thấy?</p>
+                <p>&quot;Lão già, ngươi nếu được yêu tộc xưng hô một tiếng lão sư, vậy hẳn là có học vấn chứ?&quot;</p>
+                <p>&quot;Há không nghe câu chuyện Tô Thức và Phật Ấn sao?&quot;</p>
+                <p>Hàn Phi Đạo lúc này mới chú ý tới, nơi đây còn có một người tộc. Định mắt quét qua, thấy dáng vẻ và xiềng xích trên tay chân, lập tức biết được là người phương nào.</p>
+                <p>Ngay sau đó vẻ mặt càng thêm hờ hững, ghét bỏ nói: &quot;Nguyên lai là ngươi à!&quot;</p>
+                <p>&quot;Mặc dù ngay trước mặt ngươi, lão phu cũng phải nói!&quot;</p>
+                <p>&quot;Ngươi không xứng làm phò mã của yêu tộc ta!&quot;</p>
+                <p>&quot;Ta sẽ kiến nghị Yêu Hoàng hủy bỏ cuộc hôn nhân này.&quot;</p>
+                <p>&quot;Để tránh ngươi làm ô uế huyết mạch cao quý của hoàng thất yêu tộc!&quot;</p>
+                <p>Mở miệng là &quot;yêu tộc ta&quot;! Giang Phàm nghe thật chói tai. Thật đúng là gặp phải một &quot;nhân gian&quot;!</p>
+                <p>Giang Phàm cười khẩy: &quot;Trong lòng có Phật thì thấy ai cũng là Phật.&quot;</p>
+                <p>&quot;Trong lòng là phân thì thấy ai cũng là phân!&quot;</p>
+                <p>&quot;Chính ngươi dơ bẩn, tự nhiên cảm thấy nhân tộc đều dơ bẩn.&quot;</p>
+                <p>Hàn Phi Đạo hừ mạnh: &quot;Càn rỡ!&quot;</p>
+                <p>&quot;Ngươi một tên tù binh, cũng dám ở trước mặt lão phu ăn nói bừa bãi?&quot;</p>
+                <p>&quot;Cút ra ngoài!&quot;</p>
+                <p>Linh Sơ đầu óc rối bời. Nàng mời Hàn Phi Đạo đến để ép Lưu Ly. Không ngờ, chưa ép được Lưu Ly, ngược lại còn gây xung đột với &quot;hảo ca ca&quot; của mình.</p>
+                <p>Nàng vội vàng hòa giải, ôn nhu nói: &quot;Hàn lão, vãn bối hôm qua đi ngang qua học đường của ngài, thấy được câu đối ở cổng.&quot;</p>
+                <p>&quot;Mặc dù ngay thẳng bằng trắc, lại nói lý thâm sâu, khiến người tỉnh ngộ.&quot;</p>
+                <p>&quot;Cho tới bây giờ ngạnh nỏ dây cung trước đoạn... Nửa câu sau là gì ạ?&quot;</p>
+                <p>&quot;Vãn bối ngu dốt, quên mất rồi.&quot;</p>
+                <p>Nàng lộ vẻ ngượng ngùng.</p>
+                <p>Hàn Phi Đạo từ tốn nói: &quot;Mỗi thấy cương đao khẩu dễ dàng thương.&quot;</p>
+                <p>Linh Sơ bừng tỉnh đại ngộ: &quot;Đúng đúng, chính là câu này.&quot;</p>
+                <p>&quot;Hàn lão tùy tay một đôi câu đối, đều khiến vãn bối được lợi rất sâu ạ.&quot;</p>
+                <p>Khuôn mặt giận dữ của Hàn Phi Đạo dịu lại, cười mắng: &quot;Ngươi còn đốt lửa cho lão phu nữa à!&quot;</p>
+                <p>&quot;Đôi câu đối này là khuyên người nhẫn nại.&quot;</p>
+                <p>&quot;Ngươi muốn khuyên ta nhẫn nại thì cứ nói thẳng.&quot;</p>
+                <p>&quot;Còn đổi cách khen câu đối của ta?&quot;</p>
+                <p>Linh Sơ lè lưỡi, cười duyên nói: &quot;Đây không phải sợ Hàn lão không nghe lời khuyên của vãn bối sao?&quot;</p>
+                <p>Hàn Phi Đạo chọc vào trán nàng một cái, không hề che giấu sự yêu quý: &quot;Lanh chanh tiểu chút chít!&quot;</p>
+                <p>Một tiểu bối vừa biết nói chuyện, vừa thông minh, ai mà chẳng thích?</p>
+                <p>Ông lại nhìn về phía Giang Phàm, không còn thịnh khí lăng nhân như trước, nhưng sắc mặt cũng không tốt.</p>
+                <p>&quot;Lão phu lười biếng so đo với tiểu bối!&quot;</p>
+                <p>Sau đó dưới sự đỡ đậy của Linh Sơ, ông ngồi xuống vị trí đầu.</p>
+                <p>Sắp xếp ổn thỏa cho Hàn Phi Đạo, Linh Sơ lại đi tới trước mặt Giang Phàm, mặt đầy áy náy:</p>
+                <p>&quot;Ca ca, thật xin lỗi.&quot;</p>
+                <p>&quot;Ta cũng không nghĩ tới lại thành ra thế này.&quot;</p>
+                <p>&quot;Đều là ta không tốt.&quot;</p>
+                <p>Câu câu không rời trà a.</p>
+                <p>Nhưng cũng rất tốt. Chỉ cần không có ý đồ xấu, trà một chút thì sao đâu?</p>
+                <p>&quot;Không liên quan đến ngươi. Người đã đến đông đủ chưa?&quot; Giang Phàm nói.</p>
+                <p>Linh Sơ nói: &quot;Còn có Thập Tinh...&quot;</p>
+                <p>Lời còn chưa dứt.</p>
+                <p>Dưới lầu truyền đến tiếng bước chân lộn xộn. Tử Tinh dẫn đầu Bát Tinh, vội vàng chạy tới. Vừa vào cửa, liền liên tục tạ lỗi với Hàn Phi Đạo.</p>
+                <p>&quot;Hàn lão...&quot;</p>
+                <p>&quot;Lão sư, xin lỗi, trên đường chậm trễ.&quot;</p>
+                <p>Hàn Phi Đạo trầm mặt, không nói gì.</p>
+                <p>Lưu Ly quát khẽ: &quot;Tử Tinh, các ngươi làm ăn thế nào vậy?&quot;</p>
+                <p>&quot;Nếu biết lão sư sắp tới, tại sao không đến trước?&quot;</p>
+                <p>&quot;Thế mà lại để lão sư đợi các ngươi!&quot;</p>
+                <p>Nàng không biết, tình có thể hiểu. Thập Tinh nếu biết, còn dám lãnh đạm như vậy sao?</p>
+                <p>Tử Tinh vẻ mặt đau khổ chắp tay nói: &quot;Lưu Ly thiếu chủ, trong thành gặp phải chuyện lạ.&quot;</p>
+                <p>&quot;Liên tục có người mất tích, chúng ta tạm thời nhận được nhiệm vụ đi điều tra.&quot;</p>
+                <p>Lưu Ly kinh ngạc. Dưới mắt Yêu Hoàng, có kẻ dám làm loạn, bắt người yêu tộc? Sao lại thế?</p>
+                <p>Tuy nhiên, chuyện này có cường giả yêu tộc quan tâm, tin rằng rất nhanh sẽ được giải quyết.</p>
+                <p>&quot;Mau ngồi đi.&quot;</p>
+                <p>&quot;Chút nữa giải tán, các ngươi hộ tống lão sư trở về, để tránh người khác để mắt tới lão sư.&quot;</p>
+                <p>Tử Tinh gật gật đầu, không dám tự tiện ngồi xuống, đều nhìn về phía Hàn Phi Đạo.</p>
+                <p>&quot;Nếu sự việc có nguyên nhân, ngồi đi.&quot; Hàn Phi Đạo thần sắc giãn ra, khẽ gật đầu.</p>
+                <p>Thoáng nhìn Giang Phàm đang ngồi đối diện mình, trong lòng hơi động nói:</p>
+                <p>&quot;Các ngươi ngồi cạnh Giang Phàm đi.&quot;</p>
+                <p>Giang Phàm đã làm chuyện khiến yêu tộc căm phẫn ở Giới Sơn. Thập Tinh đến đây, nhìn thấy kẻ thù xưa, sao có thể khiến hắn dễ chịu được?</p>
+                <p>Vì thế, Hàn Phi Đạo còn cố ý chỉ ra thân phận &quot;Giang Phàm&quot;. Thập Tinh biết Giang Phàm ở đây, nhất định rất tức giận phải không?</p>
+                <p>Nhưng mà...</p>
+                <p>Điều khiến Hàn Phi Đạo hơi nhíu mày chính là...</p>
+                <p>Trong bao sương quỷ dị yên lặng. Bát Tinh nhìn nhau, không ai lên tiếng.</p>
+                <p>Hàn Phi Đạo trong lòng nghi hoặc. Thế mà không ai nhảy ra chỉ trích Giang Phàm? Không nên thế.</p>
+                <p>Đám yêu tộc dưới lầu, tụ tập không tán, luôn miệng muốn thảo phạt Giang Phàm đây. Thân là Thập Tinh yêu tộc lại bình tĩnh như vậy sao?</p>
+                <p>&quot;Vậy các ngươi ngồi đi.&quot; Hàn Phi Đạo xúi giục không thành, đành bỏ cuộc.</p>
+                <p>Ai ngờ...</p>
+                <p>Tử Tinh vẫn không động đậy. Không ai dám sang đó ngồi.</p>
+                <p>Ai chán sống, dám ngồi cạnh Giang Phàm?</p>
+                <p>Ngay trước mặt Yêu Hoàng, hắn còn giết chết hai sao. Bây giờ Yêu Hoàng không có mặt. Hắn giết chẳng phải càng thêm dễ dàng, thuận buồm xuôi gió sao?</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_122.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_122.html" class="page-btn">122</a>
+            <a href="page_123.html" class="page-btn current">123</a>
+            <a href="page_124.html" class="page-btn">124</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_124.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

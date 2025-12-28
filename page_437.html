@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 437">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 437</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_436.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="#" class="nav-link disabled">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_2184">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2184: Lợi ích bất ngờ khi trị thương</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Ngọc Diện kinh ngạc che lấy khuôn miệng nhỏ: “Cữu cữu?”</p>
+                <p>“Sao lại là người chứ?” Cô bé vừa mừng vừa sợ chạy lên phía trước, ôm chặt lấy cánh tay hắn mà lắc mạnh: “Ta cứ thắc mắc mãi, không biết vị gia gia tốt bụng nào từ đâu chui ra giúp đỡ chúng ta?”</p>
+                <p>“Vừa dẫn chúng ta tham gia hội giao dịch, vừa cứu mạng, lại còn tặng quà nữa. Ta còn tưởng là muốn mời tỷ tỷ ta đi xem cá vàng chứ.”</p>
+                <p>Khụ khụ! Nghe đến câu cuối cùng, Giang Phàm suýt chút nữa thì ho văng cả phổi ra ngoài. Đây là cái tình tiết quái quỷ gì vậy?</p>
+                <p>Hắn giơ tay gõ một phát vào đầu Ngọc Diện: “Bình thường toàn xem mấy thứ sách vở linh tinh gì thế?”</p>
+                <p>Ngọc Diện đau đớn ôm đầu, không phục nói: “Thì vốn là vậy mà, không dưng lại tốt với chúng ta như thế, ai tin được người không có mưu đồ gì? Tỷ tỷ ta miệng không nói, nhưng chắc chắn cũng nghĩ như vậy.”</p>
+                <p>Ngọc Nhan bị điểm tên, biểu cảm cứng đờ quay mặt đi chỗ khác, đôi môi đỏ mọng mím chặt. Trong lòng nàng lúc này là muôn vàn cảm xúc phức tạp đan xen.</p>
+                <p>Hóa ra kẻ mà nàng ghét nhất lại chính là người đã cứu nàng! Bản thân lâm vào cảnh bị coi như hàng hóa để bán buôn, khoảnh khắc chật vật nhất lại bị hắn nhìn thấy. Bây giờ còn bị hắn lấy danh nghĩa cữu cữu mà giáo huấn.</p>
+                <p>Nàng vốn cao ngạo, chưa bao giờ chịu khuất phục, lúc này chỉ cảm thấy mặt mũi chẳng còn, chỉ muốn lập tức rời đi.</p>
+                <p>“Đa tạ ơn đức của Giang công tử, nương ta sẽ báo đáp sau. Ngọc Diện, còn đứng đó làm gì? Còn không đi?”</p>
+                <p>Nàng là người đầu tiên rời khỏi động phủ, đầu cũng không ngoảnh lại. Ngọc Diện gọi với theo hai tiếng nhưng không giữ được nàng, chỉ đành giậm chân: “Chạy cái gì mà chạy? Người ta còn muốn nói chuyện với cữu cữu thêm chút nữa mà.”</p>
+                <p>Cô bé quay đầu vỗ ngực bảo đảm với Giang Phàm: “Cữu cữu, người cứ yên tâm đi. Tỷ tỷ vô lễ như vậy, về nhà ta sẽ âm thầm mách nương, để nương đánh đòn tỷ ấy!”</p>
+                <p>“Ta đi trước đây, cữu cữu nhớ đến U Minh Giới thăm ta nhé.” Nói xong, cô bé vội vàng chạy ra ngoài đuổi theo Ngọc Nhan.</p>
+                <p>Khóe miệng Giang Phàm hiện lên một tia ấm áp. Có một đứa cháu ngoại tinh nghịch đáng yêu thế này, đôi khi cũng khá thú vị.</p>
+                <p>Liễu Khuynh Tiên nhướng mày: “Bao lâu không gặp, lại có thêm hai đứa cháu ngoại sao?” Nghĩ đoạn, nàng lại nói: “Cũng tốt, dù sao cũng hơn là có thêm hai đứa con riêng.”</p>
+                <p>Giang Phàm trợn tròn mắt: “Nàng nói bậy bạ gì đó?”</p>
+                <p>Liễu Khuynh Tiên giơ tay định đánh: “Oan uổng cho chàng sao? Vị Yêu Hoàng xinh đẹp ở Nam Hải thuộc Thái Thương Đại Châu kia, chàng dám bảo nàng ta không có ý gì với chàng không?”</p>
+                <p>Giang Phàm chột dạ dời tầm mắt đi chỗ khác. Cứ ngỡ không ai biết, hóa ra những hồng nhan tri kỷ bên cạnh hắn đã sớm bàn tán xôn xao cả rồi.</p>
+                <p>Hắn thở dài: “Ta và nàng ấy không giống như các nàng. Đời này chỉ dừng lại ở đó thôi.”</p>
+                <p>Liễu Khuynh Tiên bĩu môi: “Chàng cứ thong thả đi, đừng để sau này phải hối tiếc. Chàng tu luyện là Vô Khuyết Chi Đạo, trong lòng không thể dung nạp khuyết điểm. Trở về Trung Thổ thì đi thăm nàng ta đi, không thành được là tốt nhất, còn nếu thành...”</p>
+                <p>Nàng dừng lại một chút, lẩm bẩm: “Dù sao cũng chẳng thiếu thêm một mình nàng ta!” Dứt lời, nàng hất mái tóc đuôi ngựa, bước ra ngoài động phủ để bắt đầu giám sát xung quanh.</p>
+                <p>Giang Phàm hơi xuất thần. Trước trận đại chiến với Cự Nhân Viễn Cổ, hắn liên lạc khắp tứ hải để tìm kiếm nguyên liệu luyện chế linh đan trị thương. Người tích cực nhất chính là Cựu Mộng Yêu Hoàng. Nàng âm thầm hy sinh vì hắn rất nhiều nhưng lại không muốn gặp mặt, chỉ ủy thác cho Di Táng Yêu Hoàng mang đến.</p>
+                <p>Lắc đầu một cái, Giang Phàm lẩm bẩm: “Ta và nàng ấy, đời này khó lòng gặp lại, nói gì đến hối tiếc đây?”</p>
+                <p>Gạt đi những tạp niệm trong lòng, hắn nhắm mắt lại, nuốt xuống một viên Thái Thanh Đan. Linh đan vào cơ thể, cảm giác mát lạnh như bàn tay ngọc của nữ nhân lướt qua khuôn mặt, nỗi đau trong linh hồn cũng theo đó mà dịu đi.</p>
+                <p>Ba canh giờ sau. Khi dược lực tan hết, linh hồn Giang Phàm không còn một chút thương tổn nào. Điều khiến hắn kinh ngạc là linh hồn không những khôi phục như cũ mà còn tăng vọt một đoạn lớn!</p>
+                <p>Linh hồn của hắn hiện tại đã vô cùng tiếp cận Hiền cảnh! So với lúc trước khi luyện hóa chín đạo quy tắc, chỉ còn cách một bước là thể phách nhập Hiền thì cũng chẳng kém là bao.</p>
+                <p>“Chẳng lẽ linh hồn bị Loạn Cổ Huyết Hầu làm bị thương cũng mang lại hiệu quả rèn luyện sao? Vậy thì thể phách bị thương nặng hơn của ta, chẳng phải sẽ được tôi luyện đến mức độ lớn hơn?”</p>
+                <p>Lúc đại chiến với Loạn Cổ Huyết Hầu, hắn từng bị đánh đến mức thân thể tan nát. Mức độ nghiêm trọng vượt xa linh hồn! Không lý nào thể phách lại không được nâng cao!</p>
+                <p>Ánh mắt hắn lộ vẻ hưng phấn, lấy ra một viên Phượng Nguyên Đan nuốt xuống, tiếp tục khôi phục thể phách.</p>
+                <p>Hai canh giờ sau. Trên bề mặt cơ thể hắn tràn ra từng luồng huyết khí, đó chính là khí tức mà Loạn Cổ Huyết Hầu để lại trong người hắn. Đồng thời, băng diễm trên da hắn bùng lên mạnh mẽ, vượt xa trước kia.</p>
+                <p>Một luồng khí tức tiếp cận Nhất Tai Cảnh trung kỳ từ từ dao động lan tỏa. Đúng như dự đoán, những vết thương quy tắc trên cơ thể đã mang lại cho hắn sự thăng tiến không gì sánh kịp!</p>
+                <p>Để đột phá Nhất Tai Cảnh sơ kỳ, hắn đã tốn bao nhiêu tâm huyết, chịu bao nhiêu khổ cực. Nhưng tất cả đều không bằng một đòn chí mạng của Loạn Cổ Huyết Hầu! Khi cơ thể hoàn toàn phục hồi, thể phách chắc chắn có thể đạt tới Nhất Tai Cảnh trung kỳ!</p>
+                <p>Mang theo sự phấn khích, hắn nhắm mắt tiếp tục tu luyện.</p>
+                <p>Bên ngoài động phủ. Liễu Khuynh Tiên dán một tấm Ẩn Thân Phù lên người, ẩn nấp trên một ngọn núi cách động phủ không xa. Nàng cầm Giám Thiên Bảo Giám trong tay, chăm chú quan sát những thay đổi bên trong.</p>
+                <p>Thỉnh thoảng nàng lại ngoảnh đầu nhìn về phía động phủ, ánh mắt lộ ra vẻ mãn nguyện sâu sắc. “Cuối cùng cũng có thể giúp được chàng một chút.”</p>
+                <p>Trong đầu nàng hiện lên hình ảnh của Vân Thường Tiên Tử, Chân Ngôn Tôn Giả, Lục Châu. Họ đều là những người đã từng giúp đỡ Giang Phàm rất nhiều.</p>
+                <p>“Làm nữ nhân của chàng, áp lực thật sự không hề nhỏ đâu.” Liễu Khuynh Tiên oán trách liếc nhìn về hướng động phủ một cái. Sau đó, ánh mắt nàng lại rơi xuống Giám Thiên Bảo Giám.</p>
+                <p>Tuy nhiên, vừa nhìn qua, sắc mặt nàng lập tức đại biến. Một trước một sau, hai bóng người đang không ngừng di chuyển chớp nhoáng hiện lên trong Giám Thiên Bảo Giám.</p>
+                <p>Một kẻ bao bọc trong hắc bào, không nhìn rõ hình dáng thì không nói. Đó chính là vị Thần Bí Đại Hiền thuộc Tam Tai Cảnh! Phía bên kia thì lưng mang đôi cánh xương trắng, toàn thân tỏa ra khí tức âm lãnh, chính là Độc Lang Hiền Giả.</p>
+                <p>Tim Liễu Khuynh Tiên thắt lại. Trong hai người này, Độc Lang Hiền Giả có địch ý với Giang Phàm còn sâu đậm hơn cả Kiếm Vô Sầu. Nếu để bọn họ phát hiện ra Giang Phàm, hậu quả sẽ không thể lường trước được.</p>
+                <p>Điều khiến nàng kinh hãi hơn nữa là vị Thần Bí Đại Hiền kia bỗng nhiên ngẩng đầu lên, xuyên qua khoảng cách xa xôi, nhìn thẳng vào Giám Thiên Bảo Giám.</p>
+                <p>Liễu Khuynh Tiên cảm thấy tim mình đập loạn nhịp. Nàng hiểu rằng, mình đã bị khóa chặt! Đối phương đang tiến về phía này!</p>
+                <p>Nàng lo lắng tột độ, vội vàng dịch chuyển trở lại động phủ, phát hiện Giang Phàm đang ở thời khắc mấu chốt của việc trị thương.</p>
+                <p>“Có người đuổi tới sao?” Giang Phàm mở mắt hỏi.</p>
+                <p>Trong đầu Liễu Khuynh Tiên lóe lên vô số ý nghĩ, sau một thoáng im lặng ngắn ngủi, nàng nở nụ cười rạng rỡ: “Không có, chỉ là muốn nhìn chàng một chút thôi.”</p>
+                <p>Kẻ đuổi tới là Tam Tai Cảnh, và đối phương rõ ràng đã nắm bắt được tung tích của Giang Phàm. Dù Giang Phàm có Vạn Thổ Chi Tâm, cuối cùng cũng khó lòng thoát khỏi sự truy sát liên tục của Tam Tai Cảnh. Muốn cứu hắn, chỉ có cách dẫn dụ vị Tam Tai Cảnh kia đi hướng khác.</p>
+                <p>Nàng nhìn ngắm khuôn mặt tuấn tú của Giang Phàm, mỉm cười nhẹ nhàng. Trong lòng thầm nhủ: “Đến lượt ta bảo vệ chàng rồi.”</p>
+                <p>Cố nén ham muốn tiến lên hôn từ biệt một cái, nàng tỏ ra như không có chuyện gì: “Nhìn xong rồi, ta tiếp tục canh gác cho chàng. Chàng tranh thủ thời gian đi.”</p>
+                <p>Giang Phàm tức giận nói: “Cứ hốt ha hốt hoảng, ta còn tưởng kẻ địch đuổi tới chứ! Ta chỉ cần một canh giờ nữa là xong thôi, lát nữa ta sẽ bù đắp cho nàng thật tốt!”</p>
+                <p>Liễu Khuynh Tiên lườm hắn một cái, rảo bước rời khỏi động phủ. Nàng xoay người lấy ra một bộ ẩn thân trận pháp, cắm xung quanh động phủ.</p>
+                <p>Nhìn cánh cửa đá từ từ khép lại, trong mắt nàng lộ vẻ kiên định tuyệt đối: “Chúc chàng may mắn, Tiểu Phàm.”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_2185">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2185: Một Gia Đình</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nàng đưa ngón tay điểm nhẹ lên ấn ký kiếm nhỏ trên trán. Luồng kiếm khí cuồn cuộn tuôn ra, bao bọc lấy thân hình nàng, hóa thành một hư ảnh cự kiếm hoàng kim xé rách không trung mà đi.</p>
+                <p>Trong lúc suy tư, nàng lấy ra Tâm Kiếm. Ánh mắt lóe lên, nàng kích hoạt thanh kiếm này, vạn kiếm trong thiên địa đồng loạt phát ra tiếng ngân vang rền rĩ, tựa như nhận được sự triệu hoán từ trái tim của vạn kiếm.</p>
+                <p>Thần Bí Đại Hiền đang truy lùng tung tích Loạn Cổ Huyết Hầu chợt có cảm ứng, đưa mắt nhìn về phía Liễu Khuynh Tiên.</p>
+                <p>“Tâm Kiếm của bản tọa? Thanh kiếm này lẽ ra phải nằm trong tay lão già kia mới đúng!” Đôi mắt hắn lóe lên tinh quang, thầm lộ vẻ kích động.</p>
+                <p>Tuy nhiên, hắn nhận ra hướng đi của Loạn Cổ Huyết Hầu và Tâm Kiếm không cùng một đường. Sau một thoáng suy tính, hắn dứt khoát từ bỏ việc truy đuổi Huyết Hầu, chuyển hướng lao nhanh về phía Tâm Kiếm.</p>
+                <p>Loạn Cổ Huyết Hầu rốt cuộc đang đuổi theo ai, thực lực mạnh thế nào, trên người có trọng bảo hay không đều là ẩn số. Nhưng lão già kia thì đã được xác nhận!</p>
+                <p>Vút —— Thần Bí Đại Hiền đổi hướng, thuấn di biến mất.</p>
+                <p>Độc Cô Hiền Giả bám sát theo sau hơi khựng lại, lộ vẻ nghi hoặc: “Lão hồ ly kia sao lại không đuổi theo Loạn Cổ Huyết Hầu nữa?”</p>
+                <p>Ánh mắt đảo qua, lão cũng đi theo. Mọi nguy cơ to lớn sắp ập đến đều bị Liễu Khuynh Tiên dẫn đi hết.</p>
+                <p>Thế nhưng, ngay sau khi hai người rời đi không lâu, giữa thiên địa cách đó không xa, một bóng hình thướt tha từ hư vô dần hiện rõ. Chính là Phù Vân Đại Hiền phong vận hữu tồn, yêu mị đa tình.</p>
+                <p>Nàng nhìn theo hướng hai người vừa đi, ánh mắt đầy vẻ khó hiểu: “Lạ thật, các người suýt chút nữa đã tìm thấy lão già kia, sao đột nhiên lại bỏ đi?”</p>
+                <p>“Họ không quản được, vậy thì lão già đó để một mình ta độc chiếm là tốt nhất!” Khóe môi nàng khẽ nhếch, mỉm cười nhìn về phía Linh Sơn nơi cuối chân trời.</p>
+                <p>Phía ngoài Linh Sơn, thấp thoáng có một luồng huyết quang đang dừng lại. “Nhưng tại sao Loạn Cổ Huyết Hầu lại tìm lão già đó? Thậm chí còn cách cả một thế giới mà vẫn tìm ra?”</p>
+                <p>Phù Vân Đại Hiền lẩm bẩm một câu, sau đó nhắm mắt lại cảm ứng. Ngay khoảnh khắc tiếp theo, nàng xuất hiện chuẩn xác trước động phủ của Giang Phàm.</p>
+                <p>Những thủ đoạn ẩn nấp mà Giang Phàm và Liễu Khuynh Tiên bố trí, trước mặt một vị cường giả Tam Tai Cảnh tự nhiên không đáng nhắc tới.</p>
+                <p>Nàng chắp tay sau lưng, mỉm cười bước qua trận pháp, nhìn thấy thạch môn đang ẩn giấu. “Tên nhóc xảo quyệt, ngươi tưởng rằng có thể tẩy sạch lạc ấn trên ngọc phù của ta sao? Thủ đoạn của lão nương không dễ phá như vậy đâu.”</p>
+                <p>Nàng cười híp mắt, tung một cước đá văng thạch môn. Bụi bặm mịt mù rơi xuống, thấp thoáng thấy một bóng người mờ ảo.</p>
+                <p>“Hì hì, lão gia hỏa, có kinh hỷ không, có bất ngờ không?” Phù Vân Đại Hiền cười khúc khích, nhưng rất nhanh sau đó liền lộ vẻ kinh ngạc: “Ngươi hóa ra lại trẻ như vậy?”</p>
+                <p>Hiện ra trước mắt nàng là một khuôn mặt anh tuấn và trẻ tuổi. Nàng từng nghĩ dưới lớp mặt nạ của Giang Phàm có lẽ không phải lão già, nhưng cũng không nên trẻ đến mức này.</p>
+                <p>Thứ nhất, thực lực Hóa Thần Cảnh mà có thể sánh ngang với sơ kỳ Nhất Tai Cảnh, giống như một vị Đại Tôn đã trầm mặc tu luyện nhiều năm hơn, xác suất là người trẻ tuổi gần như bằng không. Thứ hai, kẻ xảo quyệt như vậy cũng không giống phong thái của một thiếu niên.</p>
+                <p>Nhưng vạn lần không ngờ tới, chân dung thực sự lại là một thiếu niên trông mới chỉ mười mấy tuổi!</p>
+                <p>Lúc này, Giang Phàm cũng cảm thấy ngoài ý muốn. Phù Vân Đại Hiền vậy mà lại đuổi tới đây! Trên miếng ngọc phù kia, lẽ nào có lạc ấn mà ngay cả Tẩy Linh Dịch cũng không thể xóa sạch?</p>
+                <p>Hắn dứt khoát dừng việc trị thương, lật tay lấy ra một cuốn sách. Chính là sách từ Võ Khố! Trước đó hắn đã lấy vài cuốn để phòng thân, vẫn luôn chưa từng sử dụng. Hiện tại, không còn thủ đoạn nào khác để đối phó với Tam Tai Cảnh, chỉ có thể lấy ra để uy hiếp đối phương.</p>
+                <p>“Sách của Võ Khố?” Phù Vân Đại Hiền lập tức nhận ra sự bất phàm của cuốn sách, trên mặt hiện lên một vẻ kiêng dè.</p>
+                <p>Sách của Võ Khố - một trong mười đại cấm địa chư thiên, nàng sao có thể không biết sự lợi hại của nó? Một khi rơi vào trong đó, bắt buộc phải tuân theo diễn biến của câu chuyện, nếu không sẽ vĩnh viễn bị kẹt lại bên trong.</p>
+                <p>Tuy nhiên, nhìn thiếu niên non nớt trước mắt toan tính uy hiếp mình, nàng hạ quyết tâm: “Thằng nhóc thối, còn muốn uy hiếp ta? Cùng lắm thì lão nương vào trong sách một chuyến!”</p>
+                <p>Là một cường giả Tam Tai Cảnh, nàng có nắm chắc sẽ thoát ra được khỏi cuốn sách. Giang Phàm thầm kinh hãi, dùng thứ này uy hiếp một vị Tam Tai Cảnh quả nhiên không dễ dàng như vậy.</p>
+                <p>Ánh mắt hắn đảo qua, liền nói: “Được thôi, cuốn sách này kể về một đoạn tình cảm cấm kỵ giữa sư đồ, còn có cả cảnh giường chiếu nữa. Ngươi muốn vào, vậy ta thành toàn cho ngươi.”</p>
+                <p>Nói đoạn, hai tay hắn định mở cuốn sách ra. Mí mắt Phù Vân Đại Hiền giật nảy: “Sư đồ? Tình cảm cấm kỵ? Còn có cảnh giường chiếu?”</p>
+                <p>“Cái thằng nhóc vô liêm sỉ nhà ngươi, sao lại chọn một cuốn sách hạ lưu như thế?” Nàng cuống lên rồi. Những câu chuyện khác thì trải nghiệm một chút cũng không sao, nhưng cùng Giang Phàm diễn một vở sư đồ luyến, lại còn có loại tình tiết đó? Nếu truyền ra ngoài, sau này nàng còn mặt mũi nào ở Võ Khố nữa?</p>
+                <p>Giang Phàm hừ lạnh: “Hạ lưu? Còn vinh quang hơn kẻ đường đường là cao thủ lại âm thầm theo dõi người tham gia hội nghị như ngươi sao?”</p>
+                <p>Trong mắt Phù Vân Đại Hiền bùng lên lửa giận, thầm bực bội. Cứ ngỡ vớ được một con cừu béo, ai ngờ lại là một con nhím đầy gai! “Đưa cho ta thêm một con Táng Thiên Thánh Thú, lão nương sẽ không tìm ngươi gây phiền phức nữa!” Phù Vân Đại Hiền lùi lại một bước.</p>
+                <p>Giang Phàm cầm sách tiến lên, lạnh lùng nói: “Lão bà già, ngươi vẫn là nên cùng ta diễn một đoạn sư đồ luyến đầy màu sắc đi!” Nói xong, hắn làm bộ muốn lật mở cuốn sách.</p>
+                <p>Phù Vân Đại Hiền sợ hãi, quát lớn: “Dừng tay! Cái thằng nhóc chết tiệt này, ngươi có giỏi thì...” Đang nói, nàng bỗng nhiên nhìn vào trán Giang Phàm.</p>
+                <p>Trong tầm mắt nàng, trên trán Giang Phàm hiện lên một chữ “Huyết”, đang không ngừng nhảy động.</p>
+                <p>“Truy tung huyết ấn của Loạn Cổ Huyết Hầu?” Phù Vân Đại Hiền sững sờ: “Loạn Cổ Huyết Hầu đang tìm ngươi? Ngươi chính là người đã đại chiến một trận với Loạn Cổ Huyết Hầu mấy ngày trước?”</p>
+                <p>“Làm sao có thể là ngươi được?” Phù Vân Đại Hiền lảo đảo lùi lại vài bước, đôi mắt hạnh trợn tròn. Nhìn khuôn mặt thiếu niên của Giang Phàm trước mắt, nàng như thể nhìn thấy ma vậy.</p>
+                <p>Vị tuyệt đại cường giả trong truyền thuyết đã đánh bị thương Loạn Cổ Huyết Hầu, thực lực vô cùng đáng sợ kia, cư nhiên lại là thiếu niên Hóa Thần Cảnh trước mặt này?</p>
+                <p>Sắc mặt Giang Phàm trầm xuống, xuyên qua động phủ nhìn ra ngoài trời: “Cái thứ âm hồn bất tán!”</p>
+                <p>Sau đó hắn trừng mắt nhìn Phù Vân Đại Hiền: “Xú nữ nhân, nếu không phải vì đối phó với Loạn Cổ Huyết Hầu mà tiêu hao hết thủ đoạn, ngươi và kẻ truy đuổi ta sớm đã chết rồi!”</p>
+                <p>Phù Vân Đại Hiền khẽ che miệng. Câu nói này, nàng không hề nghi ngờ. Một người có thể chính diện đại chiến với Loạn Cổ Huyết Hầu, còn đánh đối phương bị thương, tuyệt đối có thủ đoạn giết nàng và Thần Bí Đại Hiền.</p>
+                <p>“Ngươi... rốt cuộc ngươi là ai?” Ánh mắt Phù Vân Đại Hiền dao động. Nàng không thể tưởng tượng nổi, chư thiên bách giới từ bao giờ lại xuất hiện một vị thiếu niên thiên kiêu khủng khiếp đến thế.</p>
+                <p>Bất chợt, nàng nhớ tới một cái tên đang nổi như cồn, cũng đang bị Loạn Cổ Huyết Hầu truy sát. Nàng hít một hơi lạnh: “Ngươi là... Trung Thổ Giang Phàm?”</p>
+                <p>Giang Phàm lạnh mặt nói: “Là thì đã sao? Lập tức cút đi cho ta!” Hắn hiện tại lo lắng nhất là Liễu Khuynh Tiên. Nếu Phù Vân Đại Hiền đã xông vào đây, vậy Liễu Khuynh Tiên chẳng lẽ...</p>
+                <p>Phù Vân Đại Hiền kinh ngạc nói: “Ngươi thực sự là Giang Phàm? Á... chúng ta... chúng ta là người một nhà mà!”</p>
+                <p>Hửm? Hai hàng lông mày của Giang Phàm nhíu chặt lại một chỗ: “Người một nhà?”</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_436.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_433.html" class="page-btn">433</a>
+            <a href="page_434.html" class="page-btn">434</a>
+            <a href="page_435.html" class="page-btn">435</a>
+            <a href="page_436.html" class="page-btn">436</a>
+            <a href="page_437.html" class="page-btn current">437</a>
+            <a href="#" class="page-btn disabled">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 321">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 321</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_320.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_322.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_1601">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1601: Tổ hoàn</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Tà Nha Tôn Giả, kẻ đã nhận ra động tĩnh nơi đây, lập tức nhận thấy có gì đó không ổn: “Cửu Khiếu nhập điên, lại còn vội vã bái đường?”</p>
+                <p>“Chẳng lẽ, ngươi đang viên mãn Đạo ý?”</p>
+                <p>“Muốn mượn cơ hội này để chứng đạo Hóa Thần ư?”</p>
+                <p>Nhớ lại truyền thuyết đáng sợ về việc Giang Phàm tạm thời Hóa Thần ở Thiên Di Thành, một mình giết chết năm cường giả Pháp Tướng Cảnh bán cự nhân.</p>
+                <p>Hắn có chút hoảng loạn.</p>
+                <p>Chỉ với những việc hắn đã làm, một khi Giang Phàm Hóa Thần, chắc chắn sẽ lên trời xuống đất truy sát hắn!</p>
+                <p>Không thể để Giang Phàm Hóa Thần!</p>
+                <p>Tuyệt đối không thể!</p>
+                <p>“Các ngươi hãy cùng tiểu súc sinh này đi chết đi!” Tà Nha Tôn Giả đau lòng vô cùng, dứt khoát phát động Ngũ Tướng Cảnh nhất kích!</p>
+                <p>Trong khoảnh khắc, năm pho pháp tướng uy nghi hiện ra.</p>
+                <p>Đồng loạt giáng một quyền diệt thế về phía những người của Thiên Cơ Các.</p>
+                <p>Không gian liên tục sụp đổ, nứt ra những vết nứt hư vô li ti như mạng nhện, kình phong hủy diệt càng bao trùm toàn bộ Thiên Cơ Các.</p>
+                <p>Hắn cười dữ tợn, nhìn Thiên Cơ Các mọi người cùng bị chôn vùi!</p>
+                <p>Dù sao cũng đã phản bội Trung Thổ, vậy thì cứ một đường đi đến tận cùng!</p>
+                <p>Nhưng ngay lúc này.</p>
+                <p>Hồng Ma Đại Tôn trong bộ cung trang, lướt mình chắn trước năm pho pháp tướng khổng lồ, ánh mắt lộ vẻ quyết tuyệt.</p>
+                <p>Tà Nha Tôn Giả cười lạnh: “Một kẻ Thiên Nhân Tam Suy, mà còn muốn chặn được Ngũ Tướng Cảnh nhất kích sao?”</p>
+                <p>“Châu chấu đá xe, không biết tự lượng sức mình!”</p>
+                <p>Thế nhưng.</p>
+                <p>Điều khiến Tà Nha Tôn Giả kinh hãi là, trong cơ thể Hồng Ma Đại Tôn, Hạo Nhiên chi khí xông thẳng lên trời, tạo thành một hư ảnh uy nghi.</p>
+                <p>Ngũ Tướng Cảnh nhất kích bị toàn bộ thân thể nàng đỡ lấy.</p>
+                <p>Thân thể Hồng Ma Đại Tôn nứt toác, từng vết thương máu tươi bắn ra như tên, người nàng cũng bị đánh bay đi, va vào dãy Thanh Ly Sơn ở đằng xa.</p>
+                <p>Dãy núi khổng lồ, bị va chạm tạo thành một lỗ hổng hình người.</p>
+                <p>Hồng Ma Đại Tôn sống chết không rõ.</p>
+                <p>Nhưng thể phách Đại Tôn của nàng, đã hóa giải thành công Ngũ Tướng Cảnh nhất kích, giúp mọi người được bảo toàn.</p>
+                <p>Trong khi đó, Hứa U Nhiên không hề bị ngoại vật lay động, vẫn nắm tay Giang Phàm, cúi đầu đối bái.</p>
+                <p>Thiên Cơ Các chủ trong lòng bi ai trỗi dậy.</p>
+                <p>Để thành toàn cho đại hôn của hai người, Hồng Ma Đại Tôn, người vốn rất khó khăn mới đoạt xá trùng tu được, đã lấy thân mình đỡ kiếp.</p>
+                <p>Ông ta bi tráng hô to: “Lễ thành!”</p>
+                <p>Hai chữ vừa dứt, có nghĩa là Giang Phàm và Hứa U Nhiên chính thức trở thành vợ chồng.</p>
+                <p>Lời hứa Giang Phàm đã thề thốt ở nơi khởi đầu, đã được thực hiện.</p>
+                <p>Dưới cái nhìn sâu sắc của Hứa U Nhiên, sự mơ màng trong mắt Giang Phàm đang dần tan biến, ý điên cũng lặng lẽ tiêu tán.</p>
+                <p>Nàng kinh ngạc mừng rỡ nói: “Hắn sắp tỉnh rồi!”</p>
+                <p>Quả nhiên, nàng chính là sự thiếu sót cuối cùng trong lòng Giang Phàm.</p>
+                <p>Giờ đây tất cả đã được bù đắp!</p>
+                <p>Giang Phàm sắp bước vào Hóa Thần Cảnh rồi!</p>
+                <p>Tà Nha Tôn Giả sắc mặt đại biến, kinh hãi tức giận nói: “Muốn bước vào Hóa Thần? Mơ đi!!!”</p>
+                <p>Hắn biến mất tại chỗ một cách quỷ dị, trực tiếp thuấn di giết về phía Giang Phàm.</p>
+                <p>Cường giả Hóa Thần Cảnh ra tay, những Nguyên Anh Cảnh có mặt tại đó căn bản không có chút sức phản kháng nào.</p>
+                <p>Ngay cả Thiên Cơ Các chủ đang ở gần trong gang tấc cũng không kịp phản ứng, khi ông ta nhận ra tung tích của Tà Nha Tôn Giả thì hắn đã xuất hiện ngay trước mặt Giang Phàm.</p>
+                <p>Một nắm đấm đầy sát cơ, mang theo lực xuyên thấu giáng xuống đầu Giang Phàm.</p>
+                <p>Vô số tiếng gầm thét, tiếng nguyền rủa truyền đến.</p>
+                <p>Tiếng kêu kinh hãi của Thiên Cơ Các chủ và Hứa U Nhiên cũng vang lên bên tai.</p>
+                <p>Nhưng, tất cả những điều này đều không ngăn được sát tâm tất sát của Tà Nha Tôn Giả.</p>
+                <p>Hắn mặt mũi dữ tợn: “Chết đi, tiểu súc sinh!!!”</p>
+                <p>Hình ảnh Giang Phàm thề chết liều mạng chiến đấu với cự nhân viễn cổ, tạo thành sự đối lập rõ ràng với hắn.</p>
+                <p>Giang Phàm càng giết mạnh tay bao nhiêu, hắn, kẻ phản bội này, càng bị làm nổi bật sự đáng ghét bấy nhiêu.</p>
+                <p>Hắn giống như con chuột trong bóng tối, mặt trời càng rực rỡ, hắn càng khó chịu!</p>
+                <p>Kình phong đáng sợ của hắn, đã đánh trúng thể biểu của Giang Phàm.</p>
+                <p>Hắn chắc chắn sẽ chết!</p>
+                <p>Ngay lúc này!</p>
+                <p>Một luồng sáng ngũ sắc từ trên trời giáng xuống, bao phủ Giang Phàm cùng ba thước xung quanh hắn.</p>
+                <p>Kình phong công kích trên thể biểu của hắn, bị vô thanh vô tức tiêu biến đi.</p>
+                <p>Nắm đấm của Tà Nha Tôn Giả đánh vào luồng sáng ngũ sắc, cũng bị phản弹 trở lại, bản thân hắn loạng choạng lùi lại mấy bước.</p>
+                <p>Hắn theo luồng sáng ngẩng đầu nhìn lên, trên bầu trời xuất hiện một vạt tường vân ngũ sắc rộng lớn.</p>
+                <p>Trong một đám tường vân, chiếu xuống một luồng sáng, bao trùm Giang Phàm vào trong đó.</p>
+                <p>“Tường vân sao lại bảo vệ hắn?”</p>
+                <p>Tà Nha Tôn Giả kinh hãi tức giận quát lên.</p>
+                <p>Hắn cũng là người đã Hóa Thần, đương nhiên biết dị tượng khi Hóa Thần.</p>
+                <p>Có tường vân ngũ sắc là đúng, nhưng căn bản không có cái gọi là luồng sáng hộ thể.</p>
+                <p>Không chỉ hắn, bất cứ ai Hóa Thần cũng chưa từng xuất hiện luồng sáng hộ thể.</p>
+                <p>Đây là điều lịch sử chưa từng ghi nhận!</p>
+                <p>Hắn không cam lòng lần nữa ra tay công kích, nhưng luồng sáng không hề nhúc nhích, chưa kể một tia sét ngũ sắc còn từ trên trời giáng xuống, giáng mạnh lên người hắn.</p>
+                <p>Tia sét này, trong nháy mắt đã đánh nát cánh tay hắn, toàn thân lở loét chảy máu.</p>
+                <p>Đau đến mức Tà Nha Tôn Giả kêu la liên tục, hắn vẻ mặt kinh ngạc nghi ngờ nhìn về phía tường vân ngũ sắc.</p>
+                <p>Cuối cùng cũng nhận ra, có một loại ý chí nào đó đang bảo vệ Giang Phàm.</p>
+                <p>Hành vi của mình đã chọc giận đối phương, giáng xuống sét để cảnh cáo.</p>
+                <p>“Là… là ai đang bảo vệ hắn?”</p>
+                <p>Tà Nha Tôn Giả nuốt khan một ngụm nước bọt, trong đầu hiện lên hai chữ “Cổ Thánh”.</p>
+                <p>Điều này khiến hắn rùng mình một cái.</p>
+                <p>Vào giờ phút này, cuối cùng hắn cũng nhận ra, Giang Phàm căn bản không phải là người hắn nên chọc vào.</p>
+                <p>Nhưng, tất cả đã quá muộn.</p>
+                <p>Tường vân ngũ sắc giáng xuống hà quang, ngưng tụ thành một đạo Thần Hoàn màu trắng ánh trăng rực rỡ phía sau đầu Giang Phàm.</p>
+                <p>Điểm khác biệt là.</p>
+                <p>Thần Hoàn của người khác là rỗng ruột, chỉ có một đường cong tròn ở vành.</p>
+                <p>Thần Hoàn của Giang Phàm đã không thể gọi là một cái vòng nữa, mà là một đĩa tròn không có chỗ trống!</p>
+                <p>Thoạt nhìn qua, tựa như một vầng trăng tròn vành vạnh, rực rỡ mà huy hoàng.</p>
+                <p>Tà Nha Tôn Giả ngây người ra: “Đây… đây là Thần Hoàn sao?”</p>
+                <p>Mọi người cũng đều kinh ngạc.</p>
+                <p>Trong trận đại chiến này, bọn họ đã thấy không ít Tôn Giả Hóa Thần.</p>
+                <p>Nhưng loại Thần Hoàn như của Giang Phàm, đừng nói là thấy qua, ngay cả nghe cũng chưa từng nghe nói đến.</p>
+                <p>“Đó không phải Thần Hoàn.”</p>
+                <p>“Mà là Tổ Hoàn!”</p>
+                <p>Một giọng nói yếu ớt và già nua, từ chân trời truyền đến.</p>
+                <p>Hồng Ma Đại Tôn toàn thân đẫm máu, loạng choạng bay đến, nhưng đôi mắt lại chăm chú nhìn chằm chằm vào Thần Hoàn sau lưng Giang Phàm.</p>
+                <p>Trong mắt nàng dâng lên sóng to gió lớn.</p>
+                <p>Cảm xúc kích động không thể kiềm chế được, khiến toàn thân nàng không ngừng run rẩy, ngay cả giọng nói cũng run run:</p>
+                <p>“Trên đời, lại thật sự tồn tại Tổ Hoàn!”</p>
+                <p>“Truyền thuyết… đã trở thành hiện thực!”</p>
+                <p>Tổ Hoàn?</p>
+                <p>Tất cả mọi người trong trường đều lộ vẻ mơ màng.</p>
+                <p>Nhưng nhìn biểu cảm của Hồng Ma Đại Tôn, Tổ Hoàn nhất định không tầm thường.</p>
+                <p>Hứa U Nhiên cố nén sự kích động, hỏi: “Tiền bối, Tổ Hoàn là gì?”</p>
+                <p>Hồng Ma Đại Tôn bay xuống, nhìn chằm chằm vào cái vòng tròn vành vạnh như vầng trăng của Giang Phàm, không khỏi nuốt một ngụm nước bọt, nói:</p>
+                <p>“Truyền thuyết nói rằng, Tổ của Thiên Địa, chỉ truyền lại chín loại Đạo.”</p>
+                <p>“Mà Cửu Đạo lại sinh ra Vạn Đạo.”</p>
+                <p>“Tu luyện được một trong Vạn Đạo, ngưng luyện ra chính là Thần Hoàn.”</p>
+                <p>“Còn nếu tu luyện được một trong Cửu Đạo, thì đó là Tổ Hoàn.”</p>
+                <p>“Ta cứ nghĩ, đó chỉ là truyền thuyết mà thôi, bởi vì trong lịch sử vạn năm của Trung Thổ, chưa từng nghe nói có cái gọi là Tổ Hoàn ra đời.”</p>
+                <p>Ánh mắt Hứa U Nhiên sáng rực, nói: “Tiền bối, Cửu Đại Tổ Đạo là những loại nào?”</p>
+                <p>“Vô Khuyết Chi Đạo của Tiểu Phàm, có phải là một trong Cửu Đạo không?”</p>
+                <p>Hồng Ma Đại Tôn lắc đầu: “Cụ thể Cửu Đại Tổ Đạo là những loại nào, không ai biết, có người nói là thời gian, có người nói là không gian, còn có người nói là sinh tử và vận mệnh.”</p>
+                <p>“Nhưng, những người tu hành các loại Đạo kể trên từ vạn năm nay không ít, nhưng chưa ai ngưng tụ được Tổ Hoàn.”</p>
+                <p>“Vô Khuyết Chi Đạo của Giang Phàm, có phải là một trong Cửu Tổ Đạo hay không, ta cũng không dám xác nhận.”</p>
+                <p>“Nhưng, đây tuyệt đối là Tổ Hoàn không sai!”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1602">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1602: Tuyên cáo thiên hạ, Tinh Hỏa Tôn Giả</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nàng mặt đầy kích động, vươn tay định chạm vào thần hoàn, nhưng lại bị luồng sáng ngũ sắc đẩy văng ra.Nàng vẫy vẫy tay: &quot;Thảo nào các Cổ Thánh đều tự mình bảo vệ Giang Phàm.&quot;&quot;Tổ Hoàn xuất thế, nếu ta là Cổ Thánh, cũng sẽ phá lệ che chở hắn.&quot;</p>
+                <p>Nghe lời ấy, trong mắt Hứa U Nhiên tràn ngập vẻ kinh hỉ.Từ khi bước chân vào võ đạo, Giang Phàm đã luôn khác biệt, nay đến cả khi nhập đạo hóa thần, cũng phi phàm không thôi.Vân Thường Tiên Tử và Liễu Khuynh Tiên cũng đầy vẻ tự hào, ánh mắt nhìn Giang Phàm tràn ngập sự sùng bái.Người đàn ông này, chưa bao giờ khiến các nàng thất vọng.</p>
+                <p>Khi Tổ Hoàn ngưng thực, một lượng lớn tường vân ngũ sắc tuôn trào vào cơ thể Giang Phàm.Cơ thể hắn trải qua sự lột xác long trời lở đất.Xương cốt hắn ngọc hóa, từ bạch cốt trắng xóa biến thành chất ngọc trong suốt, kiên cố bất hoại.Cơ bắp cũng tăng trưởng và ngưng thực nhanh chóng, thoạt nhìn thân hình không thay đổi, nhưng thực tế cơ bắp đã tăng gấp mười lần, tràn đầy lực lượng bùng nổ.Máu tươi cũng được ngũ sắc vân hà tưới nhuận, trở nên rực rỡ hơn, lấp lánh ánh hồng ngọc.Sinh cơ vô song bùng phát, tựa như một hạt giống, trưởng thành cây đại thụ chọc trời.Từ đây, tuổi thọ hơn trăm năm của hắn có thể kéo dài đến tám trăm năm!Một tầng thứ sinh mệnh hoàn toàn mới, cứ thế ra đời.</p>
+                <p>Trong mắt hắn khôi phục tiêu cự, tâm thần cũng hoàn toàn thanh tỉnh.Hắn nhìn những người có mặt, ánh mắt lướt qua các Nguyên Anh cảnh, toàn bộ nguyên anh lực của họ đều mất kiểm soát mà hỗn loạn.Nguyên Anh trong bụng run rẩy dưới ánh mắt của hắn.Các Kết Đan cảnh thì khí huyết trong cơ thể cuồn cuộn, Kim Đan chấn động mạnh.Hắn có một trực giác, trong một ý niệm có thể hủy diệt tất cả mọi người.Tựa như một con người, nhìn xuống một đàn kiến.Cảm giác ngự trị vạn vật, chúa tể chúng sinh ấy, không tự chủ dâng lên trong lòng.Cảm giác này, khi lâm thời hóa thần không hề có.Đó chỉ là mượn nhờ ngoại vật.Mà bây giờ, Giang Phàm là Hóa Thần thật sự!Là một tồn tại chí cao vượt qua tầng thứ sinh mệnh thông thường.Hắn cuối cùng cũng hiểu, Hóa Thần cảnh nhìn nhận các sinh linh khác là cảm giác gì.Cũng rốt cuộc hiểu rõ, năm xưa Tà Nha Tôn Giả đã mang tâm thái nào để giết hắn.Thật sự chỉ là nhất thời nổi ý, tùy tiện giẫm chết một con kiến mà thôi.Không hề mang theo chút cảm xúc nào.</p>
+                <p>Hắn thở ra một hơi thật dài, điều chỉnh tâm thái, không để bản thân bước vào tâm thái của Tà Nha Tôn Giả.Vào lúc này.Tường vân ngũ sắc chưa tan đi, mà chậm rãi ngưng tụ thành vài hàng chữ.&quot;Giang Phàm, nhân tộc Trung Thổ, chứng đạo Hóa Thần, nắm giữ Vô Khuyết Tổ Đạo, sắc lệnh Cửu Châu Bát Phương, hợp Tứ Hải thành một, ban tặng đạo danh Tôn Giả Tinh Hỏa, đặc xá thấy Hiền không lễ, gặp Thánh không bái.&quot;&quot;Nhất Nguyên Phục Thủy, Vạn Tượng Canh Tân, lấy đó làm gương, Cửu Châu đại hưng.&quot;&quot;Tuyên cáo thiên hạ, Trung Thổ cùng biết.&quot;Sau đó, chữ tường vân hóa thành một đạo âm thanh, đồng thời truyền khắp Cửu Châu.</p>
+                <p>Hỗn Nguyên Châu.Tinh Uyên Đại Tôn với thân thể mệt mỏi, chợt nghe thấy tiếng tuyên cáo vang vọng giữa trời đất.Không khỏi toàn thân chấn động, kinh ngạc nói: &quot;Giang Phàm đã chứng đạo Hóa Thần rồi ư?&quot;&quot;Đạo hiệu, Tinh Hỏa Tôn Giả!&quot;&quot;Ha ha ha ha, chân ngôn có thể ký thác cho hắn, ta không còn lo lắng gì nữa rồi!&quot;</p>
+                <p>Quy Khư Châu.Thiên Di Thành.Thiên Di Thành Chủ đột ngột nhìn lên bầu trời, nghe thấy tuyên cáo, phẫn nộ gầm lên:&quot;Tổ Hoàn? Hắn dựa vào cái gì?&quot;&quot;Đứa nhãi này, không diệt không được!&quot;</p>
+                <p>Quần Tinh Sơn.Hứa Di Ninh một thân áo tím như họa, máu tươi nhuộm đỏ mái tóc nàng.Chợt nghe tiếng trời đất tuyên cáo, trong đôi mắt ẩn sau mặt nạ, tràn ngập niềm vui, cũng trỗi lên sự phức tạp.&quot;Vô Khuyết Tổ Đạo, hắn và tỷ tỷ cuối cùng vẫn thành hôn rồi.&quot;</p>
+                <p>Di tích cổ xưa.Nguyệt Minh Châu che miệng nhỏ, mắt đầy kinh hỉ: &quot;Sư tôn sư tôn, người nghe thấy không?&quot;&quot;Giang Phàm đã chứng đạo Hóa Thần rồi!&quot;Vong Tình Dã Lão trợn tròn mắt: &quot;Chỉ là nhập Hóa Thần mà thôi, lại có thể dẫn đến Cổ Thánh tuyên cáo sao?&quot;&quot;Cái gì? Thấy Hiền không lễ, gặp Thánh không bái?&quot;&quot;Cái này... đây là đãi ngộ cấp bậc Cổ Thánh đó!&quot;</p>
+                <p>Vạn Yêu Đại Châu.Kim Lân Đại Tôn ngửa mặt lên trời cười lớn: &quot;Sắc lệnh Cửu Châu Bát Phương, hợp Tứ Hải thành một, rể hiền của Kim Lân Đại Tôn ta, hẳn phải có nghiệp lớn cái thế này!&quot;Cửu Châu kinh động, Trung Thổ cùng vang.Tin tức Giang Phàm chứng đạo Hóa Thần, ngay lập tức được thiên hạ cùng biết!</p>
+                <p>Hồng Ma Đại Tôn ở gần đó cũng trợn tròn mắt: &quot;Đãi ngộ tuyên cáo thiên hạ chỉ có bậc Nhập Hiền mới có, vậy mà lại xuất hiện trên thân một Hóa Thần sao?&quot;&quot;Còn nữa, thấy Hiền không lễ, gặp Thánh không bái, đây là thật ư?&quot;&quot;Hiền giả gặp Thánh nhân còn phải bái lạy mà.&quot;</p>
+                <p>Tà Nha Tôn Giả toàn thân run rẩy, rốt cuộc mình đã chọc phải quái vật gì thế này?Không chút do dự, hắn xoay người bỏ chạy!Giang Phàm đã Hóa Thần, tuyệt đối không phải kẻ hắn có thể địch nổi!Chỉ là, vừa mới dịch chuyển tức thời đi, phía trước hắn liền có hai người theo sát dịch chuyển tới.Chính là Giang Phàm.Hắn nắm tay Hứa U Nhiên, chắn trước mặt Tà Nha Tôn Giả, nghiêng đầu nhìn Hứa U Nhiên, nói:&quot;Hôn lễ của chúng ta đã có pháo hoa rồi, nếu có thêm chút hồng trang nữa thì tốt biết mấy.&quot;Hắn chuyển ánh mắt, đặt lên người Tà Nha Tôn Giả, ánh mắt bình lặng không chút gợn sóng.Giống hệt như khi Tà Nha Tôn Giả nhìn hắn năm xưa.</p>
+                <p>Tà Nha Tôn Giả lông tóc dựng ngược, tim đập thình thịch, lập tức có cảm giác như ếch bị mãng xà nhìn chằm chằm.Hắn có một cảm giác, Giang Phàm muốn giết hắn, chỉ cần trong một niệm.Cảm giác này, ngay cả khi đối mặt Thiên Nhân Nhị Suy cũng chưa từng có.Hắn sợ rồi, cũng hối hận rồi.&quot;Giang... Giang đạo hữu...&quot;Tà Nha Tôn Giả chắp hai tay, liên tục vái lạy, nói:&quot;Người phàm ai mà chẳng có lỗi, ta cũng nhất thời hồ đồ, phạm phải vài sai lầm nhỏ.&quot;&quot;Vẫn xin ngươi rộng lượng, cho ta thêm một cơ hội.&quot;&quot;Ta nguyện ý cải tà quy chính, chiến tử trên sa trường!&quot;</p>
+                <p>Giang Phàm lạnh nhạt nói: &quot;Ta cho ngươi cơ hội, vậy ai cho những liệt sĩ bị ngươi hãm hại kia cơ hội?&quot;&quot;Còn muốn chiến tử sa trường? Ngươi xứng sao?&quot;&quot;Mảnh đất Trung Thổ này, không cần máu của ngươi làm ô uế!&quot;Nếu không phải hắn đã là thân xác bị đoạt xá, Giang Phàm nhất định sẽ giam linh hồn hắn vào hắc bình, vĩnh viễn hành hạ!</p>
+                <p>Tà Nha Tôn Giả sợ hãi quỳ xuống, cầu xin: &quot;Giang đạo hữu, ta cầu xin ngươi!&quot;&quot;Ta lạy ngươi đây!&quot;Hắn quỳ trên mặt đất, bò về phía Giang Phàm.Ngay khi sắp bò đến trước mặt Giang Phàm, hắn đang cúi đầu, trong mắt chợt lóe lên hung quang.Hắn đột ngột tế ra một hộp ngọc nhỏ, rồi lập tức bóp nát, để lộ ra mảnh vải rách nát bên trong.Hắn vừa dùng sức, chuẩn bị ném mảnh vải rách nát kia ra, vừa rống lớn:&quot;Tên tiểu tạp chủng, đi chết đi!&quot;&quot;Muốn giết ta, ngươi còn chưa...&quot;Tuy nhiên, lời còn chưa dứt.Một tiếng &quot;phụt&quot; trầm đục vang lên, cánh tay hắn bị Giang Phàm túm chặt lấy.Mảnh vải rách nát bị ném ra, nhẹ bẫng bay đi, rồi bị Giang Phàm dùng hộp ngọc thu lại.</p>
+                <p>Tà Nha Tôn Giả ngây người: &quot;Ngươi...&quot;Hắn ngẩng đầu lên, đối mặt với ánh mắt lãnh đạm vô cùng của Giang Phàm.&quot;Thiên Di Thành Thiếu chủ chính là bị ngươi giết chết đoạt xá như vậy sao?&quot;&quot;Ta không phải hắn.&quot;&quot;Sẽ không tin lời của loại người như ngươi!&quot;Nói xong.Giang Phàm dùng sức kéo mạnh, cánh tay của Tà Nha Tôn Giả bị xé toạc ra.Một lượng lớn máu tươi phun tung tóe, Tà Nha Tôn Giả ngửa mặt lên trời đau đớn gào thét: &quot;Giang Phàm!!!&quot;&quot;Ngươi quá độc ác rồi, nhất định phải làm mọi chuyện tuyệt tình đến vậy sao?&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1603">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1603: Trừng phạt Tà Nha Tôn Giả</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm hờ hững nói: &quot;Tuyệt?&quot;&quot;Ngươi nói tuyệt, là chỉ việc lần đầu gặp mặt đã muốn giết ta sao?&quot;&quot;Hay vì muốn cướp đoạt Chân Ngôn Tôn Giả mà lại muốn giết ta?&quot;&quot;Hoặc là khi ta giết Cự Nhân Vương, ngươi từ phía sau tập kích, chặt đứt một cánh tay của ta?&quot;&quot;Hay là việc ngươi dẫn Nhị Tinh Cự Nhân Vương hủy diệt Thiên Cơ Các không thành, nên tự tay muốn đẩy ta vào chỗ chết?&quot;&quot;Ngươi tự mình làm chuyện xấu đến cùng cực, đến khi báo ứng ập đến lại đổ lỗi người khác quá tàn nhẫn?&quot;&quot;Đến lúc chết, ngươi vẫn không hề có chút hối cải.&quot;&quot;Giết ngươi, thật sự là quá nhân từ rồi!&quot;</p>
+                <p>Tà Nha Tôn Giả chẳng hề để tâm, mắt lóe lên hung quang, cười dài:&quot;Khi ấy ta là Tôn Giả, giết một con kiến hôi Nguyên Anh cảnh như ngươi thì có gì sai?&quot;&quot;Rơi vào tay ngươi, ta nhận.&quot;&quot;Muốn giết muốn lóc thịt tùy ngươi định đoạt, đừng tưởng ta sẽ cầu xin!&quot;</p>
+                <p>Giang Phàm không nói nhiều.Một chưởng đánh lên kinh mạch của hắn, tiếng &quot;rắc rắc&quot; vỡ nát vang lên, từng sợi huyết mạch Cự Nhân Vương màu đen bị tách rời ra.Không còn huyết mạch Bán Cự Nhân Vương duy trì, thân thể này lập tức trở nên suy yếu vô lực.Tà Nha Tôn Giả rên rỉ thảm thiết một tiếng, ngã xuống đất rên la đau đớn.</p>
+                <p>Nhưng, chuyện đó vẫn chưa kết thúc.Giang Phàm ngưng tụ Bất Diệt Nhận trong lòng bàn tay, chém đứt một tay và hai chân của hắn.Cùng với một cánh tay trong tay, ném lên không trung.Dưới áp lực ánh mắt của hắn, tất cả nổ tung thành từng mảnh, hóa thành một cơn mưa máu đỏ thắm rải khắp Thiên Cơ Các, nhuộm đỏ mặt đất, mái nhà với những vệt loang lổ.</p>
+                <p>&quot;Như vậy mới có chút sắc màu hỷ sự.&quot;Giang Phàm thản nhiên nói.</p>
+                <p>Tà Nha Tôn Giả biến thành nhân trư, biết mình khó thoát cái chết, liền dứt khoát buông xuôi, ngửa mặt lên trời cười nói:&quot;Ha ha ha, chỉ có chút thủ đoạn tra tấn người thế này thôi sao?&quot;&quot;Chỉ là chút đau đớn vặt vãnh thôi, Hóa Thần Tôn Giả nào mà chẳng phải trải qua ngàn lần rèn luyện mà đi lên?&quot;&quot;Giang Phàm tiểu tử, ngươi không làm gì được ta đâu!&quot;&quot;Ha ha ha!&quot;</p>
+                <p>Giang Phàm cúi đầu nhìn hắn, hờ hững nói: &quot;Ta còn chưa bắt đầu đâu.&quot;Hắn lấy ra Thần Mộc.Trên đời này có người không sợ đau sao?Trước Thần Mộc thì không tồn tại!</p>
+                <p>&quot;Tiểu Hổ, né ra, cha ngươi lại phát điên rồi.&quot;Bích Lạc đột nhiên khẽ kêu một tiếng, một tay giật Tiểu Hổ từ trên đầu Hoàng Tuyền xuống, rồi nhanh chóng lùi ra xa.Những người xung quanh Hoàng Tuyền cũng lần lượt tản ra.</p>
+                <p>Các chủ Thiên Cơ Các đau đầu: &quot;Đây là lần thứ mấy phát điên rồi? Mọi người cẩn thận một chút, đừng để bị lây.&quot;Hoàng Tuyền từ khi bước vào Bát Khiếu Nguyên Anh, vì tính tình nóng nảy bình thường mà rất dễ phát điên.Đạo của hắn, lại là Đạo Tự Lừa Dối.Có khi hắn tự lừa dối mình là Hóa Thần, có khi lại tự lừa dối mình là anh hùng, thậm chí đôi khi còn tự lừa dối mình là một tuyệt thế mỹ nhân.Tóm lại, hắn điên điên khùng khùng, khiến người ta đau đầu.Lần này lại tái phát.</p>
+                <p>&quot;Ha ha, ha ha ha, ta Hóa Thần rồi, ta là Tinh Hỏa Tôn Giả, ta là Giang Phàm, ta muốn ngủ với rất nhiều rất nhiều nữ nhân, ta muốn ba ngày ba đêm không xuống giường...&quot;Hoàng Tuyền cười ngây ngô, lại tự lừa dối mình là Giang Phàm!Ý điên của hắn lây lan xung quanh, phàm là người bị ảnh hưởng, khi nhìn theo góc nhìn của Hoàng Tuyền, đều sẽ mơ hồ nhìn thành Giang Phàm.Bích Lạc giật mình, cái tên chết tiệt này bị kích thích bởi Giang Phàm Hóa Thần, lại dám ảo tưởng mình là Giang Phàm sao?Còn làm bại hoại danh tiếng của Giang Phàm nữa?Nàng vừa kinh vừa nộ, kiều xích nói: &quot;Mất mặt thì cút về động phủ mà mất!&quot;Nàng với vẻ mặt ghét bỏ lấy ra bộ điều khiển, định đánh ngất hắn.</p>
+                <p>Giang Phàm mặt tái mét.Có ý gì chứ? Trong mắt Hoàng Tuyền, hắn Giang Phàm đã ngủ với rất nhiều rất nhiều nữ nhân? Lại còn luôn ba ngày không xuống giường ư?Nhưng, hắn đột nhiên đảo mắt, thu lại Thần Mộc, mỉm cười như không cười:&quot;Đừng vội, Tuyền ca cứ giao cho ta đi.&quot;</p>
+                <p>Bích Lạc rùng mình một cái, vội vàng ôm Tiểu Hổ chạy tới, lo lắng nói: &quot;Tinh Hỏa Tôn Giả, ngài đừng chấp nhặt với cái tên chết tiệt này.&quot;&quot;Với lại, ngài cứ gọi thẳng tên hắn là được rồi, hắn nào xứng để ngài gọi Tuyền ca chứ?&quot;</p>
+                <p>Giang Phàm cười nói:&quot;Hắn là Tuyền ca vĩnh viễn trong lòng ta, không ai có thể vượt qua.&quot;Bích Lạc hơi khựng lại, không ngờ Giang Phàm lại coi trọng Hoàng Tuyền đến vậy, không khỏi cảm động thay Hoàng Tuyền:&quot;Kẻ sĩ chết vì tri kỷ, tiền bối cứ tùy ý xử trí Hoàng Tuyền đi, ta và hắn đều sẽ không trách ngài.&quot;</p>
+                <p>Giang Phàm cười gật đầu, một tay nắm lấy cánh tay Hoàng Tuyền, một tay xách Tà Nha Tôn Giả đi vào mật thất của mình.&quot;Ngươi muốn làm gì?&quot; Tà Nha Tôn Giả nghi hoặc hỏi.Giang Phàm không nói nhiều, cho Tà Nha Tôn Giả uống một viên Thiên Y Thần Thủy.Bốn chi bị đứt của hắn nhanh chóng mọc lại.Tà Nha Tôn Giả hiểu ra, cười lạnh nói: &quot;Muốn lặp đi lặp lại việc chặt đứt tứ chi của ta sao?&quot;&quot;Ha ha, nếu ngươi chịu bỏ Thiên Y Thần Thủy ra, lão tử sẽ phụng bồi đến cùng!&quot;</p>
+                <p>Giang Phàm lắc đầu: &quot;Ngươi cũng xứng lãng phí Thiên Y Thần Thủy của ta sao?&quot;Hắn lấy ra một viên linh đan đỏ tươi, có năm đường đan văn, nói với vẻ đầy ẩn ý:&quot;Ngươi có từng nghe nói, Tam Thanh Sơn đã luyện chế một số linh đan kỳ lạ không?&quot;&quot;Ví dụ như viên linh đan Ngũ Phẩm trước mặt này, có thể khiến người ta biến thành giới tính khác.&quot;&quot;Nữ nhân ăn vào có thể biến thành nam nhân, nam nhân ăn vào có thể biến thành nữ nhân, hiệu quả duy trì ba ngày.&quot;</p>
+                <p>Tà Nha Tôn Giả sắc mặt cứng đờ, nói: &quot;Ngươi... ngươi muốn làm gì?&quot;Giang Phàm nói: &quot;Không có gì, chỉ muốn cho ngươi trải nghiệm tư vị làm nữ nhân trong ba ngày thôi.&quot;Nói xong, một tay nắm cằm Tà Nha Tôn Giả, nhét linh đan vào miệng hắn.Dược hiệu lập tức thấy rõ.Thân thể trung niên nam nhân của Tà Nha Tôn Giả, lập tức biến đổi.Toàn thân da thịt tróc ra, cơ bắp co lại, ngực sưng phồng, đường nét khuôn mặt thô kệch trở nên mềm mại.Chớp mắt một cái, từ một nam nhân trung niên, biến thành một phụ nhân khoảng ba mươi tuổi khá có nhan sắc.</p>
+                <p>Giang Phàm nhàn nhạt nói: &quot;Ta đi đây, các ngươi hãy ở chung hòa thuận nhé.&quot;Hắn xoay người rời đi, đồng thời đóng chặt cửa đá, còn vận dụng Thổ Chi Bản Nguyên phong tỏa xung quanh mật thất.Tà Nha Tôn Giả mất đi Thần Hoàn, tu vi không còn, không thể mở ra được nữa.</p>
+                <p>&quot;Tiểu tử thối, biến ta thành nữ nhân muốn làm gì?&quot;Tà Nha Tôn Giả nhìn thân thể nữ giới của mình, sắc mặt âm trầm.Ai ngờ, phía sau đột nhiên có một đôi bàn tay mạnh mẽ ôm lấy eo nàng.&quot;Ta là Tinh Hỏa Tôn Giả, ta là Giang Phàm, ta muốn đại chiến với nữ nhân ba ngày ba đêm không xuống giường!&quot;&quot;Đến đây nào, bảo bối lớn, ca ca ta thương ngươi.&quot;Tà Nha Tôn Giả toàn thân nổi da gà, sợ hãi hét chói tai liên tục: &quot;Cút đi! Ngươi tên yêu thú chết tiệt!&quot;Nàng cố gắng giãy giụa, nhưng đã mất đi thể phách, làm sao có thể thoát khỏi một đại yêu Bát Khiếu Nguyên Anh chứ?Trong tiếng kêu kinh hãi của nàng, liền bị Hoàng Tuyền vồ ngã xuống dưới thân, y phục cũng bị xé rách.Tà Nha Tôn Giả hoảng sợ, hét lớn: &quot;Không! Không!! Không!!!&quot;&quot;Giang Phàm! Mau kéo hắn ra!&quot;&quot;Ta sai rồi! Ta biết ta sai rồi! Ngươi mau giết ta đi, cầu xin ngươi mau giết ta...&quot;&quot;A...&quot;Một tiếng kêu thảm thiết chói tai xuyên thấu bầu trời, vang lên trong mật thất.</p>
+                <p>***</p>
+                <p>Quảng trường.Giang Phàm thuấn di trở về.Hứa U Nhiên nhíu mày hỏi: &quot;Phu quân, Tà Nha Tôn Giả đã được xử trí ổn thỏa chưa?&quot;Giang Phàm khẽ gật đầu: &quot;Hắn đã nhận được kết cục đáng có rồi.&quot;</p>
+                <p>Nhìn dung nhan ôn nhuận như ngọc trước mặt, Giang Phàm không thể kìm nén sự áy náy vô hạn trong lòng, nói:&quot;Ta lại có thể quên mất nàng.&quot;Một người quan trọng đến thế, một lời hẹn quan trọng đến thế, hắn lại có thể quên hết.</p>
+                <p>Hứa U Nhiên kiễng chân, nâng khuôn mặt Giang Phàm, mặt như gió xuân nói:&quot;Đó là vì, chàng đã xem ta là người thân thiết nhất mà.&quot;&quot;Chúng ta thanh mai trúc mã đi đến bây giờ, vốn đã là người thân, mà người thân thì thường là người dễ bị bỏ qua nhất.&quot;&quot;Ta không trách chàng, ta biết trong lòng chàng có ta là đủ rồi.&quot;</p>
+                <p>Một câu &quot;đủ rồi&quot;, lại một mình nuốt xuống sự ủy khuất sao?Mắt Giang Phàm hơi ướt.Người có thể lay động trái tim hắn nhất, vẫn luôn là Hứa U Nhiên.Nàng như một dòng suối trong, tuy nông cạn, nhưng luôn có thể tưới mát tâm hồn hắn vào lúc hắn khô cạn nhất.</p>
+                <p>Giang Phàm lặng lẽ ôm lấy nàng, cúi đầu say đắm hôn nàng.Một lát sau, Giang Phàm mới rời ra.Nhìn Hứa U Nhiên má hơi ửng hồng, khẽ thở dốc, hắn nhẹ nhàng buông nàng ra, nói:&quot;Xin lỗi U Nhiên, hôm nay là đại hôn của chúng ta, nhưng ta lại không thể ở bên nàng rồi.&quot;&quot;Quân tiếp viện các châu, vẫn còn đang đợi ta.&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1604">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1604: Thái Sơ Tù Thiên Hầu</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Hứa U Nhiên cũng buông Giang Phàm ra, nói: “Đáng lẽ là ta đã làm mất thời gian của ngươi. Mau đi đi, chờ ngươi trở về.”</p>
+                <p>Giang Phàm không dám chậm trễ, chuyến này trở về hóa thần đã làm chậm trễ rất nhiều thời gian rồi. Chiến đấu ở Cực Đông Chi Địa không biết đã phát triển thành tình hình như thế nào.</p>
+                <p>“Hồng Ma Đại Tôn tiền bối, Phản Cốt Tử!”</p>
+                <p>Phản Cốt Tử kháng cự lùi về phía sau một chút, nhưng chợt nghĩ, lại được gặm chiếc giày ngọt ngào thơm ngon kia, lập tức hai mắt sáng rỡ nhảy lên vai hắn. Hồng Ma Đại Tôn cũng lê lết thân thể bị thương chạy tới.</p>
+                <p>Giang Phàm lập tức cùng bọn họ dịch chuyển tức thời đến trận pháp truyền tống.</p>
+                <p>Sau khi đặt trận nhãn vào trong, Giang Phàm tra xét một chút, trận pháp ở Bái Hỏa Giáo không bị hư hại, có thể trực tiếp truyền tống qua đó. Hắn lập tức nhảy lên, ném một viên cực phẩm tinh thạch, một giọt Thiên Y Thần Thủy cho Hồng Ma Đại Tôn:</p>
+                <p>“Tiền bối kích hoạt trận pháp đi, vãn bối có một chuyện cần xử lý một chút.”</p>
+                <p>Lập tức, tâm thần hắn chìm sâu vào linh hồn. Tầm nhìn của hắn dần tối đi, khi trở lại rõ ràng, một cái cây cổ thụ chọc trời hiện ra trước mắt.</p>
+                <p>So với lúc đột phá Nguyên Anh, Thái Hư Cổ Thụ lại lớn mạnh thêm một vòng. Lá xanh rậm rạp, sum suê bóng mát.</p>
+                <p>Ngẩng đầu nhìn lên, một quả trái cây treo lơ lửng, bên trong phong ấn một cái hồ lô ba màu. Chính là giới khí Thái Sơ Tù Thiên Hồ!</p>
+                <p>Giang Phàm mắt lộ vẻ nóng bỏng, liền nhảy vọt tới trước. Lần này không còn chướng ngại nào, hắn dễ dàng đến bên cạnh quả trái cây và một tay hái nó xuống. Giang Phàm cầm quả trái cây, cẩn thận quan sát.</p>
+                <p>Đó là một cái hồ lô lớn bằng bàn tay, ba màu cam, vàng, xanh lam, phân bố đều theo dạng chảy trên thân bình. Trong đó, vùng màu vàng và màu xanh lam đều tối tăm không ánh sáng. Chỉ riêng vùng màu cam là vô cùng tươi sáng.</p>
+                <p>Hắn áp quả trái cây lên trán, lập tức một đoạn tin tức tràn vào trong đầu.</p>
+                <p>“Thái Sơ Tù Thiên Hồ, trung phẩm giới khí. Sau khi thôi động, có thể cách không bắt kẻ địch vào hồ lô, lắc ba cái, sẽ luyện hóa thành Thái Sơ Chủng Tử.”</p>
+                <p>Giang Phàm nhướng nhướng mày. Cách không bắt địch vào hồ lô, điều này nằm trong dự liệu của hắn. Chữ “Tù” trong Thái Sơ Tù Thiên Hồ, đã chỉ rõ đây là một loại pháp bảo vây khốn kẻ địch.</p>
+                <p>Nhưng, Thái Sơ Chủng Tử được luyện hóa từ kẻ địch bị vây khốn là gì? Chẳng lẽ là một loại thiên địa linh quả nào đó? Giang Phàm có chút bài xích, dù sao cũng là thứ luyện chế từ người sống, trực tiếp ăn vào, thì có gì khác với việc cự nhân viễn cổ ăn thịt người sống chứ?</p>
+                <p>“Thái Sơ Tù Thiên Hồ chia làm ba hồ lô. Hồ lô cam có thể bắt giữ tất cả kẻ địch Hóa Thần.”</p>
+                <p>Tiếp nhận được tin tức này, Giang Phàm cả kinh. Tất cả kẻ địch Hóa Thần? Bao gồm cả Đại Tôn Thiên Nhân Ngũ Suy? Điều này cũng quá nghịch thiên rồi! So sánh ra, Câu Quyết Bút cùng là giới khí, dường như không có uy năng lớn đến vậy.</p>
+                <p>“Hồ lô vàng có thể bắt giữ phần lớn Hiền Giả.”</p>
+                <p>Giang Phàm không khỏi run rẩy một cái, Hiền Giả cũng không đỡ nổi? Cái hồ lô này một khi phát động, dưới Thánh Nhân gần như vô địch rồi!</p>
+                <p>“Hồ lô xanh lam vừa ra, Thánh Nhân cũng phải tránh lui.”</p>
+                <p>Giang Phàm có chút ngây người, nhìn Thái Sơ Tù Thiên Hồ trong tay, cả người hắn tê dại. Thánh Nhân cũng sợ thứ này sao? Hắn ngay lập tức nghĩ đến vị Cổ Thánh Đại Lục đã từng đá vào mông hắn! Sau này lấy hồ lô này ra, xem ả đàn bà thối đó còn dám kiêu ngạo không! Khoảng cách đến việc đè ả xuống đất mà ma sát, đã càng ngày càng gần rồi!</p>
+                <p>“Để thôi động hồ lô này, cần tích tụ đầy đủ lực lượng pháp tắc. Khi lực lượng pháp tắc đủ, ba màu mới lần lượt được mở ra.”</p>
+                <p>Giang Phàm nhìn cái hồ lô màu cam tươi sáng, màu vàng và xanh lam ảm đạm, trong lòng đã hiểu rõ. Theo uy lực, rõ ràng màu cam là dễ kích hoạt nhất, màu vàng và xanh lam khó hơn theo thứ tự. Hơn nữa, hiện tại màu cam sáng rực, chứng tỏ có thể dùng Hồ Lô Cam một lần!</p>
+                <p>“Phương pháp bắt địch: Sau khi kích hoạt, hô to lai lịch và tên của đối phương trước mặt, là có thể khóa chặt mục tiêu thành công.”</p>
+                <p>Giang Phàm suy nghĩ gật đầu. Trong thiên hạ, người trùng tên trùng họ nhiều không kể xiết. Nhưng khi ở trước mặt mình, lại có lai lịch rõ ràng, tự nhiên sẽ là duy nhất. Trừ phi là song sinh, lại còn trùng tên trùng họ, nếu không thì đều có thể khóa chặt ngay tại chỗ.</p>
+                <p>“Hắc Nhật Vương, U Minh Vương! Các ngươi ai sẽ đến khai phong cho giới khí của ta đây?”</p>
+                <p>Giang Phàm lòng tràn đầy cảm xúc, Thái Hư Cổ Thụ chưa bao giờ khiến hắn thất vọng!</p>
+                <p>Thái Sơ Tù Thiên Hồ đã vào tay, nhưng Giang Phàm vẫn chưa rời đi. Bởi vì theo truyền thống từ trước đến nay, hái một quả trái cây, sẽ có một vật phẩm rơi xuống. Lần trước hái được quả trái cây của 《Đại Diễn Kiếm Trận》, đã rơi ra Cần Câu Hư Không. Lần này hái quả trái cây Thái Sơ Tù Thiên Hồ, không biết sẽ rơi ra cái gì.</p>
+                <p>Thấy trên đó không có phản ứng, Giang Phàm quen tay đi lên đá Thái Hư Cổ Thụ một cước, lẩm bẩm nói: “Tự giác một chút đi, đừng để ta phải giục.”</p>
+                <p>Rào rào ——</p>
+                <p>Thái Hư Cổ Thụ bị đá đến mức cành lá xào xạc vang lên. Một khối bóng đen xuyên qua từng lớp cành cây và lá, ầm một tiếng đập xuống Giang Phàm. Giang Phàm vội vàng né tránh, nơi hắn vừa đứng bị đập thành một cái hố nhỏ. Hắn gân xanh trên trán giật giật: “Ngươi cố ý đúng không?”</p>
+                <p>Nhìn về phía khối bóng đen rơi xuống, phát hiện ra lại là một cái chậu sắt nhỏ lồi lõm, đen sì. Ước chừng bằng cái bát của chó, không đựng được bao nhiêu thứ. Hắn hơi ngạc nhiên, nói: “Lần trước là tặng ta Cần Câu Hư Không, lần này lại trực tiếp tặng bát chó ư?”</p>
+                <p>Nhưng vật phẩm do Thái Hư Cổ Thụ sản xuất, chắc chắn là tinh phẩm. Không thể chỉ nhìn bề ngoài. Hắn vội vàng nhặt cái bát chó lên, một luồng tin tức tràn vào trong đầu.</p>
+                <p>“Tụ Bảo Bồn, hạ phẩm giới khí. Đặt một vật vào trong, có thể thu hoạch được hai phần. Mỗi ngày chỉ có thể sử dụng một lần, bất kỳ vật phẩm nào cũng chỉ có thể đặt vào một lần. Hạn chế: Sinh linh vô hiệu; vật phẩm độc nhất vô nhị vô hiệu; vật phẩm phẩm giai cao hơn Tụ Bảo Bồn vô hiệu; vật phẩm do Thái Hư Cổ Thụ xuất ra vô hiệu.”</p>
+                <p>Giang Phàm sững sờ, nhìn chằm chằm cái bát chó, hai mắt đờ đẫn: “Lại… lại là một kiện giới khí?”</p>
+                <p>Không uổng công hắn chịu bao gian nan vất vả, trải qua vạn khó khăn để hóa thần. Thái Hư Cổ Thụ vừa tặng đã là hai kiện giới khí! Hơn nữa, nếu không hiểu lầm thì cái Tụ Bảo Bồn này, chẳng phải là bảo bối chuyên dùng của phú hộ địa chủ trong truyền thuyết, ném vào một thỏi bạc có thể biến thành hai, ném vào một ngọn núi vàng có thể biến thành hai ngọn sao?</p>
+                <p>Đương nhiên, Tụ Bảo Bồn này rất nhỏ, không thể đựng vật lớn, hơn nữa hạn chế cũng rất nhiều. Người hoặc thú cưng không thể đặt vào, vật phẩm phẩm giai quá cao cũng không được, thứ độc nhất vô nhị trên đời vẫn không được. Ngay cả muốn phục chế một chiếc Cần Câu Hư Không cũng bị hạn chế.</p>
+                <p>Nhưng, dù là như vậy, cũng nghịch thiên đến cực điểm! Nếu có được một viên cực phẩm đại đan, hoặc là vô thượng tài nguyên, chẳng phải có thể phục chế ra thêm một phần sao? Thật không hổ là giới khí. Đạt đến cấp bậc này, hoàn toàn là cấp độ tạo hóa thần kỳ. Xa xa không phải cực phẩm linh khí có thể sánh bằng.</p>
+                <p>Giang Phàm vô cùng kích động, có hai kiện giới khí, con đường Hóa Thần cảnh sẽ thuận lợi hơn người thường rất nhiều.</p>
+                <p>Cầm hai vật trong tay, hắn ngẩng đầu nhìn về phía Thái Hư Cổ Thụ. Suy nghĩ một chút, hắn nhảy lên. Theo kinh nghiệm từ trước đến nay, hẳn sẽ xuất hiện quả trái cây mà chỉ Hiền Giả cảnh mới có thể hái được.</p>
+                <p>Quả nhiên. Nhảy hơn mười trượng, quả nhiên nhìn thấy một quả trái cây. Điều kỳ lạ là, bên trong là một hài nhi nhắm mắt tọa thiền, lấp lánh tỏa sáng, nhìn có vẻ là do một loại lực lượng nào đó ngưng tụ mà thành. Một luồng tin tức truyền vào trong đầu hắn.</p>
+                <p>“Thánh Anh, bồi dưỡng đến khi trưởng thành, ăn vào có thể đột phá Thánh Nhân cảnh. Khi đạt Hiền cảnh có thể hái.”</p>
+                <p>Giang Phàm ngây người. Quả trái cây này, lại là thứ mà ăn vào sau có thể đột phá Thánh cảnh sao?</p>
+                <p>Từ xưa đến nay, Trung Thổ chưa từng nghe nói có người nào trở thành Thánh cảnh mới. Những gì mọi người biết, cũng chỉ có chín vị Cổ Thánh đó mà thôi. Vị Cửu Nhật Cự Nhân Hoàng ở Thiên Giới kia chắc hẳn đã là tồn tại mạnh nhất dưới Cự Nhân Đại Đế, nhưng ngàn năm sau hôm nay, hắn vẫn là Cửu Nhật Cự Nhân Hoàng. Có thể thấy, giữa Hiền Giả và Thánh Nhân, nhất định tồn tại một loại thiên tiệm không thể vượt qua.</p>
+                <p>Nhưng, Thái Hư Cổ Thụ đã biến điều không thể thành hiện thực! Chỉ cần Giang Phàm đột phá Hiền cảnh, là có thể bảo đảm nhập Thánh!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1605">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1605: Sát hồi chiến trường</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Vô Giải Thế Gả: Giang Phàm, Hứa Di Ninh.</p>
+                <p>Giang Phàm cảm thấy đầu óc trống rỗng. Mãi một lúc sau, hắn mới dần tỉnh táo trở lại:&quot;Hay lắm, xem ra Thái Hư Cổ Thụ cũng ủng hộ ta đè ả tiện nhân Cổ Thánh xuống đất mà vùi dập!&quot;&quot;Nhập Hiền, cả đời này nhất định phải Nhập Hiền!&quot;Hắn bỗng có một động lực chưa từng có. Tất cả đều vì để &quot;xử lý&quot; Cổ Thánh!</p>
+                <p>&quot;Giang đạo hữu… Giang đạo hữu…&quot;Lúc này, bên tai Giang Phàm vọng đến giọng nói của Hồng Ma Đại Tôn.Lòng Giang Phàm khẽ rùng mình, vội vàng thoát khỏi ý thức sâu thẳm.Sau khi hắn rời đi, trên đỉnh Thái Hư Cổ Thụ, giữa những tán cây lay động, vang lên một tiếng cười khẩy khàn khàn:&quot;Cũng đến lúc phải rèn giũa cô nhóc đó một chút rồi.&quot;&quot;Lá của Thái Hư Cổ Thụ mà cũng dám hái, còn muốn chặt cành cây để luyện kiếm ư?&quot;&quot;Cứ để thằng nhóc này cho ngươi nếm mùi đau khổ đi.&quot;&quot;Ha ha ha…&quot;</p>
+                <p>Bên ngoài.Ý thức Giang Phàm trở lại thể xác. Hai bàn tay đang rụt trong ống tay áo trống rỗng bỗng nặng trĩu. Đó chính là Thái Sơ Tù Thiên Hồ và Bồn Chó! Hắn không chút động thái nào, lặng lẽ cất chúng vào không gian trữ vật.&quot;Giang đạo hữu, lúc nãy ngươi…?&quot;Hồng Ma Đại Tôn đứng bên cạnh lộ vẻ nghi hoặc. Có khoảnh khắc nàng thấy toàn bộ thân thể Giang Phàm trống rỗng, linh hồn như biến mất, đi đến một không gian khác. Nàng còn tưởng Giang Phàm đã chết, khiến nàng không khỏi kinh hãi.Giang Phàm nói lấp lửng: &quot;Không sao, chỉ là lơ đãng một chút thôi.&quot;Nhận thấy mình đã được truyền tống đến Điện Truyền Tống của Bái Hỏa Giáo, Giang Phàm vội vàng nói: &quot;Chúng ta mau chóng đi!&quot;Hồng Ma Đại Tôn gật đầu, xách Giang Phàm thi triển thân pháp Thiên Nhân Tam Suy, cấp tốc dịch chuyển tức thời về phía Cực Đông Chi Địa.</p>
+                <p>Bên cạnh Cột Đen Nối Trời.Chiến sự đã không còn kịch liệt như lúc đầu, bởi vì cả hai bên đều có thương vong.Số lượng Cự Nhân Vương từ mười bảy con khi Giang Phàm rời đi, nay chỉ còn lại mười con.Thương vong của các Hóa Thần nhân tộc ở Tứ Châu cũng không hề nhỏ.Bạch Cốt Tôn Giả của Đại Hoang Châu đã ngã xuống, Thần Hoàn của Tử Tiêu Tôn Giả vỡ nát, Hồng Trần Tôn Giả bị trọng thương.Đan Châu chỉ còn lại Dữu Phó Cung Chủ và một Tôn Giả đang chiến đấu, hai vị Tôn Giả khác đã hi sinh.Ba vị Tôn Giả của Thần Binh Châu cũng chỉ còn lại một người đang khổ chiến!Năm vị viện quân từ ba Châu đã ngã xuống, số lượng trực tiếp bị giảm một nửa.</p>
+                <p>Về Thái Thương Đại Châu.Xác chiến thi kia đang nằm rách nát bên rìa chiến trường, bất động. Giản Lan Giang, người điều khiển nó, đã không còn tung tích. Với một trận đại chiến Cự Nhân Vương hùng vĩ như vậy, kết cục của một Nguyên Anh Thất Khiếu như ông không khó đoán.Sau Bồ Tát, lại một cường giả xung phong tiền tuyến đã gục ngã.Tâm Ma Tôn Giả, Minh Dạ Tu La Vương, Bình Thiên Bồ Tát – những người vẫn đang kiên cường chống đỡ – đều bị thương, cắn răng gắng gượng.Thần Bi Ách Vận của Khương Vô Nhai cũng khó khăn chống lại đòn tấn công của hai Cự Nhân Vương Tam Tinh.Tình cảnh của Giang Sơn Nhất Phẩm Lâu Chủ và Hồng Tụ cũng không mấy lạc quan.Hồng Tụ thì đỡ hơn một chút. Mặc dù nàng mới thăng cấp thành Ngũ Quán Tu La Vương, thực lực kém hơn U Minh Vương lão luyện, nhưng nhờ vào tâm kế và thủ đoạn, nàng vẫn tạm thời cầm chân được đối phương, chỉ chịu một số vết thương không quá nghiêm trọng.Riêng Giang Sơn Nhất Phẩm Lâu Chủ thì nguy hiểm rồi.Với khí huyết đã cạn kiệt, hắn căn bản không đủ sức để đối đầu với Hắc Nhật Vương.Thần Hoàn của hắn xuất hiện những vết nứt, cơ thể vốn đã gầy gò lại càng thêm khô héo, khắp người chi chít những vết thương ghê rợn. Dưới những đòn tấn công của thể phách vô địch của Hắc Nhật Vương, hắn liên tục thất bại.</p>
+                <p>&quot;Khụ khụ.&quot;Giang Sơn Nhất Phẩm Lâu Chủ ho sặc sụa, mấy ngụm dịch mật văng ra. Hắn đã không còn máu để mà nôn nữa.Cảm nhận được cơ thể mình sắp sụp đổ, hắn lộ vẻ bất lực:&quot;Giá như cho ta thêm chút thời gian, dù trở thành Liệt Hiền cũng được.&quot;&quot;Tiếc thay, thiên ý đã định cho ta phải chôn thây nơi đây.&quot;Vốn dĩ Giang Sơn Nhất Phẩm Lâu Chủ đã ôm ý muốn chết, không muốn đối mặt với chúng sinh Trung Thổ, trong lòng hắn trào dâng ý chí tử sâu sắc.Hắc Nhật Vương cũng nhìn ra tình trạng của Giang Sơn Nhất Phẩm Lâu Chủ, ánh mắt lộ vẻ lạnh lẽo. Hắn dồn toàn lực, dịch chuyển tức thời để giáng đòn cuối cùng lên Giang Sơn Nhất Phẩm Lâu Chủ!Giang Sơn Nhất Phẩm Lâu Chủ tự biết khó lòng chống đỡ được đòn này, hắn ngoảnh đầu nhìn lại vùng đất phía sau, trong lòng thở dài một tiếng:&quot;Ta xin lỗi, Thái Thương cố thổ.&quot;&quot;Ta đã chém Cự Nhân Hoàng, nhưng lại không thể bảo vệ ngươi.&quot;</p>
+                <p>Thế nhưng.Hắn đã cảm nhận được cơn đau xé toạc thân thể từ quyền phong, nhưng Hắc Nhật Vương lại đột nhiên thu quyền, rồi lui ra ngoài chiến trường. Hắn lộ vẻ kinh ngạc xen lẫn nghi ngờ, mặt đầy vẻ không thể tin nổi.Chỉ thấy năm viên tinh thần bản nguyên trên trán hắn đang xoay tròn nhanh chóng. Bản nguyên của hắn là dự đoán tương lai.Ngay khoảnh khắc định giết Giang Sơn Nhất Phẩm Lâu Chủ, các tinh thần bản nguyên của hắn bỗng dự cảm được nguy hiểm và tự động xoay chuyển, rồi bắt được một cảnh tượng tương lai.Nội dung của cảnh tượng đó khiến hắn không dám tin.Thế mà lại là hắn đã chết!Kỳ lạ hơn là hắn không chết dưới tay người khác. Mà lại chết dưới tay… U Minh Vương!Và trong cảnh tượng đó, hắn còn nhìn thấy một gương mặt quen thuộc vô cùng! Đó chính là Giang Phàm!!!Hắn không hiểu tại sao U Minh Vương lại giết hắn? Điều duy nhất có thể xác nhận là chuyện này có liên quan đến Giang Phàm!Nghĩ đến Cổ Thánh tuyên ngôn đã được truyền bá đến đây trước đó, lòng hắn càng thêm bất an.Giang Phàm đã đột phá Hóa Thần cảnh, chẳng lẽ đã nghịch thiên đến vậy rồi sao?Tương lai là thứ không thể thay đổi. Trừ phi, phải trả một cái giá cực lớn không thể chịu nổi.Vì thế, Hắc Nhật Vương kịp thời thu tay, do dự không biết có nên trở về Thiên Giới để tránh nhân quả hay không.</p>
+                <p>&quot;Hắc Nhật Vương, tại sao lại dừng lại?&quot; U Minh Vương ở đằng xa cau mày hỏi.Hắc Nhật Vương chần chừ đáp: &quot;Chúng ta nên rút lui thôi, tương lai bất lợi cho chúng ta.&quot;Cái gì?U Minh Vương nhướn mày. Dự đoán của Hắc Nhật Vương lại bất lợi cho Cự Nhân Vương bọn họ ư? Làm sao có thể chứ?Tình hình hiện tại là Cự Nhân Vương mười đấu chín, hai Tinh Cự Nhân Vương Ngũ Tinh đang đánh cho hai Đại Tôn nhân tộc liên tục bại lui. Tình thế đang rất tốt, chiến thắng đã nằm trong tầm tay. Làm sao có thể bất lợi được?Vút vút!Ngay lúc này.Hai luồng Hóa Thần ba động bỗng giáng lâm trên không chiến trường. Một trong số đó tỏa ra khí tức Thiên Nhân Tam Suy. Luồng còn lại là của một thiếu niên với Thần Hoàn kỳ lạ.</p>
+                <p>&quot;Vương Xung Tiêu! Hay ngươi gọi là Giang Phàm?&quot;&quot;Ngươi lại Hóa Thần rồi!&quot;U Minh Vương có chút khó tin. Hóa Thần của nhân tộc không phải khó như lên trời sao? Giang Phàm cách đây không lâu khi rời đi mới chỉ là Nguyên Anh Bát Khiếu, mà khi trở lại đã là Hóa Thần cảnh!Giang Phàm không để ý đến hắn. Hắn quét mắt nhìn chiến trường, lòng lạnh đi một nửa. Viện quân ba Châu vậy mà đã tổn thất quá nửa, số còn lại đều mang thương tích. Còn người của Thái Thương Đại Châu đâu?Đột nhiên, hắn dịch chuyển tức thời đến bên cạnh chiến thi, nhìn thấy trong tay chiến thi đang nắm chặt một đoạn bàn tay già nua đứt lìa.Hắn đau khổ nhắm mắt lại. Lão già này, người đã trải qua hai trận đại chiến, mỗi lần đều suýt soát giữ lại mạng sống, cuối cùng vẫn không thể sống sót qua trận chiến thứ ba.Trước đây ông từng nói, Thái Thương Lăng Viên sẽ có một vị trí cho ông. Giờ đây, câu nói ấy đã trở thành sự thật.Giang Phàm rút bàn tay đứt lìa đó ra, cẩn thận đặt vào một chiếc hộp ngọc.Tâm Ma Tôn Giả đánh lui một Cự Nhân Vương, rồi đi đến bên cạnh hắn, áy náy nói: &quot;Giản tộc trưởng là vì cứu ta, nên mới điều động chiến thi để đỡ đòn chí mạng cho ta.&quot;&quot;Còn ông ấy thì bị Cự Nhân Vương tìm được sơ hở nuốt chửng.&quot;Nhìn Thần Hoàn sau gáy Giang Phàm, Tâm Ma Tôn Giả càng thêm hổ thẹn. Hắn siết chặt nắm tay, trầm giọng nói: &quot;Giản tộc trưởng đã ra đi trong nụ cười.&quot;&quot;Trước khi chết, ông ấy đã nghe được Cổ Thánh tuyên ngôn.&quot;Giản Lan Giang đã đặt vô vàn kỳ vọng vào Giang Phàm, nhưng, vào khoảnh khắc Giang Phàm chứng đạo Hóa Thần, ông lại vĩnh viễn nhắm mắt. Không còn nhìn thấy được nữa.Môi Giang Phàm khẽ run rẩy, trong mắt cuộn trào những cảm xúc khó tả. Lão già Nguyên Anh Thất Khiếu này, không sợ cái chết, đã cùng đám Hóa Thần chiến lực của bọn hắn hết lần này đến lần khác chiến đấu. Muốn vì Thái Thương Đại Châu mà mở ra một con đường hy vọng.Thế nhưng, hy vọng ngay trước mắt, ông lại gục ngã.&quot;Là con Cự Nhân Vương nào đã nuốt chửng ông ấy?&quot; Giang Phàm siết chặt hộp ngọc, giọng nói trầm thấp đến đáng sợ.</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_320.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_320.html" class="page-btn">320</a>
+            <a href="page_321.html" class="page-btn current">321</a>
+            <a href="page_322.html" class="page-btn">322</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_322.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

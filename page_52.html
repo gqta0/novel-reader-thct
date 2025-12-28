@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 52">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 52</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_51.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_53.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_256">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 256: Hối hận</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Cung Thải Y rúng động tâm can.</p>
+                <p>Nàng là cường giả Kết Đan hậu kỳ! Dù chỉ vận dụng một thành linh lực, cũng đủ sức chống đỡ sự công kích của cường giả Kết Đan tầng hai. Vậy mà Giang Phàm… lại đánh xuyên phòng ngự của nàng!</p>
+                <p>Điều khiến nàng kinh hãi hơn cả là, đạo chùm sáng tím kia còn dư uy, tiếp tục công kích lòng bàn tay nàng. Nàng vội vàng vận chuyển toàn bộ linh lực trong tay, lúc này mới kịp thời ngăn cản trước khi bàn tay bị đánh xuyên.</p>
+                <p>Theo chùm sáng tím tan đi, lòng bàn tay Cung Thải Y bỏng rát đau nhức. Không cần nhìn cũng biết, chắc chắn đã bị thương! Khóe miệng nàng hơi co rút, lộ ra vẻ thống khổ.</p>
+                <p>&quot;Tông chủ, ngươi không sao chứ?&quot;</p>
+                <p>Giang Phàm nhận thấy vẻ thống khổ trên mặt nàng, kinh ngạc hỏi. Chẳng lẽ ta làm ngươi bị thương? Không thể nào? Ta mạnh đến vậy sao?</p>
+                <p>Cung Thải Y vội vàng thu lại biểu cảm. Nàng làm sao có thể thừa nhận mình bị một tiểu gia hỏa Trúc Cơ cảnh đánh bị thương? Truyền đi thì mặt mũi nàng để đâu?</p>
+                <p>Bất động thanh sắc giấu bàn tay bị thương ra sau lưng, nàng bình tĩnh nói: &quot;Nghĩ gì thế? Chút thực lực ấy còn chưa làm bị thương được bản tông.&quot;</p>
+                <p>Giang Phàm không mấy nghi ngờ. Dù sao giữa hai bên là cách biệt một đại cảnh giới. Làm sao có thể làm đối phương bị thương? Hắn không nhịn được tán thưởng: &quot;Tông chủ thực lực cao thâm, vãn bối bội phục. Cứ tưởng ít nhiều có thể khiến Tông chủ nghiêm túc một chút. Không ngờ, tùy tiện đã tiếp nhận. Về sau ta phải cố gắng gấp bội.&quot;</p>
+                <p>Bội phục? Cung Thải Y cảm nhận từng đợt đau nhức nóng bỏng từ lòng bàn tay, hận không thể đánh tên này một trận! Nếu không kịp phản ứng, bàn tay nàng đã bị hắn phế đi. Tên này mới Trúc Cơ cảnh đã mạnh mẽ vậy, đến Kết Đan cảnh thì thế nào nữa?</p>
+                <p>Nàng tức giận nói: &quot;Khoan đắc ý! Võ đạo chi lộ như đi ngược dòng nước, không tiến ắt lùi. Phải không kiêu không ngạo, hiểu chưa? Đi, thu nạp mười con ngàn dặm điêu ngươi muốn áp giải, sau đó xéo đi nhanh lên.&quot;</p>
+                <p>Giang Phàm không hiểu sao. Chớp chớp đôi mắt vô tội. Ta làm gì mà không hiểu sao lại bị giáo huấn một trận? Tâm tư nữ nhân thật khó lường!</p>
+                <p>Lắc đầu, hắn theo Cung Thải Y đi ra ngoài điện. Cung Thải Y đi phía trước, cơn đau lòng bàn tay không giảm mà còn tăng, khiến nàng âm thầm nhe răng. Mang theo giọng điệu oán trách: &quot;Ngươi rốt cuộc cảnh giới gì thế?&quot; Thế mà làm tay nàng bị thương thành thế này, thật là không có thiên lý.</p>
+                <p>Giang Phàm không giấu giếm nàng, nói: &quot;Trúc Cơ bảy tầng.&quot; Dừng một chút, lại nói: &quot;Không, đây là trước khi dùng Thổ Phượng thảo tủy. Hiện tại là Trúc Cơ tám tầng.&quot;</p>
+                <p>Cái gì?</p>
+                <p>Cung Thải Y đột nhiên cứng đờ, bước chân khựng lại, không dám tin quay người nhìn lại. Đôi mắt trợn tròn! Trúc Cơ bảy tầng? Một tháng trước, Giang Phàm trong trận đấu đệ tử mới ở Thanh Vân tông mới là Trúc Cơ bốn tầng mà thôi! Sao chớp mắt đã Trúc Cơ bảy tầng? Tốc độ tu hành gì nghịch thiên thế này?</p>
+                <p>Còn nữa! Dùng Thổ Phượng thảo tủy, hắn trực tiếp đột phá một cảnh giới? Mới hai canh giờ thôi sao? Loại linh vật bá đạo này không phải cần rất nhiều lần mới có thể tiêu hóa sao?</p>
+                <p>Giang Phàm đang băn khoăn bước đi, trong đầu khổ sở suy nghĩ vì sao vừa rồi Cung Thải Y lại giáo huấn mình, căn bản không đề phòng Cung Thải Y đột ngột dừng bước. Khi hắn phát hiện mũi chân Cung Thải Y, đầu đã va phải một khối mềm mại đầy đàn hồi. Hơi sững sờ một chút, hắn mới ý thức được điều gì, sợ hãi vội vàng lùi lại. Căn bản không dám nhìn mắt Cung Thải Y, quay mặt đi, không ngừng xin lỗi: &quot;Xin lỗi, vãn bối… không nhìn đường.&quot;</p>
+                <p>Trên thực tế, Cung Thải Y cũng không nhìn hắn. Ngọc dung lướt qua một luồng dị sắc, vội vàng quay người đi tiếp, giọng nói không tự nhiên: &quot;Đi, đi thôi.&quot; Nàng bất động thanh sắc đè lại ngực bị đụng tê dại, hơi hơi cau mày.</p>
+                <p>Rốt cuộc chuyện gì xảy ra thế này? Vì sao luôn xảy ra những chuyện không đúng lúc với Giang Phàm? Vô tình ôm hắn một cái cũng thôi đi, ngực bị hắn nhìn rõ ràng rồi. Hiện tại càng bị hắn… Mặc dù đều là vô tình, nhưng khiến Cung Thải Y có cảm giác hơi đè nén.</p>
+                <p>Giấu trong lòng cảm xúc khó hiểu, nàng dẫn Giang Phàm đến chân núi Linh Thú tông. Mười con tuấn mã mỗi con kéo một tấm ván gỗ rộng lớn có bánh xe. Mỗi tấm đều đặt riêng một con phi cầm màu đen cao bằng người. Mỏ nhọn màu vàng kim, cánh rộng sải trượng, móng vuốt sắc bén như mũi dao. Những con ngựa kéo nó đều cúi thấp đầu, không dám lên tiếng, rõ ràng bị uy hiếp.</p>
+                <p>&quot;Sư tôn, sư đệ.&quot; Viên Chỉ Ngọc chào đón.</p>
+                <p>Nàng hơi kinh ngạc phát hiện không khí giữa sư tôn và Giang Phàm có vẻ không đúng. Người trước mặt không biểu cảm, không có sự nhiệt tình vui vẻ thường ngày đối với Giang Phàm. Giang Phàm cũng giữ khoảng cách với Cung Thải Y. Nàng âm thầm hồ nghi. Lẽ nào giữa hai người xảy ra chuyện gì?</p>
+                <p>Đương nhiên, nàng cũng không dám hỏi. Chỉ có thể giả vờ như không thấy, nói với Giang Phàm: &quot;Giang sư đệ, đây là ngàn dặm điêu. Đây là chìa khóa xiềng xích chân chúng, ngươi giữ gìn cẩn thận.&quot; Nàng đưa một chùm chìa khóa cho Giang Phàm.</p>
+                <p>Lúc này, Giang Phàm mới phát hiện cổ chân mỗi con ngàn dặm điêu đều bị một sợi xích sắt huyền đen như mực trói buộc. Đây là để phòng ngàn dặm điêu giữa đường không nghe lệnh người ta, tự động bay đi.</p>
+                <p>&quot;Được rồi.&quot; Giang Phàm nhét nó vào ngực. Sau đó nhìn mười con ngựa, hơi lúng túng. Ba, bốn con hắn một mình khống chế được. Mười con, một khi gặp địch tập, hắn sẽ không thể chú ý hết.</p>
+                <p>Dường như nhìn ra sự lo lắng của hắn, Viên Chỉ Ngọc nhắc nhở: &quot;Sư đệ, nhiệm vụ này là tổ đội bốn người. Ngươi có thể đơn độc chấp hành, cũng có thể tìm thêm ba đồng đội. Không ảnh hưởng điểm chiến công của ngươi. Đáng tiếc, ta sớm có nhiệm vụ, nếu không nói gì cũng phải giành một suất đồng đội!&quot; Nàng lộ vẻ bất đắc dĩ lại hâm mộ.</p>
+                <p>Lúc này cổng sơn môn tụ tập không ít đệ tử Linh Thú tông. Càng có Tần Thải Hà, Sở Tinh Mộng chưa rời đi, lại có Dịch Liên Tinh muốn tiễn Giang Phàm. Thậm chí Lục Tinh Hà cũng còn ở chân núi. Nghe thấy lời này, Tần Thải Hà và Sở Tinh Mộng không khỏi động lòng. Đây là nhiệm vụ siêu cấp bốn trăm điểm công lao. Ai mà không động lòng chứ? Nhưng, đây xa xa không phải nhiệm vụ mà những đệ tử Trúc Cơ năm tầng như các nàng xứng đáng nhận. Cho nên hai người nhìn nhau cười khổ, mười phần tự biết thân phận đè nén ý nghĩ trong lòng.</p>
+                <p>Không ngờ, Giang Phàm nhìn quanh một vòng, thấy hai nữ liền vẫy tay: &quot;Sở sư muội, Tần sư tỷ, còn chờ gì? Qua giúp ta cùng nhau áp giải những con ngàn dặm điêu này đi.&quot;</p>
+                <p>Tần Thải Hà chỉ vào mình: &quot;Ngươi nói là, để chúng ta cũng tham gia nhiệm vụ này?&quot;</p>
+                <p>Sở Tinh Mộng trực tiếp khoát tay từ chối: &quot;Không nên không nên, chúng ta làm sao có tư cách? Giang sư đệ vẫn nên tìm kiếm đồng đội lợi hại đi.&quot;</p>
+                <p>Giang Phàm ôn hòa cười: &quot;Chúng ta không phải đồng đội sao? Tới đi.&quot;</p>
+                <p>Nhiệm vụ thưởng hậu như vậy, lại không lo lắng tìm không được đồng đội mạnh mẽ. Vấn đề là, chuyến đi này hung hiểm, người khác hắn không tin được. Tần Thải Hà và Sở Tinh Mộng là đồng đội cùng nhau đi tới, nhân phẩm có bảo đảm. Mặc dù thực lực hơi yếu một chút, nhưng các nàng có thể coi chừng ngàn dặm điêu là đủ rồi. Kẻ địch giao cho hắn là được.</p>
+                <p>Hai nữ do dự một chút, mới chậm rãi chuyển bước chân đi đến trước mặt Giang Phàm. Sở Tinh Mộng một mặt không tự tin: &quot;Giang sư huynh, ta… ta lo lắng mình gây trở ngại.&quot; Tần Thải Hà cũng chần chờ nói: &quot;Có muốn không, ngươi vẫn tìm người khác đi.&quot;</p>
+                <p>Giang Phàm không nói lời gì. Đưa Sở Tinh Mộng đến trước con ngựa thứ tư: &quot;Ngựa số bốn, năm, sáu, ngươi phụ trách.&quot; Sau đó, lại đưa Tần Thải Hà lên lưng con ngựa số bảy: &quot;Bốn con ngựa cuối cùng, ngươi phụ trách.&quot;</p>
+                <p>Sắp xếp xong phân công cho hai nữ, Giang Phàm chuẩn bị cáo từ. Lúc này, một thân ảnh do dự chạy tới, ngượng ngùng nói: &quot;Giang sư đệ, ta đây đâu? Ta cũng là thành viên trong đội chúng ta nha!&quot;</p>
+                <p>Người đến không ai khác, chính là Lục Tinh Hà! Nhìn thấy hai sư muội thực lực kém xa mình vậy mà lại nhận được nhiệm vụ siêu cấp bốn trăm điểm công huân, hắn ngồi không yên!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_257">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 257: Đạo lí đối nhân xử thế</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Vì vậy, Lục Tinh Hà đành nhẫn nhịn những ánh mắt khác thường, dày mặt đòi gia nhập đội.</p>
+                <p>Giang Phàm bình thản nhìn hắn, không chút do dự đáp: &quot;Ba người là đủ rồi. Lục sư huynh tự mình nhận nhiệm vụ đi thôi.&quot;</p>
+                <p>Hắn đang no đủ, hà cớ gì phải dẫn theo một kẻ đáng ghét để dọc đường làm mình khó chịu?</p>
+                <p>Lục Tinh Hà cuống quýt. Với thực lực của hắn, nhiều nhất chỉ có thể nhận nhiệm vụ cấp ba. Nhưng bất luận tông môn nào, nhiệm vụ cấp thấp đều không đủ điểm cho đệ tử của mình, sao lại còn cho một người ngoài như hắn? Dù có đi chăng nữa, cũng không đáng một phần trăm của nhiệm vụ trước mắt!</p>
+                <p>&quot;Giang sư đệ, chúng ta đều là đồng đội, ngươi không thể thiên vị thế chứ?&quot;</p>
+                <p>Vì bốn trăm điểm công huân, hắn chẳng màng sĩ diện, không ngại mất tấm mặt mo này.</p>
+                <p>Giang Phàm thấy buồn cười. Hắn không muốn so đo, vậy mà đối phương lại quấn lấy.</p>
+                <p>Lúc này, hắn lạnh lùng nói: &quot;Thân phận đồng đội của chúng ta chỉ giới hạn trong nhiệm vụ vừa rồi. Sớm đã kết thúc khi giao nhận. Huống chi, coi như ta có thiên vị, thì sao nào?&quot;</p>
+                <p>Nói đến đây, Lục Tinh Hà vẫn chưa từ bỏ ý định, hung dữ nói: &quot;Họ Giang, ngươi đừng quá đáng! Ta chẳng qua đắc tội ngươi bằng lời nói, cần gì phải bụng dạ hẹp hòi như vậy? Ngươi còn có phải là nam nhân không?&quot;</p>
+                <p>Giang Phàm hơi nheo mắt. Hắn xưa nay chỉ nói đạo lý với người biết lý lẽ. Kẻ ngang ngược, miệng lưỡi bẩn thỉu, chỉ cần nắm đấm là đủ.</p>
+                <p>Đang định ra tay thì Dịch Liên Tinh không nhịn nổi nữa, tức giận nói: &quot;Câm miệng! Ngươi không biết xấu hổ à?&quot;</p>
+                <p>Vô liêm sỉ đòi người khác dẫn đi, bị từ chối lại buông lời ác độc! Nàng thật sự xấu hổ vì có một người biểu đệ trơ trẽn như vậy.</p>
+                <p>Lục Tinh Hà khẽ nói: &quot;Chuyện của ta, ngươi bớt can thiệp vào! Hôm nay Giang Phàm không cho ta một lời giải thích, ta sẽ không bỏ qua!&quot;</p>
+                <p>Dịch Liên Tinh cảm thấy không còn chỗ nào để giấu mặt. Lục Tinh Hà quả thật đã phát huy sự trơ trẽn đến cực hạn. Từng thấy người chiếm tiện nghi, chưa từng thấy kẻ nào trắng trợn chiếm tiện nghi như thế.</p>
+                <p>Điều khiến nàng cảm thấy mặt nóng ran hơn là, Lục Tinh Hà còn mưu toan dây dưa với Giang Phàm? Hắn hoàn toàn không biết gì về thực lực của Giang Phàm!</p>
+                <p>Để Lục Tinh Hà không nói thêm gì nữa, Dịch Liên Tinh tức giận, bước nhanh xông tới.</p>
+                <p>Lục Tinh Hà biến sắc, quát: &quot;Ngươi làm gì...?&quot;</p>
+                <p>A!!</p>
+                <p>Vài tiếng kêu thảm thiết vang lên.</p>
+                <p>Lục Tinh Hà bị Dịch Liên Tinh đánh cho một trận tơi bời ngay trước mặt mọi người! Đánh đến mức mặt mũi bầm dập, liên tục cầu xin tha thứ nàng mới dừng tay.</p>
+                <p>&quot;Cút! Đồ mất mặt xấu hổ!&quot; Dịch Liên Tinh hầm hầm nói.</p>
+                <p>Lục Tinh Hà lúc này trong ngoài đều không ổn, nào còn dám dây dưa nữa? Chỉ còn biết ghen tị nhìn Tần Thải Hà và Sở Tinh Mộng, lòng đầy hối hận lủi thủi rời đi.</p>
+                <p>Dịch Liên Tinh thở hổn hển, mặt đầy áy náy đi đến trước mặt Giang Phàm, chắp tay nói:</p>
+                <p>&quot;Để Giang sư đệ chê cười rồi. Ta lập tức viết thư, bảo cậu ta quản giáo nó cho thật tốt. Càng ngày càng không ra thể thống gì.&quot;</p>
+                <p>Trong lòng nàng thầm thở dài.</p>
+                <p>Nhìn Tần Thải Hà và Sở Tinh Mộng, rồi lại nhìn Lục Tinh Hà. Đều là đồng đội của Giang Phàm, nhưng thu hoạch lại khác biệt như ngày và đêm.</p>
+                <p>Đúng như nàng đã nói với Lục Tinh Hà trước đây, biểu đệ đã bỏ lỡ một cơ duyên rồi!</p>
+                <p>Chẳng qua, nàng không ngờ, lời này lại ứng nghiệm nhanh đến vậy!</p>
+                <p>Giang Phàm nói: &quot;Theo hắn đi.&quot;</p>
+                <p>Dịch Liên Tinh trong lòng càng thêm thở dài.</p>
+                <p>Nhìn độ lượng của Giang Phàm, rồi nhìn Lục Tinh Hà. Đơn giản là không thể so sánh.</p>
+                <p>Nàng chắp tay nói: &quot;Vậy thì chúc Giang sư đệ thuận buồm xuôi gió.&quot;</p>
+                <p>Nhìn Tần Thải Hà và Sở Tinh Mộng trên lưng ngựa, nàng từ đáy lòng ngưỡng mộ.</p>
+                <p>Đây chính là nhiệm vụ cấp siêu cấp với bốn trăm điểm công huân. Phần lớn đệ tử, sau khi thú triều kết thúc, chưa chắc đã có thể kiếm được nhiều như vậy.</p>
+                <p>Hai cô nương may mắn này, chỉ vì được Giang Phàm ưu ái, liền nhất phi trùng thiên.</p>
+                <p>&quot;Dịch sư tỷ không đi cùng ta sao?&quot;</p>
+                <p>Có thể, Giang Phàm lại đột nhiên hỏi.</p>
+                <p>Dịch Liên Tinh bất ngờ, kinh ngạc nói: &quot;Ta? Giang sư đệ mời ta cùng đi?&quot;</p>
+                <p>Điều này khiến các đệ tử Linh Thú tông ngạc nhiên không thôi. Ánh mắt nhảy qua nhảy lại giữa Viên Chỉ Ngọc và Dịch Liên Tinh.</p>
+                <p>Giang Phàm không phải có quan hệ tốt hơn với Viên Chỉ Ngọc sao? Sao lại nhường suất cuối cùng quý giá cho Dịch Liên Tinh? Hai người họ đâu có hợp nhau!</p>
+                <p>Trong lòng Viên Chỉ Ngọc nhất thời nổi lên sự phiền muộn khó chịu, nhìn Giang Phàm với ánh mắt hơi tủi thân.</p>
+                <p>Nói về quen biết, mình quen Giang Phàm sớm hơn Dịch Liên Tinh nhiều. Nói về tình bạn, mình biết Giang Phàm gặp rắc rối là người đầu tiên chạy tới.</p>
+                <p>Thế mà, có cơ hội tốt như vậy, Giang Phàm lại nghĩ đến đối thủ của mình là Dịch Liên Tinh.</p>
+                <p>Nàng có cảm giác bị phản bội.</p>
+                <p>Ai ngờ, giọng nói Giang Phàm đột nhiên chuyển hướng, hỏi ngược lại: &quot;A? Dịch sư tỷ, Viên sư tỷ không nói cho ngươi biết sao? Viên sư tỷ đã dặn ta, nhường suất cuối cùng lại cho ngươi. Nàng không thông báo cho ngươi sao?&quot;</p>
+                <p>Viên Chỉ Ngọc sững sờ. Ai muốn cầu xin suất cho Dịch Liên Tinh chứ? Nàng há miệng định bác bỏ Giang Phàm, nhưng bị Cung Thải Y bất động thanh sắc ngăn lại.</p>
+                <p>Dịch Liên Tinh cũng ngạc nhiên, lắp bắp nói: &quot;Viên sư tỷ đã cầu xin suất cho ta?&quot;</p>
+                <p>Nàng không tin nhìn Viên Chỉ Ngọc.</p>
+                <p>Giang Phàm ngữ trọng tâm trường nói:</p>
+                <p>&quot;Viên sư tỷ nói, thú triều sắp đến, không ai biết trong số những người đang ngồi đây, cuối cùng còn bao nhiêu người có thể gặp lại nhau. Có chút ân oán vướng mắc, nên nhanh chóng hóa giải đi, để tránh không lưu lại tiếc nuối.&quot;</p>
+                <p>Đừng nói là Dịch Liên Tinh, ngay cả các đệ tử bên cạnh cũng cảm động.</p>
+                <p>Đúng vậy, đại nạn sắp đến. Người đang ở ngay trước mắt, tương lai có thể là một thi thể lạnh băng. Ân oán ngày xưa, chẳng qua là một luồng khói thoảng qua.</p>
+                <p>Dịch Liên Tinh chấn động trong lòng. Cảm giác hổ thẹn to lớn dâng lên.</p>
+                <p>Nàng làm sao cũng không ngờ, Viên Chỉ Ngọc nhỏ hơn mình, nhưng lại hơn mình trong việc nghĩ đến tình đồng môn.</p>
+                <p>Khẽ mím môi đỏ, nàng đi đến trước mặt Viên Chỉ Ngọc, sửa lại vạt áo hành lễ, dịu dàng nói:</p>
+                <p>&quot;Viên sư muội, trước đây sư tỷ có rất nhiều điều không phải, xin nhận cúi đầu của sư tỷ.&quot;</p>
+                <p>Viên Chỉ Ngọc thụ sủng nhược kinh, nhanh chóng dìu nàng đứng dậy.</p>
+                <p>&quot;Sư tỷ đừng làm vậy với muội. Thực ra, chuyện suất...&quot;</p>
+                <p>Nàng muốn nói ra sự thật, nhưng thấy Giang Phàm ra hiệu ngăn lại. Đành mặt dày nhận lấy, hổ thẹn nói: &quot;Sư muội cũng có một chút không phải. Ta cũng xin lỗi ngươi.&quot;</p>
+                <p>Hai người nhìn nhau, ánh mắt nhìn về phía đối phương đã hòa hoãn hơn rất nhiều, không còn vẻ đối chọi gay gắt như trước.</p>
+                <p>Hai người đều là người tâm cao khí ngạo. Nếu không có thời cơ thích hợp, e rằng cả đời này đều không thể hòa hợp.</p>
+                <p>Nhưng bây giờ, lại được Giang Phàm mượn cơ hội hóa giải ân oán. Đợi thú triều đến, giữa họ không còn khoảng cách, tự nhiên sẽ hợp tác hài hòa, nâng cao hy vọng sống sót.</p>
+                <p>Giang Phàm từ đáy lòng vui mừng.</p>
+                <p>Chuyển mắt nhìn về phía Cung Thải Y, trong ánh mắt có một tia phức tạp. Trang nghiêm chắp tay nói: &quot;Tông chủ, ta đi đây! Người tốt nhất bảo trọng thân thể.&quot;</p>
+                <p>Vốn là lời chào tạm biệt thường tình, nghe vào tai Cung Thải Y lại có cảm giác thương cảm của người quen đang cáo biệt.</p>
+                <p>Nàng quơ quơ ống tay áo, dịu dàng nói: &quot;Dọc đường cẩn thận.&quot;</p>
+                <p>Giang Phàm gật đầu, điều khiển đội xe, chậm rãi rời đi.</p>
+                <p>Cung Thải Y đứng ở cổng sơn môn. Nhìn chăm chú vào bóng dáng Giang Phàm dần khuất xa, trong lòng không hiểu sao trống rỗng.</p>
+                <p>Có cảm giác tịch liêu, tẻ nhạt sau khi pháo hoa lụi tàn.</p>
+                <p>Viên Chỉ Ngọc khẽ thở dài: &quot;Nhận một phần nhân tình của Giang sư đệ. Đều là người cùng thế hệ, nhưng nhân tình thế thái của hắn thâm sâu hơn ta nhiều.&quot;</p>
+                <p>Hiểu được dụng tâm lương khổ của Giang Phàm khi hóa giải ân oán giữa hai người, nàng không khỏi cảm khái.</p>
+                <p>Chẳng qua nửa ngày không nhận được hồi đáp từ sư tôn, quay đầu nhìn lại, liền thấy nàng đang ngẩn ngơ nhìn theo bóng Giang Phàm, thất thần.</p>
+                <p>Trước khi Giang Phàm đến, Cung Thải Y bình thản như nước, ít khi cười. Từ khi hắn đến, nàng vui vẻ thấy rõ.</p>
+                <p>Lại liên tưởng đến trạng thái vi diệu của hai người trước đây, Viên Chỉ Ngọc mơ hồ hiểu rõ điều gì đó. Do dự một lát, nàng khẽ hỏi:</p>
+                <p>&quot;Sư tôn, người có lẽ là thích Giang Phàm?&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_258">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 258: Quân sinh ta đã già</h2>
+            </header>
+            <div class="chapter-content">
+                <p>&quot;Ông!&quot;</p>
+                <p>Cung Thải Y run bắn người, linh lực trong cơ thể chấn động không kiểm soát, phát ra tiếng vù vù khẽ. Nàng đột nhiên quay đầu, thấp giọng quát: &quot;Nói bậy bạ gì đó! Bản tông là nhất tông chi chủ, Giang Phàm chỉ là một vãn bối! Sao lại có ý nghĩ bẩn thỉu này?&quot;</p>
+                <p>Khi nhận ra Viên Chỉ Ngọc sợ đến run rẩy, nàng mới ý thức được tâm tình mình đang mất kiểm soát. Hít thở sâu vài lần, nàng giấu đi vẻ thất thố. Nhìn chăm chú vào bóng Giang Phàm đã khuất dạng, nàng đứng lặng hồi lâu mới lẳng lặng quay người.</p>
+                <p>Với giọng chỉ đủ cho Viên Chỉ Ngọc nghe thấy, nàng u u thở dài: &quot;Nếu như trẻ lại mười tuổi... có lẽ sẽ đi.&quot;</p>
+                <p>Lại nói về Giang Phàm.</p>
+                <p>Hai ngày sau, họ thuận lợi đến biên giới phía tây Linh Thú tông. Một Trường Giang rộng vài dặm chặn ngang đường tiến. Phóng tầm mắt nhìn tới, sóng cuộn vỗ bờ, nước lũ đục ngầu chảy xiết khiến người nhìn mà sợ.</p>
+                <p>Sở Tinh Mộng thở dài: &quot;Đây là Nộ Giang sao? Nghe đồn sâu không thấy đáy, rộng chừng mười dặm. Dù là Cửu Tông chi chủ cũng chỉ có thể đi thuyền mà qua.&quot;</p>
+                <p>Người hiểu rõ nhất về điều này đương nhiên là Dịch Liên Tinh. Nàng khẽ gật chiếc cằm trắng tuyết, hướng Giang Phàm giới thiệu: &quot;Nộ Giang là ranh giới giữa Linh Thú tông và Hợp Hoan tông. Vượt qua là địa phận Hợp Hoan tông. Phía trước có bến đò do võ đạo thế gia nơi đó quản lý, chúng ta thuê một thuyền lớn là có thể dễ dàng qua sông.&quot;</p>
+                <p>Giang Phàm ngắm nhìn, quả nhiên thấy bến đò không xa bên bờ sông, vài bóng thuyền lờ mờ hiện rõ. Hắn lập tức thúc ngựa, dẫn đội ngũ rầm rộ tiến tới. Đến nơi mới phát hiện, cạnh bến đò cũng có một đội ngũ lớn. Thật không may, đó chính là Minh U Liên và Phó Triều Quân đã xuất phát trước. Họ đang chờ người lái thuyền sắp xếp ngựa lên thuyền, còn mình thì nghỉ ngơi trong lương đình.</p>
+                <p>Thấy người đến là Giang Phàm, Phó Triều Quân cười khẩy: &quot;Nha, vận khí không tệ nha. Một đường bình an đến đây.&quot;</p>
+                <p>Giang Phàm thản nhiên đáp: &quot;Vẫn là lo cho hai trăm điểm công lao của mình đi.&quot;</p>
+                <p>Một câu nói lập tức đâm trúng chỗ mẫn cảm của Phó Triều Quân. Cùng là chấp hành nhiệm vụ cấp một, cùng đối mặt nguy hiểm, nhiệm vụ của Giang Phàm có thưởng bốn trăm điểm công lao, còn hắn chỉ có hai trăm. Ai mà chịu nổi?</p>
+                <p>Phó Triều Quân đập mạnh chén trà xuống bàn đá, làm nó vỡ tan. &quot;Ở Linh Thú tông có Cung Thải Y bao che, ngươi muốn ngang tàng thế nào cũng được! Ở ngoài, ngươi cho ta thành thật một chút!&quot;</p>
+                <p>Giang Phàm bình tĩnh kéo cương ngựa, không những không sợ, ngược lại còn cưỡi ngựa đi thẳng tới. Hắn liếc nhìn Minh U Liên đang làm ngơ, để mặc đệ tử mình la lối, thản nhiên nói: &quot;Vẫn câu nói cũ. Muốn kiếm chuyện, ta phụng bồi!&quot;</p>
+                <p>&quot;Phanh!&quot;</p>
+                <p>Phó Triều Quân vỗ đổ chiếc bàn đá trước mặt, đột nhiên đứng dậy, cười giận dữ: &quot;Ta thấy ngươi là muốn chết!&quot;</p>
+                <p>Hắn đã cảnh cáo Giang Phàm, vậy mà hắn không sợ, ngược lại còn tiến đến trước mặt! Quả thật không coi hắn ra gì!</p>
+                <p>&quot;Âm vang!&quot;</p>
+                <p>Hắn vừa động, Tần Thải Hà và Sở Tinh Mộng đều rút kiếm, thúc ngựa tới bên cạnh Giang Phàm. Dịch Liên Tinh cũng cưỡi ngựa tới, nhíu mày nhìn Phó Triều Quân, khẽ hừ: &quot;Ngươi còn chưa rời khỏi địa phận Linh Thú tông đã dám càn rỡ như vậy! Đến địa phận Hợp Hoan tông, có phải chuẩn bị giết Giang Phàm, phá hỏng trách nhiệm hộ tống ngàn dặm điêu?&quot;</p>
+                <p>Họ càng che chở Giang Phàm, Phó Triều Quân càng tức giận. Linh lực trong cơ thể cuồn cuộn, hắn khinh thường nói: &quot;Nhiều người thì sao? Một đám lính tôm tướng cua cũng dám khiêu chiến ta Phó Triều Quân?&quot;</p>
+                <p>Thấy hắn quyết tâm gây sự ở đây, Giang Phàm rút hắc kiếm ra, chỉ về phía hắn: &quot;Được thôi, để ngươi hết hy vọng!&quot;</p>
+                <p>Nếu không, hắn sẽ luôn cho rằng mình dễ bị bắt nạt, dây dưa không ngừng nghỉ.</p>
+                <p>Nhưng ngay khi hai bên giương cung bạt kiếm, căng thẳng tột độ, Minh U Liên giả vờ như không nghe thấy, thấy sự việc làm lớn chuyện, cuối cùng lên tiếng. &quot;Hướng Quân, chấp nhặt với bọn họ làm gì?&quot;</p>
+                <p>Nếu chỉ có mâu thuẫn với Giang Phàm thì không có gì, chỉ là ân oán cá nhân. Nói cho cùng cũng không phải chuyện gì lớn. Nhưng đệ tử của ba tông khác đều tham gia vào, mùi vị liền thay đổi. Thứ nhất là đồng thời đắc tội ba tông. Thứ hai, bốn người họ đang áp tải ngàn dặm điêu liên quan đến chiến cuộc. Nếu đánh họ bị nguy hiểm đến tính mạng, nhiệm vụ không thể hoàn thành, Thiên Cơ các một khi giáng tội, Phó Triều Quân chạy được không? Đại trưởng lão dung túng đệ tử hành hung như hắn chạy được không?</p>
+                <p>&quot;Nhưng Đại trưởng lão, tiểu tử này quá không biết sống chết!&quot; Phó Triều Quân không cam lòng nói.</p>
+                <p>Minh U Liên thong thả nói: &quot;Tranh cãi miệng lưỡi tính là gì? Hắn bình an vượt sông rồi nói sau.&quot;</p>
+                <p>Phó Triều Quân lúc này mới tỉnh ngộ. Hắn thu lại linh lực, lộ vẻ cười trên nỗi đau của người khác: &quot;Suýt nữa quên nói cho các ngươi biết. Nộ Giang gần đây không yên ổn, không biết từ đâu đến một đám thủy yêu thú lợi hại. Chúng gây sóng gió, lật đổ không ít thuyền bè qua lại. Không có cường giả trấn thủ, căn bản không qua được.&quot;</p>
+                <p>Giang Phàm nhìn về phía dòng sông cuộn sóng, ánh mắt lộ vẻ nghi hoặc. Dịch Liên Tinh cũng không tin lắm: &quot;Đoạn sông này, Linh Thú tông ta đã càn quét qua không biết bao nhiêu lần. Nếu có yêu thú, chúng ta lại không rõ sao?&quot;</p>
+                <p>Tuy nhiên, rất nhanh nàng nhận thấy vài chiếc thuyền bỏ neo bên bờ. Trên mạn thuyền, lờ mờ nhìn thấy từng vết vuốt, vài chiếc thậm chí còn có lỗ thủng lớn. Con ngươi nàng co lại, phóng ngựa tới chiếc thuyền có lỗ thủng để kiểm tra. Không lâu sau, nàng nghiêm túc cầm một chiếc răng nanh dài bằng cánh tay, quay về trước mặt Giang Phàm.</p>
+                <p>&quot;Giang sư đệ, chúng ta e rằng phải đi đường vòng.&quot;</p>
+                <p>Nàng đưa chiếc răng nanh trắng ngà ra cho Giang Phàm xem. Sở Tinh Mộng đặt cánh tay mình bên cạnh so sánh, run rẩy nói: &quot;Răng dài bằng cánh tay? Yêu thú này cực kỳ lợi hại!&quot;</p>
+                <p>&quot;Đây chỉ là răng của ấu thể.&quot; Dịch Liên Tinh nói. &quot;Thể trưởng thành, răng còn dài hơn người trưởng thành. Một ngụm có thể cắn đứt đôi chiếc thuyền cỡ trung. Hơn nữa hành động hung mãnh, đi lại như điện. Nếu không có võ giả cấp bậc Kết Đan trung kỳ trở lên đồng hành, rất khó đối phó.&quot;</p>
+                <p>Nói xong, nàng im lặng chờ Giang Phàm hỏi thêm về thông tin yêu thú này. Nếu nói về hiểu biết về yêu thú, Cửu Tông ai có thể so sánh với Linh Thú tông? Đây chính là lĩnh vực nàng am hiểu nhất, là lúc thể hiện giá trị của mình.</p>
+                <p>Tuy nhiên, điều nàng không ngờ tới là Giang Phàm cầm chiếc răng nhìn lướt qua, rồi lẩm bẩm: &quot;Trong Nộ Giang lại có Xích Lân Ác Giao. Loài thú này cực kỳ hung ác, lại đúng vào lúc này là thời khắc chúng giao phối. Hơi có động tĩnh là dễ dàng chọc giận chúng. Muốn qua sông, quả thật không dễ dàng.&quot;</p>
+                <p>&quot;Ách...&quot; Dịch Liên Tinh không tin vào tai mình. Giang Phàm vậy mà nhận ra nguồn gốc chiếc răng? Hơn nữa, còn biết lúc này là thời khắc chúng giao phối? Điểm này, nàng là tinh anh Linh Thú tông còn là lần đầu nghe nói. Nàng run rẩy hồi lâu, hơi cảm thấy thất bại: &quot;Không ngờ, Giang sư đệ cũng có tìm hiểu về lĩnh vực yêu thú. Yêu Tinh bái phục.&quot;</p>
+                <p>Cách đó không xa, Phó Triều Quân nhíu mày. Sao cái tên họ Giang này cái gì cũng biết?</p>
+                <p>Nhưng thế này cũng tốt. Biết Xích Lân Ác Giao lợi hại, lời tiếp theo dễ nói. Hắn tự đắc nói: &quot;Dựa vào chính ngươi, không thể vượt sông đâu. Ta rộng lượng một lần, để Đại trưởng lão của chúng ta tiện đường đưa ngươi cùng qua sông. Tuy nhiên, ngươi phải thể hiện chút gì đó mới được. Bình thổ Phượng thảo tủy đó, ta rất thích, coi như phí bảo hộ hộ tống các ngươi đi. Thế nào?&quot;</p>
+                <p>Giang Phàm cắm hắc kiếm vào vỏ, ý vị sâu xa nói: &quot;Hộ tống ta? Hay là ta hộ tống các ngươi, đáng tin cậy hơn một chút!&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_259">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 259: Ti tiện</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Đừng nói U Liên cùng Phó Triều Quân, ngay cả Dịch Liên Tinh, Tần Thải Hà và Sở Tinh Mộng ba người cũng kinh ngạc há hốc mồm. Giang Phàm một Trúc Cơ cảnh, lại muốn hộ tống một cường giả đương thế cảnh giới Kết Đan hậu kỳ? Chuyện đùa gì vậy?</p>
+                <p>Dịch Liên Tinh khẽ nói: &quot;Giang sư đệ, nói như vậy có ổn không?&quot; Nàng là đồng đội, còn cảm thấy lời này quá hoang đường.</p>
+                <p>Giang Phàm bình tĩnh đáp: &quot;Thực lực võ giả dù cao thế nào, khi xuống nước cũng giảm bớt sát thương đi nhiều.&quot; Hắn nói tiếp: &quot;Ngược lại Xích Lân Ác Giao, vào mùa giao phối chúng sẽ thức tỉnh một loại thiên phú sóng âm khủng khiếp trong thời gian ngắn. Ngay cả cường giả Kết Đan hậu kỳ gặp phải cũng rất khó giải quyết.&quot;</p>
+                <p>Nửa câu đầu, Dịch Liên Tinh rất đồng tình. Cường giả nhân loại chỉ có thể phát huy toàn bộ thực lực khi đối đầu với yêu thú trên cạn. Trên không và dưới nước thì khó mà phát huy được sát thương vốn có, bởi nhiều công pháp không thể công kích hiệu quả khi yêu thú bay trên trời hoặc lặn dưới nước.</p>
+                <p>Nửa câu sau, nàng tỏ ra nghi ngờ. Xích Lân Ác Giao là loại yêu thú rất hiếm, nàng cũng chỉ vô tình đọc được vài dòng trong điển tịch, nhưng không thấy mô tả về thiên phú sóng âm. Không lẽ Giang Phàm, một người ngoại đạo, lại hiểu biết hơn mình, một người trong nghề? Nàng còn không tin, huống chi là Phó Triều Quân?</p>
+                <p>&quot;Ha ha ha! Ngươi bảo hộ chúng ta?&quot; Phó Triều Quân nghe như chuyện cười lớn. &quot;Giang Phàm à Giang Phàm, rốt cuộc là gì khiến ngươi có được sức mạnh như vậy?&quot; Hắn nói tiếp: &quot;Lại nói ra lời hoang đường vô song như thế!&quot;</p>
+                <p>Minh U Liên lão mặt trầm xuống, liếc xéo Giang Phàm: &quot;Tiểu bối, ta gặp qua kẻ vũ nhục người, nhưng chưa thấy ai vũ nhục người như ngươi!&quot; Lão nói: &quot;Bảo hộ ta? Chê cười!&quot; Hắn nói tiếp: &quot;Vậy lão phu rửa mắt chờ xem, nhìn ngươi vượt sông thế nào!&quot; Rồi hắn gọi: &quot;Hướng Quân, chúng ta đi!&quot;</p>
+                <p>Đoàn xe của họ đã được xếp lên đội thuyền, chuẩn bị xong xuôi. Phó Triều Quân khinh miệt liếc Giang Phàm, nói: &quot;Đáng tiếc thật, ngươi đã bỏ qua cơ hội vượt sông duy nhất!&quot; Hắn hừ hừ: &quot;Ngoan ngoãn đi đường vòng đi thôi!&quot;</p>
+                <p>Theo cánh buồm nâng lên, thuyền của họ từ từ tiến về mặt sông mênh mông.</p>
+                <p>Dịch Liên Tinh khẽ thở dài. Giá mà hai bên không căng thẳng thế này thì tốt biết bao. Bây giờ, họ chỉ còn cách đi đường vòng mất thêm nửa tháng hành trình.</p>
+                <p>Thế nhưng, Giang Phàm lại nói: &quot;Mượn một chiếc thuyền, chúng ta cũng lên đường đi.&quot;</p>
+                <p>&quot;A?&quot; Dịch Liên Tinh giật mình: &quot;Thế này có nguy hiểm không?&quot; Nàng không dám tưởng tượng, nếu không có võ giả mạnh mẽ trấn giữ, vạn nhất Xích Lân Ác Giao trưởng thành đột kích thì sao? Đó là tồn tại chỉ cần một ngụm là cắn đứt đôi chiếc thuyền.</p>
+                <p>Giang Phàm lấy ra một bình thuốc đỏ lớn, chia cho ba nữ mỗi người hai mươi viên. &quot;Thứ này gọi Ba Bước Say, có sức hấp dẫn cực lớn đối với yêu thú.&quot; Hắn giải thích: &quot;Sau khi ăn, yêu thú sẽ hôn mê trong vài hơi thở. Lát nữa nếu có yêu thú, các ngươi ném viên thuốc này xuống nước, chúng sẽ tự tranh đoạt.&quot;</p>
+                <p>Đối với Ba Bước Say, Giang Phàm vẫn rất tự tin. Dù sao ngay cả Tiểu Kỳ Lân, một loại thiên địa linh thú, cũng trúng chiêu. Yêu thú bình thường làm sao có thể ngăn cản sự dụ hoặc của nó?</p>
+                <p>Ba nữ nửa tin nửa ngờ nhận lấy.</p>
+                <p>Không lâu sau, họ mượn được một chiếc thuyền lớn, sắp xếp mười chiếc xe ngựa lần lượt lên thuyền rồi cũng trương buồm xuất phát. Sở Tinh Mộng phụ trách cầm lái. Tần Thải Hà thì tay cầm viên thuốc đỏ, thấp thỏm bất an tuần tra khắp mạn thuyền, quan sát tình hình xung quanh.</p>
+                <p>Dịch Liên Tinh cũng không nhàn rỗi. Như ảo thuật, nàng từ tay áo lấy ra hai con Hắc Ưng to bằng bàn tay, mắt sáng ngời có thần. Chúng rất linh tính, sau khi trao đổi với Dịch Liên Tinh vài câu, liền bay lên không trung, lượn quanh đội thuyền. &quot;Nếu dưới nước có điều bất thường, linh thú của ta sẽ kịp thời thông báo cho ta.&quot; Dịch Liên Tinh chấp tay sau lưng, nhưng trên mặt không mấy vẻ nhẹ nhàng.</p>
+                <p>Giang Phàm khoanh chân ngồi ở mũi thuyền. Một thanh hắc kiếm nằm ngang trên hai đầu gối, toàn thân linh lực không ngừng vận chuyển, như một bảo khí đang chờ phát động. Tất cả mọi người đều căng thẳng tinh thần, không dám thở mạnh.</p>
+                <p>Chỉ nghe thấy tiếng thuyền lướt qua mặt sông ục ục, cùng tiếng bọt nước vỗ mạn thuyền phần phật. Bất tri bất giác, họ đã vượt qua khúc nước sâu, từ từ hướng về phía bờ. Đứng ở đầu thuyền có thể nhìn rõ bến tàu bên bờ sông. Nhìn kỹ, thậm chí còn có thể phát hiện bóng người lờ mờ đang hoạt động phía trên.</p>
+                <p>Dịch Liên Tinh đang căng thẳng bỗng hơi thả lỏng: &quot;Xem ra vận khí của chúng ta rất tốt, không gặp Xích Lân Ác Giao.&quot; Nàng nói tiếp: &quot;Loại Giao này thích gây sóng gió ở chỗ sâu, hiện tại chúng ta đã vượt qua chỗ sâu nhất.&quot; Nàng kết luận: &quot;Nếu không có chuyện ngoài ý muốn, là an toàn.&quot;</p>
+                <p>Tần Thải Hà và Sở Tinh Mộng căng thẳng đến mỏi nhừ, cuối cùng cũng thả lỏng. Tần Thải Hà cười nói: &quot;Xích Lân Ác Giao chưa tới, chúng ta lại tự mình sợ hãi trước.&quot; Sở Tinh Mộng cũng hít sâu vài hơi, tâm tình bình tĩnh lại. Nàng đứng trên boong thuyền, nhìn xa hơn so với họ.</p>
+                <p>Đột nhiên, nàng hơi nghi hoặc: &quot;Cảm giác của ta sai sao?&quot; Nàng nói tiếp: &quot;Tại sao ta cảm giác như sắp đuổi kịp thuyền của Phó Triều Quân rồi?&quot;</p>
+                <p>Dịch Liên Tinh và Tần Thải Hà ngẩng đầu nhìn theo. Quả nhiên thấy đoàn thuyền của Phó Triều Quân càng ngày càng rõ. Mặt sông rộng lớn như vậy, tầm mắt không bị cản trở. Ngay từ khi họ xuất phát, họ đã nhìn thấy đoàn thuyền của Phó Triều Quân. Tuy nhiên, lúc đó nhìn lại, thuyền của Phó Triều Quân nhỏ bé như kiến hôi. Hai bên cách nhau rất xa.</p>
+                <p>Nhưng lúc này, thuyền của Phó Triều Quân chỉ cách đó ngoài một dặm. Hai bên đều là thuyền buồm, dựa vào gió mà đi, tốc độ hẳn là như nhau mới đúng. Sao lại càng đuổi càng gần?</p>
+                <p>&quot;Đi vòng qua!&quot; Đúng lúc này, Giang Phàm ở đầu thuyền vụt đứng dậy, gấp giọng nói.</p>
+                <p>Sở Tinh Mộng ngẩn người, vẻ mơ hồ thay đổi hướng thuyền, nghi ngờ nói: &quot;Nhưng, bến tàu ngay trước mặt mà.&quot; Dịch Liên Tinh và Tần Thải Hà cũng lộ vẻ không hiểu. Mắt thấy sắp tới bờ rồi, tự nhiên chuyển hướng làm gì?</p>
+                <p>Giang Phàm trầm giọng nói: &quot;Không phải chúng ta nhanh, là họ gặp biến cố, không thể đi tiếp!&quot;</p>
+                <p>Biến cố? Ba nữ đang thả lỏng thần kinh, đột nhiên lại căng lên. Trong đầu đồng thời hiện lên một ý nghĩ! Xích Lân Ác Giao! Phó Triều Quân và đồng đội bị Xích Lân Ác Giao tấn công!</p>
+                <p>Sở Tinh Mộng run rẩy, vội vàng bẻ bánh lái, làm đội thuyền chệch hướng so với đường ray ngay phía trước.</p>
+                <p>Không lâu sau, họ vòng qua phía bên trái đoàn thuyền của Phó Triều Quân. Cách nhau mấy trăm trượng. Lúc này đã có thể nhìn rõ tình hình trên đoàn thuyền! Cột buồm bị hư hại, buồng nhỏ trên tàu bị đụng nát. Từng thớt ngựa bị hung vật không rõ xé nát thành mảnh vụn, vương vãi khắp nơi, ruột gan tung tóe. Yêu thú bị áp giải càng thê thảm hơn, bị ngược sát. Vô số dòng máu theo boong thuyền chảy xuống nước, nhuộm đỏ một vùng quanh đoàn thuyền!</p>
+                <p>Cảnh tượng kinh hoàng đó khiến con ngươi ba nữ co thắt lại! Càng làm họ tim đập loạn hơn chính là, một chiếc đùi ngựa trôi nổi trong dòng máu, đột nhiên bị vật không rõ kéo xuống, tóe lên một làn sóng lớn. Ngay sau đó, sóng nước rung động, bọt nước sủi bọt, rõ ràng có vật đang tranh giành chiếc đùi ngựa!</p>
+                <p>Dịch Liên Tinh kinh hô: &quot;Xích Lân. . . Ngô. . .&quot;</p>
+                <p>Giang Phàm kịp thời bịt miệng nàng, sau đó làm động tác im lặng với Tần Thải Hà và Sở Tinh Mộng đang kinh sợ. Hắn vô cùng khẽ nói: &quot;Xích Lân Ác Giao chủ yếu dựa vào thính giác, đừng gây động tĩnh.&quot; Hắn giục: &quot;Nhân lúc chúng chưa phát hiện, mau lên!&quot;</p>
+                <p>Sở Tinh Mộng kìm nén nỗi sợ hãi trong lòng, nắm chặt bánh lái, giữ cho đội thuyền tiến lên đều đặn và nhanh chóng. Mắt thấy họ dần rời xa đoàn thuyền của Phó Triều Quân, mà đám Xích Lân Ác Giao vẫn quanh quẩn trong dòng máu quanh đoàn thuyền, cả đám dần thở phào. Cứ đà này, họ có thể thoát khỏi kiếp nạn.</p>
+                <p>Thế nhưng, đúng lúc họ sắp an toàn, trong khoang thuyền bị tàn phá kia, một cái đầu người cẩn thận nhô ra. Rõ ràng là Phó Triều Quân đang trốn! Hắn phát hiện thuyền của Giang Phàm và đồng đội, mừng rỡ quá đỗi, vội vàng vẫy tay!</p>
+                <p>Tần Thải Hà phát hiện, khẽ hô: &quot;Phó Triều Quân còn sống!&quot; Nàng hỏi: &quot;Có muốn cứu họ không?&quot;</p>
+                <p>Không đợi Giang Phàm mở miệng, Dịch Liên Tinh đã quả quyết nói: &quot;Không muốn sống nữa sao?&quot; Nàng nói tiếp: &quot;Đội thuyền bị phá hủy thành thế này, rõ ràng trưởng lão Minh U Liên trấn giữ cũng vô dụng, thậm chí ông ấy bây giờ sống chết thế nào cũng không biết!&quot; Nàng kết luận: &quot;Chúng ta đi qua, không phải không tốt sao?&quot;</p>
+                <p>Giang Phàm lạnh nhạt nói: &quot;Tiếp tục đi, đừng dừng lại.&quot; Nếu họ là bạn bè như trước đây, xem xét việc đều chống lại thú triều, hắn cũng sẽ thử cứu viện một chút. Nhưng họ chỉ có ác ý với Giang Phàm. Vậy Giang Phàm dựa vào cái gì phải mạo hiểm tính mạng cứu họ?</p>
+                <p>Trong khoang thuyền đổ nát, Phó Triều Quân nhìn đoàn thuyền của Giang Phàm tiếp tục đi xa, không hề dừng lại, đột nhiên nổi giận: &quot;Ngươi dám thấy chết không cứu?&quot; Hắn nói: &quot;Tốt! Ta chết, ngươi cũng đừng nghĩ được yên!&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_260">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 260: Ba bước say lập đại công</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Hắn lấy ra một cái ống trúc loại hình pháp khí. Nhắm chuẩn đội thuyền của Giang Phàm, dùng sức hất lên!</p>
+                <p>&quot;Thu!&quot;</p>
+                <p>Một tiếng bén nhọn, viên đạn đen như mực mang theo tiếng tàn vang kinh người, cấp tốc đụng vào đội thuyền của Giang Phàm.</p>
+                <p>&quot;Phanh!&quot;</p>
+                <p>Va chạm ngay lập tức, viên đạn phát ra tiếng nổ mạnh cực lớn, đồng thời làm đội thuyền bốc cháy. Những hung vật dưới nước đang vây quanh đội thuyền tàn phá, lập tức bị tiếng nổ hấp dẫn. Chỉ thoáng cái, dưới nước sủi lên liên miên bọt nước!</p>
+                <p>Từng cái bóng màu đỏ sậm hung tợn ẩn hiện dưới nước, cấp tốc phóng về phía đội thuyền của Giang Phàm!</p>
+                <p>Phóng tầm mắt nhìn tới, mặt sông tựa như bị đun sôi, thanh thế cực kỳ hạo đại.</p>
+                <p>Phó Triều Quân nhìn xem đội thuyền của Giang Phàm dần dần bị vây quanh, hừ lạnh nói: &quot;Đừng trách ta! Ai bảo ngươi không cứu ta sao?&quot;</p>
+                <p>Hắn cúi đầu nhìn về phía Minh U Liên đang nằm trên mặt đất, sắc mặt tái nhợt như tờ giấy. Giờ khắc này, cánh tay phải của nàng bị cắn đứt, máu chảy không ngừng. Lồng ngực càng bị cào ra vết trảo khủng bố, nhìn rõ cả phủ tạng!</p>
+                <p>&quot;Sư tôn, ta đi tìm người cứu ngươi, ngươi chờ ở tại đây.&quot; Phó Triều Quân nhấc chân bước lên, muốn thừa dịp Xích Lân Ác Giao bị hấp dẫn mà mau chóng tới bờ.</p>
+                <p>Không ngờ, lại bị Minh U Liên bắt lấy mắt cá chân, yếu ớt nói: &quot;Đừng bỏ lại ta.&quot;</p>
+                <p>Mặc dù cực độ suy yếu, nhưng ý thức của nàng vẫn tỉnh táo, hiểu rõ Phó Triều Quân muốn vứt bỏ nàng mà chạy.</p>
+                <p>Phó Triều Quân vừa vội vừa giận. Minh U Liên chết thì chết, tuổi đã cao, chết cũng không tiếc. Nhưng mình là một đời kỳ tài, sao có thể chết ở chỗ này?</p>
+                <p>Làm sao Minh U Liên tóm hắn rất chặt, hắn chỉ đành bất đắc dĩ đỡ nàng dậy. Lặng lẽ cởi ra thuyền gỗ dự phòng trên thuyền, mang theo Minh U Liên thận trọng hướng bến tàu chèo tới.</p>
+                <p>Một bên khác, Giang Phàm và đám người lâm vào nguy hiểm cực lớn.</p>
+                <p>Vô số Xích Lân Ác Giao nhanh như tia chớp lao tới, từ bốn phương tám hướng hung hăng đụng vào thuyền.</p>
+                <p>&quot;Phanh!&quot;</p>
+                <p>Lập tức đội thuyền run rẩy dữ dội, mấy người suýt chút nữa bị hất tung xuống đất! Ba nữ sắc mặt ảm đạm, nhất thời hoảng loạn, thét lên liên tục.</p>
+                <p>May mà Giang Phàm vẫn trấn định, liên tục ra lệnh: &quot;Sở Tinh Mộng dập lửa! Tần Thải Hà, Dịch Liên Tinh, nắm Ba Bước Say rải khắp nơi trên thuyền!&quot;</p>
+                <p>Hắn thì nhảy lên cột buồm, từ trên cao quan sát tình hình dưới nước. Chỉ thấy từng đầu cự ngạc màu đỏ sậm dài năm trượng ẩn hiện trong nước. Trên người chúng có lớp vảy dày, cái đuôi cứng cáp, đầy gai ngược. Trong con ngươi mờ đục tràn ngập vẻ tàn bạo. Rõ ràng là Xích Lân Ác Giao! Hơn nữa, đang trong kỳ giao phối, chúng càng thêm hung ác. Lúc này đang điên cuồng va chạm, gặm cắn đội thuyền, cố gắng nhấn chìm nó.</p>
+                <p>&quot;Còn tốt đều là ấu thể.&quot; Giang Phàm quan sát một lượt, khẽ thở phào. Nếu là thành thục thể, hình thể của chúng còn lớn hơn thuyền con của bọn họ, một ngụm liền có thể cắn nát thuyền!</p>
+                <p>Lúc này, Tần Thải Hà đã trong lòng run sợ nắm Ba Bước Say rải khắp nơi. Theo mùi thuốc dần dần phát ra, Xích Lân Ác Giao dưới nước lập tức bị hấp dẫn, dồn dập dừng tấn công, tranh nhau bò lên thuyền, tham lam tìm kiếm Ba Bước Say. Sau khi phát hiện liền lập tức ngụm lớn hút vào miệng, sau đó lại tiếp tục tìm kiếm.</p>
+                <p>Không ít Xích Lân Ác Giao thậm chí còn chưa tranh đoạt được Ba Bước Say đã cắn xé lẫn nhau! Ba nữ kinh hồn táng đảm trốn trong khoang thuyền, không dám thở mạnh, sợ bị Xích Lân Ác Giao phát hiện, đánh vỡ buồng nhỏ trên tàu.</p>
+                <p>Nhưng điều khiến các nàng kinh hỉ như điên chính là, quả như Giang Phàm nói, Xích Lân Ác Giao ăn Ba Bước Say, ba hơi sau liền phảng phất ngất đi, nằm rạp trên mặt đất dần dần không động đậy. Chỉ còn lại vài con Xích Lân Ác Giao lẻ tẻ còn đang khắp nơi tìm kiếm.</p>
+                <p>Giang Phàm thấy thế, thả người nhảy xuống, hắc kiếm trong tay dùng sức đâm vào con ngươi Xích Lân Ác Giao, thẳng tới chỗ sâu trong đầu, sau đó dùng sức khuấy động. Con Xích Lân Ác Giao đang hôn mê liền ngay tại chỗ chết đi.</p>
+                <p>Ba nữ thấy thế, cũng lập tức tỉnh ngộ. Nhanh chóng lấy ra pháp khí, bắt chước Giang Phàm đâm vào mắt Xích Lân Ác Giao. Chỉ thấy từng con Xích Lân Ác Giao kèm theo run rẩy, ngay tại chỗ chết đi.</p>
+                <p>Không bao lâu, hơn hai mươi con Xích Lân Ác Giao bò lên thuyền đều bị chém giết. Điều này khiến ba nữ mừng rỡ như điên.</p>
+                <p>Dịch Liên Tinh liên tục kinh ngạc nói: &quot;Giang sư đệ, đó là linh dược gì của ngươi vậy, thần kỳ như thế?&quot;</p>
+                <p>Là đệ tử Linh Thú tông, nàng hiểu biết về dược dùng cho linh thú vượt xa người thường. Nhưng chưa từng nghe nói có dược hoàn thần kỳ như thế. Xích Lân Ác Giao hung ác như vậy, ăn một viên liền lập tức hôn mê.</p>
+                <p>Giang Phàm không rảnh giải thích, nói: &quot;Nắm thi thể kéo về buồng nhỏ trên tàu, sau đó lại lấy tài liệu! Tiếp tục rải lên Ba Bước Say. Xích Lân Ác Giao còn có!&quot;</p>
+                <p>Trên thực tế, hắn lo lắng nhất vẫn là con Xích Lân Ác Giao khiến Minh U Liên sống chết không rõ. Nếu nó hiện thân, chiếc thuyền này liền không giữ được. Nhất định phải xử lý hết ấu thể Xích Lân Ác Giao trước khi nó xuất hiện, bằng không tất cả mọi người sẽ lâm vào nguy hiểm.</p>
+                <p>Mọi người lập tức làm theo. Không bao lâu, trên thuyền lại rải đầy Ba Bước Say. Sở Tinh Mộng thì lái đội thuyền, cấp tốc tiến về bến tàu.</p>
+                <p>Những con Xích Lân Ác Giao kia tiếp tục bị Ba Bước Say dẫn dụ, nhảy lên thuyền gặm ăn. Kết quả cũng giống như lần trước, tất cả sau khi hôn mê đều bị bọn hắn dùng kiếm đâm chết. Cứ thế lặp lại năm sáu lần, cuối cùng, xung quanh đội thuyền hoàn toàn yên tĩnh, không còn một con Xích Lân Ác Giao nào.</p>
+                <p>Trên thuyền, boong tàu, buồng nhỏ trên tàu, tất cả đều chất đầy thi thể Xích Lân Ác Giao. Máu tươi nhuộm đỏ đội thuyền, dòng máu lớn chảy xuống nước, nhuộm đỏ cả nửa mặt sông.</p>
+                <p>Rất nhanh, bọn hắn đã tới bến tàu.</p>
+                <p>Tâm trạng căng thẳng của Giang Phàm cuối cùng cũng buông xuống. Con Xích Lân Ác Giao lợi hại kia không biết vì duyên cớ nào, không đuổi theo.</p>
+                <p>Ba nữ sống sót sau tai nạn, ôm nhau hoan hô. Ai có thể nghĩ tới, các nàng vậy mà có thể còn sống lên bờ? Nhưng các nàng rất rõ ràng, lần này có thể tuyệt xử phùng sinh, không phải là các nàng may mắn, mà là chuyến này có Giang Phàm trấn giữ! Không có Giang Phàm chỉ huy, không có công lao của Ba Bước Say, các nàng sớm đã thành thức ăn của bầy Xích Lân Ác Giao.</p>
+                <p>Dịch Liên Tinh ánh mắt sáng rực nhìn về phía Giang Phàm, nhịn không được than thở nói: &quot;Ta xem như hiểu rõ, vì sao tông chủ lại ưu ái Giang sư đệ có thừa. Giang sư đệ quả thật rất khiến người ta mê muội a.&quot;</p>
+                <p>Tần Thải Hà trêu ghẹo nói: &quot;Vậy ngươi có thể phải xếp hàng. Có rất nhiều nữ tử mê muội Giang sư đệ đó. Có phải vậy không, Sở sư muội?&quot;</p>
+                <p>Sở Tinh Mộng mặt đỏ lên, mở to đôi mắt vô tội, yếu ớt chống lại: &quot;Tần sư muội, ngươi nói chính mình thì nói chính mình đi, kéo ta vào làm gì?&quot;</p>
+                <p>Người trong cuộc là Giang Phàm, đang lùa ngựa lên bờ. Nghe các nàng lấy mình ra trêu chọc, tức giận nói: &quot;Các ngươi việc sống đều làm xong rồi đúng không?&quot;</p>
+                <p>Ba nữ quen thuộc cười một tiếng, nhanh chóng giúp đỡ. Người đánh xe ngựa thì đánh xe ngựa, người kéo Xích Lân Ác Giao thì kéo Xích Lân Ác Giao.</p>
+                <p>Trọn vẹn sau nửa canh giờ, mới thành công mang đồ vật lên bờ.</p>
+                <p>Dịch Liên Tinh xoa xoa mồ hôi trên trán, nhìn đội xe hoàn hảo không chút tổn hại, cùng với hơn năm mươi cỗ thi thể yêu thú quý giá, tâm tình thật tốt: &quot;Cuối cùng cũng kết thúc!&quot;</p>
+                <p>Nhưng, Giang Phàm lại thản nhiên nói: &quot;Kết thúc? Còn chưa đâu!&quot; Thanh âm hắn phát lạnh, ánh mắt sắc bén nhìn về phía bến tàu cách đó không xa.</p>
+                <p>Dịch Liên Tinh theo ánh mắt hắn nhìn lại, lập tức hai mắt phun lửa! Bởi vì, nàng nhìn thấy một người! Một người đã hãm hại bọn hắn suýt chết dưới nước!</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_51.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_51.html" class="page-btn">51</a>
+            <a href="page_52.html" class="page-btn current">52</a>
+            <a href="page_53.html" class="page-btn">53</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_53.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

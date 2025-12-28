@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 265">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 265</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_264.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_266.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_1321">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1321: Gương bụi và điên ý</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Bồ Tát?</p>
+                <p>Giang Phàm khẽ rùng mình.</p>
+                <p>Thái Thương Đại Châu có Tứ Hóa Thần và một Bồ Tát. Bồ Tát là người đầu tiên Giang Phàm tiếp xúc, nhưng đến nay vẫn chưa từng đối mặt trực diện.</p>
+                <p>Từ đầu đến cuối, Bồ Tát luôn mang đến cho Giang Phàm một cảm giác duy nhất: thâm bất khả trắc!</p>
+                <p>Chân dung không rõ, thân thế không rõ, thậm chí thực lực cũng là một ẩn số.</p>
+                <p>Đối mặt với Tứ Hóa Thần, Giang Phàm sẽ không còn cảm thấy ngạt thở như lần đầu gặp Tôn Giả nữa.</p>
+                <p>Duy chỉ có Bồ Tát là ngoại lệ.</p>
+                <p>“Phàm đệ, có phải đệ gặp rắc rối rồi không?” Bích Lạc nhận ra thần sắc Giang Phàm có gì đó không ổn.</p>
+                <p>Giang Phàm cất ngọc giản đi, lắc đầu nói: “Chỉ có thể nói là tạm thời không sao.”</p>
+                <p>Tiếp Thiên Hắc Trụ vẫn còn ở gần Bạch Mã Tự, Bồ Tát tạm thời sẽ không động đến hắn.</p>
+                <p>Đợi khi dời Tiếp Thiên Hắc Trụ đi, thì chưa chắc đã yên.</p>
+                <p>Trong lòng hắn không khỏi dấy lên một cảm giác cấp bách.</p>
+                <p>Thái Thương Đại Châu hiện giờ không chỉ có Bồ Tát, mà còn có Tâm Nghiệp Tôn Giả, Ma Nữ, thậm chí cả Lục Châu.</p>
+                <p>Bọn họ có thể đến Thiên Cơ Các bất cứ lúc nào.</p>
+                <p>Mà thực lực hiện tại của mình, không đủ để đối phó với bọn họ.</p>
+                <p>“Nhất định phải nhanh chóng tăng cường thực lực mới được!”</p>
+                <p>Trong lòng suy tư, hắn đã đến trước mật thất.</p>
+                <p>Hắn quay đầu dặn dò: “Bích tỷ, tỷ cũng về đi.”</p>
+                <p>“Sau này cố gắng ít ra ngoài, tỷ đã là Bát Khiếu Nguyên Anh rồi, không thể tùy tiện đi lại bên ngoài nữa.”</p>
+                <p>Bích Lạc mặt đỏ bừng, lần phong ý này của nàng, coi như đã gây họa lớn.</p>
+                <p>Trong lòng áy náy, nàng ghé lại gần, hạ giọng nói:</p>
+                <p>“Nếu đệ có cô gái nào mà không giải quyết được, cứ dẫn đến trước mặt ta, ta sẽ giúp các ngươi gạo nấu thành cơm!”</p>
+                <p>Nói xong, nàng mím môi cười trộm rồi chạy biến.</p>
+                <p>Giang Phàm dở khóc dở cười.</p>
+                <p>“Phong ý của Bích tỷ, hơi quá giới hạn rồi đấy.”</p>
+                <p>Hắn không khỏi nghĩ đến đạo của mình.</p>
+                <p>“Ta đã là Thất Khiếu Nguyên Anh, nhưng đạo của ta vẫn chưa rõ ràng.”</p>
+                <p>Khẽ cau mày, Giang Phàm bước vào mật thất, kiểm tra xung quanh, xác nhận không có vấn đề gì mới đóng lại cửa đá.</p>
+                <p>Sau khi khoanh chân ngồi xuống, hắn lấy ra Vấn Tâm Thủy Tinh để soi chiếu bản thân.</p>
+                <p>“Không biết sau một loạt trải nghiệm này, liệu có đạo mới xuất hiện không.”</p>
+                <p>Dưới sự soi chiếu, trong gương hiện lên một bóng người Giang Phàm.</p>
+                <p>Vung tay áo, sơn hà đại địa trước người như một bức tranh bị xé nát, cuốn vào hư vô.</p>
+                <p>Đồng thời, thân thể Giang Phàm cũng xuất hiện những vết nứt lớn.</p>
+                <p>Đồng tử Giang Phàm chấn động: “Không Gian Chi Đạo!”</p>
+                <p>“Chắc là do ta đã lĩnh ngộ được bản nguyên không gian, uy lực của lĩnh vực này rất đáng sợ.”</p>
+                <p>“Nếu vận dụng đúng cách, e rằng không thua kém bản nguyên thời gian của Tử Giáng Hoàng Nữ.”</p>
+                <p>“Nhưng nhược điểm rất nghiêm trọng, khi xé rách thiên địa, bản thân cũng sẽ chịu phản phệ của lực lượng không gian.”</p>
+                <p>Sau khi xem xét các đạo mà mọi người tu luyện, Giang Phàm đã sớm phát hiện ra lĩnh vực là một con dao hai lưỡi.</p>
+                <p>Khi vận dụng lĩnh vực, bản thân cũng sẽ phải chịu đựng lĩnh vực đó.</p>
+                <p>Ví dụ đơn giản nhất chính là Chân Ngôn Tôn Giả.</p>
+                <p>Nàng có thể khiến người khác nói ra lời thật, cái giá phải trả là bản thân tuyệt đối không thể nói dối.</p>
+                <p>Nếu không, lĩnh vực sẽ bị tổn hại, nghiêm trọng hơn có thể sụp đổ ngay lập tức.</p>
+                <p>Không Gian Chi Đạo trước mắt cũng vậy, muốn phát huy uy lực của lĩnh vực không gian, bản thân cũng phải có khả năng chịu đựng được sự tổn hại từ lực lượng không gian.</p>
+                <p>Nếu không, lĩnh vực bị tổn hại, còn sẽ làm thương tổn đến bản thân.</p>
+                <p>Thể phách hiện tại của Giang Phàm, không thể đạt đến trình độ không sợ sự xâm lấn của lực lượng không gian.</p>
+                <p>Vì vậy, Không Gian Chi Đạo trước mắt, chưa chắc đã thích hợp với hắn.</p>
+                <p>“Rốt cuộc ta nên đi con đường nào đây?” Giang Phàm khổ sở thở dài.</p>
+                <p>Lâu sau, hắn lắc đầu: “Thôi vậy, trước tiên cứ tu luyện 《Đại Diễn Kiếm Trận》và《Phạn Thánh Chân Linh Công》đã.”</p>
+                <p>“Có thời gian rồi từ từ suy nghĩ, xem mình nên đi con đường Hóa Thần nào.”</p>
+                <p>Vài ngày sau. Tẩy Nguyệt Hồ.</p>
+                <p>Chân Ngôn Tôn Giả ngồi trước linh trì, ngắm nhìn những con Tần Nguyên Linh Ngư bơi lội qua lại trong đó, khẽ ngẩn người.</p>
+                <p>Nàng như đang suy nghĩ điều gì, lúc thì mím chặt đôi môi đỏ, lúc thì ôm mặt giậm chân thình thịch.</p>
+                <p>Khiến lũ cá trong ao hoảng loạn bỏ chạy.</p>
+                <p>“Sư tôn, người đang nghĩ đến Giang Phàm sao?”</p>
+                <p>Trần Kính Thượng Nhân đến phía sau nàng, bình tĩnh hỏi.</p>
+                <p>Chân Ngôn Tôn Giả khẽ chấn động thân thể, nhưng không trả lời hắn.</p>
+                <p>Mà hỏi lại: “Gần đây tu hành thế nào?”</p>
+                <p>Trần Kính Thượng Nhân đáp: “Cũng ổn.”</p>
+                <p>“Còn sư tôn? Người đã trừng phạt Giang Phàm chưa?”</p>
+                <p>Chân Ngôn Tôn Giả cau mày.</p>
+                <p>Kể từ lần trước, Trần Kính Thượng Nhân bắt gặp nàng và Giang Phàm trên giường, hắn ta cứ mở miệng là nhắc đến Giang Phàm.</p>
+                <p>Nàng không quay đầu lại nói: “Chuyện của vi sư, không cần ngươi bận tâm.”</p>
+                <p>Lần này đi cắt &#039;mạng căn&#039; Giang Phàm không thành, ngược lại còn bị hắn chiếm hai món hời lớn.</p>
+                <p>Một lần bị nhìn hết. Một lần bị sờ hết!</p>
+                <p>Điều khiến nàng khó nói hơn là, còn bị phụ thân ban cho hôn ước.</p>
+                <p>Nghĩ đến đây, nàng gần như phát điên.</p>
+                <p>Trần Kính Thượng Nhân nói: “Vậy là không có rồi sao?”</p>
+                <p>“Sư tôn miệng thì nói Giang Phàm đáng ghét, nhưng khi thực sự tìm thấy Giang Phàm, lại không ra tay được.”</p>
+                <p>“Sư tôn, người và hắn ngủ chung giường, thật sự là mất trí nhớ sao?”</p>
+                <p>Ánh mắt Chân Ngôn Tôn Giả bỗng trở nên sắc bén.</p>
+                <p>Chuyện ngày hôm đó đối với nàng mà nói, chính là một cái gai trong lòng.</p>
+                <p>Trần Kính Thượng Nhân không chỉ cố ý nhắc đến, còn vu khống nàng giả vờ mất trí nhớ để leo lên giường Giang Phàm!</p>
+                <p>Vốn dĩ đã phát điên vì chuyến đi Hỗn Nguyên Châu, trong lòng nàng càng thêm tức giận.</p>
+                <p>Nàng tùy tiện vung tay áo. Trần Kính Thượng Nhân lập tức bị đánh bay ra ngoài, đập vào cột đá.</p>
+                <p>Cột đá lập tức nứt ra những vết rạn nhỏ, Trần Kính Thượng Nhân miệng đầy máu.</p>
+                <p>Mãi đến lúc này, Chân Ngôn Tôn Giả mới nhận ra mình đã mất kiểm soát cảm xúc, nhưng đã quá muộn. Nàng chỉ có thể giữ vẻ uy nghiêm, khẽ quát:</p>
+                <p>“Ngươi hỗn xược!”</p>
+                <p>“Sao dám nói chuyện với vi sư như vậy!”</p>
+                <p>Trần Kính Thượng Nhân trước đây, đối với nàng luôn vô cùng cung kính.</p>
+                <p>Từ khi bắt gặp nàng và Giang Phàm nằm chung giường, hắn ta dần dần thay đổi.</p>
+                <p>Trần Kính Thượng Nhân bò dậy, lau máu ở khóe miệng, trong mắt mang theo một chút thê lương:</p>
+                <p>“Vì một Giang Phàm, sư tôn lại đánh ta.”</p>
+                <p>“Được, ta hiểu rồi.”</p>
+                <p>“Ta chỉ là một đệ tử, sao sánh bằng người nằm cạnh gối của sư tôn!”</p>
+                <p>Chân Ngôn Tôn Giả vươn tay ra, muốn giải thích, nhưng Hỗn Nguyên Châu đã xảy ra quá nhiều chuyện.</p>
+                <p>Mối quan hệ giữa nàng và Giang Phàm, đã đến mức có nói cũng không thể giải thích rõ ràng.</p>
+                <p>Và thấy Chân Ngôn Tôn Giả, ngay cả giải thích cũng không có, Trần Kính Thượng Nhân càng thêm nguội lạnh trong lòng.</p>
+                <p>Nhìn sư tôn thân hình yểu điệu, dung nhan thanh lệ tuyệt mỹ, trong lòng Trần Kính Thượng Nhân dâng lên ngọn lửa ghen tỵ.</p>
+                <p>Giang Phàm cướp đi nửa thanh Khai Khiếu Thần Đinh thuộc về hắn, cướp đi muội muội Nam Cung Tiểu Vân của hắn vẫn chưa đủ.</p>
+                <p>Bây giờ, còn cướp đi sư tôn của hắn!</p>
+                <p>Dựa vào đâu mà Giang Phàm có thể cướp đi?</p>
+                <p>Trong mắt hắn xẹt qua một tia hung lệ, trầm giọng nói: “Đệ tử lần này xuất quan, muốn thỉnh cầu sư tôn, được phép ra ngoài du lịch.”</p>
+                <p>“Xin sư tôn cho phép.”</p>
+                <p>Chân Ngôn Tôn Giả trong lòng có chút hổ thẹn, nói: “Ngươi hãy cẩn thận.”</p>
+                <p>Trần Kính Thượng Nhân gật đầu: “Đệ tử cáo từ.”</p>
+                <p>Nhìn Trần Kính Thượng Nhân dùng trận pháp truyền tống rời đi, Chân Ngôn Tôn Giả khổ sở ôm trán.</p>
+                <p>“Giang Phàm, đều tại ngươi!”</p>
+                <p>“Quan hệ sư đồ tốt đẹp của chúng ta, bị ngươi hại thành ra thế này sao?”</p>
+                <p>Đúng lúc này. Chân Ngôn Tôn Giả phát hiện, linh trì trước mặt có chút kỳ lạ.</p>
+                <p>Một trận gió thổi tới, nhưng những đợt sóng lại hướng về phía ngược lại!</p>
+                <p>Kỳ lạ hơn nữa, những con Tần Nguyên Linh Ngư trong nước lại đang bơi ngược!</p>
+                <p>Nhìn lại xung quanh. Những con sâu trên cây lao về phía chim, chim vội vàng bay trốn.</p>
+                <p>Tòa tháp cao trắng như tuyết phản chiếu trong Tẩy Nguyệt Hồ, không biết từ lúc nào đã hoàn toàn đảo ngược.</p>
+                <p>Toàn bộ thế giới, trừ Chân Ngôn Tôn Giả ra, đều chìm vào sự vặn vẹo quỷ dị.</p>
+                <p>Chân Ngôn Tôn Giả đột ngột đứng dậy, trong đôi mắt đẹp dâng lên sự kinh ngạc: “Đây là ‘phong ý’!”</p>
+                <p>“Phong ý của Trần Kính!”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1322">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1322: Tông chủ Giang thật là thơm ngát</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Chân Ngôn Tôn Giả tinh mâu khẽ run lên:&quot;Như vậy, hắn chỉ trong hơn một tháng ngắn ngủi, từ Ngũ Khiếu Nguyên Anh đã khôi phục đến Bát Khiếu?&quot;&quot;Hơn nữa, còn bước ra một con đường Hóa Thần hoàn toàn mới, khác với trước kia?&quot;</p>
+                <p>Nàng ta mãi vẫn không thể bình phục cảm xúc trong lòng. Trên ngọc dung hiện lên một tia hổ thẹn.&quot;Hắn xuất quan gặp ta, là muốn khoe thành quả bế quan sao?&quot;&quot;Thế mà ta lại vì Giang Phàm mà xao nhãng, đến mức ngay cả việc hắn đã khôi phục đến Bát Khiếu Nguyên Anh cũng không hề hay biết.&quot;&quot;Khiến ta không những không khen ngợi hắn, mà còn ra tay đánh hắn.&quot;</p>
+                <p>Nghĩ đến đây, nàng khẽ cắn răng bạc: &quot;Giang Phàm, ngươi đúng là đồ tai họa chết tiệt!&quot;&quot;Mối quan hệ sư đồ giữa ta và Trần Kính sắp bị ngươi phá tan rồi.&quot;&quot;Ta muốn vạch rõ giới hạn với ngươi!&quot;</p>
+                <p>Tiên Vân Môn, một tông môn nhỏ.</p>
+                <p>Phụt một tiếng — Một cái đầu lăn lông lốc trên mặt đất, máu vương vãi, lăn vài vòng mới từ từ dừng lại. Trong đôi mắt đầy sợ hãi của nó, phản chiếu lại một cảnh tượng như địa ngục.Cả tông môn ngập tràn thi thể. Có kẻ bị treo trên cột đá, có kẻ bị đánh chết trên mái nhà, lại có kẻ nằm la liệt trên bậc thang. Máu tươi chói mắt hội tụ thành dòng sông, nhuộm đỏ quảng trường rộng lớn. Thịt nát xương tan, vương vãi khắp nơi.</p>
+                <p>Giữa biển máu núi thây, một lão nhân mặc hắc bào, tay đầy máu, mặt mũi âm trầm đứng đó. Hắn bóp chặt cổ Tiên Vân Môn chủ, giọng nói lạnh lùng, tựa như vọng ra từ địa ngục.&quot;Ta hỏi lần cuối, Vương Xung Tiêu ở đâu?&quot;</p>
+                <p>Tiên Vân Môn chủ hai tay bị xé đứt, bụng vỡ toác, tóc tai rũ rượi, mặt đầy máu. Hiển nhiên đã phải chịu đựng vô vàn tra tấn. Hắn ta phát ra tiếng cầu xin tuyệt vọng: &quot;Vương Xung Tiêu của Tiên Vân Môn chúng ta, chỉ là trùng tên với người ngài muốn tìm mà thôi!&quot;&quot;Mà hắn, đã bị ngài giết rồi.&quot;&quot;Vương Xung Tiêu mà ngài muốn tìm, ta thực sự không biết.&quot;</p>
+                <p>Tâm Nghiệt Tôn Giả ánh mắt lạnh lùng. Hắn khẽ dùng sức, cổ của Tiên Vân Môn chủ liền bị vặn đứt.Hắn vứt bỏ đầu lâu, vung vẩy vạt áo rũ bỏ vết máu, nhìn những thi thể nằm la liệt trên mặt đất, nhàn nhạt nói:&quot;Ta cũng bị ép buộc mà thôi, Thiếu Đế cho ta thời gian chỉ còn năm ngày.&quot;&quot;Ta chỉ có thể thà giết nhầm một ngàn chứ không bỏ sót một ai.&quot;</p>
+                <p>Hắn nhìn quanh một lượt, xác định Tiên Vân Môn đã bị diệt toàn bộ, không ai có thể tố cáo với Đại Tế Tửu. Lúc này, hắn mới nheo mắt lại, nhìn về phía Thiên Cơ Các.&quot;Tên đệ tử ký danh của ta, chỉ giỏi nói mà không làm, hắn sẽ không nghĩ, đồ của ta dễ lấy như vậy chứ?&quot; Giữa hai lông mày của hắn, sát khí nhảy nhót.Giang Phàm miệng thì nói sẽ huy động nhân lực Đại Âm Tông giúp hắn tìm kiếm Vương Xung Tiêu. Nhưng hoàn toàn không có bất kỳ động thái nào. Giờ đây, thời hạn cuối cùng mà Thiếu Đế ban cho sắp hết, Giang Phàm vẫn chưa có hành động gì. Hắn có cảm giác bị lừa dối.</p>
+                <p>Tâm niệm vừa động, hắn liền dịch chuyển tức thời, bay về phía Thiên Cơ Các.</p>
+                <p>Cùng lúc đó, tại Đại Âm Tông.Phùng Viễn Tông đang vắt chéo chân, lắng nghe các đệ tử báo cáo nhiệm vụ.&quot;Phùng sư đệ, đại trận hộ tông đã kiểm tu xong xuôi.&quot;&quot;Linh đan chữa thương, các loại bùa chú cũng đã được dự trữ đạt mức tối đa.&quot;&quot;Cuối cùng, âm thi được tông môn tích trữ nhiều năm cũng đã được kiểm tra toàn bộ, chỉ chờ Giang tông chủ trở về là sẽ phân phối cho chúng ta.&quot;</p>
+                <p>Phùng Viễn Tông lúc này, rõ ràng đã ra dáng tân tông chủ của Đại Âm Tông. Trong thời gian Giang Phàm vắng mặt, hắn ra lệnh cho toàn tông môn.Nghe hai điều đầu, hắn hài lòng gật đầu, rất hưởng thụ cảm giác chỉ huy toàn tông. Chỉ là khi nghe đến điều cuối cùng, lông mày hắn nhíu chặt thành cục:&quot;Giang tông chủ cái quái gì? Hắn ta chỉ đi qua cho có lệ thôi, các ngươi còn coi là thật sao?&quot;&quot;Từ nay về sau không được phép xưng hô cái gì Giang tông chủ nữa, Đại Âm Tông có ta và các trưởng lão là đủ rồi!&quot;&quot;Không đến lượt Giang Phàm lên tiếng!&quot;</p>
+                <p>Sư huynh bị răn dạy một trận, ngượng ngùng nói: &quot;Vâng, Phùng sư đệ.&quot;</p>
+                <p>Đúng lúc này, trên bầu trời Đại Âm Tông bỗng nhiên mây đen cuồn cuộn, vừa nãy còn là ban ngày, chớp mắt đã tối đen như mực. Ngay sau đó, mây đen co lại, hóa thành sáu vị tồn tại toàn thân ma khí ngút trời, sau đầu ẩn hiện thần hoàn màu đen.Khí tức phát ra từ bọn họ, tựa như những con sóng hủy diệt thế gian. Phùng Viễn Tông đang nằm thoải mái, thân thể run lên bần bật, lập tức lăn từ ghế nằm xuống đất. Hắn ngẩng đầu nhìn sáu thân ảnh vĩ đại kia, hít một hơi khí lạnh:&quot;Hóa Thần Tôn Giả?&quot;&quot;Sáu vị Hóa Thần Tôn Giả?&quot;</p>
+                <p>Các Bát Khiếu Nguyên Anh của Đại Âm Tông đều vội vã chạy ra, đồng loạt lộ vẻ kinh hãi.&quot;Là Ma Đạo Tôn Giả của Đại Hoang Châu!&quot;&quot;Sao, sao lại có nhiều Ma Đạo Tôn Giả như vậy đến Đại Âm Tông chúng ta?&quot;&quot;Là ai đã chọc giận bọn họ?&quot;</p>
+                <p>Không trách bọn họ lại đoán như vậy. Bởi vì sắc mặt của sáu vị Ma Đạo Tôn Giả, không hề tỏ ra thân thiện cho lắm. Ai mà bị &quot;tự nguyện&quot; đến &quot;chăm sóc&quot; tông môn của Giang Phàm thì cũng chẳng có tâm trạng tốt đẹp gì.</p>
+                <p>Vô Dục Tôn Giả và Hồng Trần Tôn Giả, hai vị Tôn Giả Thiên Nhân Nhị Suy dẫn đầu hạ xuống. Vô Dục Tôn Giả miễn cưỡng nặn ra một nụ cười:&quot;Đây là Đại Âm Tông phải không?&quot;</p>
+                <p>Một lão giả Bát Khiếu Nguyên Anh nuốt khan một tiếng, run rẩy nói: &quot;Chính, chính là Đại Âm Tông, xin hỏi tiền bối Tôn Giả có gì chỉ giáo?&quot;Vô Dục Tôn Giả lại nói: &quot;Giang tông chủ có ở đây không?&quot;</p>
+                <p>Là tìm Giang Phàm sao? Chẳng lẽ là tai họa do Giang Phàm gây ra? Phùng Viễn Tông vội vàng chen lời: &quot;Bẩm tiền bối Tôn Giả, Giang tông chủ không có ở trong môn.&quot;</p>
+                <p>Nghe vậy, Hồng Trần Tôn Giả vô cùng thất vọng: &quot;Không có ở đây sao?&quot;&quot;Ta còn muốn bị hắn cưỡng ép giày vò đây, thật đáng tiếc.&quot;</p>
+                <p>Vô Dục Tôn Giả thu lại nụ cười, khẽ hừ một tiếng: &quot;Không có ở đây thì tốt nhất.&quot;&quot;Ta còn không muốn gặp hắn đâu.&quot;</p>
+                <p>Nói đoạn, hắn tùy tiện vung tay, ba chiếc trận bàn khắc đầy cổ ngữ hiện ra trong lòng bàn tay. &quot;Đây là đại trận phòng ngự của Ma Uyên ta, mỗi mặt đều có thể chặn đứng một đòn Hóa Thần.&quot;&quot;Ba chiếc trận bàn này, coi như là chút tâm ý của Ma Uyên ta dành cho Đại Âm Tông.&quot;&quot;Ngươi cứ thay Giang tông chủ của các ngươi mà nhận lấy.&quot;</p>
+                <p>Có ba chiếc trận bàn này, có thể ngăn chặn ba đòn trực diện của Cổ Cự Nhân Vương. Tuyệt đối là chí bảo khó cầu trong thời điểm hiện tại.</p>
+                <p>Hồng Trần Tôn Giả không tình nguyện lấy ra một chiếc túi gấm, nói: &quot;Vốn dĩ muốn đặt bên gối Giang tông chủ, nhưng giờ ngươi cứ giữ hộ vậy.&quot;&quot;Bên trong là Hồng Trần Huyễn Âm của Vạn Ma Quật ta, sau khi phóng thích, có thể khiến ngay cả Tôn Giả cũng sinh ra ảo giác, mê mất trong đó.&quot;</p>
+                <p>Đây cũng là một bảo vật tuyệt thế dùng để chống lại Cự Nhân Vương.</p>
+                <p>Bốn vị Tôn Giả còn lại thấy vậy, đều &quot;tự nguyện&quot; hào phóng móc túi.Nhìn từng món trọng bảo trong tay, Phùng Viễn Tông điên cuồng nuốt nước bọt. Những thứ này, những thứ này đều là cho Đại Âm Tông sao?</p>
+                <p>Ngay khi hắn chuẩn bị nhận lấy, vị Bát Khiếu Nguyên Anh lão thành cẩn trọng kia kịp thời bừng tỉnh, vội vàng nói: &quot;Bẩm các vị tiền bối Tôn Giả, có lẽ các ngài nên đến Thiên Cơ Các.&quot;Những thứ này rõ ràng là các Tôn Giả ban thưởng cho Giang Phàm. Dám chiếm làm của riêng, đúng là không biết chữ chết viết thế nào.</p>
+                <p>Hồng Trần Tôn Giả ngạc nhiên: &quot;Hắn không phải tự xưng là Đại Âm Tông chủ sao?&quot;Lão giả Bát Khiếu Nguyên Anh ngượng ngùng nói: &quot;Đây là chức vụ kiêm nhiệm của hắn.&quot;&quot;Chức vụ chính của hắn là Thiên Cơ Các Thủ Tịch Phó Các Chủ.&quot;</p>
+                <p>Kiêm… kiêm nhiệm? Hồng Trần Tôn Giả và Vô Dục Tôn Giả nhìn nhau, đều có chút ngây người.Đại Âm Tông không phải là một trong Tam Thần Tông của Thái Thương Đại Châu sao? Lại còn có thể bị người khác kiêm nhiệm?Nếu Đại Âm Tông chỉ là chức vụ kiêm nhiệm, vậy Thiên Cơ Các, nơi giữ chức vụ chính, lại là loại tồn tại nào?</p>
+                <p>Vô Dục Tôn Giả lấy lại trận bàn của mình, lộ ra vẻ tò mò: &quot;Thật có chút ngoài ý muốn, Thái Thương Đại Châu lại có tông môn thần bí như vậy sao?&quot;Hồng Trần Tôn Giả cũng lấy lại túi gấm, khẽ cười khúc khích: &quot;Xem ra, ta vẫn còn cơ hội bị Giang tông chủ đè nén cho thỏa thích đây.&quot;</p>
+                <p>Các Tôn Giả còn lại, lần lượt lấy lại đồ vật. Sau khi hỏi rõ nơi Thiên Cơ Các tọa lạc, tất cả đồng loạt dịch chuyển tức thời rời đi.Để lại Phùng Viễn Tông với vẻ mặt đau khổ: &quot;Những bảo bối đó... không thể để lại cho Đại Âm Tông chúng ta một chút sao?&quot;&quot;Đại Âm Tông chúng ta, chẳng phải cũng là tông môn của Giang Phàm sao?&quot;&quot;Sao lại có thể đối xử khác biệt như vậy chứ?&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1323">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1323: Đi Sai Linh Trì</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Thiên Cơ Các.Mật thất.</p>
+                <p>Tiếng &quot;ầm&quot; vang dội!</p>
+                <p>Mật thất kiên cố nổ tung thành những mảnh vụn lớn nhỏ, sắc cạnh, văng tứ tung.</p>
+                <p>Ba đạo thần quang màu tím, trắng, đen bao quanh Giang Phàm, tựa như một cầu vồng ba màu đang lướt đi với tốc độ cực nhanh.</p>
+                <p>Nơi cầu vồng đi qua, không gian xuất hiện những vết nứt nhỏ li ti.Chợt nhận ra, đó chính là Khe Nứt Hư Vô!Đây là dấu vết chỉ có Tôn Giả mới có khả năng tạo ra!</p>
+                <p>&quot;Thu!&quot; Giang Phàm khẽ búng ngón tay.Cầu vồng ba màu tách ra, biến thành Tử Kiếm, Thính Tuyết Kiếm và Cưa Răng Kiếm.Chúng bay vào vỏ kiếm sau lưng Giang Phàm.</p>
+                <p>Nhìn những vết nứt hư vô đang dần khép lại trước mắt, Giang Phàm tràn đầy vẻ kích động trong mắt.&quot;Uy lực lớn hơn nhiều so với ta tưởng tượng!&quot;&quot;Ban đầu, ta cứ nghĩ nó chỉ có uy lực của một đòn đánh cấp Cửu Khiếu Nguyên Anh, có thể vô địch trong cảnh giới Nguyên Anh.&quot;&quot;Nhưng, uy lực lại vượt xa cảnh giới Nguyên Anh, gần như đã tiệm cận một đòn đánh cấp Hóa Thần!&quot;</p>
+                <p>Nguyên nhân, Giang Phàm cũng đã nghĩ thông suốt.&quot;Đại Diễn Kiếm Trận&quot; yêu cầu kiếm phải là Thượng phẩm Linh Khí.Mà những thanh kiếm Giang Phàm tìm được, tất cả đều là Cực phẩm Linh Khí!Cũng là Tiểu Thành Kiếm Trận, nhưng được cấu tạo từ Thượng phẩm và Cực phẩm, uy lực há có thể so sánh như nhau?</p>
+                <p>Nhờ kiếm trận này, hắn cuối cùng đã có một đòn tấn công đủ sức uy hiếp Hóa Thần Tôn Giả!Đương nhiên.Điều này không có nghĩa là hắn có thể ngang hàng với Hóa Thần Tôn Giả.Hóa Thần Tôn Giả không phải là những con rối đứng yên, mặc cho Giang Phàm dùng kiếm trận đánh chết.Mà là những tồn tại có tốc độ gần như thuấn di! Kiếm trận rất khó đuổi kịp tốc độ của bọn họ.Chỉ có thể dùng như một sát chiêu lúc bất ngờ!</p>
+                <p>&quot;Phù! Tôn Giả, cũng không phải là không thể với tới.&quot; Giang Phàm thở phào nhẹ nhõm, ưỡn ngực.Đối với việc Cự Nhân Viễn Cổ sắp giáng lâm, hắn cuối cùng cũng có thêm một tia tự tin.</p>
+                <p>Ngoài ra.Tượng thứ ba của &quot;Phạm Thánh Chân Linh Công&quot;, Hậu Thổ Tượng, đã triệt để đại thành.Lực thể phách có được, có thể vô địch trong cảnh giới Nguyên Anh.&quot;Không biết ta so với tên Bán Cự Nhân Huyết Thiên Trượng kia – kẻ có Kim Thân đỉnh phong, sắp bước vào cảnh giới Pháp Tướng – thì thể phách ai mạnh hơn ai yếu hơn.&quot;</p>
+                <p>Giang Phàm khẽ suy nghĩ.Cả hai đều có thể phách đạt đến đỉnh phong của cảnh giới Nguyên Anh.Một người đi theo con đường huyết mạch Cự Nhân Viễn Cổ, một người đi theo pháp môn rèn luyện thân thể song tu yêu - nhân.Nếu có thể gặp được người này thì tốt, có thể kiểm tra xem ai hơn ai một bậc.</p>
+                <p>Cúi đầu nhìn cơ thể mình, toàn thân dính đầy bụi bặm và mồ hôi nhớp nháp.Hắn khẽ động tâm niệm, dùng thuật không gian thuấn di đến trước một đại điện.</p>
+                <p>Đây là mật địa của Thiên Cơ Các do hắn tạo ra bằng linh dịch tắm rửa của Lục Châu.Chỉ những môn nhân lập công mới có thể vào trong tắm rửa, tăng tiến tu vi.Giờ đây mọi người đều đang bế quan, chắc hẳn không có ai sử dụng.</p>
+                <p>Đại điện bị trận pháp phong ấn, cho thấy nó chưa được mở.Nhưng trận pháp không thể ngăn cản Giang Phàm, thuật không gian có thể xuyên qua.Chỉ là, linh trì bị một trận pháp và bức tường gạch chia thành hai nửa.Chắc hẳn một nửa là linh trì nam, một nửa là linh trì nữ.</p>
+                <p>Hắn gọi Tiểu Kỳ Lân ra, hỏi: &quot;Bên nào là linh trì nam?&quot;Khi xây dựng linh trì, Tiểu Kỳ Lân ở trong tông môn, chắc hẳn nó phải biết rõ.Tiểu Kỳ Lân không chút suy nghĩ chỉ về bên phải: &quot;Đó ạ.&quot;Giang Phàm nghi ngờ: &quot;Ngươi chắc chứ?&quot;Tình huống bình thường, chẳng phải nên là nam tả nữ hữu sao?Tiểu Kỳ Lân lại gật đầu: &quot;Vâng vâng, ta đã vào rồi.&quot;Vậy thì không có vấn đề gì.Giang Phàm yên tâm, thi triển thuật không gian, xuyên qua phong ấn, đi vào linh trì bên phải.</p>
+                <p>Trong linh trì.Hơi nước chín màu mờ ảo.Hạ Triều Ca thoải mái nằm trong đó, chỉ lộ ra một cái đầu.Nàng khẽ rên rỉ đầy hưởng thụ:&quot;Tu luyện xong, ngâm mình thật là thoải mái.&quot;&quot;Chỉ là, lén lút đến đây, hơi vi phạm quy tắc của Thiên Cơ Các.&quot;Theo những lần đột phá tu vi liên tiếp, nàng đã có được không ít năng lực.Một trong số đó, chính là xuyên qua cấm chế, tương tự thiên phú không gian trước đây của Tiểu Kỳ Lân.</p>
+                <p>&quot;Nhưng, đây là linh dịch do sư thúc ta mang về mà.&quot;&quot;Ta dùng một chút cũng chẳng ai trách ta đâu nhỉ?&quot;Nhắc đến sư thúc, Hạ Triều Ca từ từ mở mắt, trong đôi mắt tràn đầy vẻ dịu dàng.&quot;Sư thúc bây giờ đang ở đâu nhỉ? Lâu thế rồi mà còn chưa về?&quot;&quot;Hắn sẽ không phải là đã đến Thiên Giới, ở cùng với nữ tu la tên Hồng Tụ đó chứ?&quot;&quot;Thật là một kẻ phong lưu đa tình, trong nhà đã có nhiều thế rồi mà còn tơ tưởng bên ngoài.&quot;&quot;Đợi hắn về, ta nhất định phải nói chuyện tử tế với hắn...&quot;</p>
+                <p>Xoảng ——Phía sau, tiếng nước văng lên vang vọng không chút báo trước.Giống như có thứ gì đó rơi vào trong hồ.Hạ Triều Ca giật mình, vội vàng đứng dậy, quay người nhìn lại.Vừa nhìn thấy, nàng không khỏi ngẩn người.</p>
+                <p>Trong linh trì.Giang Phàm một thân hắc y ôm Tiểu Kỳ Lân, đang đứng trong linh trì.Hắn cũng đang nhìn xung quanh.Khi quay người lại, hắn cũng như Hạ Triều Ca, sững sờ tại chỗ.</p>
+                <p>Hạ Triều Ca chớp mắt.Không phải, mình ngâm linh dịch lâu quá nên bị ảo giác sao?Lại nhìn thấy sư thúc trong phòng tắm nữ!Hắn còn đang ở bên ngoài chưa về mà.Cho dù có về, cũng sẽ không đến phòng tắm chứ?Cho dù có đến phòng tắm, cũng sẽ không đến phòng tắm nữ chứ?Sư thúc không phải là người như vậy.&quot;Nhất định là ảo giác.&quot; Hạ Triều Ca lẩm bẩm, dụi mắt.</p>
+                <p>Chỉ là, dù nàng có dụi thế nào đi nữa, Giang Phàm trước mắt vẫn ở đó.Hơn nữa, ánh mắt của hắn vẫn đang di chuyển.Từ khuôn mặt nàng, di chuyển đến chiếc cổ trắng ngần, rồi xương quai xanh, sau đó là ngực...Hạ Triều Ca trợn tròn mắt, vội vàng ngồi xổm xuống, giấu thân mình trong linh dịch chín màu.Chỉ lộ ra một cái đầu.Đôi môi nhỏ khẽ run rẩy, không chắc chắn mà gọi một tiếng: &quot;Sư thúc?&quot;</p>
+                <p>Đầu óc Giang Phàm trống rỗng, nói: &quot;Triều Ca?&quot;Hai người mắt lớn trừng mắt nhỏ.Đều xác nhận đối phương không hề bị ảo giác!Đồng tử Hạ Triều Ca co rút kịch liệt, theo bản năng muốn hét lên, may mà kịp phản ứng, vội vàng bịt miệng lại.Nếu để người khác nghe thấy, chạy đến phát hiện Giang Phàm và nàng trong linh trì.Thì có nhảy xuống Hoàng Hà cũng không rửa sạch.Sư thúc và sư điệt cùng nhau tắm rửa.Chuyện này, chuyện này thật quá chấn động, không hề thua kém cuộc đối thoại giữa Hồng Tụ và Giang Phàm trong Nguyệt Cảnh!Mặt nàng &quot;phụt&quot; một cái đỏ bừng, giống như con cua hấp chín.Trên đỉnh đầu vù vù bốc khói.Trong mắt vì xấu hổ mà sắp chảy nước ra, giọng nói nhỏ yếu như tiếng muỗi kêu: &quot;Sư... sư thúc, đây là linh trì nữ.&quot;</p>
+                <p>Giang Phàm lúc này mới hoàn hồn, vội vàng quay người lại.Khuôn mặt già nua đỏ bừng vô cùng.Mình đã làm gì thế này? Lại chạy vào linh trì nữ, nhìn trộm nữ sư điệt tắm rửa ư?Trời ơi!Nếu chuyện này truyền ra ngoài, hắn thật sự không còn mặt mũi nào mà sống nữa.Nghĩ đến đây, hắn túm lấy Tiểu Kỳ Lân, chất vấn: &quot;Ngươi không phải nói đây là linh trì nam sao?&quot;</p>
+                <p>Tiểu Kỳ Lân chớp chớp đôi mắt to tròn: &quot;Là linh trì nam mà!&quot;&quot;Ta với Phản Cốt Tử, Tiểu Hổ đều đã đến rồi.&quot;&quot;Lại còn là chị Triều Ca dẫn chúng ta đến nữa chứ.&quot;Giang Phàm suýt nữa phun ra một ngụm máu già, nói: &quot;Các ngươi là tiểu linh sủng, đương nhiên có thể vào!&quot;&quot;Ta có thể giống sao?&quot;Hóa ra, Tiểu Kỳ Lân cho rằng mình là giống đực, nó có thể đến, Giang Phàm cũng có thể đến.Nhưng sự việc đã đến nước này, nói gì cũng đã muộn.Giang Phàm mặt đỏ tía tai, ngượng ngùng nói: &quot;Triều Ca, con cũng nghe thấy rồi đó.&quot;&quot;Sư thúc không cố ý, ta đi đây.&quot;</p>
+                <p>Hạ Triều Ca ngồi xổm trong nước, hai tay che ngực, sau cơn hoảng loạn vừa rồi, nàng đã bình tĩnh hơn nhiều.Nghe Giang Phàm xin lỗi, nàng khẽ bĩu môi, tủi thân lẩm bẩm:&quot;Lần nào cũng là ngoài ý muốn.&quot;&quot;Lần nào?&quot;Giang Phàm cạn lời: &quot;Con đừng nói linh tinh.&quot;&quot;Giữa ta và con chỉ có hiểu lầm lần này, trước đây chưa từng có.&quot;&quot;Lấy đâu ra &#039;lần nào&#039;?&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1324">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1324: Âm Dương Thiên</h2>
+            </header>
+            <div class="chapter-content">
+                <p>“Ta nói càn ư?”</p>
+                <p>Hạ Triều Ca siết chặt nắm tay phấn nộn, khẽ đấm xuống mặt nước, bắn tung tóe những đợt sóng nước. Nàng mím môi, hơi có vẻ giận dỗi, nhưng ngay cả như vậy, giọng nói vẫn dịu dàng: “Sư thúc đâu phải lần đầu!”</p>
+                <p>Giang Phàm nghiêm mặt nói: “Triều Ca, mối quan hệ giữa ta và ngươi, không thể đùa giỡn như vậy.” Bọn họ là sư thúc cháu mà. Có những mối quan hệ không thể vượt qua, cho dù tuổi tác của cả hai rất gần nhau.</p>
+                <p>Hạ Triều Ca khẽ cắn môi đỏ mọng bằng hàm răng ngọc, vài lần định nói rồi lại thôi, cuối cùng vẫn lấy hết dũng khí nói: “Sư thúc quên rồi sao, người bị ngươi làm bị thương ở Lôi Trì của Thiên Cơ Các đại lục?”</p>
+                <p>Giang Phàm ngẩn người. Ngay sau đó, đồng tử của hắn từ từ co rút lại, cuối cùng co nhỏ như đầu kim. Hắn đột ngột quay người lại, kinh ngạc nhìn Hạ Triều Ca.</p>
+                <p>“Ngươi... ngươi... ngươi chính là người đã thi triển Âm Dương Thiên?” Gương mặt Hạ Triều Ca vừa mới bớt đỏ một chút, lại lần nữa ửng hồng.</p>
+                <p>Nàng vươn tay vẫy một cái, không gian trữ vật bên bờ bay vào lòng bàn tay. Trong ý niệm, một lệnh bài Lôi Diễn xuất hiện trong lòng bàn tay.</p>
+                <p>“Lần trước đã muốn đưa cho sư thúc rồi, nhưng sợ ngươi nhận ra ta, nên không dám đưa. Giờ thì... đằng nào cũng lại bị sư thúc ức hiếp rồi. Chuyện lần trước, có giấu hay không cũng không còn quan trọng nữa.”</p>
+                <p>Nàng cong ngón tay búng một cái, ném Lôi Diễn lệnh qua, sau đó lại rụt người vào trong nước. Gương mặt nhỏ nhắn hoàn toàn đỏ bừng.</p>
+                <p>Giang Phàm chụp lấy, nhưng căn bản không có tâm trí xem xét nội dung bên trong. Đại não trống rỗng, ấp úng nói: “Người lén nhìn ta tu luyện kia... là ngươi?”</p>
+                <p>Hạ Triều Ca quay mặt đi, không dám nhìn vào mắt Giang Phàm, khẽ gật đầu một cái.</p>
+                <p>Giang Phàm nhìn về phía bàn tay phải của mình, lập tức cảm thấy mặt già nóng bừng, không thể tin được nói: “Vậy... vậy cái mà ta làm bị thương... là của ngươi...”</p>
+                <p>Hạ Triều Ca xấu hổ không chịu nổi, vội vàng đến mức hai bàn tay nhỏ bé vỗ nước liên hồi: “Ngươi còn hỏi nữa!”</p>
+                <p>Giang Phàm chỉ cảm thấy trời đất quay cuồng. Trời ạ! Hắn đã làm gì Hạ Triều Ca vậy? Thế mà, thế mà lại nắm phải chỗ đó của nàng?</p>
+                <p>Điều khiến hắn càng thêm xấu hổ là, bộ não của hắn thế mà lại rất &quot;phối hợp&quot; giúp hắn hồi tưởng lại cảm giác chạm vào ngày đó. Chát chát chát! Giang Phàm vội vàng vỗ vào mặt mình, xua tan những ý nghĩ dơ bẩn đó.</p>
+                <p>Trời đánh! Ngươi là trưởng bối của Hạ Triều Ca, làm sao có thể chứa chấp những thứ này trong đầu chứ? Không thể ở lại nữa rồi. Hắn vội vàng nói: “Cảm ơn Lôi Diễn lệnh của Triều Ca, ta, ta đi trước đây.”</p>
+                <p>Hạ Triều Ca mặt mày đỏ bừng, tiếng nói nhỏ như muỗi kêu: “Ừm.”</p>
+                <p>Giang Phàm đỏ mặt, vội vàng rời đi. Chuyện như vậy, hắn còn mặt mũi nào mà nói ra ngoài?</p>
+                <p>Đợi đến khi Giang Phàm rời đi. Hạ Triều Ca che mặt, xấu hổ không kiềm chế được nói: “Sao lại xảy ra chuyện thế này?”</p>
+                <p>Nàng vẫn cảm thấy, mình như đang trong mơ vậy. Nhớ lại ánh mắt của Giang Phàm, từ gương mặt nàng, nhìn sang cổ, rồi lại nhìn sang xương quai xanh. Cuối cùng nhìn đến ngực nàng.</p>
+                <p>Nàng xấu hổ đến mức đầu bốc khói, lập tức lặn vào trong nước, hồi lâu không dám nổi lên.</p>
+                <p>Rất lâu sau, nàng mới ló nửa cái đầu lên. Xấu hổ nói: “Sư thúc thế mà lại nhìn ngực ta.”</p>
+                <p>“Hắn không chỉ là Hoa Tùng Thượng Nhân, mà còn là một Lưu Manh Thượng Nhân!”</p>
+                <p>Giang Phàm cũng chẳng còn tâm trạng tắm rửa nữa, vội vàng như chạy trốn khỏi Linh Trì. “Gặp quỷ rồi, chuyện như vậy cũng có thể xảy ra!” Hắn lộ vẻ mặt bẽn lẽn.</p>
+                <p>Nhìn thoáng qua Lôi Diễn lệnh trong tay, nhất thời hắn cũng không còn tâm trí tu luyện.</p>
+                <p>Rầm một tiếng! Đột nhiên, một tiếng động lớn truyền đến từ bên ngoài cổng Thiên Cơ Các. Kèm theo đó là khói đen cuồn cuộn bay thẳng lên trời. Cổng lớn đã bị người ta đánh nát!</p>
+                <p>Giang Phàm nhíu mày, ai mà to gan đến vậy, dám đến Thiên Cơ Các gây sự?</p>
+                <p>Tiếng động lớn cuối cùng cũng kinh động đến những người đang bế quan trong Thiên Cơ Các. Vân Thường tiên tử, Thiên Cơ Các chủ, Nô Tâm Yêu Hoàng cùng những người khác đồng loạt bay vút ra.</p>
+                <p>“Giang Lang?” Vân Thường tiên tử phát hiện Giang Phàm, trong mắt tràn ngập niềm vui sướng. Bóng dáng yểu điệu trong bộ y phục tuyết trắng, nhào thẳng vào lòng Giang Phàm.</p>
+                <p>Cảm nhận sự mềm mại ấm áp trong vòng tay, Giang Phàm cũng không kìm được tình cảm, ôm chặt lấy nàng. “Nhớ ta sao?”</p>
+                <p>Đôi mắt Vân Thường tiên tử long lanh hơi nước, không chớp mắt nhìn chằm chằm Giang Phàm, cằm khẽ gật liên tục. “Nhớ, lúc nào cũng nhớ.”</p>
+                <p>Giang Phàm cười, khẽ hôn lên trán nàng. Liễu Khuynh Tiên cũng bay vụt tới, trong mắt tràn đầy niềm vui sướng: “Tiểu Phàm, sao bây giờ ngươi mới trở về vậy?”</p>
+                <p>Vân Thường tiên tử hiểu ý rời khỏi vòng tay, chỉ ôm lấy một cánh tay của Giang Phàm. Giang Phàm thuận thế ôm Liễu Khuynh Tiên vào lòng, nói:</p>
+                <p>“Ta đã trở về từ lâu rồi, nhưng các ngươi đều đang bế quan, nên không dám quấy rầy. Lát nữa đến phòng ta, để ta kiểm tra xem, tu vi của ngươi đã thăng tiến đến mức độ nào rồi?”</p>
+                <p>Liễu Khuynh Tiên gò má hơi ửng hồng, khẽ nhổ một tiếng: “Giữa thanh thiên bạch nhật mà nói những lời như vậy. Ngươi học hư với người phụ nữ Tu La kia sao?”</p>
+                <p>Nàng khẽ cắn vào vai Giang Phàm một cái, nhưng không nỡ dùng sức, chỉ oán trách một cách u buồn.</p>
+                <p>Giang Phàm bật cười: “Đối phương là Tứ Quan Tu La Vương, giờ rất có thể đã là Ngũ Quan rồi. Tồn tại như vậy, làm sao có thể có liên hệ với ta chứ?”</p>
+                <p>“Giữa ta và nàng ta, chỉ là lợi dụng giá trị của đối phương mà thôi, không hề có chút tình cảm nam nữ nào.” Đây không phải là nói qua loa, mà là sự miêu tả chân thực về mối quan hệ giữa hắn và Hồng Tụ.</p>
+                <p>Cả hai người họ đều là những kẻ lý trí đến cực điểm, tuyệt đối sẽ không có tình cảm nảy sinh. Hiện tại chung sống hòa thuận, cũng chỉ vì có chung kẻ thù lớn là Cự Nhân Viễn Cổ.</p>
+                <p>Nếu một ngày nào đó, cả hai bên đụng chạm đến lợi ích căn bản của đối phương, ví dụ như tộc nhân của nàng ta xâm lược Trung Thổ, hoặc Trung Thổ tấn công trại của nàng ta, Giang Phàm và nàng ta, đều sẽ không chút do dự mà đứng về lập trường của chủng tộc mình, lập tức trở thành kẻ thù!</p>
+                <p>Hắn và Lục Châu có lẽ còn chút duyên phận, nhưng với Hồng Tụ thì không.</p>
+                <p>“Trêu ngươi chút thôi, còn thật sự giải thích.” Liễu Khuynh Tiên bật cười: “Bên cạnh ngươi còn ít người sao? Nếu ta mà ghen, chẳng phải ngày nào cũng ngâm mình trong vò dấm sao?”</p>
+                <p>Lúc này. Hạ Triều Ca cũng quần áo xộc xệch vội vàng chạy tới, tóc tai ướt sũng, gò má vẫn còn ửng hồng.</p>
+                <p>“Đã xảy ra chuyện gì vậy?” Nàng đưa mắt nhìn về phía khói bụi ở cổng, vẻ mặt khó hiểu. Vân Thường tiên tử đánh giá sự bất thường của nàng.</p>
+                <p>Lại nhìn Giang Phàm cũng ướt sũng cả người, trên mặt cũng còn vương chút ửng hồng. Dường như đã nhìn ra điều gì đó, trong mắt lộ vẻ kinh ngạc.</p>
+                <p>Nàng đảo mắt nhẹ nhàng, nói: “Triều Ca, sư thúc của ngươi trở về, ngươi không hề kinh ngạc sao?”</p>
+                <p>Hạ Triều Ca nhìn thấy Giang Phàm, lại như không nhìn thấy vậy. Chỉ có thể nói lên một vấn đề: Hai người đã gặp nhau, lại còn là ở trong Linh Trì, và đã xảy ra chuyện gì đó.</p>
+                <p>Hạ Triều Ca trong lòng hoảng hốt, nói: “À ừ, không, không để ý. Sư thúc, ngươi đã trở về.”</p>
+                <p>Giang Phàm cũng chột dạ gật đầu: “Ừm, vừa về.”</p>
+                <p>Vân Thường tiên tử thu hết biểu cảm của hai người vào mắt, cười mà không nói. Để chuyển hướng không khí cho hai người, nàng nhìn về phía cổng lớn, nói: “Kẻ nào dám tự ý xông vào Thiên Cơ Các của chúng ta?”</p>
+                <p>Sự chú ý của mọi người lập tức bị thu hút về phía cổng lớn. Chỉ thấy trong một làn khói bụi mịt mù, một bóng dáng thanh niên đứng chắp tay sau lưng, không nhanh không chậm đi tới.</p>
+                <p>Đó không phải ai khác, mà chính là Trần Kính Thượng Nhân!</p>
+                <p>Giang Phàm nhíu mày, đối với vị sư huynh của Thanh Vân Tông ngày xưa này, hắn chẳng có chút thiện cảm nào: “Ngươi đến làm gì?”</p>
+                <p>Trần Kính Thượng Nhân từng bước một đi lên bậc thang, thần sắc lạnh lùng, ánh mắt sắc bén. Khác biệt lớn với khí chất trước đây.</p>
+                <p>Hắn đi đến cuối bậc thang, đứng trước mặt mọi người. Nâng ngón tay, chỉ thẳng về phía Giang Phàm:</p>
+                <p>“Giữa ngươi và ta, chỉ có thể tồn tại một người!”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_1325">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 1325: Thái Thương Thập Bát Tử</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm chợt thấy khó hiểu, cau mày nói:“Hãy giữ lại sức lực của ngươi mà đi giết Cự Nhân Viễn Cổ đi.”</p>
+                <p>Hắn và Trần Kính Thượng Nhân không có thù oán gì. Mâu thuẫn duy nhất là nửa cây Khai Khiếu Thần Đinh kia, nhưng cũng chẳng đến mức phải liều mạng chém giết.</p>
+                <p>“Ngươi không làm chủ được đâu.”</p>
+                <p>Trần Kính Thượng Nhân lãnh đạm nhìn Giang Phàm, tu vi Bát Khiếu Nguyên Anh từ từ phóng thích ra. Bụi đất bay lả tả quanh thân, cát đá rung chuyển, khiến cho mọi người trong Thiên Cơ Các đều cảm thấy một luồng áp lực ngạt thở.</p>
+                <p>Đồng tử Giang Phàm co rụt lại: “Bát Khiếu Nguyên Anh?”</p>
+                <p>Làm sao có thể chứ? Lần trước Trần Kính Thượng Nhân đến Thiên Cơ Các đón Chân Ngôn Tôn Giả, tu vi của hắn vẫn chỉ là Ngũ Khiếu Nguyên Anh. Giờ đây lại đột nhiên nhảy vọt đạt đến Bát Khiếu Nguyên Anh. Xét về tốc độ tu luyện, lại chẳng hề thua kém Giang Phàm.</p>
+                <p>Thế nhưng, Giang Phàm liên tiếp trải qua ma luyện của Liên Kính Tôn Giả, được Vô Cấu Đại Tôn dùng linh vũ quán thể. Những cơ duyên lớn tày trời này, chẳng lẽ Trần Kính Thượng Nhân cũng có được sao? Tu vi của tên này rốt cuộc là thế nào?</p>
+                <p>Tuy nhiên.</p>
+                <p>Dù là Bát Khiếu Nguyên Anh, Giang Phàm cũng không cảm thấy có uy hiếp quá lớn. Hắn giết chết đối phương cũng không quá khó khăn.</p>
+                <p>Nhìn Trần Kính Thượng Nhân, Giang Phàm nhàn nhạt nói:“Rời khỏi Thiên Cơ Các đi, đừng tự chuốc lấy nhục.”</p>
+                <p>Nếu là cường giả khác, công khai khiêu khích như vậy, đối phương còn chưa kịp mở lời uy hiếp, đã bị hắn ra tay trấn sát.</p>
+                <p>Nhưng, đây lại là Trần Kính Thượng Nhân. Là đệ tử của Chân Ngôn Tôn Giả, cũng là ca ca ruột của Nam Cung Tiểu Vân. Không nhìn mặt mũi Chân Ngôn Tôn Giả, thì cũng nên nhìn mặt mũi Nam Cung Tiểu Vân chứ? Trước mặt nàng, làm sao có thể dễ dàng giết chết ca ca ruột của nàng được?</p>
+                <p>Trần Kính Thượng Nhân lạnh lùng nói: “Ngươi bảo ta đừng tự chuốc lấy nhục? Giang Phàm, ngươi cũng xứng nói lời này với ta sao?”</p>
+                <p>Giang Phàm mất kiên nhẫn. Đang định ra tay trục xuất đối phương thì vô số luồng khí tức từ hướng địa cung truyền đến. Sơ bộ đếm qua, có tới mấy chục người. Dẫn đầu là hơn mười thanh niên, tu vi tất cả đều đạt đến Bát Khiếu Nguyên Anh! Bên cạnh họ đều có trưởng bối của tông môn đi kèm, sẵn sàng ngăn chặn họ nhập điên.</p>
+                <p>Giang Phàm cau mày: “Sao? Còn mang theo cả trợ thủ nữa à?”</p>
+                <p>Trần Kính Thượng Nhân lạnh nhạt nói: “Giết ngươi, cần gì trợ thủ? Ta chỉ mời Thái Thương Thập Bát Tử đến làm người chứng kiến mà thôi. Để bọn họ cùng chứng kiến, vị Thiên Kiêu Vương Giả của Thái Thương năm đó, đã trở về rồi.”</p>
+                <p>Thiên Kiêu Vương Giả? Trần Kính Thượng Nhân? Giang Phàm lộ vẻ nghi hoặc. Trần Kính Thượng Nhân đã hai mươi sáu, hai mươi bảy tuổi, không lâu trước còn là Ngũ Khiếu Nguyên Anh. Tư chất như vậy, cũng có thể tự xưng là Thiên Kiêu Vương Giả Thái Thương sao? Còn nữa, “trở về” là có ý gì?</p>
+                <p>Vù vù vù ——</p>
+                <p>Lần lượt có các cường giả tuyệt đại thanh niên, tỏa ra khí tức đáng sợ giáng lâm. Tuổi tác đa phần từ hai m mươi đến ba mươi. Số lượng vừa đủ, là mười sáu người. Trừ đi Tông Triều Thánh đã vẫn lạc, vẫn còn thiếu một người.</p>
+                <p>“Trần Kính đại ca, huynh đã trở lại Bát Khiếu Nguyên Anh rồi sao?” Người đầu tiên hạ xuống là một nữ tử Bát Khiếu Nguyên Anh đến từ Vạn Kiếp Thánh Điện. Tuổi chừng hai mươi lăm, hai mươi sáu, dung mạo không tồi. Đôi mắt đẹp ánh lên vẻ dị sắc liên tục nhìn Trần Kính Thượng Nhân.</p>
+                <p>“Nhận được truyền tấn của huynh, ta còn tưởng là giả.” Lại một thanh niên đạo bào dáng người gầy gò hạ xuống, đó là đương đại thiên kiêu của Tam Thanh Sơn. Hắn vắt phất trần lên tay, mặt nở nụ cười:“Từ khi huynh tự phế tu vi, trùng tu chứng đạo Hóa Thần, Thái Thương Đại Châu trở nên vắng vẻ rồi. Chúng ta Thái Thương Thập Bát Tử, kẻ nhập điên thì nhập điên, người bế quan thì bế quan. Chẳng còn ai đi lại bên ngoài nữa. Võ đạo của Thái Thương Đại Châu, đều vì chúng ta rút lui mà mất đi sắc màu. Giờ đây, huynh cuối cùng cũng trở về, Thái Thương Đại Châu sẽ trở nên náo nhiệt rồi.”</p>
+                <p>Giang Phàm nghe vậy không khỏi ngạc nhiên liên tục. Nếu không hiểu lầm thì ý của bọn họ là, Trần Kính Thượng Nhân từng tự phế tu vi? Cảnh giới hiện tại, là tu luyện lại mà có? Thế thì có chút kinh người rồi!</p>
+                <p>Giang Phàm từ Luyện Khí cảnh một đường đi đến tận bây giờ, những gian nan hiểm trở trong đó, chỉ có một mình hắn hiểu rõ. Làm lại từ đầu, hắn hoàn toàn không có nắm chắc có thể thành công đạt đến cảnh giới hiện tại.</p>
+                <p>Nhưng, Trần Kính Thượng Nhân lại từng tu luyện đến đỉnh phong Nguyên Anh cảnh. Sau đó tự chặt đứt tu vi, tu luyện lại từ đầu ư? Một nghi vấn lớn trong lòng hắn, bỗng nhiên được giải đáp. Đó chính là, vì sao Chân Ngôn Tôn Giả lại thu Trần Kính loại người tầm thường này làm đệ tử.</p>
+                <p>Hóa ra, không phải Trần Kính tầm thường. Hắn chỉ là làm lại từ đầu mà thôi!</p>
+                <p>Trần Kính Thượng Nhân bình tĩnh nhìn Giang Phàm: “Rất ngạc nhiên phải không? Thật ra, ta cũng rất ngạc nhiên. Hóa ra, ta từng là một cường giả đỉnh phong Nguyên Anh, đã chạm đến cảnh giới Hóa Thần. Chẳng qua, năm đó ta quá nóng vội, muốn cùng sư tôn hóa thần, nên đã chọn sai con đường. Khiến cho ta bị mắc kẹt ở Cửu Khiếu Nguyên Anh, mãi không thể tỉnh lại. Giờ đây, ta đã đi trên một con đường mới, hơn nữa lại là con đường thích hợp nhất với ta. Chẳng bao lâu nữa, ta sẽ tỉnh lại hóa thần, trở thành Tôn Giả đứng trên vạn chúng sinh!”</p>
+                <p>Giang Phàm thầm kinh ngạc. Hắn nhớ Linh Âm Tế Tự từng nói, người nhập điên nếu muốn tỉnh lại, chỉ có hai kết quả. Một là hóa thần tỉnh lại. Hai là phế bỏ Nguyên Anh, trạng thái điên tự động giải trừ, nhưng phải làm lại từ đầu. Không ngờ, trên đời thật sự có người chọn con đường thứ hai. Hơn nữa, còn bước ra một con đường hóa thần hoàn toàn mới.</p>
+                <p>“Ta phải cảm ơn ngươi.” Trần Kính Thượng Nhân lạnh nhạt nói: “Chính là ngươi kích thích ta, để ta tìm thấy con đường hoàn toàn mới.”</p>
+                <p>Giang Phàm lộ vẻ mặt cổ quái. Trần Kính Thượng Nhân nói, chẳng lẽ không phải là hắn và Chân Ngôn Tôn Giả đã lên giường rồi sao? Chuyện này cũng có thể kích thích được hắn ư? Tên này, sẽ không phải là đã yêu sư tôn của mình rồi chứ?</p>
+                <p>Hắn vẫy tay: “Chuyện này không cần cảm ơn. Ta vui vẻ trong đó, không hề vất vả.”</p>
+                <p>Trong mắt Trần Kính Thượng Nhân hiện lên một tia hung lệ, giọng nói âm trầm:“Không cần kích thích ta. Sư tôn ta đã làm rõ, đó là hiểu lầm, ta tin, ngươi cũng không có gan đụng vào nàng!”</p>
+                <p>Giang Phàm nhún vai, nói:“Sư tôn ngươi không nói cho ngươi biết, chúng ta ở Hỗn Nguyên Châu lại gặp nhau rồi sao?”</p>
+                <p>“Cái gì?” Ánh mắt Trần Kính Thượng Nhân chợt thắt lại, nhớ đến sư tôn đang ngồi trước Linh Trì phát ngẩn. Chẳng lẽ, giữa sư tôn và Giang Phàm lại xảy ra chuyện gì nữa rồi? Hắn trầm giọng hỏi: “Các ngươi đã xảy ra chuyện gì? Mau nói!”</p>
+                <p>Giang Phàm nói: “Cũng chẳng có gì, chỉ là hai người không mặc quần áo, ôm lấy nhau.”</p>
+                <p>Rắc!</p>
+                <p>Trần Kính Thượng Nhân mắt lộ hàn ý: “Sư tôn ta lại không giết ngươi ư?”</p>
+                <p>Giang Phàm bất đắc dĩ xòe tay: “Nàng muốn giết ta, thì chính là mưu sát thân phu.”</p>
+                <p>Hai mắt Trần Kính Thượng Nhân bắn ra vẻ sắc bén, quát:“Câm mồm, đừng có sỉ nhục sư tôn của ta!”</p>
+                <p>Giang Phàm trêu chọc nói: “Ngươi còn không biết sao? Phụ thân nàng, Tinh Uyên Đại Tôn, đã gả nàng cho ta rồi. Không lâu nữa, chúng ta sẽ thành hôn. Đến lúc đó, ngươi với tư cách là đệ tử, thì phải đến góp vui đấy!”</p>
+                <p>“Cái gì?” Trần Kính Thượng Nhân loạng choạng một chút, không dám tin nói: “Điều này không thể nào! Giang Phàm, ngươi bớt ở đây nói bậy đi!”</p>
+                <p>Giang Phàm khoanh hai tay trước ngực, nói: “Bây giờ ngươi còn có thể gọi tên ta thì cứ gọi đi. Chẳng bao lâu nữa, ngươi sẽ phải đổi giọng mà gọi ta là Sư Trượng rồi.”</p>
+                <p>Khí trường của Trần Kính Thượng Nhân bùng nổ, nhất thời cát bay đá chạy. Các Thái Thương Thập Bát Tử bên cạnh hắn, đều bị buộc phải lùi lại. Bọn họ tức giận nhìn Giang Phàm.</p>
+                <p>“Thằng nhóc hoang dã nào đây, lại dám ở đây nói năng huênh hoang?”“Dám nói chuyện với Trần Kính đại ca của chúng ta như vậy sao?”“Nhiều năm không ra ngoài hành tẩu, đám nhóc đời sau là quên mất uy danh của Thái Thương Thập Bát Tử chúng ta rồi sao?”</p>
+                <p>Giang Phàm quét mắt nhìn bọn họ một cái. Sắc mặt nhàn nhạt: “Trước khi các ngươi đến đây, không đi hỏi thăm một chút ta là ai sao?”</p>
+                <p>Các trưởng bối phía sau Thái Thương Thập Bát Tử, ai nấy sắc mặt đều thay đổi.</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_264.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_264.html" class="page-btn">264</a>
+            <a href="page_265.html" class="page-btn current">265</a>
+            <a href="page_266.html" class="page-btn">266</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_266.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

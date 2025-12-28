@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 106">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 106</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_105.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_107.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_526">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 526: Hỏng chuyện tốt</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nam Cung Tiểu Vân vừa mới đến Giới Sơn.</p>
+                <p>Chỉ nghe nói trận chiến này thảm liệt, cụ thể tình hình chiến đấu hoàn toàn không biết gì cả. Bởi vậy, chiến tích của Giang Phàm cũng không hiểu rõ. Chẳng qua là bản năng cảm thấy, không quan trọng hai trăm quân coi giữ có thể đánh thắng một trận khoáng thế đại chiến, các tông đệ tử, trưởng lão khẳng định đều biểu hiện ra chiến lực mạnh mẽ phi phàm. Bằng không, rất khó thủ thắng.</p>
+                <p>Giang Phàm hai mắt tỏa sáng. Hắn trông mà thèm ba cái Ngọc phù Nguyên Anh nhất kích rất lâu. Nếu như trận chiến Giới Sơn có ba tấm ngọc phù này, đã sớm khóa chặt thắng cục. Uy lực của bọn nó có thể so với trận kiếp lôi thay đổi càn khôn kia.</p>
+                <p>Thô sơ giản lược tính toán, Giang Phàm tại Thánh địa Cự Nhân Tông, Đoạn Thiên hẻm núi, Giới Sơn, trước sau thu được hơn một trăm viên yêu đan Thú Vương. Cùng đại quân yêu thú một trận chiến, lại thu được hai trăm viên yêu đan Thú Vương. Cộng lại, có chừng ba trăm viên nhiều.</p>
+                <p>Dựa theo năm viên yêu đan Thú Vương quy ra một kiện nhiệm vụ cấp một, cũng tức là một trăm điểm công lao, thì số yêu đan này có trọn vẹn sáu ngàn điểm công huân. Hối đoái ba tấm Ngọc phù Nguyên Anh nhất kích là dư sức. Huống chi, công huân trận chiến Giới Sơn còn chưa kết toán. Lần này có thể đổi được đồ vật, thật không ít.</p>
+                <p>“Tốt, ngươi đi trước, ta sau đó sẽ đến,” Giang Phàm nói. Dù sao công huân bảng phát trước, tập kết các đệ tử đều cần một quãng thời gian khá dài.</p>
+                <p>Nam Cung Tiểu Vân gật đầu: “Vậy ngươi mau tới đây. Rất nhiều người không phục ngươi đứng đầu bảng lần trước đó. Đều tha thiết nhìn xem ngươi lần này rớt xuống ngàn trượng, sau đó thoải mái nói một câu, cái tên này lộ ra nguyên hình.”</p>
+                <p>Chế nhạo cười một tiếng, nàng liền bước những bước chân nhẹ nhàng, nhún nhảy một cái rời đi.</p>
+                <p>Giang Phàm sờ lên mũi, thầm nói: “Bây giờ còn sẽ có hạng người như vậy sao?”</p>
+                <p>Tuần tự trải qua nhiều đại chiến như vậy, trừ phi các đệ tử Cửu Tông đều là mù lòa, bằng không đối với thực lực chân thật của hắn, đều nên có nhất định nhận thức. Còn ai dám tùy tiện xem nhẹ hắn?</p>
+                <p>Nhìn người trong ngực còn đang ngủ say, Giang Phàm tựa ở trên tường thành, không làm phiền nàng, cũng không lãng phí thời gian. Hắn tranh thủ tu luyện công pháp “Thiên Lôi lục bộ Vân Trung Ảnh” trên Lôi Diễn lệnh. Lần trước vội vàng tu hành, chỉ tu luyện được một nửa, nhưng cũng nắm giữ kỹ thuật thuấn di 50 trượng. Khi cướp đoạt trâm cài xương trắng Yêu Nguyệt, kỹ năng này đã phát huy tác dụng cực kỳ quan trọng. Thần kỹ như vậy, sao có thể thiếu sót?</p>
+                <p>Lúc này, hắn nhắm mắt lại, chuyên chú tu luyện. Mấy canh giờ sau, trong cơ thể hắn lôi xà đi khắp, dòng điện phun trào. Chỉ cần hắn nghĩ, trong phạm vi trăm trượng đều có thể hóa thân Lôi Đình, trong nháy mắt mà tới. Bất luận là giết địch hay đoạt bảo, hoặc là xuất kỳ bất ý đào mệnh, đều là thần kỹ tương tự.</p>
+                <p>“Tầng thứ nhất tu luyện viên mãn. Tầng thứ hai nếu tu luyện viên mãn, liền có thể đạt được năng lực nghịch thiên là thuấn di trong phạm vi ngàn trượng. Đáng tiếc, với lôi điện chi lực hiện tại của ta, xa xa không chống đỡ nổi nhảy vọt khoảng cách dài như vậy,” Giang Phàm âm thầm tiếc hận. Có thể từ đá thiên lôi thu được một điểm lôi điện chi lực, tu hành thành công tầng thứ hai “Ngũ lôi chính thiên chưởng” của “Tam Thanh Lôi Ảnh”, đã là chuyện cực kỳ may mắn. Muốn lần nữa thu hoạch được nhiều lôi điện chi lực hơn, nào có chuyện tốt như vậy?</p>
+                <p>“Ưm…” Đột nhiên, Liễu Khuynh Tiên giật mình tỉnh lại. Nàng làm một giấc ác mộng, mơ thấy Giang Phàm với nửa khuôn mặt tàn khuyết, đầy người huyết y, mỉm cười hướng nàng vẫy tay từ biệt. May mắn thay, mở mắt ra, chính là khuôn mặt ôn nhuận hàm ý đưa tình của Giang Phàm, điều này mới khiến trái tim nàng siết chặt giãn ra. Hóa ra, là một giấc mơ.</p>
+                <p>Nàng ngồi dậy, lại rúc vào ngực Giang Phàm không chịu rời đi. Nhớ lại lúc trước khi ngủ, đã đánh ngực hắn, nàng liền duỗi ra ngón tay trắng tuyết, nhẹ nhàng vuốt vuốt.</p>
+                <p>“Còn đau không?” Liễu Khuynh Tiên ghé vào tai hắn, yên lặng hỏi.</p>
+                <p>Giang Phàm bắt lấy tay nàng, khẽ lắc đầu: “Đau, nhưng không có đau lòng.”</p>
+                <p>Biết Liễu Khuynh Tiên gặp chuyện không may, trái tim hắn như bị kiếm đâm một cái. Danh kiếm dù lợi, bảo đao dù phong, gì sánh được chữ tình làm tổn thương tâm? Liễu Khuynh Tiên đôi mắt ướt át, chỉ cảm giác chân tâm của mình không bị cô phụ. Ngước mắt đối diện với cặp mắt thâm thúy lại ôn nhu kia, nàng tuyết cái cổ hơi hơi dương lên. Đôi môi khô khan mà không ánh trạch, điểm vào khuôn mặt Giang Phàm.</p>
+                <p>Giang Phàm thân thể hơi chấn động một chút. Lần này, hắn không cự tuyệt. Ôm nàng vào lòng, say sưa đòi lấy.</p>
+                <p>Đang lúc hai người ánh mắt mê ly, hô hấp dần gấp gáp…</p>
+                <p>“Giang sư đệ, Giang sư đệ…”</p>
+                <p>Một tiếng gọi ầm ĩ từ xa mà đến gần tới. Sợ đến hai người đều run lên. Liễu Khuynh Tiên hoảng loạn theo Giang Phàm trong ngực đứng lên, vội vàng giật giật cổ áo tán ra, xoa xoa dấu vết trên môi.</p>
+                <p>Hai người nhìn về phía nơi phát ra âm thanh. Trong gió tuyết đầy trời, Lương Phi Yên một mặt nóng nảy chạy tới.</p>
+                <p>“Giang sư đệ, ngươi hóa ra trốn ở đây nha!”</p>
+                <p>Là hắn nha! Thật biết chọn thời điểm!</p>
+                <p>Giang Phàm lập tức nén giận, lạnh mặt nói: “Tìm ta có chuyện gì?”</p>
+                <p>Lương Phi Yên bị Giang Phàm mặt lạnh làm cho không hiểu gì. Mình làm gì mà chọc hắn rồi? Cho đến khi phát hiện Liễu Khuynh Tiên ở một bên ánh mắt không vui nghiêng nàng, lại thấy cổ áo Liễu Khuynh Tiên hơi lộ ra lộn xộn, trên môi còn lưu lại ẩm ướt, Lương Phi Yên mới hiểu ra mình quấy rầy chuyện tốt của người ta.</p>
+                <p>“Mẹ nó! Khó trách đều không chịu tới, đẩy hết cho ta tới!”</p>
+                <p>“Đồ chó hoang!”</p>
+                <p>Lương Phi Yên trong lòng mắng mẹ. Tất cả mọi người đang đợi Giang Phàm, Diệp Thương Uyên nhờ Nam Cung Tiểu Vân đến mời. Nam Cung Tiểu Vân giao cho Hạ Triều Ca. Hạ Triều Ca giao cho Âu Dương Quân. Âu Dương Quân giao cho Tạ Lưu Thư. Tạ Lưu Thư lại giao cho hắn. Hóa ra đám gia hỏa này đều đoán được Giang Phàm và Liễu Khuynh Tiên đang gặp nhau. Thậm chí nam nữ cô quả, củi khô lửa bốc, đang làm chút chuyện thân mật cũng không chừng. Đột nhiên chạy đến rất có thể quấy rầy người, nhận người ác, nên đều lần lượt từ chối. Chỉ có hắn ngu dại chạy tới. Quả nhiên liền ăn một cái mặt lạnh.</p>
+                <p>“Khụ khụ, Giang sư đệ, công huân bảng sắp phát thưởng, Diệp phó các chủ cùng chuyên viên Thiên Cơ các mời ngươi qua đó,” Lương Phi Yên không dám nhìn ánh mắt của hai người, nói thật nhanh.</p>
+                <p>Giang Phàm gật đầu một cái, kéo tay Liễu Khuynh Tiên đi luôn. Đi ngang qua Lương Phi Yên, hắn tức giận nói:</p>
+                <p>“Lương sư huynh, đừng chỉ mãi lo tu luyện. Có rảnh tìm sư tỷ, sư muội nào đó, nói chuyện tình, nói chút yêu đi. Cứ mãi một mình, đáng thương quá.”</p>
+                <p>Nói xong, vứt lại Lương Phi Yên đang trợn mắt há hốc mồm, nghênh ngang rời đi.</p>
+                <p>Nửa ngày sau Lương Phi Yên mới tỉnh hồn lại. Không khỏi giận đến đau dạ dày. Ăn mặt lạnh thì thôi, còn bị giáo huấn một trận.</p>
+                <p>“Không phải chỉ là phụ nữ sao? Ta Lương Phi Yên muốn tìm một thiên chi kiêu nữ danh chấn Cửu Tông, chẳng phải dễ như trở bàn tay sao? Cửu Tông đệ nhất mỹ nữ Liễu Khuynh Tiên… Ừ, cái này không tính. Linh Thú tông Đại sư tỷ Dịch Liên Tinh, ách, cái này cũng không tính. Thái Thượng tông đệ nhất thiên chi kiêu nữ Hạ Triều Ca, ngô, cái này càng không thể tính. Hợp Hoan tông phương danh lan xa Cơ Như Nguyệt sư muội, được rồi, cái này vẫn không thể tính. Ta đây Vạn Kiếm môn sư muội Tần Thải Hà tổng được chứ, nàng sắc đẹp có thể là rất biết đánh nhau… Thảo!”</p>
+                <p>Niệm đến cuối cùng, Lương Phi Yên trợn tròn con mắt, trực tiếp phát nổ nói tục. Cửu Tông phàm là thiên chi kiêu nữ có chút danh tiếng, tỉ mỉ đếm một chút, lại đều cùng Giang Phàm có thiên ti vạn lũ quan hệ.</p>
+                <p>“Giang Phàm! Ngươi cái cẩu vật! Lão Tử muốn báo quan phủ!”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_527">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 527: Vạn chúng chú mục</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giới Sơn, người người nhốn nháo.</p>
+                <p>Ngọn Giới Sơn không lớn, nhưng chật ních các tông nhân sĩ. Bởi vì số lượng quá đông, đỉnh núi căn bản không đủ chỗ đứng. Rất nhiều đệ tử phải chen chúc trên sườn núi.</p>
+                <p>Theo bước chân Giang Phàm đến, đám đông hỗn loạn ồn ào đột nhiên như phát hiện ra một châu lục mới. Ánh mắt dò xét dồn dập đổ dồn về phía hắn.</p>
+                <p>&quot;Vị sư đệ này, chính là Giang Phàm Giang sư đệ đại danh đỉnh đỉnh đó ư?&quot;</p>
+                <p>&quot;Thật sự là lợi hại a. Công huân bảng đời trước xếp thứ nhất. Nghe nói lần Giới Sơn đại chiến này, hắn lập được kỳ công.&quot;</p>
+                <p>&quot;Lời đồn hắn mới mười tám tuổi, thì ra là thật!&quot;</p>
+                <p>&quot;Thật không thể tin được, hắn vẫn là một đệ tử mới nhập tông chưa đầy nửa năm.&quot;</p>
+                <p>Các nam đệ tử của các tông phái có phần tán thưởng khi dò xét Giang Phàm. Các chấp sự và trưởng lão cũng đưa mắt dò xét.</p>
+                <p>&quot;Đệ tử môn hạ ta nói, chính là kẻ này cuối cùng đã thao túng thiên lôi, xoay chuyển càn khôn.&quot;</p>
+                <p>&quot;Không chỉ có thế, ban đầu vật liệu gỗ cũng là do hắn tìm đến. Trong chiến đấu cũng lập được rất nhiều công lao.&quot;</p>
+                <p>&quot;Ta đã tổng kết vài lần hắn ra tay ở những thời điểm mấu chốt. Câu này các ngươi có lẽ không tin, nhưng trận chiến này nếu không có Giang Phàm, nhân tộc chúng ta chắc chắn sẽ thua.&quot;</p>
+                <p>&quot;Vậy sao ta lại thấy Lôi tông chủ gặp ai cũng nói Giang Phàm không biết điều thế nhỉ?&quot;</p>
+                <p>&quot;Ưm... Hắn thật sự đã nói với ta như vậy, cứ như một oán phụ ấy. Giang Phàm đã làm gì hắn rồi?&quot;</p>
+                <p>Đến cả mấy vị Thái Thượng trưởng lão dẫn đầu chạy đến cũng không nhịn được tò mò dò xét.</p>
+                <p>&quot;Nghe nói kẻ này tinh thông đủ loại thần thông. Âm đạo của Thiên Âm tông, Lôi đạo của Chính Lôi tông, thậm chí Ngự Kiếm Thuật của Vạn Kiếm môn, hắn lại đều học được!&quot;</p>
+                <p>&quot;Nếu không phải lần đại chiến này khiến hắn lộ diện, ai dám tin Cửu Tông chúng ta lại có một yêu nghiệt như vậy?&quot;</p>
+                <p>&quot;Thanh Vân tông thật sự là thâm tàng bất lộ a, bí mật bồi dưỡng được nhân vật như thế này.&quot;</p>
+                <p>&quot;Cái gì mà bồi dưỡng được? Đám lão già ở Thanh Vân tông có bản lĩnh ấy sao? Bọn họ là gặp may mắn chó ngáp phải ruồi, nhặt được một bảo bối đệ tử như vậy!&quot;</p>
+                <p>&quot;Đúng vậy! Toàn bộ nhờ mồ mả tổ sư gia Thanh Vân tông bốc khói xanh!&quot;</p>
+                <p>&quot;May mắn chó ngáp phải ruồi! Khinh!&quot;</p>
+                <p>&quot;Ta cũng khinh!&quot;</p>
+                <p>&quot;Khinh!&quot;</p>
+                <p>Các nữ đệ tử cũng nhón chân, ngẩng cao chiếc cổ trắng nõn, tò mò nhìn ra xa vị đệ tử danh trấn tứ phương này.</p>
+                <p>&quot;Kia chính là Giang Phàm Giang sư đệ sao? Trông thật sự rất tuấn tú.&quot;</p>
+                <p>&quot;Chỉ tuấn tú thôi sao? Sự lợi hại của hắn ngươi không hề nhắc đến sao? Ta nghe nói hắn chỉ cần một khúc đàn đã diệt sạch hàng trăm con yêu thú đấy!&quot;</p>
+                <p>&quot;Sao ta lại nghe nói, hắn và Phó Triều Quân thi đấu đàn, một khúc xuống, hàng ngàn quân đoàn yêu thú bị hủy diệt?&quot;</p>
+                <p>&quot;À? Sao ta lại nghe nói, hắn mặc bộ y phục trắng như tuyết, một mình trên đỉnh núi đánh đàn, chỉ trong lúc nói cười đã trấn diệt hơn vạn đại quân tử thi?&quot;</p>
+                <p>Đương nhiên, cũng không ít nữ đệ tử tập trung sự chú ý vào Liễu Khuynh Tiên.</p>
+                <p>&quot;Nàng thật sự biết cách chọn mà, thoáng một cái đã câu được Giang sư đệ!&quot;</p>
+                <p>&quot;Chẳng qua chỉ là nhà ở ven hồ hưởng ánh trăng trước thôi!&quot;</p>
+                <p>&quot;Đúng vậy, xét về sắc đẹp ta không thấy mình thua Liễu Khuynh Tiên nhiều lắm, chỉ là thua ở vận khí.&quot;</p>
+                <p>Liễu Khuynh Tiên đi theo bên cạnh Giang Phàm, chịu đủ ánh mắt chú mục của toàn trường.</p>
+                <p>Thân là thiên kim tông chủ Thanh Vân tông, nàng cũng đã quen với những trường hợp lớn. Nhưng trận chiến lớn như thế này, đây là lần đầu tiên nàng trải qua, không khỏi có chút câu nệ.</p>
+                <p>Nàng nghĩ lại nửa năm trước, Giang Phàm vẫn chỉ là một tiểu bối vô danh cần dựa vào phần thưởng mới có thể may mắn sử dụng linh trì trong phủ thành chủ Cô Chu. Giờ đây, hắn đã hào quang vạn trượng, trở thành nhân vật phong vân khiến nàng cũng được vạn người chú ý.</p>
+                <p>Khi nghe thấy một vài âm thanh không hòa hợp bên tai, trong lòng nàng lại càng nảy sinh một tia tự ti. Dường như nàng lúc này có chút không xứng với hào quang của Giang Phàm.</p>
+                <p>Lúc này, Giang Phàm siết chặt tay nàng một chút.</p>
+                <p>Cảm nhận được sự ủng hộ vô hình của hắn, đáy lòng Liễu Khuynh Tiên lập tức có sức mạnh to lớn. Bất kể bên ngoài nhìn nàng thế nào, giờ phút này, Giang Phàm đang đứng bên cạnh nàng.</p>
+                <p>Nàng xua tan tâm trạng sa sút, thẳng lưng, ánh mắt sắc bén đối chọi lại những nữ đệ tử đang ghen tỵ. Sau đó, nàng kiêu hãnh ngẩng cao chiếc cổ trắng nõn, chủ động khoác tay Giang Phàm, tuyên bố chủ quyền, hệt như một vị tướng quân đắc thắng trở về.</p>
+                <p>Điều này khiến nhiều nữ đệ tử ngầm nắm chặt nắm đấm vì tức giận.</p>
+                <p>&quot;Vậy mà dám khiêu khích ta!&quot;</p>
+                <p>&quot;Cái đồ đàn bà hợm hĩnh đắc ý quên mình!&quot;</p>
+                <p>&quot;Khoe khoang cái gì chứ?&quot;</p>
+                <p>&quot;Trời ơi! Nàng sẽ không nghĩ là ta đang ghen tỵ với nàng đấy chứ?&quot;</p>
+                <p>Nghe thấy tiếng tức giận bất lực của họ, khóe miệng Liễu Khuynh Tiên khẽ nhếch lên, cảm thấy vô cùng vui vẻ.</p>
+                <p>Dưới vô số ánh mắt dõi theo, Giang Phàm dẫn theo Liễu Khuynh Tiên một đường đi đến trước mặt Diệp Thương Uyên.</p>
+                <p>&quot;Đệ tử Thanh Vân tông Giang Phàm, bái kiến Diệp phó các chủ.&quot;</p>
+                <p>Khuôn mặt bầu bĩnh đầy ý tứ của Diệp Thương Uyên, từ khi Giang Phàm xuất hiện, nụ cười chưa hề tắt.</p>
+                <p>&quot;Mau mau đứng dậy, mau mau đứng dậy, công thần hạng nhất của chúng ta!&quot;</p>
+                <p>&quot;Ôi chao! Lão phu thật sự đã nhìn nhầm!&quot;</p>
+                <p>&quot;Mặc dù biết ngươi sẽ biểu hiện bất phàm, nhưng tuyệt đối không ngờ lại lợi hại đến vậy!&quot;</p>
+                <p>&quot;Trận đại thắng Giới Sơn lần này, ngươi là người đứng đầu!&quot;</p>
+                <p>Hắn cười đến không ngậm miệng được. Từ khi tọa trấn Lạc Nhật thành, chỉ huy các phương, đây là lần đầu tiên hắn thoải mái cười to. Bởi vì trận đại thắng này có ảnh hưởng vô cùng sâu xa. Đây là trận đại chiến chính diện đầu tiên giữa nhân tộc và yêu tộc sau thời viễn cổ. Kết quả, nhân tộc chỉ với hai trăm quân giữ thành ít ỏi, đã đại bại đại quân tử thi một vạn của yêu tộc. Chiến tích huy hoàng như vậy, chắc chắn sẽ để lại một nét chói sáng trong sử sách!</p>
+                <p>Đồng thời, nó cũng khích lệ sĩ khí rất lớn. Nó cho chín tông môn nhân biết rằng yêu tộc không phải là không thể chiến thắng! Thậm chí, còn làm thay đổi cục diện chiến tranh. Trải qua trận này, chiến lực của yêu tộc bị suy giảm, sĩ khí thấp thỏm. Ngược lại, sĩ khí của nhân tộc dâng cao, chưa từng có sự đoàn kết. Cục diện cân bằng ngang ngửa giữa hai bên đã bị phá vỡ hoàn toàn!</p>
+                <p>Nếu không có gì bất ngờ xảy ra, phần thắng của nhân tộc sẽ cao hơn! Cho nên, công lao của Giang Phàm to lớn như thế nào có thể tưởng tượng được.</p>
+                <p>Giang Phàm chắp tay nói: &quot;Diệp phó các chủ quá khen. Công lao đầu tiên nên dành cho những tông môn nhân chín tông đã hy sinh. Không có sự liều chết bảo vệ cương thổ của họ, đâu có chiến thắng của chúng ta.&quot;</p>
+                <p>Diệp Thương Uyên thu lại nụ cười. Trong lòng lại càng thêm tán thưởng Giang Phàm. Cư công to lớn mà không kiêu ngạo, cúi mình trước chúng sinh mà biết xót thương. Cho hắn thời gian, hẳn sẽ tạo phúc cho một phương, trở thành đương thế nhân kiệt.</p>
+                <p>Hắn nghiêm trang gật đầu: &quot;Những tông môn nhân chín tông đã hy sinh sẽ được an táng với lễ nghi cao nhất. Sư môn của họ sẽ nhận được tài nguyên bồi thường từ Thiên Cơ các. Gia tộc của họ, tiểu bối trong tộc sẽ được giảm bớt ngưỡng cửa, đặc biệt được vào Cửu Tông. Cha mẹ nếu còn sống, do Thiên Cơ các chăm sóc đến trọn đời. Nếu đã qua đời, Thiên Cơ các sẽ thay mặt cung phụng linh vị một giáp.&quot;</p>
+                <p>Lời vừa dứt, tiếng khóc lóc trong đám đông liên tiếp vang lên. Các trưởng lão và đệ tử đã trải qua sự mất mát của môn đồ, lặng lẽ rơi lệ. Họ vui mừng vì những đồng đội đã hy sinh đã nhận được sự tôn trọng cao nhất. Những người còn lại cũng cảm thấy vui mừng. Lễ ngộ cao như vậy chưa từng có trước đây, càng khiến họ kiên định quyết tâm chiến đấu trận này. Bởi vì dù chết trận, cũng không có nỗi lo về sau.</p>
+                <p>Diệp Thương Uyên nói xong, liền quay sang La Đông Thành bên cạnh nói:</p>
+                <p>&quot;La chuyên viên, Ngụy chuyên viên, tiếp theo việc công huân bảng sẽ do hai ngươi chủ trì.&quot;</p>
+                <p>Lần này, chủ trì công huân bảng là La Đông Thành và một nữ tử trẻ ngại ngùng ngoài ba mươi tuổi. Nàng tên là Ngụy Nhiên. Tuổi tác tuy không lớn, nhưng thực lực lại cao tới Kết Đan bảy tầng. Nàng may mắn được chức vị chuyên viên của Thiên Cơ các. Lần này là lần đầu tiên nàng rời Thiên Cơ các chấp hành nhiệm vụ. Điều khiến nàng thấp thỏm là, người hợp tác với nàng lại là La Đông Thành nổi tiếng khó chung đụng.</p>
+                <p>La Đông Thành là chuyên viên lão làng, thường xuyên di chuyển giữa Cửu Tông. Do tính tình ngạo mạn, hắn không ít lần kết oán với người của Cửu Tông. Ngụy Nhiên rất lo lắng, nhiệm vụ đầu tiên của mình sẽ bị cuốn vào mâu thuẫn với Cửu Tông.</p>
+                <p>Nghe Diệp Thương Uyên lên tiếng, nàng suy nghĩ một chút, vẫn quyết định nàng sẽ nói trước để tránh La Đông Thành vừa mở miệng đã đả kích người khác. Nàng bước lên một bước, dùng giọng điệu giải quyết công việc nói:</p>
+                <p>&quot;Xin các vị đệ tử, tự giác xếp hàng, lần lượt nộp yêu đan để chúng tôi thống kê...&quot;</p>
+                <p>Là chuyên viên của Thiên Cơ các, nàng không thể ngạo mạn, nhưng cũng không thể quá hòa ái. Thái độ giải quyết công việc là thích hợp.</p>
+                <p>Ai ngờ, nàng chưa nói xong, La Đông Thành đã đứng dậy quát lớn: &quot;Ngụy chuyên viên!&quot;</p>
+                <p>&quot;Chú ý thái độ của ngươi!&quot;</p>
+                <p>&quot;Nói chuyện với đệ tử Cửu Tông sao có thể ngạo mạn như thế?&quot;</p>
+                <p>&quot;Họ đã chiến đấu đổ máu vì đại chiến, nên cần thêm sự quan tâm, bớt đi sự lạnh lùng!&quot;</p>
+                <p>Ngụy Nhiên chớp chớp mắt, chỉ chỉ vào mũi mình. Ta ngạo mạn ư? Bị La Đông Thành nói ta quá ngạo mạn? Nàng có cảm giác La Đông Thành cầm nhầm kịch bản.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_528">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 528: Chiến tích mạnh đến mức quá giả</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Lời này, chẳng phải Ngụy Nhiên đang chỉ trích La Đông Thành sao?</p>
+                <p>Hơn nữa!</p>
+                <p>Lúc nãy nàng nói rất đúng với thân phận, chỗ nào dính dáng đến ngạo mạn?</p>
+                <p>Ngay cả Diệp Thương Uyên cũng lộ vẻ kinh ngạc nhìn La Đông Thành, như thể đang nhận ra hắn lần nữa.</p>
+                <p>Diệp Thương Uyên có nghe tiếng về La Đông Thành. Làm chuyên viên có tuổi, hắn chậm chạp không thể đột phá cảnh giới tiếp theo, cũng chẳng thể thăng chức cao hơn. Thế là, hắn có tâm thái &quot;vô vọng thì mặc kệ&quot;. Hắn trở thành một kẻ già đời đúng nghĩa. Có nhiệm vụ, hắn sẽ tìm cách gian lận nếu được.</p>
+                <p>Chẳng hạn như lần công bố bảng xếp hạng trước, hắn buông tay hoàn toàn, giao hết cho Lâm Ngọc Hành xử lý. Bị buộc phải ra mặt, hắn lại tỏ vẻ ngạo mạn, thô lỗ. Hắn không ít lần cãi nhau với người của Cửu Tông, thậm chí còn động thủ nhiều lần. Nếu không nhờ hào quang chuyên viên bảo vệ, với cái tính nát bươm ấy, hắn đã bị người ta đánh chết từ lâu rồi.</p>
+                <p>Hôm nay mặt trời mọc đằng tây sao? Hắn chủ động nhận việc không nói, lại còn phê bình đồng nghiệp không đủ quan tâm các đệ tử Cửu Tông? Hơn nữa, theo Diệp Thương Uyên, lời Ngụy Nhiên nói cũng không có vấn đề gì, thậm chí trong số các chuyên viên, nàng còn được coi là rất khách khí.</p>
+                <p>&quot;Ngươi lui ra một bên, xem ta chủ trì thế nào!&quot; La Đông Thành lạnh lùng mặt, đẩy Ngụy Nhiên đầy ủy khuất ra sau.</p>
+                <p>Khi đối mặt với các đệ tử Cửu Tông, hắn lập tức thay đổi sang bộ dạng hòa nhã, dễ gần. Ôm quyền nói: &quot;Chư vị sư đệ sư muội Cửu Tông, một tháng qua mọi người đã vất vả rồi.&quot;</p>
+                <p>&quot;Để báo đáp, bảo khố tháng này sắp mở cửa.&quot;</p>
+                <p>&quot;Nhiệm vụ Hạn Chế Vô Hạn có rất nhiều, cần thống kê từng cái một.&quot;</p>
+                <p>&quot;Xin chư vị sư đệ sư muội chịu khó thêm chút nữa, giao nộp Yêu Đan Thú Vương thu được gần đây cho sư huynh thống kê. Sư huynh chắc chắn sẽ thống kê theo lẽ công bằng, đưa ra bảng xếp hạng công bằng nhất cho chư vị sư đệ sư muội.&quot;</p>
+                <p>Ước...</p>
+                <p>Ngụy Nhiên thấy choáng váng. Nàng sờ mặt mình, có cảm giác không chân thực.</p>
+                <p>Không phải. Đây là La Đông Thành khét tiếng hay sao? Hắn không thô lỗ khiến nhiều người tức giận đã là kỳ tích, vậy mà lại hạ thấp tư thái, bình dị gần gũi như vậy? Các chuyên viên khác cũng không làm được như hắn!</p>
+                <p>Diệp Thương Uyên cũng lộ ra vẻ mặt như gặp quỷ. Nói câu không hay thì tư thái của La Đông Thành đã quá thấp, có hại đến uy nghiêm của Thiên Cơ Các. Chuyện như vậy lại là La Đông Thành làm ra? Thật không thể tưởng tượng nổi.</p>
+                <p>Các đệ tử Cửu Tông ít giao tiếp với La Đông Thành nên cũng không phát hiện điều bất thường, chỉ cảm thấy chuyên viên này rất dễ nói chuyện. Thế là họ lần lượt xếp hàng.</p>
+                <p>La Đông Thành thân thiết tiếp đón từng người một, ánh mắt thỉnh thoảng lướt qua các đệ tử. Khi phát hiện Giang Phàm cũng trong hàng, hắn càng thêm thân thiết. Chẳng có cách nào, chỉ có vậy mới có thể thay đổi ấn tượng tệ hại của hắn trong lòng Giang Phàm.</p>
+                <p>Rất nhanh đến lượt Giang Phàm. La Đông Thành tâm tình cũng kích động lên không ít, cười nói ấm áp: &quot;Giang sư đệ, đã lâu không gặp.&quot;</p>
+                <p>Giang Phàm đương nhiên nhớ La Đông Thành. Ngày đó đưa thịt trai cho Lâm Ngọc Hành, hắn cũng muốn tiện thể đưa cho hắn một ít. Không ngờ, hắn lại từ chối.</p>
+                <p>&quot;La chuyên viên, lần này sao không đi cùng Lâm chuyên viên?&quot; Lâm Ngọc Hành rất quan tâm Giang Phàm, thiện ý này Giang Phàm vẫn luôn ghi nhớ.</p>
+                <p>Khóe miệng La Đông Thành giật giật, không che giấu vẻ hâm mộ, nói: &quot;Nhờ phúc Giang sư đệ, Lâm chuyên viên đã đột phá Kết Đan tám tầng. Thuận lý thành chương thăng lên chức vị cao hơn. Sau này không cần làm công việc chuyên viên vất vả nữa.&quot;</p>
+                <p>Nói đến đây toàn là nước mắt! Lâm Ngọc Hành giống như hắn, đều là chuyên viên có tuổi, vô vọng đột phá Kết Đan tám tầng. Làm việc ở Thiên Cơ Các được ngày nào hay ngày đó. Nhưng nàng may mắn, gặp được Giang Phàm, quý nhân của nàng, nhận được một đoàn ngàn năm linh nhục. Thế là, vận mệnh thay đổi. Nhờ ngàn năm linh nhục, nàng một mạch đột phá Kết Đan tám tầng. Mà có tu vi cao hơn, nàng đương nhiên được Thiên Cơ Các trọng dụng, thăng chức. Còn La Đông Thành thì sao? Rõ ràng Giang Phàm nể mặt Lâm Ngọc Hành, cũng đưa hắn một đoàn ngàn năm linh nhục, cho hắn một cơ duyên to lớn. Nhưng lại bị hắn ghét bỏ cự tuyệt!!!</p>
+                <p>Nửa tháng qua, hắn không biết hối hận đến mức tự tát bao nhiêu cái bạt tai. Bởi vậy, lần này hắn đến là ôm suy nghĩ kết giao lại với Giang Phàm. Bây giờ Giang Phàm ở trước mặt, hắn tự nhiên muốn thay đổi tác phong ngày xưa, làm việc thật lòng.</p>
+                <p>Biết Lâm Ngọc Hành lên chức, Giang Phàm lộ vẻ vui mừng: &quot;Có cơ hội, ta sẽ chúc mừng nàng sau.&quot;</p>
+                <p>&quot;La chuyên viên, đây là Yêu Đan của ta, làm phiền ngươi kiểm đếm chút.&quot; Hắn đưa một bọc quần áo cho La Đông Thành.</p>
+                <p>La Đông Thành không nhận, nói: &quot;Đặt lên bàn đi.&quot;</p>
+                <p>&quot;Ta cố gắng không chạm vào, để tránh rơi vào nghi ngờ thống kê gian lận, ảnh hưởng không tốt đến Giang sư đệ.&quot; La Đông Thành chỉ vào chiếc bàn gỗ trước mặt.</p>
+                <p>Không thể không nói, nếu hắn nghiêm túc làm việc, vẫn rất lão luyện. Giang Phàm gật đầu, tiện tay đặt bọc quần áo lên mặt bàn trước mặt La Đông Thành.</p>
+                <p>Giới Sơn đơn sơ, đến một căn phòng tử tế cũng không có. Chiếc bàn này vẫn là dùng vật liệu gỗ còn sót lại sau đại chiến làm tạm. Mấy vật liệu gỗ này trải qua ngàn năm phong hóa, hơi yếu ớt. Đặt đồ vật nhẹ nhàng không vấn đề, nhưng không chịu được trọng lượng lớn. Bởi vậy, khi Giang Phàm buông tay, liền nghe tiếng loảng xoảng. Toàn bộ bàn gỗ trong nháy mắt sập xuống.</p>
+                <p>Tiếng động lớn dẫn đến ánh mắt kinh ngạc của các đệ tử, chấp sự và trưởng lão đang xếp hàng. La Đông Thành cũng sửng sốt một chút: &quot;Giang sư đệ, trong đây ngươi có bao nhiêu Yêu Đan vậy?&quot;</p>
+                <p>Trước đây, đệ tử nhiều nhất thống kê được hơn hai mươi viên Yêu Đan. Đây đã là chiến tích phi thường. Dù sao đây đều là Yêu Đan cấp Thú Vương. Các đệ tử Kết Đan sơ kỳ, mỗi lần chém giết một đầu Thú Vương đều rất khó khăn. Hơn hai mươi đầu đã rất lợi hại, nhưng nhiều Yêu Đan như vậy đặt lên bàn cũng không làm bàn sập. Bây giờ thì sao?</p>
+                <p>Giang Phàm nói: &quot;Số lượng cụ thể, ta cũng không nhớ rõ.&quot;</p>
+                <p>&quot;La chuyên viên đếm một chút thì biết.&quot;</p>
+                <p>Không nhớ rõ? La Đông Thành run lên. Nói gì vậy? Với thực lực của Giang Phàm, mỗi lần giết một đầu Thú Vương đều phải rất tốn sức mới đúng! Giết vài đầu, lẽ ra phải nhớ rõ mới phải.</p>
+                <p>Trong đám đệ tử, cũng có người hừ lạnh: &quot;Ngươi cứ giả vờ đi!&quot;</p>
+                <p>Trong hàng đệ tử Cự Nhân Tông, một đệ tử vóc người cực kỳ khôi ngô, như một ngọn núi nhỏ, hai mắt phun lửa nhìn chằm chằm Giang Phàm. Khắp đại địa Cửu Tông, có người hình dáng không giống con người, như yêu thú, chỉ có một. Đó chính là bán cự nhân có huyết mạch viễn cổ cự nhân! Tiết Vạn Trọng!</p>
+                <p>Tại Cự Nhân Tông, hắn bị Giang Phàm trọng thương. Bây giờ không những thương thế phục hồi, thể phách lại có bước nhảy vọt về chất. Mờ mờ có lực lượng thể phách của thực lực Kết Đan ba tầng, có thể so ngang với Kim Trọng Minh.</p>
+                <p>&quot;Với tu vi của ngươi, có thể giết được mấy đầu Thú Vương?&quot;</p>
+                <p>&quot;Trang một túi đá lớn, là sợ mất mặt mũi quán quân bảng công huân của ngươi sao?&quot;</p>
+                <p>&quot;Chuyện gì cũng phải đến lúc lộ ra.&quot;</p>
+                <p>&quot;Những trò lừa gạt này đừng lấy ra làm xấu mặt.&quot;</p>
+                <p>Giang Phàm mắt lộ vẻ nghi hoặc. Tiết Vạn Trọng mới đến Tuyết Nguyên gần đây, không biết chiến tích của Giang Phàm thì thôi. Nhưng Kim Trọng Minh lại tận mắt nhìn thấy thu hoạch kinh người của Giang Phàm ở Hẻm Núi Đoạn Thiên, làm sao có thể không rõ ràng?</p>
+                <p>Nhưng Kim Trọng Minh im lặng đứng một bên, nhắm mắt mà đứng, không chút nào có ý khuyên nhủ Tiết Vạn Trọng, bảo hắn đừng làm xấu mặt.</p>
+                <p>Không ít đệ tử không rõ tình hình cũng hùa theo: &quot;Cái túi kia nếu toàn là Yêu Đan Thú Vương, chẳng phải là đến mấy trăm viên?&quot;</p>
+                <p>&quot;Làm sao có thể? Làm sao có nhiều Thú Vương cho hắn giết?&quot;</p>
+                <p>&quot;Vẫn là Tiết sư huynh thấy rõ ràng, Giang Phàm này, là sợ chiến tích lần này quá tệ, bị đánh về nguyên hình.&quot;</p>
+                <p>&quot;La chuyên viên và hắn là người quen cũ, có phải đã thương lượng xong, ngầm thao túng số liệu thống kê không?&quot;</p>
+                <p>La Đông Thành cũng không khỏi lo lắng. Những lời lẽ âm mưu này của những người này cũng không phải hoàn toàn vô lý. Túi lớn như vậy, thật sự đều là Yêu Đan Thú Vương, thì phải có bao nhiêu?</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_529">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 529: Hoài nghi</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Hắn trong lòng một hồi mâu thuẫn.</p>
+                <p>Công bằng lý do thống kê ư? Có thể nào bộc lộ ra chiến tích chân thực của Giang Phàm, khiến hắn nhận thiên phu sở chỉ, bị mất mặt?</p>
+                <p>Ngầm thao tác ư? Diệp phó các chủ đang nhìn chằm chằm bên cạnh. Chưa nói thất bại sẽ có kết cục gì, coi như thành công, khẳng định cũng sẽ bị các đệ tử ở đây nghi vấn? Dù sao, con số mấy trăm con Thú Vương do một người chém giết là quá khoa trương. La Đông Thành với thực lực Kết Đan bảy tầng cũng không dám nói mình có thể trong một tháng chém giết nhiều Thú Vương như vậy, huống chi là Giang Phàm vừa mới Kết Đan tầng hai.</p>
+                <p>&quot;La chuyên viên, nhanh thống kê đi.&quot;</p>
+                <p>Giang Phàm nghe từng tiếng nghi vấn, không khỏi âm thầm im lặng. Hắn còn thấy sốt ruột thay chỉ số IQ của những người này. Trong bao quần áo đựng tảng đá? Lại còn đựng mấy trăm viên? Thiệt là họ nghĩ ra được!</p>
+                <p>Nếu thật sự làm giả nhiều chiến tích như vậy, chớ nói những người này sẽ nghi vấn, các Tông trưởng lão, Thái Thượng trưởng lão đang ngồi, thậm chí là chính Diệp Thương Uyên đều sẽ nghi vấn. Đến lúc đó tại chỗ giằng co, Giang Phàm xong, La Đông Thành cũng xong. Ngón chân nghĩ một lát, La Đông Thành đều khó có khả năng phối hợp Giang Phàm làm loại chuyện chắc chắn sẽ lộ tẩy này!</p>
+                <p>Nghe thấy tiếng thúc giục, La Đông Thành với vẻ mặt khó xử mở bao quần áo. Hắn vẫn chưa quyết định xong có giúp Giang Phàm gian lận hay không. Không gian lận, đắc tội Giang Phàm, ngàn năm linh nhục cũng đừng nghĩ. Gian lận… Nhưng mấy trăm viên yêu đan làm sao giấu diếm được? Cuối cùng khẳng định sẽ bị yêu cầu đối chất.</p>
+                <p>Vậy thì báo thêm mấy khỏa yêu đan? Miễn cưỡng giúp Giang Phàm giữ thể diện một chút, không đến mức quá mất mặt? Nghĩ lại, La Đông Thành lại âm thầm lắc đầu. Bởi vì trong túi này rõ ràng không chỉ có ít như vậy yêu đan. Báo quá ít vẫn sẽ gây nghi vấn. Điều này khiến hắn thật khó xử!</p>
+                <p>Với tâm trạng nặng nề, hắn cởi bao quần áo ra, lập tức nghe thấy vô số đồ vật va đập vào nhau. Hắn không khỏi cười khổ. Giang Phàm rốt cuộc đựng bao nhiêu tảng đá trong đó? Tựa hồ còn không chỉ hai trăm viên.</p>
+                <p>Thế nhưng, khi ánh mắt nhìn vào trong, La Đông Thành ngây dại. Đủ mọi màu sắc, to to nhỏ nhỏ, rực rỡ muôn màu đủ loại yêu đan hiện ra trước mắt. Nhỏ như mắt người, lớn như nắm tay hài nhi. Màu sắc đa dạng, thậm chí còn có màu hỗn tạp mà hắn không thể hình dung nổi. Những thứ này, lại đều là yêu đan! Thuần một sắc, tất cả đều là yêu đan cấp bậc Thú Vương! Thậm chí có mấy khỏa, vẫn là yêu đan Kết Đan hậu kỳ! Còn về những tảng đá như trong tưởng tượng? Một khỏa cũng không có!</p>
+                <p>Ngẩn người một hồi lâu, hắn mới nhớ ra công việc bản chức của mình. Như trút được gánh nặng, bắt đầu kiểm kê.</p>
+                <p>Tiết Vạn Trọng thấy vậy thì cười nhạo không thôi.</p>
+                <p>&quot;Xem đi, làm như thật thống kê đi lên.&quot;</p>
+                <p>&quot;Ta cũng muốn nhìn xem, Giang Phàm cuối cùng có thể có được chiến tích gì!&quot;</p>
+                <p>Các đệ tử tâm tồn không phục Giang Phàm cũng cười lạnh không thôi.</p>
+                <p>&quot;Không vội, để cho bọn họ gian lận. Không sợ họ làm cho cao, chỉ sợ họ gian lận ít quá, lát nữa khó mà làm loạn với họ!&quot;</p>
+                <p>&quot;Một kẻ vô linh căn của Thanh Vân tông, còn muốn mãi mãi giẫm lên những thiên chi kiêu tử chân chính của chúng ta sao?&quot;</p>
+                <p>&quot;Lần này công huân bảng, nhất định phải cho hắn lộ nguyên hình!&quot;</p>
+                <p>Không khí hiện trường, theo thời gian La Đông Thành kiểm kê, trở nên có chút cổ quái. Các trưởng lão và các vị Thái Thượng trưởng lão, ban đầu cũng không tin Giang Phàm gian lận. Lý do rất đơn giản: Gian lận một hai khỏa không có vấn đề gì lớn, nhưng gian lận số lượng yêu đan lớn như vậy, lẽ nào là coi những người ở đây đều là đồ trang trí sao? Căn bản không thể thông qua!</p>
+                <p>Thế nhưng, nhìn thấy La Đông Thành mãi mà vẫn chưa kiểm kê xong, bọn họ cũng không nhịn được thầm nghĩ.</p>
+                <p>&quot;Cái này cần bao nhiêu yêu đan?&quot;</p>
+                <p>&quot;Coi như hai trăm viên, cũng sớm nên đếm xong rồi chứ?&quot;</p>
+                <p>&quot;Chẳng lẽ, bên trong có ba trăm viên yêu đan?&quot;</p>
+                <p>&quot;Số lượng yêu đan như thế, dù cho là các trưởng lão chúng ta ra tay, đều khó có khả năng đạt được?&quot;</p>
+                <p>&quot;Trước không nói đi đâu tìm nhiều Thú Vương như vậy, chỉ riêng việc chém giết chúng nó đã tốn sức rồi.&quot;</p>
+                <p>&quot;Dù sao đây đều là Thú Vương thật sự, không phải bù nhìn mặc cho chúng ta chém.&quot;</p>
+                <p>Lý Thanh Phong cùng Ôn Hồng Dược, Triệu Vô Cực ba người vẻ mặt bình tĩnh. Mấy vị trưởng lão từ Thanh Vân tông chạy tới, có chút thấp thỏm nói:</p>
+                <p>&quot;Lý trưởng lão, Giang Phàm không có vấn đề gì chứ?&quot;</p>
+                <p>&quot;Nếu lần này gian lận, thanh danh tích lũy trước đây đã có thể hủy sạch rồi.&quot;</p>
+                <p>Giang Phàm lần này là vì Thanh Vân tông tranh giành một phần vinh quang lớn lao, khiến Thanh Vân tông được nở mày nở mặt trong Cửu Tông. Thân là đệ tử Thanh Vân tông, họ đi đến đâu cũng đều nhận được ánh mắt hâm mộ từ đệ tử các tông môn khác. Thế nhưng, nếu Giang Phàm gian lận bị phát hiện, vinh quang này sẽ sụp đổ trong chốc lát.</p>
+                <p>Lòng người phức tạp. Có thể khoan dung độ lượng, cũng có thể ghen ghét nhỏ hẹp. Cho nên, một người làm chuyện xấu cả đời, đột nhiên làm một chuyện tốt, sẽ kích phát thiện ý của người khác, đạt được sự tán đồng của họ. Ngược lại, một người chính trực cả đời, đột nhiên làm một chuyện xấu, liền như thiên lý bất dung, bị chửi bới chỉ trích. Điều này cũng là bởi vì, lòng người dễ thay đổi.</p>
+                <p>Đặt trên người Giang Phàm cũng vậy. Hắn hiện tại vinh quang gia thân. Đặc cấp công thần, thiếu niên anh hùng, ngôi sao mới của Cửu Tông. Nhưng nếu làm một chuyện xấu, vinh quang này sẽ trong nháy mắt sụp đổ, khiến hắn trở thành chuột chạy qua đường bị thiên phu sở chỉ. Danh tiếng tạo nên người, cũng sẽ hủy người. Giang Phàm hiện tại đang ở vào một hoàn cảnh cực kỳ mong manh, không cho phép hắn có bất kỳ tì vết nào.</p>
+                <p>Lý Thanh Phong cũng ý thức được tính nghiêm trọng của vấn đề. Hắn hít sâu một hơi, nói: &quot;Ta tin tưởng Giang Phàm làm người.&quot;</p>
+                <p>Ngữ khí không tính kiên định, bởi vì hắn cũng cảm thấy số lượng yêu đan kia nhiều đến không tưởng nổi. Giản Lâm Uyên lợi hại lắm chứ? Là đệ tử Thiên Cơ các, thiếu chủ gia tộc thần bí, sau lưng càng có cường giả vô hình vô ảnh bảo hộ. Nhưng khi hắn nộp yêu đan, cũng chỉ hơn một trăm viên mà thôi. Giang Phàm làm sao có thể nhiều hơn Giản Lâm Uyên được?</p>
+                <p>Nghe thấy ngữ khí của hắn như vậy, các trưởng lão Thanh Vân tông đều lo lắng không thôi. Ngược lại, Khổng Nguyên Bá cách đó không xa, phát giác được sắc mặt của các trưởng lão Thanh Vân tông, tâm tình thoải mái không ít.</p>
+                <p>&quot;Giang Phàm rốt cuộc vẫn còn quá trẻ.&quot;</p>
+                <p>&quot;Danh tiếng thứ này, lúc hưởng thụ thì vô cùng thích thú.&quot;</p>
+                <p>&quot;Chỉ khi nào dùng không tốt, phản phệ lại thì muốn mạng cũng là thật muốn mạng.&quot;</p>
+                <p>&quot;Người Thanh Vân tông, vừa rồi có bao nhiêu thần khí, lát nữa vẻ mặt sẽ khó coi bấy nhiêu.&quot;</p>
+                <p>&quot;Ha ha ha.&quot;</p>
+                <p>Diệp Thương Uyên chấp tay sau lưng, yên lặng không nói. Thế nhưng, ý cười ban đầu trên mặt, chẳng biết từ lúc nào đã khôi phục lại vẻ cứng nhắc. Có thể biết tâm trạng của hắn lúc này cũng không tốt lắm. Thậm chí, đứng bên cạnh Nam Cung Tiểu Vân, còn mơ hồ nghe thấy Diệp Thương Uyên phát ra một tiếng thở dài. Nàng hiểu rõ, Diệp Thương Uyên đang tiếc hận Giang Phàm. Một ngôi sao mới đang nổi, bởi vì một lần gian lận mà hủy đi, thật sự là quá đáng tiếc. Nàng nhìn về phía Giang Phàm, cũng có tiếc hận sâu sắc. Rõ ràng tiền đồ xán lạn, nhưng bởi vì nhất thời tham niệm, rơi vào cảnh danh tiếng mất hết. Cần gì chứ?</p>
+                <p>Liễu Khuynh Tiên cũng không khỏi khẩn trương lên, nhưng nàng không buông tay Giang Phàm, ngược lại còn nắm chặt hơn. Mặc kệ Giang Phàm có bị thiên phu sở chỉ hay không, cũng mặc kệ có bị liên lụy hay không. Nếu đã quyết định Giang Phàm, vậy thì trung thành với Giang Phàm. Chớ nói chẳng qua là gian lận, coi như một ngày nào đó Giang Phàm bất đắc dĩ phản bội nhân tộc, nàng cũng sẽ không chút do dự theo Giang Phàm mà đi, cùng toàn nhân loại là địch!</p>
+                <p>Cũng chính trong bầu không khí có chút đè nén này, La Đông Thành thở phào một hơi đứng thẳng người, vặn vẹo uốn éo cái eo ê ẩm.</p>
+                <p>Nói: &quot;Thống kê xong.&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_530">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 530: Gian lận ta cũng duy trì hắn</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Toàn trường bỗng nhiên yên tĩnh.</p>
+                <p>Bọn hắn đều muốn xem xem, La Đông Thành sẽ báo ra một con số thế nào.</p>
+                <p>Tựa hồ, bất luận báo nhiều hay ít, đều sẽ gây nghi vấn.</p>
+                <p>Theo Giang Phàm lấy ra cái túi lớn đó, Giang Phàm liền không còn đường lui. Trừ phi tất cả yêu đan của hắn đều là thật. Bằng không, hôm nay hắn khó tránh khỏi thân bại danh liệt. Chỉ có điều, khả năng có nhiều yêu đan như vậy đều là thật rất nhỏ, gần như không thể xảy ra.</p>
+                <p>La Đông Thành nhìn mọi người xung quanh, mỉm cười nói:&quot;Thanh Vân tông đệ tử Giang Phàm, Thú Vương yêu đan, ba trăm năm mươi viên!&quot;</p>
+                <p>Trên Giới Sơn tĩnh lặng, con số ba trăm năm mươi như một cơn lốc xoáy, không ngừng lượn vòng trên không, vang vọng bên tai mỗi người.</p>
+                <p>&quot;Bao nhiêu? Ba trăm năm mươi viên?&quot; Một Thái Thượng trưởng lão già nua khẽ hô. Ngay cả những người mạnh như Thái Thượng trưởng lão cũng phải kinh ngạc trước con số này.</p>
+                <p>Các trưởng lão cũng liên tục kinh hô.&quot;Ba trăm năm mươi viên? Cái này... có khả năng sao?&quot;&quot;Yêu tộc phát động xâm lăng đến bây giờ, tổng cộng xuất hiện Thú Vương, đều không nhiều như vậy a?&quot;&quot;Ta vẫn rất thích Giang Phàm đứa nhỏ này, hắn làm điểm sai ta cũng có thể hiểu được, chỉ là con số này... quá vô lý.&quot;&quot;Đúng là người trẻ tuổi, tâm tính không ổn định, lập công lớn lại có chút phơi phới.&quot;&quot;Ai, đáng tiếc một mầm mống tốt.&quot;Các trưởng lão đều suy đoán như vậy. Huống hồ là các đệ tử?</p>
+                <p>Tiết Vạn Trọng trực tiếp cười phá lên.&quot;Ba trăm năm mươi viên! Ha ha ha!&quot;&quot;Thật sự là một người dám lấy ra, một người dám đọc lên!&quot;&quot;Không cần biết các ngươi tin hay không, dù sao ta tin!&quot;&quot;Ha ha ha!&quot;</p>
+                <p>Những đệ tử ghen ghét Giang Phàm lúc này đều trào phúng đầy ẩn ý.&quot;Không hổ là người đứng đầu bảng công huân, thu hoạch nhiều đến chấn động mọi người.&quot;&quot;Ngươi có phục hay không đi!&quot;&quot;Phục! Đương nhiên phục! Người ta là công thần, là anh hùng, hắn dù có lấy ra ba nghìn năm trăm viên, ba vạn năm trăm viên, ta đều phục!&quot;</p>
+                <p>Lý Thanh Phong và những người khác yên lặng thở dài. Cảm nhận được ánh mắt kỳ lạ từ các trưởng lão tông môn khác, họ có cảm giác uất ức khó thở. Vừa rồi họ tự hào về Giang Phàm bao nhiêu, giờ lại mất mặt bấy nhiêu.</p>
+                <p>Một trăm viên, họ còn miễn cưỡng có thể nói giúp Giang Phàm, ủng hộ hắn. Ba trăm năm mươi viên, khiến họ không thể nói được lời nào tranh luận.</p>
+                <p>Khổng Nguyên Bá càng không tiếc lời trào phúng:&quot;Thanh Vân tông có cách dạy đệ tử tốt.&quot;&quot;Bổn tông bội phục, bội phục a!&quot;&quot;Ha ha ha!&quot;</p>
+                <p>Những nữ đệ tử từng nhìn Giang Phàm đầy ngưỡng mộ, giờ phút này cũng có chút thất vọng.&quot;Giang sư đệ bề ngoài tài hoa, không chê vào đâu được, chỉ là nhân phẩm... Ai!&quot;&quot;Trên đời cuối cùng không có người hoàn hảo, ta lẽ ra nên hiểu rõ đạo lý này sớm hơn.&quot;&quot;Còn định giao lưu nhiều với Giang sư đệ, bây giờ xem ra, vẫn nên thôi.&quot;</p>
+                <p>Những nữ đệ tử ghen ghét Liễu Khuynh Tiên thì dồn dập mở mày mở mặt.&quot;Ta đã nói rồi, nàng sẽ có báo ứng.&quot;&quot;Sau này nàng còn mặt mũi tự xưng là Cửu Tông đệ nhất tiên tử sao?&quot;&quot;Ha ha, nên gọi là số một mắt mù tiên tử.&quot;&quot;Nhiều tuấn kiệt xuất sắc như vậy không chọn, lại chọn kẻ gian lận.&quot;</p>
+                <p>Liễu Khuynh Tiên nắm chặt nắm đấm. Bị mắng nàng có thể không để ý, nhưng mắng Giang Phàm thì nàng không thể tha thứ. Nàng lạnh giọng nói:&quot;Gian lận thì sao? Ta cam lòng đi theo hắn, các ngươi quản được sao?&quot;</p>
+                <p>Mấy nữ đệ tử dáng người cao gầy, dung mạo không tầm thường lập tức ánh mắt sắc lạnh. Lập tức kết thành nhóm, quát: &quot;Liễu Khuynh Tiên, muốn đánh nhau phải không?&quot;</p>
+                <p>Liễu Khuynh Tiên không sợ bọn họ đông người. Buông Giang Phàm ra, liền dứt khoát rút kiếm. Hàn quang chiếu người, kiếm khí như sương.&quot;Đúng lúc, để cho các ngươi tất cả câm miệng!&quot; Liễu Khuynh Tiên giương kiếm chỉ vào mấy nữ đệ tử cao gầy xinh đẹp.</p>
+                <p>&quot;Hừ! Chúng ta đông người, lẽ nào còn sợ ngươi?&quot; Một trong số nữ đệ tử rút kiếm hừ lạnh. Đắc đạo đa trợ, thất đạo không trợ. Nàng không tin có người sẽ mạo hiểm bị vạ lây để đứng ra bênh vực Giang Phàm và Liễu Khuynh Tiên.</p>
+                <p>Chưa kịp xuất kiếm, một bóng dáng tuyệt mỹ, bình tĩnh bước ra từ đám đông.&quot;Thêm ta đây?&quot; Hạ Triều Ca bình tĩnh đi đến bên cạnh Giang Phàm. Cùng Liễu Khuynh Tiên một trái một phải, kiên định đứng cạnh Giang Phàm.</p>
+                <p>Mấy nữ đệ tử khiêu khích biến sắc mặt. Hạ Triều Ca, người vốn không tranh quyền thế, vậy mà cũng đứng ra ủng hộ Giang Phàm? Nàng bình thường ngay cả chút xíu ồn ào cũng không muốn xen vào mà! Lại tại thời điểm rạch ròi này, không tiếc bị vấy bẩn để bảo vệ Giang Phàm!</p>
+                <p>&quot;Hạ sư tỷ, ngươi... ngươi lẽ nào cũng ủng hộ Giang Phàm gian lận sao?&quot; Hạ Triều Ca nhạt nhẽo nói: &quot;Việc làm không dối trá, hắn đều là sư thúc ta.&quot;&quot;Mà hướng sư huynh ta rút kiếm, ta tự nhiên rút kiếm hướng về phía đó.&quot;</p>
+                <p>*Âm vang*-- Nàng rút ra trường kiếm hàn khí bức người.</p>
+                <p>Có đệ nhất thiên kiêu Cửu Tông ủng hộ, khí thế của mấy nữ đệ tử xinh đẹp không khỏi bị giảm sút.</p>
+                <p>Lúc này, Tiết Vạn Trọng sải bước nặng nề, nhanh chân tới:&quot;Đệ nhất thiên kiêu Cửu Tông là có thể tùy ý làm bậy sao?&quot;&quot;Ta Tiết Vạn Trọng thứ nhất không đồng ý!&quot;</p>
+                <p>Hắn đứng phía sau mấy nữ đệ tử xinh đẹp, mang lại sự cổ vũ to lớn cho họ. Nhưng, chưa kịp để họ vui mừng, Lương Phi Yên vác kiếm, lạnh lùng đi từ bên ngoài đám đông vào.&quot;Ở đây có phần cho Tiết Vạn Trọng ngươi nói chuyện sao?&quot;&quot;Nói về sự vô sỉ, những chuyện xấu xa đệ tử Cự Nhân Tông các ngươi làm nhiều lắm!&quot;</p>
+                <p>Hắn đi đến bên cạnh Hạ Triều Ca, lập trường thể hiện không chút nghi ngờ.</p>
+                <p>&quot;Đúng vậy! Giang sư đệ gian lận thì sao?&quot;&quot;Một lỗi nhỏ, liền muốn đánh người ta vào vực sâu vạn trượng sao?&quot;</p>
+                <p>Âu Dương Quân chắp tay sau lưng, dạo bước từ trong đám đông ra, đứng cạnh Liễu Khuynh Tiên.&quot;Đúng vậy nha, chuyện lớn gì đâu?&quot;&quot;Ta ngày nào cũng ve vãn nữ nhân tông môn khác, có ảnh hưởng đến việc ta làm thủ tịch đại đệ tử Hợp Hoan tông rồi sao?&quot;</p>
+                <p>Tạ Lưu Thư cười cợt đi ra trong đám đông, đi đến sau lưng Giang Phàm.</p>
+                <p>Dịch Liên Tinh cũng mặt lạnh lùng, dứt khoát đi đến sau lưng Giang Phàm. Ánh mắt sắc bén trừng mắt nhìn mấy nữ đệ tử cao gầy:&quot;Chỉ biết phóng đại khuyết điểm của người khác một cách vô hạn, lại ngay cả việc soi gương, xem xem dũng khí của mình đều không có!&quot;</p>
+                <p>Ngay sau đó, Hoa Hướng Thần, Lý Thi Thiến, Cơ Như Nguyệt, cùng với các đệ tử từng kề vai chiến đấu với Giang Phàm trong trận chiến Giới Sơn, cuối cùng là toàn bộ đệ tử Thanh Vân tông, đều tiến lên. Chỉ trong khoảnh khắc, gần trăm người vây quanh Giang Phàm bên tả hữu.</p>
+                <p>Họ thừa nhận Giang Phàm quả thật làm điều ám muội, nhưng không thể chấp nhận những người này nâng cao quan điểm, không chỉ công kích Giang Phàm mà còn công kích bạn gái của hắn!</p>
+                <p>Ngược lại, bên phía Tiết Vạn Trọng vẫn chỉ có mấy người bọn hắn. Những đệ tử trước đây luôn miệng, nhìn Giang Phàm không vừa mắt, nhìn thấy Giang Phàm được nhiều đệ tử Cửu Tông ủng hộ như vậy, đều rụt cổ lại, không dám ló đầu.</p>
+                <p>Mấy nữ đệ tử xinh đẹp le lưỡi, lúc này mới nhận ra, Giang Phàm và người phụ nữ của Giang Phàm, căn bản không phải mấy người các nàng có thể làm gì được. Giang Phàm có uy vọng cực cao trong lòng các đệ tử. Các đệ tử tinh anh có danh tiếng, hầu như đều nghiêng về phía ủng hộ Giang Phàm. Điều này trước đây, gần như là không thể xảy ra. Ngay cả Hạ Triều Ca, cũng chưa chắc có nhiều đệ tử như vậy vì sai lầm của nàng mà lên tiếng ủng hộ.</p>
+                <p>Tiết Vạn Trọng tức cười. Thấy mình không thể giải quyết được, liền chắp tay nói với Diệp Thương Uyên:&quot;Diệp phó các chủ, người xem thế này đúng sao?&quot;&quot;Đệ tử Cửu Tông hủ bại thành dạng gì rồi?&quot;&quot;Nhiều đệ tử như vậy, lại công nhiên che chở một kẻ gian lận vô sỉ!&quot;&quot;Đệ tử thỉnh cầu Diệp phó các chủ chủ trì công đạo, trừng ác dương thiện, diệt trừ cái xấu!&quot;</p>
+                <p>Không ít đệ tử khinh bỉ liếc xéo Tiết Vạn Trọng. Tông môn khác nói những lời này, còn có thể tin được. Đệ tử Cự Nhân Tông cũng xứng sao? Vài ngày trước, chuyện cướp đoạt của đệ tử các tông, họ làm thiếu đi à?</p>
+                <p>Diệp Thương Uyên khẽ thở dài. Chuyện phát triển đến bước này, hắn không thể không đứng ra. Chỉ có điều, vừa mới chuẩn bị mở miệng, La Đông Thành liền chắp tay sau lưng, không giận mà uy mở miệng trước:&quot;Các ngươi có ý gì?&quot;&quot;Luôn miệng nói Giang Phàm gian lận.&quot;&quot;Yêu đan của hắn là do chuyên viên này lần lượt kiểm điểm.&quot;&quot;Các ngươi muốn nói, chuyên viên này cũng đang gian lận?&quot;</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_105.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_105.html" class="page-btn">105</a>
+            <a href="page_106.html" class="page-btn current">106</a>
+            <a href="page_107.html" class="page-btn">107</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_107.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 38">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 38</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_37.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_39.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_186">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 186: Cẩu huyết lâm đầu</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Đan hương trùng thiên, tạo thành sương mù nồng đặc, lan tỏa ra.Tần Vong Xuyên hơi sững sờ, không nén được hỏi: &quot;Đan dược này dược lực có thể hơi quá mạnh không?&quot;Trong ấn tượng của nàng, hồn sư học đồ chỉ có thể luyện chế hạ phẩm Luyện Khí dịch, hoặc một vài đan dược cực kỳ đơn giản. Nhưng đan hương nồng đậm như vậy, sao nhìn cũng không giống đan dược bình thường?</p>
+                <p>&quot;Tiểu tử ngươi giở trò gì?&quot;Tần Vong Xuyên hừ một tiếng, mang thái độ nghi ngờ, cúi đầu nhỏ xuống lò luyện đan, nhìn vào bên trong.Một viên đan dược màu xanh biếc, to bằng ngón cái, óng ánh trong suốt đập vào mắt. Từng tia linh quang lập lòe trên bề mặt đan dược.&quot;Ba... Tam phẩm Linh Đan?&quot;Tần Vong Xuyên hít sâu một hơi. Nàng đơn giản không dám tin vào mắt mình! Dù vừa tận mắt chứng kiến toàn bộ quá trình, nàng vẫn không thể tin được người này đã luyện chế ra tam phẩm Linh Đan. Đây không phải chỉ có tam tinh hồn sư mới làm được sao? Chẳng lẽ người này thật sự là một hồn sư, hơn nữa còn là tam tinh hồn sư?</p>
+                <p>&quot;À? Tiểu muội muội, ngươi lại phân biệt được phẩm cấp Linh Đan à?&quot;Giang Phàm tấm tắc kỳ lạ, nắm cằm nàng dò xét: &quot;Kỳ lạ, ngươi nhỏ như vậy, lại hiểu về đan dược? Chẳng lẽ cha mẹ ngươi cũng là hồn sư?&quot;Nghĩ đến đây, hắn không khỏi lo lắng. Nói: &quot;Ca ca biết luyện đan, ngươi giúp ta giữ bí mật, ngàn vạn lần đừng nói ra ngoài, được không?&quot;&quot;Nếu đồng ý, viên linh đan này ta sẽ tặng ngươi.&quot;</p>
+                <p>Tần Vong Xuyên quá kinh ngạc, đến mức bị bóp mặt một lúc lâu mới phản ứng lại. Nhìn viên tam phẩm Linh Đan gần trong gang tấc, sao nàng có thể không muốn?Bàn tay nhỏ như tia chớp túm lấy, nhanh chóng nhét vào lòng, nói: &quot;Được, ta sẽ giữ bí mật cho ngươi.&quot;Mặc dù Giang Phàm không đề cập yêu cầu này, nàng cũng sẽ không dễ dàng tiết lộ việc này. Đây là tam tinh hồn sư. Nàng một mình lặng lẽ nắm giữ mối quan hệ này chẳng tốt sao? Tại sao phải làm kẻ khoe mẽ, cho tất cả mọi người đều biết?</p>
+                <p>&quot;Vậy chúng ta ngoéo tay!&quot; Giang Phàm chìa ngón út ra.Trán Tần Vong Xuyên nổi gân xanh: &quot;Ngây thơ không ngây thơ?&quot; Thật coi nàng là bé gái!Giang Phàm sờ mũi, đi, bị bé gái sáu tuổi khinh bỉ.</p>
+                <p>Nếu đan phương không sai, vậy hắn yên tâm. Thu dọn đồ đạc xong, hắn nói: &quot;Ngươi là phong nào? Ta đưa ngươi về.&quot;Tần Vong Xuyên suy nghĩ một chút, nói: &quot;Dược Phong.&quot;Giang Phàm giật mình: &quot;Dược Phong ta quen, ta đưa ngươi về.&quot;Thế là nắm tay nàng đi ra ngoài. Tần Vong Xuyên giãy dụa mấy lần nhưng không thoát, chỉ đành để Giang Phàm dẫn ra dược viên.</p>
+                <p>Vừa ra khỏi dược viên, liền phát hiện ngoài ba vị chấp sự, Ôn Hồng Dược cũng ở đó.&quot;Ôn trưởng lão? Thật trùng hợp, tôi nhặt được một đứa bé trong dược viên, nói là người của Dược Phong các ngươi.&quot;&quot;Ngươi xem, có phải người của phong các ngươi không?&quot;Ôn Hồng Dược nhìn kỹ, suýt trố mắt. Thái Thượng trưởng lão? Nàng không phải ghét nhất bị người ta coi là trẻ con sao? Sao lại để Giang Phàm nắm tay vậy?&quot;Sư...&quot; Nàng vừa định tiến lên nhận, lại bị Tần Vong Xuyên dùng ánh mắt ngăn lại. Sững sờ một chút, đầu óc mơ hồ đổi lời: &quot;Đúng vậy, là người của phong chúng ta.&quot;</p>
+                <p>Giang Phàm cười đưa nàng cho Ôn Hồng Dược, nói: &quot;Đứa bé lanh lợi, là mầm giống tốt.&quot;&quot;Chỉ là tính khí không tốt lắm, cần phải quản giáo nhiều.&quot;Da mặt Ôn Hồng Dược run rẩy, không dám lên tiếng, hoàn toàn không dám tiếp lời. Quản giáo Thái Thượng trưởng lão? Ta nào dám?</p>
+                <p>&quot;Muốn ngươi xen vào việc của người khác?&quot; Tần Vong Xuyên lầm bầm căm tức.Giang Phàm ngồi xổm xuống, tức giận nhéo nhéo mặt nàng: &quot;Còn như vậy xông, cẩn thận cha mẹ ngươi đánh đòn đó!&quot;&quot;Ngươi càn rỡ!&quot; Tần Vong Xuyên phì phò đẩy tay hắn ra, răng nghiến ken két. Nếu không phải nể mặt đối phương là tam tinh hồn sư, nàng sớm đã hung hăng đánh cho đối phương một trận.&quot;Ha ha ha! Hẹn có dịp gặp lại, tiểu nha đầu.&quot;Hắn phất tay, nghênh ngang rời đi, bỏ lại Ôn Hồng Dược trố mắt. Nàng không nhìn lầm chứ! Giang Phàm nắm mặt Thái Thượng trưởng lão, lại không bị đánh gãy đôi tay chó? Đây thật là Thái Thượng trưởng lão nóng tính mà mình biết sao?</p>
+                <p>&quot;Sao? Ngươi có lời muốn nói?&quot;Tần Vong Xuyên trợn mắt nhìn Ôn Hồng Dược đang ngẩn người. Lão thân thể run rẩy, vội vàng cúi đầu: &quot;Đệ tử không dám.&quot;Tần Vong Xuyên xoa xoa gương mặt bị bóp đỏ, khẽ nói: &quot;Tin ngươi cũng không dám!&quot;Ôn Hồng Dược im lặng. Bóp ngươi là Giang Phàm, tìm ta trút giận gì chứ? Nhưng nàng dám nói gì? Chỉ đành ngoan ngoãn cúi đầu thấp hơn.</p>
+                <p>&quot;Ta nghe nói bên ngoài, ngươi cùng Triệu Vô Cực tranh giành đệ tử?&quot;Tần Vong Xuyên chắp tay sau lưng, cau mày hỏi. Ôn Hồng Dược gật đầu nói: &quot;Bẩm sư tôn, thật có chuyện này.&quot;Tần Vong Xuyên khó chịu nói: &quot;Nhìn ngươi chút tiền đồ kia! Quảng trường đều là đệ tử người ta chọn còn lại, toàn là vớ vẩn. Ngươi lại còn tranh giành, người ngoài đều cho rằng Dược Phong ta không ai, vớ vẩn cũng muốn tranh giành! Ngươi có mất mặt không?&quot;</p>
+                <p>Ôn Hồng Dược dở khóc dở cười nói: &quot;Sư tôn, ngài có điều không biết, đệ tử đó rất bất phàm! Không tranh giành được hắn, là tổn thất của Dược Phong chúng ta.&quot;Tần Vong Xuyên tức giận cười: &quot;Còn ngu xuẩn mất khôn! Thiên tài gì mà Dược Phong chúng ta chưa từng có, đến mức phải tranh giành sao? Ngươi trở về cho ta kiểm điểm thật tốt! Toàn làm ta mất mặt! Hừ!&quot;</p>
+                <p>Ôn Hồng Dược miệng đắng chát. Sư tôn thật sự nửa lời cũng không nghe người ta giải thích.Lúc này, Tần Vong Xuyên hạ cơn giận, mắt nhìn bóng lưng Giang Phàm biến mất ở cuối đường, tầm mắt hơi híp lại.&quot;Không thể không nói, Tông chủ phong khí vận thâm hậu thật.&quot;&quot;Lại chiêu được đệ tử thâm tàng bất lộ như vậy. Hắn tên là gì?&quot;Ôn Hồng Dược không dám giấu diếm, nói: &quot;Giang Phàm.&quot;Tần Vong Xuyên suy nghĩ một hồi, nghi ngờ nói: &quot;Họ Giang? Trong cảnh nội Thanh Vân tông chúng ta có hào phú họ Giang sao?&quot;Nàng nghĩ rằng, có thể thai nghén ra hồn sư như vậy, chỉ có thể là những hào phú đỉnh cấp. Ai ngờ, trên mặt Ôn Hồng Dược vẻ cổ quái, nói: &quot;Hắn xuất thân gia đình bình thường.&quot;</p>
+                <p>&quot;À?&quot; Tần Vong Xuyên kinh ngạc: &quot;Bây giờ Võ Đạo giới, hàn môn còn có thể xuất hiện quý tử? Cũng hiếm thấy.&quot;&quot;Điều này càng chứng tỏ khí vận Tông chủ phong mạnh mẽ a, có thể trong biển người mênh mông đào được đệ tử này.&quot;&quot;Dược Phong ta nếu có một nửa vận khí thì tốt biết mấy.&quot;Lời này khiến Ôn Hồng Dược giật mình, kinh ngạc nói: &quot;Thái Thượng trưởng lão, ngươi rất xem trọng Giang Phàm?&quot;Giang Phàm ở trong dược viên không bị Tần Vong Xuyên phê bình gay gắt, đã là hết sức ngoài ý muốn. Trước mắt lại luôn miệng khen ngợi, khiến biểu cảm nàng kỳ lạ.</p>
+                <p>Tần Vong Xuyên mắt lộ vẻ hâm mộ: &quot;Nào chỉ là xem trọng.&quot;&quot;Dược Phong ta nếu có đệ tử như vậy, tương lai đạp đổ Tông chủ phong, nắm giữ vị trí Tông chủ, dễ như trở bàn tay.&quot;&quot;À?&quot; Ôn Hồng Dược ngạc nhiên không thôi. Giang Phàm rất xuất sắc, có thiên phú y đạo cực mạnh, Thượng Quan thánh đô khen không dứt lời. Nhưng làm cho Dược Phong nghịch thiên cải mệnh, không khỏi nói quá sự thật đi?</p>
+                <p>&quot;A cái gì a?&quot; Tần Vong Xuyên liếc nàng: &quot;Ngươi nếu không chịu thua kém chút, cũng đi tìm một đệ tử như vậy, ta tại chỗ chết đi cũng được!&quot;&quot;Nhưng ngươi chỉ biết chọn đệ tử trong đám vớ vẩn.&quot;Liên tục bị mắng, Ôn Hồng Dược chịu không nổi, yếu ớt nói: &quot;Nhưng Giang Phàm chính là vị đệ tử mà ta cùng Triệu Vô Cực tranh giành.&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_187">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 187: Đấu giá hội</h2>
+            </header>
+            <div class="chapter-content">
+                <p>&quot;À?&quot;</p>
+                <p>Lần này đến lượt Tần Vong Xuyên &quot;à&quot;. Nàng trợn tròn mắt, miệng há hốc: &quot;Ta không nghe lầm chứ?&quot;</p>
+                <p>&quot;Ngươi nói, Giang Phàm bị người ném vào quảng trường?&quot;</p>
+                <p>&quot;Cái này sao có thể?&quot;</p>
+                <p>Tam tinh hồn sư đấy! Hắn là tam tinh hồn sư, một nhân vật mà Thiên Cơ các cũng phải vô cùng tôn kính. Lại bị coi như con rơi, ném ở quảng trường cho người ta chọn lựa ư?</p>
+                <p>Ôn Hồng Dược cười khổ nói: &quot;Đúng vậy! Ta phát hiện kẻ này có thiên phú luyện dược, mới nảy sinh ý niệm thu đồ đệ.&quot;</p>
+                <p>&quot;Có thể ngờ được lão già Triệu Vô Cực kia nổi điên cái gì, vậy mà cũng cùng ta tranh giành!&quot;</p>
+                <p>&quot;Cuối cùng, Tông chủ cũng không biết là gân nào nối sai, cưỡng chế thu làm đệ tử.&quot;</p>
+                <p>Biết được, Giang Phàm thiếu chút nữa trở thành đệ tử Dược Phong. Tần Vong Xuyên tối sầm mắt lại, suýt nữa ngã quỵ. Nàng siết chặt nắm đấm, quát: &quot;Ngươi sao không tranh giành đi hả?&quot;</p>
+                <p>&quot;Tông chủ thì sao chứ? Hắn là cái lông à?&quot;</p>
+                <p>&quot;Loại đệ tử như Giang Phàm này, dù có đánh nhau vỡ đầu cũng phải tranh giành cho bằng được!&quot;</p>
+                <p>&quot;Đồ nghịch đồ vô dụng này, làm hại Dược Phong ta ba trăm năm!&quot;</p>
+                <p>Thiên đại khí vận bày ra trước mắt, Ôn Hồng Dược lại không nắm giữ được. Tần Vong Xuyên suýt nữa tức ngất đi!</p>
+                <p>Ôn Hồng Dược trong lòng nghẹn ứ đến khó chịu! Mắng ta không có tiền đồ, giành giật vớ vẩn chính là ngươi. Trách ta không tận lực tranh giành, làm lỡ Dược Phong lại là ngươi! Lão bà này, thật khó chiều!</p>
+                <p>Lại nói Giang Phàm. Trở về Tông chủ phong, liền có một tên ngoại môn đệ tử, bưng theo một nhánh ngọc văn kiện. Mặt lộ vẻ hâm mộ sâu sắc: &quot;Giang sư huynh, vừa rồi người của hội đấu giá Thiên Cơ các đến.&quot;</p>
+                <p>&quot;Nói đem vật này chuyển giao cho huynh.&quot;</p>
+                <p>Giang Phàm mở ra xem xét, lại là thư mời viết tay của Trần Lạc Nguyệt. Hóa ra, ngày mai chính là ngày hội đấu giá chính thức khai mạc. Nàng mời Giang Phàm tham gia. Đồng thời cũng chuẩn bị cho hắn một gian bao sương tốt nhất.</p>
+                <p>&quot;Vẫn tính nàng có ý.&quot; Giang Phàm cất kỹ ngọc văn kiện. Nếu lần này luyện chế Hồi Xuân Đan số lượng đủ nhiều, không ngại cho nàng một chút, để nàng nâng cao công trạng.</p>
+                <p>Thế là. Trở về biệt viện sau việc đầu tiên là luyện chế Hồi Xuân Đan. Loại đan này có chút phiền phức. Chỉ có thể luyện chế từng viên một, không thể luyện chế nhiều viên cùng lúc. Do đó, lần này luyện chế mất trọn một ngày. Hắn mệt mỏi đến mức mắt vằn vện tia máu, mới cuối cùng luyện chế được bốn mươi ba viên.</p>
+                <p>Trong đó bốn mươi viên, hắn lần lượt cất vào bốn chiếc bình ngọc. Tự mình một bình, Hứa Du Nhiên, Trần Tư Linh mỗi người một bình, Liễu Khuynh Tiên cũng cho một bình. Còn lại ba viên, hắn dùng một chiếc bình nhỏ riêng sắp xếp gọn gàng.</p>
+                <p>&quot;Giang Phàm!&quot;</p>
+                <p>Tiếng gọi ầm ĩ của Liễu Khuynh Tiên mơ hồ truyền đến. Mỗi lần có hoạt động quan trọng, nàng luôn là người đầu tiên đến gọi Giang Phàm. Giang Phàm đã thành thói quen. Hắn nắm bình ngọc đều nhét vào trong ngực, đẩy cửa ra xem xét, vẫn như cũ là bóng hình xinh đẹp quen thuộc.</p>
+                <p>Lần này trong tay nàng mang theo không ít thứ, kín đáo đưa cho Giang Phàm nói: &quot;Đây! Toàn là thứ cần dùng khi săn giết yêu thú.&quot;</p>
+                <p>Giang Phàm nhận lấy, thấy nặng trĩu, lập tức vui vẻ nhận. Liễu Khuynh Tiên dùng ngón tay lượn lờ lọn tóc rủ xuống trước ngực, quay mặt sang chỗ khác nói: &quot;Ngươi đừng nói là ta cho nhé.&quot;</p>
+                <p>&quot;Bình dấm chua nhà ngươi, ta không dám trêu chọc.&quot;</p>
+                <p>Lần trước chuẩn bị đồ cho Giang Phàm, bị Hứa Du Nhiên từ chối. Điều này khiến Liễu Khuynh Tiên canh cánh trong lòng. Giang Phàm dở khóc dở cười, vẫn nhớ à! Hắn lúc này móc ra một bình Hồi Xuân Đan: &quot;Bình này cho ngươi.&quot;</p>
+                <p>Không có lệnh bài của Liễu Khuynh Tiên, hắn cũng không lấy được những dược liệu cao cấp kia.</p>
+                <p>&quot;Đây là gì?&quot; Liễu Khuynh Tiên nhận lấy, mở ra ngửi thử. Mùi đan nồng đậm ập vào mặt khiến người ta tâm thần thanh thản. Dù không hiểu đan dược, cũng biết đây là đồ tốt.</p>
+                <p>&quot;Một ít đan dược chữa thương, dùng lúc bảo mệnh.&quot; Giang Phàm dặn dò: &quot;Giấu kỹ, đừng để người khác biết.&quot;</p>
+                <p>Liễu Khuynh Tiên bĩu môi: &quot;Cũng không phải tiên đan, còn sợ người đoạt hay sao?&quot;</p>
+                <p>&quot;Được, ta nhận!&quot;</p>
+                <p>Nàng rất trịnh trọng nhét vào trong tay áo. Chỉ cần là Giang Phàm cho, dù không đáng tiền, nàng cũng thích.</p>
+                <p>&quot;Hội đấu giá sắp bắt đầu rồi, chúng ta đi xem đi.&quot; Liễu Khuynh Tiên mời: &quot;Tất nhiên, chỉ có thể ngồi ở khu vực công cộng bình thường thôi.&quot;</p>
+                <p>&quot;Bao sương ta hỏi rồi, đều được phân cho các trưởng lão tông môn, đệ tử chỉ được phép ngồi ở khu vực công cộng.&quot;</p>
+                <p>Thế ư? Hóa ra bao sương mà Trần Lạc Nguyệt chuẩn bị cho mình lại không hề dễ dàng? Vậy ba viên Hồi Xuân Đan cuối cùng, nói gì cũng phải cho nàng đấu giá.</p>
+                <p>&quot;Trước nhìn kỹ rồi nói.&quot;</p>
+                <p>Hai người cùng đi vào Thanh Vân thành. Sàn đấu giá đã dựng xong. Không gian rất lớn, đủ sức chứa vài ngàn người. Trên mặt đất có hàng ngàn chỗ ngồi. Còn ở vị trí gần sàn đấu giá, có mười gian bao sương khảm vào vách tường. Toàn bộ được xây dựng bằng thủy tinh đặc biệt, bên ngoài nhìn không thấy bên trong, nhưng bên trong lại có thể dễ dàng nhìn rõ bên ngoài.</p>
+                <p>Bao sương càng gần sàn đấu giá, đương nhiên càng có thể nhìn rõ tình hình trên đài. Đương nhiên, nó cũng càng tôn quý.</p>
+                <p>&quot;Đó là Đại trưởng lão Cự Nhân Tông! Thiết Bất Bại!&quot;</p>
+                <p>Bỗng nhiên, Liễu Khuynh Tiên phát hiện có một đám người dáng người khôi ngô, từng người như cột điện, tiến vào phòng đấu giá. Trong đó người trung niên dẫn đầu, càng cao hai mét, đi lại giữa đám đông, tựa như hạc giữa bầy gà. Nghĩ không làm cho nàng chú ý cũng khó.</p>
+                <p>Giang Phàm đối với Cự Nhân Tông không có ấn tượng tốt đẹp gì. Lần trước chính là Tông chủ Cự Nhân Tông và đệ tử của hắn thua không nổi. Trước khi đi, cố ý khích nộ Bách Thú sơn, dẫn đến cảnh giới Thanh Vân tông xảy ra thú triều cỡ nhỏ.</p>
+                <p>&quot;Bọn họ đến làm gì? Chẳng lẽ lần này phòng đấu giá còn có tài liệu luyện thể hay sao?&quot; Giang Phàm suy nghĩ. Hắn nghĩ đến cuốn 《Thiết Huyết Chân Kinh》 của mình. Từ sau lần đầu tiên tu luyện, liền bị hạn chế bởi tài liệu, thủy chung không thể lên một tầng nữa. Nếu có thể tinh tiến một chút, lần này đối phó thú triều không nghi ngờ sẽ an toàn hơn.</p>
+                <p>Bởi vì yêu thú bình thường khí lực rất lớn. Nhân loại bị nó áp sát cận thân vô cùng chịu thiệt.</p>
+                <p>&quot;Đó là thần y Thượng Quan của Thái Thượng tông, bọn họ cũng vào bao sương rồi.&quot; Liễu Khuynh Tiên lại thấy một nhân vật lớn. Giang Phàm ngước mắt nhìn lại, thấy được Thượng Quan Thánh và Hạ Triều Ca.</p>
+                <p>&quot;Thần y Thượng Quan lẽ nào cũng có sở cầu?&quot;</p>
+                <p>Ngay sau đó, bọn họ thấy từng vị trưởng lão lần lượt tiến vào trong rạp. Liễu Khuynh Tiên đều phát giác ra điều không đúng: &quot;Chuyện gì xảy ra vậy?&quot;</p>
+                <p>&quot;Chẳng qua là một lần hội đấu giá bình thường, sao lại có nhiều trưởng lão tham gia như vậy?&quot;</p>
+                <p>&quot;Trước đây hội đấu giá bình thường, chỉ có lác đác vài trưởng lão thôi.&quot;</p>
+                <p>&quot;Chẳng lẽ lần này hội đấu giá có trọng bảo lớn không tưởng tượng được hiện thế?&quot;</p>
+                <p>Giang Phàm rất tán thành. Có thể hấp dẫn nhiều trưởng lão như vậy, sao lại đơn giản được?</p>
+                <p>Lúc này. Một giọng nói quen thuộc từ xa truyền đến.</p>
+                <p>&quot;Ơ! Liễu sư muội, Giang sư đệ, hai người cũng đến à?&quot;</p>
+                <p>Lăng Quy Hải dẫn theo các tinh anh tông môn, ồn ào chạy tới. Từ xa thấy bọn họ, liền chủ động chào hỏi. Liễu Khuynh Tiên không thích người này lắm, khẽ gật đầu cằm, coi như đáp lại. Giang Phàm cũng mặt không biểu tình.</p>
+                <p>Lăng Quy Hải cũng không giận, mặt đỏ au nói: &quot;Hai người có muốn vào bao sương không?&quot;</p>
+                <p>Liễu Khuynh Tiên khẽ nhíu mày: &quot;Bao sương của Vạn Kiếm môn ngươi sao?&quot;</p>
+                <p>Theo quy định của phòng đấu giá, mỗi vị trưởng lão có thể dẫn theo một người. Lần này Thanh Vân tông đi là Đại trưởng lão Phong Cổ Thiền, đương nhiên sẽ không dẫn Liễu Khuynh Tiên vào bao sương. Trong bao sương nhìn rõ ràng hơn, nàng đương nhiên rất muốn đi. Tuy nhiên, nếu là bao sương của Vạn Kiếm môn thì thôi.</p>
+                <p>&quot;Đương nhiên không phải!&quot;</p>
+                <p>Lăng Quy Hải đắc ý nói: &quot;Vạn Kiếm môn ta chỉ là bao sương số chín thôi.&quot;</p>
+                <p>&quot;Cho ta còn không đi!&quot;</p>
+                <p>Liễu Khuynh Tiên kinh ngạc, chợt nhớ ra thẩm thẩm của Lăng Quy Hải chính là phó hội trưởng phòng đấu giá. Sắp xếp cho hắn một gian bao sương cũng không khó. Nàng không khỏi cảm thán: &quot;Thẩm thẩm ngươi vẫn rất thương ngươi, nàng sắp xếp cho ngươi bao sương nào?&quot;</p>
+                <p>Lăng Quy Hải cười ha hả: &quot;Đương nhiên là bao sương số một!&quot;</p>
+                <p>Cái gì? Liễu Khuynh Tiên nhíu mày: &quot;Cái này sao có thể?&quot;</p>
+                <p>Dù có muốn mở cửa sau cho người thân, cũng tuyệt đối không thể nào giao bao sương tôn quý nhất số một cho hắn sử dụng chứ? Lăng Quy Hải cười bí hiểm: &quot;Chỉ riêng cho ta dùng, đương nhiên là không thể nào.&quot;</p>
+                <p>&quot;Bao sương số một này, đến một vị đại nhân vật dậm chân một cái, toàn bộ Cửu Tông đại địa đều phải run rẩy ba lần!&quot;</p>
+                <p>&quot;Thẩm thẩm ta để ta đến bao sương số một, bưng trà rót nước cho vị đại nhân vật kia, biểu hiện thật tốt trước mặt hắn!&quot;</p>
+                <p>&quot;Nói ta nếu được hắn ưu ái, từ đó lên như diều gặp gió, một bước lên mây đấy!&quot;</p>
+                <p>Lời này vừa nói ra, các tinh anh phía sau đều lộ ra vẻ khát vọng. Với thân phận như Trần Lạc Nguyệt, nói ra lời như vậy, có thể thấy đời này khủng bố đến mức nào. Ít nhất cũng là cấp bậc Tông chủ. Có khi vẫn là cao tầng Thiên Cơ các! Đây là cơ duyên lớn lao!</p>
+                <p>Liễu Khuynh Tiên cũng đôi mắt đẹp lấp lánh, muốn được chiêm ngưỡng vị đại lão cấp cự phách này.</p>
+                <p>Chỉ có Giang Phàm, hơi choáng váng. Nhớ không lầm, hôm qua trong thư mời rõ ràng viết. Sắp xếp cho hắn bao sương là... bao sương số một...</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_188">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 188: Giang Phàm địa vị</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Chẳng lẽ Trần Lạc Nguyệt trong miệng đại nhân vật chính là hắn, Giang Phàm?</p>
+                <p>&quot;Giang Phàm, ngươi có muốn đi mở mang kiến thức về vị tiền bối này không?&quot;</p>
+                <p>Liễu Khuynh Tiên động lòng. Tuy nhiên, cân nhắc đến những chuyện không thoải mái giữa Giang Phàm và Lăng Quy Hải, nàng vẫn quyết định tôn trọng ý kiến của Giang Phàm.</p>
+                <p>Giang Phàm cười khổ. Vị đại tiền bối này tám phần mười chính là hắn.</p>
+                <p>Còn chưa nghĩ kỹ trả lời thế nào, Lăng Quy Hải đã hơi nhíu mày, nói: &quot;Liễu sư muội, hắn đi e là không tiện lắm.&quot;</p>
+                <p>&quot;Cô cô ta nói, vị tiền bối kia quyền cao chức trọng, không có chút thân phận địa vị nào thì ngay cả tư cách châm trà cho người ta cũng không có.&quot;</p>
+                <p>&quot;Giang sư đệ tuy không biết lấy đâu ra cái thân phận sư thúc của Hạ Triều Ca, nhưng hắn rốt cuộc cũng chỉ là một đệ tử vô linh căn.&quot;</p>
+                <p>&quot;Dẫn hắn đi, vị tiền bối kia e rằng sẽ không vui.&quot;</p>
+                <p>Cơ duyên tốt đẹp như vậy, sao hắn có thể chia sẻ cho Giang Phàm? Chỉ có Liễu Khuynh Tiên mới có tư cách cùng hắn đi mở mang tầm mắt.</p>
+                <p>Nhìn cho rõ, nhân mạch mạnh mẽ của hắn, Lăng Quy Hải.</p>
+                <p>Nghe xong những lời này, Liễu Khuynh Tiên liền dứt khoát nói: &quot;Vậy chính các ngươi đi đi.&quot;</p>
+                <p>&quot;Ta ở lại cùng Giang Phàm tại khu ghế công cộng là được.&quot;</p>
+                <p>&quot;Chúng ta đi thôi.&quot;</p>
+                <p>Giang Phàm không đi, nàng đi làm gì?</p>
+                <p>Hành động lần này khiến Lăng Quy Hải tức đến nghiến răng. Sao Liễu Khuynh Tiên đi đâu cũng muốn kéo theo cái vướng víu này!</p>
+                <p>Bất đắc dĩ, hắn đành nói: &quot;Được, vậy thì dẫn theo Giang sư đệ!&quot;</p>
+                <p>&quot;Tuy nhiên, Giang sư đệ tốt nhất nên tự kiềm chế lời nói hành động một chút.&quot;</p>
+                <p>&quot;Nếu làm tức giận vị tiền bối kia, liên lụy chúng ta bị đuổi ra ngoài thì không sao.&quot;</p>
+                <p>&quot;Hắn chịu trách phạt của vị tiền bối kia, đến lúc đó đừng oán trách ta.&quot;</p>
+                <p>Mắt Liễu Khuynh Tiên sáng lên, hỏi: &quot;Giang Phàm, ngươi có đi không?&quot;</p>
+                <p>Giang Phàm dở khóc dở cười. Cái bao sương đó vốn chuẩn bị cho hắn, tại sao lại không thể đi?</p>
+                <p>&quot;Dĩ nhiên muốn đi, đi thôi.&quot; Giang Phàm khẳng định.</p>
+                <p>Điều này khiến Lăng Quy Hải và mấy đệ tử tinh anh đi cùng trợn trắng mắt. Cơ Như Nguyệt oán hận nhìn chằm chằm vào bóng lưng Giang Phàm. Lần trước bị hắn chê bai trước mặt mọi người, mất hết mặt mũi, nàng khắc sâu trong lòng. Lần này gặp lại, nhìn Giang Phàm dựa hơi Lăng Quy Hải, liền không nhịn được mỉa mai:</p>
+                <p>&quot;Còn tưởng rằng Hạ Triều Ca sẽ vì hắn cái sư thúc này mà an bài tốt bao sương chứ.&quot;</p>
+                <p>&quot;Kết quả, vẫn phải cọ Lăng sư huynh.&quot;</p>
+                <p>Lăng Quy Hải nghe rất khoái chí. Lần trước mất mặt, lần này xem như lấy lại. Hắn giả bộ rộng lượng nói: &quot;Chuyện quá khứ không cần nhắc lại.&quot;</p>
+                <p>&quot;Ta tin rằng với năng lực của Giang sư đệ, không có ta, hắn cũng có thể vào được bao sương.&quot;</p>
+                <p>Điều này khiến mấy đệ tử tinh anh nịnh hót hắn càng thêm bất bình:</p>
+                <p>&quot;Lăng sư huynh thật là lòng dạ khoáng đạt a! Giang Phàm cái loại ăn bám này cũng có thể bao dung như thế.&quot;</p>
+                <p>&quot;Đúng vậy sao? Lần trước là dựa vào Hạ Triều Ca ra vẻ ta đây, lần này lại dựa vào Liễu Khuynh Tiên mới có thể trà trộn vào bao sương.&quot;</p>
+                <p>&quot;Hắn nhìn có vẻ cứng rắn lắm, không ngờ, ăn cơm chùa lại nghiêm túc như vậy.&quot;</p>
+                <p>Lăng Quy Hải nghe trong lòng gọi tốt. Nhẫn nhịn nhiều ngày khí, cuối cùng cũng phun ra được.</p>
+                <p>&quot;Giang Phàm a Giang Phàm, so với ta, ngươi cũng xứng?&quot; Lăng Quy Hải trong lòng cười lạnh.</p>
+                <p>Mọi người đi vào trong hội đấu giá, hướng về bao sương số một. Người phụ trách tiếp đãi là Ôn Thắng Nam. Nàng đương nhiên nhận ra chất tử của Trần phó hội trưởng, lộ ra ý cười: &quot;Lăng công tử.&quot;</p>
+                <p>Lăng Quy Hải lập tức thu lại vẻ kiêu ngạo. Hắn chưa quên lời dặn của thím. Bảo hắn sau này thấy Ôn Thắng Nam phải lễ phép ba phần, xem nàng như thấy phó hội trưởng. Cũng nói rõ, sau lưng Ôn Thắng Nam có cao nhân, ngàn vạn lần không được đắc tội. Nếu không sẽ gây rắc rối cho tông môn. Lăng Quy Hải tin tưởng điều này không chút nghi ngờ, bởi vậy không dám có nửa điểm lãnh đạm.</p>
+                <p>&quot;Ôn chủ sự tốt!&quot; Lăng Quy Hải cung kính nói.</p>
+                <p>Ôn Thắng Nam rất hài lòng thái độ nho nhã lễ độ của hắn, nói: &quot;Chẳng trách Trần phó hội trưởng dặn dò, bảo ngươi hầu hạ đại nhân vật ở bao sương số một.&quot;</p>
+                <p>&quot;Khiêm tốn hữu lễ như vậy, chắc hầu hạ vị đại nhân vật này sẽ không có sơ suất gì.&quot;</p>
+                <p>&quot;Tuy nhiên...&quot;</p>
+                <p>Nhìn lướt qua đám người đông nghịt phía sau hắn, nói: &quot;Đây đều là bạn của ngươi?&quot;</p>
+                <p>&quot;Nhiều người quá, không thể đưa vào.&quot;</p>
+                <p>Mang trà dâng nước một người là đủ rồi. Nhiều người như vậy đều chen chúc trong bao sương, ai sẽ thích?</p>
+                <p>Lăng Quy Hải cũng không thấy ngoài ý muốn. Trên thực tế, hắn cũng căn bản không nghĩ đến, thật sự dẫn bọn họ vào bao sương gặp vị đại nhân vật kia. Đó là cơ duyên thuộc về một mình hắn, Lăng Quy Hải. Dựa vào cái gì chia sẻ cho người khác?</p>
+                <p>Sở dĩ dẫn theo bọn họ trùng trùng điệp điệp tới là để cho bọn họ tận mắt chứng kiến một phen, làm nổi bật sự khác thường của hắn, để cho bọn họ ghen tỵ với hắn.</p>
+                <p>Hành động của Ôn Thắng Nam hoàn toàn trong dự liệu của hắn. Thế là, hắn lộ ra vẻ khó xử, nhìn về phía các tinh anh phía sau lưng:</p>
+                <p>&quot;Chư vị, là ta sơ sót.&quot;</p>
+                <p>&quot;Vậy phải làm sao bây giờ đây?&quot;</p>
+                <p>Có thể làm sao? Rất nhiều tinh anh mặt mày thất vọng, lại cũng không tiện phát tác. Dù sao tâm ý của Lăng Quy Hải là tốt, chẳng qua là Ôn Thắng Nam không cho phép thôi.</p>
+                <p>Cơ Như Nguyệt cố nén thất vọng, cố gắng cười nói: &quot;Lăng sư huynh không nên tự trách, đây không phải lỗi của ngươi.&quot;</p>
+                <p>&quot;Chúng ta đi khu ghế công cộng là được.&quot;</p>
+                <p>Liễu Khuynh Tiên cũng mắt lộ vẻ thất vọng, xoay người nói: &quot;Chúng ta đi thôi.&quot;</p>
+                <p>Giang Phàm gãi đầu, nói: &quot;Ngươi muốn đi thì đi đi.&quot;</p>
+                <p>Hắn tách người phía trước, đi về phía Ôn Thắng Nam, nói: &quot;Không sao, bọn họ muốn đi vào thì để cho bọn họ đều đi vào đi.&quot;</p>
+                <p>Ôn Thắng Nam lúc này mới chú ý tới trong số họ có Giang Phàm. Lập tức lộ ra ý cười, sửa lại ý tứ: &quot;Được lắm, các ngươi đều đi đi, nhớ kỹ không nên ồn ào.&quot;</p>
+                <p>Ách ――</p>
+                <p>Các tinh anh mừng rỡ sau khi lại có chút kinh ngạc nhìn về phía Giang Phàm. Chuyện gì xảy ra? Vì sao Giang Phàm vừa mở miệng, Ôn chủ sự liền cho bọn họ vào?</p>
+                <p>&quot;Giang sư đệ này, sao lại có tác dụng hơn cả Lăng sư huynh?&quot;</p>
+                <p>&quot;Không nên a? Chẳng lẽ Giang sư đệ lại nhảy ra một thân phận đáng gờm gì đó?&quot;</p>
+                <p>&quot;Kỳ lạ, thím của Lăng Quy Hải là Trần phó hội trưởng, theo lý thuyết đây hẳn là địa bàn của Lăng Quy Hải, sao lại không bằng Giang sư đệ dễ dùng?&quot;</p>
+                <p>Bọn họ xì xào bàn tán. Hướng Giang Phàm ném ánh mắt kính sợ. Kết hợp với thân phận sư thúc của Hạ Triều Ca, bọn họ nhìn Giang Phàm với ánh mắt đã khác xưa.</p>
+                <p>Lăng Quy Hải nghe bọn họ nói, chỉ cảm thấy từng tiếng chói tai. Khẽ nói: &quot;Ôn chủ sự thấy ta khó xử, vốn định để chúng ta đều vào.&quot;</p>
+                <p>&quot;Còn chưa mở miệng thì đã bị Giang Phàm đoạt tiên cơ thôi.&quot;</p>
+                <p>&quot;Các ngươi còn thật sự cho rằng hắn có tác dụng ở hội đấu giá sao?&quot;</p>
+                <p>&quot;Cũng không nghĩ xem ta là ai, hắn lại có địa vị gì?&quot;</p>
+                <p>Nói như vậy, sự nghi ngờ trong lòng mọi người được giải tỏa. Cơ Như Nguyệt trên khuôn mặt quyến rũ một lần nữa rạng rỡ: &quot;Ta chính là nghĩ như vậy.&quot;</p>
+                <p>&quot;Chúng ta có thể đi vào, tất cả đều là nhờ Lăng sư huynh.&quot;</p>
+                <p>&quot;Mà không phải một gã vô linh căn nào đó!&quot;</p>
+                <p>Rất nhiều đệ tử liên tục gật đầu. Vây quanh Lăng Quy Hải đi vào bao sương số một.</p>
+                <p>Liễu Khuynh Tiên kinh ngạc, nói: &quot;Lăng Quy Hải này đáng ghét thì đáng ghét thật, nhưng ở Thiên Cơ các dạo hội đấu giá, đúng là có chút mặt mũi.&quot;</p>
+                <p>&quot;Nhiều người như vậy, hắn thật sự dẫn vào.&quot;</p>
+                <p>&quot;Cũng không sợ vị tiền bối kia không vui?&quot;</p>
+                <p>Giang Phàm nhún vai nói: &quot;Chỉ cần bọn họ không ồn ào là được rồi.&quot;</p>
+                <p>Hai người chân trước vừa vào trong, chân sau Trần Lạc Nguyệt liền chạy tới, hỏi: &quot;Thắng Nam, Giang công tử đã tới?&quot;</p>
+                <p>Ôn Thắng Nam gật đầu: &quot;Vâng, vừa mới vào rồi ạ.&quot;</p>
+                <p>Tảng đá trong lòng Trần Lạc Nguyệt buông xuống. Theo nàng thấy, tất cả khách quý hôm nay cũng không quan trọng bằng Giang Phàm. An bài cho nàng bao sương tốt nhất là muốn kết một phần thiện duyên.</p>
+                <p>&quot;Đúng rồi, cháu ta đâu?&quot; Trần Lạc Nguyệt nhìn quanh, cau mày nói:</p>
+                <p>&quot;Ta vất vả lắm mới tranh thủ cho nó cơ hội, để nó có thể biểu hiện trước mặt Giang công tử.&quot;</p>
+                <p>&quot;Sao đến bây giờ nó còn chưa tới?&quot;</p>
+                <p>&quot;Không phải sớm ở trong bao sương chờ Giang công tử đến sao, chẳng lẽ muốn Giang công tử chờ nó?&quot;</p>
+                <p>Ôn Thắng Nam che miệng cười khẽ: &quot;Lăng công tử cũng vào rồi ạ.&quot;</p>
+                <p>Trần Lạc Nguyệt lúc này mới thở phào: &quot;Thế mới đúng.&quot;</p>
+                <p>&quot;Ngươi đi lấy linh trà thượng hạng ta cất giữ tới đây, ta tự mình đưa vào.&quot;</p>
+                <p>&quot;Vâng, phó hội trưởng.&quot; Ôn Thắng Nam lập tức chạy nhanh đi.</p>
+                <p>Không Thể Tu Tiên Ta Chỉ Đi Bồi Dưỡng Hồn Sủng Thế Giới Thụ Du Hí Bản Vai Phản Diện Ta Nuôi Hôm Nay Rất Ngoan Lìa Xa Ưu Phiền - Nguyệt Lộc</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_189">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 189: Nên lăn chính là bọn ngươi</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Số một bao sương có chút xa hoa, khắp nơi lộ ra quý khí. Trên tường trang trí trị giá vạn tinh, chén trà trên bàn là trân phẩm điêu khắc từ linh mộc thượng đẳng, mỗi chiếc giá một ngàn tinh thạch. Ngay cả chỗ ngồi bình thường nhất cũng giá mấy ngàn tinh thạch.</p>
+                <p>Đây đều là các đệ tử tinh anh của các đỉnh núi, những người từng trải, vậy mà vẫn bị khung cảnh xa hoa trước mắt làm cho rung động.</p>
+                <p>Cơ Như Nguyệt trong mắt đẹp lóe sáng: &quot;Không hổ là phòng đấu giá Thiên Cơ các!&quot;</p>
+                <p>&quot;Trang hoàng của bao sương số một, nói ít cũng mấy vạn tinh thạch!&quot;</p>
+                <p>Các đệ tử còn lại cũng nhao nhao tán thưởng.</p>
+                <p>&quot;So với phòng ngủ của chưởng môn chúng ta còn tốt hơn.&quot;</p>
+                <p>&quot;Ai sẽ bỏ nhiều tiền vào việc trang trí như vậy?&quot;</p>
+                <p>&quot;Ngoại trừ Thiên Cơ các, không có ai khác.&quot;</p>
+                <p>Lúc này, Cơ Như Nguyệt nhìn thấy một chiếc ghế dài chạm ngọc đặt ở trung tâm. Điêu Long Họa Phượng, khí phái phi phàm. Quan trọng nhất là, đây là Băng Ngọc khó tìm ở Cửu Tông đại địa, một khối to bằng nắm tay đã trị giá ngàn tinh. Một chiếc ghế dựa nguyên khối như vậy, tốn hao nhiều không dám tưởng tượng.</p>
+                <p>&quot;Lăng sư huynh, cái ghế này ta có thể ngồi một chút không?&quot;</p>
+                <p>Cơ Như Nguyệt sờ lấy nắm tay, mắt lộ ra vẻ tham luyến.</p>
+                <p>Nhưng, hành động này bị Lăng Quy Hải nghiêm khắc ngăn lại: &quot;Bỏ tay ra!&quot;</p>
+                <p>&quot;Ngươi muốn chết sao? Đây là chỗ ngồi của vị đại nhân vật kia, há lại ngươi ta có thể tùy ý ngồi?&quot;</p>
+                <p>Cơ Như Nguyệt giật mình, vội vàng rụt tay về, luống cuống xin lỗi: &quot;Xin lỗi, ta nhất thời quên mất.&quot;</p>
+                <p>Lăng Quy Hải trong lòng rất sốt ruột. Dẫn đám vướng víu này đến, không chỉ chia sẻ cơ duyên độc thuộc về hắn, còn gây thêm phiền toái cho hắn. Nếu vị tiền bối kia vừa vặn đến, nhìn thấy một đám người không đứng đắn ngồi vào vị trí của ngài, sẽ cảm thấy thế nào? Hắn nghiêm khắc quét mắt nhìn mọi người, nói: &quot;Tất cả đều để tâm vào một chút!&quot;</p>
+                <p>&quot;Chọc giận vị tiền bối kia, ngươi ta đều không có kết cục tốt đẹp đâu!&quot;</p>
+                <p>Đám đệ tử tinh anh đang khắp nơi kiểm tra, ngắm nhìn, vội vàng đứng thẳng đàng hoàng.</p>
+                <p>Liễu Khuynh Tiên đối với cách trang hoàng ở đây cũng có chút mới lạ. Nàng tỉ mỉ quan sát xung quanh. Bỗng nhiên, nàng phát hiện trên bàn có một con Ngọc Sư Tử to bằng bàn tay, không khỏi hiếu kỳ nói: &quot;Đây là cái gì?&quot;</p>
+                <p>Nàng đưa tay muốn cầm lên.</p>
+                <p>Lăng Quy Hải nổi nóng, đè nén lửa giận nói: &quot;Liễu sư muội, không nên tùy tiện đụng vào đồ vật ở đây.&quot;</p>
+                <p>&quot;Làm hư thì không dễ giải quyết đâu.&quot;</p>
+                <p>Liễu Khuynh Tiên thè lưỡi, ngại ngùng rụt tay về. Nhờ người ta mà được vào đây, nàng cũng chỉ có thể nghe lời người ta quản thúc.</p>
+                <p>Ai ngờ, Giang Phàm lại cầm lấy Ngọc Sư Tử, điên đảo nhìn xem, nói: &quot;Giống như là dùng khi đấu giá nhỉ?&quot;</p>
+                <p>&quot;Đánh vào một chút linh lực, bàn đấu giá phía dưới liền biết bao sương này báo giá.&quot;</p>
+                <p>Nói xong ném cho Liễu Khuynh Tiên: &quot;Cứ chơi đi, lại không đáng tiền, làm hư thì bảo chủ sự đổi cái khác.&quot;</p>
+                <p>Liễu Khuynh Tiên vội vàng tiếp lấy, cằn nhằn: &quot;Ngươi cẩn thận một chút, suýt rớt bể!&quot;</p>
+                <p>Hành động tùy ý này làm các tinh anh giật mình.</p>
+                <p>&quot;Cái tên này! Sao lại như là chủ nhân bao sương vậy!&quot;</p>
+                <p>&quot;Còn há miệng bảo chủ sự đổi cái khác nữa chứ!&quot;</p>
+                <p>&quot;Thật sự làm hư, chủ sự đến đuổi hết chúng ta ra ngoài mất!&quot;</p>
+                <p>Cơ Như Nguyệt cũng giận dữ: &quot;Lăng sư huynh, ngươi xem hắn kìa! Cố tình gây sự đây mà!&quot;</p>
+                <p>Lăng Quy Hải tức giận hơn ai hết. Ban đầu không muốn dẫn Giang Phàm theo, vì nể mặt Liễu Khuynh Tiên mới miễn cưỡng đồng ý. Thế mà hắn lại làm gì? Không có chút ý thức cảm ơn, đến nơi này lại đổi khách làm chủ! Hoàn toàn không nghe lời hắn dặn, ở đây làm loạn.</p>
+                <p>&quot;Giang Phàm, ta cảnh cáo ngươi lần cuối, không được sờ loạn chạm loạn!&quot;</p>
+                <p>&quot;Đụng hỏng, ta chịu không nổi, ngươi càng gặp tai họa đấy!&quot;</p>
+                <p>Giang Phàm bĩu môi, rất im lặng:</p>
+                <p>&quot;Nếu ta là người cho phép các ngươi vào, sẽ không có vấn đề.&quot;</p>
+                <p>&quot;Các ngươi cũng không cần câu nệ, chỉ cần không ồn ào, cứ thoải mái.&quot;</p>
+                <p>Nói xong, đặt mông ngồi lên chiếc ghế dài chạm ngọc. Cảm giác mát lạnh thoải mái lập tức lan khắp toàn thân, hơn nữa từng luồng linh lực còn không ngừng tràn vào cơ thể, làm thân thể thoải mái vô cùng.</p>
+                <p>&quot;Không tệ, phòng đấu giá Thiên Cơ các quả thực có thứ đáng giá.&quot;</p>
+                <p>Giang Phàm thầm tán thưởng. Ít nhất ở trải nghiệm cảm giác trong bao sương, họ đã bỏ công sức. Như vậy mới có thể hấp dẫn nhiều cường giả đến đây. Mà hưởng thụ trang trí xa hoa như thế, ai lại xuống phía dưới, không đấu giá tranh giành chứ?</p>
+                <p>Thế nhưng, hành động đó lại làm Lăng Quy Hải không thể nhịn được nữa.</p>
+                <p>&quot;Giang Phàm!&quot;</p>
+                <p>Lăng Quy Hải quát lớn, trên mặt rõ ràng có tức giận: &quot;Ngươi rốt cuộc muốn làm gì?&quot;</p>
+                <p>&quot;Lập tức cút khỏi đó cho ta!&quot;</p>
+                <p>Hắn giận điên lên! Vị tiền bối kia có thể đến bất cứ lúc nào. Nếu ngài phát hiện chiếc ghế dài chạm ngọc của mình bị người khác ngồi, sao có thể vui vẻ? Đến lúc đó dưới cơn nóng giận, bọn họ đều phải cút ra ngoài!</p>
+                <p>Giang Phàm nhíu mày, nói: &quot;Bao sương này là chuẩn bị cho ta.&quot;</p>
+                <p>&quot;Ta muốn làm gì là tự do của ta!&quot;</p>
+                <p>&quot;Còn ngươi, thật rất ồn ào!&quot;</p>
+                <p>&quot;Cứ gào thét như vậy, thì cút ra ngoài cho ta!&quot;</p>
+                <p>Vì thấy mọi người hào hứng, Giang Phàm mới đồng ý cho họ vào xem. Nhưng Lăng Quy Hải cứ thế này thế nọ, thật sự làm người ta phiền chán.</p>
+                <p>Cơ Như Nguyệt giật mình, chợt bật cười: &quot;Các ngươi nghe thấy chưa?&quot;</p>
+                <p>&quot;Hắn nói bao sương này là chuẩn bị cho hắn!&quot;</p>
+                <p>&quot;Trời ạ, ta không phải bị ảo giác chứ?&quot;</p>
+                <p>Đám đệ tử tinh anh cũng khóe miệng giật giật, nhao nhao lẩm bẩm.</p>
+                <p>&quot;Tên này có phải điên rồi không?&quot;</p>
+                <p>&quot;Các Đại trưởng lão của các tông môn khác cũng đến nhiều vị, còn chưa có tư cách làm chủ bao sương số một đâu.&quot;</p>
+                <p>&quot;Cho dù hắn thật sự là sư thúc của Hạ Triều Ca, cũng tuyệt đối không có tư cách ngồi ở đây nha!&quot;</p>
+                <p>Liễu Khuynh Tiên cũng bị lời nói của Giang Phàm làm cho bối rối. Nàng hạ giọng nói: &quot;Giang Phàm, sao ngươi nói linh tinh vậy?&quot;</p>
+                <p>&quot;Như vậy sẽ đắc tội với người ta.&quot;</p>
+                <p>Lan truyền ra ngoài, đệ tử Thanh Vân tông Giang Phàm mạo danh chiếm cứ bao sương số một. Không chỉ chọc cho vị tiền bối sắp đến không vui, phòng đấu giá Thiên Cơ các cũng sẽ đưa Giang Phàm vào sổ đen, vĩnh viễn không cho vào nữa sao?</p>
+                <p>Lăng Quy Hải tức giận vỗ bàn, không thể khoan dung thêm nữa, quát: &quot;Đồ không biết điều!&quot;</p>
+                <p>&quot;Ta dẫn ngươi vào là cho ngươi mặt mũi rồi đấy à?&quot;</p>
+                <p>&quot;Dám ở đây được đà lấn tới?&quot;</p>
+                <p>&quot;Cút! Bây giờ cút ngay!&quot;</p>
+                <p>&quot;Nơi này không hoan nghênh ngươi!&quot;</p>
+                <p>Vẻ mặt Giang Phàm lạnh xuống. Ngồi trên chiếc ghế dài chạm ngọc, không những không có ý đứng dậy, ngược lại lạnh lùng nói:</p>
+                <p>&quot;Người nên cút là ngươi!&quot;</p>
+                <p>&quot;Còn có các ngươi, quá ồn!&quot;</p>
+                <p>&quot;Tất cả đi ra ngoài cho ta!&quot;</p>
+                <p>Hảo tâm coi như lòng lang dạ thú! Một đám không biết tốt xấu!</p>
+                <p>Liễu Khuynh Tiên giật mình. Nàng gần như không nhận ra Giang Phàm trước mắt. Bình thường không phải rất khiêm tốn sao? Sao lại thô bạo vô lý như vậy, còn không phân nặng nhẹ? Chiếm chỗ ngồi của tiền bối, còn muốn đuổi người khác? Thật sự làm cho vị tiền bối kia và người của đấu giá hội thấy, hắn không chịu nổi đâu.</p>
+                <p>Kẹt kẹt――</p>
+                <p>Sợ điều gì sẽ gặp điều đó! Đúng lúc không khí căng thẳng như dây cung, cửa bao sương bị đẩy ra. Trần Lạc Nguyệt bưng hộp linh trà xếp ngay ngắn, vẻ mặt tươi cười đi đến. Chợt nhìn thấy nhiều người như vậy, nàng lập tức sững sờ.</p>
+                <p>&quot;Nhiều người như vậy?&quot;</p>
+                <p>Đánh Dấu Một Trăm Năm Chiếc Áo Lót Của Nàng Cá Ướp Muối Bị Nổ Tung Tử Mẫu Đồng Thi Đại Sư Xuyên Không: Bắt Quỷ, Đoán Mệnh, Cưa Đổ Tổng Tài Tử Mẫu Đồng Thi</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_190">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 190: Hối hận</h2>
+            </header>
+            <div class="chapter-content">
+                <p>&quot;Thẩm thẩm!&quot;Lăng Quy Hải vội vàng tiến lên đón, nói: &quot;Đây đều là bằng hữu của ta.&quot;</p>
+                <p>Các vị tinh anh đồng loạt tỏ vẻ kính ý: &quot;Trần phó hội trưởng.&quot;</p>
+                <p>Trần Lạc Nguyệt nhướng mày.Bảo cháu trai một mình tới, sao hắn lại mời nhiều bạn bè như vậy?Cãi cọ như thế, làm phiền Giang Phàm thì sao?</p>
+                <p>&quot;Về Hải, các ngươi không làm ồn ở đây chứ?&quot;Nàng cẩn thận liếc nhìn Giang Phàm, phát hiện sắc mặt hắn không tốt, không khỏi lòng hơi thót lại.</p>
+                <p>Lăng Quy Hải cảm thấy buồn cười.Giang Phàm không phải vô pháp vô thiên sao?Báo ứng đến thật kịp thời!Hắn nghiêm mặt nói: &quot;Thẩm thẩm, bạn bè của cháu đều rất thủ quy củ, không có ồn ào.&quot;</p>
+                <p>Trần Lạc Nguyệt trong lòng khựng lại.Chợt lại nổi lên nghi ngờ.Đã vậy, vì sao sắc mặt Giang Phàm nhìn không tốt?</p>
+                <p>Câu nói tiếp theo của Lăng Quy Hải khiến nàng chân tay lạnh buốt.&quot;Ồn ào chính là người tên Giang Phàm này!&quot;Lăng Quy Hải cười lạnh liếc Giang Phàm, nói: &quot;Mặt dày mày dạn đi theo cháu trà trộn vào thì thôi.&quot;&quot;Còn không nghe lời người ta dặn!&quot;&quot;Bảo hắn đừng đụng lung tung, hắn lại khắp nơi sờ loạn!&quot;&quot;Còn không biết mùi vị ngồi ở ghế chạm ngọc, đây cũng là hắn có thể ngồi sao? Một chút tự mình hiểu biết cũng không có!&quot;</p>
+                <p>Nghe đến đó, Trần Lạc Nguyệt đã tâm trầm như nước.Có thể nghe được câu tiếp theo, Trần Lạc Nguyệt càng thêm tâm tan nát.&quot;Buồn cười hơn nữa là gì, thẩm thẩm biết không?&quot;Lăng Quy Hải không nhịn được cười: &quot;Cháu bảo hắn cút ra ngoài, ngươi đoán hắn làm gì?&quot;&quot;Hắn ngược lại chê chúng cháu ồn ào, bảo chúng cháu cút ra ngoài!&quot;&quot;Ngươi nói có hài hước không?&quot;</p>
+                <p>Các tinh anh ở đây đồng loạt cười phá lên.&quot;Trần phó hội trưởng, tôi có thể làm chứng, Lăng sư huynh nói không sai một chữ.&quot;&quot;Người này quả thực khó hiểu, cứ như hắn mới là chủ nhân phòng số một vậy.&quot;</p>
+                <p>Liễu Khuynh Tiên tỏ vẻ áy náy.Vội nói: &quot;Trần phó hội trưởng, sư đệ tôi bình thường không như vậy, mời ngài...&quot;Lời cầu tình còn ở trong miệng.</p>
+                <p>Cơ Như Nguyệt liền cười lạnh cắt ngang: &quot;Nói nhảm nhiều như vậy làm gì?&quot;&quot;Còn không mau dẫn hắn cút đi?&quot;&quot;Đây là nơi hắn có thể ở sao?&quot;</p>
+                <p>Nhưng mà.Vừa dứt lời, Trần Lạc Nguyệt liền ánh mắt sắc bén, tức giận rút nàng một bạt tai!&quot;Ngươi câm miệng cho ta!&quot; Trần Lạc Nguyệt thịnh nộ vô cùng.Nàng khó khăn lắm mới từ chỗ hội trưởng tranh thủ được phòng số một, chính là để chiêu đãi Giang Phàm thật tốt.Kết quả, đám đồ vật mắt chó coi thường người khác này.Vậy mà cùng nhau chế nhạo Giang Phàm!Đơn giản là lẽ nào lại như vậy!</p>
+                <p>Cơ Như Nguyệt bối rối, bụm mặt gò má, có chút mờ mịt nhìn về phía Lăng Quy Hải.Trong ánh mắt viết đầy ủy khuất.Lăng Quy Hải cũng sửng sốt, nói: &quot;Thẩm thẩm, ngươi đánh bạn bè của cháu làm gì?&quot;&quot;Nên đánh chính là Giang Phàm cái đồ chó má này...&quot;</p>
+                <p>Ba ――Một bạt tai mạnh hơn mấy lần vừa rồi, hung hăng quất vào mặt Lăng Quy Hải!Trần Lạc Nguyệt giận đến nghiến răng nghiến lợi, quát lớn: &quot;Lăng Quy Hải! Ngươi cái đồ bùn nhão không dính lên tường được!&quot;Xem như hắn là cháu mình, mới nghĩ cho hắn một cơ hội.Nếu Lăng Quy Hải biểu hiện tốt, nói không chừng tương lai cũng có thể giống như Ôn Thắng Nam, leo lên vị trí Đại Hồn Sư!Nhưng tên súc sinh này đã làm gì?Mang một đám bạn bè không đứng đắn, làm phiền hứng thú của Giang Phàm thì thôi.Còn dẫn đầu nói lời ác độc!Mắng người ta là đồ chó má?</p>
+                <p>&quot;Thẩm thẩm, ngươi...&quot; Lăng Quy Hải bụm mặt, vẻ mặt không thể tin.Sao thẩm thẩm ngay cả mình cũng đánh?</p>
+                <p>Trần Lạc Nguyệt tức giận vô cùng: &quot;Giang công tử chính là quý khách ta mời tới!&quot;&quot;Ta bảo ngươi bưng trà rót nước cho hắn, bảo ngươi hầu hạ hắn thật tốt!&quot;&quot;Ngươi đã làm những gì?&quot;Giọng nàng vang vọng trong căn phòng trống rỗng, liên tục truyền đến những tiếng vọng.</p>
+                <p>Tất cả mọi người như cọc gỗ, đứng sững tại chỗ.Bọn họ không thể tin vào tai mình.Tiền bối mà Trần Lạc Nguyệt nói tới, vậy mà thật sự là Giang Phàm!Trước đây Ôn Thắng Nam sở dĩ đổi lời, bảo bọn họ đều vào.Căn bản không phải vì thấy Lăng Quy Hải khó xử, mà là Giang Phàm mở miệng, cho phép bọn họ vào.Mà Giang Phàm sở dĩ có thể ở đây tùy ý hành động.Bởi vì, căn phòng này chính là của hắn.</p>
+                <p>Quát lớn xong cháu mình, Trần Lạc Nguyệt vẻ mặt thấp thỏm đi đến trước mặt Giang Phàm, thỉnh tội nói:&quot;Giang công tử, thật sự xin lỗi, cháu của tôi mắt không tròng.&quot;&quot;Tôi sẽ đổi Thắng Nam tới nghe ngài sai bảo.&quot;</p>
+                <p>Giang Phàm khoát tay: &quot;Không cần chuyên gia hầu hạ.&quot;&quot;Đem bọn họ đều mời đi là được.&quot;</p>
+                <p>Trần Lạc Nguyệt quay đầu nhìn về phía Lăng Quy Hải đang ngẩn người, trong lòng bực bội.&quot;Tai điếc sao? Còn không mau dẫn bạn bè của ngươi cút đi cho ta!&quot;&quot;Đồ thành sự không có bại sự có dư, sau này đừng nói ta là thẩm thẩm của ngươi!&quot;&quot;Ta không có ngươi như thế không hăng hái cháu trai!&quot;</p>
+                <p>Cổ họng Lăng Quy Hải dường như bị thứ gì nghẹn lại, một chữ cũng không nói nên lời.Như khúc gỗ, cứng đờ di chuyển bước chân rời đi.Nhiều tinh anh khác cũng đầy bụi đất rời đi.Làm cả buổi, bọn họ có thể vào, là nhờ ánh sáng của Giang Phàm.Hài hước thay bọn họ còn nhiều lần chế giễu Giang Phàm.</p>
+                <p>Cơ Như Nguyệt khẽ mím môi đỏ, nhìn Giang Phàm, muốn đi qua, lại bị Trần Lạc Nguyệt trừng mắt trở về.Đành lòng, chỉ có thể tạm thời rời đi.Trong lòng nàng vô cùng ảo não, mình rốt cuộc có ánh mắt thế nào vậy?Cùng là một người, vậy mà có thể nhìn nhầm hai lần.Nàng hận không thể cho mình một bạt tai!</p>
+                <p>Đợi đến khi người đều đi hết, Trần Lạc Nguyệt liên tục xin lỗi.Giang Phàm nói: &quot;Thôi, việc này sai không ở ngươi.&quot;&quot;Hơn nữa, ngươi cũng là có ý tốt, sao lại trách tội ngươi?&quot;</p>
+                <p>Nói xong, lấy ra ba viên Hồi Xuân Đan.&quot;Đan này nếu có thể cạnh tranh, thì cùng nhau cạnh tranh đi.&quot;</p>
+                <p>Trần Lạc Nguyệt lịch duyệt phi phàm, liếc mắt liền nhìn ra đây không phải linh đan bình thường, lúc này trong lòng vui vẻ, hai tay nâng lên.&quot;Được, tôi lấy trước đi giám định thành phần một chút.&quot;&quot;Nếu giá trị cao, sẽ giúp Giang công tử đưa lên sàn đấu giá.&quot;</p>
+                <p>Khi trong phòng chỉ còn lại hai người.Liễu Khuynh Tiên cũng không nhịn được sự nghi vấn lớn trong lòng.&quot;Giang Phàm, sao ngươi lại là chủ nhân phòng số một?&quot;</p>
+                <p>Giang Phàm lấy ra thư mời của Trần Lạc Nguyệt, dở khóc dở cười nói: &quot;Ta nào biết được?&quot;&quot;Đột nhiên sắp xếp cho ta phòng số một.&quot;&quot;Sớm biết sẽ có nhiều chuyện như vậy, ta đã không tới.&quot;</p>
+                <p>Liễu Khuynh Tiên cầm thư mời xem xét, cũng không hiểu ra sao.&quot;Không phải thế, cho dù ngươi lấy Tật Phong Châu làm vật phẩm đấu giá, nhiều lắm cũng chỉ là khách hàng lớn của nàng mà thôi.&quot;&quot;Sao đến mức coi trọng ngươi như vậy?&quot;&quot;Đãi ngộ cao như thế, gần như sánh được với nhất tông chi chủ.&quot;Nàng nhìn hộp ngọc đựng cực phẩm linh trà trên bàn, nói như vậy.</p>
+                <p>Giang Phàm cười cười, vỗ vỗ bên cạnh: &quot;Mặc kệ nó, tới rồi thì hưởng thụ một chút chứ sao.&quot;</p>
+                <p>Liễu Khuynh Tiên nhìn chằm chằm Giang Phàm thật sâu một cái.Dứt khoát không nghĩ nhiều như vậy nữa.Mang váy, ngọt ngào ngồi ở ghế chạm ngọc.Qua tấm kính thủy tinh phía trước, mọi thứ trên đài đấu giá đều có thể nhìn rõ.</p>
+                <p>Hậu trường.Nhân viên đấu giá hội đang khua chiêng gõ trống làm công tác chuẩn bị cuối cùng.Hội trưởng Điền Thạch Quân đang kiểm kê vật phẩm đấu giá sắp bắt đầu.Các vật phẩm cạnh tranh do Tô Hướng Quyền và Trần Lạc Nguyệt sưu tầm, được tách riêng ra, lát nữa sẽ do chính bọn họ lên đài chủ trì đấu giá.</p>
+                <p>Điền Thạch Quân ước định sơ qua, nói: &quot;Xem ra, kim ngạch đấu giá lần này của Tô hội phó sẽ càng cao thêm một bậc.&quot;Đi cùng bên cạnh Tô Hướng Quyền, vuốt râu cười nói: &quot;Trần phó hội trưởng, bất quá là vừa lúc gặp được một khách hàng có đồ tốt thôi.&quot;&quot;Sao hơn được giao thiệp rộng lớn của ta?&quot;</p>
+                <p>Đối với điều này, Điền Thạch Quân khẽ gật đầu, tán thưởng nói: &quot;Gừng càng già càng cay.&quot;&quot;Ngươi đã sớm chuẩn bị tìm được mấy thứ đan dược chữa thương, tuyệt đối là vật phẩm cạnh tranh hàng đầu của đấu giá hội lần này, có thể bán được không ít tiền.&quot;</p>
+                <p>Tô Hướng Quyền không khỏi đắc ý: &quot;Sớm tại trước khi thú triều xuất hiện, ta đã dự bị một ngày này.&quot;&quot;Do đó, đã tích lũy được Linh Đan chữa thương tam phẩm tốt nhất của Thiên Cơ các.&quot;&quot;Bây giờ muốn mua, chỉ có trong tay ta mới có.&quot;</p>
+                <p>Điền Thạch Quân rất hài lòng.Mặc dù Tô Hướng Quyền hơi bá đạo, nhưng năng lực không thể nghi ngờ.Trái lại Trần Lạc Nguyệt, vẫn còn non một chút.Nàng rất khó đấu thắng Tô Hướng Quyền.Không lâu sau, ông ta là hội trưởng thoái vị, Tô Hướng Quyền chắc chắn là ứng cử viên xứng đáng.</p>
+                <p>Lúc này.Trần Lạc Nguyệt vẻ mặt hưng phấn chạy tới: &quot;Hội trưởng hội trưởng! Tôi được ba hạt Linh Đan, ngài giúp giám định một chút.&quot;</p>
+                <p>Điền Thạch Quân nhíu mày: &quot;Này đều sắp bắt đầu đấu giá rồi.&quot;Mỗi một kiện vật đấu giá đều được tuyển chọn tỉ mỉ.Nếu ba hạt đan dược này gia nhập cạnh tranh, có nghĩa là phải xếp loại trừ một kiện.</p>
+                <p>Tô Hướng Quyền &quot;a&quot; một tiếng, tự tin nói: &quot;Hội trưởng, cứ giúp nàng xem một chút đi.&quot;&quot;Linh Đan tạm thời tìm được, có thể là loại hàng nào tốt đâu?&quot;&quot;Xem qua một chút, để nàng hết hy vọng thôi.&quot;</p>
+                <p>Điền Thạch Quân bất đắc dĩ, nói: &quot;Được rồi, cho ta xem một chút.&quot;&quot;Sự việc tuyên bố trước, không phải đỉnh cấp Linh Đan, cũng không cần đưa ra đấu giá, để tránh làm rối loạn...&quot;Ông ta không nói hết câu.Nhìn ba viên Linh Đan màu xanh lá trên tay Trần Lạc Nguyệt, cứng đờ tại chỗ.</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_37.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_37.html" class="page-btn">37</a>
+            <a href="page_38.html" class="page-btn current">38</a>
+            <a href="page_39.html" class="page-btn">39</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_39.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

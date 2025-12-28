@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 146">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 146</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_145.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_147.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_726">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 726: Hối Hận</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Ở đằng xa.</p>
+                <p>Một nhóm bóng người hùng dũng, khí phách ngút trời, cưỡi linh thú tiến về phía Cự Nhân Tông. Thể trạng bọn họ vạm vỡ, khí thế hùng hồn. Tựa như một dòng lũ, bọn họ cuồng nhiệt phi nước đại giữa nền tuyết trắng xóa bao la.</p>
+                <p>Một vị Thái Thượng Trưởng Lão hơi lộ vẻ bất an, liên tục ngoái đầu nhìn lại phía sau. Thỉnh thoảng, lão lại thở dài. Lão vẫn cảm thấy, lần này Tông chủ e rằng đã gây họa lớn rồi. Sát hại Lý Thanh Phong, Thanh Vân Tông tuyệt đối sẽ không bỏ qua dễ dàng như vậy.</p>
+                <p>“Chu Thái Thượng Trưởng Lão, ngươi có thể tin tưởng vào bản thân một chút được không?” Khổng Nguyên Bá liếc xéo lão một cái.</p>
+                <p>Kể từ khi hai vị Thái Thượng Trưởng Lão Kết Đan Cảnh tầng chín viên mãn vẫn lạc, thực lực của Khổng Nguyên Bá đã không còn thua kém bất kỳ vị Thái Thượng Trưởng Lão nào nữa. Trước đây còn có Phương Thái Cực áp chế hắn, hiện tại, hắn chính là chủ nhân thực sự, nói một không hai của Cự Nhân Tông. Đến mức, hắn không còn tỏ ra kính trọng các Thái Thượng Trưởng Lão như trước nữa.</p>
+                <p>Chu Khánh Thương thở dài: “Thôi được rồi, sự việc đã đến nước này, ta có nói thêm nữa thì có ích gì chứ? Chỉ cần Tông chủ không hối hận là được.” Lão có thể dự đoán được, rất nhanh sau đó Thanh Vân Tông sẽ đuổi tới. Hai bên chắc chắn sẽ vì chuyện này mà xảy ra một trận ác chiến. Cự Nhân Tông dù có là Thượng Tam Tông, dù có thực lực mạnh hơn Thanh Vân Tông đi chăng nữa, cũng không thể nào không hề hấn gì, không có bất kỳ thương vong nào chứ? Chỉ vì vui vẻ nhất thời mà dẫn đến ác quả thế này, thật sự là không sáng suốt chút nào.</p>
+                <p>“Hối hận?” Khổng Nguyên Bá khinh thường nói: “Trong từ điển của Khổng Nguyên Bá ta, không hề có hai chữ này!”</p>
+                <p>Một tiếng rên nhẹ truyền đến. Là Hứa Di Ninh đã tỉnh lại. Nàng đột ngột ngồi bật dậy, đôi mắt lập tức trở nên sắc bén, điên cuồng lao về phía Khổng Nguyên Bá.</p>
+                <p>“Ngươi đã giết sư tôn của ta!”</p>
+                <p>Khổng Nguyên Bá hừ nhẹ một tiếng qua lỗ mũi. Thuận tay vung lên, ống tay áo đã quất thẳng vào người Hứa Di Ninh. Hứa Di Ninh thậm chí còn chưa đạt tới Kết Đan Cảnh, làm sao có thể chịu nổi một đòn như vậy chứ? Ngay lập tức bị quật ngã xuống đất. Áo váy trên lưng nàng bị quất rách toạc, để lộ ra tấm lưng trần trắng nõn mịn màng như ngọc. Hai sợi dây yếm buộc sau lưng cũng ẩn hiện rõ ràng.</p>
+                <p>“Cũng giống như sư tôn ngươi, đều là những kẻ không biết tự lượng sức mình!” Khổng Nguyên Bá lạnh lùng hừ mũi. Ánh mắt hắn lại tùy tiện lướt qua tấm lưng trắng như tuyết của nàng. “Thật trắng nõn a. Tên tiểu tử Giang Phàm kia, vậy mà lại không cần ngươi. Đúng là không biết trân trọng.”</p>
+                <p>Trên linh thú bên cạnh, ngồi mấy tên đệ tử chân truyền của hắn. Trong đó có Tiết Vạn Trọng. Thân thể hùng vĩ cao hai trượng của hắn, như một ngọn đồi nhỏ. Một đôi hổ mục to như chuông đồng, tùy ý đánh giá nàng. Trong mắt đầy vẻ cuồng nhiệt.</p>
+                <p>“Sư tôn, đệ tử bị Liễu Khuynh Tiên một kiếm đánh trọng thương, mối thù này đến bây giờ vẫn chưa được báo. Nữ nhân này, được coi là vị hôn thê chính thức theo khế ước của Giang Phàm. Báo thù trên người nàng ta, cũng là như nhau phải không?”</p>
+                <p>Khổng Nguyên Bá cười như không cười: “Ồ? Ngươi muốn báo thù thế nào?”</p>
+                <p>Hắn đối với tên đệ tử bán cự nhân này, xưa nay vẫn luôn đặc biệt sủng ái. Mức độ chỉ đứng sau Kim Trọng Minh. Đối phương muốn báo thù, hắn làm sư tôn sao có thể không đồng ý chứ?</p>
+                <p>Tiết Vạn Trọng liếm liếm môi, cười như không cười nói: “Đương nhiên là cũng phải hung hăng cho nàng ta một kiếm rồi! Khiến nàng ta cũng nếm thử uy lực một kiếm của ta.”</p>
+                <p>Các nam đệ tử có mặt tại đó, phát ra từng tràng cười quái dị mà đàn ông ai cũng hiểu. Trong mắt ẩn chứa vẻ hưng phấn. Đại mỹ nhân như Hứa Di Ninh, khắp Cửu Tông cũng khó tìm được mấy người có thể sánh bằng. Hoàn toàn không phải là thứ mà những đệ tử tầm thường như bọn họ có thể tơ tưởng tới. Thế nhưng bây giờ lại khác rồi. Bọn họ đều có cơ hội xếp hàng, nếm thử tư vị của loại đại mỹ nhân tuyệt phẩm này. Đây là cơ hội khó có được lần thứ hai trong đời. Vì vậy, bọn họ nhao nhao hò hét, hận không thể bắt tay vào làm ngay lập tức, không chờ được đến ba ngày sau nữa.</p>
+                <p>Hứa Di Ninh nghiến chặt răng bạc: “Các ngươi đừng hòng!” Nàng dùng tay kia rút cây trâm cài tóc trên đầu ra, đặt vào ngực mình. Nàng hung hăng phun một bãi nước bọt dính máu vào Khổng Nguyên Bá. “Làm nhục ta, còn muốn dùng ta để dụ Giang Phàm tới? Các ngươi cứ nằm mơ đi!”</p>
+                <p>Nàng quyết tuyệt đâm cây trâm vào sâu trong ngực. Nhưng, bên tai nàng như có tiếng sấm nổ, truyền đến tiếng hừ lạnh của Khổng Nguyên Bá.</p>
+                <p>“Muốn tìm chết trước mặt ta ư? Là ai cho ngươi ảo giác rằng ngươi có tư cách đó?”</p>
+                <p>Ngay sau đó, một luồng gió mạnh ập tới. Hứa Di Ninh đầu óc đau nhói, trực tiếp ngất lịm đi.</p>
+                <p>Khổng Nguyên Bá thu tay về, lạnh lùng hừ nói: “Vốn dĩ muốn giữ ngươi lại đến khi Giang Phàm tới rồi tính. Để trước mặt hắn, cho đệ tử Cự Nhân Tông ta làm nhục ngươi. Thế nhưng ngươi đã muốn tìm đường chết, vậy thì ta đành phải để các đệ tử Cự Nhân Tông ta nếm thử trước vậy!” Hắn nhón mũi chân một cái, đá văng Hứa Di Ninh lên lưng linh thú của Tiết Vạn Trọng.</p>
+                <p>“Tiết Vạn Trọng người thứ nhất, Kim Trọng Minh người thứ hai…”</p>
+                <p>Kim Trọng Minh đứng ở rìa, nhàn nhạt nói: “Sư tôn, đệ tử không tham gia.” Dựa vào cái gì mà lại để Tiết Vạn Trọng nếm thử trước? Sư tôn càng ngày càng thiên vị Tiết Vạn Trọng rồi! Kim Trọng Minh hắn, muốn làm thì phải làm số một! Tuyệt đối không làm số hai!</p>
+                <p>Khổng Nguyên Bá liếc nhìn hắn một cái, nói: “Tùy ngươi.” Dù sao thì trong vòng mười năm, Kim Trọng Minh cũng không có tư cách đến Thiên Cơ Các, vậy thì giá trị của hắn cũng không còn quan trọng đến thế nữa.</p>
+                <p>“Người thứ hai Sử Hướng Minh, người thứ ba Hoàng Lâm, người thứ tư…”</p>
+                <p>Các đệ tử được gọi tên, hò reo cởi bỏ áo ngoài. Giống như từng bầy sói đói, đôi mắt lộ ra ánh sáng tham lam nhìn chằm chằm vào thân thể quyến rũ của Hứa Di Ninh. Tiết Vạn Trọng thậm chí còn cởi sạch quần áo. Một bàn tay to lớn đã tóm lấy eo của Hứa Di Ninh, nhấc bổng nàng lên. Nhìn nữ nhân xinh đẹp như tiên giáng trần này, Tiết Vạn Trọng không ngừng chảy nước dãi.</p>
+                <p>“Tiểu mỹ nhân, ta không khách sáo nữa đây.” Hắn vươn hai ngón tay thô tráng, túm lấy vạt áo của nàng, định xé toạc ra.</p>
+                <p>Ầm ầm ——</p>
+                <p>Bỗng nhiên, nơi chân trời đột nhiên vang vọng một tiếng sấm rền. Tay Tiết Vạn Trọng run lên, kinh ngạc nhìn lên bầu trời. Lúc này, bầu trời trong xanh như rửa, vạn dặm không một gợn mây. Sấm sét từ đâu ra chứ?</p>
+                <p>Một đệ tử thúc giục: “Tiết sư huynh, huynh cứ kệ nó đi. Chắc là bọn người Chính Lôi Tông đang bày trò gì đó thôi.”</p>
+                <p>Tiết Vạn Trọng nghĩ lại cũng phải. Trong tình huống này, chỉ có thể là có người tinh thông lôi điện thần thông đang thi triển lôi pháp. Hắn lại lần nữa nhìn về phía mỹ nhân trước mặt, cười tà một tiếng, định xé nát quần áo nàng.</p>
+                <p>Ầm ầm ——</p>
+                <p>Lại một đạo lôi đình ầm ầm kéo tới. Âm thanh so với vừa nãy rõ ràng kịch liệt hơn rất nhiều. Dường như, nó đang cấp tốc tiếp cận bọn họ.</p>
+                <p>Đến lúc này, không chỉ Tiết Vạn Trọng, ngay cả Khổng Nguyên Bá cũng không nhịn được nhìn về phía nguồn âm thanh.</p>
+                <p>“Lôi Chấn Hải đang làm trò quỷ gì thế?” Trong Chính Lôi Tông, cũng chỉ có Lôi Chấn Hải tinh thông Vân Trung Ảnh, mới có thể di chuyển với tốc độ nhanh đến vậy.</p>
+                <p>Ầm ầm ——</p>
+                <p>Tiếng sấm thứ ba truyền đến. Âm thanh đó, vang dội như thiên uy, vô cùng mênh mông.</p>
+                <p>“Không phải Lôi Chấn Hải!” Khổng Nguyên Bá đứng bật dậy, trong mắt lộ vẻ kinh nghi. Từ khí thế của hai luồng âm thanh mà phán đoán, người thi triển lôi pháp đã vượt qua ít nhất mấy chục dặm trong nháy mắt. Vân Trung Ảnh của Lôi Chấn Hải, nhiều nhất cũng chỉ có thể dịch chuyển tức thời trăm trượng mà thôi.</p>
+                <p>Ầm ầm ——</p>
+                <p>Tiếng sấm rền thứ tư. Bầu trời như nổ tung, chấn động khiến bầy linh thú kinh hoàng dừng lại, đứng yên tại chỗ, không dám tiến về phía trước nữa. Khổng Nguyên Bá cùng một nhóm Thái Thượng Trưởng Lão của Cự Nhân Tông, đều trở nên nặng nề.</p>
+                <p>Gần hơn nữa rồi! Đối phương chính là lao thẳng về phía bọn họ!</p>
+                <p>Chu Khánh Thương kinh ngạc nói: “Đây là vị cao nhân nào đang lấy lôi đạo mà hành tẩu vậy? Vì sao lại tới chỗ chúng ta? Chúng ta đâu có trêu chọc vị cao nhân tinh thông lôi đạo nào đâu!”</p>
+                <p>Mấy vị Thái Thượng Trưởng Lão còn lại cũng cảm thấy vô cùng chấn động. Khí thế của đạo lôi đình này, thật sự có chút kinh hãi lòng người. Khắp Cửu Tông đại địa, thậm chí là Thiên Cơ Các, cũng không có nhân vật nào đạt đến lôi đạo đại thành như vậy. Điều khiến bọn họ bất an là, nghe tiếng sấm sét, đối phương là lao thẳng về phía bọn họ!</p>
+                <p>Khổng Nguyên Bá cũng có chút thấp thỏm không yên. Hắn chắp tay, hướng về phía lôi đình tới, cung kính nói: “Tiền bối, chúng vãn bối là Cự Nhân Tông. Xin ngài ngàn vạn lần đừng lầm tổn thương người vô tội!”</p>
+                <p>Ầm ầm ầm ầm ——</p>
+                <p>Đạo lôi đình thứ năm, ầm ầm tới! Âm thanh lôi bạo đáng sợ, chấn động khiến toàn bộ linh thú tại hiện trường, kinh hoàng nằm rạp xuống, trong miệng phát ra tiếng kêu ai oán. Các đệ tử có tu vi thấp kém, bị chấn ngã ngay tại chỗ, miệng mũi phun máu.</p>
+                <p>Đồng thời, giữa thiên địa, lôi quang chợt hiện. Một đạo lôi quang chói mắt, lấn át cả ánh sáng ban ngày, khiến đất trời trở nên trắng xóa một màu. Không ai có thể mở mắt ra được! Khí tức hủy diệt của lôi đình, càn quét khắp nơi!</p>
+                <p>Khổng Nguyên Bá theo bản năng nhắm mắt lại. Khi nhận ra lôi quang biến mất, hắn lại lần nữa mở mắt ra. Điều khiến con ngươi hắn co rụt lại vì chấn động là, ái đồ của hắn, Tiết Vạn Trọng, đầu đã biến mất rồi! Không phải bị chém rụng, mà là bị người ta, cả cổ cùng với đầu, đánh nát chìm vào trong lồng ngực!</p>
+                <p>Hứa Di Ninh đang nằm trong tay hắn, giờ lại xuất hiện trong vòng tay của một người khác. Hắn một thân hắc y phần phật tung bay trong gió mạnh. Từng đạo lôi tức, vẫn không ngừng bao quanh thân thể hắn. Một đôi băng mâu lạnh lẽo, tựa như nối liền với Cửu U Địa Ngục, phát ra khí lạnh thấu xương.</p>
+                <p>Và khi nhìn rõ dung mạo thật của hắn, Khổng Nguyên Bá kinh hãi tột độ:</p>
+                <p>“Giang Phàm?”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_727">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 727: Bạn cũng biết đau</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Người đã đại thành Lôi Đạo thần thông, lại là Giang Phàm!</p>
+                <p>Cự Nhân Tông rơi vào tĩnh lặng ngắn ngủi. Nhất thời, tất cả đều khó lòng liên kết vị tiền bối khiến họ kính sợ ấy với Giang Phàm trước mắt.</p>
+                <p>Mãi đến khi tiếng máu phun &quot;phụt phụt phụt&quot; vang lên. Hóa ra, máu từ lồng ngực Tiết Vạn Trọng bị đầu hắn ép nát, phun ra ngoài như suối. Lúc này, mọi người mới nhận ra sự thật tàn khốc: Tiết Vạn Trọng đã bị giết!</p>
+                <p>Thiên kiêu đương đại của Cự Nhân Tông, mang huyết mạch bán cự nhân hiếm có, chỉ kém Kim Trọng Minh, hắn đã không còn!</p>
+                <p>Khổng Nguyên Bá hoàn hồn, thất thanh gào thét: &quot;Vạn Trọng!!!&quot;</p>
+                <p>Đây là đệ tử mà hắn dồn nhiều tâm huyết nhất, ngay cả Kim Trọng Minh cũng không sánh bằng! Từ lúc nhập môn, hắn đã tay kèm tay dạy y tu luyện, dạy y cách vận dụng huyết mạch viễn cổ Cự Nhân, dạy y cách phát lực, cách tăng cường khí huyết...</p>
+                <p>Nhìn y trưởng thành nhanh chóng, giành hết vinh quang này đến vinh quang khác, Khổng Nguyên Bá cười trên mặt, vui trong lòng. Không có gì bất ngờ, vài năm nữa, hắn sẽ nâng Tiết Vạn Trọng lên làm Trưởng lão. Hai mươi năm nữa, khi hắn lui về làm Thái Thượng Trưởng lão, y sẽ cùng Kim Trọng Minh gánh vác đại sự của Cự Nhân Tông.</p>
+                <p>Cảm giác mãn nguyện và thành tựu khi nhìn đứa con của mình dần trở thành đại thụ chọc trời, không biết bao nhiêu tinh thạch, bao nhiêu tài nguyên cũng không đổi được. Hạnh phúc ấy khó diễn tả bằng lời.</p>
+                <p>Nhưng, tất cả đã đột ngột dừng lại. Nhìn Tiết Vạn Trọng không còn đầu, hắn bi thương gào thét: &quot;Không!!!&quot; Hắn không thể chấp nhận được việc một người quan trọng đến vậy lại rời bỏ mình! Một cơn đau như dao cắt lan khắp lồng ngực. Hắn ôm ngực, vẻ mặt đầy thống khổ.</p>
+                <p>&quot;Hóa ra, các ngươi Cự Nhân Tông cũng biết, lòng người sẽ đau đớn ư?&quot;</p>
+                <p>&quot;Vậy tại sao lại giết Lý Thanh Phong? Có chuyện gì, cứ xông vào ta đây! Tại sao lại giết hắn? Hả?&quot;</p>
+                <p>Giang Phàm gầm lên, sát khí đầy mặt.</p>
+                <p>&quot;Lý Thanh Phong hắn tính là cái thá gì?&quot;</p>
+                <p>Khổng Nguyên Bá hai mắt đỏ ngầu, cũng gầm lên:</p>
+                <p>&quot;Chỉ là một lão tạp mao phế vật tu vi đã đến đỉnh mà thôi!&quot;</p>
+                <p>&quot;Mạng của hắn có đáng một sợi lông tơ của đồ nhi ta không?!&quot;</p>
+                <p>&quot;Vì cái lão già này, ngươi lại dám giết đồ nhi ta! Ta muốn ngươi không được chết tử tế!!!&quot;</p>
+                <p>Toàn thân hắn cơ bắp cuồn cuộn, gân xanh nổi lên như những con giun đất uốn lượn. Trên mặt cũng chằng chịt những đường gân màu xanh li ti, dưới ngũ quan dữ tợn, mang đến cảm giác như một ác quỷ mặt xanh nanh dài.</p>
+                <p>&quot;Chết!&quot;</p>
+                <p>&quot;Ngươi phải chết!&quot;</p>
+                <p>&quot;Ta không cần biết Thiên Cơ Các gì đó nữa!&quot;</p>
+                <p>&quot;Hôm nay, cho dù Thiên Vương lão tử có đến, ngươi cũng phải chết!!!&quot;</p>
+                <p>Giang Phàm cười, ngửa mặt lên trời giận dữ cười:</p>
+                <p>&quot;Ngươi hỏi Lý Thanh Phong tính là cái gì ư? Vậy ta sẽ nói cho ngươi biết!&quot;</p>
+                <p>&quot;Vì cái chết của hắn, toàn bộ Cự Nhân Tông các ngươi đều phải chôn cùng!&quot;</p>
+                <p>Tay áo vung lên. Một luồng kiếm quang màu tím, trong nháy mắt xuyên thủng một đệ tử đang cởi trần, xếp hàng chờ &quot;thưởng thức&quot; Hứa Di Ninh.</p>
+                <p>Phụt!</p>
+                <p>Máu bắn tung tóe. Trên cổ đệ tử nam kia để lại một lỗ máu to bằng quả trứng gà. Trong lỗ máu, có thể nhìn thấy biểu cảm kinh hãi trên mặt đệ tử phía sau hắn. Nỗi kinh hãi của hắn cũng không kéo dài được bao lâu. Ánh tím vô tình xuyên qua trái tim hắn, cũng để lại một lỗ máu lớn.</p>
+                <p>Trong một khắc, hai vị đệ tử đã bị chém giết. Cả hai đều là những đệ tử được Khổng Nguyên Bá đích thân điểm danh, là những đệ tử thân truyền quan trọng nhất, ngoài Kim Trọng Minh và Tiết Vạn Trọng!</p>
+                <p>&quot;A! Giang Phàm!&quot; Khổng Nguyên Bá gầm lên liên hồi, cái bóng khổng lồ như núi của hắn hung hăng lao tới.</p>
+                <p>Giang Phàm không vội giết hắn. Dưới chân thân pháp liên tục, y đuổi kịp luồng sáng tím, một tay nắm lấy nó. Sau đó, tay nhấc kiếm chém xuống, chặt bay đầu của một đệ tử nam đang cởi trần! Tiếp đó, y lại thi triển thân pháp nhảy vọt, một kiếm chém con linh thú cùng đệ tử nam cởi trần trên lưng nó thành hai đoạn.</p>
+                <p>Máu tươi bắn tung tóe, tiếng kêu la vang trời. Những đệ tử vừa nãy còn đang xếp hàng chờ &quot;thưởng thức&quot; đại mỹ nhân, trong chớp mắt đã gặp phải cuộc thảm sát cực kỳ đẫm máu! Bọn chúng vội vàng mặc lại quần áo, cố gắng hòa lẫn vào đám đông.</p>
+                <p>Nhưng tốc độ của Giang Phàm quá nhanh! Y giết người như cắt cỏ, gọn gàng dứt khoát, không hề dây dưa. Thanh tử kiếm trong tay y càng sắc bén vô song, bất kể ngươi dùng gì để cản, đều sẽ bị chém làm đôi như đậu phụ.</p>
+                <p>Trong mười hơi thở khi Khổng Nguyên Bá đuổi theo, hơn mười vị đệ tử đang cởi trần kia đều thảm tử tại chỗ! Mà bọn họ, không một ai ngoại lệ, đều là những đệ tử thân truyền được Khổng Nguyên Bá ưu tiên chăm sóc! Giang Phàm dựa theo danh sách mà Khổng Nguyên Bá đã tuyên bố trước đó, lần lượt giết sạch bọn họ!</p>
+                <p>&quot;Không!&quot;</p>
+                <p>&quot;Giang Phàm, ngươi không được chết tử tế đâu!&quot;</p>
+                <p>Khổng Nguyên Bá mắt nứt toác. Ngoại trừ Kim Trọng Minh, tất cả đệ tử của hắn đều đã chết sạch! Chết sạch rồi!!!</p>
+                <p>Sát ý trên mặt Giang Phàm không giảm mà còn tăng: &quot;Mới thế đã không chịu nổi rồi sao? Đừng vội! Mới chỉ bắt đầu thôi!&quot;</p>
+                <p>Y đột nhiên đưa tay ra, chắn sau lưng. Thập Trưởng lão của Cự Nhân Tông, không biết từ lúc nào đã lén lút xuất hiện sau lưng Giang Phàm. Bàn tay mọc đầy móng tay đen, rõ ràng đã tẩm kịch độc, hung hăng đâm thẳng vào lưng Giang Phàm.</p>
+                <p>&quot;Chết đi! Tiểu súc sinh!&quot;</p>
+                <p>Lại dám giết nhiều đệ tử của Cự Nhân Tông như vậy! Đáng chết!</p>
+                <p>Nhưng Giang Phàm dường như có cảm ứng, bàn tay kịp thời chắn sau lưng. Thập Trưởng lão lộ ra nụ cười dữ tợn. Luyện thể mấy chục năm, một đôi bàn tay này đã sớm như đao thép, có thể dễ dàng cắm vào cơ thể bất cứ ai. Mười ngón tay càng mang kịch độc, có thể dễ dàng hạ độc bất kỳ võ giả cảnh giới Kết Đan trung kỳ nào. Ngay cả võ giả Kết Đan hậu kỳ cũng sẽ trúng kịch độc.</p>
+                <p>Tuy nhiên. Khi ngón tay hắn đâm vào lòng bàn tay Giang Phàm, mười chiếc móng &quot;rắc rắc&quot; gãy nát. Cứ như thể, tay Giang Phàm được đúc từ Huyền Thiết.</p>
+                <p>&quot;Không ổn!&quot; Nhận ra điều bất trắc, Thập Trưởng lão lập tức rút tay.</p>
+                <p>Giang Phàm lại không quay đầu lại, tiện tay tát một phát vào cánh tay hắn. Thập Trưởng lão đau đến mức khóe miệng giật giật, vung vẩy cánh tay nóng rát đau đớn, lùi về phía xa.</p>
+                <p>&quot;Hừ! Lời đồn nói ngươi có luyện thể tạo nghệ không tệ. Hóa ra đúng là có chút bản lĩnh. Lại có thể đánh đau cơ thể ta!&quot;</p>
+                <p>&quot;Nhưng cũng chỉ đến thế mà thôi, hôm nay ngươi dám xông vào Cự Nhân Tông ta, đại sát đệ tử tông ta. Chút luyện thể thuật này, không bảo vệ được ngươi!&quot;</p>
+                <p>Hắn đang quát mắng, nhưng Lục Trưởng lão phía sau lại kinh hãi gào lên: &quot;Lâm Trưởng lão! Tay... tay của ngươi!&quot;</p>
+                <p>Thập Trưởng lão ngây người, giơ cánh tay lên nhìn, sắc mặt đông cứng. Cánh tay bị Giang Phàm tát một cái kia, lại nhanh chóng thối rữa thành nước đen, &quot;soạt soạt&quot; rơi xuống.</p>
+                <p>&quot;Ta trúng độc?&quot; Chỉ một thoáng ngẩn ngơ. Toàn thân hắn da dẻ đều bắt đầu lở loét thành nước đen. Cảm giác đau đớn chậm trễ lúc này mới truyền đến trong đầu hắn.</p>
+                <p>&quot;A, cứu ta... Tông chủ cứu ta...&quot; Hắn giãy giụa chạy về phía Khổng Nguyên Bá. Nhưng chân phải còn đang giữa không trung, cơ thể đã hóa thành một vũng nhão nhoét, &quot;hoàng lạp&quot; một tiếng tan rã, rơi xuống lớp băng tuyết ngàn năm không tan, làm tan chảy một lỗ hổng khổng lồ.</p>
+                <p>Mọi người hít một hơi khí lạnh! Bọn họ không phải chưa từng thấy kịch độc có thể làm tan chảy người. Nhưng, chưa từng thấy có loại độc công nào có thể làm người ta tan chảy hoàn toàn!</p>
+                <p>Giang Phàm lạnh lùng quay người lại, giống như một tôn sát thần: &quot;Vật chôn cùng, một kẻ.&quot;</p>
+                <p>Lời vừa dứt, y một bước lao về phía Ngũ Trưởng lão gần nhất.</p>
+                <p>Hắn giật mình, trong miệng bạo hống: &quot;Tất cả còn ngây người ra đó làm gì? Sao còn không giết hắn?!&quot; Bản thân hắn thì lùi về phía sau, kéo giãn khoảng cách, không dám có tiếp xúc thân thể với y, tránh đi vào vết xe đổ của Thập Trưởng lão.</p>
+                <p>Hắn rút cây côn sắt bên hông ra, hung hăng đập thẳng vào Giang Phàm đang lao tới: &quot;Ngươi ngông cuồng!&quot;</p>
+                <p>Giữa các cường giả Cự Nhân Tông mà như vào chỗ không người, đây quả là không coi Cự Nhân Tông ra gì!</p>
+                <p>Giang Phàm không thèm nhìn, tử kiếm quét qua một cái, liền dễ dàng chặt đứt cây côn sắt rõ ràng có chất liệu cực cao kia thành hai đoạn.</p>
+                <p>Ngũ Trưởng lão đồng tử co rụt.</p>
+                <p>&quot;Đây là kiếm gì? Pháp khí thượng phẩm cũng có thể chém đứt ư? Màu tím... Khoan đã!&quot;</p>
+                <p>&quot;Là thanh kiếm đã giết Đại Trưởng lão Thiết Bất Bại! Là ngươi! Ngươi chính là hung thủ giết Đại Trưởng lão!&quot;</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_728">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 728: Chương 729 Đến lượt Thái Thượng Trưởng Lão</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm lạnh lùng nói: “Đúng vậy.”“Chính là Tử Kiếm chuyên giết súc sinh của Cự Nhân Tông các ngươi!”Cổ tay hắn khẽ vung.Tử Kiếm ngự không bay đi, đâm thẳng vào mặt Ngũ trưởng lão.Khoảng cách gần như vậy, lão không thể phòng bị kịp.Lão kinh hãi thất sắc kêu lên: “Cứu ta!”</p>
+                <p>Ầm ——Một luồng quyền phong kinh khủng, áp bức không khí, phát ra tiếng nổ chói tai, đánh bay Tử Kiếm đang giữa không trung!Là Khổng Nguyên Bá.Hắn trợn mắt xé toạc mà đến: “Giang Phàm!”“Thì ra thật sự là ngươi đã giết Đại trưởng lão của chúng ta!”</p>
+                <p>Giờ phút này.Hắn hối hận rồi!Hối hận vì sao khi đó không bất chấp cái giá phải trả để giết Giang Phàm!Rõ ràng hắn đã hai lần nghi ngờ Giang Phàm.Nhưng cuối cùng đều để hắn thoát đi.Nếu khi đó đã giết Giang Phàm.Ái đồ Tiết Vạn Trọng của hắn sẽ không chết thảm!Đệ tử môn hạ sẽ không chết đến mức chỉ còn lại Kim Trọng Minh!Thập trưởng lão càng sẽ không tan xương nát thịt!Tất cả đều là lỗi của hắn!Tất cả những điều này đều là lỗi của hắn!</p>
+                <p>“Chư vị trưởng lão! Cùng nhau ra tay, vì Cự Nhân Tông ta mà trừ bỏ họa hoạn này!”Khổng Nguyên Bá gầm lên giận dữ.Các trưởng lão cuối cùng cũng nổi giận.Giết vài đệ tử, hay thậm chí đệ tử của Tông chủ, vẫn chưa chạm đến lợi ích căn bản của họ.Nhưng giết Thập trưởng lão.Điều đó có nghĩa là, đã tạo thành uy hiếp cực lớn đối với chính họ!</p>
+                <p>Ầm ——Ầm ầm ——Sáu vị trưởng lão còn lại đồng loạt phát động những đòn tấn công chí mạng.Người thì dùng pháp khí cận chiến, người thì tấn công từ xa.Ai nấy đều mặt đầy sát ý, muốn chém giết đệ tử Thanh Vân Tông đầy uy hiếp này ngay tại chỗ!</p>
+                <p>Ngũ trưởng lão càng cười lớn trong giận dữ:“Ngươi giống hệt lão già Lý Thanh Phong kia.”“Đều là tự lượng sức mình!”“Trước thực lực tuyệt đối của Cự Nhân Tông ta, cái gọi là dũng cảm của các ngươi, đều là trò cười!”“Ha ha ha!”</p>
+                <p>“Kiếm thân!”Giang Phàm lạnh lẽo quát khẽ.Vô số kiếm khí từ trong lỗ chân lông hắn tuôn ra, hình thành một luân quách hình người.Sau đó, chúng tức thì xuyên qua thân thể Ngũ trưởng lão.Ư…Lão vẫn giữ nguyên biểu cảm cười giận dữ, thẳng cẳng đổ gục xuống đất.Từng dòng máu phun ra từ các lỗ chân lông.</p>
+                <p>“Ngũ trưởng lão!”“Lão Viên!”“Viên trưởng lão!”Khổng Nguyên Bá và các trưởng lão gầm lên bi phẫn không thể kìm nén.Ngũ trưởng lão tuy không phải người có thứ hạng cao nhất, nhưng lại là trưởng lão giữ chức vụ lâu nhất, thâm niên nhất trong Cự Nhân Tông.Được mọi người tin tưởng và kính trọng sâu sắc.Lão… cứ thế mà chết rồi!</p>
+                <p>“A! Giang Phàm! Ta liều mạng với ngươi!”Lục trưởng lão tóc dựng ngược vì giận dữ, tay nắm một cây lang nha bổng đầy gai nhọn xông tới.Giang Phàm thu Tử Kiếm về.Hắn giơ tay lên trời nắm một cái.Một cây lang nha bổng dài năm sáu trượng xuất hiện, nằm gọn trong lòng bàn tay hắn.Sau đó, hắn hung hăng giáng xuống.Rầm ——Lục trưởng lão thậm chí còn không có chút kháng cự mang tính tượng trưng nào.Lão đã bị đập thành một bãi thịt nát, cây lang nha bổng trong tay cũng tan nát hoàn toàn, găm chặt vào đống thịt nát.“Vật bồi táng, ba người.”</p>
+                <p>Chỉ trong chớp mắt.Ba vị trưởng lão đã liên tiếp bị giết.Các Thái thượng trưởng lão đều không ngồi yên được nữa.Vốn dĩ, họ cho rằng Giang Phàm giết vài đệ tử để trút giận thì mọi chuyện sẽ qua.Song phương không ai nợ ai.Ai ngờ, Giang Phàm lại tàn nhẫn đến vậy.</p>
+                <p>“Giang Phàm! Ngươi đủ rồi!”“Chúng ta chẳng qua chỉ giết một Lý Thanh Phong, mà ngươi lại giết nhiều người của chúng ta như vậy sao?”“Nếu không phải vì đại cục, ta đã sớm đập chết ngươi rồi!”</p>
+                <p>Ha ha!“Đại cục?”Giang Phàm lạnh lùng cười nói:“Đại cục của Cự Nhân Tông các ngươi, là Thiết Bất Bại đoạt được Nguyên Anh Ngọc Phù liền tống tiền Thanh Vân Tông ta?”“Là Phương Thái Cực vì muốn sống mà tàn sát trưởng lão của tám tông?”“Là Hạ Cửu Chương xưng huynh gọi đệ với yêu tộc, còn đối với đồng tộc thì ra tay đánh giết?”“Là các ngươi vì báo thù mà làm nhục nữ đệ tử Thanh Vân Tông, sát hại trưởng lão Thanh Vân Tông?”“Các ngươi nào có đại cục gì?”“Các ngươi chỉ là tự đá vào chân mình, cuối cùng cũng biết đau rồi!!!”</p>
+                <p>Hắn gầm lên một tiếng!Bước chân hắn khẽ nhích.Lướt về phía ba vị trưởng lão cách đó không xa.Bọn họ tay cầm lợi khí, thừa lúc Giang Phàm nói chuyện với mấy vị Thái thượng trưởng lão, lén lút tiến lại gần.Phát hiện Giang Phàm xông về phía mình.Bọn họ quả quyết đồng loạt ra tay, đồng thời gầm lên đầy giận dữ.“Chúng ta giữ chân hắn!”“Các ngươi động thủ, băm thây vạn đoạn hắn!!”Thất trưởng lão gào thét trong nước mắt.</p>
+                <p>Giang Phàm tiện tay vứt Hứa Di Ninh lên lưng cõng.Tay trái lấy ra Ngũ Từ Nguyên Sơn.Tay phải kết ấn, vỗ lên ngọn núi.“Ngũ Từ Thần Quang!”Kể từ khi biết tin hắn tu luyện Hư Lưu Lôi Kình đã bị Thái Thương Đại Châu treo thưởng.Hắn rất ít khi dùng loại thần quang này.Để tránh bị người khác phát hiện.Bây giờ không cần lo lắng điều đó nữa.Bởi vì.Những người trước mắt, đều là người chết rồi!</p>
+                <p>Ù…Ba trượng ngũ sắc thần quang bao phủ, ba vị trưởng lão đang xông tới lập tức mất đi linh lực và thể lực.Lảo đảo ngã xuống.Mặt bọn họ đầy kinh hãi: “Cái… cái quang tráo này không đúng.”“Mau cứu chúng ta!”Sắc mặt mọi người đều thay đổi lớn.Mỗi người đều phát động tấn công tầm xa!Nhưng khi đánh vào Ngũ Từ Thần Quang, sức tấn công đều bị trấn áp.Khi rơi xuống người Giang Phàm, liền như gãi ngứa.</p>
+                <p>Giang Phàm thì không chút lưu tình nhấc chân, giẫm lên lưng Thất trưởng lão.Phụt ——Thất trưởng lão thảm thiết kêu lên một tiếng, một ngụm máu pha lẫn vụn thịt tim phun ra.Ngay sau đó hai chân co quắp, chết ngay tại chỗ.“Vật bồi táng, bốn người.”</p>
+                <p>Sau đó.Lại một cước giẫm về phía Bát trưởng lão.“Đừng!” Khổng Nguyên Bá trợn mắt rách mi gầm lên.Giang Phàm như không nghe thấy.Dưới cái nhìn của hắn, một cước giẫm nát đầu lão.“Vật bồi táng, năm người.”</p>
+                <p>Sau đó không ngừng nghỉ, giẫm về phía Cửu trưởng lão.“Không!!” Khổng Nguyên Bá gầm lên lao tới.Nhưng lại không dám tới gần thần quang.Các Thái thượng trưởng lão cũng bi phẫn vô cùng.“Giang Phàm! Ngươi dừng tay lại!”“Buông hắn ra, ngươi vẫn còn một đường sống.”“Bằng không…”Phụt ——Chân Giang Phàm không chút dừng lại.Trực tiếp giẫm nát lồng ngực Cửu trưởng lão lõm sâu vào.Đã giết đến mức này rồi, còn có chỗ nào để hòa hoãn nữa?Giữa bọn họ chỉ có một kết quả.Không phải Giang Phàm chết, thì là Cự Nhân Tông diệt vong toàn bộ!</p>
+                <p>Keng ——Ngay lúc này.Một mũi tên lạnh lẽo sắc bén đã tích tụ sức mạnh từ lâu, không hề có dấu hiệu báo trước đã xuyên qua Ngũ Từ Thần Quang.Ghim vào lưng Giang Phàm.Hắn quay đầu nhìn lại.Là một vị Thái thượng trưởng lão tóc bạc mắt đầy lệ quang.Cửu trưởng lão vừa bị Giang Phàm giẫm nát lồng ngực chính là đệ tử thân truyền của lão.Lúc này, lão có chút kinh ngạc.Mũi tên này, lão không chỉ dốc hết sức lực, còn uống một viên linh đan tăng cường sức mạnh.Uy lực một mũi tên này, đủ để uy hiếp được Kết Đan Cửu Tầng Viên Mãn rồi!Giang Phàm vậy mà không sao?Lão đâu biết rằng, Giang Phàm trên người có một bộ giáp xích, có thể chặn một đòn của Kết Đan Cửu Tầng Viên Mãn.Cộng thêm việc bị Ngũ Từ Thần Quang làm suy yếu đi không ít sức mạnh.Làm sao có thể làm gì được hắn?</p>
+                <p>“Trưởng lão giết gần đủ rồi.”“Các Thái thượng trưởng lão cũng có thể bắt đầu rồi!”“Kinh Hồn Thứ!”Từ giữa trán hắn bắn ra một mũi kim linh hồn, xuyên qua bầu trời, trực tiếp ghim vào đầu đối phương.“A!”Vị Kết Đan Bát Tầng kia, chịu một đòn như vậy, lập tức lộ vẻ đau đớn.Cây cung dài trong tay cũng rơi xuống.Giang Phàm lạnh lẽo lóe lên, xông ra khỏi Ngũ Từ Thần Quang, giết về phía lão.</p>
+                <p>Khổng Nguyên Bá giận dữ nói: “Chặn hắn lại!”Mấy vị Thái thượng trưởng lão gần đó, từ bốn phương tám hướng vây堵 mà đến.Trong đó có cả Kết Đan Bát Tầng, cũng có Kết Đan Cửu Tầng.Căn bản không cho Giang Phàm cơ hội giết Thái thượng trưởng lão.“Vây hắn lại, để hắn có cánh cũng khó thoát!”Một vị Thái thượng trưởng lão Kết Đan Cửu Tầng, phát hiện Giang Phàm không hề sợ hãi sự bao vây của bọn họ.Mặt đầy sát ý: “Hắn muốn chết, cứ thành toàn cho hắn!”Đến nước này, còn bận tâm gì đến Thiên Cơ Các nữa?Khổng Nguyên Bá cũng mang theo nỗi giận mà xông tới.Lần này, trừ phi Giang Phàm có thể bay, nếu không tất sẽ rơi vào vòng vây của bọn họ, bị đánh chết!</p>
+                <p>Loảng xoảng ——Tuy nhiên.Khoảnh khắc tiếp theo.Điều khiến tất cả mọi người trong Cự Nhân Tông chết lặng là.Giang Phàm bật nhảy lên, Tử Kiếm bay tới dưới chân, chở hắn bay qua đầu mọi người.Hiển nhiên là, Ngự Kiếm Phi Hành!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_729">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 729: Sát [Giết] phạ [sợ] liễu [rồi]</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Khi bọn họ kịp phản ứng, Giang Phàm đã phi thân đến trước mặt vị Thái Thượng Trưởng Lão đang ôm đầu đau đớn gào thét.</p>
+                <p>“Không hay rồi!”</p>
+                <p>“Khổng Thái Thượng Trưởng Lão, cẩn thận!!”</p>
+                <p>Khổng Thái Thượng Trưởng Lão vẫn luôn ở vị trí xa nhất, là nơi an toàn nhất, chẳng hề phòng bị nhiều. Đột nhiên nghe tiếng mọi người vội vàng kêu gọi, lão mới ngẩng đầu nhìn về phía trước. Thế nhưng, thứ lão nhìn thấy chỉ còn lại một vầng tử mang che kín đôi mắt. Ngay sau đó, cổ lão lạnh toát. Lão trợn trừng mắt, đầu đã bay thẳng lên trời.</p>
+                <p>“Không! Khổng Lão!”</p>
+                <p>Có Thái Thượng Trưởng Lão phát ra tiếng gầm thét bi thương đến tột độ. Đệ tử chết, bọn họ không quá xót xa, bởi vì vẫn có thể chiêu mộ thêm. Trưởng Lão chết, bọn họ có chút đau lòng, nhưng vẫn có thể chịu đựng. Thế nhưng, Thái Thượng Trưởng Lão – người đã sớm chiều ở bên nhau mấy chục năm, vừa là sư huynh đệ vừa là lão hữu – chết rồi, bọn họ không thể nào chịu đựng nổi.</p>
+                <p>“Ta giết ngươi!!”</p>
+                <p>Một vị Thái Thượng Trưởng Lão mắt nứt khóe mi, đeo lên đôi bao tay, vung ra một kích long trời lở đất về phía Giang Phàm! Vốn dĩ là Kết Đan Cửu Tầng, một kích trong cơn cuồng nộ của hắn, uy lực chấn động đến mức nào?</p>
+                <p>Giang Phàm không chút nghĩ ngợi. Xoay người, song tay vẽ ra từng quỹ tích huyền ảo, trên ngực hắn ngưng tụ thành một ấn quyết. Nó tựa hồ như mở ra một cánh cổng thần bí, khiến từng tia kim quang dâng trào trong cơ thể Giang Phàm, ngưng tụ sau lưng hắn thành một pho Thần Tượng Tám Tay sống động như thật.</p>
+                <p>“Thần Chủ Thương Mang!”</p>
+                <p>Giang Phàm vung song chưởng ra ầm ầm, Thần Tượng sau lưng hắn theo đó phát động tấn công.</p>
+                <p>Ầm ầm —</p>
+                <p>Vị Thái Thượng Trưởng Lão kia, bị pho Thần Tượng đột nhiên xuất hiện dọa giật mình. Nếu là bình thường, hắn đã sớm cảnh giác mà lùi lại. Thế nhưng giờ phút này lại có chút mất trí, rõ ràng đã nhận ra nguy hiểm, vẫn cứ liều mình đỡ lấy. Hắn song chưởng thành công chặn lại hai tay Thần Tượng vỗ tới. Phát hiện sức mạnh dù mạnh mẽ, nhưng cũng chỉ khoảng Kết Đan Bát Tầng, không khỏi nhe răng cười: “Đây chính là át chủ bài của ngươi?”</p>
+                <p>“Vậy ngươi chết chắc rồi!”</p>
+                <p>“Cút ngay!”</p>
+                <p>Hắn bộc phát lực thể phách cường đại tuyệt luân, ý đồ đánh bay Thần Tượng. Ai ngờ, ngay lúc này, Thần Tượng lại có thêm hai tay cử động! Đột nhiên ấn lên đầu hắn. Hắn hoàn toàn không phòng bị, chỉ kịp trợn trừng đồng tử, liền bị đánh nát đầu!</p>
+                <p>“Đoạn Lão!”</p>
+                <p>“Đoạn Thái Thượng Trưởng Lão!!”</p>
+                <p>Mọi người gần như không dám tin vào mắt mình! Trong chớp mắt, Khổng Lão và Đoạn Lão, hai vị Thái Thượng Trưởng Lão đồng thời bị chém rụng!</p>
+                <p>“Tên tiểu tử này hung hiểm quá!”</p>
+                <p>“Tất cả Thái Thượng Trưởng Lão, cùng nhau ra tay!”</p>
+                <p>Một vị Thái Thượng Trưởng Lão có thực lực chỉ sau Hạ Cửu Chương, mái tóc bạc trắng điên cuồng bay múa trong sát cơ bùng nổ, tựa như một tôn ma đầu tóc bạc. Dưới sự dẫn dắt của hắn, sáu vị Thái Thượng Trưởng Lão còn lại, hai vị Trưởng Lão, cùng một vị Tông Chủ, đồng loạt gầm thét, vây giết Giang Phàm.</p>
+                <p>“Cẩn thận độc công của hắn!”</p>
+                <p>“Đừng cho hắn cơ hội thi triển Ngự Kiếm Thuật!”</p>
+                <p>“Tấn công kết hợp xa gần!”</p>
+                <p>“Khắc chế những thủ đoạn này của hắn, hắn sẽ chẳng còn chiêu trò nào dùng được nữa!”</p>
+                <p>“Ta không tin, thủ đoạn của hắn lại vô cùng vô tận!”</p>
+                <p>Giang Phàm chẳng những không hề sợ hãi, trái lại còn nghênh đón mấy vị Thái Thượng Trưởng Lão, gầm thét mà lao đến. Hắn mạnh mẽ kéo một cái, một chiếc huyết quần xuất hiện trong tay, quất thẳng đến vị Thái Thượng Trưởng Lão xông lên đầu tiên.</p>
+                <p>“Chết đến nơi mà vẫn không biết cầu xin tha mạng!”</p>
+                <p>“Lão phu thành toàn cho ngươi!”</p>
+                <p>Hắn vung một chưởng chém tới, không khí cũng phát ra tiếng nứt tách. Cách không khí, vẫn có thể cảm nhận được uy lực khổng lồ trong thế chưởng, ẩn ẩn mang vài phần thần vận của Phương Thái Cực. Không hổ là Thái Thượng Trưởng Lão chỉ đứng sau Hạ Cửu Chương. Thể phách cường tráng, siêu việt phàm nhân. Nếu như cho hắn thêm thời gian, cho hắn đủ tài nguyên, Cự Nhân Tông sẽ lại một lần nữa sinh ra một siêu cường giả Kết Đan Cửu Tầng Viên Mãn! Đáng tiếc, hắn không còn cơ hội nữa!</p>
+                <p>Huyết quần khẽ run lên, nghênh đón bàn tay hắn. Cảnh tượng huyết quần bị chấn nát trong tưởng tượng của hắn không hề xuất hiện. Ngược lại, chiếc huyết quần này sống lại rồi! Nó lại cuốn chặt lấy tay hắn, rồi dọc theo cánh tay mà bao bọc lấy thân thể hắn. Lập tức, hắn liền phát ra tiếng kêu thảm thiết. Chỉ cảm thấy trên người bị vô số cái miệng cắn xé, hút lấy huyết nhục của hắn, khiến hắn đau đớn không muốn sống!</p>
+                <p>Thế nhưng, điều khiến đồng tử hắn co rút lại là, Giang Phàm trong tay cầm Tử Kiếm, hung hăng chém thẳng vào cổ hắn! Lúc này thân thể hắn, như một cái bánh chưng bị cuốn chặt, trong thời gian ngắn không thể giãy ra, cũng không thể nhúc nhích. Chỉ có thể trơ mắt nhìn một kiếm này chém xuống cổ mình.</p>
+                <p>“Tên súc sinh nhỏ! Cút ngay!”</p>
+                <p>Một vị Thái Thượng Trưởng Lão khác kịp thời趕 đến. Nắm đấm khủng bố, hung hăng đánh thẳng vào sau lưng hắn. Trừ khi Giang Phàm không muốn mạng, nếu không chỉ có thể từ bỏ việc chém giết vị Thái Thượng Trưởng Lão trước mắt. Nhận thấy đối phương tấn công sau lưng mình, Giang Phàm trực tiếp xem thường, một kiếm lướt qua cổ vị Thái Thượng Trưởng Lão đang bị huyết quần bao bọc kia. Một cái đầu, lăn lóc rơi xuống.</p>
+                <p>“Vật bồi táng, chín cái.”</p>
+                <p>Giang Phàm lạnh lùng nói.</p>
+                <p>“Không!”</p>
+                <p>Các Thái Thượng Trưởng Lão vừa tới kịp thời gầm thét. Vị Thái Thượng Trưởng Lão ra quyền kia, càng thêm giận không kiềm chế nổi, một kích mang theo phẫn nộ đánh vào sau lưng hắn.</p>
+                <p>Xoẹt —</p>
+                <p>Một trận tiếng xích sắt va chạm vang lên. Giang Phàm bị một quyền đánh cho lảo đảo về phía trước, khóe miệng rỉ ra một tia máu tươi. Chỉ là phủ tạng bị chấn thương nhẹ một chút, cũng không hề tổn hại đến tính mạng. Liều mình chịu chút thương nhẹ, chém giết Thái Thượng Trưởng Lão có thực lực mạnh nhất, đáng giá!</p>
+                <p>Hơn nữa, Thái Thượng Trưởng Lão dám đánh lén mình, còn muốn được lợi sao? Trong lúc Giang Phàm lảo đảo về phía trước, đã sớm tiện tay ném một vật có hình dáng giống như pháp khí không gian trữ vật lên người hắn.</p>
+                <p>Khoảnh khắc rơi xuống người hắn, liền lộ ra hình dạng tròn. Hóa ra là một hạt giống đã nảy mầm. Cái búp trên đỉnh nứt ra, lộ ra hàm răng dày đặc đáng sợ, một ngụm cắn vào người hắn. Trong phút chốc, hắn liền đứng im tại chỗ, không hề nhúc nhích, ngay cả biểu cảm, cũng là tư thái giận dữ không thể tin nổi. Tranh thủ cơ hội này, Giang Phàm thi triển Ngự Kiếm Thuật, Tử Kiếm lập tức xuyên thủng tim hắn!</p>
+                <p>“A! Tiền Lão! Hàn Lão!!!”</p>
+                <p>Bốn vị Thái Thượng Trưởng Lão và hai vị Trưởng Lão đang xông tới đều mắt nứt khóe mi. Lại là một chớp mắt, hai vị Thái Thượng Trưởng Lão cùng lúc bỏ mạng! Thủ đoạn của Giang Phàm, đơn giản là nhiều đến mức không tưởng! Khiến người ta khó lòng phòng bị!</p>
+                <p>“Đến lượt các ngươi!” Giang Phàm ánh mắt lộ sát cơ. Hắn một tay giật lấy huyết quần từ trên thi thể, nghênh đón bốn vị Thái Thượng Trưởng Lão mà lao tới!</p>
+                <p>Khổng Nguyên Bá kinh hãi xen lẫn phẫn nộ, gầm lên: “Đệ tử các phong! Các ngươi đừng đứng đó, đi, kéo Hứa Di Ninh kia ra đây cho ta!” Đã chứng kiến sự khủng bố của Giang Phàm, Khổng Nguyên Bá lập tức nghĩ ra chiêu trò bẩn thỉu, dùng Hứa Di Ninh uy hiếp Giang Phàm!</p>
+                <p>Các đệ tử Cự Nhân Tông, nghe lệnh, lập tức muốn hành động. Lại nghe Giang Phàm giọng nói lạnh lùng quát lớn: “Đây là ân oán giữa ta và các trưởng bối Cự Nhân Tông các ngươi. Không liên quan đến tiểu bối các ngươi! Hiện tại lập tức cút đi, ta lười đi tìm các ngươi gây phiền phức! Nhưng nếu dám tiếp tay làm việc ác, tất cả đều phải chết!” Các đệ tử Cự Nhân Tông, thân thể chấn động, lộ ra vẻ mặt kinh hãi. Bọn họ thật sự bị Giang Phàm đang giết đến phát điên này dọa sợ rồi. Thế nhưng nhìn khắp mặt đất là thi thể, trong đó có cả Trưởng Lão của bọn họ, có cả sư huynh của bọn họ, lòng thù hận dâng trào, bọn họ liền nhao nhao đi đến bên cạnh Ngũ Từ Nguyên Sơn.</p>
+                <p>Bên trong Ngũ Từ Thần Quang, quả thật không thể đi vào, nhưng không cản trở bọn họ dùng dây thừng kéo Hứa Di Ninh đang hôn mê ra!</p>
+                <p>“Tìm móc sắt và dây thừng đến đây!”</p>
+                <p>Các đệ tử Cự Nhân Tông nhao nhao chạy đến lưng các linh thú để tìm dụng cụ. Giang Phàm nhìn vào trong mắt: tất cả đệ tử đều tham gia rồi. Lát nữa ra tay giết chóc, sẽ không còn ai là vô tội nữa!</p>
+                <p>Nhân lúc hắn phân tâm nơi khác, một Thái Thượng Trưởng Lão ánh mắt lộ vẻ âm hiểm, gầm thét xông tới: “Chết đi!” Hắn đưa tay ngược ra sau sờ vào trong tay áo. Trong tay áo, ẩn ẩn có thể thấy một bình chất lỏng đen kịt, chắc chắn là kịch độc! Hắn vồ lấy, nhưng lại vồ hụt. Gần như cùng lúc đó, trong lòng Giang Phàm trĩu nặng. Tiểu Kỳ Lân miệng ngậm bình nhỏ màu đen, hung tợn trừng mắt nhìn vị Thái Thượng Trưởng Lão kia. Giang Phàm hoàn hồn lại, lạnh lùng nhìn vị Thái Thượng Trưởng Lão hai tay không không xông tới. Trong lòng kẻ sau giật thót một cái, một luồng khí lạnh xộc thẳng lên thiên linh cái!</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_730">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 730: Chương 731 Mời Tông chủ tử chiến</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm không cho hắn dù nửa phần cơ hội hối hận!</p>
+                <p>Vung kiếm chém xuống, đầu hắn khổng lồ bay vút lên trời, trên mặt tràn đầy ấm ức!</p>
+                <p>&quot;A! Ngươi đáng chết!!!&quot;</p>
+                <p>Ba vị Thái Thượng Trưởng Lão còn lại, nổi giận đùng đùng, chia nhau đánh tới đầu và hạ bàn của Giang Phàm, khiến hắn không thể tránh né, không thể chạy thoát! Nhất định phải giáng cho Giang Phàm một đòn chí mạng!</p>
+                <p>Giang Phàm tiện tay vung huyết quần về phía một vị Thái Thượng Trưởng Lão, bức lui người đó. Sau đó, hắn nắm chặt bình thuốc đen mà Tiểu Kỳ Lân cướp về, ngay tại chỗ bóp nát. Độc dịch tức khắc bắn tung tóe.</p>
+                <p>Hai vị Thái Thượng Trưởng Lão khác giật mình, vội vàng lùi lại, hét lớn: &quot;Ngươi điên rồi ư? Đến cả bản thân cũng muốn tự hạ độc chết ư?&quot;</p>
+                <p>Điều khiến bọn họ chấn động là, những kịch độc này rơi vào lòng bàn tay Giang Phàm, chỉ khiến da hắn bị ăn mòn đến mức xanh tái. Nhưng rơi vào người bọn họ, da thịt lại bị thối rữa!</p>
+                <p>Chỉ trong nháy mắt, hai vị Thái Thượng Trưởng Lão không kịp tránh né, trên mặt đã lở loét thành từng mảng thịt đen rỗng, trong những cái lỗ đó bốc ra từng đợt khói đen. Đau đến mức bọn họ rống giận không ngừng.</p>
+                <p>&quot;A! Mặt của ta!&quot;</p>
+                <p>&quot;Ngón tay của ta không còn nữa, ngón tay của ta! A...&quot;</p>
+                <p>Giết chóc đến đây, người của Cự Nhân Tông đều chết lặng. Trưởng Lão bị giết chỉ còn lại hai người! Thái Thượng Trưởng Lão, năm người chết, hai người bị thương, chỉ còn lại một người nguyên vẹn.</p>
+                <p>Kết quả thảm khốc như vậy, khiến tất cả mọi người đều đau đớn khôn nguôi, cũng hối hận vô cùng.</p>
+                <p>&quot;Khổng Nguyên Bá!&quot;</p>
+                <p>&quot;Bảo ngươi đừng giết Lý Thanh Phong, ngươi lại cứ nhất quyết giết! Bây giờ ngươi hài lòng rồi chứ?&quot; Chu Khánh Thương ôm con mắt thối rữa, đau đớn gầm thét chửi rủa.</p>
+                <p>Hai vị Thái Thượng Trưởng Lão khác cũng đầy bụng oán khí. &quot;Đều bảo ngươi đừng giết, ngươi lại nói Thái Thượng Trưởng Lão chúng ta hèn nhát! Cục diện bây giờ, ngươi vui rồi ư? Cự Nhân Tông rơi vào cục diện hôm nay, đều tại ngươi!&quot;</p>
+                <p>Khổng Nguyên Bá cũng bị sự thảm khốc trước mắt chấn động. Nếu nói trong lòng không hối hận, thì là giả dối. Sớm biết rằng, giết một Lý Thanh Phong không quan trọng lại phải chịu đựng hậu quả tai ương thế này, hắn nói gì cũng sẽ không giết.</p>
+                <p>Giờ phút này, hắn nhớ tới lời cảnh cáo của Diệp Thương Uyên: đừng chọc Giang Phàm. Chỉ cần hắn nghe lọt tai, căn bản sẽ không có cục diện bây giờ.</p>
+                <p>Chỉ là, hắn làm sao chịu thừa nhận mình sai? Cho dù thật sự sai, cũng phải đi một con đường đến cùng!</p>
+                <p>Hắn hai mắt sát khí cuồn cuộn, rống lên: &quot;Bây giờ nói mấy lời này có tác dụng gì? Giết Giang Phàm, báo thù cho bọn họ!&quot; Ngay sau đó, lại giận dữ nhìn về phía các đệ tử: &quot;Bọn phế vật các ngươi? Còn chưa bắt được Hứa Di Ninh sao?&quot;</p>
+                <p>&quot;Sắp rồi, chúng ta đã tìm thấy công cụ rồi!&quot; Một đệ tử lớn tuổi căm hận nói. &quot;Các ngươi cố gắng lên, chúng ta sắp bắt được Hứa Di Ninh rồi!&quot;</p>
+                <p>Chờ bắt được Hứa Di Ninh, xem Giang Phàm muốn mạng Hứa Di Ninh, hay là mạng của mình!</p>
+                <p>Giang Phàm ánh mắt lạnh lẽo, một thân lao vụt về phía Ngũ Từ Nguyên Sơn!</p>
+                <p>&quot;Cản hắn lại!&quot; Chu Khánh Thương cắn răng, nhịn đau nhức trên mặt xông lên.</p>
+                <p>Ai ngờ, hắn vừa đuổi tới, Giang Phàm đột nhiên ra một đòn hồi mã thương! Một viên châu tròn màu đỏ sẫm, bị hắn ném mạnh tới. Chính là Hương Thi Hoàn tìm được từ trên người Vương Xung Tiêu! Đây chính là bảo bối của Đại Âm Tông có thể làm mê man cả Thanh Đức ở Kết Đan Cảnh tầng chín Viên Mãn.</p>
+                <p>Hắn lập tức ý thức được không ổn, che miệng mũi muốn lùi lại. Nhưng hắn đang ở giữa không trung, lại đang lao về phía trước, căn bản không kịp lập tức tránh né, đâm thẳng vào Hương Thi Hoàn.</p>
+                <p>&quot;Bạo!&quot;</p>
+                <p>Theo tiếng quát nhẹ của Giang Phàm, Hương Thi Hoàn nổ tung ra một mảng lớn huyết vụ. Chu Khánh Thương che miệng mũi cũng không có tác dụng. Hai mắt trợn trắng, dưới làn huyết vụ bá đạo, ngay tại chỗ ngất lịm, ngã thẳng cẳng xuống đất.</p>
+                <p>&quot;Lão Chu!&quot; Hai vị Thái Thượng Trưởng Lão khác muốn chạy tới cứu viện, nhưng đã không kịp rồi. Giang Phàm đã thôi động Tử Kiếm, đâm về phía lồng ngực hắn.</p>
+                <p>Mà cũng đúng lúc này, trong đám đệ tử bùng nổ một trận reo hò.</p>
+                <p>&quot;Móc được rồi, kéo ra, kéo nàng ra!&quot; Đệ tử lớn tuổi kinh hỉ nói. Chỉ thấy bọn họ dùng dây thừng buộc móc sắt, móc vào mắt cá chân Hứa Di Ninh, kéo nàng ra ngoài.</p>
+                <p>Khổng Nguyên Bá thấy vậy, giận dữ quát: &quot;Tiểu súc sinh! Dám động đến một sợi lông trên người Chu Thái Thượng Trưởng Lão, ngươi vĩnh viễn đừng nghĩ gặp được Hứa Di Ninh nữa!&quot;</p>
+                <p>Giang Phàm lại làm như không nghe thấy, điều khiển Tử Kiếm từ trên trời giáng xuống, đâm mạnh vào trái tim Chu Khánh Thương. Lưỡi kiếm xuyên qua lồng ngực hắn, cắm sâu vào mặt đất, chỉ lộ ra một chuôi kiếm ở ngực, phát ra tiếng rung động liên tục.</p>
+                <p>&quot;Tiểu súc sinh!&quot; Hai vị Thái Thượng Trưởng Lão giận đến mức không thể kìm nén. Không ngờ Hứa Di Ninh đã bị bắt, Giang Phàm vẫn còn dám càn rỡ đến thế!</p>
+                <p>Khổng Nguyên Bá càng bùng nổ giận dữ: &quot;Giết tiện nhân kia! Băm nát nàng ra!!!&quot;</p>
+                <p>Giang Phàm lại không quay đầu lại. Tâm niệm khẽ động, Ngũ Từ Nguyên Sơn kia đột nhiên bành trướng gấp trăm lần, hóa thành một ngọn đồi.</p>
+                <p>Một tiếng &#039;ong&#039;, móc sắt kia ngay tại chỗ bị Ngũ Từ Nguyên Sơn hút đi. Một công dụng lớn khác của Ngũ Từ Nguyên Sơn, chính là đoạt binh khí!</p>
+                <p>Ngay sau đó, Giang Phàm tâm niệm lại động, Ngũ Từ Nguyên Sơn bay lên không trung, bao quanh Hứa Di Ninh, quét ngang bốn phía.</p>
+                <p>Phốc phốc phốc ——</p>
+                <p>Vị đệ tử lớn tuổi kia, ngay tại chỗ bị đâm thành một bãi máu. Ngoài ra, mười mấy đệ tử cũng bị đánh giết bất ngờ, số người bị thương lên tới mấy chục!</p>
+                <p>Chờ khi Ngũ Từ Nguyên Sơn một lần nữa hạ xuống, các đệ tử vẫn chưa hết kinh hồn, tuyệt đối không dám lại gần ngọn núi ngũ sắc quỷ dị này nữa, càng không dám có ý định gì với Hứa Di Ninh nữa.</p>
+                <p>Giang Phàm lạnh lùng nhìn về phía Khổng Nguyên Bá, hai vị Thái Thượng Trưởng Lão, hai vị Trưởng Lão.</p>
+                <p>&quot;Vật tế, đã có mười hai. Chỉ còn thiếu năm người các ngươi thôi.&quot;</p>
+                <p>Các Trưởng Lão sợ hãi. Các Thái Thượng Trưởng Lão cũng sợ rồi. Khổng Nguyên Bá cũng tràn ngập sợ hãi. Ai dám tin, mười sáu Thái Thượng Trưởng Lão và Trưởng Lão của Cự Nhân Tông, bị Giang Phàm một mình một ngựa giết đến chỉ còn lại vỏn vẹn bốn người! Cộng thêm một Tông Chủ!</p>
+                <p>Việc bắt giữ Hứa Di Ninh thất bại, càng khiến bọn họ hiểu rõ, đại thế đã mất. Mà khi Giang Phàm một lần nữa lấy ra mấy viên Hương Thi Hoàn có uy lực cực lớn kia, mấy người đó triệt để tuyệt vọng.</p>
+                <p>Một vị Thái Thượng Trưởng Lão lùi lại một bước, nói: &quot;Giang công tử. Oan có đầu nợ có chủ. Là Khổng Nguyên Bá giết Lý Thanh Phong, ngươi muốn tìm thì cứ tìm phiền phức của hắn là được. Ta không quản nữa!&quot;</p>
+                <p>Một vị Thái Thượng Trưởng Lão khác, nhìn quanh chiến trường đẫm máu tựa như địa ngục Tu La, cũng run rẩy trong lòng lùi lại, nói: &quot;Đúng! Đều là Khổng Nguyên Bá! Ta từng khuyên hắn đừng giết Lý Thanh Phong, nhưng hắn nhất định không nghe! Chuyện này, kỳ thực không liên quan gì đến chúng ta!&quot;</p>
+                <p>Thấy hai vị Thái Thượng Trưởng Lão đều có ý thoái lui, Tam Trưởng Lão và Tứ Trưởng Lão, lại làm sao dám một mình đối mặt Giang Phàm? Đồng loạt lui về bên cạnh bọn họ.</p>
+                <p>&quot;Tông Chủ, họa do ngươi tự gây ra, ngươi tự gánh đi! Đừng để toàn bộ Cự Nhân Tông chôn cùng với ngươi!&quot;</p>
+                <p>Khổng Nguyên Bá giận dữ, quay đầu quát: &quot;Các ngươi có ý gì? Kẻ địch lớn trước mắt, lại chọn bảo toàn tính mạng? Các ngươi có xứng đáng với các Thái Thượng Trưởng Lão, Trưởng Lão đã hy sinh của Cự Nhân Tông không?&quot;</p>
+                <p>Không nói lời này còn đỡ, một vị Thái Thượng Trưởng Lão lập tức nổi giận. &quot;Ngươi có mặt mũi nào nói câu này? Bọn họ vì sao lại chết? Chẳng phải vì ngươi ương ngạnh tự cho mình là đúng, bị ngươi hại chết sao? Ngươi là tội nhân lịch sử của Cự Nhân Tông!&quot;</p>
+                <p>Một vị Thái Thượng Trưởng Lão khác cũng đầy mặt tức giận: &quot;Khổng Nguyên Bá, ngươi tự vẫn đi! Cho Giang công tử một lời giải thích, cũng cho Thanh Vân Tông một lời công đạo! Coi như ngươi tự mình giảm bớt tội nghiệt vậy!&quot;</p>
+                <p>Kế sách hiện tại, cũng chỉ có hy sinh Khổng Nguyên Bá, làm nguôi ngoai lửa giận của Giang Phàm, để Cự Nhân Tông bảo tồn một chút hỏa chủng. Món nợ máu ngập trời hôm nay, chỉ có thể chờ mười năm, hai mươi năm, thậm chí năm mươi năm sau, khi Cự Nhân Tông Đông Sơn Tái Khởi rồi mới báo! Khi đó, nhất định phải san bằng Thanh Vân Tông, không chừa một người nào!</p>
+                <p>Thái độ của hai vị Thái Thượng Trưởng Lão, tức khắc khiến Tam Trưởng Lão và Tứ Trưởng Lão hiểu rõ ý đồ của bọn họ. Chết một Khổng Nguyên Bá, đổi lấy cơ hội Cự Nhân Tông được thoi thóp tồn tại. Ẩn mình một giáp, rồi báo huyết cừu!</p>
+                <p>Tam Trưởng Lão nghiêm mặt nói: &quot;Tông Chủ, xin hãy tự vẫn!&quot;</p>
+                <p>Tứ Trưởng Lão cũng lên tiếng: &quot;Tông Chủ! Xin hãy tự vẫn!&quot;</p>
+                <p>Các đệ tử khắp sân, nhìn các Thái Thượng Trưởng Lão, Trưởng Lão và vô số đệ tử chết thương, trong thần sắc cũng tràn đầy bi phẫn. Nếu không phải Tông Chủ nhất định phải giết Lý Thanh Phong, sự tình sẽ biến thành thế này sao? Bọn họ đều là do quyết định tùy hứng của Tông Chủ hại chết!</p>
+                <p>&quot;Tông Chủ! Xin hãy tự vẫn đi!&quot;</p>
+                <p>&quot;Tông Chủ! Xin hãy tự vẫn...&quot;</p>
+                <p>&quot;Tông Chủ, xin...&quot;</p>
+                <p>Vô số âm thanh, hội tụ thành một ý chí!</p>
+                <p>Xin Tông Chủ thụ tử!!!</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_145.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_145.html" class="page-btn">145</a>
+            <a href="page_146.html" class="page-btn current">146</a>
+            <a href="page_147.html" class="page-btn">147</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_147.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

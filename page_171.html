@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 171">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 171</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_170.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_172.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_851">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 851: Phản thủ</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Nàng vội vàng vận chuyển thủy hệ thần thông, hòng chống cự. Nhưng đây là bí thuật của Tam Thanh Sơn, đến Vân Hà Phi tử bất ngờ cũng trúng chiêu. Nữ hải yêu làm sao mà chịu nổi?</p>
+                <p>Nàng ta lảo đảo. Cuối cùng, mi mắt khép lại, ngã vật xuống đất.</p>
+                <p>Nàng còn chưa đổ vật xuống đất, một thanh Tử Kiếm đã chuẩn bị sẵn chợt chém tới. Đầu của nữ hải yêu xinh đẹp, lập tức lăn lóc trên mặt đất.</p>
+                <p>Giang Phàm vội vàng vỗ vỗ Tây Hải Thái tử, người cũng bị làm cho ngủ thiếp đi.</p>
+                <p>&quot;Này, ta ngất xỉu rồi sao?&quot; Tây Hải Thái tử mắt còn mơ màng, hơi hoang mang không hiểu sao vừa rồi lại đột nhiên choáng váng.</p>
+                <p>Giang Phàm nói: &quot;Độc này giải thế nào?&quot;</p>
+                <p>Tây Hải Thái tử liếc nhìn xung quanh, liền thấy đầu của nữ hải yêu. Nhìn dung nhan tinh xảo xinh đẹp kia, hắn không khỏi than thở: &quot;Xinh đẹp thế này, ngươi cũng nỡ chặt sao? Thật quá lãng phí!&quot;</p>
+                <p>&quot;Ta đi!&quot; Giang Phàm tức giận đấm vào ngực hắn một cái: &quot;Cái đồ vô dụng! Mạng suýt nữa mất trong tay nàng ta, còn nhớ nhung sắc đẹp của nàng sao? Thi thể nàng ta còn nóng đó, ngươi có muốn nhân lúc còn nóng không?&quot;</p>
+                <p>Tây Hải Thái tử mắt sáng rỡ, nhưng nhìn thi thể không đầu, trông khá ghê rợn, ánh sáng trong mắt hắn lập tức ảm đạm.</p>
+                <p>&quot;Vẫn là giải độc cho ta trước đi. Trên người nữ hải yêu này hẳn là có thứ giải độc.&quot;</p>
+                <p>Giang Phàm cầm Tử Kiếm, khều khều trên thi thể không đầu. Quả nhiên khều ra một đoạn rong biển kỳ lạ màu tím lục.</p>
+                <p>Tây Hải Thái tử vui vẻ nói: &quot;Chính là thứ này!&quot;</p>
+                <p>Hắn lập tức bò tới, vơ lấy một nắm nhét vào miệng nhai. Chẳng bao lâu, nỗi đau trên mặt hắn nhanh chóng dịu đi, hành động cũng khôi phục tự do.</p>
+                <p>&quot;Huynh đệ tốt! Ngươi lại cứu ta rồi!&quot; Tây Hải Thái tử tán thán: &quot;Thật không ngờ, ngươi có thể thoát khỏi tay Thương Khung Yêu Hoàng. Giờ còn đi theo Cựu Mộng Yêu Hoàng làm tiểu đệ. Ca ca ta thật sự đã coi thường ngươi.&quot;</p>
+                <p>Tiểu đệ? Cũng coi là vậy.</p>
+                <p>Giang Phàm liếc nhìn chiến trường từ xa. Tình cảnh của Cựu Mộng Yêu Hoàng không mấy tốt đẹp. Mặc dù có Trọc Âm hỗ trợ, nhưng thực lực của hắn không thể gây ra uy hiếp quá lớn cho Tà Đồng Thượng nhân. Ngược lại, sự hiện diện của hắn còn khiến Cựu Mộng Yêu Hoàng bó tay bó chân, sợ rằng lúc ra tay, không cẩn thận lại làm Trọc Âm bị thương. Tà Đồng Thượng nhân thì hoàn toàn không kiêng dè gì. Vì thế, Cựu Mộng Yêu Hoàng đang ở thế hạ phong.</p>
+                <p>Cứ thế này không được. Nghĩ một lát, hắn một tay xách đầu nữ hải yêu lên, cắm lên Tử Kiếm. Sau đó, cách một khoảng, ngự kiếm bay vào chiến trường của ba người.</p>
+                <p>Tà Đồng Thượng nhân đang đắc ý vô cùng: &quot;Sớm đã nghe nói Cựu Mộng Yêu Hoàng vì chăm sóc gã chồng vô dụng kia, đã chia cho hắn một phần kiếp lôi của mình. Kết quả là rèn luyện không đủ, dẫn đến thực lực không bằng Yêu Hoàng bình thường. Bây giờ xem ra, là thật. Nếu đã như vậy, vậy ngươi tự dâng mình tới, ta đây xin nhận lấy!&quot;</p>
+                <p>Hắn ta cười tà, nhãn cầu lả lướt trên đôi chân dài quyến rũ của Cựu Mộng Yêu Hoàng.</p>
+                <p>Bỗng nhiên, một thanh kiếm bay tới. Trên đó còn treo một cái đầu người, ban đầu hắn không để tâm. Nhưng nhìn kỹ lại, lập tức thất thần, kinh hãi kêu lên: &quot;Tiểu Linh!&quot;</p>
+                <p>Mặc dù hắn chưa chắc đã thật lòng yêu nữ hải yêu này, nhưng dù sao cũng là người phụ nữ đã theo hắn nhiều năm. Một con chó còn có thể nuôi ra tình cảm, huống hồ là người phụ nữ trung thành như vậy.</p>
+                <p>Và cũng chính là khoảnh khắc thất thần đó, Cựu Mộng Yêu Hoàng chớp lấy cơ hội. Trong mắt nàng tinh quang lóe lên, một đạo thủy nhận vô hình nhanh chóng đánh tới. Mặc dù Tà Đồng Thượng nhân nhanh chóng phản ứng, kịp thời né tránh, nhưng vẫn bị xuyên thủng lồng ngực bên phải. Máu tươi lập tức tràn ra, phủ tạng bên trong bị tổn thương. Hắn đau đớn kêu lên một tiếng, lập tức lùi về phía sau.</p>
+                <p>Cựu Mộng Yêu Hoàng làm sao có thể bỏ qua cơ hội ngàn năm có một này? Nàng lập tức thừa thế truy kích, nói: &quot;Trọc Âm, ra tay, đừng cho hắn cơ hội phản ứng!&quot;</p>
+                <p>Nếu nắm bắt được cơ hội, ít nhất cũng có thể trọng thương Tà Đồng Thượng nhân, như vậy, liền có thể bắt sống hắn!</p>
+                <p>Trọc Âm trong mắt hàn quang lóe lên, nói: &quot;Được!&quot; Hắn vận chuyển tất cả thủy hệ thần thông, hung hăng đánh về phía sau lưng Cựu Mộng Yêu Hoàng.</p>
+                <p>Cựu Mộng Yêu Hoàng đang toàn tâm toàn ý đối phó đại địch, làm sao ngờ được Trọc Âm lại lén lút đánh lén từ phía sau? Giang Phàm từ xa quan sát thấy cảnh này, sắc mặt càng thêm biến đổi. Hắn vội vàng điều khiển Tử Kiếm gần chiến trường, đâm thẳng vào đầu Trọc Âm.</p>
+                <p>Trọc Âm bị quấy nhiễu. Cú đánh vốn nhắm vào yếu huyệt của Cựu Mộng Yêu Hoàng, lại trúng vào vai nàng. Cựu Mộng Yêu Hoàng kêu rên một tiếng thảm thiết. Vai nàng bị đánh bay một mảng máu thịt, xuất hiện một vết thương sâu đến mức thấy xương.</p>
+                <p>Tà Đồng Thượng nhân thì thừa cơ hoàn hồn. Hắn hơi kinh ngạc và nghi hoặc nhìn về phía Trọc Âm. Lại thấy Trọc Âm vẻ mặt âm hiểm: &quot;Nhìn cái gì mà nhìn? Cùng nhau giết chết ả đàn bà này! Nếu không, nàng ta giết ngươi, ta sẽ bị nàng ta dẫn về Nam Hải Hoàng Cung xử lý. Nhẹ thì phế bỏ tu vi, nặng thì vĩnh viễn giam cầm!&quot;</p>
+                <p>Tà Đồng Thượng nhân lập tức bừng tỉnh. Hóa ra, Trọc Âm ban đầu giúp Cựu Mộng Yêu Hoàng, chính là đang chờ đợi cơ hội giết nàng ta.</p>
+                <p>&quot;Ha ha, Trọc Âm à Trọc Âm, ngươi đúng là đồ khốn nạn mà. Nhưng ta thích, ha ha ha! Nếu đã vậy, vậy thì tiễn tiện nhân này lên đường đi!&quot;</p>
+                <p>Tà Đồng Thượng nhân bị thương, mặt đầy giận dữ, ra tay không còn chút lưu tình! Cựu Mộng Yêu Hoàng lập tức rơi vào tình cảnh cực kỳ nguy hiểm. Vết thương ở vai khiến nàng cả cánh tay không thể dùng sức, lại còn phải đồng thời đối mặt với sự công kích gọng kìm từ hai phía của Tà Đồng Thượng nhân và Trọc Âm.</p>
+                <p>&quot;Trọc Âm!&quot; Cựu Mộng Yêu Hoàng giận đến cực điểm. Giây phút mấu chốt như vậy, hắn lại giúp kẻ địch đối phó với mình! Chẳng lẽ, nàng còn đáng ghét hơn cả Tà Đồng Thượng nhân đã lừa hắn sao? Khoảnh khắc này, nàng hoàn toàn nguội lạnh.</p>
+                <p>Trọc Âm lạnh lùng nói: &quot;Kêu cái gì mà kêu? Ngươi mau chết đi cho ta!&quot;</p>
+                <p>Thấy nàng sắp rơi vào vòng kìm kẹp của hai người, sắp bỏ mạng, Giang Phàm cắn răng một cái. Hắn đau lòng lấy ra Phù tiễn. Thôi vậy, cứ coi như là dùng để đối phó Linh Âm lúc nào đó vậy. Nếu không Cựu Mộng Yêu Hoàng chết ở đây, hai người kia cũng sẽ không tha cho mình.</p>
+                <p>Nghĩ đến đây, hắn dứt khoát thúc giục Phù tiễn, mục tiêu thẳng hướng Tà Đồng Thượng nhân.</p>
+                <p>Oanh——</p>
+                <p>Mũi Phù tiễn mạnh mẽ đột ngột xuất hiện, làm Tà Đồng Thượng nhân giật nảy mình, vội vàng rút lui bỏ chạy. Cựu Mộng Yêu Hoàng thì mừng rỡ khôn xiết, thừa thế phối hợp Phù tiễn công kích Tà Đồng Thượng nhân.</p>
+                <p>Điều này khiến Tà Đồng Thượng nhân rơi vào thế bị động, vừa kinh ngạc vừa tức giận, nói: &quot;Trọc Âm, đừng lo bên này trước! Giết chết tên tiểu tử nhân tộc kia! Tránh để hắn lại can thiệp vào cục diện chiến đấu!&quot;</p>
+                <p>Vừa rồi chính là hắn mang đầu Tiểu Linh tới, khiến hắn thất thần mà bị Cựu Mộng Yêu Hoàng đánh lén. Bây giờ lại là tên tiểu vương bát đản này ra tay!</p>
+                <p>Trọc Âm sớm đã muốn giết Giang Phàm. Hắn lập tức hung hăng quay đầu lại, lao về phía Giang Phàm: &quot;Tiểu súc sinh! Ngươi tới số rồi!&quot;</p>
+                <p>Giang Phàm sắc mặt ngưng trọng. Dù Trọc Âm có yếu ớt đến mức không chịu nổi một đòn trước Nguyên Anh, Yêu Hoàng, nhưng hắn cũng là một Nguyên Anh Tả Đạo, thực lực vượt xa Kết Đan Cửu Tầng Viên Mãn.</p>
+                <p>Tây Hải Thái tử sợ hãi nhanh chóng lùi về sau, nói: &quot;Huynh đệ, tìm ngươi đó!&quot;</p>
+                <p>Giang Phàm bực tức, cái đồ không có nghĩa khí này. Hắn lập tức hừ lạnh: &quot;Ngươi trêu chọc tiểu thiếp của người ta, hắn sẽ tha cho ngươi sao? Ta chết rồi sẽ đến lượt ngươi! Thà rằng cùng ta đối phó với hắn.&quot;</p>
+                <p>Tây Hải Thái tử nghĩ lại cũng đúng. Mình suýt nữa đã đội nón xanh cho Trọc Âm, hắn ta chắc chắn sẽ không tha cho mình. Hắn liền chỉ đành cắn răng, cùng Giang Phàm đối mặt với Trọc Âm.</p>
+                <p>&quot;Giang huynh, chúng ta cùng nhau chống đỡ. Cha ta chắc sắp tới rồi.&quot; Ngay từ lúc bị Trọc Âm đánh bị thương, hắn đã âm thầm gọi người. Giờ này có lẽ sắp đến rồi.</p>
+                <p>Giang Phàm trong lòng vui vẻ, tên này không ngu ngốc. Thấy tình thế bất ổn, còn biết gọi cha tới. Có điều, trời mới biết có chống đỡ được đến khi Tây Hải Yêu Hoàng của hắn đến không.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_852">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 852: Độc chiến Trọc Âm</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Lúc này, một tiếng nổ lớn vang lên.</p>
+                <p>Tà Đồng Thượng Nhân phát ra một tiếng kêu thảm. Hiển nhiên là bị mũi tên bùa làm bị thương. Hai lần bị thương, hắn đã không thể chiếm thượng phong nữa.</p>
+                <p>Hắn từ xa quát lớn: “Trọc Âm, tốc chiến tốc thắng!”</p>
+                <p>Trọc Âm khuấy động dòng nước cuồn cuộn, đã xông đến trước mặt Giang Phàm và Tây Hải Thái tử. “Hai thằng chó chết, tất cả cút đi chết cho ta!”</p>
+                <p>Giang Phàm nói với vẻ cạn lời: “Tây Hải Thái tử, ngươi còn không lấy ra bản lĩnh gia truyền của mình? Đều tại ngươi động đến tiểu thiếp của người ta, chiêu đến oán khí lớn thế này.”</p>
+                <p>Tây Hải Thái tử lập tức lúng túng. Oán khí này, thật sự là do hắn dẫn tới.</p>
+                <p>Ai ngờ, Trọc Âm vừa nghe đã nổ tung. “Thằng tiểu vương bát đản họ Giang kia!” “Ngươi có mặt mũi nói người khác sao?” “Ngươi cởi đồ vợ ta lúc đó sướng không?” “Ngươi ăn ngực vợ ta lúc đó sướng không?” “Lão tử sẽ lóc thịt ngươi, nghiền xương thành tro bụi!!!”</p>
+                <p>Tây Hải Thái tử chỉ cảm thấy ngũ lôi oanh đỉnh! Hắn nhìn về phía xa, nhìn Cựu Mộng Yêu Hoàng mỹ nhân thân tư tuyệt thế, danh tiếng vang xa. Rồi lại nhìn Giang Phàm vẻ mặt đạo mạo đứng cạnh mình. Lập tức có tâm muốn mắng mẹ người ta. “Dựa vào!” “Ngươi vậy mà tán được Nam Hải Yêu Hoàng!” “Ta nằm mơ cũng không dám mơ như vậy!” “Giang Phàm, ngươi thật đáng chết mà!”</p>
+                <p>Mắt hắn đỏ ngầu vì ghen tị. Lập tức không muốn giúp Giang Phàm nữa. Toàn bộ lợi lộc đều bị Giang Phàm chiếm hết, giờ phiền phức đến lại phải giúp Giang Phàm gánh chung. Đúng là một tên đại oan gia!</p>
+                <p>Giang Phàm mặt già đỏ bừng, nói: “Ít nói nhảm đi!” Ngay lập tức, trong cơ thể hắn lôi điện cuồn cuộn.</p>
+                <p>Trọc Âm khinh thường nói: “Tiểu bạch kiểm, mới Kết Đan cảnh cũng dám ra tay với bản yêu hoàng?” “Không biết tự lượng sức mình!”</p>
+                <p>Hắn tùy tiện vung tay, liền là một đạo thủy nhận cường đại vô song, từ xa chém về phía Giang Phàm! Đây là phương diện duy nhất của hắn đạt đến tiêu chuẩn Yêu Hoàng cảnh. Mặc dù không có đủ Yêu Hoàng chi lực, thể phách, linh hồn đều chưa đạt tới. Nhưng một kích này, vẫn cứ vượt xa Kết Đan Cửu Tầng Viên Mãn!</p>
+                <p>Tây Hải Thái tử da đầu tê dại. Đây đâu phải là thứ hắn có thể ứng phó? Hắn vội vàng đánh ra một đạo thiên phú, rồi nhanh chóng né tránh.</p>
+                <p>Giang Phàm thì hai mắt tinh quang lấp lánh, khẽ gầm lên: “Thiên Lôi Lục Bộ · Bất Diệt Nhận!” Một đạo lôi đao cường đại cao tám trăm trượng, trong nháy mắt từ trên trời giáng xuống, hung hăng chém ra, đối chọi gay gắt với đạo thủy nhận kia ngay tại chỗ.</p>
+                <p>Oanh —— Đáy biển lập tức bùng nổ một tiếng vang trầm đục dữ dội.</p>
+                <p>Lôi đao tan rã, hóa thành từng đạo lôi hồ vỗ vào người Trọc Âm, khiến hắn toàn thân đầy vết cháy sém. Thủy nhận cũng tan vỡ, bắn tung tóe ra. Nhiều mảnh bay thẳng về phía Giang Phàm. Nhưng Giang Phàm đã sớm có chuẩn bị, lấy ra Giám Thiên Bảo Giám. Những thủy nhận còn sót lại uy lực này, toàn bộ bị phản ngược trở lại, không gây ra bất kỳ tổn thương nào cho hắn. Chỉ là khiến hắn lùi lại mấy bước mà thôi.</p>
+                <p>Trọc Âm đầy vẻ không thể tin nổi sờ sờ vết cháy sém trên mặt: “Ngươi vậy mà đỡ được một kích của ta?”</p>
+                <p>Hắn đơn giản không dám tin, Giang Phàm chỉ mới Kết Đan Bát Tầng mà thôi. Nếu hắn đột phá đến Kết Đan Cửu Tầng Viên Mãn, chẳng phải có thể thắng được hắn, một Tả Đạo Nguyên Anh sao?</p>
+                <p>Nhưng hắn cũng nhìn ra chút manh mối, hừ nói: “Một kích này đã tiêu hao hết lôi điện chi lực của ngươi.” “Ta muốn xem, ngươi còn có thể chịu được ta mấy chiêu?”</p>
+                <p>Hắn lại lần nữa đánh ra một đạo thủy nhận cường đại vô song.</p>
+                <p>Giang Phàm cắn răng. “Thần Chủ Thương Mang!” Từng đạo đường nét màu vàng kim, sau lưng hắn ngưng tụ thành một pho tượng thần uy vũ bất phàm. Sáu cánh tay, cùng với Giang Phàm đồng loạt đánh ra. Sáu đạo quyền phong màu vàng kim, đánh xuyên dòng nước, chấn nát thủy nhận.</p>
+                <p>Hai người đều bị chấn động lùi lại liên tục. Điều này khiến Trọc Âm không thể chấp nhận được. Tên tiểu bạch kiểm mà hắn luôn khinh thường, vậy mà… vậy mà có thể đánh hòa với mình?</p>
+                <p>“Ta không tin!!” Trọc Âm như thể chịu kích thích cực lớn, điên cuồng lao tới tấn công.</p>
+                <p>Giang Phàm thì không ngừng đánh ra thần tượng. Dưới sự bảo vệ của Giám Thiên Bảo Giám, Giang Phàm nhất thời vậy mà có thể bất phân thắng bại với Trọc Âm.</p>
+                <p>Tây Hải Thái tử trốn ở xa quan sát cảnh tượng này, liên tục hít ngụm khí lạnh. “Ta đi!” “Khó trách dám tán vợ người ta.” “Đây là có bản lĩnh không sợ Trọc Âm trong người mà!”</p>
+                <p>Ở đằng xa.</p>
+                <p>Tà Đồng Thượng Nhân thấy Trọc Âm vậy mà bị Giang Phàm quấn lấy, tức đến mức mở miệng chửi bới: “Đúng là một tên phế vật!” “Một tên Kết Đan cũng không đối phó được!”</p>
+                <p>Cựu Mộng Yêu Hoàng thì đôi mắt đẹp dị sắc liên tục, tràn đầy kinh hỉ. Thực lực của Trọc Âm, nàng rất rõ. Tuyệt đối không phải phế vật gì. Trừ phi là tồn tại Tả Đạo Nguyên Anh đồng cấp, nếu không Kết Đan Cửu Tầng Viên Mãn, căn bản không ai là đối thủ của hắn. Vạn vạn không ngờ. Giang Phàm không lộ diện lộ tài. Vừa ra tay đã kinh người!</p>
+                <p>Điều càng khiến nàng vui mừng là. Xa xa, hải lưu cuồn cuộn. Khí tức cường đại của Tây Hải Yêu Hoàng, đang cấp tốc lao tới. Nhận ra sự xuất hiện của hắn. Tà Đồng Thượng Nhân sắc mặt đại biến, đâu còn dám dây dưa chiến đấu? Hắn dùng vài chiêu khai mở lớn, liền muốn chấn bay Cựu Mộng Yêu Hoàng để thoát thân.</p>
+                <p>Trọc Âm cũng cảm nhận được khí tức của Tây Hải Yêu Hoàng, sắc mặt đại biến. Vô cùng không cam lòng trừng mắt nhìn Giang Phàm, âm trầm nói: “Coi như ngươi gặp may!” Hắn dứt khoát rút thân độn đi.</p>
+                <p>Thấy hắn chạy, Tà Đồng Thượng Nhân chửi một tiếng, liền cũng dốc sức chấn lui Cựu Mộng Yêu Hoàng. Rồi xoay người bỏ chạy. Cựu Mộng Yêu Hoàng muốn đuổi theo, nhưng lại có chút vô lực.</p>
+                <p>Giang Phàm đã rảnh tay. Thấy tình hình này, đâu thể để Tà Đồng Thượng Nhân chạy thoát? Hắn nhìn chiếc Vô Lượng Giới trên tay còn ít màu xanh. Cắn răng một cái, lập tức thúc giục nó.</p>
+                <p>Lập tức! Tà Đồng Thượng Nhân đột nhiên gặp phải một luồng quái lực không thể kháng cự. Một tiếng “ầm” vang lên, hắn bị nện mạnh xuống mặt đất.</p>
+                <p>Cựu Mộng Yêu Hoàng ngẩn ra, rồi chợt hiểu là Giang Phàm lại động dùng chiếc nhẫn thần kỳ kia. Nàng đâu chịu bỏ qua cơ hội? Hai tay chắp lại, hung hăng chém xuống. Một đạo không gian chi nhận đáng sợ, lập tức cắt về phía hắn.</p>
+                <p>Tà Đồng Thượng Nhân đại kinh thất sắc. Trong thời khắc sinh tử, hắn quả quyết động dùng thuật bảo mệnh. Quanh thân lập tức hiện lên một mảnh huyết quang, bao bọc hắn truyền tống đi.</p>
+                <p>Nhưng vẫn chậm một bước. Một tiếng kêu thảm thiết ai oán truyền đến. Người hắn đã đi rồi. Nhưng một cánh tay lại bị cắt xuống gọn gàng, máu tươi phun trào, lưu lại tại chỗ.</p>
+                <p>Tuy nhiên. Vận khí của hắn hình như không được tốt lắm. Ở tận cùng tầm nhìn, lại lần nữa bùng phát những dao động dữ dội. Hóa ra là đụng phải Tây Hải Yêu Hoàng!</p>
+                <p>Cựu Mộng Yêu Hoàng cùng những người khác lập tức chạy tới. Khi bọn họ đến nơi, quả nhiên thấy Tây Hải Yêu Hoàng. Xung quanh một mảnh máu nhuộm, nhưng không thấy bóng dáng Tà Đồng Thượng Nhân.</p>
+                <p>“Tên này, dùng là phương pháp đốt cháy lượng lớn tinh huyết để độn đi.” “Muốn giữ lại, thật sự không dễ.”</p>
+                <p>Tây Hải Yêu Hoàng đầu trọc, nhìn viên nhãn cầu có hai đồng tử đang kẹp giữa hai ngón tay mình. Tà Đồng Thượng Nhân tuy đã chạy thoát. Nhưng vẫn bị Tây Hải Yêu Hoàng sống sờ sờ móc mất một con mắt. Lần này mất một cánh tay, một con mắt, cộng thêm hai lần hao tổn lượng lớn tinh huyết. Xem như là nguyên khí đại thương rồi. Những tài nguyên lừa được từ Nam Hải bấy lâu nay, xem như uổng phí.</p>
+                <p>“Cha!” Tây Hải Thái tử kinh hỉ chạy tới.</p>
+                <p>Tây Hải Yêu Hoàng trừng mắt nhìn hắn một cái, rồi hướng Cựu Mộng Yêu Hoàng chắp tay: “Đa tạ Cựu Mộng Yêu Hoàng đã cứu giúp con ta.”</p>
+                <p>Cựu Mộng Yêu Hoàng nhún nhún vai phải đang bị thương dữ tợn, cười khổ nói: “Ta tự lo còn không xong, đâu có dư lực mà giúp chứ?” “Muốn tạ thì tạ Phàm đệ của ta đi.” “Nếu không phải hắn mấy lần ra tay, tình cảnh của ta và những người khác đã khó nói rồi.”</p>
+                <p>Phàm đệ? Tây Hải Yêu Hoàng nhìn về phía bên cạnh Cựu Mộng Yêu Hoàng, lập tức nhướng mày, kinh ngạc nói: “Giang Phàm?” “Sao ngươi cũng ở đây?” “Ngươi không phải đi Đông Hải rồi sao?”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_853">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 853: Cao cấp trận đấu</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm cười khổ: &quot;Chuyện này nói ra thì dài lắm. Tóm lại, gặp Tây Hải Thái tử cũng là chuyện tình cờ. Cứu hắn cũng là thuận tay mà thôi, Tây Hải Yêu Hoàng đừng bận tâm.&quot;</p>
+                <p>Nghe Giang Phàm khiêm tốn như vậy, Cựu Mộng Yêu Hoàng không chịu được. Nàng vỗ vỗ vai hắn, đầy mặt tự hào nói: &quot;Tây Hải Yêu Hoàng, ngươi đừng nghe hắn tự khiêm tốn. Trận đại chiến vừa rồi cực kỳ gay cấn...&quot;</p>
+                <p>Đến khi nàng kể xong mọi chuyện, Tây Hải Yêu Hoàng liên tục kinh ngạc: &quot;Ngươi lại có thể cùng Trọc Âm Yêu Hoàng phân cao thấp?&quot; &quot;Hừ! Thiên Cơ Các đã bồi dưỡng ra một quái thai gì thế này!&quot;</p>
+                <p>Một Kết Đan Bát Tầng mà lại đại chiến với Tả Đạo Nguyên Anh, còn bất phân thắng bại. Ai dám tin chứ? Hơn nữa, hắn còn liên tiếp vận dụng hai món sát thủ tiễn là Phù Tiễn và Vô Lượng Giới mới có thể thay đổi cục diện chiến trường.</p>
+                <p>Nhìn Giang Phàm rồi lại nhìn con trai mình, hắn tức điên lên. Hắn giơ tay đấm vào đầu Tây Hải Thái tử một cái, hận sắt không thành thép nói: &quot;Ngươi nhìn Giang Phàm người ta kìa! Còn nhỏ hơn ngươi mà đã có thể chiến đấu với Tả Đạo Nguyên Anh, còn có thể can dự vào các trận chiến của cường giả Nguyên Anh rồi!&quot; &quot;Còn ngươi thì sao! Cả ngày chỉ biết ăn chơi đú đởn!&quot; &quot;Lần này còn suýt nữa mất mạng vì ăn chơi đấy!&quot; &quot;Tây Hải ta sao lại nuôi ra cái thứ bất tranh khí như ngươi chứ?&quot;</p>
+                <p>Tây Hải Thái tử ôm đầu đau đớn xoa xoa, không phục nói: &quot;Cha, cha đừng bị Giang lão đệ của con lừa. Hắn &#039;chơi gái&#039; chỉ chơi hạng sang, vừa ra tay là...&quot; Hắn không thể nói tiếp. Bởi vì Giang Phàm và Cựu Mộng Yêu Hoàng đều phóng tới hai ánh mắt như muốn bóp chết hắn. Tây Hải Thái tử vội vàng dừng lại, ho khan: &quot;Tóm lại, phụ nữ của hắn đều rất lợi hại, cực kỳ lợi hại.&quot;</p>
+                <p>Tây Hải Yêu Hoàng lại đấm vào đầu hắn một cái nữa: &quot;Đó cũng là bản lĩnh của hắn! Có bản lĩnh thì ngươi cũng &#039;chơi hạng sang&#039; đi!&quot;</p>
+                <p>Tây Hải Thái tử mặt đầy khổ sở. Hắn làm sao mà chơi nổi chứ? Đó toàn là những Nữ Yêu Hoàng cùng chia sẻ Tứ Hải với cha hắn đấy.</p>
+                <p>Tây Hải Yêu Hoàng hận sắt không thành thép. Không có Giang Phàm để so sánh, hắn còn thấy con trai mình cũng tạm ổn, ít nhất cũng mạnh hơn tên thối nát Trọc Âm kia chứ? Nhưng vừa so sánh thì quả thực chỉ muốn vứt đi, sinh lại một đứa khác.</p>
+                <p>Nhìn Giang Phàm đã hao tổn không nhỏ, Tây Hải Yêu Hoàng suy nghĩ. Hắn liền đưa cho Giang Phàm con mắt móc ra từ Tà Đồng Thượng nhân: &quot;Lần trước ngươi lập công, ta không có gì để thưởng, con mắt này coi như bù đắp cho ngươi.&quot;</p>
+                <p>Giang Phàm nhìn viên mắt đẫm máu, hơi nghi hoặc: &quot;Thứ này có tác dụng gì chăng?&quot; Cựu Mộng Yêu Hoàng lại sáng mắt lên, thay Giang Phàm cầm lấy, nói: &quot;Đây đúng là một món bảo bối tốt!&quot;</p>
+                <p>&quot;Tà Đồng Thượng nhân có một con mắt, đó là trọng đồng bẩm sinh. Con mắt này có thể phá tan hư vọng, bất cứ thuật ẩn thân, huyễn thuật, mị thuật nào cũng không thoát khỏi nó, ngay cả Trung Phẩm Vô Trần Phù của các ngươi cũng không thể ẩn mình dưới nhãn cầu này.&quot; &quot;Tây Hải Yêu Hoàng vậy mà lại moi con mắt này ra ư?&quot; &quot;Giang Phàm, ngươi luyện chế nó thành pháp bảo, tuyệt đối hữu dụng.&quot;</p>
+                <p>Giang Phàm lộ vẻ vui mừng. Nghe một cái là biết đây là bảo bối tốt rồi! Bản thân hắn thường dùng ẩn thân phù để ngầm hại người... khắc chế kẻ địch. Tự nhiên hắn biết việc kẻ địch ẩn thân là nguy hiểm đến mức nào. Bây giờ có con mắt này, hắn liền có thêm một tầng bảo đảm cực lớn. Năng lượng của Phù Tiễn, Vô Lượng Giới mà hắn đã mất trước đó, tất cả đều đã được con mắt này bù đắp lại rồi.</p>
+                <p>Giang Phàm cười nói: &quot;Tà Đồng Thượng nhân lần này lỗ nặng rồi. Trọng đồng duy nhất cũng bị moi ra mất rồi.&quot; &quot;Đáng tiếc là Trọc Âm. Lần này vì hắn mà đến, cuối cùng lại để hắn chạy thoát.&quot;</p>
+                <p>Cựu Mộng Yêu Hoàng cũng nhíu mày không ngớt. Con rắn độc này, trời biết hắn trốn ở đâu. Không chừng ngày nào đó hắn đột nhiên xuất hiện, cắn người một miếng.</p>
+                <p>Tây Hải Yêu Hoàng lại biến sắc mặt lạnh lẽo: &quot;Đánh trọng thương con trai ta, hắn còn muốn chạy thoát khỏi Tây Hải ư? Yên tâm, hắn không thoát được đâu! Ta đã mang theo cường giả trong tộc Tây Hải, sớm đã bố trí Thiên La Địa Võng trong phạm vi trăm dặm quanh đây rồi.&quot;</p>
+                <p>Vừa dứt lời, một đạo âm ba kỳ lạ truyền đến từ dưới biển xa xa. Tây Hải Yêu Hoàng giãn mày, &quot;ha&quot; một tiếng: &quot;Có người phát hiện ra hắn rồi.&quot; Hắn lập tức hóa thành tàn ảnh, mang theo Tây Hải Thái tử bay đi xa.</p>
+                <p>Cựu Mộng Yêu Hoàng mặt lộ vẻ vui mừng, nói: &quot;Tên này, cuối cùng cũng đến lúc báo ứng rồi!&quot; Giang Phàm suy tư: &quot;Cựu Mộng tỷ, ngươi còn định tha cho hắn một con đường sống ư? Vừa rồi, hắn đã phản bội khiến ngươi suýt nữa thân tử đạo tiêu đấy.&quot;</p>
+                <p>Cựu Mộng Yêu Hoàng nghe vậy, sắc mặt hơi lạnh. Trầm ngâm rất lâu, nàng khẽ lắc đầu: &quot;Ai cũng có thể giết hắn, duy chỉ có ta không thể. Ta là thê tử của hắn, lại càng là người Lão Yêu Hoàng lâm chung phó thác chăm sóc hắn. Xét về tình về lý, ta đều không thể giết.&quot;</p>
+                <p>Giang Phàm nhíu mày: &quot;Vậy còn các trưởng lão của Nam Hải Hoàng tộc thì sao?&quot; Cựu Mộng Yêu Hoàng vẫn lắc đầu: &quot;Bọn họ cũng sẽ không giết đâu.&quot;</p>
+                <p>Nói rồi, nàng khẽ cúi đầu, thở dài: &quot;Nam Hải cần một Yêu Hoàng tọa trấn. Sở dĩ ta có thể hiệu lệnh Nam Hải, là bởi vì ta là thê tử của Trọc Âm, có được danh phận này, ai cũng không thể không phục. Nếu Trọc Âm chết, ta lại là người gì đây? Dựa vào đâu mà hiệu lệnh Nam Hải đây? Cho nên, bất luận thế nào, Trọc Âm đều không thể chết.&quot;</p>
+                <p>&quot;Thậm chí...&quot; Nàng trầm ngâm rất lâu. Trong mắt nàng dâng lên một tia ủy khuất và bất lực. Nhìn Giang Phàm đã nhiều lần giúp mình hóa giải đại nguy cơ trước mắt, nàng dường như cuối cùng cũng tìm được một người có thể trút bầu tâm sự. Nàng cay đắng nói: &quot;Thậm chí, các trưởng lão trong tộc không chỉ một lần thúc giục ta mang thai con của Trọc Âm, để Nam Hải Hoàng tộc nối dõi. Cùng loại người này giao hợp, sinh con cho hắn... Giang Phàm, ta phải làm sao đây?&quot;</p>
+                <p>Giang Phàm có thể cảm nhận được nỗi đau trong lòng Cựu Mộng Yêu Hoàng. Hắn cũng có thể hiểu được phần nào. Giống như Linh Âm thúc giục hắn và Yêu Nguyệt sinh con vậy. Hắn thà chết còn hơn là có giao thiệp kiểu đó với Yêu Nguyệt. Huống chi là Cựu Mộng Yêu Hoàng và Trọc Âm, cái loại hàng nát bét đến mức đó. Chuyện đó tuyệt đối còn khó chịu hơn cả việc giết nàng. Nếu có lựa chọn, nàng chắc chắn sẽ giống Giang Phàm, thà chết chứ không ở bên Trọc Âm.</p>
+                <p>Giang Phàm trầm ngâm hồi lâu, trong mắt lóe lên một tia lạnh lẽo. Trên mặt hắn lại không có chút biểu cảm nào, nói: &quot;Cựu Mộng tỷ, thuyền đến đầu cầu ắt sẽ thẳng. Tổng sẽ có cách thôi.&quot;</p>
+                <p>Cựu Mộng Yêu Hoàng trong lòng có chút thất vọng. Vốn nàng muốn nghe được lời an ủi, không ngờ lại chỉ là hai câu qua loa như vậy. Nàng khẽ thở dài: &quot;Nỗi khổ của người khác thật khó mà cảm thông được. Là ta làm khó ngươi rồi.&quot; &quot;Đi thôi, đi xem Trọc Âm, kẻo hắn bị Tây Hải đánh chết.&quot;</p>
+                <p>Khi bọn họ赶 tới, Trọc Âm đã đầu vỡ máu chảy nằm trên mặt đất. Bên cạnh hắn là Chúc Ảnh Huyễn đang khá chật vật, đệ nhất võ thần dưới trướng Tây Hải Yêu Hoàng. Hắn tuy là Kết Đan Cửu Tầng Viên Mãn, nhưng thực lực thâm hậu đến mức không thể tin được. Hắn đã mạnh mẽ giữ chân được Trọc Âm, kéo dài cho đến khi Tây Hải Yêu Hoàng đến.</p>
+                <p>Tây Hải Yêu Hoàng vuốt vuốt ống tay áo dính máu, nói: &quot;Cựu Mộng Yêu Hoàng, người này là phu quân ngươi, ta chỉ dạy dỗ hắn một trận thôi. Tiếp theo, cứ giao cho ngươi phát lạc.&quot; Rõ ràng, Trọc Âm sở dĩ thảm như vậy, hoàn toàn là do cơn giận báo thù cho con trai của vị Tây Hải Yêu Hoàng này mà ra.</p>
+                <p>Trọc Âm như được đại xá. Hắn tóc tai bù xù, mặt đầy máu dơ bò về phía Cựu Mộng Yêu Hoàng, nói: &quot;Cựu Mộng, mau đưa ta về Nam Hải.&quot; Hắn không chút nghi ngờ, nếu không phải e dè Cựu Mộng Yêu Hoàng, Tây Hải Yêu Hoàng đã ra tay giết hắn rồi.</p>
+                <p>Cựu Mộng Yêu Hoàng mặt không biểu cảm nhìn hắn. Nàng nhấc chân, đá vào bụng hắn. Yêu lực cường đại xông thẳng vào cơ thể hắn, phế bỏ toàn bộ tu vi. Yêu lực, thiên phú thần thông của hắn, tất cả đều tan rã. Hắn trở thành một người bình thường có thể chất chỉ nhỉnh hơn hải yêu tộc thông thường một chút.</p>
+                <p>Trọc Âm mặt đầy đau đớn, ôm cánh tay vặn vẹo lăn lộn trên mặt đất. Một đời Yêu Hoàng Nam Hải, cứ thế bị phế bỏ. Mãi lâu sau hắn mới hoàn hồn lại, khó khăn lắm mới bò dậy được.</p>
+                <p>Hắn đã nhận mệnh. Làm một phế nhân, dù sao cũng tốt hơn chết chứ? Dù sao khi trở về Nam Hải, cũng sẽ không ai giết hắn. Nghĩ đến đây, hắn thả lỏng thân tâm.</p>
+                <p>Khi chú ý tới Giang Phàm đứng một bên, trong mắt hắn tràn đầy cừu hận. Nhưng vừa nghĩ lại, hắn lại chế nhạo. Hắn đi đến trước mặt Giang Phàm, âm dương quái khí nói: &quot;Giang Phàm! Có phải ngươi thất vọng lắm không, vì thê tử ta không giết ta ư?&quot; &quot;Yên tâm, điều khiến ngươi thất vọng hơn còn ở phía sau.&quot; &quot;Nam Hải Hoàng tộc cần phải dựa vào ta để duy trì hậu duệ. Cho nên, mặc kệ Cựu Mộng có vui lòng hay không, sớm muộn gì nàng cũng phải nằm dưới háng ta, mặc ta gieo giống. Nàng sẽ bị ta tùy ý chinh phục, ngoan ngoãn mang thai cốt nhục cho ta, sinh ra đứa con thuộc về chúng ta! Ngươi có phải rất tức giận không? Có phải rất muốn giết ta không? Hahahahaha!&quot;</p>
+                <p>Giang Phàm cười nhạt: &quot;Ngươi nghĩ nhiều rồi. Đó là chuyện của Nam Hải các ngươi, ta là một nhân tộc sao có thể xen vào chứ? Mong hai vợ chồng ngươi sớm hòa thuận lại nhé.&quot;</p>
+                <p>Trọc Âm mặt cứng đờ. Hắn lại không thể chọc tức được Giang Phàm ư? Hắn nào có hay biết, trong lòng bàn tay Giang Phàm giấu sau lưng, đang khẽ xoay tròn một chiếc vương miện.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_854">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 854: Khích Thiên Thần Châu</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Mọi việc ở đây đã xong.</p>
+                <p>Cựu Mộng Yêu Hoàng chỉ cảm thấy bờ vai nhẹ nhõm. Sự ràng buộc của Hàn Thiền Tịch Diệt Đan đã hoàn toàn chấm dứt, ẩn họa Trọc Âm cũng sắp kết thúc.</p>
+                <p>Đã hơn mười năm rồi. Nàng chưa từng cảm thấy thư thái đến vậy.</p>
+                <p>Nếu nơi đây chỉ có một mình nàng, nàng sẽ nâng một hồ rượu, đối nguyệt khinh vũ.</p>
+                <p>Đương nhiên, cũng có chuyện chẳng mấy tốt đẹp. Đó là, đã đến lúc phải nói lời tái kiến với Giang Phàm.</p>
+                <p>“Giang Phàm, tiếp theo ngươi có tính toán gì không?”</p>
+                <p>Cựu Mộng Yêu Hoàng khẽ nhìn Giang Phàm, ánh mắt nhu hòa.</p>
+                <p>Giang Phàm xoa xoa giữa trán, nói: “Có lẽ là đi Bắc Hải một chuyến.” Vốn dĩ ta muốn đợi đến khi ba linh hồn Nguyên Anh tề tựu, rồi mới đến di tích Hóa Thần ở Bắc Hải thử vận may, tìm kiếm tinh huyết Hóa Thần. Nhưng cường giả cảnh giới Nguyên Anh như Tà Đồng Thượng Nhân đều đang tìm kiếm tư cách vào cửa. Hắn không thể chờ thêm được nữa. Bằng không bị người khác nhanh chân giành trước, cho dù ta gom đủ linh hồn thì có ích gì?</p>
+                <p>“Giờ ngươi đi ngay sao?” Cựu Mộng Yêu Hoàng nhẹ nhàng hỏi. Trong lòng nàng dâng lên một chút vị đắng của sự không nỡ.</p>
+                <p>Lúc này, Tây Hải Yêu Hoàng lại đi tới, nói: “Ai! Đã đến rồi, sao có thể cứ thế mà đi được? Các ngươi một vị là Nam Hải Yêu Hoàng, một vị là ân nhân cứu mạng của khuyển tử nhà ta. Không làm tròn bổn phận chủ nhà, người ngoài sẽ nói Tây Hải ta không có quy củ.”</p>
+                <p>Cựu Mộng Yêu Hoàng lắc đầu nói: “Ta thì không cần đâu. Ngươi cứ chiêu đãi tốt đệ ấy của ta là được. Ta phải vội quay về xử lý Trọc Âm, kẻo đêm dài lắm mộng.”</p>
+                <p>Tây Hải Yêu Hoàng há miệng, cuối cùng vẫn không níu giữ. Hắn biết tính cách của Cựu Mộng Yêu Hoàng. Công việc Nam Hải vĩnh viễn là ưu tiên hàng đầu, những chuyện khác đều xếp sau. Hiện giờ có chuyện quan trọng như vậy cần xử lý, đương nhiên nàng sẽ không ở lại tham gia yến tiệc không mấy ý nghĩa.</p>
+                <p>“Cựu Mộng tỷ, ngươi ở lại đi. Ngày mai đi cũng chưa muộn.” Giang Phàm lên tiếng níu giữ.</p>
+                <p>Cựu Mộng Yêu Hoàng vén sợi tóc mai bên tai, có chút do dự: “Vậy Trọc Âm thì sao?”</p>
+                <p>Giang Phàm nhìn hắn một cái, nói: “Tu vi của hắn đã phế, còn có thể làm gì được chứ? Ngươi ở lại đi, cứ coi như là cùng ta chơi đùa ở Tây Hải vậy.”</p>
+                <p>Cựu Mộng Yêu Hoàng vốn không mấy muốn ở lại. Nghe được câu nói sau, nàng như bị quỷ thần xui khiến mà đồng ý.</p>
+                <p>“Được thôi. Vậy thì làm phiền Tây Hải Yêu Hoàng rồi.”</p>
+                <p>“Không sao không sao.” Tây Hải Yêu Hoàng trên mặt cười tươi, trong lòng lại thắc mắc. Quỷ dị thật. Cựu Mộng Yêu Hoàng vậy mà lại bỏ dở chính sự của Nam Hải, tham gia yến tiệc giải trí.</p>
+                <p>Tây Hải Thái tử bên cạnh nhìn vào mắt, ghen tị đến nghiến răng. “Chỉ một câu ‘cùng ta’, Nam Hải Yêu Hoàng liền lập tức buông vũ khí đầu hàng. Công lực này của Giang lão đệ, ta ít nhất phải học hai mươi năm.”</p>
+                <p>Đêm đó, Tây Hải Yêu Hoàng thịnh tình khoản đãi Giang Phàm và Cựu Mộng Yêu Hoàng.</p>
+                <p>“Giang tiểu hữu, ngươi vừa nói muốn đi Bắc Hải. Nhưng có phải có nguyên nhân không thể không đi không?” Tây Hải Yêu Hoàng hỏi giữa tiệc.</p>
+                <p>Giang Phàm suy nghĩ một lát, liền thành thật kể lại. Dù sao chuyện này nhiều người biết, cũng không coi là bí mật gì.</p>
+                <p>“Mấy tháng trước, Bắc Hải Yêu tộc từng tặng ta một cơ hội tiến vào di tích Hóa Thần. Lần này nhân cơ hội đi Thương Hải, ta dứt khoát đến Bắc Hải một chuyến, giải quyết xong chuyện này.”</p>
+                <p>Mọi người ồ lên kinh ngạc. Cựu Mộng Yêu Hoàng ngồi cạnh hắn, kinh ngạc nói: “Bắc Hải Yêu tộc vậy mà lại cam lòng tặng ngươi tư cách di tích Hóa Thần ư? Thật không thể tin nổi! Ta và Di Châu Yêu Hoàng đích thân đòi, bọn họ còn không chịu cho đây. Dùng bất cứ giá nào, bọn họ cũng không đổi.”</p>
+                <p>Tây Hải Yêu Hoàng cũng đầy mặt kinh ngạc. “Giang tiểu hữu quả nhiên được Hải Yêu tộc ta ưu ái. Bắc Hải Yêu tộc vậy mà ngay cả vật này cũng tặng ngươi. Tây Hải ta sở dĩ may mắn có được một bằng chứng, là bởi vì Bắc Hải từng gặp nạn, Tây Hải ta đã đến chi viện, thương vong không ít người. Bắc Hải niệm tình ân nghĩa này, mới phá lệ tặng Tây Hải ta một miếng.”</p>
+                <p>Giang Phàm ngạc nhiên. Không ngờ tư cách di tích Hóa Thần, Bắc Hải lại coi trọng đến vậy. Ba hải còn lại đều khó có được một tư cách, hắn lại có được một. May mà lúc đó Bạch Sơ Phi ép buộc giao thủ với hắn, còn lấy tư cách di tích Hóa Thần làm vật đánh cược.</p>
+                <p>Nhưng bằng chứng di tích Hóa Thần của Tây Hải…</p>
+                <p>Hắn nhìn về phía Tây Hải Thái tử. Lại thấy Tây Hải Thái tử vùi mặt vào bát, khụt khịt ăn cơm. Lúc này hắn, e rằng đã mồ hôi đầm đìa rồi.</p>
+                <p>Cựu Mộng Yêu Hoàng bĩu môi, đáng đời! Trêu chọc phu nhân người ta, kết quả trúng kế của người ta, không chỉ làm mất tư cách di tích Hóa Thần quý giá như vậy, tính mạng còn suýt mất. Vẫn là Giang Phàm tốt, không bao giờ trêu chọc phụ nữ đã có chồng…</p>
+                <p>Nghĩ đến cảnh tượng nàng và Giang Phàm trong trận pháp, nàng đỏ mặt. Được rồi. Nhưng hắn sẽ không lén lút, mà là quang minh chính đại. Tóm lại, không giống cái thứ hàng như Tây Hải Thái tử này!</p>
+                <p>“Giang Phàm, vì ngươi cũng có một miếng di tích Hóa Thần. Vậy chi bằng kết bạn với thứ bất tranh khí của ta?” Tây Hải Yêu Hoàng mắt sáng rực nói: “Ta đang lo hắn một mình đi vào sẽ bị thiệt thòi. Có ngươi che chở, ta liền yên tâm hơn nhiều.”</p>
+                <p>Giang Phàm khóe miệng co giật. Hắn vốn định giúp che giấu, nhưng bây giờ không thể giấu được nữa, chỉ đành để Tây Hải Thái tử tự cầu đa phúc.</p>
+                <p>“Ta không thành vấn đề, cứ xem ý kiến của Thái tử thôi.”</p>
+                <p>Tây Hải Yêu Hoàng hơi nghi hoặc. Thái tử thì có ý kiến gì được chứ? Giang Phàm sao lại nói lời này? Lại nhìn Tây Hải Thái tử vùi đầu khụt khịt ăn cơm. Trong lòng hắn lập tức nảy sinh một dự cảm chẳng lành.</p>
+                <p>“Thái tử, con lấy hỏa diễm ấn ký di tích Hóa Thần ra cho ta xem nào.”</p>
+                <p>Tây Hải Thái tử ngẩng đầu lên, khuôn mặt dính đầy hạt cơm cố nặn ra nụ cười. “Cha, có gì mà xem chứ? Con còn có thể làm mất nó sao?”</p>
+                <p>Tây Hải Yêu Hoàng chợt đứng bật dậy, lộ vẻ hoảng hốt. Con trai mình, hắn còn không hiểu sao? Chỉ cần liếc mắt một cái, là biết nó đang giở trò gì. Che che giấu giấu như thế này, vậy tuyệt đối là làm mất rồi! Lại thêm chuyện trước đó bị nữ hải yêu kia lừa gạt, trong đầu hắn vang lên tiếng ong ong.</p>
+                <p>“Nghiệt súc! Ngươi không phải đã bị nữ hải yêu kia lừa mất hỏa diễm ấn ký rồi chứ?”</p>
+                <p>Tây Hải Thái tử đảo mắt, ôm bụng nói: “Cha, hài nhi đau bụng. Xin cáo lui trước.” Vừa nói xong đã muốn chuồn.</p>
+                <p>Tây Hải Yêu Hoàng tức đến tối sầm mặt mũi, hỏa diễm ấn ký quan trọng như vậy, lại để nghiệt súc này bị đàn bà lừa mất. “Đau bụng? Giờ ta sẽ cho ngươi đau khắp cả người!” Hắn tiện tay rút ra roi da, “đét” một tiếng liền cách không quất cho Tây Hải Thái tử kêu thảm thiết lộn nhào một cái. Y bào trước ngực bị quất nát, lộ ra một vệt máu.</p>
+                <p>Giang Phàm nhìn mà cũng thấy đau. Tây Hải Yêu Hoàng đúng là nỡ ra tay đánh thật!</p>
+                <p>“Oao.” Tây Hải Thái tử đau đến kêu oai oái. Vội vàng bò về phía Giang Phàm: “Giang lão đệ, cứu ta, mau cứu ta với! Cha ta sẽ đánh chết ta mất.”</p>
+                <p>Giang Phàm liếc hắn một cái, cái thứ không chịu ghi nhớ này, đánh chết là tốt nhất. Tuy nhiên, bản thân hắn đã “ăn chặn” một rương Thủy Nguyên Tinh Tủy của tên này. Giúp hắn một lần vậy.</p>
+                <p>Hắn quay sang Cựu Mộng Yêu Hoàng nói: “Cựu Mộng tỷ, cứ để Tây Hải cũng sao chép một phần đan phương đó đi.”</p>
+                <p>Cựu Mộng Yêu Hoàng có chút không tình nguyện, khẽ bĩu môi: “Ta đổi bằng mười viên Hộ Thân Dạ Minh Châu, Tây Hải muốn có không công sao? Chẳng lẽ, chỉ có Nam Hải nàng là kẻ chịu thiệt? Vậy không được! Tứ Hải là một nhà. Dựa vào đâu mà Tây Hải lại được đặc cách?”</p>
+                <p>Mắt đẹp khẽ chuyển, nàng đầy ý vị nói: “Tây Hải Yêu Hoàng, nghe nói Hoàng tộc các ngươi lại phát hiện ra một viên Khí Thiên Thần Châu.”</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_855">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 855: Hữu đệ biến thúc thúc</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Tây Hải Yêu Hoàng nghe vậy, nở nụ cười khổ:&quot;Cựu Mộng Yêu Hoàng, ngươi nghe được tin đồn này từ đâu vậy?&quot;&quot;Kể từ khi một viên Kỳ Thiên Thần Châu được phát hiện ba trăm năm trước, nó đã hoàn toàn tuyệt tích.&quot;&quot;Nếu có, những thần tông đại giáo ở Thái Thương Đại Châu kia đã sớm giẫm nát ngưỡng cửa Tây Hải của ta rồi.&quot;&quot;Những lời này không thể nói bừa.&quot;&quot;Sẽ vô cớ rước thêm phiền toái cho Tây Hải ta đấy.&quot;</p>
+                <p>Giang Phàm nghe lọt tai.Lập tức hiểu rõ ý của Cựu Mộng Yêu Hoàng.Nàng ta từng dầm mưa, biết rõ tư vị dầm mưa không dễ chịu.Cho nên muốn xé nát ô của Tây Hải, để mọi người cùng khó chịu.</p>
+                <p>&quot;Cựu Mộng tỷ, Kỳ Thiên Thần Châu là gì?&quot; Giang Phàm nhỏ tiếng hỏi.Cựu Mộng Yêu Hoàng nói: &quot;Ba trăm năm trước, thái tử Tây Hải lúc đó đột phá vội vàng, sắp thất bại.&quot;&quot;Một khi xung kích Yêu Hoàng cảnh thất bại, hậu quả sẽ ra sao, ngươi có rõ không?&quot;</p>
+                <p>Giang Phàm gật đầu.Nghiệt khí quấn thân, cả đời khó mà đặt chân vào Yêu Hoàng cảnh được nữa.Vân Hà Phi Tử chính là một ví dụ sống sờ sờ.Nếu không nhờ có phất trần Tĩnh Tâm Liên Ti của Thanh Hạc Thượng nhân, nàng ta cả đời này cũng vô vọng xung kích Yêu Hoàng.</p>
+                <p>&quot;Vị thái tử kia trông thấy sắp xung kích Yêu Hoàng thất bại.&quot;&quot;Liền lấy ra một pháp bảo tên là Kỳ Thiên Thần Châu.&quot;&quot;Sau đó, đột phá ngừng lại!&quot;&quot;Hắn chuẩn bị lại ba tháng sau, tiếp tục đột phá, cuối cùng cũng đặt chân vào Yêu Hoàng cảnh.&quot;</p>
+                <p>Giang Phàm trợn tròn mắt.&quot;Ngươi nói, xung kích Yêu Hoàng cảnh còn có thể tạm dừng sao?&quot;&quot;Độ kiếp lại có chuyện đùa như vậy à?&quot;Nếu không phải Cựu Mộng Yêu Hoàng nói có sách mách có chứng, hắn căn bản không dám tin đây là thật.Độ kiếp là chuyện nghiêm trọng và nguy hiểm đến thế, vậy mà lại có thể bị cưỡng chế tạm dừng sao?</p>
+                <p>Cựu Mộng Yêu Hoàng khẽ gật đầu, rất nghiêm túc nói:&quot;Ta biết ngươi không tin, ban đầu ta cũng không tin lắm.&quot;&quot;Nhưng trong Hải Lịch của Tứ Hải đều ghi chép về chuyện này.&quot;&quot;Kỳ Thiên Thần Châu, trước đây chưa từng xuất hiện, sau này cũng không tái sinh nữa.&quot;&quot;Lịch sử mấy ngàn năm của Tứ Hải, cũng chỉ xuất hiện có một viên mà thôi.&quot;&quot;Tên của nó, chính là do Yêu Hoàng lúc đó đặt.&quot;&quot;Kỳ Thiên Kỳ Thiên, lừa dối trời cao.&quot;&quot;Viên châu này, thật sự đã làm được!&quot;</p>
+                <p>Trong giọng điệu của Cựu Mộng Yêu Hoàng, lộ ra chút khó tin.&quot;Viên châu này, không chỉ khiến thiên kiếp tạm thời tiêu tán, mà còn luôn giữ lại cơ duyên đột phá trong thể nội của người xung kích.&quot;&quot;Sự quý giá của nó, ngươi đã hiểu rồi chứ?&quot;</p>
+                <p>Tim Giang Phàm đập thình thịch.Thứ này còn quý giá hơn cả sáu viên Hộ Thân Dạ Minh Châu!Cơ duyên đột phá Nguyên Anh, khó đến mức nào, không cần nói cũng hiểu chứ?Giang Phàm hiện tại còn đang lo lắng cho một huyết ba hồn của Cải Mệnh Ngọc Điệp.Hổ Yêu Hoàng kia, một tồn tại cận Hóa Thần cảnh, trấn áp đại lục một thời đại.Trong số những vật để lại, trước sau cũng chỉ có ba phần cơ duyên xung kích Yêu Hoàng.Cuối cùng, chính là treo thưởng của Khâm Thiên Giám, một Cự Nhân Viễn Cổ đổi lấy một cơ duyên đột phá Nguyên Anh.Ngoài ra, hắn một chút tin tức nào về cơ duyên đột phá Nguyên Anh cũng chưa từng nghe được.Thế mà, viên Kỳ Thiên Thần Châu này.Lại có thể giữ tạm cơ duyên khi đột phá sắp thất bại ư?Cái này cũng quá nghịch thiên rồi!Tương đương với việc cho một cơ duyên, có được hai cơ hội!Một lần không được, lập tức tạm dừng.Chờ đợi chuẩn bị đầy đủ, lại đột phá lần nữa.</p>
+                <p>Giang Phàm chợt động lòng.Nhìn về phía Tây Hải Yêu Hoàng, nói: &quot;Tây Hải Yêu Hoàng, vãn bối nguyện dùng một tấm đan phương đổi lấy...&quot;Hắn nhìn sang Tây Hải Thái Tử.Vốn định đổi lấy việc hắn ta thoát khỏi một trận đòn.Nhưng hiện tại... Tây Hải Thái Tử là ai vậy?&quot;Đổi lấy Kỳ Thiên Thần Châu.&quot;</p>
+                <p>Tây Hải Yêu Hoàng cười khổ: &quot;Giang công tử, sao ngươi cũng nghe tin đồn của Cựu Mộng Yêu Hoàng thế?&quot;&quot;Tây Hải ta biết đi đâu mà biến ra thứ này?&quot;</p>
+                <p>Cựu Mộng Yêu Hoàng lại khẽ cười một tiếng: &quot;Tây Hải Yêu Hoàng.&quot;&quot;Đan phương này, chính là đan phương của Hàn Thiền Tịch Diệt Đan đấy.&quot;&quot;Ngươi xác định không muốn ư?&quot;</p>
+                <p>Cái gì?Nụ cười khổ trên mặt Tây Hải Yêu Hoàng chợt tan biến, thay vào đó là sự chấn động.Hắn quét mắt nhìn xung quanh.Dứt khoát đóng cửa đại điện lại, đồng thời thiết lập kết giới thủy mạc ngăn cách.&quot;Đan phương Hàn Thiền Tịch Diệt Đan?&quot;&quot;Cựu Mộng Yêu Hoàng, lời này không thể nói bừa đâu đấy.&quot;&quot;Rơi vào tai Tam Thanh Sơn, không chừng sẽ rước bao nhiêu phiền toái.&quot;&quot;Chuyện của Tam Công Chúa Đông Hải, chính là bài học nhãn tiền đó.&quot;</p>
+                <p>Cựu Mộng Yêu Hoàng nói: &quot;Đan phương này là Đông Hải Yêu Hoàng tự mình kiểm chứng qua rồi.&quot;&quot;Tuyệt đối là thật.&quot;</p>
+                <p>Tây Hải Yêu Hoàng hít một hơi khí lạnh.Lập tức hiểu ra điều này có ý nghĩa gì.Kỳ Thiên Thần Châu nhiều nhất cũng chỉ giúp Hải Yêu tộc thành công sinh ra một vị Hoàng cảnh.Thế nhưng, có thêm một vị Hoàng cảnh, cũng không thể thay đổi vận mệnh trăm năm bị Tam Thanh Sơn ghì chặt cổ của Tây Hải.Cho nên.Ai giá trị cao hơn, còn cần phải nói sao?</p>
+                <p>Hắn ánh mắt rực lửa nhìn Giang Phàm, nói: &quot;Giang công tử, đan phương này ngươi xác nhận là thật chứ?&quot;Giang Phàm gật đầu: &quot;Nếu có giả, Đông Nam Tây Tam Hải, cứ việc đến Thiên Cơ Các tìm ta.&quot;</p>
+                <p>Tây Hải Yêu Hoàng không còn nghi ngờ gì nữa.Trước có Đông Hải Yêu Hoàng kiểm chứng.Sau có Thiên Cơ Các bảo đảm.Hơn nữa Giang Phàm là người thông minh như vậy, nào dám làm trò trên chuyện lớn như vận mệnh Tứ Hải tộc?Nếu thật sự làm giả, hậu quả đó hắn rõ hơn ai hết.Lập tức nói: &quot;Tốt, tốt.&quot;&quot;Đa tạ phúc trạch của Giang tiểu hữu, đã mang đến cho Tây Hải ta một món quà kinh người như vậy.&quot;&quot;Kỳ Thiên Thần Châu này liền tặng ngươi.&quot;</p>
+                <p>Hắn dứt khoát lấy ra từ trong lòng một hộp pha lê mang theo bên mình.Bên trong đặt một viên châu tròn đỏ rực tựa như ngọc phác.Trong đó luân chuyển từng luồng khí xoáy kỳ lạ.Giống như một loại văn tự, lại giống như minh văn, nhìn kỹ lại giống như một loại quỹ tích nào đó.Tóm lại, rất là huyền diệu.</p>
+                <p>Giang Phàm trong lòng kích động.Dứt khoát mặc tả đan phương, đưa cho Tây Hải Yêu Hoàng.Người sau nâng đan phương, lại so sánh thêm một lần với đan phương mà Cựu Mộng Yêu Hoàng đang cầm, bản viết tay của Di Châu Yêu Hoàng.Sau khi xác nhận không sai một ly, liền cất tiếng cười lớn.</p>
+                <p>&quot;Đám rùa con Tam Thanh Sơn kia.&quot;&quot;Tây Hải ta cuối cùng cũng không cần nhìn sắc mặt các ngươi nữa rồi!&quot;</p>
+                <p>Sau đó.Hắn gọi Tây Hải Thái Tử đến trước mặt, đấm vào ngực hắn một cái:&quot;Thằng nhóc ranh!&quot;&quot;Kết giao với Giang công tử, xem như là cống hiến lớn nhất đời này của ngươi cho Tây Hải!&quot;&quot;Chuyện Di Tích Hóa Thần, tha cho ngươi.&quot;&quot;Sau này hãy thường xuyên qua lại với Giang công tử, ít đặt tâm tư vào phụ nữ đi!&quot;</p>
+                <p>Tây Hải Thái Tử như được đại xá, vội vàng chắp tay thi lễ với Giang Phàm: &quot;Giang lão đệ, đại ân cứu mạng, vô dĩ vi báo! Sau này chúng ta hãy thường xuyên qua lại.&quot;</p>
+                <p>Cựu Mộng Yêu Hoàng liếc hắn một cái.Nghe hắn muốn qua lại với Giang Phàm, càng không tình nguyện.Mắt đẹp khẽ chuyển, nói: &quot;Ta nói này, Tây Hải Thái Tử, ngươi có phải nên đổi cách xưng hô không?&quot;&quot;Giang Phàm là em kết nghĩa của ta và Di Châu Yêu Hoàng, ngươi cũng xưng hắn là lão đệ, chẳng phải là ngang hàng với chúng ta sao?&quot;&quot;Vậy cha ngươi, chúng ta phải đổi xưng hô là trưởng bối à?&quot;</p>
+                <p>Tây Hải Yêu Hoàng vừa nghe.Liền vội vàng đá Tây Hải Thái Tử một cước: &quot;Cái đồ không có mắt!&quot;Ngay sau đó, liền chắp tay về phía Giang Phàm nói: &quot;Giang tiểu hữu, nếu không chê.&quot;&quot;Ngươi ta cũng kết làm huynh đệ thì sao?&quot;Mặc dù không biết, vì sao Cựu Mộng, Di Châu hai vị Yêu Hoàng đều nhận Giang Phàm làm em kết nghĩa.Nhưng hai vị này đều là chủ thông minh.Chuyện không có lợi, bọn họ sẽ không làm.Mình tiện thể cũng kết bái, tuyệt đối không sai.</p>
+                <p>Giang Phàm đương nhiên không có vấn đề gì.Lập tức nâng chén nói: &quot;Ta kính...&quot;Nói đến đây, hắn còn chưa biết đạo hiệu của Tây Hải Yêu Hoàng là gì.Ngay cả Cựu Mộng Yêu Hoàng cũng luôn gọi &quot;Tây Hải Yêu Hoàng Tây Hải Yêu Hoàng&quot;.Dường như cũng đang kiêng kỵ việc gọi ra đạo hiệu của hắn.</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_170.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_170.html" class="page-btn">170</a>
+            <a href="page_171.html" class="page-btn current">171</a>
+            <a href="page_172.html" class="page-btn">172</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_172.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>

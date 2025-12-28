@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Đọc truyện online miễn phí - Trang 156">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Samsung Internet specific -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>Thái Hư Chí Tôn - Trang 156</title>
+    
+    <style>
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
+    --chapter-bg: #1c2128;
+    --success: #3fb950;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Samsung Internet specific optimizations */
+@supports (-webkit-overflow-scrolling: touch) {
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-title:hover,
+.site-title:active {
+    color: var(--accent-hover);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.nav-link.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Chapter Styles */
+.chapter {
+    background: var(--chapter-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.chapter-header {
+    background: var(--bg-tertiary);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+}
+
+.chapter-content {
+    padding: 20px;
+}
+
+.chapter-content p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.chapter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 0;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 16px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.page-btn:hover,
+.page-btn:active {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.current {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-color: var(--accent);
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Index Page */
+.chapter-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.chapter-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-item:last-child {
+    border-bottom: none;
+}
+
+.chapter-link {
+    display: block;
+    padding: 12px 0;
+    padding-left: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.chapter-link:hover,
+.chapter-link:active {
+    color: var(--accent);
+}
+
+/* Page Groups - Details/Summary for Samsung Internet */
+.page-group {
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--chapter-bg);
+}
+
+.page-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.page-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.page-group summary::after {
+    content: '▶';
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+}
+
+.page-group[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.page-group summary:hover,
+.page-group summary:active {
+    background: var(--bg-secondary);
+}
+
+.page-group-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.page-group-title .page-num {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.page-group-title .chapter-range {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.page-group .chapter-list {
+    margin: 0;
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+}
+
+.page-group .read-page-btn {
+    display: block;
+    margin: 12px 16px 16px;
+    padding: 12px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    touch-action: manipulation;
+}
+
+.page-group .read-page-btn:active {
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Settings Panel */
+.settings-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-group {
+    margin-bottom: 16px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.settings-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    outline: none;
+}
+
+.settings-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+/* Reading Progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .chapter-content {
+        padding: 16px;
+    }
+    
+    .pagination {
+        gap: 8px;
+    }
+    
+    .page-btn {
+        min-width: 44px;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .chapter {
+        border: none;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="site-title">Thái Hư Chí Tôn</a>
+                <nav class="nav">
+                    <a href="page_155.html" class="nav-link">← Trước</a>
+                    <a href="index.html" class="nav-link">Mục lục</a>
+                    <a href="page_157.html" class="nav-link">Sau →</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        
+        <article class="chapter" id="chapter_776">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 776: Minh Quang Cẩm Tú Y</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Sau một sự việc nhỏ, việc thống kê công huân diễn ra đâu vào đó.</p>
+                <p>Chẳng mấy chốc, Thiên Cơ Các chủ tay cầm hai cuốn trục, một cuốn rất mỏng, cuốn còn lại rất dày. Hắn mở cuốn trục mỏng ra, cất tiếng:&quot;Trước hết, ta sẽ công bố bảng xếp hạng công huân đội ngũ.&quot;</p>
+                <p>Mọi người đều tinh thần phấn chấn. Bảng xếp hạng luôn được chia làm hai phần: một là xếp hạng công huân cá nhân, hai là xếp hạng công huân đội ngũ. Các đội đứng đầu sẽ được hưởng đặc quyền. Thứ nhất, họ có thể chọn vật phẩm trong kho báu đội ngũ; dù không tốt bằng kho báu cá nhân, nhưng đây cũng là phần thưởng bổ sung. Thứ hai, họ có quyền ưu tiên lựa chọn nhiệm vụ. Những nhiệm vụ có điểm công huân cao hoặc kèm theo phần thưởng lớn, các đội đứng đầu sẽ được ưu tiên chọn. Điều này khiến các đội mạnh ngày càng mạnh hơn. Đội Vô Cực đã hưởng lợi không ít từ đó. Lần này, chắc hẳn đội Vô Cực cũng sẽ giành được vị trí số một.</p>
+                <p>Ly Thương Thu chắp tay sau lưng đứng đó, trên mặt lộ vẻ mong đợi:&quot;Bảy người chúng ta ai nấy đều có phát hiện lớn. Tổng công huân cuối cùng cũng đã vượt quá hai ngàn điểm. Đủ để đổi lấy một kiện Minh Quang Cẩm Tú Y trong kho báu đội ngũ.&quot;</p>
+                <p>Sáu thành viên phía sau hắn không ai là không phấn khích.&quot;Minh Quang Cẩm Tú Y là trang phục tiêu chuẩn của đội hạng nhất từ trước đến nay. Không chỉ bản thân y phục đạt cấp độ Chuẩn Linh Khí, có thể cản được công kích dưới Nguyên Anh kỳ, mà còn là biểu tượng của Vương Giả. Chỉ có đội đứng đầu Thiên Cơ Các mới có tư cách mặc nó. Tiếc rằng, kể từ năm mươi năm trước, không còn đội nào có thể mặc được chiếc y phục này nữa. Yêu cầu hai ngàn điểm công huân đội ngũ đã chặn đứng tất cả những người đi sau! Lần này, dưới sự dẫn dắt của Ly sư huynh, chúng ta, Vô Cực, cuối cùng cũng đã làm cho chiếc chiến bào Vương Giả đã bị lãng quên suốt năm mươi năm này, tái xuất giang hồ!&quot;</p>
+                <p>Ly Thương Thu bề ngoài không chút động lòng, nhưng trong lòng lại khó kìm nén sự phấn khích. Hắn không quan tâm chiếc y phục có giá trị bao nhiêu. Điều hắn quan tâm là vinh quang to lớn mà chiếc y phục tượng trưng — một vinh quang đã chinh phục lịch sử, vươn tới đỉnh cao!</p>
+                <p>Thiên Cơ Các chủ cũng bắt đầu đọc danh sách:&quot;Số lượng đội ngũ tham gia lần này là hai mươi.&quot;</p>
+                <p>Các đệ tử lão luyện khẽ ngạc nhiên:&quot;Khóa tân nhân này mạnh thật đấy. Điều kiện thành lập đội ngũ đã nâng lên đến mức đội trưởng phải đạt Kết Đan Bát Tầng. Nhiều đội cũ còn chưa đạt được điều kiện này. Một nhóm tân nhân lại có hai đội đạt chuẩn. Không lẽ điều kiện này vẫn chưa được thực thi?&quot;</p>
+                <p>Trên mặt Ly Thương Thu thoáng hiện vẻ kinh ngạc, nhưng hắn cũng không để tâm. Mấy đội tân nhân cỏn con không thể ảnh hưởng đến hắn. Đội duy nhất có thể cạnh tranh với hắn chỉ có hai: một là đội của Nhậm Cô Hồng, hai là đội của Vương Trùng Linh, một trong Tứ Đại Thần Thoại Thiên Kiêu. Tuy nhiên, đội của Vương Trùng Linh đã nhận nhiệm vụ bí mật đi Nam Hải, nên lần này không vào Địa Hạ Thế Giới. Điều duy nhất hắn cần lo lắng là Nhậm Cô Hồng. Dù thực lực đội của Nhậm Cô Hồng không bằng hắn, nhưng bản thân Nhậm Cô Hồng có nhiều thủ đoạn, hắn thường xuyên có những phát hiện mà người khác không thể sánh bằng trong Địa Hạ Thế Giới.</p>
+                <p>&quot;Ta chỉ công bố ba vị trí đầu tiên. Các thứ hạng tiếp theo, sau khi bảng danh sách được niêm yết, các ngươi hãy tự đối chiếu.&quot; Thiên Cơ Các chủ cắt ngang dòng suy nghĩ của Ly Thương Thu.</p>
+                <p>Không gian trở nên yên tĩnh, mọi người thầm đoán thứ tự xếp hạng trong lòng. Vị trí thứ nhất, không nghi ngờ gì nữa, chính là đội Vô Cực của Ly Thương Thu. Vị trí thứ hai phần lớn sẽ là Nhậm Cô Hồng. Còn vị trí thứ ba, vì Vương Trùng Linh không có mặt, nên khó nói. Dù sao thì, ba vị trí đầu trước đây đều thuộc về ba đội này, rất hiếm khi có đội nào khác chen chân vào được.</p>
+                <p>&quot;Vị trí thứ ba: Vô Cực, hai ngàn một trăm năm mươi điểm công huân.&quot; Thiên Cơ Các chủ bình thản đọc.</p>
+                <p>Nhưng giữa các đệ tử có mặt, lại dấy lên những tiếng kêu kinh hãi như sóng thần:&quot;Hả? Vô Cực hạng ba? Khoan đã? Công huân đội ngũ vượt quá hai ngàn điểm? Nếu ta nhớ không nhầm, mấy chục năm gần đây không có đội nào đạt được mức công huân này phải không? Mà thế mà vẫn chỉ là hạng ba?&quot;</p>
+                <p>Không chỉ các đệ tử chấn động, các chưởng sự không tham gia thống kê công huân cũng đều ngớ người. Họ đều nhìn về phía bốn vị phó Các chủ, ý rằng, có phải có gì đó sai sót rồi không. Hai ngàn điểm công huân, đây là thành quả phá kỷ lục lịch sử suốt năm mươi năm qua. Vậy mà lại xếp thứ ba?</p>
+                <p>Nụ cười trên mặt Ly Thương Thu đông cứng lại. Sự mong đợi trong lòng hắn, như bị dội một chậu nước đá, tắt ngấm ngay tại chỗ.Thứ ba ư? Vô Cực vốn hiếm khi rớt khỏi vị trí thứ nhất, vậy mà khi đang mang theo thành tích lịch sử, lại tụt xuống hạng ba? Hắn cảm thấy có gì đó đã sai. Không thể nào như thế được!</p>
+                <p>Các đội viên phía sau hắn đồng loạt lên tiếng:&quot;Không thể nào! Chắc chắn là bảng xếp hạng có vấn đề! Công huân cao như vậy mà lại xếp thứ ba?&quot;</p>
+                <p>Ly Thương Thu khẽ giơ tay lên, khẽ cắn răng nói: &quot;Đừng nói nữa! Hãy xem phía trước là ai rồi hãy nói!&quot;Hắn cảm thấy không thể tin nổi. Nhậm Cô Hồng vượt qua hắn, hắn có thể hiểu. Nhưng, tại sao lại có một đội ngũ khác, có thể đứng trên Vô Cực?</p>
+                <p>Thiên Cơ Các chủ tiếp tục công bố:&quot;Vị trí thứ hai: Viễn Chinh, bốn ngàn điểm công huân.&quot;</p>
+                <p>Các đệ tử lão luyện vô cùng ngơ ngác. Đây là một đội ngũ chưa từng được nghe đến.Ly Thương Thu nheo mắt nói: &quot;Đội tân nhân? Một đội tân nhân, lần đầu tiên vào Địa Hạ Thế Giới, chỉ ở đó một ngày, mà lại vượt qua chúng ta sao? Công huân lại còn gấp đôi chúng ta?&quot;</p>
+                <p>Các đệ tử lão luyện không còn giữ được bình tĩnh. Họ xôn xao bàn tán. Các chưởng sự cũng cảm thấy khó tin. Điều này thật quá vô lý. Một đội tân nhân, chỉ dùng một ngày, chỉ là lần đầu tiên, mà lại phá kỷ lục năm mươi năm qua? Nói họ không có vấn đề gì, thì thật sự là có quỷ rồi.</p>
+                <p>&quot;Chuyện gì thế này?&quot; Mục Anh, thủ lĩnh đội Viễn Chinh, mắt trợn tròn: &quot;Chúng ta lại chỉ đứng thứ hai?&quot;Sáu đội viên cũng kinh ngạc không kém. Dư Thiên Đô khẽ kêu lên: &quot;Sao có thể chứ? Chúng ta đã... mới có được thành quả kinh người như vậy. Làm sao có thể có người thu hoạch còn cao hơn chúng ta được?&quot;Vì quá đỗi kinh ngạc, hắn suýt nữa đã nói ra chuyện nội bộ. May mà kịp thời ngậm miệng.</p>
+                <p>Mục Anh lắc đầu, không chấp nhận danh sách này, trầm giọng nói:&quot;Chẳng lẽ người Thiên Cơ Các đang đề phòng người đến từ vực ngoại như chúng ta, cố tình sửa đổi công huân, đàn áp chúng ta? Ta không tin, Địa Hạ Thế Giới khô cạn như vậy, mà còn có người có thể đạt được hơn bốn ngàn công huân.&quot;Trong kho báu đội ngũ, có một bảo vật mà họ cực kỳ khao khát. Nếu có được nó, mọi việc sau này sẽ thuận lợi vô cùng. Mục tiêu đầu tiên của chuyến đi này là giành lấy nó. Vì vậy, họ đã tìm mọi cách, bỏ ra không ít cái giá, mới thu hoạch được bốn ngàn công huân. Kết quả... Chỉ đạt được vị trí thứ hai nhỏ nhoi? Nếu đối phương trùng hợp cũng nhắm vào món đồ đó, thì sẽ không còn phần họ nữa.</p>
+                <p>&quot;Vị trí thứ nhất là ai?&quot; Mục Anh siết chặt nắm đấm, lẩm bẩm đầy cam chịu.Ly Thương Thu từ xa nhìn thoáng qua Nhậm Cô Hồng. Ban đầu hắn nghĩ sẽ là đối phương. Ai ngờ, Nhậm Cô Hồng lúc này cũng đầy vẻ kinh ngạc, không hề có sự bình tĩnh của người chắc chắn giành hạng nhất.</p>
+                <p>Vị trí thứ nhất không phải Nhậm Cô Hồng? Ly Thương Thu thật sự ngây người.Không phải hắn, vậy còn có thể là ai? Sẽ không phải lại là một đội tân nhân nữa chứ? Nếu thật như vậy, thì trò đùa này đã đi quá xa rồi.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_777">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 777: Ta có bằng hữu!</h2>
+            </header>
+            <div class="chapter-content">
+                <p>“Hạng nhất!”“Linh, công huân đúng tám ngàn!”Các chủ Thiên Cơ Các mỉm cười, cất giọng công bố danh sách.</p>
+                <p>Theo sau đó là một khoảng lặng dài.Thiên Cơ Các rộng lớn chỉ còn vang vọng tiếng của các chủ, như không ngừng vọng lại.Trừ bốn vị phó các chủ vốn đã kinh ngạc trước đó, những người còn lại, sau giây phút trầm mặc, đều bùng nổ trong sự kinh ngạc đến mức núi lở biển gầm.</p>
+                <p>“Bao nhiêu?”“Tám ngàn công huân?”“Chắc chắn pháp khí kiểm tra không có vấn đề gì chứ?”“Một đội ngũ mới mà được tám ngàn điểm công huân?”Các chấp sự trưởng trợn tròn mắt.Mục Anh và những người khác cũng hít sâu một hơi khí lạnh.Dư Thiên Đô không thể tin nổi, nói: “Không thể nào!”“Tám ngàn, đùa kiểu gì vậy?”“Ta không tin, kết quả này chắc chắn có vấn đề!”</p>
+                <p>Trên thực tế, có rất nhiều người cũng nghĩ như hắn.Bao gồm cả Ly Thương Thu.Lời hắn nói đã thành sự thật.Hạng nhất cũng là một đội ngũ mới.Còn lập nên một chiến tích khiến hắn chỉ biết ngước nhìn.Hắn trầm giọng nói: “Các chủ!”“Đệ tử xin các chủ phúc tra lệnh bài thân phận của đội ngũ này.”“Tám ngàn quả thật quá khoa trương!”“Đệ tử khó mà phục!”Các chủ Thiên Cơ Các liếc nhìn hắn, lại liếc nhìn rất nhiều chấp sự trưởng và đệ tử.Nhàn nhạt nói: “Bốn vị phó các chủ đều đã phúc tra rồi.”“Bản các chủ cũng tự mình chất vấn qua.”“Kết quả không sai.”“Thay vì không phục, chi bằng tự tìm vấn đề của mình đi.”“Một đám lão đệ tử, còn không bằng người ta một tân nhân.”“Truyền ra ngoài, ta còn thấy mất mặt thay các ngươi.”</p>
+                <p>Giang Phàm đứng trong đám người, khóe miệng giật giật.Ngươi giáo huấn đệ tử thì cứ giáo huấn đi.Kéo ta vào làm gì vậy?Không phải là kéo thù hận cho ta sao?Chỉ một câu “lão đệ tử không bằng tân nhân nhà người ta” này, trời biết có bao nhiêu người âm thầm ghi hận hắn.Quả nhiên.Vừa dứt lời, Giang Phàm liền nghe thấy những tiếng xì xào bàn tán.“Thủ lĩnh của Linh là ai vậy?”“Trông có vẻ oai phong lắm đấy!”“Chỉ nghe nói lão nhân cho tân nhân nếm mùi, hôm nay lại là trời đất đảo lộn rồi.”“Người còn chưa thấy, đã cho chúng ta đám lão đệ tử một cái bạt tai vang dội.”“Ta phải gặp mặt hắn mới được, cái bạt tai này không thể ăn không.”“Tiểu sư đệ, ngươi cũng là tân đệ tử phải không?”“Có quen thủ lĩnh của Linh không?”Giang Phàm thành thật chỉ tay về phía Dư Thiên Đô cách đó không xa:“Đó chính là hắn.”“Ta cũng nhìn hắn không thuận mắt, các ngươi thay ta đánh hắn thêm vài quyền.”Đương nhiên.Những lão đệ tử có chí khí thực sự thì lại bị kích thích.Ai nấy đều nghẹn một hơi, quyết tâm phải giành lại thể diện trong lần khám phá thế giới ngầm tiếp theo.</p>
+                <p>Dưới bóng cây.Chấp sự trưởng Vân Ương tặc lưỡi khen ngợi: “Nếu ta không đoán sai, thủ lĩnh của Linh chính là Phàm Cương phải không?”“Hắn ta thật sự đã khám phá xong không gian bí ẩn đầy âm khí kia rồi.”“Không hổ là người có tên trên danh sách Kim Cương Độ Hóa Pháp Ấn.”“Thật sự lợi hại.”Đột nhiên.Nàng phát hiện Thương Thời Thu không nói nên lời.“Ngươi làm sao vậy?”Thương Thời Thu lúc này mắt đã đờ đẫn.Người khác không rõ, nhưng nàng sao lại không biết Linh là ai tạo ra?Chính vì đồng đội của Giang Phàm quá nhiều, nàng đã từ chối Giang Phàm gia nhập đội ngũ của mình.Nhưng ai ngờ, đội ngũ nhỏ mà Giang Phàm tự mình thành lập, lại giành được tám ngàn công huân?“Sư... Sư tôn, đệ tử muốn thỉnh giáo người một việc.”“Đệ tử có một người bạn.”“Linh vốn có thể gia nhập đội ngũ của nàng ấy, nhưng nàng ấy đã từ chối. Nếu người là sư tôn của nàng ấy, người sẽ xử phạt nàng ấy thế nào?”Chấp sự trưởng Vân Ương nghiêm túc trả lời: “Ta đề nghị bạn của ngươi nên tự mua một cái hũ cốt.”“Bởi vì, nếu là ta, ta sẽ trước tiên đoạn tuyệt quan hệ sư đồ với nàng ta.”“Sau đó đánh nàng ta đến chết.”“Cuối cùng đốt thành tro.”Ngừng một chút, chấp sự trưởng Vân Ương lại bổ sung:“Đương nhiên, vi sư là người nhân từ nhất trong số các chấp sự trưởng.”“Ta đốt nàng ta thành tro là đủ rồi, đổi lại các chấp sự trưởng khác, chắc sẽ rắc tro cốt đi.”“Cho nên, vị bằng hữu của ngươi cũng không cần mua hũ cốt đâu.”“Cứ chờ chết là được.”</p>
+                <p>Lạnh quá.Thương Thời Thu chỉ cảm thấy mình như rơi vào hố băng giữa mùa đông giá rét.Lạnh đến mức toàn thân cứng đờ.Chấp sự trưởng Vân Ương kỳ lạ nhìn nàng: “Ngươi sẽ không nói, người bạn này là ngươi chứ?”Thương Thời Thu run rẩy, vội vàng lắc đầu như trống bỏi:“Không, đương nhiên không phải.”“Đệ tử thật sự có một người bạn như vậy.”Chấp sự trưởng Vân Ương lộ ra vẻ đồng cảm: “Vậy thì vị bằng hữu của ngươi thảm rồi.”“Thật không biết là chấp sự trưởng hay phó các chủ xui xẻo nào, lại chiêu mộ phải một đệ tử hãm hại như vậy.”“Đến thủ lĩnh của Linh cũng có thể từ chối ngoài cửa.”“Chậc chậc chậc, ta còn thấy thay sư tôn của nàng ta thổ huyết đấy.”Vẻ mặt Thương Thời Thu càng thêm khổ sở.Ai sẽ cứu nàng đây!</p>
+                <p>Đáng tiếc, không ai cứu nàng.Trái lại.Các chủ Thiên Cơ Các lại lấy ra thứ muốn lấy mạng nàng!Hắn mở ra danh sách công huân cá nhân dày cộp.Nói: “Ta chỉ đọc mười thứ hạng đầu.”“Các thứ hạng sau, các ngươi lát nữa tự mình tìm xem.”“Hạng mười, Nghiêm Thu Quy, năm trăm bảy mươi mốt điểm.”“Hạng chín, Triệu Điểm Thương, năm trăm bảy mươi mốt điểm.”“Hạng tám, Hùng Hân Nghiên, năm trăm bảy mươi mốt điểm.”“Hạng bảy, Tưởng Bá Hoa, năm trăm bảy mươi mốt điểm.”“Hạng sáu, Dư Thiên Đô, năm trăm bảy mươi mốt điểm.”“Hạng năm, Mục Anh, năm trăm bảy mươi mốt điểm.”Năm vị trí cuối cùng, đều bị đội Viễn Chinh bao trọn.Giang Phàm lộ vẻ kinh ngạc.“Bọn họ làm sao mà tất cả công huân điểm lại hoàn toàn giống nhau được?”“Chẳng lẽ khu vực bọn họ khai phá, thật sự chỉ là khai phá vùng đất chưa biết, mà không có một chút thu hoạch nào sao?”“Hạng tư, Diệp Bán Hạ, chín trăm điểm.”Các chủ Thiên Cơ Các tiếp tục đọc.Giang Phàm thầm kinh ngạc.Diệp Bán Hạ đơn độc hành động, không có bất kỳ đội ngũ nào, nhưng số điểm công huân nàng đạt được, hoàn toàn không thua kém hầu hết các đội ngũ.Thực lực của nàng chắc chắn cực kỳ mạnh mẽ.Khi trước là đánh nàng một đòn bất ngờ.Nếu giao thủ trực diện, nữ nhân này tất sẽ là một đối thủ vô cùng khó nhằn.</p>
+                <p>“Hạng ba, Vu Mạn Nguyệt, một ngàn công huân.”“Hạng hai, Nhậm Cô Hồng, một ngàn mười công huân.”Người sau nhiều hơn người trước một hạt sen của Long Tâm Huyết Liên.Một hạt chỉ có mười điểm công huân.Có thể thấy, bảo vật thu hoạch được, quy đổi thành công huân quả thực rất ít.Cũng khó trách bảo vật của Giang Phàm đạt tới bốn ngàn công huân lại khiến bọn họ chấn kinh lớn đến vậy.Hạng nhất vẫn chưa được công bố.Nhưng hắn là ai, đáp án đã hiện rõ mồn một.Đó chính là thủ lĩnh của Linh!Các chấp sự trưởng đều háo hức mong chờ, rất muốn biết tên cụ thể của tiểu tử này.Trong số tân nhân, chỉ còn lại Giang Phàm, Lương Phi Yên và mấy nữ đệ tử.Không biết cụ thể là ai trong số bọn họ.Chỉ có bốn vị phó các chủ là hiểu rõ là ai.Bọn họ đồng loạt nhìn về phía chấp sự trưởng Vân Ương.Nghĩ đến lát nữa, Vân Ương sẽ mặt mày hớn hở giới thiệu đây là đệ tử của nàng ta.Trong lòng liền khó chịu.Du Vân Tử khinh bỉ phun một tiếng:“Số chó má!”Cố Hoa Khê hừ nhẹ:“Không phải là mồ mả tổ tiên bốc khói đậm sao?”Diệp Thương Uyên căng mặt:“Kiếp sau vận khí đều dùng hết rồi sao?”Trần Chính Đạo liếc xéo:“Mắt không thấy tâm không phiền!”Chấp sự trưởng Vân Ương dường như có cảm giác.Nàng nghi hoặc nói: “Lạ thật.”“Phó các chủ Trần sao lại không vui thế?”“Nếu ta có một đệ tử như vậy, sớm đã không biết nhảy cao bao nhiêu trượng rồi.”“Hắn còn vẻ mặt như ai đó nợ tiền hắn vậy.”Thương Thời Thu nhìn thấy các chủ sắp công bố danh sách.Sự thật Giang Phàm chính là Phàm Cương, sư tôn nàng sắp biết rồi.Vốn dĩ là để trêu sư tôn.Giờ đây, lại là trêu cái mạng của nàng.Đợi khi sư tôn biết, nàng đã từ chối Giang Phàm, còn Giang Phàm lại mang theo đệ tử nhà người khác bay xa.Thì cứ chờ bị đốt thành tro đi!Nàng chỉ có thể tranh thủ trước khi danh sách được công bố, thành thật báo cáo.“Sư tôn, đệ tử có một tin tốt và một tin xấu.”“Người muốn nghe tin nào trước?”Thương Thời Thu cẩn thận từng li từng tí nói.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_778">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 778: Hải Yêu Tộc Đến Thăm</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Vân Ương nghi hoặc trừng nàng một cái:“Lại giở trò gì nữa đây?”</p>
+                <p>“Yên tĩnh một chút, nghe Các Chủ công bố danh sách.”</p>
+                <p>Thương Thời Thu vội vàng.Bây giờ thú thật còn có thể được khoan hồng.Đợi Sư Tôn tự mình nhận ra thì vạn sự hưu hỷ.</p>
+                <p>“Sư Tôn, người mau chọn một cái đi.”</p>
+                <p>Vân Ương nhíu mày: “Nghe tin tốt trước đi.”“Tin tốt của ngươi chưa chắc đã là tốt.”“Nhưng tin xấu nhất định là xấu. Ta bây giờ tâm trạng không tốt, không chịu được kích thích.”“Trước tiên cứ nghe tin tốt để đỡ sốc đã.”</p>
+                <p>Thương Thời Thu vội nói: “Sư Tôn, người có một đệ tử mới tên Giang Phàm, còn nhớ không?”</p>
+                <p>Vân Ương lườm nàng một cái: “Vô nghĩa!”“Không phải ngươi thay ta chiêu mộ sao?”“Đúng rồi, hắn đâu rồi? Hắn đáng lẽ phải lên rồi, tại sao không đến gặp ta là Sư Tôn?”</p>
+                <p>Thương Thời Thu hai tay nhỏ nhắn đan vào nhau căng thẳng, ánh mắt lảng tránh nói:“Người và hắn đã gặp rồi.”</p>
+                <p>Vân Ương nghi hoặc: “Khi nào?”“Tại sao ta lại không có chút ấn tượng nào?”</p>
+                <p>Thương Thời Thu càng thêm chột dạ: “Sư Tôn, người hãy đọc ngược tên Phạm Cương một lần đi.”</p>
+                <p>Vân Ương không chút nghĩ ngợi nói: “Phạm Cương, Cương Phạm… Giang Phàm… Giang Phàm?”Nàng trừng lớn đôi mắt, một tay tóm lấy cánh tay Thương Thời Thu.Như lắc cái nia, nàng ta ra sức lay mạnh: “Ngươi nói gì?”“Phạm Cương chính là Giang Phàm?”“Hắn chính là đệ tử mới của ta?”</p>
+                <p>Thương Thời Thu bị lắc đến hồn lìa khỏi xác, vội vàng nói: “Vâng, đúng vậy.”“Đệ tử muốn cho người một bất ngờ.”“Sư Tôn, người có vui không?”</p>
+                <p>Vân Ương sao có thể không vui?Nàng ta kinh ngạc reo lên: “Trời ơi! Ta không mơ chứ?”“Giang Phàm là đệ tử mới của ta!”“Chuyện này quá thần kỳ!”</p>
+                <p>“Danh sách độ hóa của Pháp Ấn Kim Cương, lại có thể bỏ sót một người cho ta làm đệ tử?”“Vận may ngập trời, cuối cùng cũng đến lượt ta rồi.”“Hắn lần đầu tiên vào Địa Hạ Thế Giới, đã thu hoạch được tám ngàn công huân!”“Các đệ tử khác của ta, cũng có thể theo hắn cùng nhau… cùng nhau…!”</p>
+                <p>“Khoan đã!”Nụ cười trên mặt nàng đột nhiên cứng lại.Nàng cứng đờ người quay đầu lại, chầm chậm nhìn về phía Thương Thời Thu.</p>
+                <p>“Ngươi vừa nói, bản thân có một người bạn, đã từ chối Phạm Cương, khiến hắn phải thành lập đội ngũ mới, mang theo đệ tử nhà người khác bay lên?”</p>
+                <p>Thương Thời Thu rụt cổ lại, lén lút lùi về sau.Nàng cười ngượng nghịu nói: “Đây chính là tin xấu mà đệ tử muốn nói.”“Người bạn đó, thật ra là chính đệ tử.”“Sư Tôn, người sẽ không giận đâu nhỉ?”</p>
+                <p>Vân Ương lắc đầu.“Ta không giận.”“Ta chỉ muốn đánh chết ngươi!”Xoẹt một tiếng, nàng ngọc diện hàm nộ lao tới.</p>
+                <p>“Ngươi cái nghiệt đồ này!”“Ta ở Địa Hạ Thế Giới giúp ngươi lo liệu hậu quả.”“Ngươi lại cắt đứt đường của ta!”“Tám ngàn công huân, đồng đội có tám ngàn công huân đó, ngươi lại để đệ tử nhà người khác hưởng lợi!”“Ta đánh chết ngươi!”</p>
+                <p>Thương Thời Thu ôm đầu, vừa chạy vừa hét ầm ĩ:“Giết người rồi!”“Mưu sát đồ đệ ruột rồi!”“Sư Tôn của ta điên rồi, mau cản nàng lại!”</p>
+                <p>Các chưởng sự ai nấy đều vẻ mặt mờ mịt.Bốn vị Phó Các Chủ thì đồng loạt lộ ra vẻ mặt thoải mái.</p>
+                <p>Thiên Cơ Các Chủ nghi hoặc nhìn hai người sư đồ bọn họ một cái.Rồi tiếp tục đọc:“Hạng nhất Giang Phàm, tám ngàn công huân.”Hắn mỉm cười, nhìn về phía Giang Phàm giữa đám đông, nói:“Giang Phàm vẫn còn là một tân nhân, lần đầu tiên đi Địa Hạ Thế Giới mà đã đạt được thành tích như vậy.”“Các ngươi hãy nhìn lại bản thân, không cảm thấy xấu hổ sao…”</p>
+                <p>Giang Phàm nhướng mày.Ông còn nói nữa sao?Ta thật sự cảm ơn ông đấy.Không kéo đầy thù hận cho ta, ông sẽ không bỏ qua sao?</p>
+                <p>Hắn vội vàng ngắt lời: “Đa tạ Các Chủ đã khen ngợi.”“Dám hỏi Các Chủ, đệ tử bây giờ có thể đến Bảo Khố Điện để đổi đồ không?”</p>
+                <p>Thiên Cơ Các Chủ khẽ mỉm cười, ngừng lời.Nói: “Cầm lấy lệnh bài thân phận, đến Bảo Khố Điện là được.”“Được rồi, mọi người hãy xem công huân của mình đi.”“Xác nhận không có sai sót, thì có thể đến Bảo Khố Điện.”“Giải tán đi.”</p>
+                <p>Chữ cuối cùng của hắn còn chưa dứt lời.Giang Phàm đã chuồn mất rồi.Nhưng vừa đi được vài bước, đã bị một bóng người cường tráng mặc hồng bào chặn đường.</p>
+                <p>Sáu bóng hồng bào khác, tạo thành thế bán nguyệt vây quanh Giang Phàm.“Giang sư đệ, lập được công lao hiển hách như vậy, không muốn giao lưu kinh nghiệm với các sư huynh sao?”</p>
+                <p>Ly Thương Thu miệng thì nói là giao lưu.Nhưng trên mặt lại âm trầm vô cùng.Danh tiếng hôm nay, xem như đã bị Giang Phàm một mình chiếm hết.</p>
+                <p>Giang Phàm bất đắc dĩ thở dài một tiếng, nhưng cũng chẳng có gì phải sợ, nói:“Chọn một nơi nào đó đi.”“Chúng ta không thể động thủ ở đây, đúng không?”Với những kẻ tự cho mình là đúng này, nói lý lẽ không hiệu quả bằng nắm đấm.</p>
+                <p>Ly Thương Thu lạnh nhạt nói: “Ngươi hiểu lầm rồi.”“Ta đến để nói cho ngươi biết, trong Bảo Khố Đội Ngũ có một loại trang phục tên là Minh Quang Cẩm Tú Y.”“Ta không muốn ngươi lấy nó đi.”“Hiểu không?”</p>
+                <p>Giang Phàm khẽ cười một tiếng: “Thì ra còn có Bảo Khố Đội Ngũ sao?”“Bên trong còn có thứ gọi là Minh Quang Cẩm Tú Y này nữa?”“Ly sư huynh để tâm như vậy, chắc hẳn là đồ tốt rồi.”“Đa tạ Ly sư huynh đã báo cho.”“Ta sẽ lấy nó.”</p>
+                <p>Sắc mặt Ly Thương Thu trầm xuống: “Ngươi đang tự chuốc lấy phiền phức!”Giang Phàm lạnh nhạt nói: “Đi, đổi chỗ khác.”“Ta sẽ dạy ngươi, nên nói chuyện với ta như thế nào!”</p>
+                <p>Đằng xa.Du Vân Tử nhíu mày, hắn đi đến bên cạnh Thiên Cơ Các Chủ, nói:“Các Chủ, người cố ý để Giang Phàm có thêm kẻ thù, có ý đồ gì sao?”Các Chủ hành sự nói năng, xưa nay đều rất có phép tắc.Vừa rồi lại liên tiếp ngầm tạo thù cho Giang Phàm.Điều này tuyệt đối không phải hắn lỡ lời.Mà là cố ý.</p>
+                <p>Thiên Cơ Các Chủ thản nhiên nói: “Có người đã nhờ ta, hãy mài giũa Giang Phàm nhiều hơn.”“Nói hắn là nhân tài có thể đào tạo.”“Tạo cho hắn chút kẻ thù, hắn sẽ trưởng thành nhanh hơn một chút.”</p>
+                <p>Du Vân Tử kinh ngạc.Người này là ai vậy?Các Chủ lại nể mặt đến thế, thật không tiếc làm kẻ xấu, kéo thù hận cho Giang Phàm.</p>
+                <p>Thiên Cơ Các Chủ cười nói: “Cùng xem đi.”“Ta cũng tò mò, thực lực chân chính của hắn…”Bỗng nhiên.Hắn như có cảm ứng, nhìn ra bên ngoài Thiên Cơ Các.Sắc mặt hắn hơi trầm xuống.“E rằng phải đợi lần sau rồi.”“Có khách quan trọng đến rồi.”</p>
+                <p>Một trận gió thổi tới.Mùi tanh thoang thoảng đặc trưng của biển, theo đó mà bay vào Thiên Cơ Các.Ngay sau đó.Bảy bóng người dẫn đầu tiến vào Thiên Cơ Các.Có người nhận ra, chính là đội ngũ của Vương Trùng Linh đã đi Nam Hải chấp hành nhiệm vụ.Vương Trùng Linh dung mạo không tồi, dáng người cao ráo, khí chất ôn hòa.Nàng mặt đầy vẻ hổ thẹn, đi tới trước mặt Thiên Cơ Các Chủ.</p>
+                <p>“Các Chủ, đệ tử vô năng.”“Nhiệm vụ mời Nam Hải Yêu Hoàng xuất thủ đã thất bại.”</p>
+                <p>Địa Ngục Hoang Thú đã phá vỡ phong ấn xuất quan được mười ngày rồi.Thông tin tình báo từ Yêu tộc truyền tới, tình hình vô cùng nguy cấp.Đã có vài bộ lạc Yêu tộc, gặp phải tai họa diệt vong.Và Địa Ngục Hoang Thú vẫn đang tiến về phía Nam, trực tiếp uy hiếp Đại Địa Cửu Tông của Nhân tộc.Điều phiền phức là.Sứ giả mà Thương Khung Yêu Hoàng phái đi Bắc Hải, Tây Hải đều trở về tay trắng.Giờ đây, sứ giả mà chính mình phái đi Nam Hải cũng thất bại trở về.Nhưng điều này không khó hiểu.Trước khi đá chưa nện vào chân mình, Hải Yêu tộc sẽ không cảm thấy đau.Bốn vị Hải Yêu Hoàng, tự nhiên không muốn mạo hiểm đối phó Địa Ngục Hoang Thú.</p>
+                <p>Thiên Cơ Các Chủ nhìn ra ngoài điện, hỏi: “Vậy những người đi cùng ngươi là ai?”</p>
+                <p>“Là Nam Hải Công Chúa.”“Và khuê mật của nàng, Đông Hải Tam Công Chúa.”</p>
+                <p>Giang Phàm từ xa nghe thấy năm chữ “Đông Hải Tam Công Chúa.”Sắc mặt hắn tại chỗ liền xanh lè.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_779">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 779: Hải Yêu Hoàng Giá Lâm</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Công chúa nghìn cân đó, Giang Phàm ta nhớ rất rõ.</p>
+                <p>Hắn im lặng lùi về phía sau mọi người, để tránh bị đối phương nhìn thấy.</p>
+                <p>Các đệ tử Thiên Cơ Các hiếu kỳ nhìn về phía cửa điện. Tuy Thiên Cơ Các nằm sát cạnh Nam Hải, nhưng hiếm khi có sự giao lưu với yêu tộc Nam Hải. Ít nhất một trăm năm qua, yêu tộc Nam Hải chưa từng đặt chân lên đại lục. Thế hệ đệ tử Thiên Cơ Các hiện tại chưa từng thấy yêu tộc biển bao giờ.</p>
+                <p>Mùi tanh của biển càng lúc càng nồng. Hai nhóm yêu tộc biển có hình dáng khác biệt, lần lượt tiến vào.</p>
+                <p>Phía trước là yêu tộc Nam Hải. Thể hình của họ tương đối thấp hơn nhân tộc nửa cái đầu, ánh mắt sắc bén, trông nhỏ nhắn nhưng nhanh nhẹn. Bọn họ khiêng một chiếc kiệu được trang trí san hô, mã não. Trong kiệu ngồi một vị mỹ nhân trẻ tuổi dáng người yểu điệu, trên trán phủ một vảy cá nhỏ lấp lánh sắc màu. Nàng khoảng hai mươi tuổi, ẩn ẩn toát ra khí tức Kết Đan Cảnh tầng chín viên mãn. Chính là Công chúa Nam Hải.</p>
+                <p>Chờ kiệu dừng lại, người hầu vén rèm kiệu, nàng khom lưng chậm rãi bước ra. Một gương mặt tinh xảo tựa điêu khắc, da thịt trắng mịn màng như có thể vỡ ra khi chạm nhẹ, đã gây ra không ít tiếng trầm trồ kinh ngạc. Trong ấn tượng của mọi người, yêu tộc biển đa số là những hình thù kỳ dị. Có thể có chút hình dáng con người đã là tốt lắm rồi. Không ngờ vị Công chúa Nam Hải này lại xinh đẹp đến vậy.</p>
+                <p>Lúc này, Lương Phi Yên chen đến, nháy mắt ra hiệu nói: “Giang sư đệ.”</p>
+                <p>“Ngươi nói ta có cơ hội nào làm phò mã yêu tộc biển không?”</p>
+                <p>Giang Phàm liếc hắn một cái, nói không nên lời: “Vị Công chúa Nam Hải này, hy vọng của ngươi không lớn đâu.”</p>
+                <p>“Còn vị Đông Hải Tam công chúa kia…”</p>
+                <p>“Sống không tốt sao? Cần gì phải nghĩ quẩn?”</p>
+                <p>Lương Phi Yên nghi hoặc. Nghe có vẻ, Đông Hải Tam công chúa hình như rất tệ hả? Hắn hiếu kỳ nhìn ngó nhóm yêu tộc phía sau.</p>
+                <p>Thế nhưng, hắn thấy một nhóm yêu tộc Đông Hải thể trạng rõ ràng cao lớn và phì nhiêu, đang khiêng một chiếc vỏ sò khổng lồ. Bên trong nằm nghiêng một vị mỹ nhân thân hình yểu điệu, đôi chân ngọc thon dài, dáng vẻ thướt tha. Nàng mặc một chiếc váy dài màu hồng phấn, mái tóc đen nhánh buông xõa tự nhiên, bên tai cài một chiếc kẹp tóc san hô. Làn da nàng trắng nõn như ngọc mỡ cừu. Dung nhan mỹ lệ đến choáng ngợp, dưới ánh mặt trời rạng rỡ tỏa sáng.</p>
+                <p>Lương Phi Yên nhìn đến ngây người: “Giang sư đệ, đây… đây Đông Hải Tam công chúa… là một đại mỹ nhân ư?”</p>
+                <p>“Ngươi sợ ta huynh đệ ta tốt số nên mới nói nàng ta tệ hại phải không?”</p>
+                <p>Không nhận được hồi đáp từ Giang Phàm. Hắn quay đầu nhìn lại, phát hiện Giang Phàm đang cau chặt mày, chăm chú nhìn vị Đông Hải Tam công chúa kia.</p>
+                <p>“Ngươi sao vậy?” Lương Phi Yên nghi hoặc nói.</p>
+                <p>Giang Phàm trầm giọng nói: “Tránh xa nàng ta ra.”</p>
+                <p>“Vị Đông Hải Tam công chúa này… không đúng.”</p>
+                <p>Đông Hải Tam công chúa thật sự, dù có hóa thành tro hắn cũng nhận ra. Dù sao thì, một núi thịt lớn đến thế, đốt thành cốt cũng phải nhiều hơn người thường một đống. Sao có thể là tuyệt thế mỹ nhân tiên khí phiêu phiêu trước mắt này được?</p>
+                <p>“Công chúa Nam Hải Tuyết Trân, phụng mệnh Nam Hải Yêu Hoàng, bái kiến Thiên Cơ Các chủ.”</p>
+                <p>“Đông Hải Tam công chúa San Hô, phụng mệnh Đông Hải Yêu Hoàng, bái kiến Thiên Cơ Các chủ.”</p>
+                <p>Thiên Cơ Các chủ thầm kinh ngạc trong lòng. Nam Hải, Đông Hải Yêu Hoàng đã từ chối ra tay chống lại Địa Ngục Hoang Thú, vậy vì sao lại phái các công chúa hoàng tộc của mình đến thăm viếng? Ánh mắt ông khẽ lóe lên, ông niềm nở chào đón: “Hai vị quý khách yêu tộc biển, không cần đa lễ.”</p>
+                <p>“Mời đi theo ta đến đại điện tiếp khách.”</p>
+                <p>Thế nhưng, Đông Hải Tam công chúa chợt nhìn quanh các đệ tử Thiên Cơ Các, nói đầy ẩn ý: “Các chủ, ta muốn hỏi ngài về một người?”</p>
+                <p>Ơ –</p>
+                <p>Thiên Cơ Các chủ khẽ nhướng mày. Câu nói này, ông quá quen rồi. Trước có Cố Hinh Nhi, sau có Pháp Ấn Kim Cương. Giờ lại xuất hiện thêm một Đông Hải Tam công chúa. Thiên Cơ Các từ bao giờ đã trở thành nơi tìm người rồi?</p>
+                <p>Ông dò hỏi: “Ngươi muốn tìm là ai?”</p>
+                <p>Đôi môi đỏ mọng quyến rũ của Đông Hải Tam công chúa rõ ràng từng chữ: “Giang Phàm!”</p>
+                <p>Quả nhiên là hắn! Khóe mắt Thiên Cơ Các chủ giật giật. Giang Phàm rốt cuộc đã làm những gì khi đi một vòng yêu tộc vậy? Giang Sơn Nhất Phẩm Lâu tìm hắn, Bạch Mã Tự cũng tìm hắn, giờ ngay cả yêu tộc Đông Hải, nơi chẳng liên quan gì cũng tìm!</p>
+                <p>“Giang Phàm có ở đây không?” Thiên Cơ Các chủ nhìn quanh nói.</p>
+                <p>Phía sau đám đông, một giọng mũi nặng nề vọng tới.</p>
+                <p>“Giang Phàm không có ở đây.”</p>
+                <p>Thế nhưng, Giang Phàm vừa rồi đã nổi bật đến mức không ai không biết, không ai không hay. Hắn làm sao mà trốn được. Đám đông lần lượt dạt ra. Lộ ra Giang Phàm đang ngồi xổm dưới đất, bóp mũi trả lời.</p>
+                <p>Thiên Cơ Các chủ ngây người một lát, rồi khẽ quở trách: “Không được vô lễ!”</p>
+                <p>“Còn không mau qua đây?”</p>
+                <p>Giang Phàm đành cứng đầu bước tới. Hắn chắp tay nói: “Bái kiến Công chúa Nam Hải.”</p>
+                <p>“Bái kiến…” Hắn nhìn chằm chằm vào vị mỹ nhân cao ráo, dung nhan tuyệt sắc, xiêm y hồng phấn phiêu dật trước mắt. Trong mắt hiện rõ vẻ cảnh giác khác thường.</p>
+                <p>Suy đi nghĩ lại, hắn vẫn quyết định nói cho Thiên Cơ Các chủ. Thuở trước là Các chủ đã cứu hắn từ yêu tộc về. Lại sắp xếp ổn thỏa cho Hứa U Nhiên, Liễu Khuynh Tiên và Trần Tư Linh. Nay biết rõ Đông Hải Tam công chúa là giả mạo, có thể bất lợi cho Thiên Cơ Các chủ, lẽ nào lại có thể giấu giếm mà không bẩm báo?</p>
+                <p>“Các chủ.” Giang Phàm ghé sát đến trước mặt Thiên Cơ Các chủ, hạ giọng nói: “Cẩn thận.”</p>
+                <p>“Đông Hải Tam công chúa là giả mạo.”</p>
+                <p>“Ta từng gặp bản thân nàng ta rồi, tuyệt đối không phải vị trước mắt này.”</p>
+                <p>Cái gì? Thiên Cơ Các chủ lòng chợt rùng mình. Lập tức đôi mắt ông ánh lên những tia chớp nhỏ, nhìn chằm chằm vào Đông Hải Tam công chúa. Thế nhưng, còn chưa kịp mở miệng hỏi, Đông Hải Tam công chúa đã bất động thanh sắc mở lòng bàn tay. Một vảy cá màu vàng nhạt chợt lóe lên trong lòng bàn tay nàng.</p>
+                <p>Đồng tử Thiên Cơ Các chủ co rút lại. Vảy vàng trong lòng bàn tay, đây là đặc điểm độc nhất của Đông Hải Di Châu Yêu Hoàng. Nếu nàng ta là Đông Hải Yêu Hoàng, vậy vị Công chúa Nam Hải kia là…</p>
+                <p>Người sau nháy mắt với Thiên Cơ Các chủ, trong mắt hiện lên đôi đồng tử xanh lục. Chính là Phỉ Thúy Linh Mâu độc nhất của Nam Hải Yêu Hoàng!</p>
+                <p>Ông lập tức hiểu ra. Đông Hải, Nam Hải, không phải là không muốn đến đại lục. Mà là vì một số nguyên nhân nào đó, không dám công khai đến. Vì vậy, mỗi bên mượn danh nghĩa con gái mình, âm thầm趕 đến!</p>
+                <p>Ông vui mừng khôn xiết, liền chắp tay nói: “Đông Hải Yêu…”</p>
+                <p>Nhanh chóng, ông phản ứng lại. Đổi lời nói: “Đông Hải yêu tộc công chúa, Nam Hải yêu tộc công chúa.”</p>
+                <p>“Nơi đây không phải chỗ nói chuyện, mời hai vị theo ta đến đại điện.”</p>
+                <p>Di Châu Yêu Hoàng liếc nhìn Giang Phàm một cái, nói: “Cũng gọi Giang công tử đi cùng đi.”</p>
+                <p>“Ta có chuyện muốn hỏi hắn.”</p>
+                <p>Thiên Cơ Các chủ thầm kinh ngạc. Giang Phàm rốt cuộc đã làm gì, mà lại được Đông Hải Yêu Hoàng nhớ kỹ như vậy. Nữ nhân này, cai quản Đông Hải rộng lớn, vốn dĩ luôn rất kiêu ngạo.</p>
+                <p>Ông gật đầu nói: “Giang Phàm, theo ta.”</p>
+                <p>Ơ – Chuyện gì thế này? Giang Phàm hơi ngơ ngác. Đã nói Đông Hải Tam công chúa là giả rồi, Thiên Cơ Các chủ không những không bận tâm, còn nhiệt tình chào đón họ? Chẳng lẽ, Thiên Cơ Các chủ đã biết thân phận thật của nàng ta? Thấy nàng ta không có gì nguy hại?</p>
+                <p>Nghĩ một lát, hắn khẽ lắc đầu. Mặc kệ vậy. Dù sao cũng đã nói sự thật cho Các chủ rồi. Nếu ông ấy đã giả vờ như không có gì xảy ra, chắc chắn có suy tính của riêng mình.</p>
+                <p>Chỉ là. Vị Tam công chúa giả mạo này tìm mình làm gì?</p>
+                <p>Nghĩ đến đây là Thiên Cơ Các. Các chủ lại đang ở trước mặt. Lòng hắn đang treo lơ lửng cũng âm thầm buông xuống. Chẳng lẽ Tam công chúa giả kia, còn dám làm gì hắn ư? Nếu thực sự dám đưa ra yêu cầu quá đáng, Các chủ một tát là có thể đánh bay nàng ta rồi.</p>
+            </div>
+        </article>
+    
+
+        <article class="chapter" id="chapter_780">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 780: Khảo sát đến từ Trượng Mẫu Nương</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Trong đại điện, Thiên Cơ Các chủ cho tả hữu lui ra, chỉ còn lại bốn người bọn họ.</p>
+                <p>“Hai vị công chúa, đường sá xa xôi, vất vả rồi.”</p>
+                <p>“Giang Phàm, dâng trà.”</p>
+                <p>Giang Phàm gật đầu, trước hết dâng một tách trà cho Nam Hải công chúa. Chẳng rõ có phải ảo giác hay không, hắn cảm thấy ánh mắt của Nam Hải công chúa khi nhìn hắn, luôn mang theo ý vị đánh giá, ẩn hiện còn có chút ý cười như không.</p>
+                <p>Còn lúc dâng trà đến trước mặt Đông Hải Tam công chúa, ánh mắt kia lại hoàn toàn quét nhìn hắn từ trên xuống dưới. Nàng khẽ gật đầu nói: “Dung mạo tuấn lãng, ánh mắt có thần, quả đúng là một nhân tài xuất chúng. Chỉ là tu vi còn kém một chút, nếu tăng thêm hai tầng nữa thì hoàn hảo rồi.”</p>
+                <p>Nam Hải Yêu Hoàng khẽ gật đầu: “Ừm, ta cũng thấy các mặt đều không tồi, chỉ là tu vi có chút thiếu sót.”</p>
+                <p>Thiên Cơ Các chủ trong lòng nghi hoặc. Hai vị Đại Yêu Hoàng này, không nói chuyện chính sự, lại bắt Giang Phàm mà bình phẩm? Nghe các nàng không hài lòng tu vi của Giang Phàm, Thiên Cơ Các chủ tự nhiên phải giải thích cho Giang Phàm, khẽ cười nói:</p>
+                <p>“Hai vị có điều không biết, Giang Phàm không phải lớn lên được bồi dưỡng trong Thiên Cơ Các, mà là từ một nơi nhỏ bé từng bước đi lên. Bị hạn chế về tài nguyên, trưởng thành chậm hơn một chút. Nếu từ nhỏ ở Thiên Cơ Các của ta, e rằng đã sớm là Kết Đan Cửu Tầng viên mãn rồi.”</p>
+                <p>Đông Hải Yêu Hoàng khẽ nhướng mày: “Thật sao?”</p>
+                <p>Thiên Cơ Các chủ nhận tách trà Giang Phàm đưa tới, trên mặt khá tự hào: “Các ngươi đến chậm một chút. Pháp Ấn Kim Cương vừa rời đi không lâu. Trước khi đi, hắn đối với môn nhân này của ta nhớ mãi không quên, muốn đưa về Bạch Mã Tự.”</p>
+                <p>Đông Hải Yêu Hoàng mắt sáng lên, hơi kinh ngạc: “Ngươi nói, Giang Phàm nằm trong danh sách độ hóa của Pháp Ấn Kim Cương sao?”</p>
+                <p>Nam Hải Yêu Hoàng khẽ vỗ vỗ cánh tay nàng, hạ thấp giọng nói: “Cái này tốt! Cái này tốt quá! Những người trong danh sách độ hóa của Pháp Ấn Kim Cương, toàn là nhân vật nhất lưu, không sai được.”</p>
+                <p>Đông Hải Yêu Hoàng trên mặt lộ vẻ hài lòng: “Nghe có vẻ tiềm lực không tồi, chỉ là quá trẻ, cần phải tôi luyện thêm.”</p>
+                <p>Thiên Cơ Các chủ trên mặt lại trào ra một tia tự hào: “Hai vị công chúa, có biết tình hình gần đây của thế giới ngầm Thiên Cơ Các của ta không?”</p>
+                <p>Đông Hải Yêu Hoàng ánh mắt lóe lên, uyển chuyển nói: “Nghe nói bình an hơn nhiều so với trước, các đệ tử ra vào đều rất an toàn, khá tốt.”</p>
+                <p>Giang Phàm thầm tán thưởng trình độ nói chuyện của vị công chúa giả này. Có thể nói không có gì cả mà vẫn diễn đạt một cách thanh tân thoát tục.</p>
+                <p>Thiên Cơ Các chủ trên mặt lộ ra một tia ngượng ngùng: “Cũng không sợ hai vị công chúa chê cười. Mười năm gần đây, đệ tử thu hoạch vượt trăm đã xem như không tồi rồi. Tình hình ngày càng tệ đi.”</p>
+                <p>Lời này, khiến Đông Hải Yêu Hoàng và Nam Hải Yêu Hoàng đều khó tiếp lời. Tình hình Thiên Cơ Các, quả thật có chút không ổn. Nhưng, Thiên Cơ Các chủ lại nở nụ cười nói:</p>
+                <p>“Nhưng, Giang Phàm là đệ tử mới, lần đầu tiên xuống thế giới ngầm, và chỉ dùng một ngày. Các ngươi có biết hắn thu hoạch được bao nhiêu công huân không?”</p>
+                <p>Thiên Cơ Các chủ làm một cử chỉ số tám.</p>
+                <p>Đông Hải Yêu Hoàng nói: “Tám mươi? Vậy khả năng thích nghi không tồi.”</p>
+                <p>Thiên Cơ Các chủ lắc đầu.</p>
+                <p>Đông Hải Yêu Hoàng khẽ nhướng mày: “Tám trăm? Vậy thật lợi hại, mạnh hơn các lão đệ tử một đoạn lớn.”</p>
+                <p>Ánh mắt Nam Hải Yêu Hoàng nhìn Giang Phàm, cũng trở nên sáng hơn nhiều.</p>
+                <p>Ai ngờ, Thiên Cơ Các chủ vẫn lắc đầu.</p>
+                <p>Đông Hải Yêu Hoàng kinh ngạc: “Ngươi sẽ không nói là tám ngàn chứ?”</p>
+                <p>Nam Hải Yêu Hoàng cũng che miệng nhỏ, đầy mặt kinh ngạc: “Thật sao?” Con số này thật quá khoa trương.</p>
+                <p>Thiên Cơ Các chủ mỉm cười không nói.</p>
+                <p>Mắt Đông Hải Yêu Hoàng đã bắt đầu lấp lánh tỏa sáng. Một người mới, có thể gấp trăm lần người cũ. Năng lực của người này, không cần nghi ngờ. Ngoại hình, tiềm lực, năng lực, đều là điểm tuyệt đối. Nàng còn có thể không hài lòng sao?</p>
+                <p>Ánh mắt nhìn Giang Phàm, đầy vẻ thân thiết: “Nhà ngươi ở đâu vậy? Song thân còn không? Trong nhà có mấy huynh đệ tỷ muội?”</p>
+                <p>Giang Phàm ngạc nhiên. Sao đang nói chuyện, lại nói đến người nhà của ta rồi? Hắn nghi hoặc nhìn Thiên Cơ Các chủ, người sau lại ánh mắt lóe lên, lập tức hiểu ra ý tứ của hai vị nữ Yêu Hoàng. Hóa ra là đang khảo sát con rể!</p>
+                <p>Trong một khoảnh khắc, hắn không biết là nên vui hay nên lo. Vui là, có thể trở thành con rể Hải Yêu tộc, sẽ ít phải phấn đấu hai mươi năm. Lo là, những vị hôn thê, tiểu thiếp gì đó của Giang Phàm, đều sẽ không được Hải Yêu tộc công nhận.</p>
+                <p>Hắn có chút hối hận vì đã giải thích cho Giang Phàm. Hắn ho khan một tiếng, nói: “Giang Phàm, ngươi có suy nghĩ gì về công chúa Hải Yêu tộc không? Ý là kết thành nhân duyên gì đó?”</p>
+                <p>Giang Phàm chớp chớp mắt. Kết nhân duyên? Hắn nhìn hai vị công chúa quốc sắc thiên hương trước mặt. “Là nói các nàng ấy sao?”</p>
+                <p>Phụt——</p>
+                <p>Thiên Cơ Các chủ suýt nữa phun trà trong miệng ra, vội vàng nói: “Hai nàng ấy ngoại lệ. Ngươi tiểu tử này đúng là dám nghĩ. Cưới nữ Yêu Hoàng? Nghĩ xằng bậy gì thế?”</p>
+                <p>Nhưng, cũng không thể trách Giang Phàm. Một là hai vị Yêu Hoàng đội danh công chúa đến đây. Hai là nữ giới hoàng thất Hải Yêu tộc, có khả năng vĩnh viễn giữ tuổi thanh xuân, nhìn không khác gì người trẻ tuổi.</p>
+                <p>Giang Phàm không cần nghĩ ngợi, nói: “Ta đã có gia thất.” Chuyện này không cần nghĩ. Liên hôn với đại tộc như Hải Yêu tộc, đối phương sẽ không dung thứ cho con gái mình chịu ủy khuất. Huống hồ, nếu là liên hôn với Đông Hải Tam công chúa, tha cho hắn đi. Nước bên trong quá sâu, hắn không thể nắm bắt được.</p>
+                <p>“Có gia thất rồi sao?” Đông Hải Yêu Hoàng lộ vẻ thất vọng. Nam Hải Yêu Hoàng cũng khẽ lắc đầu, thở dài một tiếng. Giống Hải Yêu tộc có truyền thừa hoàng thất như các nàng, không thể nào cho phép phò mã gia có ngoại thất.</p>
+                <p>“Người trẻ tuổi không tồi. Lần đầu gặp mặt, một chút quà nhỏ tặng ngươi.” Mặc dù việc tìm kiếm thất bại, nhưng nàng vẫn rất thưởng thức tài năng của Giang Phàm, đưa cho Giang Phàm một quả cầu thủy tinh đầy bọt khí. “Có rảnh thì đến Đông Hải của ta chơi. Đập vỡ quả cầu thủy tinh này, là có thể ngồi bọt khí đi vào đáy biển.”</p>
+                <p>Đây là thứ tốt, sánh ngang với Bích Thủy Châu. Điểm khác biệt là, Bích Thủy Châu có thể sử dụng lại nhiều lần, bọt khí chỉ có thể dùng một lần.</p>
+                <p>“Đa tạ Đông Hải Tam công chúa.” Giang Phàm nhận lấy bọt khí, mơ mơ hồ hồ đến, mơ mơ hồ hồ đi, đến giờ vẫn chưa rõ Đông Hải Tam công chúa bảo hắn vào làm gì.</p>
+                <p>Trong điện.</p>
+                <p>Sau chuyện này, Đông Hải Yêu Hoàng cuối cùng cũng đi vào chính đề, nghiêm túc nói: “Các chủ, ta và Cựu Mộng Yêu Hoàng, sở dĩ trước đó từ chối lời mời của ngươi, là vì, bên Tam Thanh Sơn đã truyền lời, cấm Hải Yêu tộc chúng ta giúp đỡ đại lục của các ngươi. Cho nên, trên mặt ngoài chúng ta không tiện đến, chỉ có thể dùng hạ sách này, âm thầm liên thủ đến đây.”</p>
+                <p>Thiên Cơ Các chủ trong lòng bừng tỉnh, ngay sau đó lại nghi hoặc: “Tam Thanh Sơn và Thiên Cơ Các của ta, không có ân oán gì vướng mắc, vì lẽ gì lại muốn gây khó dễ cho chúng ta?”</p>
+                <p>Nam Hải Cựu Mộng Yêu Hoàng thở dài nói: “Gốc rễ ở chỗ Thương Khung Yêu Hoàng. Lần trước động phủ Hổ Yêu Hoàng mở ra, Huyền Dương Thượng Nhân của Tam Thanh Sơn dẫn theo một đám đệ tử bằng hữu đến đây. Thương Khung Yêu Hoàng hành sự có chút bá đạo, đã trêu chọc người khác. Hiện giờ Địa Ngục Hoang Thú hoành hành, Tam Thanh Sơn tự nhiên đã tìm thấy cơ hội báo thù.”</p>
+                <p>Biết được nguyên nhân, Thiên Cơ Các chủ vỗ vỗ bàn, trong mắt có tức giận. “Cái tên Thương Khung này! Thật sự cho rằng đại lục chúng ta vẫn như năm đó sao?” Từng có Nguyên Anh trung hậu kỳ tọa trấn Thiên Cơ Các, sau này Yêu tộc có Hổ Yêu Hoàng tọa trấn. Người của Thái Thương Đại Châu, tự nhiên không dám làm bậy. Nhưng giờ đây, thời thế đã đổi thay. Thương Khung Yêu Hoàng thật sự nghĩ là địa đầu xà, đối phương liền không làm gì được hắn. Bây giờ thì hay rồi, người ta thấy ngươi gặp khó khăn, liền thừa cơ giáng họa.</p>
+                <p>Đông Hải Yêu Hoàng khoát tay: “Đừng nói lời nản lòng nữa. Địa Ngục Hoang Thú tàn phá xong đại lục, sẽ đến lượt Cang Hải xung quanh, không ai chạy thoát được. Bốn vị Yêu Hoàng của Tứ Đại Hải Yêu tộc chúng ta, trừ Bắc Hải Yêu tộc bị sinh linh không rõ xâm lấn liên tục, thực sự không thể thoát thân, ba vị Hải Yêu Hoàng còn lại đều đã đến. Tây Hải Yêu Hoàng, giờ này hẳn đang trên đường.”</p>
+                <p>Thiên Cơ Các chủ cảm kích đứng dậy chắp tay: “Ba vị Yêu Hoàng đại nghĩa!”</p>
+                <p>Vốn cho rằng các nàng không đến là vì chưa tổn hại đến căn cơ của mình. Không ngờ, tầm nhìn của các nàng lại rộng lớn đến thế.</p>
+                <p>Đông Hải Yêu Hoàng khoát tay: “Chỉ là môi hở răng lạnh mà thôi. Mấy ngày này, chúng ta sẽ tạm thời ở lại Thiên Cơ Các, chờ Tây Hải Yêu Hoàng. Đến lúc đó, nhân lực tập hợp, lập tức nghênh chiến Địa Ngục Hoang Thú!”</p>
+                <p>Dừng một chút, Đông Hải Yêu Hoàng nói: “Ngoài ra, chúng ta đã phái cường giả Đông Hải, Nam Hải, đi dò xét tung tích Địa Ngục Hoang Thú. Quý Các cũng nên sớm hành động thì hơn. Từ những phản hồi tình hình cho thấy, con Địa Ngục Hoang Thú này cực kỳ xảo quyệt, hành tung cực kỳ ẩn mật. Người của Hải Yêu tộc chúng ta hành sự trên đại lục, rốt cuộc không tiện bằng các ngươi Nhân tộc. Cho nên…”</p>
+                <p>Thiên Cơ Các chủ nói: “Yên tâm. Sức lực chúng ta cần bỏ ra, trách nhiệm không thể chối từ. Ta lát nữa sẽ ban bố nhiệm vụ, lệnh môn hạ đệ tử đi tuần tra biên giới Nhân, Yêu hai tộc.”</p>
+                <p>Đông Hải Yêu Hoàng khẽ gật đầu, dường như lại nhớ ra điều gì, lộ vẻ khó xử, nói: “Các chủ, tại hạ có một thỉnh cầu không phải phép. Có thể cho tại hạ mượn nơi các chủ năm xưa độ kiếp được không?”</p>
+            </div>
+        </article>
+    
+        
+        <nav class="pagination">
+            <a href="page_155.html" class="page-btn">← Trước</a>
+            <a href="page_1.html" class="page-btn">1</a>
+            <span class="page-info">...</span>
+            <a href="page_155.html" class="page-btn">155</a>
+            <a href="page_156.html" class="page-btn current">156</a>
+            <a href="page_157.html" class="page-btn">157</a>
+            <span class="page-info">...</span>
+            <a href="page_437.html" class="page-btn">437</a>
+            <a href="page_157.html" class="page-btn">Sau →</a>
+        </nav>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Thái Hư Chí Tôn. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <button class="settings-toggle" aria-label="Cài đặt">⚙</button>
+    <div class="settings-panel">
+        <div class="settings-group">
+            <label class="settings-label">Cỡ chữ: <span id="fontValue">16</span>px</label>
+            <input type="range" id="fontSize" class="settings-slider" min="12" max="24" value="16">
+        </div>
+        <div class="settings-group">
+            <label class="settings-label">Khoảng cách dòng: <span id="lineValue">1.8</span></label>
+            <input type="range" id="lineHeight" class="settings-slider" min="1.4" max="2.4" step="0.1" value="1.8">
+        </div>
+    </div>
+    
+    <script>
+(function() {
+    'use strict';
+    
+    // Settings
+    const STORAGE_KEY = 'reader_settings';
+    const defaults = {
+        fontSize: 16,
+        lineHeight: 1.8
+    };
+    
+    function loadSettings() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+        } catch (e) {
+            return defaults;
+        }
+    }
+    
+    function saveSettings(settings) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+        } catch (e) {}
+    }
+    
+    function applySettings(settings) {
+        document.documentElement.style.fontSize = settings.fontSize + 'px';
+        document.querySelectorAll('.chapter-content').forEach(el => {
+            el.style.lineHeight = settings.lineHeight;
+        });
+    }
+    
+    // Settings Panel
+    const settingsToggle = document.querySelector('.settings-toggle');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const fontSlider = document.getElementById('fontSize');
+    const lineSlider = document.getElementById('lineHeight');
+    
+    if (settingsToggle && settingsPanel) {
+        const settings = loadSettings();
+        applySettings(settings);
+        
+        if (fontSlider) fontSlider.value = settings.fontSize;
+        if (lineSlider) lineSlider.value = settings.lineHeight;
+        
+        settingsToggle.addEventListener('click', function() {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!settingsPanel.contains(e.target) && !settingsToggle.contains(e.target)) {
+                settingsPanel.classList.remove('active');
+            }
+        });
+        
+        if (fontSlider) {
+            fontSlider.addEventListener('input', function() {
+                settings.fontSize = parseInt(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+        
+        if (lineSlider) {
+            lineSlider.addEventListener('input', function() {
+                settings.lineHeight = parseFloat(this.value);
+                applySettings(settings);
+                saveSettings(settings);
+            });
+        }
+    }
+    
+    // Reading Progress
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+    
+    // Save reading position
+    const POSITION_KEY = 'reading_position';
+    
+    function savePosition() {
+        try {
+            const data = {
+                page: window.location.pathname,
+                scroll: window.scrollY,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(POSITION_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+    
+    function restorePosition() {
+        try {
+            const saved = localStorage.getItem(POSITION_KEY);
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.page === window.location.pathname) {
+                    window.scrollTo(0, data.scroll);
+                }
+            }
+        } catch (e) {}
+    }
+    
+    window.addEventListener('scroll', debounce(savePosition, 500), { passive: true });
+    restorePosition();
+    
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+})();
+</script>
+</body>
+</html>
