@@ -14,483 +14,7 @@
     
     <title>Thái Hư Chí Tôn - Trang 437</title>
     
-    <style>
-:root {
-    --bg-primary: #0d1117;
-    --bg-secondary: #161b22;
-    --bg-tertiary: #21262d;
-    --text-primary: #e6edf3;
-    --text-secondary: #8b949e;
-    --accent: #58a6ff;
-    --accent-hover: #79c0ff;
-    --border: #30363d;
-    --chapter-bg: #1c2128;
-    --success: #3fb950;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-}
-
-html {
-    font-size: 16px;
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.8;
-    min-height: 100vh;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Samsung Internet specific optimizations */
-@supports (-webkit-overflow-scrolling: touch) {
-    body {
-        -webkit-overflow-scrolling: touch;
-    }
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
-/* Header */
-.header {
-    background: var(--bg-secondary);
-    border-bottom: 1px solid var(--border);
-    padding: 16px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-}
-
-.site-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--accent);
-    text-decoration: none;
-}
-
-.site-title:hover,
-.site-title:active {
-    color: var(--accent-hover);
-}
-
-/* Navigation */
-.nav {
-    display: flex;
-    gap: 8px;
-}
-
-.nav-link {
-    padding: 8px 16px;
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    touch-action: manipulation;
-}
-
-.nav-link:hover,
-.nav-link:active {
-    background: var(--accent);
-    color: var(--bg-primary);
-    border-color: var(--accent);
-}
-
-.nav-link.disabled {
-    opacity: 0.4;
-    pointer-events: none;
-}
-
-/* Chapter Styles */
-.chapter {
-    background: var(--chapter-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    margin: 24px 0;
-    overflow: hidden;
-}
-
-.chapter-header {
-    background: var(--bg-tertiary);
-    padding: 16px 20px;
-    border-bottom: 1px solid var(--border);
-}
-
-.chapter-title {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--accent);
-    margin: 0;
-}
-
-.chapter-content {
-    padding: 20px;
-}
-
-.chapter-content p {
-    margin-bottom: 1.25em;
-    text-align: justify;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-}
-
-.chapter-content p:last-child {
-    margin-bottom: 0;
-}
-
-/* Pagination */
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    padding: 32px 0;
-    flex-wrap: wrap;
-}
-
-.page-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 48px;
-    height: 48px;
-    padding: 0 16px;
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text-primary);
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    touch-action: manipulation;
-}
-
-.page-btn:hover,
-.page-btn:active {
-    background: var(--accent);
-    color: var(--bg-primary);
-    border-color: var(--accent);
-}
-
-.page-btn.current {
-    background: var(--accent);
-    color: var(--bg-primary);
-    border-color: var(--accent);
-}
-
-.page-btn.disabled {
-    opacity: 0.4;
-    pointer-events: none;
-}
-
-.page-info {
-    color: var(--text-secondary);
-    font-size: 0.875rem;
-}
-
-/* Index Page */
-.chapter-list {
-    list-style: none;
-    margin: 24px 0;
-}
-
-.chapter-item {
-    border-bottom: 1px solid var(--border);
-}
-
-.chapter-item:last-child {
-    border-bottom: none;
-}
-
-.chapter-link {
-    display: block;
-    padding: 12px 0;
-    padding-left: 16px;
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: color 0.2s ease;
-    font-size: 0.9375rem;
-}
-
-.chapter-link:hover,
-.chapter-link:active {
-    color: var(--accent);
-}
-
-/* Page Groups - Details/Summary for Samsung Internet */
-.page-group {
-    margin-bottom: 8px;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    background: var(--chapter-bg);
-}
-
-.page-group summary {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 20px;
-    background: var(--bg-tertiary);
-    cursor: pointer;
-    font-weight: 600;
-    color: var(--text-primary);
-    list-style: none;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    min-height: 56px;
-    user-select: none;
-    -webkit-user-select: none;
-}
-
-.page-group summary::-webkit-details-marker {
-    display: none;
-}
-
-.page-group summary::after {
-    content: '▶';
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    transition: transform 0.2s ease;
-}
-
-.page-group[open] summary::after {
-    transform: rotate(90deg);
-}
-
-.page-group summary:hover,
-.page-group summary:active {
-    background: var(--bg-secondary);
-}
-
-.page-group-title {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.page-group-title .page-num {
-    color: var(--accent);
-    font-size: 1rem;
-}
-
-.page-group-title .chapter-range {
-    color: var(--text-secondary);
-    font-size: 0.8125rem;
-    font-weight: 400;
-}
-
-.page-group .chapter-list {
-    margin: 0;
-    padding: 8px 0;
-    border-top: 1px solid var(--border);
-}
-
-.page-group .read-page-btn {
-    display: block;
-    margin: 12px 16px 16px;
-    padding: 12px 16px;
-    background: var(--accent);
-    color: var(--bg-primary);
-    text-align: center;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 0.875rem;
-    touch-action: manipulation;
-}
-
-.page-group .read-page-btn:active {
-    opacity: 0.9;
-}
-
-/* Footer */
-.footer {
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border);
-    padding: 24px 0;
-    margin-top: 48px;
-    text-align: center;
-}
-
-.footer p {
-    color: var(--text-secondary);
-    font-size: 0.875rem;
-}
-
-/* Settings Panel */
-.settings-toggle {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: var(--accent);
-    color: var(--bg-primary);
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    z-index: 1000;
-    touch-action: manipulation;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.settings-panel {
-    position: fixed;
-    bottom: 96px;
-    right: 24px;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
-    width: 280px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    z-index: 999;
-    display: none;
-}
-
-.settings-panel.active {
-    display: block;
-}
-
-.settings-group {
-    margin-bottom: 16px;
-}
-
-.settings-group:last-child {
-    margin-bottom: 0;
-}
-
-.settings-label {
-    display: block;
-    color: var(--text-secondary);
-    font-size: 0.875rem;
-    margin-bottom: 8px;
-}
-
-.settings-slider {
-    width: 100%;
-    height: 8px;
-    -webkit-appearance: none;
-    appearance: none;
-    background: var(--bg-tertiary);
-    border-radius: 4px;
-    outline: none;
-}
-
-.settings-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--accent);
-    cursor: pointer;
-}
-
-/* Reading Progress */
-.progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background: var(--accent);
-    z-index: 1001;
-    transition: width 0.1s linear;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-    html {
-        font-size: 15px;
-    }
-    
-    .header-content {
-        flex-direction: column;
-        gap: 12px;
-    }
-    
-    .nav {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .chapter-content {
-        padding: 16px;
-    }
-    
-    .pagination {
-        gap: 8px;
-    }
-    
-    .page-btn {
-        min-width: 44px;
-        height: 44px;
-        padding: 0 12px;
-        font-size: 0.875rem;
-    }
-}
-
-/* Print styles */
-@media print {
-    .header, .footer, .nav, .settings-toggle, .settings-panel, .pagination, .progress-bar {
-        display: none !important;
-    }
-    
-    body {
-        background: white;
-        color: black;
-    }
-    
-    .chapter {
-        border: none;
-        box-shadow: none;
-        page-break-inside: avoid;
-    }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        transition: none !important;
-        animation: none !important;
-        scroll-behavior: auto !important;
-    }
-}
-</style>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <div class="progress-bar"></div>
@@ -502,7 +26,7 @@ body {
                 <nav class="nav">
                     <a href="page_436.html" class="nav-link">← Trước</a>
                     <a href="index.html" class="nav-link">Mục lục</a>
-                    <a href="#" class="nav-link disabled">Sau →</a>
+                    <a href="page_438.html" class="nav-link">Sau →</a>
                 </nav>
             </div>
         </div>
@@ -739,17 +263,89 @@ body {
             </div>
         </article>
     
+
+        <article class="chapter" id="chapter_2188">
+            <header class="chapter-header">
+                <h2 class="chapter-title">Chương 2188: Một đấu hai</h2>
+            </header>
+            <div class="chapter-content">
+                <p>Giang Phàm đằng không nhi khởi, chắp tay đứng giữa không trung. Hắn không dùng bất kỳ phòng ngự nào, cũng chẳng che giấu dung mạo, cứ thế lấy chân thân đối diện với hai người.</p>
+                <p>Cảm nhận được khí tức thiên địa dần áp bách, hắn mới thong thả lấy ra Thái Sơ Tù Thiên Hồ cùng hai viên Pháp Tắc Châu, đánh toàn bộ pháp tắc vào bên trong. Vùng không gian quanh hồ lô màu vàng sáng rực lên chưa từng có.</p>
+                <p>Với uy lực của Thái Sơ Tù Thiên Hồ lúc này, Tam Tai cảnh tầm thường có thể dễ dàng bị thu phục. Ngay cả Loạn Cổ Huyết Hầu, muốn bất động thanh sắc như trước kia cũng là chuyện không thể nào!</p>
+                <p>Hắn thu Thái Sơ Tù Thiên Hồ vào trong ống tay áo, ánh mắt bình thản dõi nhìn về phía trước.</p>
+                <p>Chẳng mấy chốc, từ sâu trong thiên mạc đã truyền đến uy áp khủng bố của Tam Tai cảnh. Một đôi nhãn thần thâm thúy xuyên thấu hư không bắn tới.</p>
+                <p>“Ngươi là kẻ nào?” Vô Hối Đại Hiền cách lớp thiên mạc, trầm giọng hỏi.</p>
+                <p>Độc Lang Hiền Giả vỗ đôi cánh xương trắng theo sát phía sau, vừa thấy Giang Phàm, sắc mặt lập tức đại biến: “Là ngươi!”</p>
+                <p>Hắn liếc mắt một cái đã nhận ra gương mặt thiếu niên trước mắt! Chính là kẻ vô danh đã phá hỏng chuyện tốt của hắn tại Vạn Độc giới!</p>
+                <p>Kẻ này tại sao lại ở đây? Chẳng lẽ vừa rồi chính hắn đã cứu Liễu Khuynh Tiên?</p>
+                <p>“Chờ đã!” Hắn sực nhận ra điều gì, ánh mắt lộ vẻ kinh hãi: “Ngươi chính là Giang Phàm của Trung Thổ!”</p>
+                <p>Khóe môi Giang Phàm khẽ nhếch: “Lại gặp mặt rồi, Độc Lang Hiền Giả!”</p>
+                <p>“Lần này, ngươi đừng hòng chạy thoát!”</p>
+                <p>Nghe vậy, đồng tử Độc Lang Hiền Giả co rụt lại, nhớ tới cái hồ lô nhỏ đáng sợ kia, hắn quả quyết thối lui về phía sau!</p>
+                <p>Giữa thiên mạc, Vô Hối Đại Hiền im lặng, ánh mắt sắc lạnh đảo qua đảo lại giữa Giang Phàm và Độc Lang Hiền Giả. Độc Lang Hiền Giả vậy mà lại sợ hãi Giang Phàm?</p>
+                <p>Điều này khiến lão vốn định ra tay cũng phải trở nên thận trọng. Phải chăng tiểu tử này cũng sở hữu đại sát khí tương tự như đôi chiến ngoa của Độc Lang Hiền Giả?</p>
+                <p>Giang Phàm cười nhạt: “Hai vị vì tìm ta mà không tiếc tay đả thương nữ nhân của ta. Giờ ta đứng ngay trước mặt, sao lại không động thủ?”</p>
+                <p>Độc Lang Hiền Giả đảo mắt, truyền âm cho Vô Hối Đại Hiền: “Tiền bối, trên người kẻ này có một kiện trọng bảo lợi hại. Một khi ra tay, kẻ bị khóa định chắc chắn sẽ chết. Chi bằng chúng ta liên thủ giải quyết hắn trước, sau đó mới phân chia bảo vật?”</p>
+                <p>Vô Hối Đại Hiền không chút do dự gật đầu: “Nên là như thế!”</p>
+                <p>Khí cơ của hai người cuộn trào, sát cơ từ xa đã khóa chặt lấy Giang Phàm.</p>
+                <p>Độc Lang Hiền Giả thầm tính toán, Thái Sơ Tù Thiên Hồ tuy lợi hại nhưng có một khuyết điểm chí mạng, đó là khi đối mặt với nhiều người, nó chỉ có thể chọn một mục tiêu duy nhất.</p>
+                <p>Hắn và Vô Hối Đại Hiền đều nắm giữ Thời Gian Pháp Tắc, nếu Giang Phàm dùng hồ lô đối phó một người, người còn lại có thể lập tức thi triển pháp tắc để hạ sát. Hắn đánh cược Giang Phàm không dám khinh suất hành động.</p>
+                <p>Giang Phàm không nhanh không chậm, đưa tay nhẹ nhàng lau đi vết chất lỏng trên người. Thứ đó vốn đã chẳng còn mấy tác dụng, nay bị xóa sạch, huyết ấn không còn bị áp chế lập tức hiện rõ.</p>
+                <p>Loạn Cổ Huyết Hầu đang tìm kiếm khắp nơi ngoài thiên ngoại liền xuyên qua giới hạn, chuẩn xác khóa định vị trí của hắn, cưỡi chiến mã xuất hiện giữa hư vô trên đỉnh đầu.</p>
+                <p>Huyết khí cường đại xuyên thấu vách ngăn thế giới, trút xuống phương thiên địa này.</p>
+                <p>Sắc mặt Vô Hối Đại Hiền và Độc Lang Hiền Giả đồng loạt kịch biến.</p>
+                <p>“Loạn Cổ Huyết Hầu? Kẻ hắn truy đuổi là Giang Phàm?” Vô Hối Đại Hiền chợt nhớ ra điều gì, toàn thân run bắn lên.</p>
+                <p>Lão thốt lên bằng giọng điệu âm trầm không giấu nổi vẻ hãi hùng: “Mấy ngày trước, kẻ đại chiến với Loạn Cổ Huyết Hầu chính là ngươi?”</p>
+                <p>Độc Lang Hiền Giả cũng tái mặt! Đâu chỉ là đại chiến? Hắn còn đánh trọng thương đối phương nữa kìa!</p>
+                <p>Hắn tự phụ từng đứng tên trên Thánh Quyển Thần Đô, thủ đoạn át chủ bài không thiếu, nhưng để chính diện đại chiến với Loạn Cổ Huyết Hầu, trọng thương đối phương rồi rút lui an toàn, hắn tự nhận mình vạn lần không thể làm được.</p>
+                <p>Giang Phàm làm được, chứng tỏ trên người hắn có át chủ bài vượt xa tưởng tượng của người thường. Một thứ còn đáng sợ hơn cả cái hồ lô kia!</p>
+                <p>Sự kiêng dè nồng đậm hiện rõ trong mắt Độc Lang Hiền Giả. Vô Hối Đại Hiền cũng trở nên thận trọng, sát ý trong mắt nhanh chóng tiêu tán, bắt đầu cân nhắc lợi hại.</p>
+                <p>Giang Phàm cười giễu: “Hai vị, sao không động thủ đi? Bài tẩy của ta đã dùng hết rồi, không làm gì được các ngươi đâu.”</p>
+                <p>Hắn càng nói thế, Vô Hối Đại Hiền và Độc Lang Hiền Giả càng thêm cảnh giác. Chỉ có kẻ ngu mới tự phơi bày điểm yếu của mình! Tin vào lời quỷ kế của Giang Phàm thì coi như đời này xong rồi!</p>
+                <p>Thấy hai người vẫn không dám tiến tới, ánh mắt Giang Phàm đảo qua giữa hai bên: “Nếu các ngươi đã không dám, vậy thì tới lượt ta!”</p>
+                <p>Hắn nắm chặt Thái Sơ Tù Thiên Hồ, hồ lô màu vàng phát ra hào quang rực rỡ, rõ ràng đã được kích hoạt.</p>
+                <p>Độc Lang Hiền Giả quả quyết vỗ cánh xương, thân hình điên cuồng thối lui. Vô Hối Đại Hiền cũng nhận ra điềm chẳng lành, lập tức hóa thực thành hư để độn tẩu.</p>
+                <p>Giang Phàm lạnh giọng: “Muốn chạy? Vô Hối Đại Hiền!”</p>
+                <p>Cái tên vừa thốt ra, một sợi xích vàng nhỏ bé từ trong Thái Sơ Tù Thiên Hồ bắn mạnh ra, vượt qua thời gian đuổi kịp Vô Hối Đại Hiền, quấn chặt lấy lão.</p>
+                <p>Vô Hối Đại Hiền từ trong hư không rơi ra. Lão nhìn theo sợi xích về phía miệng hồ lô đen ngòm, lập tức cảm nhận được một luồng khí lạnh thấu xương. Đó là cảnh báo chỉ xuất hiện khi cái chết cận kề!</p>
+                <p>Cái hồ lô này có thể lấy mạng lão!</p>
+                <p>“Độc Lang! Cùng ra tay!” Vô Hối Đại Hiền gầm lên. Đã không thoát được, lão định kéo theo Độc Lang Hiền Giả cùng liều mạng!</p>
+                <p>Trong mắt Độc Lang Hiền Giả lóe lên tinh quang, cười dữ tợn: “Cuối cùng cũng đợi được cơ hội này!”</p>
+                <p>Hắn lao vút trở lại, đôi chiến ngoa dưới chân đạp mạnh một bước, thiên địa một lần nữa phát ra tiếng mạch đập.</p>
+                <p>Thời gian đột ngột ngưng đọng!</p>
+                <p>Hắn không chút do dự di chuyển tức thời đến trước mặt Giang Phàm, ánh mắt lộ vẻ trêu ngươi: “Rất tiếc, chiến ngoa của ta là Thời Gian Định Cách, đủ để khắc chế ngươi!”</p>
+                <p>Hắn vươn tay, chộp lấy Thiên Lôi Thạch trong ngực Giang Phàm, định bụng rút lui ngay lập tức!</p>
+                <p>Bỗng nhiên!</p>
+                <p>Một kiện trữ vật khí trong ngực Giang Phàm nổ tung không một điềm báo trước!</p>
+                <p>Sắc mặt Độc Lang Hiền Giả đại biến: “Dưới trạng thái Thời Gian Định Cách, sao có thể có thứ đột phá hạn chế thời gian?”</p>
+                <p>Theo lý mà nói, ngay cả không gian trữ vật đang nổ tung, dưới tác động của định cách cũng phải đứng yên. Trừ phi, vật này quá mức cường đại, đến mức thời gian cũng không chịu nổi sức nặng của nó!</p>
+                <p>Oanh một tiếng.</p>
+                <p>Một tòa Thanh Đồng Đại Điện cổ xưa, mang theo hơi thở hồng hoang từ thời viễn cổ giáng lâm!</p>
+                <p>Lấy Thanh Đồng Đại Điện làm trung tâm, toàn bộ trạng thái định cách thời gian đều bị nghiền nát vụn!</p>
+                <p>“Hỏng bét!” Độc Lang Hiền Giả rùng mình, nhận ra mình đã trúng kế! Kiện trữ vật khí này cực có thể đã được Giang Phàm kích hoạt từ trước khi hắn thi triển định cách!</p>
+                <p>Nói cách khác, mục tiêu hàng đầu của Giang Phàm chưa bao giờ là Vô Hối Đại Hiền. Mà chính là hắn!</p>
+                <p>Trong lúc tâm thần hắn đang chấn động, cổ tay bỗng nhiên bị siết chặt. Ngước mắt nhìn lên, chính là Giang Phàm đã tóm chặt lấy tay hắn!</p>
+                <p>Một đôi mắt u lãnh, băng giá nhìn chằm chằm vào hắn: “Kẻ đáng chết nhất chính là ngươi!”</p>
+                <p>Vô Hối Đại Hiền tuy đáng ghét, nhưng nếu không có Độc Lang Hiền Giả chỉ điểm, thân phận của hắn sao có thể bị bại lộ? Liễu Khuynh Tiên sao có thể rơi vào hiểm cảnh?</p>
+                <p>“Buông tay!” Độc Lang Hiền Giả kinh hãi đến tận cổ họng, cố sức rút tay ra nhưng phát hiện lực cánh tay của Giang Phàm còn lớn hơn trước nhiều. Trong lúc nhất thời vậy mà không thể thoát ra!</p>
+                <p>Mà ở bàn tay còn lại, Giang Phàm đã sớm chuẩn bị, triệu ra một thanh trường kiếm đen kịt ẩn chứa thời gian chi lực. Trên thân kiếm bao phủ ba loại sức mạnh quỷ dị khác nhau.</p>
+                <p>Dưới sự gia trì của thời gian chi lực, tốc độ của thanh kiếm này nhanh đến mức hắn căn bản không kịp phản ứng!</p>
+                <p>Phập!</p>
+                <p>Trường kiếm từ ngang hông hắn, lạnh lùng chém qua!</p>
+            </div>
+        </article>
+    
         
         <nav class="pagination">
             <a href="page_436.html" class="page-btn">← Trước</a>
             <a href="page_1.html" class="page-btn">1</a>
             <span class="page-info">...</span>
-            <a href="page_433.html" class="page-btn">433</a>
             <a href="page_434.html" class="page-btn">434</a>
             <a href="page_435.html" class="page-btn">435</a>
             <a href="page_436.html" class="page-btn">436</a>
             <a href="page_437.html" class="page-btn current">437</a>
-            <a href="#" class="page-btn disabled">Sau →</a>
+            <a href="page_438.html" class="page-btn">438</a>
+            <a href="page_438.html" class="page-btn">Sau →</a>
         </nav>
     </main>
     
